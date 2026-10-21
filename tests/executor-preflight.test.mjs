@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtemp,writeFile,readFile,mkdir,symlink,link,rm,access} from 'node:fs/promises';
+import {mkdtemp,writeFile,readFile,mkdir,symlink,link,rm,access,lstat,stat} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {PREFLIGHT_VERSION,METER_FIELDS,HARD_LIMIT_FIELDS,evidenceDigest,safeRelativePath,inspectWorkspaceBoundary,buildOfflineSandboxPlan,runBoundedProcess,createBrokerHandshake,validateBrokerHandshake,createUsageLedger,writeImmutablePreflightReport} from '../src/benchmark/executor-preflight.mjs';
@@ -8,6 +8,8 @@ const budget={tokens:100,reasoning_tokens:50,tool_calls:8,steps:12,asset_bytes:1
 const counts=(extra={})=>Object.fromEntries(METER_FIELDS.map(k=>[k,extra[k]??0]));
 const ledger=()=>createUsageLedger({trialId:'trial-test',sourceId:'trusted-test-broker',nonce:'nonce-test',budget});
 const receipt=(cumulative,extra={})=>({trial_id:'trial-test',source_id:'trusted-test-broker',nonce:'nonce-test',sequence:1,attempt:1,operation_id:'one',cumulative:counts(cumulative),...extra});
+// Windows directory junctions exercise real link rejection without symlink privileges.
+const directoryLinkType=process.platform==='win32'?'junction':'dir';
 async function temp(t){const root=await mkdtemp(join(tmpdir(),'gd-preflight-test-'));t.after(()=>rm(root,{recursive:true,force:true}));return root;}
 
 test('relative paths reject traversal, absolute aliases, Windows drives and nulls',()=>{
@@ -21,13 +23,22 @@ test('boundary inventory checks exact allowlist and missing files',async t=>{
 });
 test('baseline protected paths, symlink escapes, dangling symlinks and hardlinks are rejected without reading targets',async t=>{
  const root=await temp(t),base=join(root,'baseline');await mkdir(base);await writeFile(join(root,'sentinel'),'BENIGN');
- await symlink(join(root,'sentinel'),join(base,'outside'));await symlink('absent',join(base,'dangling'));await link(join(root,'sentinel'),join(base,'hard'));
+ if(process.platform==='win32'){
+  const target=join(root,'outside-target');await mkdir(target);await writeFile(join(target,'marker'),'BENIGN');
+  await symlink(target,join(base,'outside'),'junction');await symlink(join(root,'absent'),join(base,'dangling'),'junction');
+ }else{
+  await symlink(join(root,'sentinel'),join(base,'outside'));await symlink('absent',join(base,'dangling'));
+ }
+ for(const name of ['outside','dangling'])assert((await lstat(join(base,name))).isSymbolicLink());
+ await assert.rejects(stat(join(base,'dangling')),{code:'ENOENT'});
+ await link(join(root,'sentinel'),join(base,'hard'));
  await mkdir(join(base,'skill'));await writeFile(join(base,'skill','hidden'),'BENIGN');
  const r=await inspectWorkspaceBoundary(base,{forbiddenPrefixes:['skill','src','evaluator']});
  assert.equal(r.valid,false);assert.equal(r.issues.filter(i=>i.code==='SYMLINK_FORBIDDEN').length,2);assert(r.issues.some(i=>i.code==='HARDLINK_FORBIDDEN'));assert(r.issues.some(i=>i.code==='FORBIDDEN_EXPOSURE'));
 });
 test('workspace itself and any ancestor may not be a symlink',async t=>{
- const root=await temp(t);await mkdir(join(root,'real'));await mkdir(join(root,'real','child'));await symlink(join(root,'real'),join(root,'alias'));
+ const root=await temp(t);await mkdir(join(root,'real'));await mkdir(join(root,'real','child'));await symlink(join(root,'real'),join(root,'alias'),directoryLinkType);
+ assert((await lstat(join(root,'alias'))).isSymbolicLink());
  await assert.rejects(inspectWorkspaceBoundary(join(root,'alias')),/WORKSPACE_NOT_REAL_DIRECTORY/);
  await assert.rejects(inspectWorkspaceBoundary(join(root,'alias','child')),/WORKSPACE_SYMLINK_ANCESTOR/);
 });

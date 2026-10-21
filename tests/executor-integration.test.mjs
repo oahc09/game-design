@@ -3,7 +3,7 @@ import {fileURLToPath as portableFileURLToPath} from 'node:url';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {generateKeyPairSync,sign} from 'node:crypto';
-import {mkdtemp,mkdir,writeFile,readFile,cp,rm,symlink} from 'node:fs/promises';
+import {mkdtemp,mkdir,writeFile,readFile,cp,rm,symlink,lstat} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join,resolve} from 'node:path';
 import {freezeBenchmark,formalPrerequisites,verifyExecutorAudit,prepareWorkspace,createCommandExecutor,createBrokerExecutor,bubblewrapLauncher,runAB,readSupervisorExecutionLog,sha256,DEFAULT_BUDGET} from '../src/benchmark/ab.mjs';
@@ -56,7 +56,7 @@ test('frozen audit bytes and supervisor environment must still match at verifica
 test('workspace preparation refuses preexisting contamination or symlink ancestry before export',async t=>{
  const x=await fixture(t),workspace=join(x.dir,'contaminated');await mkdir(workspace);await writeFile(join(workspace,'evaluator-secret'),'BENIGN');
  await assert.rejects(prepareWorkspace({root:x.dir,workspace,task:tasks[0],variant:'baseline',enginePaths:['neutral-engine'],toolkitPaths:['toolkit']}),/new or empty/);
- const alias=join(x.dir,'alias');await symlink(workspace,alias);await assert.rejects(prepareWorkspace({root:x.dir,workspace:join(alias,'child'),task:tasks[0],variant:'baseline',enginePaths:['neutral-engine'],toolkitPaths:['toolkit']}),/symlink ancestor/);
+ const alias=join(x.dir,'alias');await symlink(workspace,alias,process.platform==='win32'?'junction':'dir');assert((await lstat(alias)).isSymbolicLink());await assert.rejects(prepareWorkspace({root:x.dir,workspace:join(alias,'child'),task:tasks[0],variant:'baseline',enginePaths:['neutral-engine'],toolkitPaths:['toolkit']}),/symlink ancestor/);
 });
 test('legacy directory mounts are rejected; pinned-file plan does not expose host directories',async t=>{
  const x=await fixture(t);assert.throws(()=>bubblewrapLauncher({binaryMounts:['/root']}),/forbidden/);
