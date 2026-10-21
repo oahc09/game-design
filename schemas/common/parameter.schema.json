@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://game-design.local/schema/common/parameter.json",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "value": {},
+    "min": {
+      "type": "number"
+    },
+    "max": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "id",
+    "value"
+  ],
+  "additionalProperties": false
+}

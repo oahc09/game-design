@@ -1,0 +1,5658 @@
+{
+  "archetype": "sokoban",
+  "version": "1.0.0",
+  "description": "Authored conformance fixtures: exact rule expectations, with specific validation codes for broken content.",
+  "cases": [
+    {
+      "id": "sokoban_walk_up",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#    .#",
+                "#     #",
+                "#  @  #",
+                "#    $#",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "UP"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": 17,
+          "pushes": 0
+        },
+        "events": [
+          "EntityMoved"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_push_up",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#  .  #",
+                "#     #",
+                "#  $  #",
+                "#  @  #",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "UP"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": 24,
+          "boxes": [
+            17
+          ],
+          "pushes": 1
+        },
+        "events": [
+          "ObjectPushed",
+          "EntityMoved"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_walk_onto_goal_up",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#     #",
+                "#  .  #",
+                "#  @  #",
+                "#    $#",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "UP"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": 17,
+          "pushes": 0
+        },
+        "terminal": null
+      }
+    },
+    {
+      "id": "sokoban_final_push_up",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#     #",
+                "#  .  #",
+                "#  $  #",
+                "#  @  #",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "UP"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "boxes": [
+            17
+          ],
+          "pushes": 1
+        },
+        "terminal": {
+          "status": "WIN"
+        },
+        "events": [
+          "ObjectPushed",
+          "ObjectiveCompleted"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_walk_down",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#    .#",
+                "#     #",
+                "#  @  #",
+                "#    $#",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "DOWN"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": 31,
+          "pushes": 0
+        },
+        "events": [
+          "EntityMoved"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_push_down",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#     #",
+                "#  @  #",
+                "#  $  #",
+                "#     #",
+                "#  .  #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "DOWN"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": 24,
+          "boxes": [
+            31
+          ],
+          "pushes": 1
+        },
+        "events": [
+          "ObjectPushed",
+          "EntityMoved"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_walk_onto_goal_down",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#     #",
+                "#     #",
+                "#  @  #",
+                "#  . $#",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "DOWN"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": 31,
+          "pushes": 0
+        },
+        "terminal": null
+      }
+    },
+    {
+      "id": "sokoban_final_push_down",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#     #",
+                "#  @  #",
+                "#  $  #",
+                "#  .  #",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "DOWN"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "boxes": [
+            31
+          ],
+          "pushes": 1
+        },
+        "terminal": {
+          "status": "WIN"
+        },
+        "events": [
+          "ObjectPushed",
+          "ObjectiveCompleted"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_walk_left",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#    .#",
+                "#     #",
+                "#  @  #",
+                "#    $#",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": 23,
+          "pushes": 0
+        },
+        "events": [
+          "EntityMoved"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_push_left",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#     #",
+                "#     #",
+                "#. $@ #",
+                "#     #",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": 24,
+          "boxes": [
+            23
+          ],
+          "pushes": 1
+        },
+        "events": [
+          "ObjectPushed",
+          "EntityMoved"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_walk_onto_goal_left",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#     #",
+                "#     #",
+                "# .@  #",
+                "#    $#",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": 23,
+          "pushes": 0
+        },
+        "terminal": null
+      }
+    },
+    {
+      "id": "sokoban_final_push_left",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#     #",
+                "#     #",
+                "# .$@ #",
+                "#     #",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "boxes": [
+            23
+          ],
+          "pushes": 1
+        },
+        "terminal": {
+          "status": "WIN"
+        },
+        "events": [
+          "ObjectPushed",
+          "ObjectiveCompleted"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_walk_right",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#    .#",
+                "#     #",
+                "#  @  #",
+                "#    $#",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "RIGHT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": 25,
+          "pushes": 0
+        },
+        "events": [
+          "EntityMoved"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_push_right",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#     #",
+                "#     #",
+                "# @$ .#",
+                "#     #",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "RIGHT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": 24,
+          "boxes": [
+            25
+          ],
+          "pushes": 1
+        },
+        "events": [
+          "ObjectPushed",
+          "EntityMoved"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_walk_onto_goal_right",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#     #",
+                "#     #",
+                "#  @. #",
+                "#    $#",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "RIGHT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": 25,
+          "pushes": 0
+        },
+        "terminal": null
+      }
+    },
+    {
+      "id": "sokoban_final_push_right",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#     #",
+                "#     #",
+                "# @$. #",
+                "#     #",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "RIGHT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "boxes": [
+            25
+          ],
+          "pushes": 1
+        },
+        "terminal": {
+          "status": "WIN"
+        },
+        "events": [
+          "ObjectPushed",
+          "ObjectiveCompleted"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_leave_goal",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#     #",
+                "#     #",
+                "#  +  #",
+                "#    $#",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "UP"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": 17
+        },
+        "terminal": null
+      }
+    },
+    {
+      "id": "sokoban_two_boxes_one_already_placed",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#    *#",
+                "#     #",
+                "# @$. #",
+                "#     #",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "RIGHT"
+      ],
+      "expect": {
+        "accepted": true,
+        "terminal": {
+          "status": "WIN"
+        },
+        "state": {
+          "pushes": 1
+        }
+      }
+    },
+    {
+      "id": "sokoban_push_off_goal",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#    .#",
+                "#     #",
+                "# @*  #",
+                "#    $#",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "RIGHT"
+      ],
+      "expect": {
+        "accepted": true,
+        "terminal": null,
+        "state": {
+          "boxes": [
+            25,
+            33
+          ],
+          "pushes": 1
+        }
+      }
+    },
+    {
+      "id": "sokoban_walk_then_push",
+      "archetype": "sokoban",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#     #",
+                "#     #",
+                "#@ $. #",
+                "#     #",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "RIGHT",
+        "RIGHT"
+      ],
+      "expect": {
+        "accepted": true,
+        "terminal": {
+          "status": "WIN"
+        },
+        "state": {
+          "turn": 2,
+          "pushes": 1
+        }
+      }
+    },
+    {
+      "id": "sokoban_wall_block",
+      "archetype": "sokoban",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#@   .#",
+                "#     #",
+                "#     #",
+                "#    $#",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "UP"
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "player": 8,
+          "turn": 0
+        }
+      }
+    },
+    {
+      "id": "sokoban_horizontal_wall_block",
+      "archetype": "sokoban",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#@   .#",
+                "#     #",
+                "#     #",
+                "#    $#",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "player": 8,
+          "turn": 0
+        }
+      }
+    },
+    {
+      "id": "sokoban_cannot_push_two_boxes",
+      "archetype": "sokoban",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#    .#",
+                "#    .#",
+                "#@$$  #",
+                "#     #",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "RIGHT"
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "boxes": [
+            23,
+            24
+          ],
+          "turn": 0
+        }
+      }
+    },
+    {
+      "id": "sokoban_cannot_push_box_into_wall",
+      "archetype": "sokoban",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#   @$#",
+                "#     #",
+                "#     #",
+                "#    .#",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "RIGHT"
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "boxes": [
+            12
+          ],
+          "turn": 0
+        }
+      }
+    },
+    {
+      "id": "sokoban_invalid_action",
+      "archetype": "sokoban",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#    .#",
+                "#     #",
+                "#  @  #",
+                "#    $#",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "TELEPORT"
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "turn": 0
+        }
+      }
+    },
+    {
+      "id": "sokoban_invalid_object_action",
+      "archetype": "sokoban",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#    .#",
+                "#     #",
+                "#  @  #",
+                "#    $#",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "direction": "UP"
+        }
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "turn": 0
+        }
+      }
+    },
+    {
+      "id": "sokoban_start_solved",
+      "archetype": "sokoban",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#    *#",
+                "#     #",
+                "#  @  #",
+                "#     #",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "UP"
+      ],
+      "expect": {
+        "accepted": false,
+        "terminal": {
+          "status": "WIN"
+        },
+        "state": {
+          "turn": 0
+        }
+      }
+    },
+    {
+      "id": "sokoban_move_limit",
+      "archetype": "sokoban",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#    .#",
+                "#     #",
+                "#  @  #",
+                "#    $#",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 1
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "UP"
+      ],
+      "expect": {
+        "accepted": true,
+        "terminal": {
+          "status": "LOSE",
+          "reason": "MOVE_LIMIT"
+        }
+      }
+    },
+    {
+      "id": "sokoban_unbounded_map_edge_no_wrap",
+      "archetype": "sokoban",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "@ .",
+                "$  ",
+                "   "
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "player": 0
+        }
+      }
+    },
+    {
+      "id": "sokoban_corner_trap_remains_unsolved",
+      "archetype": "sokoban",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#######",
+                "#$   .#",
+                "#     #",
+                "#  @  #",
+                "#     #",
+                "#     #",
+                "#######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "UP"
+      ],
+      "expect": {
+        "accepted": true,
+        "terminal": null,
+        "state": {
+          "boxes": [
+            8
+          ]
+        }
+      }
+    },
+    {
+      "id": "sokoban_missing_map",
+      "archetype": "sokoban",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": null,
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "INVALID_MAP"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_ragged",
+      "archetype": "sokoban",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#####",
+                "#@$.#",
+                "####"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "RAGGED_MAP"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_unknown_tile",
+      "archetype": "sokoban",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#####",
+                "#@x.#",
+                "#$###"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "INVALID_TILE"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_missing_player",
+      "archetype": "sokoban",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#####",
+                "# $.#",
+                "#####"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "PLAYER_COUNT"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_two_players",
+      "archetype": "sokoban",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "######",
+                "#@@$.#",
+                "######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "PLAYER_COUNT"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_missing_box",
+      "archetype": "sokoban",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#####",
+                "#@ .#",
+                "#####"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "BOX_COUNT"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_unequal_goals",
+      "archetype": "sokoban",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "######",
+                "#@$..#",
+                "######"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "GOAL_COUNT"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_too_short",
+      "archetype": "sokoban",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "#@$.#",
+                "#####"
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "INVALID_MAP"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_bad_move_limit",
+      "archetype": "sokoban",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "########",
+                "# .  . #",
+                "# $  $ #",
+                "#  @   #",
+                "########"
+              ],
+              "maxMoves": 0
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "MOVE_LIMIT"
+        ]
+      }
+    },
+    {
+      "id": "sokoban_oversize",
+      "archetype": "sokoban",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "sokoban-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "sokoban",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "sokoban"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "sokoban-challenge-001",
+          "type": "challenge",
+          "archetype": "sokoban",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "sokoban": {
+              "map": [
+                "@$.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ",
+                "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ",
+                "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 "
+              ],
+              "maxMoves": 120
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "astar",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "completion_rate",
+            "moves",
+            "pushes",
+            "deadlock_traps",
+            "box_switches",
+            "branching"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "sokoban_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "CONTENT_SIZE"
+        ]
+      }
+    }
+  ]
+}

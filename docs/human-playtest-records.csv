@@ -1,0 +1,1 @@
+participant_id,archetype,stage,seed,spec_id,spec_sha256,trace_file,terminal_status,active_ms,completion_ms,invalid_attempts,assisted,understanding_1_5,control_comfort_1_5,fairness_1_5,wants_continue,interrupted,problem_note

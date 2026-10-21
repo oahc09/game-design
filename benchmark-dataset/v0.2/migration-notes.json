@@ -1,0 +1,155 @@
+{
+  "from": "0.1",
+  "to": "0.2-preparation",
+  "status": "PREPARATION_ONLY_NO_MODEL_OR_HUMAN_TRIALS",
+  "preserve_ids": true,
+  "frozen_v0_1_untouched": true,
+  "global_corrections": [
+    "Published equal resource budgets, seeds/train-heldout splits and all-attempt denominator rules for every task.",
+    "Published numeric generation counts/limits, parameter grids and simulation stopping caps where v0.1 left accidental gaps.",
+    "Published profile identities and a mandatory pre-run policy implementation/configuration freeze; unsupported strategy semantics require explicit blind review.",
+    "Native output contract accepts createGame and JSON observations without private GameSpec.",
+    "Added explicit task-specific semantic review obligations for all 108 tasks.",
+    "No hidden target success band is invented. Human experience is never inferred from automatic outputs."
+  ],
+  "task_material_repairs": [
+    {
+      "task_id": "gd-006",
+      "added_material_fields": [
+        "corridor_layouts",
+        "comparison_note"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    },
+    {
+      "task_id": "gd-010",
+      "added_material_fields": [
+        "campaign"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    },
+    {
+      "task_id": "gd-014",
+      "added_material_fields": [
+        "piece_stream"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    },
+    {
+      "task_id": "gd-020",
+      "added_material_fields": [
+        "scoring_trace"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    },
+    {
+      "task_id": "gd-030",
+      "added_material_fields": [
+        "footage_observations",
+        "source_limit"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    },
+    {
+      "task_id": "gd-036",
+      "added_material_fields": [
+        "comparison_boards",
+        "blocker_assumption"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    },
+    {
+      "task_id": "gd-040",
+      "added_material_fields": [
+        "observed_runs",
+        "unsupported_claim"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    },
+    {
+      "task_id": "gd-050",
+      "added_material_fields": [
+        "published_claim"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    },
+    {
+      "task_id": "gd-060",
+      "added_material_fields": [
+        "content_pack",
+        "claimed_diversity"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    },
+    {
+      "task_id": "gd-068",
+      "added_material_fields": [
+        "generation_physics",
+        "physics_scope"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    },
+    {
+      "task_id": "gd-076",
+      "added_material_fields": [
+        "paths",
+        "builds"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    },
+    {
+      "task_id": "gd-080",
+      "added_material_fields": [
+        "deck_rules",
+        "card_catalog"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    },
+    {
+      "task_id": "gd-099",
+      "added_material_fields": [
+        "scenario_override",
+        "conflict_resolution"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    },
+    {
+      "task_id": "gd-101",
+      "added_material_fields": [
+        "release_evidence",
+        "evidence_scope"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    },
+    {
+      "task_id": "gd-103",
+      "added_material_fields": [
+        "attempt_ledger"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    },
+    {
+      "task_id": "gd-104",
+      "added_material_fields": [
+        "contaminated_sample"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    },
+    {
+      "task_id": "gd-105",
+      "added_material_fields": [
+        "comparison",
+        "fair_nodes_per_action"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    },
+    {
+      "task_id": "gd-106",
+      "added_material_fields": [
+        "generation_ledger",
+        "published_claim"
+      ],
+      "reason": "Repair accidental absent task material or make intentionally conflicting evidence concrete; no original v0.1 file changed."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+// Prepare a reviewable VM boundary fixture. Does not enable components or start a VM.
+import fs from 'node:fs/promises';import path from 'node:path';import {createHash,randomUUID} from 'node:crypto';
+import {canonicalNtfsDirectory,buildWindowsSandboxConfig} from '../src/benchmark/windows-isolation.mjs';
+import {inspectWorkspaceBoundary} from '../src/benchmark/executor-preflight.mjs';
+const [out]=process.argv.slice(2);if(!out||process.platform!=='win32')throw Error('Usage on Windows: node tools/prepare-windows-sandbox.mjs NEW_OUTPUT_DIRECTORY');
+const output=path.resolve(out);await fs.mkdir(output,{recursive:false});
+const logicalParent=path.join(process.env.LOCALAPPDATA,'game-design-executor','vm-preflight');await fs.mkdir(logicalParent,{recursive:true});
+// MSIX redirects AppData. Bind the physical path seen by the guest and launcher.
+const parent=await canonicalNtfsDirectory(logicalParent);
+const root=await fs.mkdtemp(path.join(parent,'run-')),input=path.join(root,'input'),result=path.join(root,'output'),hostPrivate=path.join(root,'host-private');
+for(const dir of [input,result,hostPrivate])await fs.mkdir(dir);
+if(!(await inspectWorkspaceBoundary(root)).valid)throw Error('UNSAFE_STAGING_DIRECTORY');
+const nonce=randomUUID(),ntfsMarker=path.join(hostPrivate,'marker.txt'),exfatMarker=path.join(output,'host-marker.txt');
+await fs.writeFile(ntfsMarker,'BENIGN_HOST_NTFS_'+nonce);await fs.writeFile(exfatMarker,'BENIGN_HOST_EXFAT_'+nonce);
+await fs.copyFile(process.execPath,path.join(input,'node.exe'));
+const request={nonce,host_ntfs_marker:ntfsMarker,host_exfat_marker:exfatMarker,scope:'Known benign infrastructure fixtures only; no model, evaluator assets or credentials'};
+await fs.writeFile(path.join(input,'request.json'),JSON.stringify(request));await fs.writeFile(path.join(input,'readonly-marker.txt'),'READONLY_'+nonce);
+const probe=`import fs from 'node:fs';const req=JSON.parse(fs.readFileSync('C:/gd-input/request.json','utf8'));const checks={};const hidden=p=>{try{fs.readFileSync(p);return false}catch(e){return ['ENOENT','EACCES','EPERM'].includes(e.code)}};const writeDenied=p=>{try{fs.writeFileSync(p+'.guest-write-attempt','BENIGN',{flag:'wx'});return false}catch(e){return ['ENOENT','EACCES','EPERM'].includes(e.code)}};checks.host_ntfs_hidden=hidden(req.host_ntfs_marker);checks.host_exfat_hidden=hidden(req.host_exfat_marker);checks.host_ntfs_write_denied=writeDenied(req.host_ntfs_marker);checks.host_exfat_write_denied=writeDenied(req.host_exfat_marker);try{fs.writeFileSync('C:/gd-input/readonly-marker.txt','UNEXPECTED');checks.input_readonly=false}catch(e){checks.input_readonly=['EACCES','EPERM'].includes(e.code)}fs.writeFileSync('C:/gd-output/inside.txt','VM_OUTPUT_OK');checks.output_write_read=fs.readFileSync('C:/gd-output/inside.txt','utf8')==='VM_OUTPUT_OK';fs.writeFileSync('C:/gd-output/node-result.json',JSON.stringify({nonce:req.nonce,checks,scope:'VM boundary fixture; not formal model A/B'}));`;
+await fs.writeFile(path.join(input,'probe.mjs'),probe);
+const batch=`@echo off\r\nC:\\gd-input\\node.exe C:\\gd-input\\probe.mjs >C:\\gd-output\\node.log 2>&1\r\nif errorlevel 1 (\r\n  powershell.exe -NoProfile -Command "@{status='INFRA_FAILURE';error='NODE_PROBE_FAILED'} | ConvertTo-Json | Set-Content -Encoding UTF8 C:/gd-output/result.json"\r\n  exit /b 1\r\n)\r\npowershell.exe -NoProfile -Command "$ErrorActionPreference='Stop'; try {$report=Get-Content -Raw C:/gd-output/node-result.json | ConvertFrom-Json; $report.checks | Add-Member -NotePropertyName network_adapters_down -NotePropertyValue (@(Get-NetAdapter -ErrorAction Stop | Where-Object Status -eq 'Up').Count -eq 0); $report | Add-Member -NotePropertyName guest_user -NotePropertyValue $env:USERNAME; $report | ConvertTo-Json -Depth 6 | Set-Content -Encoding UTF8 C:/gd-output/result.json} catch {@{status='INFRA_FAILURE';error=$_.Exception.Message} | ConvertTo-Json | Set-Content -Encoding UTF8 C:/gd-output/result.json}"\r\n`;
+await fs.writeFile(path.join(input,'probe.cmd'),batch);
+const config=buildWindowsSandboxConfig({inputDir:input,outputDir:result});await fs.writeFile(path.join(root,'preflight.wsb'),config);
+const files={};for(const name of await fs.readdir(input))files[name]=createHash('sha256').update(await fs.readFile(path.join(input,name))).digest('hex');
+const hostMarkerHashes={};for(const file of [ntfsMarker,exfatMarker])hostMarkerHashes[file]=createHash('sha256').update(await fs.readFile(file)).digest('hex');
+const manifest={kind:'WINDOWS_SANDBOX_PREPARED_FIXTURE',created_at:new Date().toISOString(),status:'NOT_RUN',logical_parent:logicalParent,physical_parent:parent,root,input,result,config_path:path.join(root,'preflight.wsb'),nonce,input_files:files,config_sha256:createHash('sha256').update(config).digest('hex'),host_marker_files:[ntfsMarker,exfatMarker],component:'Containers-DisposableClientVM',global_config_modified:false,credentials_copied:false,automatic_restart:false,formal_ready:false,formal_trials:0,limits:{memory_mb:2048,network:'disabled',process_count:'NOT_ENFORCED',asset_quota:'NOT_ENFORCED',provider_caps:'NOT_ENFORCED'},next:'Obtain component-enablement authorization, enable without restart, then run this trusted fixture and independently validate output/input hashes'};
+manifest.host_marker_hashes=hostMarkerHashes;
+manifest.next='After component enablement and any required user-managed restart, run this trusted fixture and verify nonce, input/config/marker hashes and guest output with tools/verify-windows-sandbox.mjs';
+await fs.writeFile(path.join(output,'manifest.json'),JSON.stringify(manifest,null,2)+'\n',{flag:'wx'});await fs.writeFile(path.join(output,'preflight.wsb'),config,{flag:'wx'});console.log(JSON.stringify({status:'NOT_RUN',manifest:path.join(output,'manifest.json'),config:manifest.config_path,formal_ready:false}));

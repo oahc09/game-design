@@ -1,0 +1,3323 @@
+{
+  "status": "BLOCKED_FIXED_POOL",
+  "postrun_packaging_only": true,
+  "new_simulations": 0,
+  "proof": {
+    "rest_candidates": [
+      {
+        "id": "single-adjacent-moves-01",
+        "mechanics": [
+          "box_goal_planning"
+        ],
+        "difficulty": 0.21875,
+        "summary": {
+          "wins": 400,
+          "n": 512
+        },
+        "band": {
+          "index": 8,
+          "stage": "Rest",
+          "target": {
+            "min": 0.19999999999999998,
+            "max": 0.4
+          },
+          "actual": 0.21875,
+          "interval": {
+            "low": 0.1851084396772158,
+            "high": 0.2565804841669057
+          },
+          "point_margin": 0.018750000000000017,
+          "interval_margin": -0.014891560322784186,
+          "point_pass": true,
+          "interval_contained": false
+        }
+      },
+      {
+        "id": "single-adjacent-moves-02",
+        "mechanics": [
+          "box_goal_planning"
+        ],
+        "difficulty": 0.21875,
+        "summary": {
+          "wins": 400,
+          "n": 512
+        },
+        "band": {
+          "index": 8,
+          "stage": "Rest",
+          "target": {
+            "min": 0.19999999999999998,
+            "max": 0.4
+          },
+          "actual": 0.21875,
+          "interval": {
+            "low": 0.1851084396772158,
+            "high": 0.2565804841669057
+          },
+          "point_margin": 0.018750000000000017,
+          "interval_margin": -0.014891560322784186,
+          "point_pass": true,
+          "interval_contained": false
+        }
+      },
+      {
+        "id": "single-long-push-moves-05",
+        "mechanics": [
+          "box_goal_planning"
+        ],
+        "difficulty": 0.2109375,
+        "summary": {
+          "wins": 404,
+          "n": 512
+        },
+        "band": {
+          "index": 8,
+          "stage": "Rest",
+          "target": {
+            "min": 0.19999999999999998,
+            "max": 0.4
+          },
+          "actual": 0.2109375,
+          "interval": {
+            "low": 0.1778179160100254,
+            "high": 0.2483623668297662
+          },
+          "point_margin": 0.010937500000000017,
+          "interval_margin": -0.022182083989974594,
+          "point_pass": true,
+          "interval_contained": false
+        }
+      },
+      {
+        "id": "single-long-push-moves-06",
+        "mechanics": [
+          "box_goal_planning"
+        ],
+        "difficulty": 0.2109375,
+        "summary": {
+          "wins": 404,
+          "n": 512
+        },
+        "band": {
+          "index": 8,
+          "stage": "Rest",
+          "target": {
+            "min": 0.19999999999999998,
+            "max": 0.4
+          },
+          "actual": 0.2109375,
+          "interval": {
+            "low": 0.1778179160100254,
+            "high": 0.2483623668297662
+          },
+          "point_margin": 0.010937500000000017,
+          "interval_margin": -0.022182083989974594,
+          "point_pass": true,
+          "interval_contained": false
+        }
+      }
+    ],
+    "max_rest_difficulty": 0.21875,
+    "final_after_rest_ceiling": 0.61875,
+    "pressure_candidates": [
+      {
+        "id": "double-reposition-moves-17",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "difficulty": 0.556640625,
+        "summary": {
+          "wins": 227,
+          "n": 512
+        }
+      }
+    ],
+    "final_candidates_after_spike_constraint": [
+      {
+        "id": "double-reposition-moves-17",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "difficulty": 0.556640625,
+        "summary": {
+          "wins": 227,
+          "n": 512
+        }
+      }
+    ],
+    "unique_id_conflict": true,
+    "interpretation": "Under the recorded training point estimates and unchanged constraints, Pressure and Final Exam require the same sole content ID. A unique-content campaign is impossible, independently of the beam width. This is not a theorem about unknown true probabilities or every possible content pool."
+  },
+  "original_selected_units": [
+    {
+      "index": 0,
+      "id": "single-adjacent-moves-01",
+      "stage": "Introduce",
+      "original_target": {
+        "min": 0,
+        "max": 0.2
+      },
+      "original_selection_difficulty": 0.09999999999999998,
+      "original_holdout_difficulty": 0.15000000000000002,
+      "original_holdout_miss": false,
+      "new_training": {
+        "n": 512,
+        "wins": 400,
+        "losses": 112,
+        "censored": 0,
+        "invalid": 0,
+        "completion_rate": 0.78125,
+        "difficulty": 0.21875,
+        "completion_interval_95": {
+          "low": 0.7434195158330943,
+          "high": 0.8148915603227842
+        },
+        "difficulty_interval_95": {
+          "low": 0.1851084396772158,
+          "high": 0.2565804841669057
+        },
+        "mean_steps": 1,
+        "mean_replacement_draws": 0.287109375,
+        "mean_pushes": 0.78125,
+        "mean_box_switches": 0
+      },
+      "new_training_band": {
+        "index": 0,
+        "stage": "Introduce",
+        "target": {
+          "min": 0,
+          "max": 0.2
+        },
+        "actual": 0.21875,
+        "interval": {
+          "low": 0.1851084396772158,
+          "high": 0.2565804841669057
+        },
+        "point_margin": -0.01874999999999999,
+        "interval_margin": -0.0565804841669057,
+        "point_pass": false,
+        "interval_contained": false
+      },
+      "cohorts_of_20": [
+        {
+          "offset": 0,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": false
+        },
+        {
+          "offset": 20,
+          "wins": 17,
+          "difficulty": 0.15000000000000002,
+          "point_pass": true
+        },
+        {
+          "offset": 40,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": false
+        },
+        {
+          "offset": 60,
+          "wins": 17,
+          "difficulty": 0.15000000000000002,
+          "point_pass": true
+        },
+        {
+          "offset": 80,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": false
+        },
+        {
+          "offset": 100,
+          "wins": 14,
+          "difficulty": 0.30000000000000004,
+          "point_pass": false
+        },
+        {
+          "offset": 120,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 140,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": false
+        },
+        {
+          "offset": 160,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": false
+        },
+        {
+          "offset": 180,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 200,
+          "wins": 18,
+          "difficulty": 0.09999999999999998,
+          "point_pass": true
+        },
+        {
+          "offset": 220,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": false
+        },
+        {
+          "offset": 240,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 260,
+          "wins": 19,
+          "difficulty": 0.050000000000000044,
+          "point_pass": true
+        },
+        {
+          "offset": 280,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 300,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": false
+        },
+        {
+          "offset": 320,
+          "wins": 18,
+          "difficulty": 0.09999999999999998,
+          "point_pass": true
+        },
+        {
+          "offset": 340,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 360,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 380,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 400,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": false
+        },
+        {
+          "offset": 420,
+          "wins": 18,
+          "difficulty": 0.09999999999999998,
+          "point_pass": true
+        },
+        {
+          "offset": 440,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": false
+        },
+        {
+          "offset": 460,
+          "wins": 18,
+          "difficulty": 0.09999999999999998,
+          "point_pass": true
+        },
+        {
+          "offset": 480,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": false
+        }
+      ],
+      "cohort_misses": 11
+    },
+    {
+      "index": 1,
+      "id": "single-approach-moves-05",
+      "stage": "Practice",
+      "original_target": {
+        "min": 0.1,
+        "max": 0.30000000000000004
+      },
+      "original_selection_difficulty": 0.25,
+      "original_holdout_difficulty": 0.09999999999999998,
+      "original_holdout_miss": false,
+      "new_training": {
+        "n": 512,
+        "wins": 427,
+        "losses": 85,
+        "censored": 0,
+        "invalid": 0,
+        "completion_rate": 0.833984375,
+        "difficulty": 0.166015625,
+        "completion_interval_95": {
+          "low": 0.7992907911560903,
+          "high": 0.8637036117790153
+        },
+        "difficulty_interval_95": {
+          "low": 0.13629638822098467,
+          "high": 0.20070920884390975
+        },
+        "mean_steps": 3.80078125,
+        "mean_replacement_draws": 0.9921875,
+        "mean_pushes": 0.841796875,
+        "mean_box_switches": 0
+      },
+      "new_training_band": {
+        "index": 1,
+        "stage": "Practice",
+        "target": {
+          "min": 0.1,
+          "max": 0.30000000000000004
+        },
+        "actual": 0.166015625,
+        "interval": {
+          "low": 0.13629638822098467,
+          "high": 0.20070920884390975
+        },
+        "point_margin": 0.066015625,
+        "interval_margin": 0.03629638822098466,
+        "point_pass": true,
+        "interval_contained": true
+      },
+      "cohorts_of_20": [
+        {
+          "offset": 0,
+          "wins": 17,
+          "difficulty": 0.15000000000000002,
+          "point_pass": true
+        },
+        {
+          "offset": 20,
+          "wins": 20,
+          "difficulty": 0,
+          "point_pass": false
+        },
+        {
+          "offset": 40,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": false
+        },
+        {
+          "offset": 60,
+          "wins": 19,
+          "difficulty": 0.050000000000000044,
+          "point_pass": false
+        },
+        {
+          "offset": 80,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 100,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 120,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 140,
+          "wins": 18,
+          "difficulty": 0.09999999999999998,
+          "point_pass": true
+        },
+        {
+          "offset": 160,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 180,
+          "wins": 17,
+          "difficulty": 0.15000000000000002,
+          "point_pass": true
+        },
+        {
+          "offset": 200,
+          "wins": 19,
+          "difficulty": 0.050000000000000044,
+          "point_pass": false
+        },
+        {
+          "offset": 220,
+          "wins": 18,
+          "difficulty": 0.09999999999999998,
+          "point_pass": true
+        },
+        {
+          "offset": 240,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 260,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 280,
+          "wins": 18,
+          "difficulty": 0.09999999999999998,
+          "point_pass": true
+        },
+        {
+          "offset": 300,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": true
+        },
+        {
+          "offset": 320,
+          "wins": 18,
+          "difficulty": 0.09999999999999998,
+          "point_pass": true
+        },
+        {
+          "offset": 340,
+          "wins": 14,
+          "difficulty": 0.30000000000000004,
+          "point_pass": true
+        },
+        {
+          "offset": 360,
+          "wins": 17,
+          "difficulty": 0.15000000000000002,
+          "point_pass": true
+        },
+        {
+          "offset": 380,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 400,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": false
+        },
+        {
+          "offset": 420,
+          "wins": 18,
+          "difficulty": 0.09999999999999998,
+          "point_pass": true
+        },
+        {
+          "offset": 440,
+          "wins": 18,
+          "difficulty": 0.09999999999999998,
+          "point_pass": true
+        },
+        {
+          "offset": 460,
+          "wins": 17,
+          "difficulty": 0.15000000000000002,
+          "point_pass": true
+        },
+        {
+          "offset": 480,
+          "wins": 14,
+          "difficulty": 0.30000000000000004,
+          "point_pass": true
+        }
+      ],
+      "cohort_misses": 5
+    },
+    {
+      "index": 2,
+      "id": "double-reposition-moves-24",
+      "stage": "Introduce",
+      "original_target": {
+        "min": 0.1,
+        "max": 0.30000000000000004
+      },
+      "original_selection_difficulty": 0.19999999999999996,
+      "original_holdout_difficulty": 0.19999999999999996,
+      "original_holdout_miss": false,
+      "new_training": {
+        "n": 512,
+        "wins": 347,
+        "losses": 165,
+        "censored": 0,
+        "invalid": 0,
+        "completion_rate": 0.677734375,
+        "difficulty": 0.322265625,
+        "completion_interval_95": {
+          "low": 0.6360592176679912,
+          "high": 0.7167623651805154
+        },
+        "difficulty_interval_95": {
+          "low": 0.2832376348194846,
+          "high": 0.36394078233200877
+        },
+        "mean_steps": 18.712890625,
+        "mean_replacement_draws": 4.7109375,
+        "mean_pushes": 4.15234375,
+        "mean_box_switches": 1.17578125
+      },
+      "new_training_band": {
+        "index": 2,
+        "stage": "Introduce",
+        "target": {
+          "min": 0.1,
+          "max": 0.30000000000000004
+        },
+        "actual": 0.322265625,
+        "interval": {
+          "low": 0.2832376348194846,
+          "high": 0.36394078233200877
+        },
+        "point_margin": -0.022265624999999956,
+        "interval_margin": -0.06394078233200873,
+        "point_pass": false,
+        "interval_contained": false
+      },
+      "cohorts_of_20": [
+        {
+          "offset": 0,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": false
+        },
+        {
+          "offset": 20,
+          "wins": 10,
+          "difficulty": 0.5,
+          "point_pass": false
+        },
+        {
+          "offset": 40,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": false
+        },
+        {
+          "offset": 60,
+          "wins": 12,
+          "difficulty": 0.4,
+          "point_pass": false
+        },
+        {
+          "offset": 80,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": true
+        },
+        {
+          "offset": 100,
+          "wins": 11,
+          "difficulty": 0.44999999999999996,
+          "point_pass": false
+        },
+        {
+          "offset": 120,
+          "wins": 12,
+          "difficulty": 0.4,
+          "point_pass": false
+        },
+        {
+          "offset": 140,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": true
+        },
+        {
+          "offset": 160,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": false
+        },
+        {
+          "offset": 180,
+          "wins": 14,
+          "difficulty": 0.30000000000000004,
+          "point_pass": true
+        },
+        {
+          "offset": 200,
+          "wins": 14,
+          "difficulty": 0.30000000000000004,
+          "point_pass": true
+        },
+        {
+          "offset": 220,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 240,
+          "wins": 14,
+          "difficulty": 0.30000000000000004,
+          "point_pass": true
+        },
+        {
+          "offset": 260,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": false
+        },
+        {
+          "offset": 280,
+          "wins": 18,
+          "difficulty": 0.09999999999999998,
+          "point_pass": true
+        },
+        {
+          "offset": 300,
+          "wins": 14,
+          "difficulty": 0.30000000000000004,
+          "point_pass": true
+        },
+        {
+          "offset": 320,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": true
+        },
+        {
+          "offset": 340,
+          "wins": 14,
+          "difficulty": 0.30000000000000004,
+          "point_pass": true
+        },
+        {
+          "offset": 360,
+          "wins": 12,
+          "difficulty": 0.4,
+          "point_pass": false
+        },
+        {
+          "offset": 380,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": true
+        },
+        {
+          "offset": 400,
+          "wins": 10,
+          "difficulty": 0.5,
+          "point_pass": false
+        },
+        {
+          "offset": 420,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": false
+        },
+        {
+          "offset": 440,
+          "wins": 14,
+          "difficulty": 0.30000000000000004,
+          "point_pass": true
+        },
+        {
+          "offset": 460,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 480,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        }
+      ],
+      "cohort_misses": 11
+    },
+    {
+      "index": 3,
+      "id": "double-open-approach-moves-11",
+      "stage": "Practice",
+      "original_target": {
+        "min": 0.19999999999999998,
+        "max": 0.4
+      },
+      "original_selection_difficulty": 0.30000000000000004,
+      "original_holdout_difficulty": 0.09999999999999998,
+      "original_holdout_miss": true,
+      "new_training": {
+        "n": 512,
+        "wins": 394,
+        "losses": 118,
+        "censored": 0,
+        "invalid": 0,
+        "completion_rate": 0.76953125,
+        "difficulty": 0.23046875,
+        "completion_interval_95": {
+          "low": 0.7311266452959524,
+          "high": 0.8039214693534311
+        },
+        "difficulty_interval_95": {
+          "low": 0.19607853064656888,
+          "high": 0.2688733547040476
+        },
+        "mean_steps": 8.337890625,
+        "mean_replacement_draws": 2.099609375,
+        "mean_pushes": 1.84765625,
+        "mean_box_switches": 0.771484375
+      },
+      "new_training_band": {
+        "index": 3,
+        "stage": "Practice",
+        "target": {
+          "min": 0.19999999999999998,
+          "max": 0.4
+        },
+        "actual": 0.23046875,
+        "interval": {
+          "low": 0.19607853064656888,
+          "high": 0.2688733547040476
+        },
+        "point_margin": 0.030468750000000017,
+        "interval_margin": -0.003921469353431101,
+        "point_pass": true,
+        "interval_contained": false
+      },
+      "cohorts_of_20": [
+        {
+          "offset": 0,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": true
+        },
+        {
+          "offset": 20,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": true
+        },
+        {
+          "offset": 40,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": true
+        },
+        {
+          "offset": 60,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": true
+        },
+        {
+          "offset": 80,
+          "wins": 18,
+          "difficulty": 0.09999999999999998,
+          "point_pass": false
+        },
+        {
+          "offset": 100,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": false
+        },
+        {
+          "offset": 120,
+          "wins": 17,
+          "difficulty": 0.15000000000000002,
+          "point_pass": false
+        },
+        {
+          "offset": 140,
+          "wins": 14,
+          "difficulty": 0.30000000000000004,
+          "point_pass": true
+        },
+        {
+          "offset": 160,
+          "wins": 17,
+          "difficulty": 0.15000000000000002,
+          "point_pass": false
+        },
+        {
+          "offset": 180,
+          "wins": 18,
+          "difficulty": 0.09999999999999998,
+          "point_pass": false
+        },
+        {
+          "offset": 200,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": true
+        },
+        {
+          "offset": 220,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 240,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": true
+        },
+        {
+          "offset": 260,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 280,
+          "wins": 18,
+          "difficulty": 0.09999999999999998,
+          "point_pass": false
+        },
+        {
+          "offset": 300,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": true
+        },
+        {
+          "offset": 320,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": true
+        },
+        {
+          "offset": 340,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 360,
+          "wins": 14,
+          "difficulty": 0.30000000000000004,
+          "point_pass": true
+        },
+        {
+          "offset": 380,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 400,
+          "wins": 14,
+          "difficulty": 0.30000000000000004,
+          "point_pass": true
+        },
+        {
+          "offset": 420,
+          "wins": 17,
+          "difficulty": 0.15000000000000002,
+          "point_pass": false
+        },
+        {
+          "offset": 440,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": true
+        },
+        {
+          "offset": 460,
+          "wins": 17,
+          "difficulty": 0.15000000000000002,
+          "point_pass": false
+        },
+        {
+          "offset": 480,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        }
+      ],
+      "cohort_misses": 8
+    },
+    {
+      "index": 4,
+      "id": "double-reposition-moves-20",
+      "stage": "Combine",
+      "original_target": {
+        "min": 0.24999999999999997,
+        "max": 0.44999999999999996
+      },
+      "original_selection_difficulty": 0.4,
+      "original_holdout_difficulty": 0.25,
+      "original_holdout_miss": false,
+      "new_training": {
+        "n": 512,
+        "wins": 319,
+        "losses": 193,
+        "censored": 0,
+        "invalid": 0,
+        "completion_rate": 0.623046875,
+        "difficulty": 0.376953125,
+        "completion_interval_95": {
+          "low": 0.5802995498210187,
+          "high": 0.663961545997178
+        },
+        "difficulty_interval_95": {
+          "low": 0.33603845400282195,
+          "high": 0.4197004501789813
+        },
+        "mean_steps": 17.26953125,
+        "mean_replacement_draws": 4.353515625,
+        "mean_pushes": 3.96484375,
+        "mean_box_switches": 1.09765625
+      },
+      "new_training_band": {
+        "index": 4,
+        "stage": "Combine",
+        "target": {
+          "min": 0.24999999999999997,
+          "max": 0.44999999999999996
+        },
+        "actual": 0.376953125,
+        "interval": {
+          "low": 0.33603845400282195,
+          "high": 0.4197004501789813
+        },
+        "point_margin": 0.07304687499999996,
+        "interval_margin": 0.03029954982101868,
+        "point_pass": true,
+        "interval_contained": true
+      },
+      "cohorts_of_20": [
+        {
+          "offset": 0,
+          "wins": 10,
+          "difficulty": 0.5,
+          "point_pass": false
+        },
+        {
+          "offset": 20,
+          "wins": 10,
+          "difficulty": 0.5,
+          "point_pass": false
+        },
+        {
+          "offset": 40,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": false
+        },
+        {
+          "offset": 60,
+          "wins": 10,
+          "difficulty": 0.5,
+          "point_pass": false
+        },
+        {
+          "offset": 80,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 100,
+          "wins": 10,
+          "difficulty": 0.5,
+          "point_pass": false
+        },
+        {
+          "offset": 120,
+          "wins": 12,
+          "difficulty": 0.4,
+          "point_pass": true
+        },
+        {
+          "offset": 140,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 160,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 180,
+          "wins": 12,
+          "difficulty": 0.4,
+          "point_pass": true
+        },
+        {
+          "offset": 200,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 220,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": true
+        },
+        {
+          "offset": 240,
+          "wins": 11,
+          "difficulty": 0.44999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 260,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 280,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": false
+        },
+        {
+          "offset": 300,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 320,
+          "wins": 12,
+          "difficulty": 0.4,
+          "point_pass": true
+        },
+        {
+          "offset": 340,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 360,
+          "wins": 11,
+          "difficulty": 0.44999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 380,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": true
+        },
+        {
+          "offset": 400,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": false
+        },
+        {
+          "offset": 420,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 440,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 460,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": false
+        },
+        {
+          "offset": 480,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": true
+        }
+      ],
+      "cohort_misses": 8
+    },
+    {
+      "index": 5,
+      "id": "double-separated-moves-09",
+      "stage": "Twist",
+      "original_target": {
+        "min": 0.30000000000000004,
+        "max": 0.5
+      },
+      "original_selection_difficulty": 0.4,
+      "original_holdout_difficulty": 0.19999999999999996,
+      "original_holdout_miss": true,
+      "new_training": {
+        "n": 512,
+        "wins": 292,
+        "losses": 220,
+        "censored": 0,
+        "invalid": 0,
+        "completion_rate": 0.5703125,
+        "difficulty": 0.4296875,
+        "completion_interval_95": {
+          "low": 0.5270665087613602,
+          "high": 0.6125112602776095
+        },
+        "difficulty_interval_95": {
+          "low": 0.3874887397223905,
+          "high": 0.4729334912386398
+        },
+        "mean_steps": 8.38671875,
+        "mean_replacement_draws": 2.11328125,
+        "mean_pushes": 1.53125,
+        "mean_box_switches": 0.572265625
+      },
+      "new_training_band": {
+        "index": 5,
+        "stage": "Twist",
+        "target": {
+          "min": 0.30000000000000004,
+          "max": 0.5
+        },
+        "actual": 0.4296875,
+        "interval": {
+          "low": 0.3874887397223905,
+          "high": 0.4729334912386398
+        },
+        "point_margin": 0.0703125,
+        "interval_margin": 0.027066508761360186,
+        "point_pass": true,
+        "interval_contained": true
+      },
+      "cohorts_of_20": [
+        {
+          "offset": 0,
+          "wins": 11,
+          "difficulty": 0.44999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 20,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 40,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": false
+        },
+        {
+          "offset": 60,
+          "wins": 11,
+          "difficulty": 0.44999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 80,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": false
+        },
+        {
+          "offset": 100,
+          "wins": 11,
+          "difficulty": 0.44999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 120,
+          "wins": 11,
+          "difficulty": 0.44999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 140,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": false
+        },
+        {
+          "offset": 160,
+          "wins": 12,
+          "difficulty": 0.4,
+          "point_pass": true
+        },
+        {
+          "offset": 180,
+          "wins": 11,
+          "difficulty": 0.44999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 200,
+          "wins": 12,
+          "difficulty": 0.4,
+          "point_pass": true
+        },
+        {
+          "offset": 220,
+          "wins": 10,
+          "difficulty": 0.5,
+          "point_pass": true
+        },
+        {
+          "offset": 240,
+          "wins": 8,
+          "difficulty": 0.6,
+          "point_pass": false
+        },
+        {
+          "offset": 260,
+          "wins": 14,
+          "difficulty": 0.30000000000000004,
+          "point_pass": true
+        },
+        {
+          "offset": 280,
+          "wins": 12,
+          "difficulty": 0.4,
+          "point_pass": true
+        },
+        {
+          "offset": 300,
+          "wins": 12,
+          "difficulty": 0.4,
+          "point_pass": true
+        },
+        {
+          "offset": 320,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": false
+        },
+        {
+          "offset": 340,
+          "wins": 12,
+          "difficulty": 0.4,
+          "point_pass": true
+        },
+        {
+          "offset": 360,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": false
+        },
+        {
+          "offset": 380,
+          "wins": 10,
+          "difficulty": 0.5,
+          "point_pass": true
+        },
+        {
+          "offset": 400,
+          "wins": 10,
+          "difficulty": 0.5,
+          "point_pass": true
+        },
+        {
+          "offset": 420,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 440,
+          "wins": 15,
+          "difficulty": 0.25,
+          "point_pass": false
+        },
+        {
+          "offset": 460,
+          "wins": 12,
+          "difficulty": 0.4,
+          "point_pass": true
+        },
+        {
+          "offset": 480,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        }
+      ],
+      "cohort_misses": 7
+    },
+    {
+      "index": 6,
+      "id": "double-mixed-directions-moves-05",
+      "stage": "Pressure",
+      "original_target": {
+        "min": 0.45000000000000007,
+        "max": 0.65
+      },
+      "original_selection_difficulty": 0.6,
+      "original_holdout_difficulty": 0.55,
+      "original_holdout_miss": false,
+      "new_training": {
+        "n": 512,
+        "wins": 173,
+        "losses": 339,
+        "censored": 0,
+        "invalid": 0,
+        "completion_rate": 0.337890625,
+        "difficulty": 0.662109375,
+        "completion_interval_95": {
+          "low": 0.2982628290738182,
+          "high": 0.37993287008633525
+        },
+        "difficulty_interval_95": {
+          "low": 0.6200671299136647,
+          "high": 0.7017371709261818
+        },
+        "mean_steps": 5,
+        "mean_replacement_draws": 1.291015625,
+        "mean_pushes": 1.119140625,
+        "mean_box_switches": 0.341796875
+      },
+      "new_training_band": {
+        "index": 6,
+        "stage": "Pressure",
+        "target": {
+          "min": 0.45000000000000007,
+          "max": 0.65
+        },
+        "actual": 0.662109375,
+        "interval": {
+          "low": 0.6200671299136647,
+          "high": 0.7017371709261818
+        },
+        "point_margin": -0.012109374999999978,
+        "interval_margin": -0.0517371709261818,
+        "point_pass": false,
+        "interval_contained": false
+      },
+      "cohorts_of_20": [
+        {
+          "offset": 0,
+          "wins": 2,
+          "difficulty": 0.9,
+          "point_pass": false
+        },
+        {
+          "offset": 20,
+          "wins": 10,
+          "difficulty": 0.5,
+          "point_pass": true
+        },
+        {
+          "offset": 40,
+          "wins": 3,
+          "difficulty": 0.85,
+          "point_pass": false
+        },
+        {
+          "offset": 60,
+          "wins": 8,
+          "difficulty": 0.6,
+          "point_pass": true
+        },
+        {
+          "offset": 80,
+          "wins": 4,
+          "difficulty": 0.8,
+          "point_pass": false
+        },
+        {
+          "offset": 100,
+          "wins": 4,
+          "difficulty": 0.8,
+          "point_pass": false
+        },
+        {
+          "offset": 120,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": true
+        },
+        {
+          "offset": 140,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": true
+        },
+        {
+          "offset": 160,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": true
+        },
+        {
+          "offset": 180,
+          "wins": 8,
+          "difficulty": 0.6,
+          "point_pass": true
+        },
+        {
+          "offset": 200,
+          "wins": 11,
+          "difficulty": 0.44999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 220,
+          "wins": 6,
+          "difficulty": 0.7,
+          "point_pass": false
+        },
+        {
+          "offset": 240,
+          "wins": 6,
+          "difficulty": 0.7,
+          "point_pass": false
+        },
+        {
+          "offset": 260,
+          "wins": 6,
+          "difficulty": 0.7,
+          "point_pass": false
+        },
+        {
+          "offset": 280,
+          "wins": 8,
+          "difficulty": 0.6,
+          "point_pass": true
+        },
+        {
+          "offset": 300,
+          "wins": 6,
+          "difficulty": 0.7,
+          "point_pass": false
+        },
+        {
+          "offset": 320,
+          "wins": 7,
+          "difficulty": 0.65,
+          "point_pass": true
+        },
+        {
+          "offset": 340,
+          "wins": 8,
+          "difficulty": 0.6,
+          "point_pass": true
+        },
+        {
+          "offset": 360,
+          "wins": 5,
+          "difficulty": 0.75,
+          "point_pass": false
+        },
+        {
+          "offset": 380,
+          "wins": 4,
+          "difficulty": 0.8,
+          "point_pass": false
+        },
+        {
+          "offset": 400,
+          "wins": 4,
+          "difficulty": 0.8,
+          "point_pass": false
+        },
+        {
+          "offset": 420,
+          "wins": 8,
+          "difficulty": 0.6,
+          "point_pass": true
+        },
+        {
+          "offset": 440,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": true
+        },
+        {
+          "offset": 460,
+          "wins": 8,
+          "difficulty": 0.6,
+          "point_pass": true
+        },
+        {
+          "offset": 480,
+          "wins": 5,
+          "difficulty": 0.75,
+          "point_pass": false
+        }
+      ],
+      "cohort_misses": 12
+    },
+    {
+      "index": 7,
+      "id": "double-separated-moves-08",
+      "stage": "Mastery",
+      "original_target": {
+        "min": 0.55,
+        "max": 0.75
+      },
+      "original_selection_difficulty": 0.65,
+      "original_holdout_difficulty": 0.4,
+      "original_holdout_miss": true,
+      "new_training": {
+        "n": 512,
+        "wins": 164,
+        "losses": 348,
+        "censored": 0,
+        "invalid": 0,
+        "completion_rate": 0.3203125,
+        "difficulty": 0.6796875,
+        "completion_interval_95": {
+          "low": 0.2813630427373133,
+          "high": 0.3619382141630977
+        },
+        "difficulty_interval_95": {
+          "low": 0.6380617858369023,
+          "high": 0.7186369572626867
+        },
+        "mean_steps": 7.70703125,
+        "mean_replacement_draws": 1.962890625,
+        "mean_pushes": 1.21875,
+        "mean_box_switches": 0.322265625
+      },
+      "new_training_band": {
+        "index": 7,
+        "stage": "Mastery",
+        "target": {
+          "min": 0.55,
+          "max": 0.75
+        },
+        "actual": 0.6796875,
+        "interval": {
+          "low": 0.6380617858369023,
+          "high": 0.7186369572626867
+        },
+        "point_margin": 0.0703125,
+        "interval_margin": 0.031363042737313274,
+        "point_pass": true,
+        "interval_contained": true
+      },
+      "cohorts_of_20": [
+        {
+          "offset": 0,
+          "wins": 6,
+          "difficulty": 0.7,
+          "point_pass": true
+        },
+        {
+          "offset": 20,
+          "wins": 4,
+          "difficulty": 0.8,
+          "point_pass": false
+        },
+        {
+          "offset": 40,
+          "wins": 4,
+          "difficulty": 0.8,
+          "point_pass": false
+        },
+        {
+          "offset": 60,
+          "wins": 7,
+          "difficulty": 0.65,
+          "point_pass": true
+        },
+        {
+          "offset": 80,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": true
+        },
+        {
+          "offset": 100,
+          "wins": 6,
+          "difficulty": 0.7,
+          "point_pass": true
+        },
+        {
+          "offset": 120,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": true
+        },
+        {
+          "offset": 140,
+          "wins": 7,
+          "difficulty": 0.65,
+          "point_pass": true
+        },
+        {
+          "offset": 160,
+          "wins": 6,
+          "difficulty": 0.7,
+          "point_pass": true
+        },
+        {
+          "offset": 180,
+          "wins": 4,
+          "difficulty": 0.8,
+          "point_pass": false
+        },
+        {
+          "offset": 200,
+          "wins": 8,
+          "difficulty": 0.6,
+          "point_pass": true
+        },
+        {
+          "offset": 220,
+          "wins": 7,
+          "difficulty": 0.65,
+          "point_pass": true
+        },
+        {
+          "offset": 240,
+          "wins": 3,
+          "difficulty": 0.85,
+          "point_pass": false
+        },
+        {
+          "offset": 260,
+          "wins": 8,
+          "difficulty": 0.6,
+          "point_pass": true
+        },
+        {
+          "offset": 280,
+          "wins": 6,
+          "difficulty": 0.7,
+          "point_pass": true
+        },
+        {
+          "offset": 300,
+          "wins": 6,
+          "difficulty": 0.7,
+          "point_pass": true
+        },
+        {
+          "offset": 320,
+          "wins": 7,
+          "difficulty": 0.65,
+          "point_pass": true
+        },
+        {
+          "offset": 340,
+          "wins": 7,
+          "difficulty": 0.65,
+          "point_pass": true
+        },
+        {
+          "offset": 360,
+          "wins": 6,
+          "difficulty": 0.7,
+          "point_pass": true
+        },
+        {
+          "offset": 380,
+          "wins": 5,
+          "difficulty": 0.75,
+          "point_pass": true
+        },
+        {
+          "offset": 400,
+          "wins": 3,
+          "difficulty": 0.85,
+          "point_pass": false
+        },
+        {
+          "offset": 420,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": true
+        },
+        {
+          "offset": 440,
+          "wins": 8,
+          "difficulty": 0.6,
+          "point_pass": true
+        },
+        {
+          "offset": 460,
+          "wins": 8,
+          "difficulty": 0.6,
+          "point_pass": true
+        },
+        {
+          "offset": 480,
+          "wins": 6,
+          "difficulty": 0.7,
+          "point_pass": true
+        }
+      ],
+      "cohort_misses": 5
+    },
+    {
+      "index": 8,
+      "id": "single-approach-moves-03",
+      "stage": "Rest",
+      "original_target": {
+        "min": 0.19999999999999998,
+        "max": 0.4
+      },
+      "original_selection_difficulty": 0.30000000000000004,
+      "original_holdout_difficulty": 0.30000000000000004,
+      "original_holdout_miss": false,
+      "new_training": {
+        "n": 512,
+        "wins": 307,
+        "losses": 205,
+        "censored": 0,
+        "invalid": 0,
+        "completion_rate": 0.599609375,
+        "difficulty": 0.400390625,
+        "completion_interval_95": {
+          "low": 0.5565780477142338,
+          "high": 0.6411571250909732
+        },
+        "difficulty_interval_95": {
+          "low": 0.3588428749090268,
+          "high": 0.4434219522857662
+        },
+        "mean_steps": 3,
+        "mean_replacement_draws": 0.77734375,
+        "mean_pushes": 0.619140625,
+        "mean_box_switches": 0
+      },
+      "new_training_band": {
+        "index": 8,
+        "stage": "Rest",
+        "target": {
+          "min": 0.19999999999999998,
+          "max": 0.4
+        },
+        "actual": 0.400390625,
+        "interval": {
+          "low": 0.3588428749090268,
+          "high": 0.4434219522857662
+        },
+        "point_margin": -0.0003906249999999778,
+        "interval_margin": -0.043421952285766174,
+        "point_pass": false,
+        "interval_contained": false
+      },
+      "cohorts_of_20": [
+        {
+          "offset": 0,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": false
+        },
+        {
+          "offset": 20,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 40,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": false
+        },
+        {
+          "offset": 60,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 80,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 100,
+          "wins": 11,
+          "difficulty": 0.44999999999999996,
+          "point_pass": false
+        },
+        {
+          "offset": 120,
+          "wins": 10,
+          "difficulty": 0.5,
+          "point_pass": false
+        },
+        {
+          "offset": 140,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 160,
+          "wins": 12,
+          "difficulty": 0.4,
+          "point_pass": true
+        },
+        {
+          "offset": 180,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 200,
+          "wins": 16,
+          "difficulty": 0.19999999999999996,
+          "point_pass": true
+        },
+        {
+          "offset": 220,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": false
+        },
+        {
+          "offset": 240,
+          "wins": 10,
+          "difficulty": 0.5,
+          "point_pass": false
+        },
+        {
+          "offset": 260,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 280,
+          "wins": 14,
+          "difficulty": 0.30000000000000004,
+          "point_pass": true
+        },
+        {
+          "offset": 300,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 320,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 340,
+          "wins": 11,
+          "difficulty": 0.44999999999999996,
+          "point_pass": false
+        },
+        {
+          "offset": 360,
+          "wins": 12,
+          "difficulty": 0.4,
+          "point_pass": true
+        },
+        {
+          "offset": 380,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": false
+        },
+        {
+          "offset": 400,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": false
+        },
+        {
+          "offset": 420,
+          "wins": 14,
+          "difficulty": 0.30000000000000004,
+          "point_pass": true
+        },
+        {
+          "offset": 440,
+          "wins": 13,
+          "difficulty": 0.35,
+          "point_pass": true
+        },
+        {
+          "offset": 460,
+          "wins": 12,
+          "difficulty": 0.4,
+          "point_pass": true
+        },
+        {
+          "offset": 480,
+          "wins": 10,
+          "difficulty": 0.5,
+          "point_pass": false
+        }
+      ],
+      "cohort_misses": 10
+    },
+    {
+      "index": 9,
+      "id": "double-offset-approach-moves-07",
+      "stage": "Final Exam",
+      "original_target": {
+        "min": 0.55,
+        "max": 0.75
+      },
+      "original_selection_difficulty": 0.7,
+      "original_holdout_difficulty": 0.55,
+      "original_holdout_miss": false,
+      "new_training": {
+        "n": 512,
+        "wins": 161,
+        "losses": 351,
+        "censored": 0,
+        "invalid": 0,
+        "completion_rate": 0.314453125,
+        "difficulty": 0.685546875,
+        "completion_interval_95": {
+          "low": 0.2757440988618599,
+          "high": 0.35592567728530355
+        },
+        "difficulty_interval_95": {
+          "low": 0.6440743227146964,
+          "high": 0.7242559011381401
+        },
+        "mean_steps": 7,
+        "mean_replacement_draws": 1.796875,
+        "mean_pushes": 1.140625,
+        "mean_box_switches": 0.322265625
+      },
+      "new_training_band": {
+        "index": 9,
+        "stage": "Final Exam",
+        "target": {
+          "min": 0.55,
+          "max": 0.75
+        },
+        "actual": 0.685546875,
+        "interval": {
+          "low": 0.6440743227146964,
+          "high": 0.7242559011381401
+        },
+        "point_margin": 0.064453125,
+        "interval_margin": 0.02574409886185991,
+        "point_pass": true,
+        "interval_contained": true
+      },
+      "cohorts_of_20": [
+        {
+          "offset": 0,
+          "wins": 2,
+          "difficulty": 0.9,
+          "point_pass": false
+        },
+        {
+          "offset": 20,
+          "wins": 5,
+          "difficulty": 0.75,
+          "point_pass": true
+        },
+        {
+          "offset": 40,
+          "wins": 5,
+          "difficulty": 0.75,
+          "point_pass": true
+        },
+        {
+          "offset": 60,
+          "wins": 5,
+          "difficulty": 0.75,
+          "point_pass": true
+        },
+        {
+          "offset": 80,
+          "wins": 8,
+          "difficulty": 0.6,
+          "point_pass": true
+        },
+        {
+          "offset": 100,
+          "wins": 7,
+          "difficulty": 0.65,
+          "point_pass": true
+        },
+        {
+          "offset": 120,
+          "wins": 10,
+          "difficulty": 0.5,
+          "point_pass": false
+        },
+        {
+          "offset": 140,
+          "wins": 7,
+          "difficulty": 0.65,
+          "point_pass": true
+        },
+        {
+          "offset": 160,
+          "wins": 6,
+          "difficulty": 0.7,
+          "point_pass": true
+        },
+        {
+          "offset": 180,
+          "wins": 5,
+          "difficulty": 0.75,
+          "point_pass": true
+        },
+        {
+          "offset": 200,
+          "wins": 8,
+          "difficulty": 0.6,
+          "point_pass": true
+        },
+        {
+          "offset": 220,
+          "wins": 6,
+          "difficulty": 0.7,
+          "point_pass": true
+        },
+        {
+          "offset": 240,
+          "wins": 4,
+          "difficulty": 0.8,
+          "point_pass": false
+        },
+        {
+          "offset": 260,
+          "wins": 6,
+          "difficulty": 0.7,
+          "point_pass": true
+        },
+        {
+          "offset": 280,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": true
+        },
+        {
+          "offset": 300,
+          "wins": 6,
+          "difficulty": 0.7,
+          "point_pass": true
+        },
+        {
+          "offset": 320,
+          "wins": 5,
+          "difficulty": 0.75,
+          "point_pass": true
+        },
+        {
+          "offset": 340,
+          "wins": 8,
+          "difficulty": 0.6,
+          "point_pass": true
+        },
+        {
+          "offset": 360,
+          "wins": 6,
+          "difficulty": 0.7,
+          "point_pass": true
+        },
+        {
+          "offset": 380,
+          "wins": 3,
+          "difficulty": 0.85,
+          "point_pass": false
+        },
+        {
+          "offset": 400,
+          "wins": 4,
+          "difficulty": 0.8,
+          "point_pass": false
+        },
+        {
+          "offset": 420,
+          "wins": 7,
+          "difficulty": 0.65,
+          "point_pass": true
+        },
+        {
+          "offset": 440,
+          "wins": 9,
+          "difficulty": 0.55,
+          "point_pass": true
+        },
+        {
+          "offset": 460,
+          "wins": 5,
+          "difficulty": 0.75,
+          "point_pass": true
+        },
+        {
+          "offset": 480,
+          "wins": 8,
+          "difficulty": 0.6,
+          "point_pass": true
+        }
+      ],
+      "cohort_misses": 5
+    }
+  ],
+  "unopened_splits": [
+    "validation",
+    "final_test",
+    "diagnostic"
+  ],
+  "v1_reference_controls": {
+    "status": "EXPLORATION_ONLY; not new v2 controls",
+    "spec": {
+      "schema_version": "0.1",
+      "metadata": {
+        "id": "sokoban-reference",
+        "version": "0.1.0"
+      },
+      "design": {
+        "archetype": "sokoban",
+        "audience": {
+          "type": "casual"
+        },
+        "session": {
+          "target_minutes": {
+            "min": 2,
+            "max": 5
+          }
+        },
+        "pillars": [
+          "readable_rules",
+          "meaningful_decisions"
+        ],
+        "complexity": {
+          "action_budget": "low",
+          "mechanic_budget": "medium"
+        },
+        "content_target": {
+          "type": "challenge",
+          "expected_count": 1
+        }
+      },
+      "game": {
+        "archetype": "sokoban"
+      },
+      "runtime": {
+        "simulation_mode": "TURN_BASED",
+        "tick_rate": 60
+      },
+      "action_space": {
+        "type": "discrete",
+        "values": [
+          "UP",
+          "DOWN",
+          "LEFT",
+          "RIGHT"
+        ]
+      },
+      "observation": {
+        "mode": "VISIBLE_STATE",
+        "delay_ms": 0,
+        "noise": null
+      },
+      "rng": {
+        "enabled": true
+      },
+      "content": {
+        "id": "sokoban-challenge-001",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {},
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# .  . #",
+              "# $  $ #",
+              "#  @   #",
+              "########"
+            ],
+            "maxMoves": 120
+          }
+        }
+      },
+      "evaluation": {
+        "player_profiles": [
+          {
+            "id": "random",
+            "version": "1.0.0"
+          },
+          {
+            "id": "greedy",
+            "version": "1.0.0"
+          },
+          {
+            "id": "astar",
+            "version": "1.0.0"
+          }
+        ],
+        "metrics": [
+          "completion_rate",
+          "moves",
+          "pushes",
+          "deadlock_traps",
+          "box_switches",
+          "branching"
+        ],
+        "gates": [
+          "schema",
+          "runtime",
+          "replay"
+        ],
+        "seed_set": {
+          "mode": "fixed",
+          "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      "provenance": {
+        "rules_version": "sokoban_v0.1",
+        "assumptions": []
+      },
+      "adapter": {
+        "id": "web",
+        "version": "0.1"
+      },
+      "extensions": {}
+    },
+    "horizon": 500,
+    "by_profile": {
+      "random": {
+        "metric_version": "quality-distributions-1.0.0",
+        "episode_count": 10,
+        "completion_rate": 0,
+        "completion_interval": {
+          "low": 0,
+          "high": 0.2775327998628892,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "interval_note": "Intervals are emitted only within one profile on distinct seeds; pooled profiles and repeated seeds are correlated.",
+        "wins": 0,
+        "losses": 10,
+        "censored_count": 0,
+        "invalid_count": 0,
+        "failure_distribution": {
+          "MOVE_LIMIT": 10
+        },
+        "metrics": {
+          "completion_rate": {
+            "n": 10,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p10": 0,
+            "p90": 0,
+            "variance": 0,
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "moves": {
+            "n": 10,
+            "mean": 120,
+            "median": 120,
+            "min": 120,
+            "max": 120,
+            "p10": 120,
+            "p90": 120,
+            "variance": 0,
+            "values": [
+              120,
+              120,
+              120,
+              120,
+              120,
+              120,
+              120,
+              120,
+              120,
+              120
+            ]
+          },
+          "pushes": {
+            "n": 10,
+            "mean": 5.2,
+            "median": 4.5,
+            "min": 3,
+            "max": 9,
+            "p10": 3.9,
+            "p90": 7.199999999999999,
+            "variance": 2.96,
+            "values": [
+              3,
+              4,
+              4,
+              4,
+              4,
+              5,
+              6,
+              6,
+              7,
+              9
+            ]
+          },
+          "boxes_on_goals": {
+            "n": 10,
+            "mean": 0.1,
+            "median": 0,
+            "min": 0,
+            "max": 1,
+            "p10": 0,
+            "p90": 0.09999999999999964,
+            "variance": 0.09000000000000001,
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "deadlock_traps": {
+            "n": 10,
+            "mean": 10,
+            "median": 10,
+            "min": 10,
+            "max": 10,
+            "p10": 10,
+            "p90": 10,
+            "variance": 0,
+            "values": [
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10
+            ]
+          },
+          "deadlocked": {
+            "n": 10,
+            "mean": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "p10": 1,
+            "p90": 1,
+            "variance": 0,
+            "values": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "box_switches": {
+            "n": 10,
+            "mean": 1.7,
+            "median": 1.5,
+            "min": 1,
+            "max": 4,
+            "p10": 1,
+            "p90": 2.1999999999999993,
+            "variance": 0.8099999999999998,
+            "values": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              4
+            ]
+          },
+          "forced_push_ratio": {
+            "n": 10,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p10": 0,
+            "p90": 0,
+            "variance": 0,
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "branching": {
+            "n": 10,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p10": 0,
+            "p90": 0,
+            "variance": 0,
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "push_branching": {
+            "n": 10,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p10": 0,
+            "p90": 0,
+            "variance": 0,
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "steps": {
+          "n": 10,
+          "mean": 120,
+          "median": 120,
+          "min": 120,
+          "max": 120,
+          "p10": 120,
+          "p90": 120,
+          "variance": 0,
+          "values": [
+            120,
+            120,
+            120,
+            120,
+            120,
+            120,
+            120,
+            120,
+            120,
+            120
+          ]
+        },
+        "by_profile": {
+          "random": {
+            "n": 10,
+            "completion_rate": 0,
+            "completion_interval": {
+              "low": 0,
+              "high": 0.2775327998628892,
+              "level": 0.95,
+              "method": "Wilson interval; independent episodes assumed"
+            },
+            "steps": {
+              "n": 10,
+              "mean": 120,
+              "median": 120,
+              "min": 120,
+              "max": 120,
+              "p10": 120,
+              "p90": 120,
+              "variance": 0,
+              "values": [
+                120,
+                120,
+                120,
+                120,
+                120,
+                120,
+                120,
+                120,
+                120,
+                120
+              ]
+            },
+            "score": {
+              "n": 0,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "max": null,
+              "p10": null,
+              "p90": null,
+              "variance": null,
+              "values": []
+            }
+          }
+        },
+        "terminal_count": 10,
+        "seed_split": [
+          {
+            "seeds": [
+              7,
+              23,
+              83,
+              131,
+              199
+            ],
+            "wins": 0,
+            "n": 5,
+            "completion_rate": 0
+          },
+          {
+            "seeds": [
+              11,
+              47,
+              101,
+              167,
+              233
+            ],
+            "wins": 0,
+            "n": 5,
+            "completion_rate": 0
+          }
+        ]
+      },
+      "competent": {
+        "metric_version": "quality-distributions-1.0.0",
+        "episode_count": 10,
+        "completion_rate": 1,
+        "completion_interval": {
+          "low": 0.7224672001371107,
+          "high": 0.9999999999999999,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "interval_note": "Intervals are emitted only within one profile on distinct seeds; pooled profiles and repeated seeds are correlated.",
+        "wins": 10,
+        "losses": 0,
+        "censored_count": 0,
+        "invalid_count": 0,
+        "failure_distribution": {},
+        "metrics": {
+          "completion_rate": {
+            "n": 10,
+            "mean": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "p10": 1,
+            "p90": 1,
+            "variance": 0,
+            "values": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "moves": {
+            "n": 10,
+            "mean": 7,
+            "median": 7,
+            "min": 7,
+            "max": 7,
+            "p10": 7,
+            "p90": 7,
+            "variance": 0,
+            "values": [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ]
+          },
+          "pushes": {
+            "n": 10,
+            "mean": 2,
+            "median": 2,
+            "min": 2,
+            "max": 2,
+            "p10": 2,
+            "p90": 2,
+            "variance": 0,
+            "values": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          "boxes_on_goals": {
+            "n": 10,
+            "mean": 2,
+            "median": 2,
+            "min": 2,
+            "max": 2,
+            "p10": 2,
+            "p90": 2,
+            "variance": 0,
+            "values": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          "deadlock_traps": {
+            "n": 10,
+            "mean": 10,
+            "median": 10,
+            "min": 10,
+            "max": 10,
+            "p10": 10,
+            "p90": 10,
+            "variance": 0,
+            "values": [
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10
+            ]
+          },
+          "deadlocked": {
+            "n": 10,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p10": 0,
+            "p90": 0,
+            "variance": 0,
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "box_switches": {
+            "n": 10,
+            "mean": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "p10": 1,
+            "p90": 1,
+            "variance": 0,
+            "values": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "forced_push_ratio": {
+            "n": 10,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p10": 0,
+            "p90": 0,
+            "variance": 0,
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "branching": {
+            "n": 10,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p10": 0,
+            "p90": 0,
+            "variance": 0,
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "push_branching": {
+            "n": 10,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p10": 0,
+            "p90": 0,
+            "variance": 0,
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "steps": {
+          "n": 10,
+          "mean": 7,
+          "median": 7,
+          "min": 7,
+          "max": 7,
+          "p10": 7,
+          "p90": 7,
+          "variance": 0,
+          "values": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ]
+        },
+        "by_profile": {
+          "competent": {
+            "n": 10,
+            "completion_rate": 1,
+            "completion_interval": {
+              "low": 0.7224672001371107,
+              "high": 0.9999999999999999,
+              "level": 0.95,
+              "method": "Wilson interval; independent episodes assumed"
+            },
+            "steps": {
+              "n": 10,
+              "mean": 7,
+              "median": 7,
+              "min": 7,
+              "max": 7,
+              "p10": 7,
+              "p90": 7,
+              "variance": 0,
+              "values": [
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7
+              ]
+            },
+            "score": {
+              "n": 0,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "max": null,
+              "p10": null,
+              "p90": null,
+              "variance": null,
+              "values": []
+            }
+          }
+        },
+        "terminal_count": 10,
+        "seed_split": [
+          {
+            "seeds": [
+              7,
+              23,
+              83,
+              131,
+              199
+            ],
+            "wins": 5,
+            "n": 5,
+            "completion_rate": 1
+          },
+          {
+            "seeds": [
+              11,
+              47,
+              101,
+              167,
+              233
+            ],
+            "wins": 5,
+            "n": 5,
+            "completion_rate": 1
+          }
+        ]
+      },
+      "strong": {
+        "metric_version": "quality-distributions-1.0.0",
+        "episode_count": 10,
+        "completion_rate": 1,
+        "completion_interval": {
+          "low": 0.7224672001371107,
+          "high": 0.9999999999999999,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "interval_note": "Intervals are emitted only within one profile on distinct seeds; pooled profiles and repeated seeds are correlated.",
+        "wins": 10,
+        "losses": 0,
+        "censored_count": 0,
+        "invalid_count": 0,
+        "failure_distribution": {},
+        "metrics": {
+          "completion_rate": {
+            "n": 10,
+            "mean": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "p10": 1,
+            "p90": 1,
+            "variance": 0,
+            "values": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "moves": {
+            "n": 10,
+            "mean": 7,
+            "median": 7,
+            "min": 7,
+            "max": 7,
+            "p10": 7,
+            "p90": 7,
+            "variance": 0,
+            "values": [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ]
+          },
+          "pushes": {
+            "n": 10,
+            "mean": 2,
+            "median": 2,
+            "min": 2,
+            "max": 2,
+            "p10": 2,
+            "p90": 2,
+            "variance": 0,
+            "values": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          "boxes_on_goals": {
+            "n": 10,
+            "mean": 2,
+            "median": 2,
+            "min": 2,
+            "max": 2,
+            "p10": 2,
+            "p90": 2,
+            "variance": 0,
+            "values": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          "deadlock_traps": {
+            "n": 10,
+            "mean": 10,
+            "median": 10,
+            "min": 10,
+            "max": 10,
+            "p10": 10,
+            "p90": 10,
+            "variance": 0,
+            "values": [
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10
+            ]
+          },
+          "deadlocked": {
+            "n": 10,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p10": 0,
+            "p90": 0,
+            "variance": 0,
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "box_switches": {
+            "n": 10,
+            "mean": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "p10": 1,
+            "p90": 1,
+            "variance": 0,
+            "values": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "forced_push_ratio": {
+            "n": 10,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p10": 0,
+            "p90": 0,
+            "variance": 0,
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "branching": {
+            "n": 10,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p10": 0,
+            "p90": 0,
+            "variance": 0,
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "push_branching": {
+            "n": 10,
+            "mean": 0,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p10": 0,
+            "p90": 0,
+            "variance": 0,
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "steps": {
+          "n": 10,
+          "mean": 7,
+          "median": 7,
+          "min": 7,
+          "max": 7,
+          "p10": 7,
+          "p90": 7,
+          "variance": 0,
+          "values": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ]
+        },
+        "by_profile": {
+          "strong": {
+            "n": 10,
+            "completion_rate": 1,
+            "completion_interval": {
+              "low": 0.7224672001371107,
+              "high": 0.9999999999999999,
+              "level": 0.95,
+              "method": "Wilson interval; independent episodes assumed"
+            },
+            "steps": {
+              "n": 10,
+              "mean": 7,
+              "median": 7,
+              "min": 7,
+              "max": 7,
+              "p10": 7,
+              "p90": 7,
+              "variance": 0,
+              "values": [
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7
+              ]
+            },
+            "score": {
+              "n": 0,
+              "mean": null,
+              "median": null,
+              "min": null,
+              "max": null,
+              "p10": null,
+              "p90": null,
+              "variance": null,
+              "values": []
+            }
+          }
+        },
+        "terminal_count": 10,
+        "seed_split": [
+          {
+            "seeds": [
+              7,
+              23,
+              83,
+              131,
+              199
+            ],
+            "wins": 5,
+            "n": 5,
+            "completion_rate": 1
+          },
+          {
+            "seeds": [
+              11,
+              47,
+              101,
+              167,
+              233
+            ],
+            "wins": 5,
+            "n": 5,
+            "completion_rate": 1
+          }
+        ]
+      }
+    },
+    "caveat": "This old reference uses maxMoves 120, unlike the tight curriculum variants; it only illustrates planner ceiling/random floor and must not be pooled with v2 training."
+  },
+  "conclusion": "The bounded v2 attempt did not produce an eligible frozen 10-unit candidate. No new final-test calibration result exists. More sampling exposed a content-support/sequence-constraint gap rather than repairing all v1 failures.",
+  "human_calibration": "NOT_VERIFIED"
+}

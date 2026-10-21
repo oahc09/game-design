@@ -1,0 +1,993 @@
+{
+  "version": "independent-public-rules-0.2",
+  "fixtures": [
+    {
+      "id": "sokoban.reject-chain",
+      "archetype": "sokoban",
+      "seed": 11,
+      "input": {
+        "content": {
+          "grid": [
+            "########",
+            "#@$$ ..#",
+            "########"
+          ]
+        },
+        "actions": [
+          {
+            "direction": "right"
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "op": "eq",
+          "path": "transitions.0.accepted",
+          "value": false
+        },
+        {
+          "op": "same",
+          "path": "transitions.0.after",
+          "other": "transitions.0.before"
+        }
+      ],
+      "source": {
+        "kind": "independent_public_rule_derivation",
+        "task_material": "gd-003 materials.rule_note; only one box may be pushed",
+        "authoring_note": "Expected values derived by hand from public rule text; no treatment runtime or exported fixture used."
+      }
+    },
+    {
+      "id": "sokoban.final-goal",
+      "archetype": "sokoban",
+      "seed": 11,
+      "input": {
+        "content": {
+          "grid": [
+            "#####",
+            "#@$.#",
+            "#####"
+          ]
+        },
+        "actions": [
+          {
+            "direction": "right"
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "op": "eq",
+          "path": "transitions.0.after.player",
+          "value": [
+            2,
+            1
+          ]
+        },
+        {
+          "op": "eq",
+          "path": "transitions.0.after.boxes",
+          "value": [
+            [
+              3,
+              1
+            ]
+          ]
+        },
+        {
+          "op": "eq",
+          "path": "transitions.0.after.terminal.status",
+          "value": "WIN"
+        }
+      ],
+      "source": {
+        "kind": "independent_public_rule_derivation",
+        "task_material": "gd-003 final goal win and public Sokoban push rule",
+        "authoring_note": "Expected values derived by hand from public rule text; no treatment runtime or exported fixture used."
+      }
+    },
+    {
+      "id": "sokoban.reject-wall",
+      "archetype": "sokoban",
+      "seed": 11,
+      "input": {
+        "content": {
+          "grid": [
+            "#####",
+            "#@$.#",
+            "#####"
+          ]
+        },
+        "actions": [
+          {
+            "direction": "up"
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "op": "eq",
+          "path": "transitions.0.accepted",
+          "value": false
+        },
+        {
+          "op": "same",
+          "path": "transitions.0.after",
+          "other": "transitions.0.before"
+        }
+      ],
+      "source": {
+        "kind": "independent_public_rule_derivation",
+        "task_material": "gd-009 accepted/rejected actions and wall material",
+        "authoring_note": "Expected values derived by hand from public rule text; no treatment runtime or exported fixture used."
+      }
+    },
+    {
+      "id": "falling.gravity-30",
+      "archetype": "falling_blocks",
+      "seed": 11,
+      "input": {
+        "content": {
+          "board_width": 10,
+          "board_height": 20,
+          "gravity_ticks": 30,
+          "lock_ticks": 2,
+          "active_piece": {
+            "shape": "O",
+            "x": 4,
+            "y": 0
+          }
+        },
+        "actions": [
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "op": "eq",
+          "path": "transitions.28.after.active.y",
+          "value": 0
+        },
+        {
+          "op": "eq",
+          "path": "transitions.29.after.active.y",
+          "value": 1
+        },
+        {
+          "op": "eq",
+          "path": "transitions.29.after.tick",
+          "value": 30
+        }
+      ],
+      "source": {
+        "kind": "independent_public_rule_derivation",
+        "task_material": "gd-011..020 materials gravity_ticks=30, tick_rate=60",
+        "authoring_note": "Expected values derived by hand from public rule text; no treatment runtime or exported fixture used."
+      }
+    },
+    {
+      "id": "falling.lock-two",
+      "archetype": "falling_blocks",
+      "seed": 11,
+      "input": {
+        "content": {
+          "board_width": 10,
+          "board_height": 20,
+          "gravity_ticks": 30,
+          "lock_ticks": 2,
+          "active_piece": {
+            "shape": "O",
+            "x": 4,
+            "y": 18
+          },
+          "lock_policy": "two grounded simulation ticks"
+        },
+        "actions": [
+          {
+            "type": "wait"
+          },
+          {
+            "type": "wait"
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "op": "eq",
+          "path": "transitions.0.after.locked_piece_count",
+          "value": 0
+        },
+        {
+          "op": "eq",
+          "path": "transitions.1.after.locked_piece_count",
+          "value": 1
+        }
+      ],
+      "source": {
+        "kind": "independent_public_rule_derivation",
+        "task_material": "gd-019 materials lock_ticks=2; excluded from unresolved gd-013 branch decision",
+        "authoring_note": "Expected values derived by hand from public rule text; no treatment runtime or exported fixture used."
+      }
+    },
+    {
+      "id": "shooter.single-hit",
+      "archetype": "arcade_shooter",
+      "seed": 11,
+      "input": {
+        "content": {
+          "player": {
+            "position": [
+              50,
+              80
+            ],
+            "health": 3
+          },
+          "enemies": [
+            {
+              "id": "a",
+              "position": [
+                50,
+                40
+              ],
+              "health": 2
+            },
+            {
+              "id": "b",
+              "position": [
+                50,
+                40
+              ],
+              "health": 2
+            }
+          ],
+          "projectiles": [
+            {
+              "id": "p",
+              "position": [
+                50,
+                40
+              ],
+              "damage": 1
+            }
+          ],
+          "collision_fixture": "overlap two enemies with one projectile"
+        },
+        "actions": [
+          {
+            "type": "wait"
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "op": "sum",
+          "path": "transitions.0.after.enemies",
+          "field": "health",
+          "value": 3
+        },
+        {
+          "op": "eq",
+          "path": "transitions.0.after.projectiles",
+          "value": []
+        },
+        {
+          "op": "count_where",
+          "path": "transitions.0.events",
+          "field": "type",
+          "value": "DAMAGE",
+          "count": 1
+        }
+      ],
+      "source": {
+        "kind": "independent_public_rule_derivation",
+        "task_material": "gd-023 one projectile at most one target once; either target allowed",
+        "authoring_note": "Expected values derived by hand from public rule text; no treatment runtime or exported fixture used."
+      }
+    },
+    {
+      "id": "shooter.no-post-destroy-hit",
+      "archetype": "arcade_shooter",
+      "seed": 11,
+      "input": {
+        "content": {
+          "initial_snapshot": {
+            "tick": 1,
+            "terminal": null,
+            "enemies": [
+              {
+                "id": "a",
+                "health": 1
+              },
+              {
+                "id": "b",
+                "health": 2
+              }
+            ],
+            "projectiles": []
+          }
+        },
+        "actions": [
+          {
+            "type": "wait"
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "op": "same",
+          "path": "transitions.0.after.enemies",
+          "other": "transitions.0.before.enemies"
+        },
+        {
+          "op": "count_where",
+          "path": "transitions.0.events",
+          "field": "type",
+          "value": "DAMAGE",
+          "count": 0
+        }
+      ],
+      "source": {
+        "kind": "independent_public_rule_derivation",
+        "task_material": "gd-028 destroyed projectile cannot hit again",
+        "authoring_note": "Expected values derived by hand from public rule text; no treatment runtime or exported fixture used."
+      }
+    },
+    {
+      "id": "match3.nonadjacent",
+      "archetype": "match3",
+      "seed": 11,
+      "input": {
+        "content": {
+          "board": [
+            [
+              0,
+              1,
+              0,
+              2
+            ],
+            [
+              1,
+              0,
+              2,
+              1
+            ],
+            [
+              2,
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              2,
+              1,
+              0
+            ]
+          ],
+          "moves": 12,
+          "colors": 3
+        },
+        "actions": [
+          {
+            "type": "swap",
+            "from": [
+              0,
+              0
+            ],
+            "to": [
+              2,
+              0
+            ]
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "op": "eq",
+          "path": "transitions.0.accepted",
+          "value": false
+        },
+        {
+          "op": "same",
+          "path": "transitions.0.after",
+          "other": "transitions.0.before"
+        }
+      ],
+      "source": {
+        "kind": "independent_public_rule_derivation",
+        "task_material": "gd-031..040 adjacent swaps only, public contract nonmutating rejected action",
+        "authoring_note": "Expected values derived by hand from public rule text; no treatment runtime or exported fixture used."
+      }
+    },
+    {
+      "id": "match3.resolution-order",
+      "archetype": "match3",
+      "seed": 11,
+      "input": {
+        "content": {
+          "board": [
+            [
+              0,
+              1,
+              0,
+              2
+            ],
+            [
+              1,
+              0,
+              2,
+              1
+            ],
+            [
+              2,
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              2,
+              1,
+              0
+            ]
+          ],
+          "moves": 12,
+          "colors": 3,
+          "observation_requirement": "Capture semantic phase events, mapping native event names without altering order"
+        },
+        "actions": [
+          {
+            "type": "swap",
+            "from": [
+              0,
+              0
+            ],
+            "to": [
+              1,
+              0
+            ]
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "op": "ordered_events",
+          "path": "transitions.0.events",
+          "values": [
+            "MATCH_CLEAR",
+            "GRAVITY",
+            "REFILL",
+            "OBJECTIVE_CHECK"
+          ]
+        }
+      ],
+      "source": {
+        "kind": "independent_public_rule_derivation",
+        "task_material": "gd-033 public gravity/refill before objectives; each complete cascade may repeat the first three phases",
+        "authoring_note": "Expected values derived by hand from public rule text; no treatment runtime or exported fixture used."
+      }
+    },
+    {
+      "id": "2048.merge-once",
+      "archetype": "merge2048",
+      "seed": 11,
+      "input": {
+        "content": {
+          "board": [
+            [
+              2,
+              2,
+              2,
+              2
+            ],
+            [
+              4,
+              4,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "target": 128,
+          "spawn_four_probability": 0.1
+        },
+        "actions": [
+          {
+            "direction": "left"
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "op": "eq",
+          "path": "transitions.0.after.score",
+          "value": 16
+        },
+        {
+          "op": "board_after_one_spawn",
+          "path": "transitions.0.after.board",
+          "value": [
+            [
+              4,
+              4,
+              0,
+              0
+            ],
+            [
+              8,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "spawn_values": [
+            2,
+            4
+          ]
+        }
+      ],
+      "source": {
+        "kind": "independent_public_rule_derivation",
+        "task_material": "gd-043 explicit two rows: merge-once and one new random tile after a changed swipe",
+        "authoring_note": "Expected values derived by hand from public rule text; no treatment runtime or exported fixture used."
+      }
+    },
+    {
+      "id": "2048.noop-no-spawn",
+      "archetype": "merge2048",
+      "seed": 11,
+      "input": {
+        "content": {
+          "board": [
+            [
+              2,
+              4,
+              8,
+              16
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "target": 128,
+          "spawn_four_probability": 0.1
+        },
+        "actions": [
+          {
+            "direction": "left"
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "op": "eq",
+          "path": "transitions.0.accepted",
+          "value": false
+        },
+        {
+          "op": "same",
+          "path": "transitions.0.after",
+          "other": "transitions.0.before"
+        }
+      ],
+      "source": {
+        "kind": "independent_public_rule_derivation",
+        "task_material": "gd-048 no spawn after no-op; rejected action preserves RNG and state",
+        "authoring_note": "Expected values derived by hand from public rule text; no treatment runtime or exported fixture used."
+      }
+    },
+    {
+      "id": "block.cross-clear",
+      "archetype": "block_puzzle",
+      "seed": 11,
+      "input": {
+        "content": {
+          "board": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "batch": [
+            [
+              [
+                0,
+                0
+              ]
+            ]
+          ],
+          "score_per_cleared_cell": 1,
+          "replacement": "after_batch_exhaustion"
+        },
+        "actions": [
+          {
+            "type": "place",
+            "piece": 0,
+            "origin": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "op": "eq",
+          "path": "transitions.0.after.board",
+          "value": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "op": "eq",
+          "path": "transitions.0.after.score",
+          "value": 5
+        },
+        {
+          "op": "count_where",
+          "path": "transitions.0.events",
+          "field": "type",
+          "value": "PIECE_CONSUMED",
+          "count": 1
+        }
+      ],
+      "source": {
+        "kind": "independent_public_rule_derivation",
+        "task_material": "gd-053 simultaneous row/column; intersection counted once. Public fixture chooses one point per cleared cell solely to expose cell-count semantics.",
+        "authoring_note": "Expected values derived by hand from public rule text; no treatment runtime or exported fixture used."
+      }
+    },
+    {
+      "id": "block.reject-overlap",
+      "archetype": "block_puzzle",
+      "seed": 11,
+      "input": {
+        "content": {
+          "board": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "batch": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ]
+            ]
+          ]
+        },
+        "actions": [
+          {
+            "type": "place",
+            "piece": 0,
+            "origin": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "op": "eq",
+          "path": "transitions.0.accepted",
+          "value": false
+        },
+        {
+          "op": "same",
+          "path": "transitions.0.after",
+          "other": "transitions.0.before"
+        }
+      ],
+      "source": {
+        "kind": "independent_public_rule_derivation",
+        "task_material": "gd-051..060 whole piece without overlap",
+        "authoring_note": "Expected values derived by hand from public rule text; no treatment runtime or exported fixture used."
+      }
+    },
+    {
+      "id": "water.partial-maximal",
+      "archetype": "water_sort",
+      "seed": 11,
+      "input": {
+        "content": {
+          "capacity": 4,
+          "tubes": [
+            [
+              "R",
+              "B",
+              "B"
+            ],
+            [
+              "B",
+              "B",
+              "B"
+            ],
+            [],
+            []
+          ]
+        },
+        "actions": [
+          {
+            "type": "pour",
+            "from": 0,
+            "to": 1
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "op": "eq",
+          "path": "transitions.0.after.tubes",
+          "value": [
+            [
+              "R",
+              "B"
+            ],
+            [
+              "B",
+              "B",
+              "B",
+              "B"
+            ],
+            [],
+            []
+          ]
+        },
+        {
+          "op": "color_mass",
+          "path": "transitions.0.after.tubes",
+          "other": "transitions.0.before.tubes"
+        },
+        {
+          "op": "capacity",
+          "path": "transitions.0.after.tubes",
+          "value": 4
+        }
+      ],
+      "source": {
+        "kind": "independent_public_rule_derivation",
+        "task_material": "gd-061 maximal same-color pour limited by remaining capacity and bottom-to-top arrays",
+        "authoring_note": "Expected values derived by hand from public rule text; no treatment runtime or exported fixture used."
+      }
+    },
+    {
+      "id": "water.reject-color",
+      "archetype": "water_sort",
+      "seed": 11,
+      "input": {
+        "content": {
+          "capacity": 4,
+          "tubes": [
+            [
+              "R"
+            ],
+            [
+              "B"
+            ],
+            [],
+            []
+          ]
+        },
+        "actions": [
+          {
+            "type": "pour",
+            "from": 0,
+            "to": 1
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "op": "eq",
+          "path": "transitions.0.accepted",
+          "value": false
+        },
+        {
+          "op": "same",
+          "path": "transitions.0.after",
+          "other": "transitions.0.before"
+        }
+      ],
+      "source": {
+        "kind": "independent_public_rule_derivation",
+        "task_material": "gd-061 same-color pour rule; different-color destination rejected",
+        "authoring_note": "Expected values derived by hand from public rule text; no treatment runtime or exported fixture used."
+      }
+    }
+  ]
+}

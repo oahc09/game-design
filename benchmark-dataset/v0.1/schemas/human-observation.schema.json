@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "anonymous_participant_id",
+    "participant_group",
+    "experience_level",
+    "device",
+    "session_length_seconds",
+    "task_id",
+    "blind_id",
+    "artifact_version",
+    "order",
+    "blinding_broken",
+    "measures"
+  ],
+  "properties": {
+    "anonymous_participant_id": {
+      "type": "string"
+    },
+    "participant_group": {
+      "type": "string"
+    },
+    "experience_level": {
+      "type": "string"
+    },
+    "device": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "blind_id": {
+      "type": "string"
+    },
+    "artifact_version": {
+      "type": "string"
+    },
+    "order": {
+      "type": "string"
+    },
+    "session_length_seconds": {
+      "type": "number",
+      "minimum": 0
+    },
+    "blinding_broken": {
+      "type": "boolean"
+    },
+    "measures": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rule_understanding_cost",
+        "first_use_ease",
+        "gameplay_variety",
+        "repetition",
+        "perceived_difficulty",
+        "fairness",
+        "decision_agency",
+        "continue_playing_intent"
+      ],
+      "properties": {
+        "rule_understanding_cost": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "first_use_ease": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "gameplay_variety": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "repetition": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "perceived_difficulty": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "fairness": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "decision_agency": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "continue_playing_intent": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        }
+      }
+    }
+  }
+}

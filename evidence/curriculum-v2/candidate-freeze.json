@@ -1,0 +1,256 @@
+{
+  "version": "measured-curriculum-v2-1.0.0",
+  "preregistration_sha256": "298fbf4b5cfdcd4068c1e465af66d58e2328048b843f5a601073454dd7832e19",
+  "input_sha256": "e5314d670970fb44cb9fecff5c4d43c942374b79621349a4438fc3e7a7c41b16",
+  "candidate_sha256": "216eaccdb27bc17ef0c1831e1e8502599ec5b9a2de27506da2f8a79a51b78adb",
+  "campaign": {
+    "version": "measured-curriculum-v2-1.0.0",
+    "mechanics": [
+      "box_goal_planning",
+      "multi_box_goal_tracking"
+    ],
+    "dependencies": {
+      "multi_box_goal_tracking": [
+        "box_goal_planning"
+      ]
+    },
+    "learning_assumptions": [
+      "Author-defined prerequisite: box-goal planning before multi-box goal tracking.",
+      "Bot reset on every episode; no learning or human mastery inference.",
+      "The 0.25 action-replacement probability is arbitrary synthetic model control, unchanged from v1.",
+      "V1 selection and holdout are exploration only. V2 selector uses only newly committed training trials."
+    ],
+    "sequence": [],
+    "campaign_graph": [],
+    "status": "BLOCKED",
+    "validation": {
+      "version": "dependency-curriculum-1.0.1",
+      "valid": false,
+      "issues": [
+        {
+          "code": "CURRICULUM_STAGE_MISSING",
+          "stage": "Introduce"
+        },
+        {
+          "code": "CURRICULUM_STAGE_MISSING",
+          "stage": "Practice"
+        },
+        {
+          "code": "CURRICULUM_STAGE_MISSING",
+          "stage": "Combine"
+        },
+        {
+          "code": "CURRICULUM_STAGE_MISSING",
+          "stage": "Twist"
+        },
+        {
+          "code": "CURRICULUM_STAGE_MISSING",
+          "stage": "Pressure"
+        },
+        {
+          "code": "CURRICULUM_STAGE_MISSING",
+          "stage": "Mastery"
+        },
+        {
+          "code": "CURRICULUM_STAGE_MISSING",
+          "stage": "Rest"
+        },
+        {
+          "code": "CURRICULUM_STAGE_MISSING",
+          "stage": "Final Exam"
+        },
+        {
+          "code": "MECHANIC_UNUSED",
+          "mechanic": "box_goal_planning"
+        },
+        {
+          "code": "MECHANIC_NOT_PRACTICED",
+          "mechanic": "box_goal_planning"
+        },
+        {
+          "code": "MASTERY_GAP",
+          "mechanic": "box_goal_planning"
+        },
+        {
+          "code": "MECHANIC_UNUSED",
+          "mechanic": "multi_box_goal_tracking"
+        },
+        {
+          "code": "MECHANIC_NOT_PRACTICED",
+          "mechanic": "multi_box_goal_tracking"
+        },
+        {
+          "code": "MASTERY_GAP",
+          "mechanic": "multi_box_goal_tracking"
+        }
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "box_goal_planning",
+            "requires": []
+          },
+          {
+            "id": "multi_box_goal_tracking",
+            "requires": [
+              "box_goal_planning"
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "from": "box_goal_planning",
+            "to": "multi_box_goal_tracking"
+          }
+        ],
+        "order": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "issues": [],
+        "valid": true
+      },
+      "metrics": {
+        "mechanic_coverage": 0,
+        "mechanic_repetition": {},
+        "introduction_spacing": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "max": null,
+          "p10": null,
+          "p90": null,
+          "variance": null,
+          "values": []
+        },
+        "difficulty_smoothness": null,
+        "difficulty_spike": 0,
+        "rest_spacing": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "min": null,
+          "max": null,
+          "p10": null,
+          "p90": null,
+          "variance": null,
+          "values": []
+        },
+        "mastery_validation": 0,
+        "content_similarity": null
+      },
+      "mechanic_introduction_plan": {},
+      "difficulty_curve": [],
+      "limitations": [
+        "Difficulty is a declared bot-policy completion index with seed evidence; learning assumptions require human validation.",
+        "Mechanic exposure is content-author metadata. Twist/Pressure require actual content changes, but telemetry-based mechanic mastery is not inferred."
+      ]
+    }
+  },
+  "audit": [
+    {
+      "index": 0,
+      "stage": "Introduce",
+      "states_considered": 13,
+      "states_kept": 13,
+      "best": {
+        "risk": 0,
+        "distance": 0.0062500000000000056,
+        "ids": [
+          "single-long-push-moves-08"
+        ]
+      }
+    },
+    {
+      "index": 1,
+      "stage": "Practice",
+      "states_considered": 76,
+      "states_kept": 76,
+      "best": {
+        "risk": 0,
+        "distance": 0.017187499999999994,
+        "ids": [
+          "single-long-push-moves-08",
+          "single-long-push-moves-05"
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "stage": "Introduce",
+      "states_considered": 456,
+      "states_kept": 256,
+      "best": {
+        "risk": 0,
+        "distance": 0.028124999999999983,
+        "ids": [
+          "single-long-push-moves-08",
+          "single-long-push-moves-05",
+          "double-offset-approach-moves-12"
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "stage": "Practice",
+      "states_considered": 2564,
+      "states_kept": 256,
+      "best": {
+        "risk": 0,
+        "distance": 0.050390624999999994,
+        "ids": [
+          "single-long-push-moves-08",
+          "single-long-push-moves-05",
+          "double-offset-approach-moves-12",
+          "double-reposition-moves-24"
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "stage": "Combine",
+      "states_considered": 2560,
+      "states_kept": 256,
+      "best": {
+        "risk": 0,
+        "distance": 0.07734375000000002,
+        "ids": [
+          "single-long-push-moves-08",
+          "single-long-push-moves-05",
+          "double-offset-approach-moves-12",
+          "double-reposition-moves-24",
+          "double-reposition-moves-20"
+        ]
+      }
+    },
+    {
+      "index": 5,
+      "stage": "Twist",
+      "states_considered": 2016,
+      "states_kept": 256,
+      "best": {
+        "risk": 0,
+        "distance": 0.08281250000000004,
+        "ids": [
+          "single-long-push-moves-08",
+          "single-long-push-moves-05",
+          "double-offset-approach-moves-12",
+          "double-reposition-moves-24",
+          "double-reposition-moves-20",
+          "double-open-approach-moves-08"
+        ]
+      }
+    },
+    {
+      "index": 6,
+      "stage": "Pressure",
+      "states_considered": 0,
+      "states_kept": 0,
+      "best": null
+    }
+  ],
+  "score": null,
+  "selection": "Training only; one bounded beam; no post-validation or final-test selection.",
+  "frozen_at": "2026-10-08T13:34:21.698Z"
+}

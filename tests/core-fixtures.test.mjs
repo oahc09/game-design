@@ -1,0 +1,3 @@
+import {fileURLToPath}from 'node:url';
+import test from 'node:test';import assert from 'node:assert/strict';import {discoverFixtures,runSuite}from '../src/benchmark/runner.mjs';import {registry,getArchetype}from '../src/archetypes/index.mjs';
+test('20 distinct core invalid fixtures are discovered and rejected',async()=>{const files=await discoverFixtures(fileURLToPath(new URL('../fixtures/invalid/',import.meta.url)));assert.equal(files.length,20);const report=await runSuite(files,{registry,resolve:getArchetype});assert.equal(report.summary.passed,20);assert.equal(report.summary.failed,0);for(const r of report.results)assert.ok(r.detected_issues.length);});

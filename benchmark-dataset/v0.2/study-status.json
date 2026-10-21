@@ -1,0 +1,24 @@
+{
+  "status": "BLOCKED_FORMAL_EXECUTION",
+  "cloud_codex_authorized": true,
+  "transport_attempts": 1,
+  "completed_model_runs": 0,
+  "usage_records_observed": 0,
+  "formal_trials": 0,
+  "human_participants": 0,
+  "blockers": [
+    "Cloud app-server initialized on a read-only filesystem",
+    "Native isolation probe could not establish socket prerequisite",
+    "Network namespace creation denied",
+    "Production provider broker and preemptive provider caps not operationally audited"
+  ],
+  "implemented": [
+    "108 concrete task protocols",
+    "432 claim guards",
+    "signed audit and immutable source binding",
+    "per-trial broker reservation and usage ledger",
+    "durable failed-artifact retention",
+    "v3 measured curriculum original target repair"
+  ],
+  "next_step": "A supported authorized cloud environment/provider path must first pass actual preflight. Do not retry denied variants or use local computers."
+}

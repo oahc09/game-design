@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Design"
+  short_description: "Executable gameplay design, balance and reproducible QA"
+  default_prompt: "Use $game-design to turn this gameplay request into verified artifacts and evidence."

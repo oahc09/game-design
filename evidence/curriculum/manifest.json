@@ -1,0 +1,42 @@
+{
+  "protocol": "measured-curriculum-1.0.0",
+  "artifacts": {
+    "long-horizon.json": {
+      "sha256": "1bdca14a0ae4b9c03c9a82ee6e586847bad6e7bd6af1ac62847d1b80aa8e764a",
+      "bytes": 797927
+    },
+    "content-measurements.json": {
+      "sha256": "1a0fee05853695218b80ce252747a27adacef2d93366d7d486dba8965d6b58d1",
+      "bytes": 4059993
+    },
+    "campaign-report.json": {
+      "sha256": "95636af24776e10d226b11294ea92070eed331c7c5829ec67d3ddb04ed4c6f21",
+      "bytes": 1377276
+    },
+    "source-provenance.json": {
+      "sha256": "935e4aedd5ccd8c955b5372b48d53ff5320734a8dcfb2893a51d0c633a91a124",
+      "bytes": 6043
+    },
+    "replays.json.gz": {
+      "sha256": "6bdf965e9e0831b9b06a6da7b9c6cdc0f89fa8aee37be5b55ed1bffcb899a3f2",
+      "bytes": 186977
+    }
+  },
+  "input_artifact": {
+    "path": "examples/measured-curriculum-input.json",
+    "sha256": "9cf69b05e6d58aba6a451e395e41f71142e167e41242058edb5b8352d4f814d3",
+    "bytes": 183733
+  },
+  "checks": {
+    "source_unchanged": true,
+    "pool_episode_count": true,
+    "no_invalid_episodes": true,
+    "campaign_valid": true,
+    "impossible_target_blocked": true,
+    "all_replays_verified": true,
+    "strong_assessment_witnesses_win": true
+  },
+  "pass": true,
+  "total_artifact_bytes": 6611949,
+  "interpretation": "Pass checks empirical integrity and selection-seed constraints only. Held-out constraint misses, policy ties, statistical uncertainty and human unverified status remain visible."
+}

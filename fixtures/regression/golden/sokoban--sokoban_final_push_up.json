@@ -1,0 +1,203 @@
+{
+  "replay_version": "0.1.0",
+  "game_spec_id": "sokoban-reference",
+  "rules_version": "sokoban_v0.1",
+  "archetype": "sokoban",
+  "seed": 17,
+  "spec": {
+    "schema_version": "0.1",
+    "metadata": {
+      "id": "sokoban-reference",
+      "version": "0.1.0"
+    },
+    "design": {
+      "archetype": "sokoban",
+      "audience": {
+        "type": "casual"
+      },
+      "session": {
+        "target_minutes": {
+          "min": 2,
+          "max": 5
+        }
+      },
+      "pillars": [
+        "readable_rules",
+        "meaningful_decisions"
+      ],
+      "complexity": {
+        "action_budget": "low",
+        "mechanic_budget": "medium"
+      },
+      "content_target": {
+        "type": "challenge",
+        "expected_count": 1
+      }
+    },
+    "game": {
+      "archetype": "sokoban"
+    },
+    "runtime": {
+      "simulation_mode": "TURN_BASED",
+      "tick_rate": 60
+    },
+    "action_space": {
+      "type": "discrete",
+      "values": [
+        "UP",
+        "DOWN",
+        "LEFT",
+        "RIGHT"
+      ]
+    },
+    "observation": {
+      "mode": "VISIBLE_STATE",
+      "delay_ms": 0,
+      "noise": null
+    },
+    "rng": {
+      "enabled": true
+    },
+    "content": {
+      "id": "sokoban-challenge-001",
+      "type": "challenge",
+      "archetype": "sokoban",
+      "parameters": {},
+      "objectives": [],
+      "dependencies": [],
+      "extensions": {
+        "sokoban": {
+          "map": [
+            "#######",
+            "#     #",
+            "#  .  #",
+            "#  $  #",
+            "#  @  #",
+            "#     #",
+            "#######"
+          ],
+          "maxMoves": 120
+        }
+      }
+    },
+    "evaluation": {
+      "player_profiles": [
+        {
+          "id": "random",
+          "version": "1.0.0"
+        },
+        {
+          "id": "greedy",
+          "version": "1.0.0"
+        },
+        {
+          "id": "astar",
+          "version": "1.0.0"
+        }
+      ],
+      "metrics": [
+        "completion_rate",
+        "moves",
+        "pushes",
+        "deadlock_traps",
+        "box_switches",
+        "branching"
+      ],
+      "gates": [
+        "schema",
+        "runtime",
+        "replay"
+      ],
+      "seed_set": {
+        "mode": "fixed",
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    "provenance": {
+      "rules_version": "sokoban_v0.1",
+      "assumptions": []
+    },
+    "adapter": {
+      "id": "web",
+      "version": "0.1"
+    },
+    "extensions": {}
+  },
+  "initial_content": {
+    "id": "sokoban-challenge-001",
+    "type": "challenge",
+    "archetype": "sokoban",
+    "parameters": {},
+    "objectives": [],
+    "dependencies": [],
+    "extensions": {
+      "sokoban": {
+        "map": [
+          "#######",
+          "#     #",
+          "#  .  #",
+          "#  $  #",
+          "#  @  #",
+          "#     #",
+          "#######"
+        ],
+        "maxMoves": 120
+      }
+    }
+  },
+  "initial_state_hash": "b7f7070b13effc79",
+  "actions": [
+    {
+      "tick": 0,
+      "action": "UP",
+      "accepted": true,
+      "state_hash": "d944b9f442bba330",
+      "events": [
+        {
+          "type": "ObjectPushed",
+          "box": 0,
+          "from": 24,
+          "to": 17
+        },
+        {
+          "type": "EntityMoved",
+          "entity": "player",
+          "from": 31,
+          "to": 24
+        },
+        {
+          "type": "ObjectiveCompleted",
+          "outcome": {
+            "status": "WIN",
+            "reason": "ALL_BOXES_ON_GOALS"
+          }
+        },
+        {
+          "type": "StateAdvanced",
+          "tick": 1,
+          "turn": 1,
+          "pushes": 1,
+          "boxSwitches": 0,
+          "forcedPushes": 0
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "terminal": {
+      "status": "WIN",
+      "reason": "ALL_BOXES_ON_GOALS"
+    },
+    "final_state_hash": "d944b9f442bba330"
+  },
+  "state_hashes": [
+    "b7f7070b13effc79",
+    "d944b9f442bba330"
+  ]
+}

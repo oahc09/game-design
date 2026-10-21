@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "kind": "CONFIGURATION_AND_SYNTHETIC_CHECKER_SMOKE",
+  "metadata_validation": {
+    "status": "PASS",
+    "task_count": 108,
+    "criterion_count": 494,
+    "claim_guard_count": 432,
+    "issues": []
+  },
+  "dataset_validation": {
+    "valid": true,
+    "issues": [],
+    "coverage": {
+      "tasks": 108,
+      "unseen": 30,
+      "multi_stage": 66,
+      "adversarial": 48,
+      "archetypes": [
+        "sokoban",
+        "falling_blocks",
+        "arcade_shooter",
+        "match3",
+        "merge2048",
+        "block_puzzle",
+        "water_sort",
+        "platformer",
+        "tower_defense",
+        "card_game"
+      ]
+    }
+  },
+  "tests": {
+    "total": 49,
+    "passed": 49,
+    "failed": 0,
+    "tap_file": "task-protocols.tap"
+  },
+  "task_digest": "16fae617874ee5e62229b38fe0d092e815b2b2a4109d68cea456882fb9cc07d6",
+  "config_digest": "14b8a75dcbf1c853f1b499316c92c704d2fdaa44d9524721bab1e7966e4dcc8b",
+  "fixture_digest": "6d917b356e740b973f10c5273889cab0b3686541f248721a450743527ed6fc65",
+  "capture_schema_digest": "6574d3223eb787765fc444c1b94d0bd95d0bd744c37756bb73d37351a3ec46ea",
+  "actual_model_trials": 0,
+  "actual_human_participants": 0,
+  "formal_runtime_certification": false,
+  "claims": "No model-effectiveness or human-playability conclusions; positive/negative controls only."
+}

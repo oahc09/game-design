@@ -1,0 +1,6872 @@
+{
+  "mechanics": [
+    "box_goal_planning",
+    "multi_box_goal_tracking"
+  ],
+  "dependencies": {
+    "multi_box_goal_tracking": [
+      "box_goal_planning"
+    ]
+  },
+  "contents": [
+    {
+      "id": "single-adjacent-moves-01",
+      "content": {
+        "id": "single-adjacent-moves-01",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#######",
+              "#     #",
+              "# @$. #",
+              "#     #",
+              "#######"
+            ],
+            "maxMoves": 1
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-adjacent",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 1,
+        "move_limit": 1
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.9,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "da8b1da4cb983802",
+          "6178bc2d7d9f5bc1",
+          "9b1fbd1655e769f4",
+          "3cde8af843b42f9e",
+          "5a972598e869afa6",
+          "241d00277a27c6dd",
+          "6df379eaede011f2",
+          "0b2105572afc9a2d",
+          "d36b6d7ce78c1038",
+          "aadd59db5ded70c3",
+          "0abda86da828043d",
+          "26d9f763daf7c009",
+          "a90dfd1f1338d935",
+          "f46a04fd06f8b2cf",
+          "d95452037b3d5c0f",
+          "0dc516c74502f86b",
+          "72080fb1fc2132c3",
+          "2640f815a8fc3b87",
+          "b1e979a7a63c7fcf",
+          "9f6394ab1d9a87f3"
+        ],
+        "wins": 18,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.6989663547715128,
+          "high": 0.9721335187862319,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-adjacent-moves-02",
+      "content": {
+        "id": "single-adjacent-moves-02",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#######",
+              "#     #",
+              "# @$. #",
+              "#     #",
+              "#######"
+            ],
+            "maxMoves": 2
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-adjacent",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 1,
+        "move_limit": 2
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.9,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "cab47b0230e19646",
+          "429de14b09e1ca8d",
+          "daeae364b0f84078",
+          "dd470b46acc2f5f2",
+          "83454966892bf31a",
+          "1bbbbf9d50ee65b9",
+          "badd84381c8f3ef6",
+          "c23aa40d655e3049",
+          "aaeb98ba0e28502c",
+          "854af89142e8d6ff",
+          "c710c18b0fdd5d99",
+          "6393515991498735",
+          "87c723754b757e71",
+          "631be3db681b835b",
+          "50bdd7f9b4d7fe9b",
+          "9f7ff7bdcee4bf47",
+          "c65c04bfe11c98ff",
+          "d6e729737b541df3",
+          "a988391d075f505b",
+          "7e0219214d5863af"
+        ],
+        "wins": 18,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.6989663547715128,
+          "high": 0.9721335187862319,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-adjacent-moves-03",
+      "content": {
+        "id": "single-adjacent-moves-03",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#######",
+              "#     #",
+              "# @$. #",
+              "#     #",
+              "#######"
+            ],
+            "maxMoves": 3
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-adjacent",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 1,
+        "move_limit": 3
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.95,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "09542718ee84fe0a",
+          "555c4e9d41956899",
+          "742a67e2344b1c2c",
+          "f958e72cca5d5f26",
+          "8c3493ccda61ebae",
+          "6c7423471f533975",
+          "8b53bf368be2343a",
+          "62ee64b7af2339c5",
+          "03893a908df257f0",
+          "66b4c22b7671b0ab",
+          "9fb1b6ddb038e055",
+          "26094fb35919fda1",
+          "867d161fb64acfcd",
+          "9444abed329ff2b7",
+          "b1017353480f18f7",
+          "873744e738d3a813",
+          "6fe11e9114a572ab",
+          "d2e1b4c5c0a5202f",
+          "fa409cc7d1e3bfb7",
+          "8524d2fb4bf193db"
+        ],
+        "wins": 19,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.763868806553258,
+          "high": 0.9911185511992047,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-adjacent-moves-04",
+      "content": {
+        "id": "single-adjacent-moves-04",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#######",
+              "#     #",
+              "# @$. #",
+              "#     #",
+              "#######"
+            ],
+            "maxMoves": 4
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-adjacent",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 1,
+        "move_limit": 4
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.95,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "3957a22276b10ca6",
+          "22e2ac77840a7095",
+          "e14d16d41845c658",
+          "6dd465960c533682",
+          "25c137b6a7f4c88a",
+          "b31008f98ddf7161",
+          "1d54cbb8b3208396",
+          "e6769aa9cfb96d71",
+          "f5ae053aef3cec5c",
+          "778ddced16600b17",
+          "657974b7a4bbce41",
+          "89bc28950f01a79d",
+          "34063ed19149c0f9",
+          "2ecd9a875e20ccd3",
+          "c3110fb514649313",
+          "9585ba191d2fecbf",
+          "5aa4cf9bb493cd17",
+          "19e9c89fbdd6164b",
+          "40dc8279fd6499d3",
+          "3824bc7d2000d907"
+        ],
+        "wins": 19,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.763868806553258,
+          "high": 0.9911185511992047,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-adjacent-moves-06",
+      "content": {
+        "id": "single-adjacent-moves-06",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#######",
+              "#     #",
+              "# @$. #",
+              "#     #",
+              "#######"
+            ],
+            "maxMoves": 6
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-adjacent",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 1,
+        "move_limit": 6
+      },
+      "evaluation": {
+        "competent_completion_rate": 1,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "7e4df1e2aa8edf6e",
+          "639b07fb03d1486d",
+          "aefb3d3428f43dd0",
+          "10618766a3f571ca",
+          "6cfcb4060aa0b892",
+          "bf690e85ba9f7379",
+          "8e404328a2450f1e",
+          "34aef4352443f849",
+          "fdccc4da0fa7a914",
+          "41ffccc9791c51ff",
+          "1432443bc3cdb259",
+          "954de1d19f67e575",
+          "6b75855dcbe00b11",
+          "91afce4b97d90abb",
+          "ed0b89f1c96905fb",
+          "46ff50a5bc33cd27",
+          "23f6360f175013ff",
+          "de3f0b836d0d00b3",
+          "4d358805371cd7bb",
+          "25c846192a925bef"
+        ],
+        "wins": 20,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.8388748419471806,
+          "high": 1,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-adjacent-moves-09",
+      "content": {
+        "id": "single-adjacent-moves-09",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#######",
+              "#     #",
+              "# @$. #",
+              "#     #",
+              "#######"
+            ],
+            "maxMoves": 9
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-adjacent",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 1,
+        "move_limit": 9
+      },
+      "evaluation": {
+        "competent_completion_rate": 1,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "8ad61194b3c032f2",
+          "b552b06d71e13f71",
+          "a6cfed46e36491f4",
+          "ae222448edf9bf6e",
+          "3c76b6e8f77a8e96",
+          "43d0474791167c1d",
+          "7ce2564a71c97762",
+          "0134307772a79d2d",
+          "9a3553cc6b605998",
+          "16e624db79a64963",
+          "489347ad5a91a77d",
+          "f3f066a39ade9d19",
+          "3d09207f412154f5",
+          "3e985afddc9bc01f",
+          "058ed3c36c82aa5f",
+          "e8edb8e75964930b",
+          "f798a7f117da0b63",
+          "1fb2ffd5e40505b7",
+          "d19cc0c77bdf8d1f",
+          "3dfc69eb6e761ad3"
+        ],
+        "wins": 20,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.8388748419471806,
+          "high": 1,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-adjacent-moves-13",
+      "content": {
+        "id": "single-adjacent-moves-13",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#######",
+              "#     #",
+              "# @$. #",
+              "#     #",
+              "#######"
+            ],
+            "maxMoves": 13
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-adjacent",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 1,
+        "move_limit": 13
+      },
+      "evaluation": {
+        "competent_completion_rate": 1,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "abd4ac82b33db756",
+          "1ae82e097267fe71",
+          "4db6a8c072912520",
+          "fa670ace0283cf92",
+          "a45613ee4b09967a",
+          "559d4a372312b79d",
+          "4e096eecb62fcba6",
+          "c9d814e7c1daa98d",
+          "f7db8cead65faa24",
+          "90fd3af314859bfb",
+          "ab7347c971046e3d",
+          "f6f55bcbd57bf8f9",
+          "8297cc3f2cbde3f5",
+          "54dd55193662c4b7",
+          "c4b492eb395bdaf7",
+          "69d39357f4b30b43",
+          "b40f4065e718c5fb",
+          "1335b9c1a9c4a44f",
+          "0e808eb7cec235b7",
+          "fbbf4603a155e1cb"
+        ],
+        "wins": 20,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.8388748419471806,
+          "high": 1,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-approach-moves-03",
+      "content": {
+        "id": "single-approach-moves-03",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#######",
+              "#  .  #",
+              "#  $  #",
+              "#@    #",
+              "#######"
+            ],
+            "maxMoves": 3
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 3,
+        "move_limit": 3
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.7,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "e324c452a0cd3d5a",
+          "1c6f1b7b6b4d4a41",
+          "535cf884807bbd54",
+          "0890a4fe1bb596ae",
+          "421b649e6ccc4596",
+          "8d1ad83d89765995",
+          "a8f7f3d06b733c0a",
+          "c2f859ad0b3d8665",
+          "ce4ed9ca4bb275c0",
+          "0c9b6469be0fc8b3",
+          "6ce383bbc4d6eef5",
+          "f7013431cb531ac9",
+          "8bd9dc35f62c10ed",
+          "810ba0cb50cbe457",
+          "5f39c0d17d256697",
+          "9d9faddd945b573b",
+          "9b0e19575c438ab3",
+          "dbc79f83b440c1af",
+          "1ae751bdf00fb157",
+          "3ffd0239e1aa7de3"
+        ],
+        "wins": 14,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.4810271816464765,
+          "high": 0.8545227551323956,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-approach-moves-04",
+      "content": {
+        "id": "single-approach-moves-04",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#######",
+              "#  .  #",
+              "#  $  #",
+              "#@    #",
+              "#######"
+            ],
+            "maxMoves": 4
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 3,
+        "move_limit": 4
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.7,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "013c6048ea1840e6",
+          "a88329d164799b6d",
+          "0dcc913abb6027f0",
+          "91ee4944c733e83a",
+          "e8f6cbe4c1756982",
+          "98344ac3223af9d1",
+          "427a0b46321783d6",
+          "2e776ff3f65a1ce1",
+          "9f614d00980c15dc",
+          "5179f10f122d3bef",
+          "02f6c1111422ebb1",
+          "49918b379940e115",
+          "c27f5dbbd6ad0289",
+          "bc6621a1815d52e3",
+          "578faed70a583a23",
+          "f86c7d639d74ef97",
+          "8254598db060fdef",
+          "baced3d97c6ac65b",
+          "2600c44320a11fe3",
+          "846331df7f9880df"
+        ],
+        "wins": 14,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.4810271816464765,
+          "high": 0.8545227551323956,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-approach-moves-05",
+      "content": {
+        "id": "single-approach-moves-05",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#######",
+              "#  .  #",
+              "#  $  #",
+              "#@    #",
+              "#######"
+            ],
+            "maxMoves": 5
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 3,
+        "move_limit": 5
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.75,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "baa3005ab7476c8a",
+          "4ee2d85fe10ee4f9",
+          "30e6296c196047a4",
+          "c612c9163a97658e",
+          "7fb727b686f88096",
+          "64e71241fc4406ed",
+          "96d668682eca0f3a",
+          "b12644f1aa32b4bd",
+          "27336c127f5c37e0",
+          "be4bf5cd5948a95b",
+          "4bddbd9f692110cd",
+          "204692355e03fd21",
+          "9750e4b9be57d8a5",
+          "2645baefb3afa85f",
+          "7b655255c2d8169f",
+          "f8f4fd61cf5ab383",
+          "5f40582bf77c6b5b",
+          "560f9a6733583017",
+          "f2b38bc152f3755f",
+          "bfdaec1d592dea4b"
+        ],
+        "wins": 15,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.531299122381256,
+          "high": 0.8881382985923343,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-approach-moves-06",
+      "content": {
+        "id": "single-approach-moves-06",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#######",
+              "#  .  #",
+              "#  $  #",
+              "#@    #",
+              "#######"
+            ],
+            "maxMoves": 6
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 3,
+        "move_limit": 6
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.75,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "753b145c5f158fee",
+          "846b12519d30fe05",
+          "90139d8673db8708",
+          "b9df4f08770c9362",
+          "756236a8ca9b132a",
+          "fca40703265dcb89",
+          "4b4302a28d56e0de",
+          "c811baf37c77d299",
+          "1076d47462b59214",
+          "0f75f22f9a032517",
+          "7ebda191436fa7e9",
+          "eba2647730d4c1ed",
+          "17dc6fbbaaca3ac1",
+          "9e3fb8613a58fd2b",
+          "baa3ad17e633966b",
+          "15599b237bfa0a7f",
+          "cefa5acd3836e717",
+          "c1efd139c88cd863",
+          "8a708083d99cca2b",
+          "a76f037f56e76647"
+        ],
+        "wins": 15,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.531299122381256,
+          "high": 0.8881382985923343,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-approach-moves-08",
+      "content": {
+        "id": "single-approach-moves-08",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#######",
+              "#  .  #",
+              "#  $  #",
+              "#@    #",
+              "#######"
+            ],
+            "maxMoves": 8
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 3,
+        "move_limit": 8
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.95,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "f7e7eff80c03d6b6",
+          "3046a76915853b95",
+          "f244b632af495db0",
+          "698ff294ee32ef8a",
+          "69179e347fc19bb2",
+          "b8ade1db34212019",
+          "efde355eade381e6",
+          "d906404b6ee166a9",
+          "b3d6acf09431741c",
+          "a1e1fee7ef66b027",
+          "3accdea95fb6eaf9",
+          "a2c46bcf41566dfd",
+          "4d69b333c0dca3b1",
+          "6541d9b9e00505db",
+          "5b4391ef9b0d351b",
+          "4649e97b75e3ef6f",
+          "c4032ee58d9a7227",
+          "4c8ebe11cd079e93",
+          "467a5b5b7f48d2db",
+          "af8790f778a62897"
+        ],
+        "wins": 19,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.763868806553258,
+          "high": 0.9911185511992047,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-approach-moves-11",
+      "content": {
+        "id": "single-approach-moves-11",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#######",
+              "#  .  #",
+              "#  $  #",
+              "#@    #",
+              "#######"
+            ],
+            "maxMoves": 11
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 3,
+        "move_limit": 11
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.95,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "94d346944c3cbace",
+          "663bbaf3fccf5829",
+          "c5fbfea2d30171c0",
+          "fb244ec8862bd082",
+          "d197f16848dad0ea",
+          "fa38ec613062531d",
+          "8d567706877fa45e",
+          "4262169104a53f0d",
+          "e07f445cee00092c",
+          "ca452e0517b90e03",
+          "c904cab3243676bd",
+          "d0590bddbc5ffcf1",
+          "917bea0996fb3cb5",
+          "091cfdc32ffb6527",
+          "623b7f7d2be61767",
+          "0115f1812ec3ca2b",
+          "2daa6277ea4c3803",
+          "c8537c2b6e4b9c9f",
+          "b31c30e1c85ad627",
+          "187a1a95fcb3af13"
+        ],
+        "wins": 19,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.763868806553258,
+          "high": 0.9911185511992047,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-approach-moves-15",
+      "content": {
+        "id": "single-approach-moves-15",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#######",
+              "#  .  #",
+              "#  $  #",
+              "#@    #",
+              "#######"
+            ],
+            "maxMoves": 15
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 3,
+        "move_limit": 15
+      },
+      "evaluation": {
+        "competent_completion_rate": 1,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "7be200acd89c4366",
+          "63a04b7b08c60f09",
+          "83b9df6a2ef037c8",
+          "df2dd0b0fba4f98a",
+          "f8a7af504f922552",
+          "47187ea17ee9091d",
+          "7da7df5effd2bdf6",
+          "52fbb8512b9b310d",
+          "727adbb4aa6ddf04",
+          "30080d659a07c3c3",
+          "c4806b3b104ed9bd",
+          "7a96351d956a0af1",
+          "14b27ee9e3674695",
+          "1331bfcb16923b87",
+          "cd5baf3d067834c7",
+          "a78bffc10036794b",
+          "2be8514f6c9aedc3",
+          "35dad3b3e80508df",
+          "fffbc321aef1ac87",
+          "6232f5b5c5a22993"
+        ],
+        "wins": 20,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.8388748419471806,
+          "high": 1,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-long-push-moves-03",
+      "content": {
+        "id": "single-long-push-moves-03",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# @ $ .#",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 3
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-long-push",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 3,
+        "move_limit": 3
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.65,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "b4ca2ec5557b068d",
+          "9f1eccb0cdbaa0fe",
+          "a40c0633464ed3f3",
+          "c6800d59402bdfd9",
+          "2902daf9eb546f31",
+          "7a021a0615a39fea",
+          "a18246677bae6dfd",
+          "66e9d7f698ec14fa",
+          "a04b46cd216b6347",
+          "a92c282a4f6e6e0c",
+          "933571f0dd69814a",
+          "c012c942ca2f7996",
+          "99a6f96e27985552",
+          "e159b4c029b81328",
+          "108c9e62f7a30d68",
+          "23ca2926e4ba5f04",
+          "3475c664df3f800c",
+          "fe41a448bda7e1f0",
+          "069ec78617516828",
+          "ae72f67a58d7d53c"
+        ],
+        "wins": 13,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.43285427668523624,
+          "high": 0.818808175898918,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-long-push-moves-04",
+      "content": {
+        "id": "single-long-push-moves-04",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# @ $ .#",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 4
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-long-push",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 3,
+        "move_limit": 4
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.65,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "678d153dec3e0325",
+          "46c83a284e6f9be6",
+          "bac6d11bd769098b",
+          "897b8911b63f7211",
+          "6debc6b15fdbad69",
+          "d19e678ecda3abf2",
+          "67da6eafe5f951d5",
+          "fa15f07ed3609842",
+          "8872e9459ed0573f",
+          "fa9a7e12dfa5c514",
+          "f7fdcc68d1b30ad2",
+          "e8bc290a8b99bc7e",
+          "5caed676c397c19a",
+          "ba80af781086b9d0",
+          "e437b42ac58fd910",
+          "b2e8fdae670b1ccc",
+          "e711e5fc6f76d714",
+          "9ff15700c1875bd8",
+          "5e3b150efe200ed0",
+          "23e96d62af570c04"
+        ],
+        "wins": 13,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.43285427668523624,
+          "high": 0.818808175898918,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-long-push-moves-05",
+      "content": {
+        "id": "single-long-push-moves-05",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# @ $ .#",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 5
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-long-push",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 3,
+        "move_limit": 5
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.85,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "8c74dcd15caad0d5",
+          "6a5505d4a5305c76",
+          "191bcd6f978fa50b",
+          "5be13765dfe604b1",
+          "ad1d448556362d29",
+          "4ccc07da16f59912",
+          "d9825a53a8ee3685",
+          "84a2ba0a91b46322",
+          "bea8e1d95968f6cf",
+          "7799080ee6c20f24",
+          "944dd11478c07ff2",
+          "b9d6d126186e7aee",
+          "698584228dfbd99a",
+          "e2c52f6409634730",
+          "87f21dc620c07b70",
+          "a4b0c27a7a2000bc",
+          "39d4d94876932124",
+          "cd27cb0cb319ff18",
+          "d968b55af6fc9c30",
+          "7b4fc65e3ec15694"
+        ],
+        "wins": 17,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.6395811352592431,
+          "high": 0.9476312541037835,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-long-push-moves-06",
+      "content": {
+        "id": "single-long-push-moves-06",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# @ $ .#",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 6
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-long-push",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 3,
+        "move_limit": 6
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.85,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "7d7e2249f537a425",
+          "cb41f08491d07e26",
+          "f091198fc93ac12b",
+          "ddf3d33d57ba5031",
+          "5ebdfb5ddae74349",
+          "3c884942d0694092",
+          "a4808ca388620e15",
+          "dc14bcf21e62f9e2",
+          "4b3c06d16349d23f",
+          "91e97276c7572214",
+          "31f60ec46e75b3f2",
+          "9f8c8fcef5503cfe",
+          "8a2e5caaed05ccfa",
+          "305d19147f9be0b0",
+          "dab0f46e6438a3f0",
+          "d2ac97e28524620c",
+          "748ac74857283414",
+          "1601bfbce88d58f8",
+          "c924f6c26d3535b0",
+          "5d6f22c63feb18c4"
+        ],
+        "wins": 17,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.6395811352592431,
+          "high": 0.9476312541037835,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-long-push-moves-08",
+      "content": {
+        "id": "single-long-push-moves-08",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# @ $ .#",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 8
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-long-push",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 3,
+        "move_limit": 8
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.85,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "b8b5c8051c06de8d",
+          "89ef15c80bdd3f1e",
+          "4c29f1ab4646eb93",
+          "ee900bb93991b3f9",
+          "50150059d51d2611",
+          "5bdb5d066cfd048a",
+          "053df41f977a627d",
+          "af2fea365cdf42da",
+          "dfed636d8066ae27",
+          "5eabc22a48caa0ac",
+          "742ec408fb13b06a",
+          "ed7770e2befbb396",
+          "4fa8aa0e49a984b2",
+          "c79bc758f754b208",
+          "7cf82b8294ad6448",
+          "bd0653a65993a844",
+          "4e17415cd89bb2ac",
+          "441d05602b20ebd0",
+          "e8780a86e4ee0708",
+          "09015a3ae390931c"
+        ],
+        "wins": 17,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.6395811352592431,
+          "high": 0.9476312541037835,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-long-push-moves-11",
+      "content": {
+        "id": "single-long-push-moves-11",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# @ $ .#",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 11
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-long-push",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 3,
+        "move_limit": 11
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.95,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "7fca6b35f07c22f5",
+          "c10a2722b447ae9a",
+          "01d58367fe578563",
+          "c31708a1c2ccfef1",
+          "a31c12c1f281d649",
+          "7baf1154a8e58336",
+          "20759b139eeb4645",
+          "ce0f6d841e926366",
+          "35915ced0c9037a7",
+          "a29b987020824b50",
+          "d4bb55e29d085556",
+          "16e7873883b90152",
+          "b9db480c5111995e",
+          "a6876fb27c5dc61c",
+          "ba536658d19cf15c",
+          "4873a374e36b10c8",
+          "38a6a12e85070550",
+          "81445ecadcae79c4",
+          "565431d4fee25f1c",
+          "5b801840fc1585e0"
+        ],
+        "wins": 19,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.763868806553258,
+          "high": 0.9911185511992047,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "single-long-push-moves-15",
+      "content": {
+        "id": "single-long-push-moves-15",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# @ $ .#",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 15
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning"
+      ],
+      "family": "single-long-push",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 3,
+        "move_limit": 15
+      },
+      "evaluation": {
+        "competent_completion_rate": 1,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "58c1c84db49ad205",
+          "6308f99a4c8cc69a",
+          "82a723af8c77bf53",
+          "c9548529bc8fc981",
+          "4dfd90c9b5da69f9",
+          "98fb15dc33adae36",
+          "6de3160bcce10cd5",
+          "c8a3b18cea954666",
+          "727f838582312157",
+          "6e1cf0a897dd4590",
+          "3026e85a04c33d56",
+          "13e0d5f0e7ba0cf2",
+          "277f16542c3d5e3e",
+          "559be2aa44e1811c",
+          "4b694f106fd93f5c",
+          "d1d537fc7fa4d968",
+          "5b9dc476fc61ff90",
+          "4bf787a202ac9724",
+          "73a0365cc7661a1c",
+          "ea44b0b83391cae0"
+        ],
+        "wins": 20,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.8388748419471806,
+          "high": 1,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-separated-moves-07",
+      "content": {
+        "id": "double-separated-moves-07",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# .  . #",
+              "# $  $ #",
+              "#  @   #",
+              "########"
+            ],
+            "maxMoves": 7
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-separated",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 7,
+        "move_limit": 7
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.2,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "579764e1050bf5a5",
+          "62007d58bc7aa80e",
+          "bbf0c17fc42195bb",
+          "d417ac05501ceab1",
+          "acddf4e583b5d759",
+          "10f5def615eb20ba",
+          "4223eb936e9154b5",
+          "3df619c6a311ef6a",
+          "776d9dd9d6858def",
+          "5fe5b1ca5c6c707c",
+          "469f6d98fd1acc5a",
+          "b610a05208bbce16",
+          "fbe1512ed58a3d92",
+          "bdd23748605deab8",
+          "80e02d32faeb3df8",
+          "04e1b556f9afba64",
+          "df34efac7a1b327c",
+          "142671e0ce496730",
+          "587d187695d137b8",
+          "54ebdc3a5d02230c"
+        ],
+        "wins": 4,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.08065766257979806,
+          "high": 0.41601743225189364,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-separated-moves-08",
+      "content": {
+        "id": "double-separated-moves-08",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# .  . #",
+              "# $  $ #",
+              "#  @   #",
+              "########"
+            ],
+            "maxMoves": 8
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-separated",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 7,
+        "move_limit": 8
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.35,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "f196f9c13e6571dd",
+          "736a1a785e44d6d6",
+          "02bd678f3f344ba3",
+          "dce5d4e5eb600299",
+          "0e8079c562ad7881",
+          "975b2f3649a794d2",
+          "343beb732babc0ad",
+          "61821186da767e82",
+          "4a32c4f9dde5a207",
+          "f72350ea299b83c4",
+          "6b0d0db84c3c76f2",
+          "fd38e0726c9d3ffe",
+          "9102450e4145990a",
+          "09ab75a80f993bb0",
+          "30fc89d2619818f0",
+          "0ad09f160b6359cc",
+          "e6edafbc474a45c4",
+          "1a2389808f58ea88",
+          "dee268b6450c88b0",
+          "997e299acc4fad54"
+        ],
+        "wins": 7,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.18119182410108206,
+          "high": 0.5671457233147638,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-separated-moves-09",
+      "content": {
+        "id": "double-separated-moves-09",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# .  . #",
+              "# $  $ #",
+              "#  @   #",
+              "########"
+            ],
+            "maxMoves": 9
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-separated",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 7,
+        "move_limit": 9
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.6,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "558f50e55e9b72bd",
+          "107faca4461359f6",
+          "e2295ba3f61c55b3",
+          "4d29de999d0e40c9",
+          "62e30979e00842b1",
+          "98cd37f2111fae42",
+          "30ed7f677848b08d",
+          "be148342b9cc19b2",
+          "0e06819da145e347",
+          "c1d4b0c6ba8e38e4",
+          "9362f3e4228b43e2",
+          "f315faee240049be",
+          "ff36912a97d4a5ba",
+          "913951142ecf1100",
+          "542fca4e61d73a40",
+          "40af44d22b846a8c",
+          "b827f4f8d83cfae4",
+          "3c30628c4ccd5458",
+          "e054717264425e00",
+          "e8793a76af1ef774"
+        ],
+        "wins": 12,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.3865815007622531,
+          "high": 0.781193467627183,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-separated-moves-10",
+      "content": {
+        "id": "double-separated-moves-10",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# .  . #",
+              "# $  $ #",
+              "#  @   #",
+              "########"
+            ],
+            "maxMoves": 10
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-separated",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 7,
+        "move_limit": 10
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.6,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "92fc0ee518a1b8f5",
+          "0c94ea9a7f7a0752",
+          "57d26e578c6675b3",
+          "f98903b16249c821",
+          "1cbac911078969e9",
+          "3e44d58c3a22c93e",
+          "1d783ac35ae88a65",
+          "306ef35c94d7558e",
+          "28b3326d755b2567",
+          "35610948ff2978d8",
+          "10c1095ae33dec1e",
+          "96733720c313639a",
+          "976831541571e736",
+          "d71dd2ca78c23a94",
+          "b3053500a73778d4",
+          "65c1beec92a303c0",
+          "d3f09106d033a2d8",
+          "bb04f112b6f91fec",
+          "58245a0c71f72b94",
+          "dabd6ef8cf2b3e48"
+        ],
+        "wins": 12,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.3865815007622531,
+          "high": 0.781193467627183,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-separated-moves-12",
+      "content": {
+        "id": "double-separated-moves-12",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# .  . #",
+              "# $  $ #",
+              "#  @   #",
+              "########"
+            ],
+            "maxMoves": 12
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-separated",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 7,
+        "move_limit": 12
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.8,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "f1e300c500d57775",
+          "9840cefaf61daf72",
+          "70637757a2203853",
+          "d11874f106cf4481",
+          "894881d18c3c2d29",
+          "13adbfaccef006be",
+          "a3aa98237f1422e5",
+          "e440a53c2b82518e",
+          "da63416d89bc70e7",
+          "cd16a0986f450418",
+          "b14a1aba101bae1e",
+          "2e7314503ccdc05a",
+          "d7582a54b9996116",
+          "a27c446a910298b4",
+          "2382b8b0a738e3f4",
+          "8a72680c9e85b020",
+          "ae4bd876404f2e18",
+          "4edcc692204e23ec",
+          "2d8d442c8a3789b4",
+          "f47eb3c80760f948"
+        ],
+        "wins": 16,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.5839825677481064,
+          "high": 0.919342337420202,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-separated-moves-15",
+      "content": {
+        "id": "double-separated-moves-15",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# .  . #",
+              "# $  $ #",
+              "#  @   #",
+              "########"
+            ],
+            "maxMoves": 15
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-separated",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 7,
+        "move_limit": 15
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.95,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "ab618fb54c1cd1dd",
+          "bf9902cac865526a",
+          "0e20db279f5f7e0b",
+          "18143d6123bd7659",
+          "016ed141d6b5f5e1",
+          "551ce59cf31ca006",
+          "5cfb9b431691100d",
+          "1a04f5aca1639e56",
+          "889b3fbd22dff10f",
+          "e5162f789cb07f50",
+          "26c3678a89d6d1e6",
+          "bb5cf010ba183492",
+          "701c22843d16217e",
+          "f41ac7fabb23a5fc",
+          "4fc2d8f045b0143c",
+          "83c870fc07dfa798",
+          "ccc8af066dbaa950",
+          "ac4c334227c99894",
+          "6efc6a1cb45896fc",
+          "aac2fa680e8ed0c0"
+        ],
+        "wins": 19,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.763868806553258,
+          "high": 0.9911185511992047,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-separated-moves-19",
+      "content": {
+        "id": "double-separated-moves-19",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# .  . #",
+              "# $  $ #",
+              "#  @   #",
+              "########"
+            ],
+            "maxMoves": 19
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-separated",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 7,
+        "move_limit": 19
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 1,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "67c6e70d66585dcd",
+          "a5b16e827a6fd99a",
+          "7840620f737fb1db",
+          "10fb2b7950923569",
+          "e9f382d91b5334b1",
+          "cc4344b4b71e4956",
+          "158d9f0b0dec683d",
+          "ced42fc47b7a1426",
+          "348de935415417bf",
+          "11d795d0038db6a0",
+          "078f2d4259faea36",
+          "7c9e9ee84262c242",
+          "815bdd3c66528b8e",
+          "33100cb250593dec",
+          "d6c0bb48bb3f012c",
+          "60ffc6142d671ee8",
+          "8688e87ed497e0a0",
+          "abe448baddc5b784",
+          "e622c934498e2eec",
+          "be1c0ac08bdab490"
+        ],
+        "wins": 20,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.8388748419471806,
+          "high": 1,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-reposition-moves-12",
+      "content": {
+        "id": "double-reposition-moves-12",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# .$ . #",
+              "#  $@  #",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 12
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-reposition",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 12,
+        "move_limit": 12
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.1,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "0939a4243987ec3a",
+          "d23e7d676974ec2d",
+          "6896660299517154",
+          "4e7c11d02db90146",
+          "cad2ae30c0b4340e",
+          "9bf1e3d597f8a229",
+          "6a4090bedf1ef56a",
+          "e863b8e5827fd879",
+          "d88616cc60a42cc8",
+          "f7ffabd179b418b7",
+          "6202eda79dcff309",
+          "901a8529e8e3a7b5",
+          "349f491d02891161",
+          "96a704575c7ac0e3",
+          "4ad23809f61420a3",
+          "8611f8351b8fbddf",
+          "1848e1738ac7e2b7",
+          "89b50fdfc42c3d7b",
+          "4fb240553cec41e3",
+          "96596f41dc5e3427"
+        ],
+        "wins": 2,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.027866481213768224,
+          "high": 0.3010336452284873,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-reposition-moves-13",
+      "content": {
+        "id": "double-reposition-moves-13",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# .$ . #",
+              "#  $@  #",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 13
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-reposition",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 12,
+        "move_limit": 13
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.1,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "6d1afb96391f0ee6",
+          "f26f7745a7f2c8b1",
+          "c7b31394947ce2c0",
+          "d2182182e07f0092",
+          "eeb9e3621309581a",
+          "8c7bf223b8a9968d",
+          "d551ebd01d8e6016",
+          "e33f6ff3cc88be9d",
+          "e910399ee978d154",
+          "9525e08f2c30193b",
+          "899de18538f8e5ed",
+          "867507a71f80b819",
+          "7edc512ba595d745",
+          "412e43b5e02dfa67",
+          "33e5698774a79327",
+          "4318b0839e31a503",
+          "a52995213d43e33b",
+          "0d4b89fdcc81a7ff",
+          "403c4ea3c09f7b67",
+          "4476ee3f085084ab"
+        ],
+        "wins": 2,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.027866481213768224,
+          "high": 0.3010336452284873,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-reposition-moves-14",
+      "content": {
+        "id": "double-reposition-moves-14",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# .$ . #",
+              "#  $@  #",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 14
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-reposition",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 12,
+        "move_limit": 14
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.3,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "753950dc074ffb9a",
+          "f26d141b79133fd5",
+          "5e7be4ba6c0593f4",
+          "b2968358f673d516",
+          "27c8a238b54c4a9e",
+          "d176ad29a4f39b51",
+          "18012f86332dffca",
+          "ce3426b93ab903a1",
+          "e69124842a141cf8",
+          "5eb9050512c28fef",
+          "e480db5b349905b1",
+          "aee7d0dde493e73d",
+          "e0c94c9147651ee9",
+          "048d6a4bdb140b5b",
+          "2d480bbdeaeeea1b",
+          "5789e809c1620bb7",
+          "9021983723d659ef",
+          "5dcc00532a17a353",
+          "853709a9bb858c5b",
+          "3d284e751885605f"
+        ],
+        "wins": 6,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.1454772448676043,
+          "high": 0.5189728183535235,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-reposition-moves-15",
+      "content": {
+        "id": "double-reposition-moves-15",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# .$ . #",
+              "#  $@  #",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 15
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-reposition",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 12,
+        "move_limit": 15
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.3,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "78a6c05a5c49165e",
+          "6b7e0e1dbb8dae61",
+          "b7e7c04879167f88",
+          "17027096c8a1048a",
+          "7dda5ef6d55f9eb2",
+          "d568e59b5bf17f2d",
+          "7d6e68a4ea225a4e",
+          "61b2cd2b45d66cbd",
+          "340794222d2f6cdc",
+          "42828517dce25b1b",
+          "cbbaf05db985718d",
+          "ab054a2feada1f89",
+          "a2efc2e36e7a0465",
+          "a063240d05b8ba77",
+          "e1313a8f743c7737",
+          "e6a8f37b2b30aae3",
+          "14b8f6c9edf6251b",
+          "23db3bd56d40968f",
+          "8929421be62a3b77",
+          "d9bab9872c5445cb"
+        ],
+        "wins": 6,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.1454772448676043,
+          "high": 0.5189728183535235,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-reposition-moves-17",
+      "content": {
+        "id": "double-reposition-moves-17",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# .$ . #",
+              "#  $@  #",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 17
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-reposition",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 12,
+        "move_limit": 17
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.5,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "22131936cd947bb6",
+          "61114d1d89ce2a09",
+          "8ed7821c37d85ab0",
+          "8b514a4287831f82",
+          "12c57d2296cbf28a",
+          "9c14061bde3e4655",
+          "85bf32889d71b166",
+          "6c1f8e2b80061865",
+          "4b6916de63378564",
+          "a2499a97db8654b3",
+          "58c7e95dcfeb8d35",
+          "a91428afdb134091",
+          "472322e32165e8ed",
+          "8879308df627d08f",
+          "1dc02b0f3009ab4f",
+          "02c49bfb290fb7db",
+          "391f2949ec9a1eb3",
+          "6c7f50555994fc47",
+          "4fd4629bd699518f",
+          "d15da0c7ae595e63"
+        ],
+        "wins": 10,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.2992980081982123,
+          "high": 0.7007019918017877,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-reposition-moves-20",
+      "content": {
+        "id": "double-reposition-moves-20",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# .$ . #",
+              "#  $@  #",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 20
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-reposition",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 12,
+        "move_limit": 20
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.6,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "56d284d26b06c77e",
+          "0ae750b94dd05479",
+          "c9639c4851bd27b8",
+          "85a6077e27c4600a",
+          "22ab71de9354fe32",
+          "1a2dc05f5ebb8d15",
+          "aa0ebc44ee07052e",
+          "d906416f71be8da5",
+          "10b4d2badffe8f6c",
+          "5454240b6f508083",
+          "9a59c1f91df454f5",
+          "308d5f8304027ba1",
+          "8516eaa7c31a6c2d",
+          "f979e6a9e099e64f",
+          "35ec0563f40e2c0f",
+          "4557c53f1c61318b",
+          "5e00d33580644a83",
+          "2e78acd1a06fddc7",
+          "cdee1cdfc10b674f",
+          "7530cdfbfd0f7673"
+        ],
+        "wins": 12,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.3865815007622531,
+          "high": 0.781193467627183,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-reposition-moves-24",
+      "content": {
+        "id": "double-reposition-moves-24",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# .$ . #",
+              "#  $@  #",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 24
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-reposition",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 12,
+        "move_limit": 24
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.8,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "814cf95a6329ba26",
+          "0e80564962afe7e9",
+          "d7e70ca029a4d110",
+          "833af4f67ff5b322",
+          "8d57c6d66fdc7cca",
+          "d8d9da6790a65d65",
+          "fa97322c045fcb56",
+          "a978eeb7e489cab5",
+          "b1a058829dbe2ed4",
+          "089a86438c61a713",
+          "14970489021b6745",
+          "87e371bb467d07b1",
+          "81141d6f01cc369d",
+          "fa34b0b91bf7213f",
+          "099a749b29cdbfff",
+          "16d0dbc7cbc0db3b",
+          "4d461c259d757113",
+          "f0d0d421615ef597",
+          "8c9a36e7fc68a23f",
+          "9280ebb3814bfc43"
+        ],
+        "wins": 16,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.5839825677481064,
+          "high": 0.919342337420202,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-offset-approach-moves-07",
+      "content": {
+        "id": "double-offset-approach-moves-07",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# . .  #",
+              "# $ $  #",
+              "#      #",
+              "#  @   #",
+              "########"
+            ],
+            "maxMoves": 7
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-offset-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 7,
+        "move_limit": 7
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.3,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "1f5d7514b7cfd37a",
+          "57ea66b3d306dad5",
+          "a3024c02baa102d4",
+          "e8cf0280450a5716",
+          "28e85ce0521ab5ae",
+          "8984d031ab1526e1",
+          "a1b0f49e6a95636a",
+          "36c928410fb0af71",
+          "bcb9882c52cfa858",
+          "ccdee5ed81199b9f",
+          "aa80a9f349eff8c1",
+          "c373f835d7c8918d",
+          "31958c89e1d19f29",
+          "6a97f7638e06aedb",
+          "791752154d4f829b",
+          "b652371134d11877",
+          "fb99c9df4bcf459f",
+          "5895e3bb9e4a9a83",
+          "b60e74b1d07e5fdb",
+          "51a1625d8b5afb0f"
+        ],
+        "wins": 6,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.1454772448676043,
+          "high": 0.5189728183535235,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-offset-approach-moves-08",
+      "content": {
+        "id": "double-offset-approach-moves-08",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# . .  #",
+              "# $ $  #",
+              "#      #",
+              "#  @   #",
+              "########"
+            ],
+            "maxMoves": 8
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-offset-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 7,
+        "move_limit": 8
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.3,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "0e05e9507a4defea",
+          "a96fecef6863fb65",
+          "cb89604675c5c084",
+          "c02ca42c3ec4f766",
+          "4513b18cefe2cdbe",
+          "0b6300355fc825d1",
+          "4e0eb1d2200ea01a",
+          "3c84b905eb28cf21",
+          "a7cab6289bcb4d28",
+          "99a9a1e13731df8f",
+          "ddd7522f2fe91131",
+          "82e12a89e68b291d",
+          "cb067e8d2155ccd9",
+          "4b72f8dff28a31eb",
+          "0d319a6964e285ab",
+          "859ba19591cc93e7",
+          "c0faed2b01e7898f",
+          "5f0d38377217d713",
+          "37eca4b53501e2eb",
+          "ce2e16d1ffc0f4bf"
+        ],
+        "wins": 6,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.1454772448676043,
+          "high": 0.5189728183535235,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-offset-approach-moves-09",
+      "content": {
+        "id": "double-offset-approach-moves-09",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# . .  #",
+              "# $ $  #",
+              "#      #",
+              "#  @   #",
+              "########"
+            ],
+            "maxMoves": 9
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-offset-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 7,
+        "move_limit": 9
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.75,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "5eca843c146abc6a",
+          "341864abb13f4785",
+          "7b0b605a587f49e4",
+          "1d71bc78808480e6",
+          "b267d6d8f268c0be",
+          "82a1e6c936cc9df1",
+          "789bdd461a06e35a",
+          "2e40aa9913982441",
+          "061f7a54e17c7788",
+          "24440735e618644f",
+          "048324ebfcd9d051",
+          "2cac3e9d0e0cd7bd",
+          "2eb66a6160008f39",
+          "fd51841b690ca0eb",
+          "43456cfdace65bab",
+          "8189fd2971b8a627",
+          "6aaca5c7b0ce0e4f",
+          "0d079253d7fb0a93",
+          "af2b8b49ab8451eb",
+          "a99e156533b4c23f"
+        ],
+        "wins": 15,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.531299122381256,
+          "high": 0.8881382985923343,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-offset-approach-moves-10",
+      "content": {
+        "id": "double-offset-approach-moves-10",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# . .  #",
+              "# $ $  #",
+              "#      #",
+              "#  @   #",
+              "########"
+            ],
+            "maxMoves": 10
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-offset-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 7,
+        "move_limit": 10
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.75,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "9004fbe4c93ef532",
+          "801ac129e5a865e9",
+          "3390d656fa5196d4",
+          "97b59fc8bc157b8e",
+          "4e1cd2a8dbcf5686",
+          "2b3ad64b7eaca6a5",
+          "c66cf2aa10e0d242",
+          "eb0b565bbd990c95",
+          "55a7cd0cf87d9318",
+          "9e2842afb1c8ee0b",
+          "53a3bbe94d9f0645",
+          "9e2593c70698f9a1",
+          "9d13607315403b6d",
+          "a463fad98afc0437",
+          "fab25227da8c3af7",
+          "46fe2eab29c19ba3",
+          "22f3586d56f1200b",
+          "70f80ec11388c9df",
+          "c7e8cbcbba11a937",
+          "33ff969fc8b4079b"
+        ],
+        "wins": 15,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.531299122381256,
+          "high": 0.8881382985923343,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-offset-approach-moves-12",
+      "content": {
+        "id": "double-offset-approach-moves-12",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# . .  #",
+              "# $ $  #",
+              "#      #",
+              "#  @   #",
+              "########"
+            ],
+            "maxMoves": 12
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-offset-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 7,
+        "move_limit": 12
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.85,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "2386056001293902",
+          "a851b81d56ec62f9",
+          "bd76380adf76d8e4",
+          "086d56b4ce2fa67e",
+          "96bd881438a89c36",
+          "646dfef75c0adc55",
+          "ae5c6d2e685e70d2",
+          "f041da47947aff45",
+          "d38512a8a1b2ea88",
+          "6439300b5b6df73b",
+          "45968dddac4fbff5",
+          "877ba9436bf6b731",
+          "53205d5f2cf77e1d",
+          "045a5d0d62e85087",
+          "928947a3938f8c47",
+          "8cf8ccd7dd3ccd13",
+          "c6e484d10096293b",
+          "905c9975e493a26f",
+          "011bf47791fdf587",
+          "90851b3bb00cf94b"
+        ],
+        "wins": 17,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.6395811352592431,
+          "high": 0.9476312541037835,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-offset-approach-moves-15",
+      "content": {
+        "id": "double-offset-approach-moves-15",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# . .  #",
+              "# $ $  #",
+              "#      #",
+              "#  @   #",
+              "########"
+            ],
+            "maxMoves": 15
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-offset-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 7,
+        "move_limit": 15
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.95,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "a0d44ebc478152d2",
+          "55499671501fffd9",
+          "cef209de82963584",
+          "5548a2e06c7d3e5e",
+          "a8bbe7c0f2244536",
+          "d180a343610dda05",
+          "00e266425f45a962",
+          "04fdc15309cf49b5",
+          "5dc512e4a844bd98",
+          "d9c6a3977d06033b",
+          "74a94f31a84fd0a5",
+          "ec11e9af632b0f31",
+          "73f2880be8ac976d",
+          "5a5ec161e0fd7197",
+          "53fe9a0faded5457",
+          "adb8c2231ac97673",
+          "693a3f35222e353b",
+          "7e550309dfb2461f",
+          "6e2e98c310131697",
+          "49d524c725feab4b"
+        ],
+        "wins": 19,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.763868806553258,
+          "high": 0.9911185511992047,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-offset-approach-moves-19",
+      "content": {
+        "id": "double-offset-approach-moves-19",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# . .  #",
+              "# $ $  #",
+              "#      #",
+              "#  @   #",
+              "########"
+            ],
+            "maxMoves": 19
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-offset-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 7,
+        "move_limit": 19
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 1,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "405e68f40d5ce0ca",
+          "f4e0a6f91da7e621",
+          "02b195de3a90f81c",
+          "cfc49e78740d3736",
+          "0041b958a012b1ae",
+          "dacd1a43d4cc64cd",
+          "16bf8bc2b7d0dbda",
+          "4b19051373f0cefd",
+          "5df6d61ca93e5870",
+          "d07a2c97f20f8423",
+          "3d539bb95b130eed",
+          "bdc476af8b123859",
+          "a05f290bff758e75",
+          "8ae5fd2946d8473f",
+          "3d44278fa9ae9cff",
+          "54a0cc233ea5b43b",
+          "56ad909d9737b623",
+          "11cb3f11e3889907",
+          "777b0fc375edec3f",
+          "a1adc587c82a3c33"
+        ],
+        "wins": 20,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.8388748419471806,
+          "high": 1,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-open-approach-moves-06",
+      "content": {
+        "id": "double-open-approach-moves-06",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# .  . #",
+              "# $  $ #",
+              "# @    #",
+              "########"
+            ],
+            "maxMoves": 6
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-open-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 6,
+        "move_limit": 6
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.3,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "c7403d954b319a23",
+          "4c1671e2acc1f03c",
+          "c825c393beea475d",
+          "ebdfd241b1507cff",
+          "4f92612188060387",
+          "ff7bc3183d2ad4f8",
+          "3705a02ff89b3473",
+          "fd3409c88d25b268",
+          "1c2e083d3c27eae1",
+          "14d58e346899f3d6",
+          "39c25a224a4cecd8",
+          "1bdb048c32560064",
+          "fc291520755cecf0",
+          "8d7fa2f2765a7f02",
+          "fd142dec8e700fc2",
+          "ab5e5578225b0c7e",
+          "75b3965e38356dd6",
+          "ff47ef9aa98d89fa",
+          "1e76b398c5d6f802",
+          "a1cc4b04c7a383e6"
+        ],
+        "wins": 6,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.1454772448676043,
+          "high": 0.5189728183535235,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-open-approach-moves-07",
+      "content": {
+        "id": "double-open-approach-moves-07",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# .  . #",
+              "# $  $ #",
+              "# @    #",
+              "########"
+            ],
+            "maxMoves": 7
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-open-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 6,
+        "move_limit": 7
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.3,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "9aad762d46f1a193",
+          "c35dcea22f14053c",
+          "c5fe7993a8ec629d",
+          "1deca20914a18b1f",
+          "a691dc69bda9a6e7",
+          "5d2bd85077d262e8",
+          "3d5f3d4f55dd0423",
+          "e41fff00891a3bd8",
+          "1196f5753f89ddf1",
+          "01c1093c4e6e1876",
+          "602057e2e7e3b1c8",
+          "8dccbb74fe808524",
+          "1d609bf8721e1020",
+          "4819d2f2b28ae2d2",
+          "f92035d49c750592",
+          "2003a1b020bc315e",
+          "5035f07e1e099276",
+          "bf4ed09ae06fbe8a",
+          "7c26c8d002075bd2",
+          "502f3eccc36246c6"
+        ],
+        "wins": 6,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.1454772448676043,
+          "high": 0.5189728183535235,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-open-approach-moves-08",
+      "content": {
+        "id": "double-open-approach-moves-08",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# .  . #",
+              "# $  $ #",
+              "# @    #",
+              "########"
+            ],
+            "maxMoves": 8
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-open-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 6,
+        "move_limit": 8
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.5,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "5c1c97dd2b3908e3",
+          "f099c132e12f532c",
+          "7850e3cbdf946add",
+          "e52bb8d95168d83f",
+          "da2ee6b999ed17c7",
+          "3b911308dc5b70c8",
+          "c17dd37775124af3",
+          "35c061b8764c8a78",
+          "3d243925fe050621",
+          "6b2384c48aedf506",
+          "6dba407243060128",
+          "736c7d9c14915214",
+          "6b4b3cb0eeaf3500",
+          "41e66c42c998d852",
+          "decfd97c8aad2712",
+          "28b956e8110492ee",
+          "601dd34e5a896f06",
+          "342876ca4403e60a",
+          "5a8c038819155152",
+          "4c54e214a2166d56"
+        ],
+        "wins": 10,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.2992980081982123,
+          "high": 0.7007019918017877,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-open-approach-moves-09",
+      "content": {
+        "id": "double-open-approach-moves-09",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# .  . #",
+              "# $  $ #",
+              "# @    #",
+              "########"
+            ],
+            "maxMoves": 9
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-open-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 6,
+        "move_limit": 9
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.5,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "ffcefefd24a6b6a3",
+          "585ca07a492dc8bc",
+          "408300831b634a0d",
+          "e9d37ed90618694f",
+          "ec2dffb941da9897",
+          "c57d958830731328",
+          "bf33247f5c83dbf3",
+          "e5a49e78a4100d18",
+          "20009f0588d15701",
+          "751aa224310df476",
+          "e8b187ba5532da08",
+          "e46512fcff5cd1a4",
+          "22aa03f0236593e0",
+          "a1e1e5cafebb0752",
+          "abaa6edca9545312",
+          "e35386e8a4a84b1e",
+          "ccd500c600a96e76",
+          "d223da52c655fb0a",
+          "e47886084e378052",
+          "7066f5f47d050706"
+        ],
+        "wins": 10,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.2992980081982123,
+          "high": 0.7007019918017877,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-open-approach-moves-11",
+      "content": {
+        "id": "double-open-approach-moves-11",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# .  . #",
+              "# $  $ #",
+              "# @    #",
+              "########"
+            ],
+            "maxMoves": 11
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-open-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 6,
+        "move_limit": 11
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.7,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "64c16985475daf3b",
+          "aa1b32b058102f60",
+          "70e9d117284a019d",
+          "d9bcbd696cb0c4c7",
+          "38a347c985676b0f",
+          "0ee32bda45dce16c",
+          "3d0f8f4bb47b562b",
+          "3929f54ad0f276fc",
+          "e7bb52bdeab50731",
+          "95b2381e3b81a5c2",
+          "b66964707e706d8c",
+          "a40e36866d0880e8",
+          "274075f225ae9884",
+          "39bda68055bab03e",
+          "ae4f7ee64553aefe",
+          "03752cba4c35e98a",
+          "d49c65d4b79de7c2",
+          "5f0386987f3f6d56",
+          "53ebc55a86bdbd3e",
+          "68e2f66eec558df2"
+        ],
+        "wins": 14,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.4810271816464765,
+          "high": 0.8545227551323956,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-open-approach-moves-14",
+      "content": {
+        "id": "double-open-approach-moves-14",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# .  . #",
+              "# $  $ #",
+              "# @    #",
+              "########"
+            ],
+            "maxMoves": 14
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-open-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 6,
+        "move_limit": 14
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 1,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "d1aff279f67ae48b",
+          "5e785204ea770f70",
+          "5733f78b83ff16ad",
+          "d928803d2c2e18f7",
+          "e6d1339de4e5e91f",
+          "b5a8c3ce53458a9c",
+          "35af71bf762d173b",
+          "b92d823e40533eec",
+          "7805f691b1ef5261",
+          "3f7fe2c2a1f49c52",
+          "de312cc46cba143c",
+          "af0bde4a0f92ecd8",
+          "daada6063dc708d4",
+          "c3ca7914e5cda86e",
+          "9e7270aa8224192e",
+          "a3be282ef4393ffa",
+          "aa3471581e10de52",
+          "471db78ca58302a6",
+          "fab15d4e16d0b56e",
+          "31d0d21240fd8e02"
+        ],
+        "wins": 20,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.8388748419471806,
+          "high": 1,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-open-approach-moves-18",
+      "content": {
+        "id": "double-open-approach-moves-18",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "#      #",
+              "# .  . #",
+              "# $  $ #",
+              "# @    #",
+              "########"
+            ],
+            "maxMoves": 18
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-open-approach",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 6,
+        "move_limit": 18
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 1,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "9b43fff19de47943",
+          "55df79a423af9028",
+          "e8d898cb787570c5",
+          "12b6fd95fcda0ecf",
+          "1a92a5754fa6ffd7",
+          "edf3db160fb3f374",
+          "c38d35ffe4997ff3",
+          "97cdbc46feec7784",
+          "181114090ce82fb9",
+          "5b3d030acfe078aa",
+          "b4911a64a1314494",
+          "b044b93250e36070",
+          "2a27548ef07e55ec",
+          "77923ab47de727a6",
+          "1a7a9b92292b3566",
+          "d0b70ff6d3c45332",
+          "be4dbfb84bfcbaaa",
+          "58aad62cb944c11e",
+          "32fc7496aeea34a6",
+          "4f6bd95aa0da309a"
+        ],
+        "wins": 20,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.8388748419471806,
+          "high": 1,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-mixed-directions-moves-05",
+      "content": {
+        "id": "double-mixed-directions-moves-05",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# .    #",
+              "# $ $. #",
+              "#   @  #",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 5
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-mixed-directions",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 5,
+        "move_limit": 5
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.4,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "f4395c929947fd3e",
+          "b32b4287ecc963dd",
+          "03e6d1541b20f7f0",
+          "bf1f0a3644176fea",
+          "e2c13c16379dea62",
+          "58438b6103775999",
+          "42af4ca811e08b4e",
+          "57cf11f1f4bae2c9",
+          "99ae1a1a11853d64",
+          "269c78b5fca0745f",
+          "495723c7293ca0b9",
+          "bb1db6cdf622c755",
+          "989b120977b6fbc1",
+          "d6eb3eb7d0e5886b",
+          "145e31ad59be56ab",
+          "e3a953c109e8a217",
+          "17bdb8aba1c8a65f",
+          "24a5b11f9bc219d3",
+          "f4f180e1fffb2d6b",
+          "dcba2ba5f8b8072f"
+        ],
+        "wins": 8,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.21880653237281705,
+          "high": 0.6134184992377469,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-mixed-directions-moves-06",
+      "content": {
+        "id": "double-mixed-directions-moves-06",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# .    #",
+              "# $ $. #",
+              "#   @  #",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 6
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-mixed-directions",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 5,
+        "move_limit": 6
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.4,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "f20f20f46d94bb72",
+          "2d3f2609f7f98b99",
+          "0813489e3db96f54",
+          "0e352ca89f5358fe",
+          "fcf00488050978f6",
+          "123ccb63665fc435",
+          "c185a962d9c37902",
+          "c1d598f3ed25a265",
+          "75eae9bce2d41968",
+          "67ce16774851f60b",
+          "05534649e8cc98d5",
+          "4021b58ff67657d1",
+          "e231714b68e6b95d",
+          "5949a6b97a1dab77",
+          "8edddb6f844512b7",
+          "ec346ac3679cdb03",
+          "f9c43fcded7a280b",
+          "c1791701cfa4015f",
+          "aeeac0e3a9335077",
+          "6fba08277728175b"
+        ],
+        "wins": 8,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.21880653237281705,
+          "high": 0.6134184992377469,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-mixed-directions-moves-07",
+      "content": {
+        "id": "double-mixed-directions-moves-07",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# .    #",
+              "# $ $. #",
+              "#   @  #",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 7
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-mixed-directions",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 5,
+        "move_limit": 7
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.55,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "b26c3f323932fef6",
+          "c7e100f30245b005",
+          "e1b4c8b4c21dc398",
+          "78f53c468e32c442",
+          "8dfa0e26b9b99c7a",
+          "a49019a55b8e1f21",
+          "566783d8f4dc20c6",
+          "c1349df55ca2e3d1",
+          "7620f4baf54eb7ec",
+          "cf871509a2144637",
+          "15830d333d6703c1",
+          "2b277641c2ae4afd",
+          "ca67d62d0a4a4389",
+          "739e16e330018563",
+          "c51766a1fb856ca3",
+          "337cd805339f036f",
+          "2aec3d27473c7837",
+          "f0b2b4ebb43bdb8b",
+          "413e0f255f172a63",
+          "412741f983947b07"
+        ],
+        "wins": 11,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.34208534245034233,
+          "high": 0.7418021417443759,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-mixed-directions-moves-08",
+      "content": {
+        "id": "double-mixed-directions-moves-08",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# .    #",
+              "# $ $. #",
+              "#   @  #",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 8
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-mixed-directions",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 5,
+        "move_limit": 8
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.55,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "c89513582678ee0a",
+          "baa7b6999e90d969",
+          "c52fef42780c32cc",
+          "a6a5a4dce58412b6",
+          "d7db34bc6a59374e",
+          "95be43d3e9e46925",
+          "dab7f17676cb7a1a",
+          "acfeec23fd216695",
+          "7c072860ceb6efc0",
+          "476798177fa61e5b",
+          "c24439d9ddbe55c5",
+          "3ef539af3ff08bc1",
+          "dc92573b8fad4a8d",
+          "debdd189724a6a07",
+          "a98f6a8f69391a47",
+          "712f51b3270f27d3",
+          "831bb4ad24ce505b",
+          "27c81d11805e194f",
+          "326c3953a1600f07",
+          "5e0a114709e44e6b"
+        ],
+        "wins": 11,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.34208534245034233,
+          "high": 0.7418021417443759,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-mixed-directions-moves-10",
+      "content": {
+        "id": "double-mixed-directions-moves-10",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# .    #",
+              "# $ $. #",
+              "#   @  #",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 10
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-mixed-directions",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 5,
+        "move_limit": 10
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.85,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "301f9ef62bf36a2e",
+          "d560e8555a48b191",
+          "fe5242b41b2663d8",
+          "1d68b8e26baa012a",
+          "cb5c9a42a8e82fe2",
+          "a5670b836e1ad4bd",
+          "9ac38bd0d460739e",
+          "59679b938e2ccc8d",
+          "15e2e84ec82b2d3c",
+          "ebf65f2f57d8618b",
+          "727b2a1583de199d",
+          "3fe579b722c15029",
+          "cf462abb541d8a05",
+          "8cd1344570fe8ac7",
+          "40b87e97c448d407",
+          "6a92ece3c674fcc3",
+          "646b00d19f26bb8b",
+          "fca97d9d4e07c02f",
+          "cb408403a09fb3c7",
+          "9039491f99602dfb"
+        ],
+        "wins": 17,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.6395811352592431,
+          "high": 0.9476312541037835,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-mixed-directions-moves-13",
+      "content": {
+        "id": "double-mixed-directions-moves-13",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# .    #",
+              "# $ $. #",
+              "#   @  #",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 13
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-mixed-directions",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 5,
+        "move_limit": 13
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.9,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "203b80c0b09e5e02",
+          "7cc0458fa98ab54d",
+          "d7391626bacef5ec",
+          "41cb3a4c1cbccaae",
+          "3b3bbc2c54c3fe66",
+          "58810c9de0d61149",
+          "5186e3b21a80b272",
+          "dabb27adcfd82b99",
+          "7f3819f818c9c0e0",
+          "3ee928b945542577",
+          "bac8954fa24eb629",
+          "a721808145005c25",
+          "4ec42855acad0491",
+          "07912f3f1db6f843",
+          "a2a6a6619dccc083",
+          "e351aefdcf69206f",
+          "065c7c4b8ca27f77",
+          "b2177a77478d6eeb",
+          "7e5a851d4d582143",
+          "20c6a229106e4667"
+        ],
+        "wins": 18,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.6989663547715128,
+          "high": 0.9721335187862319,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    },
+    {
+      "id": "double-mixed-directions-moves-17",
+      "content": {
+        "id": "double-mixed-directions-moves-17",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {
+          "mechanics": [
+            "box_goal_planning",
+            "multi_box_goal_tracking"
+          ]
+        },
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "########",
+              "# .    #",
+              "# $ $. #",
+              "#   @  #",
+              "#      #",
+              "########"
+            ],
+            "maxMoves": 17
+          }
+        }
+      },
+      "mechanics": [
+        "box_goal_planning",
+        "multi_box_goal_tracking"
+      ],
+      "family": "double-mixed-directions",
+      "construction": {
+        "method": "hand-authored-layout-and-enumerated-move-budget",
+        "min_solution_moves": 5,
+        "move_limit": 17
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "box_goal_planning",
+          "multi_box_goal_tracking"
+        ],
+        "meaning": "Runtime goal completion requires pushing both initially unplaced boxes; this is a bot objective check, not human mastery."
+      },
+      "evaluation": {
+        "competent_completion_rate": 0.95,
+        "seeds": [
+          7,
+          11,
+          23,
+          47,
+          83,
+          101,
+          131,
+          167,
+          199,
+          233,
+          271,
+          307,
+          347,
+          389,
+          431,
+          479,
+          521,
+          569,
+          619,
+          673
+        ],
+        "profile_version": "competent-execution-error-025-v1",
+        "profile": {
+          "reaction_delay": 0,
+          "action_error_rate": 0.25,
+          "observation_scope": "VISIBLE_STATE",
+          "future_knowledge": false,
+          "risk_preference": "neutral",
+          "target_priority": "objective",
+          "memory_limit": 32,
+          "input_frequency": 1,
+          "id": "competent",
+          "version": "competent-execution-error-025-v1",
+          "policy": "competent",
+          "planning_depth": 80,
+          "planning_budget": 5000,
+          "archetype_policy_version": "1.0.0"
+        },
+        "measured_episode_ids": [
+          "22de9c681790f2aa",
+          "8776247f2de3a73d",
+          "29c9768e791379e4",
+          "52fdb1e4415ec5c6",
+          "7bcb74c4595904fe",
+          "4952cd0526c8cb19",
+          "47fc570a71eff5da",
+          "2dcc34d51a017329",
+          "3bd31620507da0a8",
+          "51e199d1b69633c7",
+          "3559cf3ffe4cedf9",
+          "e8e3c4992d418595",
+          "ab357abdd846e121",
+          "0fbeef2f5602a973",
+          "d1e0c3f9d25132b3",
+          "dc015ee557e248ff",
+          "b2cf165bfde48dc7",
+          "6adf9fa7fbbad35b",
+          "6f2c458585a3d273",
+          "65780181a0583cf7"
+        ],
+        "wins": 19,
+        "n": 20,
+        "censored_count": 0,
+        "interval": {
+          "low": 0.763868806553258,
+          "high": 0.9911185511992047,
+          "level": 0.95,
+          "method": "Wilson interval; independent episodes assumed"
+        },
+        "evidence_file": "evidence/curriculum/content-measurements.json",
+        "measurement_kind": "ACTUAL_RUNTIME_EPISODES"
+      }
+    }
+  ],
+  "targetLength": 10,
+  "difficultyCurve": [
+    0.1,
+    0.2,
+    0.2,
+    0.3,
+    0.35,
+    0.4,
+    0.55,
+    0.65,
+    0.3,
+    0.65
+  ],
+  "tolerance": 0.1,
+  "learningAssumptions": [
+    "Author-selected dependency: practice planning a box to its goal before tracking completion of multiple boxes.",
+    "The fixed bot does not learn between units. Campaign stages describe content exposure and runtime objective checks; human learning and mastery are unverified.",
+    "The 0.25 per-decision action replacement probability is an arbitrary controlled synthetic execution model, not an estimate of human error.",
+    "Targets and content are selected on the same 20 seeds. Independent holdout seeds are reported separately without post-hoc retuning."
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "version": "rubric-0.2.0-preparation",
+  "frozen_before_results": true,
+  "primary_metrics": [
+    {
+      "id": "rule_correctness",
+      "title": "Rule correctness",
+      "direction": "higher",
+      "unit": "proportion",
+      "definition": "schema, transitions, rule completeness, objectives, terminal"
+    },
+    {
+      "id": "playable_task_success",
+      "title": "Playable task success",
+      "direction": "higher",
+      "unit": "proportion",
+      "definition": "validated solution or preregistered stochastic threshold, no hard/soft lock"
+    },
+    {
+      "id": "valid_content_yield",
+      "title": "Valid content yield",
+      "direction": "higher",
+      "unit": "proportion",
+      "definition": "valid accepted candidates / all attempted candidates including rejected outputs"
+    },
+    {
+      "id": "difficulty_control_error",
+      "title": "Difficulty control error",
+      "direction": "lower",
+      "unit": "absolute_error",
+      "definition": "absolute measured target deviation, profile and seed protocol fixed"
+    },
+    {
+      "id": "content_diversity",
+      "title": "Content diversity",
+      "direction": "higher",
+      "unit": "feature_distance",
+      "definition": "topology/mechanics/solution features normalized for symmetric equivalents; not file hashes"
+    },
+    {
+      "id": "qa_defect_detection",
+      "title": "QA defect detection",
+      "direction": "higher",
+      "unit": "recall",
+      "definition": "known reproducible defects detected / all injected known defects; also report false positives"
+    },
+    {
+      "id": "engine_fidelity",
+      "title": "Engine fidelity",
+      "direction": "higher",
+      "unit": "proportion",
+      "definition": "state, event, terminal and input parity; visual review separately marked"
+    },
+    {
+      "id": "human_experience",
+      "title": "Human experience measures",
+      "direction": "mixed",
+      "unit": "vector",
+      "definition": "eight separate human ratings; no simulated human or scalar fun score"
+    }
+  ],
+  "secondary_metrics": [
+    "mechanic_coverage",
+    "skill_discrimination",
+    "decision_density",
+    "dominant_strategy_rate",
+    "repair_loop_count",
+    "regression_count",
+    "tool_usage",
+    "task_completion_cost"
+  ],
+  "success_rule": "All required task checks PASS with independently produced artifact-bound evidence. Missing checker or missing evidence is NOT_EVALUATED, never a pass.",
+  "applicability": "Per-task required checks fixed in evaluator/checks.json. Other dimensions report null with reason; never substitute zero.",
+  "evaluator_contract": "Independent trusted checkers execute artifacts or inspect source and evidence. Model-authored status and usage inside artifact are not evaluator evidence.",
+  "failure_categories": [
+    "SKILL_ROUTING_FAILURE",
+    "KNOWLEDGE_FAILURE",
+    "SCHEMA_FAILURE",
+    "TOOL_FAILURE",
+    "RUNTIME_FAILURE",
+    "GENERATOR_FAILURE",
+    "SOLVER_FAILURE",
+    "METRIC_FAILURE",
+    "ENGINE_ADAPTER_FAILURE",
+    "LLM_REASONING_FAILURE"
+  ],
+  "eligible_trials": {
+    "include": [
+      "loaded task",
+      "base runtime starts",
+      "complete intended materials",
+      "working runner"
+    ],
+    "exclude_only": [
+      "FIXTURE_CORRUPT",
+      "ENGINE_STARTUP_FAILURE",
+      "MATERIALS_MISSING",
+      "RUNNER_UNAVAILABLE"
+    ],
+    "must_include_failures": [
+      "model-generated compile failure",
+      "runtime crash",
+      "invalid generation",
+      "false solver claim",
+      "wrong routing",
+      "tool budget exhaustion"
+    ]
+  },
+  "retry": {
+    "max_attempts": 2,
+    "budget_shared_across_attempts": true,
+    "feedback": "own prior artifact and public checks only; hidden failures not exposed",
+    "report": [
+      "first_attempt_success",
+      "final_success",
+      "repair_count"
+    ]
+  },
+  "statistics": {
+    "binomial_ci": "Wilson 95%",
+    "paired_effect": "within-task treatment minus baseline; descriptive mean and normal-approximation CI, unstable at n<30",
+    "continuous": "sample size, mean, median, full distribution and descriptive normal-approximation CI",
+    "multiple_metrics": "No post-hoc primary selection; report all applicable primary metrics and avoid population-general causal claims from convenience tasks"
+  },
+  "release_gate": "Formal frozen model A/B and actual exploratory human study required before effectiveness or v1 readiness claims.",
+  "task_binding_file": "evaluator/task-configs.json",
+  "status": "NOT_RUN",
+  "manual_aggregation": "Every declared automatic and blind-manual obligation is required. Missing evidence never becomes PASS. Deliberate ambiguity/starvation may be correctly resolved as a clarification or infeasibility finding under the exact task rubric, without claiming executable-game success.",
+  "difficulty_target_policy": "No hidden completion-rate target: targets remain empty where public wording asks diagnosis/comparison, and the task-specific manual rubric assesses supported control/recommendation. Do not compute difficulty_control_error when no numeric target was specified."
+}

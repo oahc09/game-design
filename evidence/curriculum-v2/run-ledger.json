@@ -1,0 +1,415 @@
+{
+  "version": "measured-curriculum-v2-1.0.0",
+  "registration_sha256": "298fbf4b5cfdcd4068c1e465af66d58e2328048b843f5a601073454dd7832e19",
+  "events": [
+    {
+      "type": "RUN_STARTED_OR_RESUMED",
+      "at": "2026-10-08T13:24:40.377Z",
+      "source_hash": "1a0459915d7b13a728334025b2a1b550742a338ef6e655642470d661a3389ed0"
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:40.705Z",
+      "file": "train/single-adjacent-moves-01-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 400
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:40.961Z",
+      "file": "train/single-adjacent-moves-02-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 400
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:41.211Z",
+      "file": "train/single-adjacent-moves-03-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 477
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:41.486Z",
+      "file": "train/single-adjacent-moves-04-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 477
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:41.839Z",
+      "file": "train/single-adjacent-moves-06-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 498
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:42.162Z",
+      "file": "train/single-adjacent-moves-09-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 511
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:42.472Z",
+      "file": "train/single-adjacent-moves-13-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 512
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:43.144Z",
+      "file": "train/single-approach-moves-03-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 307
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:43.830Z",
+      "file": "train/single-approach-moves-04-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 307
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:44.619Z",
+      "file": "train/single-approach-moves-05-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 427
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:45.346Z",
+      "file": "train/single-approach-moves-06-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 427
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:46.213Z",
+      "file": "train/single-approach-moves-08-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 485
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:47.168Z",
+      "file": "train/single-approach-moves-11-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 509
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:48.000Z",
+      "file": "train/single-approach-moves-15-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 511
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:48.588Z",
+      "file": "train/single-long-push-moves-03-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 277
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:49.296Z",
+      "file": "train/single-long-push-moves-04-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 277
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:50.072Z",
+      "file": "train/single-long-push-moves-05-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 404
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:51.059Z",
+      "file": "train/single-long-push-moves-06-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 404
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:52.045Z",
+      "file": "train/single-long-push-moves-08-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 464
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:53.011Z",
+      "file": "train/single-long-push-moves-11-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 505
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:53.963Z",
+      "file": "train/single-long-push-moves-15-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 512
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:24:58.355Z",
+      "file": "train/double-separated-moves-07-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 150
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:25:03.383Z",
+      "file": "train/double-separated-moves-08-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 164
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:25:08.998Z",
+      "file": "train/double-separated-moves-09-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 292
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:25:14.726Z",
+      "file": "train/double-separated-moves-10-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 311
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:25:20.935Z",
+      "file": "train/double-separated-moves-12-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 394
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:25:27.096Z",
+      "file": "train/double-separated-moves-15-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 472
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:25:33.299Z",
+      "file": "train/double-separated-moves-19-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 494
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:26:15.602Z",
+      "file": "train/double-reposition-moves-12-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 49
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:27:04.331Z",
+      "file": "train/double-reposition-moves-13-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 55
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:27:58.530Z",
+      "file": "train/double-reposition-moves-14-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 137
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:28:55.306Z",
+      "file": "train/double-reposition-moves-15-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 144
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:29:59.098Z",
+      "file": "train/double-reposition-moves-17-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 227
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:31:03.542Z",
+      "file": "train/double-reposition-moves-20-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 319
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:32:06.508Z",
+      "file": "train/double-reposition-moves-24-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 347
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:32:14.271Z",
+      "file": "train/double-offset-approach-moves-07-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 161
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:32:22.712Z",
+      "file": "train/double-offset-approach-moves-08-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 161
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:32:31.599Z",
+      "file": "train/double-offset-approach-moves-09-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 313
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:32:40.884Z",
+      "file": "train/double-offset-approach-moves-10-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 313
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:32:51.629Z",
+      "file": "train/double-offset-approach-moves-12-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 404
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:33:01.239Z",
+      "file": "train/double-offset-approach-moves-15-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 488
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:33:10.926Z",
+      "file": "train/double-offset-approach-moves-19-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 499
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:33:14.694Z",
+      "file": "train/double-open-approach-moves-06-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 176
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:33:19.032Z",
+      "file": "train/double-open-approach-moves-07-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 176
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:33:23.663Z",
+      "file": "train/double-open-approach-moves-08-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 310
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:33:28.679Z",
+      "file": "train/double-open-approach-moves-09-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 310
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:33:34.124Z",
+      "file": "train/double-open-approach-moves-11-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 394
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:33:39.589Z",
+      "file": "train/double-open-approach-moves-14-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 450
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:33:45.027Z",
+      "file": "train/double-open-approach-moves-18-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 474
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:33:48.226Z",
+      "file": "train/double-mixed-directions-moves-05-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 173
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:33:52.003Z",
+      "file": "train/double-mixed-directions-moves-06-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 173
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:33:56.348Z",
+      "file": "train/double-mixed-directions-moves-07-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 300
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:34:01.037Z",
+      "file": "train/double-mixed-directions-moves-08-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 300
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:34:07.183Z",
+      "file": "train/double-mixed-directions-moves-10-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 377
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:34:13.761Z",
+      "file": "train/double-mixed-directions-moves-13-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 451
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:34:21.170Z",
+      "file": "train/double-mixed-directions-moves-17-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 480
+    },
+    {
+      "type": "CANDIDATE_FROZEN",
+      "at": "2026-10-08T13:34:21.699Z",
+      "candidate_sha256": "216eaccdb27bc17ef0c1831e1e8502599ec5b9a2de27506da2f8a79a51b78adb",
+      "ids": []
+    },
+    {
+      "type": "STOPPED_BLOCKED",
+      "at": "2026-10-08T13:34:21.718Z"
+    }
+  ],
+  "attempts": [],
+  "simulation_calls": 28672
+}

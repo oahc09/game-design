@@ -1,0 +1,58 @@
+{
+  "revision": "4ed782588351b844d270ab18246af5ff8e426ce3109df9a86924638be99201ba",
+  "schema": "0.1",
+  "runtime": "0.1.1",
+  "rules": {
+    "sokoban": "sokoban_v0.1",
+    "falling_blocks": "falling_blocks_v0.1",
+    "arcade_shooter": "arcade_shooter_v0.1.1",
+    "match3": "match3_v0.1",
+    "merge2048": "merge2048_v0.1",
+    "block_puzzle": "block_puzzle_v0.1"
+  },
+  "archetype": {
+    "sokoban": "1.0.0",
+    "falling_blocks": "0.1.0",
+    "arcade_shooter": "0.1.1",
+    "match3": "0.1.0",
+    "merge2048": "1.0.0",
+    "block_puzzle": "1.0.0"
+  },
+  "generator": {
+    "sokoban": "1.0.0",
+    "falling_blocks": "garbage-well-1",
+    "arcade_shooter": "wave-layout-1",
+    "match3": "0.1.0",
+    "merge2048": "1.0.0",
+    "block_puzzle": "1.0.0"
+  },
+  "player_model": "observation-decision-execution-1.0.0",
+  "metric": {
+    "framework": "quality-distributions-1.0.0",
+    "archetypes": {
+      "sokoban": "1.0.0",
+      "falling_blocks": "falling-metrics-1",
+      "arcade_shooter": "shooter-metrics-2",
+      "match3": "0.1.0",
+      "merge2048": "1.0.0",
+      "block_puzzle": "1.0.0"
+    }
+  },
+  "engine": {
+    "adapter": "0.1.0",
+    "name": "CocosAirJS",
+    "version": "1.0.0",
+    "revision": 100
+  },
+  "engine_documentation": {
+    "ENGINE.md": "f43d75724ab942c646a0c5d6ce0d6a69bd94eade2a0c661693d42e361c8de5c6",
+    "OUTPUT-CONTRACT.md": "7a1ea3e0e8eea36398c703f4cb025a583de171a492df4e4862d81b20a08f548e",
+    "index.html": "e3e1fef41719e59dca17f99b4887d011b11c8185a1b3324a4b7d85624b894760",
+    "main.mjs": "352549d91c23195e556ee8f1b93df3db2298d80030ed1928dbe8680b94292922",
+    "serve.mjs": "636381d825b2e0337dfb9c7812619f08704e394b8b1be80adf55406b341c849f"
+  },
+  "skill": "0.1.0",
+  "model": null,
+  "model_settings": null,
+  "evaluator": null
+}

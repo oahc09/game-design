@@ -1,0 +1,24 @@
+{
+  "name": "game-design-system",
+  "version": "0.2.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "Deterministic evidence-first game design toolkit",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "game-design": "./tools/game-design.mjs"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "validate": "node tools/game-design.mjs validate-all",
+    "benchmark": "node tools/game-design.mjs benchmark",
+    "qa": "node tools/game-design.mjs qa",
+    "serve": "node tools/serve.mjs"
+  },
+  "devDependencies": {
+    "quickjs-emscripten": "0.32.0"
+  }
+}

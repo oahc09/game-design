@@ -1,0 +1,2067 @@
+{
+  "source_file": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+  "source_sha256": "985ce768ffcea1b11a46c10cdee62a3aee90b622b47dfec4531f20311352b780",
+  "source_bytes": 77172,
+  "source_lines": 6132,
+  "sections": [
+    {
+      "line": 1,
+      "heading": "Game Design Skill v0.1 — M0-M7 Master Implementation Plan",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5
+    },
+    {
+      "line": 6,
+      "heading": "Master Roadmap",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 49
+    },
+    {
+      "line": 50,
+      "heading": "Architecture Baseline",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 128
+    },
+    {
+      "line": 129,
+      "heading": "Part I — M0 Core Architecture Validation",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 130
+    },
+    {
+      "line": 131,
+      "heading": "1. M0 总目标",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 169
+    },
+    {
+      "line": 170,
+      "heading": "2. M0 非目标",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 201
+    },
+    {
+      "line": 202,
+      "heading": "3. 建议工程结构",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 312
+    },
+    {
+      "line": 313,
+      "heading": "4. Workstream A — Gameplay Schema",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 316
+    },
+    {
+      "line": 317,
+      "heading": "A0. 目标",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 334
+    },
+    {
+      "line": 335,
+      "heading": "5. A1 — Common Metadata",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 371
+    },
+    {
+      "line": 372,
+      "heading": "6. A2 — DesignSpec",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 429
+    },
+    {
+      "line": 430,
+      "heading": "7. A3 — GameSpec Core",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 478
+    },
+    {
+      "line": 479,
+      "heading": "8. A4 — SimulationMode",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 501
+    },
+    {
+      "line": 502,
+      "heading": "9. A5 — ActionSpace Schema",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 551
+    },
+    {
+      "line": 552,
+      "heading": "10. A6 — Observation Schema",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 583
+    },
+    {
+      "line": 584,
+      "heading": "11. A7 — ContentSpec",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 633
+    },
+    {
+      "line": 634,
+      "heading": "12. A8 — EvaluationSpec",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 675
+    },
+    {
+      "line": 676,
+      "heading": "13. A9 — ProvenanceSpec",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 706
+    },
+    {
+      "line": 707,
+      "heading": "14. A10 — Schema Extension",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 744
+    },
+    {
+      "line": 745,
+      "heading": "15. A11 — 三个 Probe Fixture",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 768
+    },
+    {
+      "line": 769,
+      "heading": "16. Workstream B — Reference Runtime",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 772
+    },
+    {
+      "line": 773,
+      "heading": "17. B0 — Runtime 核心目标",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 810
+    },
+    {
+      "line": 811,
+      "heading": "18. B1 — State",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 836
+    },
+    {
+      "line": 837,
+      "heading": "19. B2 — Transition",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 875
+    },
+    {
+      "line": 876,
+      "heading": "20. B3 — Fixed-step Runtime",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 905
+    },
+    {
+      "line": 906,
+      "heading": "21. B4 — RNG",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 940
+    },
+    {
+      "line": 941,
+      "heading": "22. B5 — Replay",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 987
+    },
+    {
+      "line": 988,
+      "heading": "23. B6 — Canonical State Hash",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1020
+    },
+    {
+      "line": 1021,
+      "heading": "24. B7 — Registry",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1071
+    },
+    {
+      "line": 1072,
+      "heading": "25. B8 — Capability Dependency",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1097
+    },
+    {
+      "line": 1098,
+      "heading": "26. Probe 1 — Sokoban",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1101
+    },
+    {
+      "line": 1102,
+      "heading": "S1. 最小规则",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1127
+    },
+    {
+      "line": 1128,
+      "heading": "S2. State",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1153
+    },
+    {
+      "line": 1154,
+      "heading": "S3. Action",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1164
+    },
+    {
+      "line": 1165,
+      "heading": "S4. Runtime Rules",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1188
+    },
+    {
+      "line": 1189,
+      "heading": "S5. 必测 Case",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1203
+    },
+    {
+      "line": 1204,
+      "heading": "27. Probe 2 — Falling Blocks",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1207
+    },
+    {
+      "line": 1208,
+      "heading": "T1. 最小规则",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1241
+    },
+    {
+      "line": 1242,
+      "heading": "T2. State",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1257
+    },
+    {
+      "line": 1258,
+      "heading": "T3. Action",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1290
+    },
+    {
+      "line": 1291,
+      "heading": "T4. 关键验证",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1303
+    },
+    {
+      "line": 1304,
+      "heading": "T5. 必测 Case",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1320
+    },
+    {
+      "line": 1321,
+      "heading": "28. Probe 3 — Arcade Shooter",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1324
+    },
+    {
+      "line": 1325,
+      "heading": "H1. 最小规则",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1351
+    },
+    {
+      "line": 1352,
+      "heading": "H2. State",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1377
+    },
+    {
+      "line": 1378,
+      "heading": "H3. Action",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1389
+    },
+    {
+      "line": 1390,
+      "heading": "H4. Fixed Step",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1407
+    },
+    {
+      "line": 1408,
+      "heading": "H5. Collision Order",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1427
+    },
+    {
+      "line": 1428,
+      "heading": "H6. 必测 Case",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1445
+    },
+    {
+      "line": 1446,
+      "heading": "29. Workstream C — Benchmark Framework",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1449
+    },
+    {
+      "line": 1450,
+      "heading": "30. C0 — 目标",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1464
+    },
+    {
+      "line": 1465,
+      "heading": "31. C1 — Benchmark Case Format",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1499
+    },
+    {
+      "line": 1500,
+      "heading": "32. C2 — Result Format",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1546
+    },
+    {
+      "line": 1547,
+      "heading": "33. C3 — Failure Taxonomy",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1577
+    },
+    {
+      "line": 1578,
+      "heading": "34. C4 — Benchmark Gates for M0",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1592
+    },
+    {
+      "line": 1593,
+      "heading": "35. C5 — Evidence",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1618
+    },
+    {
+      "line": 1619,
+      "heading": "36. C6 — Broken Fixtures",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1624
+    },
+    {
+      "line": 1625,
+      "heading": "Schema",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1633
+    },
+    {
+      "line": 1634,
+      "heading": "Runtime",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1642
+    },
+    {
+      "line": 1643,
+      "heading": "Sokoban",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1650
+    },
+    {
+      "line": 1651,
+      "heading": "Falling Blocks",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1658
+    },
+    {
+      "line": 1659,
+      "heading": "Shooter",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1672
+    },
+    {
+      "line": 1673,
+      "heading": "37. Tooling CLI",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1686
+    },
+    {
+      "line": 1687,
+      "heading": "38. validate",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1708
+    },
+    {
+      "line": 1709,
+      "heading": "39. simulate",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1727
+    },
+    {
+      "line": 1728,
+      "heading": "40. replay",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1739
+    },
+    {
+      "line": 1740,
+      "heading": "41. benchmark",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1759
+    },
+    {
+      "line": 1760,
+      "heading": "42. Test Strategy",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1772
+    },
+    {
+      "line": 1773,
+      "heading": "43. Unit Tests",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1787
+    },
+    {
+      "line": 1788,
+      "heading": "44. Contract Tests",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1802
+    },
+    {
+      "line": 1803,
+      "heading": "45. Fixture Tests",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1818
+    },
+    {
+      "line": 1819,
+      "heading": "46. Probe Integration Tests",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1835
+    },
+    {
+      "line": 1836,
+      "heading": "47. M0 Fixture 数量",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1853
+    },
+    {
+      "line": 1854,
+      "heading": "48. Required Probe Examples",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1857
+    },
+    {
+      "line": 1858,
+      "heading": "Sokoban",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1871
+    },
+    {
+      "line": 1872,
+      "heading": "Falling Blocks",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1887
+    },
+    {
+      "line": 1888,
+      "heading": "Shooter",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1903
+    },
+    {
+      "line": 1904,
+      "heading": "49. Architecture Stress Test",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1947
+    },
+    {
+      "line": 1948,
+      "heading": "50. Future Extension Examples",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1951
+    },
+    {
+      "line": 1952,
+      "heading": "Platformer",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1981
+    },
+    {
+      "line": 1982,
+      "heading": "Tower Defense",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 1998
+    },
+    {
+      "line": 1999,
+      "heading": "Card Game",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2020
+    },
+    {
+      "line": 2021,
+      "heading": "Racing",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2053
+    },
+    {
+      "line": 2054,
+      "heading": "51. Implementation Task Breakdown",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2057
+    },
+    {
+      "line": 2058,
+      "heading": "Task M0-001 — 初始化工程骨架",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2077
+    },
+    {
+      "line": 2078,
+      "heading": "Task M0-002 — Schema Core",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2098
+    },
+    {
+      "line": 2099,
+      "heading": "Task M0-003 — Extension Schema Registry",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2118
+    },
+    {
+      "line": 2119,
+      "heading": "Task M0-004 — Core Runtime Contract",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2133
+    },
+    {
+      "line": 2134,
+      "heading": "Task M0-005 — RNG / Serialization / Replay",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2154
+    },
+    {
+      "line": 2155,
+      "heading": "Task M0-006 — Capability Registry",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2167
+    },
+    {
+      "line": 2168,
+      "heading": "Task M0-007 — Archetype Registry",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2181
+    },
+    {
+      "line": 2182,
+      "heading": "Task M0-008 — Sokoban Probe",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2187
+    },
+    {
+      "line": 2188,
+      "heading": "Task M0-009 — Falling Blocks Probe",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2193
+    },
+    {
+      "line": 2194,
+      "heading": "Task M0-010 — Arcade Shooter Probe",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2199
+    },
+    {
+      "line": 2200,
+      "heading": "Task M0-011 — Benchmark Case / Runner",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2213
+    },
+    {
+      "line": 2214,
+      "heading": "Task M0-012 — Broken Fixture Suite",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2219
+    },
+    {
+      "line": 2220,
+      "heading": "Task M0-013 — Architecture Stress Test",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2234
+    },
+    {
+      "line": 2235,
+      "heading": "Task M0-014 — M0 Review Report",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2251
+    },
+    {
+      "line": 2252,
+      "heading": "52. 执行顺序",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2307
+    },
+    {
+      "line": 2308,
+      "heading": "53. Agent 分工建议",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2311
+    },
+    {
+      "line": 2312,
+      "heading": "Agent A — Schema / Registry Owner",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2334
+    },
+    {
+      "line": 2335,
+      "heading": "Agent B — Runtime Infrastructure Owner",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2356
+    },
+    {
+      "line": 2357,
+      "heading": "Agent C — Sokoban Probe",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2368
+    },
+    {
+      "line": 2369,
+      "heading": "Agent D — Falling Blocks Probe",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2380
+    },
+    {
+      "line": 2381,
+      "heading": "Agent E — Shooter Probe",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2392
+    },
+    {
+      "line": 2393,
+      "heading": "Agent F — Benchmark / QA",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2409
+    },
+    {
+      "line": 2410,
+      "heading": "Agent G — Architecture Reviewer",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2422
+    },
+    {
+      "line": 2423,
+      "heading": "54. Architecture Gap Process",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2455
+    },
+    {
+      "line": 2456,
+      "heading": "55. Definition of Done — 单任务",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2472
+    },
+    {
+      "line": 2473,
+      "heading": "56. Definition of Done — M0",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2511
+    },
+    {
+      "line": 2512,
+      "heading": "57. M0 Hard Gates",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2515
+    },
+    {
+      "line": 2516,
+      "heading": "Gate 1",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2523
+    },
+    {
+      "line": 2524,
+      "heading": "Gate 2",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2531
+    },
+    {
+      "line": 2532,
+      "heading": "Gate 3",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2539
+    },
+    {
+      "line": 2540,
+      "heading": "Gate 4",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2547
+    },
+    {
+      "line": 2548,
+      "heading": "Gate 5",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2555
+    },
+    {
+      "line": 2556,
+      "heading": "Gate 6",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2563
+    },
+    {
+      "line": 2564,
+      "heading": "Gate 7",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2573
+    },
+    {
+      "line": 2574,
+      "heading": "58. M0 Metrics",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2610
+    },
+    {
+      "line": 2611,
+      "heading": "59. Freeze Review",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2646
+    },
+    {
+      "line": 2647,
+      "heading": "60. M1 入口条件",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2678
+    },
+    {
+      "line": 2679,
+      "heading": "61. 后续路线",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2735
+    },
+    {
+      "line": 2736,
+      "heading": "62. 最重要的实施约束",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2768
+    },
+    {
+      "line": 2769,
+      "heading": "Part II — M1-M6 Complete Implementation Roadmap",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2770
+    },
+    {
+      "line": 2771,
+      "heading": "1. 全局实施原则",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2772
+    },
+    {
+      "line": 2773,
+      "heading": "1.1 Core Freeze Discipline",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2799
+    },
+    {
+      "line": 2800,
+      "heading": "1.2 Reference Runtime Is Authority",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2821
+    },
+    {
+      "line": 2822,
+      "heading": "1.3 Generator / Solver / Player / Evaluator 分离",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2842
+    },
+    {
+      "line": 2843,
+      "heading": "1.4 No Single Fun Score",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2864
+    },
+    {
+      "line": 2865,
+      "heading": "1.5 Evidence-first",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2890
+    },
+    {
+      "line": 2891,
+      "heading": "2. M1 — Six Reference Archetypes Completion",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2894
+    },
+    {
+      "line": 2895,
+      "heading": "2.1 M1 目标",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2934
+    },
+    {
+      "line": 2935,
+      "heading": "3. M1-A — Match-3",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2936
+    },
+    {
+      "line": 2937,
+      "heading": "3.1 Scope",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2966
+    },
+    {
+      "line": 2967,
+      "heading": "3.2 Simulation Mode",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 2998
+    },
+    {
+      "line": 2999,
+      "heading": "3.3 Required Content",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3011
+    },
+    {
+      "line": 3012,
+      "heading": "3.4 Minimal Generator",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3042
+    },
+    {
+      "line": 3043,
+      "heading": "3.5 Player Models",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3060
+    },
+    {
+      "line": 3061,
+      "heading": "3.6 Metrics",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3078
+    },
+    {
+      "line": 3079,
+      "heading": "3.7 Required Tests",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3098
+    },
+    {
+      "line": 3099,
+      "heading": "4. M1-B — 2048",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3100
+    },
+    {
+      "line": 3101,
+      "heading": "4.1 Scope",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3118
+    },
+    {
+      "line": 3119,
+      "heading": "4.2 Content Types",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3130
+    },
+    {
+      "line": 3131,
+      "heading": "4.3 Minimal Generator",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3150
+    },
+    {
+      "line": 3151,
+      "heading": "4.4 Player Models",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3168
+    },
+    {
+      "line": 3169,
+      "heading": "4.5 Metrics",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3185
+    },
+    {
+      "line": 3186,
+      "heading": "4.6 Tests",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3200
+    },
+    {
+      "line": 3201,
+      "heading": "5. M1-C — Block Puzzle",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3202
+    },
+    {
+      "line": 3203,
+      "heading": "5.1 Scope",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3220
+    },
+    {
+      "line": 3221,
+      "heading": "5.2 Content",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3232
+    },
+    {
+      "line": 3233,
+      "heading": "5.3 Minimal Generator",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3244
+    },
+    {
+      "line": 3245,
+      "heading": "5.4 Player Models",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3254
+    },
+    {
+      "line": 3255,
+      "heading": "5.5 Metrics",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3272
+    },
+    {
+      "line": 3273,
+      "heading": "5.6 Tests",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3287
+    },
+    {
+      "line": 3288,
+      "heading": "6. M1-D — Unified Archetype Contract",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3319
+    },
+    {
+      "line": 3320,
+      "heading": "7. M1-E — Benchmark",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3348
+    },
+    {
+      "line": 3349,
+      "heading": "8. M1 Gate",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3375
+    },
+    {
+      "line": 3376,
+      "heading": "9. M1 Deliverables",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3387
+    },
+    {
+      "line": 3388,
+      "heading": "10. M2 — Generator / Solver / Player Model Framework",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3391
+    },
+    {
+      "line": 3392,
+      "heading": "10.1 M2 目标",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3413
+    },
+    {
+      "line": 3414,
+      "heading": "11. M2-A — Generator Framework",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3450
+    },
+    {
+      "line": 3451,
+      "heading": "11.1 Generator Controls",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3484
+    },
+    {
+      "line": 3485,
+      "heading": "12. M2-B — Solver Framework",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3515
+    },
+    {
+      "line": 3516,
+      "heading": "12.1 Search Budget",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3532
+    },
+    {
+      "line": 3533,
+      "heading": "12.2 Search Algorithms",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3551
+    },
+    {
+      "line": 3552,
+      "heading": "13. M2-C — Player Model Framework",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3575
+    },
+    {
+      "line": 3576,
+      "heading": "13.1 Player Profile Parameters",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3594
+    },
+    {
+      "line": 3595,
+      "heading": "13.2 Baseline Profiles",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3617
+    },
+    {
+      "line": 3618,
+      "heading": "14. M2-D — Batch Simulation",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3650
+    },
+    {
+      "line": 3651,
+      "heading": "15. M2-E — Trace",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3676
+    },
+    {
+      "line": 3677,
+      "heading": "16. M2-F — 六类专属增强",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3678
+    },
+    {
+      "line": 3679,
+      "heading": "Sokoban",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3688
+    },
+    {
+      "line": 3689,
+      "heading": "Match-3",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3698
+    },
+    {
+      "line": 3699,
+      "heading": "2048",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3707
+    },
+    {
+      "line": 3708,
+      "heading": "Block Puzzle",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3716
+    },
+    {
+      "line": 3717,
+      "heading": "Falling Blocks",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3725
+    },
+    {
+      "line": 3726,
+      "heading": "Shooter",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3737
+    },
+    {
+      "line": 3738,
+      "heading": "17. M2 Benchmark",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3754
+    },
+    {
+      "line": 3755,
+      "heading": "18. M2 Hard Gates",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3767
+    },
+    {
+      "line": 3768,
+      "heading": "19. M2 Deliverables",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3782
+    },
+    {
+      "line": 3783,
+      "heading": "20. M3 — Gameplay Metrics / Balance / Campaign",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3786
+    },
+    {
+      "line": 3787,
+      "heading": "20.1 M3 目标",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3803
+    },
+    {
+      "line": 3804,
+      "heading": "21. M3-A — Gameplay Quality Vector",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3831
+    },
+    {
+      "line": 3832,
+      "heading": "22. M3-B — Difficulty Model",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3853
+    },
+    {
+      "line": 3854,
+      "heading": "22.1 Difficulty Bands",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3878
+    },
+    {
+      "line": 3879,
+      "heading": "23. M3-C — Skill Discrimination",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3913
+    },
+    {
+      "line": 3914,
+      "heading": "24. M3-D — Decision Quality",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3940
+    },
+    {
+      "line": 3941,
+      "heading": "25. M3-E — Diversity",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3963
+    },
+    {
+      "line": 3964,
+      "heading": "26. M3-F — Controllability",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 3988
+    },
+    {
+      "line": 3989,
+      "heading": "27. M3-G — Balance Framework",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4020
+    },
+    {
+      "line": 4021,
+      "heading": "27.1 Sensitivity Analysis",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4040
+    },
+    {
+      "line": 4041,
+      "heading": "28. M3-H — Campaign / Curriculum",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4067
+    },
+    {
+      "line": 4068,
+      "heading": "28.1 Campaign Generator",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4091
+    },
+    {
+      "line": 4092,
+      "heading": "28.2 Campaign Metrics",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4106
+    },
+    {
+      "line": 4107,
+      "heading": "29. M3-I — Archetype Metric Packs",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4108
+    },
+    {
+      "line": 4109,
+      "heading": "Sokoban",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4118
+    },
+    {
+      "line": 4119,
+      "heading": "Match-3",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4128
+    },
+    {
+      "line": 4129,
+      "heading": "2048",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4138
+    },
+    {
+      "line": 4139,
+      "heading": "Block Puzzle",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4146
+    },
+    {
+      "line": 4147,
+      "heading": "Falling Blocks",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4156
+    },
+    {
+      "line": 4157,
+      "heading": "Shooter",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4168
+    },
+    {
+      "line": 4169,
+      "heading": "30. M3 Benchmark",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4186
+    },
+    {
+      "line": 4187,
+      "heading": "31. M3 Hard Gates",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4199
+    },
+    {
+      "line": 4200,
+      "heading": "32. M3 Deliverables",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4217
+    },
+    {
+      "line": 4218,
+      "heading": "33. M4 — Gameplay QA & Regression",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4221
+    },
+    {
+      "line": 4222,
+      "heading": "33.1 M4 目标",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4246
+    },
+    {
+      "line": 4247,
+      "heading": "34. M4-A — Failure Taxonomy v2",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4276
+    },
+    {
+      "line": 4277,
+      "heading": "35. M4-B — Regression Baseline",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4300
+    },
+    {
+      "line": 4301,
+      "heading": "36. M4-C — Golden Replays",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4330
+    },
+    {
+      "line": 4331,
+      "heading": "37. M4-D — Property Tests",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4354
+    },
+    {
+      "line": 4355,
+      "heading": "38. M4-E — Fuzzing",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4378
+    },
+    {
+      "line": 4379,
+      "heading": "39. M4-F — Counterexample Capture",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4410
+    },
+    {
+      "line": 4411,
+      "heading": "40. M4-G — QA Report",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4428
+    },
+    {
+      "line": 4429,
+      "heading": "41. M4-H — Release Gate",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4452
+    },
+    {
+      "line": 4453,
+      "heading": "42. M4 Benchmark",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4468
+    },
+    {
+      "line": 4469,
+      "heading": "43. M4 Hard Gates",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4480
+    },
+    {
+      "line": 4481,
+      "heading": "44. M4 Deliverables",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4495
+    },
+    {
+      "line": 4496,
+      "heading": "45. M5 — Engine Adapter",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4499
+    },
+    {
+      "line": 4500,
+      "heading": "45.1 M5 目标",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4519
+    },
+    {
+      "line": 4520,
+      "heading": "46. M5-A — Adapter Contract",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4536
+    },
+    {
+      "line": 4537,
+      "heading": "47. M5-B — Adapter Responsibility",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4557
+    },
+    {
+      "line": 4558,
+      "heading": "48. M5-C — Authoritative Logic Strategy",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4561
+    },
+    {
+      "line": 4562,
+      "heading": "Strategy A — Shared Gameplay Logic",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4571
+    },
+    {
+      "line": 4572,
+      "heading": "Strategy B — Mirrored Runtime + Differential Test",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4585
+    },
+    {
+      "line": 4586,
+      "heading": "49. M5-D — Differential Test",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4617
+    },
+    {
+      "line": 4618,
+      "heading": "50. M5-E — Visual / Input Validation",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4642
+    },
+    {
+      "line": 4643,
+      "heading": "51. M5-F — First Adapter Scope",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4672
+    },
+    {
+      "line": 4673,
+      "heading": "52. M5-G — Adapter Manifest",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4705
+    },
+    {
+      "line": 4706,
+      "heading": "53. M5-H — Adapter Benchmark",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4722
+    },
+    {
+      "line": 4723,
+      "heading": "54. M5 Hard Gates",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4734
+    },
+    {
+      "line": 4735,
+      "heading": "55. M5 Deliverables",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4747
+    },
+    {
+      "line": 4748,
+      "heading": "56. M6 — Formal SKILL.md + Role Routing",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4751
+    },
+    {
+      "line": 4752,
+      "heading": "56.1 M6 目标",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4773
+    },
+    {
+      "line": 4774,
+      "heading": "57. M6-A — Skill Entry Classification",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4800
+    },
+    {
+      "line": 4801,
+      "heading": "58. M6-B — Role Routing",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4838
+    },
+    {
+      "line": 4839,
+      "heading": "59. M6-C — Decision Rules",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4866
+    },
+    {
+      "line": 4867,
+      "heading": "60. M6-D — Tool Routing",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4892
+    },
+    {
+      "line": 4893,
+      "heading": "61. M6-E — Archetype Knowledge Loading",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4920
+    },
+    {
+      "line": 4921,
+      "heading": "62. M6-F — Unknown Archetype Flow",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4952
+    },
+    {
+      "line": 4953,
+      "heading": "63. M6-G — Output Contracts",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4956
+    },
+    {
+      "line": 4957,
+      "heading": "Design",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4965
+    },
+    {
+      "line": 4966,
+      "heading": "Content",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4974
+    },
+    {
+      "line": 4975,
+      "heading": "Balance",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4984
+    },
+    {
+      "line": 4985,
+      "heading": "QA",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 4995
+    },
+    {
+      "line": 4996,
+      "heading": "64. M6-H — Skill Safety / Quality Rules",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5010
+    },
+    {
+      "line": 5011,
+      "heading": "65. M6-I — SKILL.md 建议结构",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5032
+    },
+    {
+      "line": 5033,
+      "heading": "66. M6-J — Reference Files",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5057
+    },
+    {
+      "line": 5058,
+      "heading": "67. M6-K — Skill Benchmark",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5082
+    },
+    {
+      "line": 5083,
+      "heading": "67.1 Benchmark Questions",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5098
+    },
+    {
+      "line": 5099,
+      "heading": "68. M6 Hard Gates",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5111
+    },
+    {
+      "line": 5112,
+      "heading": "69. M6 Deliverables",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5127
+    },
+    {
+      "line": 5128,
+      "heading": "70. Cross-Milestone Agent Plan",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5131
+    },
+    {
+      "line": 5132,
+      "heading": "M1",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5133
+    },
+    {
+      "line": 5134,
+      "heading": "Agent A — Match-3",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5134
+    },
+    {
+      "line": 5135,
+      "heading": "Agent B — 2048",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5135
+    },
+    {
+      "line": 5136,
+      "heading": "Agent C — Block Puzzle",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5136
+    },
+    {
+      "line": 5137,
+      "heading": "Agent D — Contract / Registry",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5137
+    },
+    {
+      "line": 5138,
+      "heading": "Agent E — Benchmark",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5138
+    },
+    {
+      "line": 5139,
+      "heading": "Agent F — Architecture Review",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5142
+    },
+    {
+      "line": 5143,
+      "heading": "M2",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5144
+    },
+    {
+      "line": 5145,
+      "heading": "Agent A — Generator Framework",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5145
+    },
+    {
+      "line": 5146,
+      "heading": "Agent B — Solver Framework",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5146
+    },
+    {
+      "line": 5147,
+      "heading": "Agent C — Player Model Framework",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5147
+    },
+    {
+      "line": 5148,
+      "heading": "Agent D — Batch Simulation",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5148
+    },
+    {
+      "line": 5149,
+      "heading": "Agent E/F/G — Archetype Advanced Baselines",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5149
+    },
+    {
+      "line": 5150,
+      "heading": "Agent H — Benchmark / Leakage Review",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5153
+    },
+    {
+      "line": 5154,
+      "heading": "M3",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5155
+    },
+    {
+      "line": 5156,
+      "heading": "Agent A — Common Metrics",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5156
+    },
+    {
+      "line": 5157,
+      "heading": "Agent B — Difficulty / Skill",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5157
+    },
+    {
+      "line": 5158,
+      "heading": "Agent C — Diversity / Controllability",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5158
+    },
+    {
+      "line": 5159,
+      "heading": "Agent D — Balance Optimizer",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5159
+    },
+    {
+      "line": 5160,
+      "heading": "Agent E — Campaign / Curriculum",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5160
+    },
+    {
+      "line": 5161,
+      "heading": "Agent F — Archetype Metric Packs",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5161
+    },
+    {
+      "line": 5162,
+      "heading": "Agent G — Benchmark",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5165
+    },
+    {
+      "line": 5166,
+      "heading": "M4",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5167
+    },
+    {
+      "line": 5168,
+      "heading": "Agent A — Failure Taxonomy / QA Runner",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5168
+    },
+    {
+      "line": 5169,
+      "heading": "Agent B — Regression",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5169
+    },
+    {
+      "line": 5170,
+      "heading": "Agent C — Property / Fuzz",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5170
+    },
+    {
+      "line": 5171,
+      "heading": "Agent D — Golden Replays",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5171
+    },
+    {
+      "line": 5172,
+      "heading": "Agent E — Counterexample Minimization",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5172
+    },
+    {
+      "line": 5173,
+      "heading": "Agent F — Independent QA",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5176
+    },
+    {
+      "line": 5177,
+      "heading": "M5",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5178
+    },
+    {
+      "line": 5179,
+      "heading": "Agent A — Adapter Contract",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5179
+    },
+    {
+      "line": 5180,
+      "heading": "Agent B — First Engine Adapter",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5180
+    },
+    {
+      "line": 5181,
+      "heading": "Agent C — Differential Runner",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5181
+    },
+    {
+      "line": 5182,
+      "heading": "Agent D — Input/Visual Validation",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5182
+    },
+    {
+      "line": 5183,
+      "heading": "Agent E — Independent Fidelity QA",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5186
+    },
+    {
+      "line": 5187,
+      "heading": "M6",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5188
+    },
+    {
+      "line": 5189,
+      "heading": "Agent A — Skill Entry / Routing",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5189
+    },
+    {
+      "line": 5190,
+      "heading": "Agent B — Role References",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5190
+    },
+    {
+      "line": 5191,
+      "heading": "Agent C — Archetype References",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5191
+    },
+    {
+      "line": 5192,
+      "heading": "Agent D — Tool Routing",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5192
+    },
+    {
+      "line": 5193,
+      "heading": "Agent E — Skill Benchmark",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5193
+    },
+    {
+      "line": 5194,
+      "heading": "Agent F — Final Skill Review",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5197
+    },
+    {
+      "line": 5198,
+      "heading": "71. Cross-Milestone Rules",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5225
+    },
+    {
+      "line": 5226,
+      "heading": "72. Versioning",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5251
+    },
+    {
+      "line": 5252,
+      "heading": "73. Artifact Provenance",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5270
+    },
+    {
+      "line": 5271,
+      "heading": "74. M1-M6 总体 Gate",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5304
+    },
+    {
+      "line": 5305,
+      "heading": "75. M7 入口标准",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5332
+    },
+    {
+      "line": 5333,
+      "heading": "76. M1-M6 总体任务数量建议",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5361
+    },
+    {
+      "line": 5362,
+      "heading": "77. 推荐阶段性输出文件",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5385
+    },
+    {
+      "line": 5386,
+      "heading": "78. 全局禁止事项",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5404
+    },
+    {
+      "line": 5405,
+      "heading": "79. 最终产品形态",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5446
+    },
+    {
+      "line": 5447,
+      "heading": "80. 最终阶段定义",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5448
+    },
+    {
+      "line": 5449,
+      "heading": "M1",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5452
+    },
+    {
+      "line": 5453,
+      "heading": "M2",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5456
+    },
+    {
+      "line": 5457,
+      "heading": "M3",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5460
+    },
+    {
+      "line": 5461,
+      "heading": "M4",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5464
+    },
+    {
+      "line": 5465,
+      "heading": "M5",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5468
+    },
+    {
+      "line": 5469,
+      "heading": "M6",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5475
+    },
+    {
+      "line": 5476,
+      "heading": "Part III — M7 Skill A/B Benchmark",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5477
+    },
+    {
+      "line": 5478,
+      "heading": "M7.1 目标",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5485
+    },
+    {
+      "line": 5486,
+      "heading": "M7.2 实验组",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5516
+    },
+    {
+      "line": 5517,
+      "heading": "M7.3 Benchmark Task Set",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5559
+    },
+    {
+      "line": 5560,
+      "heading": "M7.4 任务难度",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5577
+    },
+    {
+      "line": 5578,
+      "heading": "M7.5 Frozen Benchmark",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5603
+    },
+    {
+      "line": 5604,
+      "heading": "M7.6 Blind Evaluation",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5615
+    },
+    {
+      "line": 5616,
+      "heading": "M7.7 自动评价维度",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5617
+    },
+    {
+      "line": 5618,
+      "heading": "Rule Correctness",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5627
+    },
+    {
+      "line": 5628,
+      "heading": "Playability",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5636
+    },
+    {
+      "line": 5637,
+      "heading": "Content Quality",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5646
+    },
+    {
+      "line": 5647,
+      "heading": "Difficulty & Balance",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5656
+    },
+    {
+      "line": 5657,
+      "heading": "Gameplay Depth",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5666
+    },
+    {
+      "line": 5667,
+      "heading": "QA Quality",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5675
+    },
+    {
+      "line": 5676,
+      "heading": "Engine Fidelity",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5684
+    },
+    {
+      "line": 5685,
+      "heading": "Development Efficiency",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5695
+    },
+    {
+      "line": 5696,
+      "heading": "M7.8 Human Evaluation",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5735
+    },
+    {
+      "line": 5736,
+      "heading": "M7.9 Primary Metrics",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5763
+    },
+    {
+      "line": 5764,
+      "heading": "M7.10 eligible_trials",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5801
+    },
+    {
+      "line": 5802,
+      "heading": "M7.11 Retry Rule",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5819
+    },
+    {
+      "line": 5820,
+      "heading": "M7.12 Cross-contamination Prevention",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5832
+    },
+    {
+      "line": 5833,
+      "heading": "M7.13 Unknown Archetype Test",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5856
+    },
+    {
+      "line": 5857,
+      "heading": "M7.14 Regression Tasks",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5876
+    },
+    {
+      "line": 5877,
+      "heading": "M7.15 Adversarial Tasks",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5897
+    },
+    {
+      "line": 5898,
+      "heading": "M7.16 Result Schema",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5945
+    },
+    {
+      "line": 5946,
+      "heading": "M7.17 Statistical Reporting",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5959
+    },
+    {
+      "line": 5960,
+      "heading": "M7.18 Failure Analysis",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 5978
+    },
+    {
+      "line": 5979,
+      "heading": "M7.19 Ablation",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 6000
+    },
+    {
+      "line": 6001,
+      "heading": "M7.20 Hard Gates",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 6015
+    },
+    {
+      "line": 6016,
+      "heading": "M7.21 Deliverables",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 6030
+    },
+    {
+      "line": 6031,
+      "heading": "M7.22 DoD",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 6047
+    },
+    {
+      "line": 6048,
+      "heading": "M7 Exit — v1.0 Readiness",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 6080
+    },
+    {
+      "line": 6081,
+      "heading": "Final — M0-M7 Master Readiness Gate",
+      "source": "Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+      "end_line": 6132
+    }
+  ],
+  "interpretation": "Full source section index; implementation and evidence status live in requirements-traceability.json, phase reviews and independent audit. Section presence is not acceptance."
+}

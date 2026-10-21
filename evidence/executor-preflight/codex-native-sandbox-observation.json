@@ -1,0 +1,30 @@
+{
+  "kind": "SUPPORTED_NATIVE_CODEX_SANDBOX_PROBE",
+  "actual_model_runs": 0,
+  "version": "codex-cli 0.159.2",
+  "private_runtime_directory_mode": "0700",
+  "managed_configuration_included": true,
+  "profile": "[permissions.game-design-probe.filesystem]\n\":root\" = \"deny\"\n\":minimal\" = \"read\"\n[permissions.game-design-probe.filesystem.\":workspace_roots\"]\n\".\" = \"write\"\n[permissions.game-design-probe.network]\nenabled = false\n",
+  "command": [
+    "codex",
+    "sandbox",
+    "--include-managed-config",
+    "--permission-profile",
+    "game-design-probe",
+    "--cd",
+    "<task-owned-workspace>",
+    "--disable",
+    "hooks",
+    "--",
+    "/bin/sh",
+    "<benign inside/outside marker check>"
+  ],
+  "result": {
+    "status": "PROCESS_FAILURE",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"/tmp\" (codex_home: AbsolutePathBuf(\"/tmp/gd-native-sandbox-46AKXF/codex-home\"))\nerror building bubblewrap command: app-server socket directory must be a user-owned directory with mode 0700\n",
+    "wall_time_ms": 27.901562
+  },
+  "formal_ready": false
+}

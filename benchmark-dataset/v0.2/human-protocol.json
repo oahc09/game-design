@@ -1,0 +1,58 @@
+{
+  "version": "human-protocol-0.2.0-preparation",
+  "status": "NOT_RUN",
+  "study_label": "exploratory",
+  "planned_adult_participants": 16,
+  "actual_participants": 0,
+  "sampling": "Voluntary consenting adults, stratified by novice/experienced self-report; convenience sample, no population inference.",
+  "task_ids": [
+    "gd-009",
+    "gd-019",
+    "gd-029",
+    "gd-039",
+    "gd-065",
+    "gd-071",
+    "gd-107",
+    "gd-108"
+  ],
+  "assignment": "Balanced AB/BA order per task, opaque IDs, matching device and five-minute cap per version; two-minute neutral break. Retain order as analysis factor.",
+  "blinding": "Coordinator retains private arm key. Raters receive only opaque packet ID and playable build. Log any inferred/revealed condition and report it.",
+  "measures": [
+    "rule_understanding_cost",
+    "first_use_ease",
+    "gameplay_variety",
+    "repetition",
+    "perceived_difficulty",
+    "fairness",
+    "decision_agency",
+    "continue_playing_intent"
+  ],
+  "scale": {
+    "min": 1,
+    "max": 7,
+    "anchors": "1 = very low, 7 = very high for the named dimension. Difficulty/repetition are descriptive, not inherently better higher."
+  },
+  "behavior": [
+    "comprehension_seconds",
+    "first_success_seconds",
+    "completed",
+    "abandoned",
+    "observed_confusion_count"
+  ],
+  "metadata": [
+    "anonymous_participant_id",
+    "participant_group",
+    "experience_level",
+    "device",
+    "session_length_seconds",
+    "task_id",
+    "blind_id",
+    "artifact_version",
+    "order",
+    "blinding_broken"
+  ],
+  "consent": "Explain purpose, optional participation, data retained, and ability to stop. No payment, recruitment messages, or personal data collection without user authorization.",
+  "privacy": "Anonymous IDs only in the package; no contact, health, age detail, or credentials. Eligibility adult yes/no handled by the authorized coordinator.",
+  "analysis": "Report each dimension separately, sample size, paired differences and order effects. Keep exploratory label. Missing participants or missing builds means NOT_RUN, never synthetic ratings.",
+  "stopping": "Stop an individual session on request or five-minute cap; stop the study only at preregistered target or documented operational blocker."
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://game-design.local/schema/evaluation.json",
+  "type": "object",
+  "properties": {
+    "player_profiles": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "seed_set": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "const": "fixed"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "required": [
+        "mode",
+        "values"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "player_profiles",
+    "metrics",
+    "gates",
+    "seed_set"
+  ],
+  "additionalProperties": false
+}

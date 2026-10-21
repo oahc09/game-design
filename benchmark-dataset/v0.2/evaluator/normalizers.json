@@ -1,0 +1,116 @@
+{
+  "version": "public-native-normalizers-0.2",
+  "trust": "Aliases are chosen by the supervisor after inspecting candidate source and never guessed silently. Values are not changed to fit expected results.",
+  "action_contracts": {
+    "sokoban": "{direction:up|down|left|right}",
+    "falling_blocks": "{type:wait|move|rotate|drop,direction?,rotation?}",
+    "arcade_shooter": "{type:wait|move|fire,dx?,dy?}",
+    "match3": "{type:swap,from:[x,y],to:[x,y]}",
+    "merge2048": "{direction:up|down|left|right}",
+    "block_puzzle": "{type:place,piece:index,origin:[x,y]}",
+    "water_sort": "{type:pour,from:index,to:index}"
+  },
+  "required_snapshot": [
+    "tick",
+    "terminal"
+  ],
+  "field_aliases": {
+    "tick": [
+      "tick",
+      "simulationTick",
+      "state.tick"
+    ],
+    "terminal": [
+      "terminal",
+      "outcome",
+      "state.terminal"
+    ],
+    "board": [
+      "board",
+      "cells",
+      "state.board"
+    ],
+    "player": [
+      "player",
+      "playerPosition",
+      "state.player"
+    ],
+    "boxes": [
+      "boxes",
+      "crates",
+      "state.boxes"
+    ],
+    "goals": [
+      "goals",
+      "targets",
+      "state.goals"
+    ],
+    "score": [
+      "score",
+      "points",
+      "state.score"
+    ],
+    "tubes": [
+      "tubes",
+      "containers",
+      "state.tubes"
+    ],
+    "batch": [
+      "batch",
+      "pieces",
+      "state.batch"
+    ],
+    "enemies": [
+      "enemies",
+      "targets",
+      "state.enemies"
+    ],
+    "projectiles": [
+      "projectiles",
+      "bullets",
+      "state.projectiles"
+    ],
+    "active": [
+      "active",
+      "activePiece",
+      "state.active"
+    ],
+    "gravity_counter": [
+      "gravity_counter",
+      "gravityCounter"
+    ],
+    "lock_counter": [
+      "lock_counter",
+      "lockCounter"
+    ],
+    "locked_piece_count": [
+      "locked_piece_count",
+      "lockedPieceCount"
+    ],
+    "moves": [
+      "moves",
+      "remainingMoves"
+    ],
+    "capacity": [
+      "capacity",
+      "tubeCapacity"
+    ]
+  },
+  "event_semantics": [
+    "PUSH",
+    "WIN",
+    "LOCK",
+    "DAMAGE",
+    "DESTROY",
+    "MATCH_CLEAR",
+    "GRAVITY",
+    "REFILL",
+    "OBJECTIVE_CHECK",
+    "MERGE",
+    "SPAWN",
+    "ROW_CLEAR",
+    "COLUMN_CLEAR",
+    "PIECE_CONSUMED",
+    "POUR"
+  ]
+}

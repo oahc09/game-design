@@ -1,0 +1,44 @@
+{
+  "status": "BLOCKED_NOT_RUN",
+  "formal_model_trials": 0,
+  "human_participants": 0,
+  "model_route_discovery": {
+    "codex_cli": "0.159.2 present",
+    "login": "ChatGPT sign-in observed; no credentials read/exported",
+    "invoked": false
+  },
+  "prerequisites": {
+    "ready": false,
+    "missing": [
+      "model",
+      "model_settings",
+      "evaluator",
+      "complete_frozen_manifest",
+      "executor",
+      "executor_os_isolation",
+      "executor_budget_enforcement",
+      "matching_frozen_model",
+      "independent_isolated_evaluator",
+      "matching_evaluator",
+      "arm_neutral_output_evaluation"
+    ]
+  },
+  "implemented": [
+    "108task dataset",
+    "frozen exposure protocol",
+    "same-engine neutral baseline",
+    "equal-budget execution transport",
+    "independent automatic measurement library",
+    "native-output normalization boundary",
+    "blind manual/human rubrics",
+    "denominator/attempt/grouped statistical reporting"
+  ],
+  "remaining_implementation_or_configuration": [
+    "Task-specific public-content/state/action normalizers and independent authored rule obligations for each formal task",
+    "Trusted isolated model/execution broker with enforced token/reasoning/tool/step/wall budgets",
+    "Semantic/unseen-program/subjective-visual reviewer integration and true participants"
+  ],
+  "authorization_next_step": "Choose and explicitly authorize the named external model-agent route and spending/resource budget before actual trials; this does not by itself certify the executor/evaluator.",
+  "evaluator_scope": "Concrete data checks and protocol-tested adapters exist; a fully audited 108-task evaluator deployment is not claimed.",
+  "experiment": "full_skill"
+}

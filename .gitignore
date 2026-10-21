@@ -1,0 +1,45 @@
+# Local dependencies, generated bundles and working outputs
+/node_modules/
+/dist/
+/output/
+/results/
+/reports/
+/.local-archive/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Operational evidence stays local except reproducible regression fixtures
+/evidence/*
+!/evidence/curriculum/
+!/evidence/curriculum-v2/
+!/evidence/curriculum-v3/
+!/evidence/curriculum/run.log
+!/evidence/curriculum/tests.log
+!/evidence/curriculum-v2/run.log
+!/evidence/curriculum-v3/run.log
+!/evidence/executor-preflight/
+!/evidence/bot-quality-calibration-interpolation-20261011-01/
+/evidence/bot-quality-calibration-interpolation-20261011-01/*
+!/evidence/bot-quality-calibration-interpolation-20261011-01/selection-freeze.json
+!/evidence/match3-challenge-repair-20261012-01/
+/evidence/match3-challenge-repair-20261012-01/*
+!/evidence/match3-challenge-repair-20261012-01/selection-freeze.json
+!/evidence/remaining-archetypes-calibration-20261012-01/
+/evidence/remaining-archetypes-calibration-20261012-01/*
+!/evidence/remaining-archetypes-calibration-20261012-01/*/
+/evidence/remaining-archetypes-calibration-20261012-01/*/*
+!/evidence/remaining-archetypes-calibration-20261012-01/*/selection-freeze.json
+!/evidence/README.md
+
+# Never version local credentials or signing material
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+auth.json
+credentials.json

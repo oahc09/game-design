@@ -1,0 +1,2548 @@
+[
+  {
+    "task_id": "gd-001",
+    "required_checks": [
+      "scope_preserved",
+      "assumptions_explicit"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-002",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-003",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-004",
+    "required_checks": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-005",
+    "required_checks": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-006",
+    "required_checks": [
+      "metric_valid",
+      "difficulty_control",
+      "knowledge_boundary",
+      "uncertainty"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-007",
+    "required_checks": [
+      "knowledge_boundary",
+      "paired_seeds",
+      "metric_valid",
+      "replay"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-008",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-009",
+    "required_checks": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-010",
+    "required_checks": [
+      "assumptions_explicit",
+      "metric_valid",
+      "evidence_complete"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-011",
+    "required_checks": [
+      "scope_preserved",
+      "assumptions_explicit"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-012",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-013",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-014",
+    "required_checks": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-015",
+    "required_checks": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-016",
+    "required_checks": [
+      "metric_valid",
+      "difficulty_control",
+      "knowledge_boundary",
+      "uncertainty"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-017",
+    "required_checks": [
+      "knowledge_boundary",
+      "paired_seeds",
+      "metric_valid",
+      "replay"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-018",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-019",
+    "required_checks": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-020",
+    "required_checks": [
+      "assumptions_explicit",
+      "metric_valid",
+      "evidence_complete"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-021",
+    "required_checks": [
+      "scope_preserved",
+      "assumptions_explicit"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-022",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-023",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-024",
+    "required_checks": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-025",
+    "required_checks": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-026",
+    "required_checks": [
+      "metric_valid",
+      "difficulty_control",
+      "knowledge_boundary",
+      "uncertainty"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-027",
+    "required_checks": [
+      "knowledge_boundary",
+      "paired_seeds",
+      "metric_valid",
+      "replay"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-028",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-029",
+    "required_checks": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-030",
+    "required_checks": [
+      "assumptions_explicit",
+      "metric_valid",
+      "evidence_complete"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-031",
+    "required_checks": [
+      "scope_preserved",
+      "assumptions_explicit"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-032",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-033",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-034",
+    "required_checks": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-035",
+    "required_checks": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-036",
+    "required_checks": [
+      "metric_valid",
+      "difficulty_control",
+      "knowledge_boundary",
+      "uncertainty"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-037",
+    "required_checks": [
+      "knowledge_boundary",
+      "paired_seeds",
+      "metric_valid",
+      "replay"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-038",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-039",
+    "required_checks": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-040",
+    "required_checks": [
+      "assumptions_explicit",
+      "metric_valid",
+      "evidence_complete"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-041",
+    "required_checks": [
+      "scope_preserved",
+      "assumptions_explicit"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-042",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-043",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-044",
+    "required_checks": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-045",
+    "required_checks": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-046",
+    "required_checks": [
+      "metric_valid",
+      "difficulty_control",
+      "knowledge_boundary",
+      "uncertainty"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-047",
+    "required_checks": [
+      "knowledge_boundary",
+      "paired_seeds",
+      "metric_valid",
+      "replay"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-048",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-049",
+    "required_checks": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-050",
+    "required_checks": [
+      "assumptions_explicit",
+      "metric_valid",
+      "evidence_complete"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-051",
+    "required_checks": [
+      "scope_preserved",
+      "assumptions_explicit"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-052",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-053",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-054",
+    "required_checks": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-055",
+    "required_checks": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-056",
+    "required_checks": [
+      "metric_valid",
+      "difficulty_control",
+      "knowledge_boundary",
+      "uncertainty"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-057",
+    "required_checks": [
+      "knowledge_boundary",
+      "paired_seeds",
+      "metric_valid",
+      "replay"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-058",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-059",
+    "required_checks": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-060",
+    "required_checks": [
+      "assumptions_explicit",
+      "metric_valid",
+      "evidence_complete"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-061",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-062",
+    "required_checks": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-063",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-064",
+    "required_checks": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-065",
+    "required_checks": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-066",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-067",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-068",
+    "required_checks": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-069",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-070",
+    "required_checks": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-071",
+    "required_checks": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-072",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-073",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-074",
+    "required_checks": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-075",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-076",
+    "required_checks": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-077",
+    "required_checks": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-078",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-079",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-080",
+    "required_checks": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-081",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-082",
+    "required_checks": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-083",
+    "required_checks": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-084",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-085",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-086",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-087",
+    "required_checks": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-088",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-089",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-090",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-091",
+    "required_checks": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-092",
+    "required_checks": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-093",
+    "required_checks": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-094",
+    "required_checks": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-095",
+    "required_checks": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-096",
+    "required_checks": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-097",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-098",
+    "required_checks": [
+      "metric_valid",
+      "difficulty_control",
+      "knowledge_boundary",
+      "uncertainty",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-099",
+    "required_checks": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-100",
+    "required_checks": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-101",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-102",
+    "required_checks": [
+      "knowledge_boundary",
+      "paired_seeds",
+      "metric_valid",
+      "replay"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-103",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-104",
+    "required_checks": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-105",
+    "required_checks": [
+      "assumptions_explicit",
+      "metric_valid",
+      "evidence_complete"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-106",
+    "required_checks": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-107",
+    "required_checks": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  },
+  {
+    "task_id": "gd-108",
+    "required_checks": [
+      "knowledge_boundary",
+      "paired_seeds",
+      "metric_valid",
+      "replay",
+      "extension_boundary"
+    ],
+    "claim_guards": [
+      "no_false_confirmation",
+      "timeout_not_unsolvable",
+      "no_bot_human_equivalence",
+      "no_single_fun_score"
+    ],
+    "failure_categories": {
+      "schema_valid": "SCHEMA_FAILURE",
+      "extension_boundary": "SKILL_ROUTING_FAILURE",
+      "knowledge_boundary": "KNOWLEDGE_FAILURE",
+      "compile": "ENGINE_ADAPTER_FAILURE",
+      "runtime_correct": "RUNTIME_FAILURE",
+      "counterexample": "TOOL_FAILURE"
+    }
+  }
+]

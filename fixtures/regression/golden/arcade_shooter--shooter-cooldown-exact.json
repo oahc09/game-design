@@ -1,0 +1,492 @@
+{
+  "replay_version": "0.1.0",
+  "game_spec_id": "arcade_shooter-reference",
+  "rules_version": "arcade_shooter_v0.1.1",
+  "archetype": "arcade_shooter",
+  "seed": 17,
+  "spec": {
+    "schema_version": "0.1",
+    "metadata": {
+      "id": "arcade_shooter-reference",
+      "version": "0.1.0"
+    },
+    "design": {
+      "archetype": "arcade_shooter",
+      "audience": {
+        "type": "casual"
+      },
+      "session": {
+        "target_minutes": {
+          "min": 2,
+          "max": 5
+        }
+      },
+      "pillars": [
+        "readable_rules",
+        "meaningful_decisions"
+      ],
+      "complexity": {
+        "action_budget": "low",
+        "mechanic_budget": "medium"
+      },
+      "content_target": {
+        "type": "challenge",
+        "expected_count": 1
+      }
+    },
+    "game": {
+      "archetype": "arcade_shooter"
+    },
+    "runtime": {
+      "simulation_mode": "FIXED_STEP",
+      "tick_rate": 60
+    },
+    "action_space": {
+      "type": "composite",
+      "fields": {
+        "move": {
+          "type": "continuous",
+          "shape": [
+            2
+          ],
+          "min": -1,
+          "max": 1
+        },
+        "aim": {
+          "type": "continuous",
+          "shape": [
+            2
+          ],
+          "min": -1,
+          "max": 1
+        },
+        "fire": {
+          "type": "discrete",
+          "values": [
+            false,
+            true
+          ]
+        }
+      }
+    },
+    "observation": {
+      "mode": "VISIBLE_STATE",
+      "delay_ms": 0,
+      "noise": null
+    },
+    "rng": {
+      "enabled": true
+    },
+    "content": {
+      "id": "arcade_shooter-challenge-001",
+      "type": "challenge",
+      "archetype": "arcade_shooter",
+      "parameters": {},
+      "objectives": [],
+      "dependencies": [],
+      "extensions": {
+        "arcade_shooter": {
+          "ruleset_version": "arcade_shooter_v0.1.1",
+          "width": 100,
+          "height": 100,
+          "playerX": 50,
+          "playerY": 80,
+          "playerHP": 3,
+          "playerRadius": 2,
+          "playerSpeed": 24,
+          "projectileSpeed": 90,
+          "projectileRadius": 0.5,
+          "projectileDamage": 1,
+          "fireIntervalTicks": 8,
+          "enemyHP": 2,
+          "enemyRadius": 2.5,
+          "enemySpeed": 0,
+          "enemyFireIntervalTicks": 0,
+          "enemyProjectileSpeed": 30,
+          "enemyDamage": 1,
+          "contactIntervalTicks": 60,
+          "maxTicks": 7200,
+          "enemies": [
+            {
+              "x": 20,
+              "y": 20
+            },
+            {
+              "x": 50,
+              "y": 15
+            },
+            {
+              "x": 80,
+              "y": 20
+            }
+          ],
+          "spawns": []
+        }
+      }
+    },
+    "evaluation": {
+      "player_profiles": [
+        {
+          "id": "random",
+          "version": "aim-avoidance-1"
+        },
+        {
+          "id": "greedy",
+          "version": "aim-avoidance-1"
+        },
+        {
+          "id": "tactical",
+          "version": "aim-avoidance-1"
+        }
+      ],
+      "metrics": [
+        "kills",
+        "accuracy",
+        "ttk",
+        "reaction_margin",
+        "threat_density",
+        "safe_path_reachability"
+      ],
+      "gates": [
+        "schema",
+        "runtime",
+        "replay"
+      ],
+      "seed_set": {
+        "mode": "fixed",
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    "provenance": {
+      "rules_version": "arcade_shooter_v0.1.1",
+      "assumptions": []
+    },
+    "adapter": {
+      "id": "web",
+      "version": "0.1"
+    },
+    "extensions": {}
+  },
+  "initial_content": {
+    "id": "arcade_shooter-challenge-001",
+    "type": "challenge",
+    "archetype": "arcade_shooter",
+    "parameters": {},
+    "objectives": [],
+    "dependencies": [],
+    "extensions": {
+      "arcade_shooter": {
+        "ruleset_version": "arcade_shooter_v0.1.1",
+        "width": 100,
+        "height": 100,
+        "playerX": 50,
+        "playerY": 80,
+        "playerHP": 3,
+        "playerRadius": 2,
+        "playerSpeed": 24,
+        "projectileSpeed": 90,
+        "projectileRadius": 0.5,
+        "projectileDamage": 1,
+        "fireIntervalTicks": 8,
+        "enemyHP": 2,
+        "enemyRadius": 2.5,
+        "enemySpeed": 0,
+        "enemyFireIntervalTicks": 0,
+        "enemyProjectileSpeed": 30,
+        "enemyDamage": 1,
+        "contactIntervalTicks": 60,
+        "maxTicks": 7200,
+        "enemies": [
+          {
+            "x": 20,
+            "y": 20
+          },
+          {
+            "x": 50,
+            "y": 15
+          },
+          {
+            "x": 80,
+            "y": 20
+          }
+        ],
+        "spawns": []
+      }
+    }
+  },
+  "initial_state_hash": "731dbf9c13de690e",
+  "actions": [
+    {
+      "tick": 0,
+      "action": {
+        "fire": true
+      },
+      "accepted": true,
+      "state_hash": "cb92e4408adf1f32",
+      "events": [
+        {
+          "type": "ProjectileSpawned",
+          "projectile": {
+            "id": 4,
+            "owner": "player",
+            "x": 50,
+            "y": 80,
+            "vx": 0,
+            "vy": -90,
+            "radius": 0.5,
+            "damage": 1,
+            "spawnTick": 0
+          }
+        },
+        {
+          "type": "ProjectileMoved",
+          "id": 4,
+          "x": 50,
+          "y": 78.5
+        },
+        {
+          "type": "StateAdvanced",
+          "tick": 1,
+          "score": 0,
+          "shots": 1,
+          "hits": 0,
+          "playerCooldown": 8
+        }
+      ]
+    },
+    {
+      "tick": 1,
+      "action": {
+        "fire": true
+      },
+      "accepted": true,
+      "state_hash": "868541f4b8ac7a6a",
+      "events": [
+        {
+          "type": "ProjectileMoved",
+          "id": 4,
+          "x": 50,
+          "y": 77
+        },
+        {
+          "type": "StateAdvanced",
+          "tick": 2,
+          "score": 0,
+          "shots": 1,
+          "hits": 0,
+          "playerCooldown": 7
+        }
+      ]
+    },
+    {
+      "tick": 2,
+      "action": {
+        "fire": true
+      },
+      "accepted": true,
+      "state_hash": "6780e2abd8ef1f4f",
+      "events": [
+        {
+          "type": "ProjectileMoved",
+          "id": 4,
+          "x": 50,
+          "y": 75.5
+        },
+        {
+          "type": "StateAdvanced",
+          "tick": 3,
+          "score": 0,
+          "shots": 1,
+          "hits": 0,
+          "playerCooldown": 6
+        }
+      ]
+    },
+    {
+      "tick": 3,
+      "action": {
+        "fire": true
+      },
+      "accepted": true,
+      "state_hash": "ebdc7111a2bd32a1",
+      "events": [
+        {
+          "type": "ProjectileMoved",
+          "id": 4,
+          "x": 50,
+          "y": 74
+        },
+        {
+          "type": "StateAdvanced",
+          "tick": 4,
+          "score": 0,
+          "shots": 1,
+          "hits": 0,
+          "playerCooldown": 5
+        }
+      ]
+    },
+    {
+      "tick": 4,
+      "action": {
+        "fire": true
+      },
+      "accepted": true,
+      "state_hash": "74664fb272a973d0",
+      "events": [
+        {
+          "type": "ProjectileMoved",
+          "id": 4,
+          "x": 50,
+          "y": 72.5
+        },
+        {
+          "type": "StateAdvanced",
+          "tick": 5,
+          "score": 0,
+          "shots": 1,
+          "hits": 0,
+          "playerCooldown": 4
+        }
+      ]
+    },
+    {
+      "tick": 5,
+      "action": {
+        "fire": true
+      },
+      "accepted": true,
+      "state_hash": "a74d2b3a772adde4",
+      "events": [
+        {
+          "type": "ProjectileMoved",
+          "id": 4,
+          "x": 50,
+          "y": 71
+        },
+        {
+          "type": "StateAdvanced",
+          "tick": 6,
+          "score": 0,
+          "shots": 1,
+          "hits": 0,
+          "playerCooldown": 3
+        }
+      ]
+    },
+    {
+      "tick": 6,
+      "action": {
+        "fire": true
+      },
+      "accepted": true,
+      "state_hash": "e504317ef225c8aa",
+      "events": [
+        {
+          "type": "ProjectileMoved",
+          "id": 4,
+          "x": 50,
+          "y": 69.5
+        },
+        {
+          "type": "StateAdvanced",
+          "tick": 7,
+          "score": 0,
+          "shots": 1,
+          "hits": 0,
+          "playerCooldown": 2
+        }
+      ]
+    },
+    {
+      "tick": 7,
+      "action": {
+        "fire": true
+      },
+      "accepted": true,
+      "state_hash": "50d1aa44ccc7dbcc",
+      "events": [
+        {
+          "type": "ProjectileMoved",
+          "id": 4,
+          "x": 50,
+          "y": 68
+        },
+        {
+          "type": "StateAdvanced",
+          "tick": 8,
+          "score": 0,
+          "shots": 1,
+          "hits": 0,
+          "playerCooldown": 1
+        }
+      ]
+    },
+    {
+      "tick": 8,
+      "action": {
+        "fire": true
+      },
+      "accepted": true,
+      "state_hash": "b1597d11c9343d69",
+      "events": [
+        {
+          "type": "ProjectileSpawned",
+          "projectile": {
+            "id": 5,
+            "owner": "player",
+            "x": 50,
+            "y": 80,
+            "vx": 0,
+            "vy": -90,
+            "radius": 0.5,
+            "damage": 1,
+            "spawnTick": 8
+          }
+        },
+        {
+          "type": "ProjectileMoved",
+          "id": 4,
+          "x": 50,
+          "y": 66.5
+        },
+        {
+          "type": "ProjectileMoved",
+          "id": 5,
+          "x": 50,
+          "y": 78.5
+        },
+        {
+          "type": "StateAdvanced",
+          "tick": 9,
+          "score": 0,
+          "shots": 2,
+          "hits": 0,
+          "playerCooldown": 8
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "terminal": null,
+    "final_state_hash": "b1597d11c9343d69"
+  },
+  "state_hashes": [
+    "731dbf9c13de690e",
+    "cb92e4408adf1f32",
+    "868541f4b8ac7a6a",
+    "6780e2abd8ef1f4f",
+    "ebdc7111a2bd32a1",
+    "74664fb272a973d0",
+    "a74d2b3a772adde4",
+    "e504317ef225c8aa",
+    "50d1aa44ccc7dbcc",
+    "b1597d11c9343d69"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "description": "Interface example only. Replace paths and provide audited adapters before execution. This file does not claim a configured executor.",
+  "mode": "formal",
+  "manifest": "benchmark-dataset/v0.1/freeze.json",
+  "outputDir": "evidence/m7/formal-run-001",
+  "executor": {
+    "command": "/path/to/authorized-json-executor",
+    "args": [],
+    "bubblewrap": {
+      "binaryMounts": []
+    },
+    "attestation": {
+      "os_isolated": false,
+      "budget_enforced": false,
+      "model": null,
+      "model_settings": null
+    }
+  },
+  "evaluator": {
+    "command": "/path/to/independent-json-evaluator",
+    "args": [],
+    "cwd": "/path/to/isolated-evaluator",
+    "attestation": {
+      "independent": false,
+      "hidden_assets_isolated": false,
+      "version": null,
+      "engine_native_outputs_supported": false,
+      "public_output_contract_only": false
+    }
+  },
+  "preflight": {
+    "command": "/path/to/trusted-environment-preflight",
+    "args": [],
+    "cwd": "/path/to/preflight"
+  },
+  "experiment": "full_skill"
+}

@@ -1,0 +1,2 @@
+# Preserve source/evidence bytes: archived freezes contain byte-level SHA256 values.
+* -text

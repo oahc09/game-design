@@ -1,0 +1,121 @@
+long-horizon sokoban: random=0/10, censored=0; competent=10/10, censored=0; strong=10/10, censored=0
+long-horizon falling_blocks: random=0/10, censored=0; competent=10/10, censored=0; strong=10/10, censored=0
+long-horizon arcade_shooter: random=1/10, censored=0; competent=10/10, censored=0; strong=10/10, censored=0
+long-horizon match3: random=10/10, censored=0; competent=10/10, censored=0; strong=10/10, censored=0
+long-horizon merge2048: random=0/10, censored=0; competent=0/10, censored=0; strong=0/10, censored=0
+long-horizon block_puzzle: random=5/10, censored=0; competent=10/10, censored=0; strong=10/10, censored=0
+pool single-adjacent-moves-01: 18/20
+pool single-adjacent-moves-02: 18/20
+pool single-adjacent-moves-03: 19/20
+pool single-adjacent-moves-04: 19/20
+pool single-adjacent-moves-06: 20/20
+pool single-adjacent-moves-09: 20/20
+pool single-adjacent-moves-13: 20/20
+pool single-approach-moves-03: 14/20
+pool single-approach-moves-04: 14/20
+pool single-approach-moves-05: 15/20
+pool single-approach-moves-06: 15/20
+pool single-approach-moves-08: 19/20
+pool single-approach-moves-11: 19/20
+pool single-approach-moves-15: 20/20
+pool single-long-push-moves-03: 13/20
+pool single-long-push-moves-04: 13/20
+pool single-long-push-moves-05: 17/20
+pool single-long-push-moves-06: 17/20
+pool single-long-push-moves-08: 17/20
+pool single-long-push-moves-11: 19/20
+pool single-long-push-moves-15: 20/20
+pool double-separated-moves-07: 4/20
+pool double-separated-moves-08: 7/20
+pool double-separated-moves-09: 12/20
+pool double-separated-moves-10: 12/20
+pool double-separated-moves-12: 16/20
+pool double-separated-moves-15: 19/20
+pool double-separated-moves-19: 20/20
+pool double-reposition-moves-12: 2/20
+pool double-reposition-moves-13: 2/20
+pool double-reposition-moves-14: 6/20
+pool double-reposition-moves-15: 6/20
+pool double-reposition-moves-17: 10/20
+pool double-reposition-moves-20: 12/20
+pool double-reposition-moves-24: 16/20
+pool double-offset-approach-moves-07: 6/20
+pool double-offset-approach-moves-08: 6/20
+pool double-offset-approach-moves-09: 15/20
+pool double-offset-approach-moves-10: 15/20
+pool double-offset-approach-moves-12: 17/20
+pool double-offset-approach-moves-15: 19/20
+pool double-offset-approach-moves-19: 20/20
+pool double-open-approach-moves-06: 6/20
+pool double-open-approach-moves-07: 6/20
+pool double-open-approach-moves-08: 10/20
+pool double-open-approach-moves-09: 10/20
+pool double-open-approach-moves-11: 14/20
+pool double-open-approach-moves-14: 20/20
+pool double-open-approach-moves-18: 20/20
+pool double-mixed-directions-moves-05: 8/20
+pool double-mixed-directions-moves-06: 8/20
+pool double-mixed-directions-moves-07: 11/20
+pool double-mixed-directions-moves-08: 11/20
+pool double-mixed-directions-moves-10: 17/20
+pool double-mixed-directions-moves-13: 18/20
+pool double-mixed-directions-moves-17: 19/20
+{
+  "pass": true,
+  "campaign_status": "VALIDATED_BOT_CURRICULUM",
+  "curve": [
+    0.09999999999999998,
+    0.25,
+    0.19999999999999996,
+    0.30000000000000004,
+    0.4,
+    0.4,
+    0.6,
+    0.65,
+    0.30000000000000004,
+    0.7
+  ],
+  "holdout_curve": [
+    0.15000000000000002,
+    0.09999999999999998,
+    0.19999999999999996,
+    0.09999999999999998,
+    0.25,
+    0.19999999999999996,
+    0.55,
+    0.4,
+    0.30000000000000004,
+    0.55
+  ],
+  "holdout_issues": [
+    {
+      "code": "DIFFICULTY_TARGET_MISS",
+      "index": 3,
+      "actual": 0.09999999999999998,
+      "target": {
+        "min": 0.19999999999999998,
+        "max": 0.4
+      }
+    },
+    {
+      "code": "DIFFICULTY_TARGET_MISS",
+      "index": 5,
+      "actual": 0.19999999999999996,
+      "target": {
+        "min": 0.30000000000000004,
+        "max": 0.5
+      }
+    },
+    {
+      "code": "DIFFICULTY_TARGET_MISS",
+      "index": 7,
+      "actual": 0.4,
+      "target": {
+        "min": 0.55,
+        "max": 0.75
+      }
+    }
+  ],
+  "source_unchanged": true,
+  "bytes": 6611949
+}

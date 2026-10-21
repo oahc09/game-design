@@ -1,0 +1,39 @@
+{
+  "manifest": "benchmark-dataset/v0.2/freeze.json",
+  "mode": "formal",
+  "experiment": "full_skill",
+  "outputDir": "evidence/formal-ab",
+  "executor": {
+    "command": "node",
+    "args": [
+      "-e",
+      "process.exit(2)"
+    ],
+    "attestation": {}
+  },
+  "executor_module_instructions": {
+    "path": "Frozen operator-owned module, explicitly configured only after a real signed audit",
+    "export": "createExecutor"
+  },
+  "audit_trust": {
+    "environment_id": "NOT_CONFIGURED",
+    "public_keys": {}
+  },
+  "evaluator": {
+    "command": "node",
+    "args": [
+      "tools/evaluate-submission.mjs",
+      "--config",
+      "benchmark-dataset/v0.2/evaluator-cli.example.json"
+    ],
+    "attestation": {
+      "independent": false,
+      "hidden_assets_isolated": false,
+      "engine_native_outputs_supported": false,
+      "public_output_contract_only": false,
+      "version": "task-protocol-evaluator-0.2.0"
+    }
+  },
+  "preflight": null,
+  "warning": "Preparation only. No provider, production trust or authentic observations configured. Formal mode must stay BLOCKED."
+}

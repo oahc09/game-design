@@ -1,0 +1,43 @@
+{
+  "kind": "INTEGRATED_EXECUTOR_READINESS_SUMMARY",
+  "supersedes": "execution-status.json",
+  "status": "BLOCKED_REAL_EXECUTION",
+  "implementation": {
+    "formal_signed_audit_gate": true,
+    "exact_workspace_inventory": true,
+    "pinned_runtime_file_mounts": true,
+    "sandbox_workspace_remapping": true,
+    "broker_reservation_receipt_wiring": true,
+    "durable_attempt_and_failure_retention": true,
+    "artifact_bound_execution_log_provider": true
+  },
+  "tests": {
+    "preflight": 32,
+    "supervisor_integration": 21,
+    "combined_with_existing_benchmark_checkers": 169,
+    "passed": 169,
+    "failed": 0
+  },
+  "actual_new_model_attempts": 0,
+  "completed_model_runs": 0,
+  "formal_ab_trials": 0,
+  "actual_isolation_checks_completed": 0,
+  "production_trust_keys_created": 0,
+  "production_trust_keys_registered": 0,
+  "provider_implementation": "NOT_INSTALLED",
+  "capability_status": {
+    "os_isolation": "BLOCKED",
+    "provider_hard_caps": "NOT_VERIFIED",
+    "codex_transport": "INITIALIZATION_FAILED"
+  },
+  "source_hashes": {
+    "src/benchmark/ab.mjs": "9ee9758879d27fdd3ccd1b8bfa10d36aa2c9ca3e26b3494a4dca85ed849caf5b",
+    "src/benchmark/executor-preflight.mjs": "0c32cf160af82f1398b53f60352804c6fd571e7187e6e785a33ae62619f118ee",
+    "tools/executor-preflight.mjs": "cb9f932cd598984eeccaf0fd2ef3684d18f697ce5769006be9d34166f76936ac",
+    "tests/executor-preflight.test.mjs": "34cbe9e1aae30999a9ed05ca2477f313a31ced22b48c2ddcceec4de067f2cac8",
+    "tests/executor-integration.test.mjs": "86ea9e6f601d5e549210dc6b85a160f6f84bbaacece3f1a66ae9a19307a32d54",
+    "docs/executor-preflight.md": "9688fe2d472a8cf2ed26f81f64a5f3abd1a496cd106f169950dd00795398613b",
+    "evidence/executor-preflight/integrated-supervisor-tests.v2.tap": "7675b5056fb14284410f96ef0dfa04b58ac2f1a01e76c26792ae235088efbff5"
+  },
+  "digest": "d40ba6d008441a2f8c97f699cbdc8b2eef47bfdc80ffcb0eb01d910541b3637f"
+}

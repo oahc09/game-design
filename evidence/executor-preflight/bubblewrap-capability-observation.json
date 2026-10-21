@@ -1,0 +1,21 @@
+{
+  "status": "BLOCKED",
+  "observed_at": "2026-10-08T13:19:13Z",
+  "source": "Actual benign shell probe, exit status captured by executor",
+  "bwrap_version": "bubblewrap 0.12.0",
+  "command": ["bwrap", "--unshare-all", "--die-with-parent", "--new-session", "--ro-bind", "/usr", "/usr", "--ro-bind", "/bin", "/bin", "--ro-bind", "/lib", "/lib", "--ro-bind", "/lib64", "/lib64", "--proc", "/proc", "--dev", "/dev", "--tmpfs", "/tmp", "--clearenv", "--setenv", "PATH", "/usr/bin:/bin", "--", "/usr/bin/true"],
+  "exit_code": 1,
+  "stderr": "bwrap: loopback: Failed to create NETLINK_ROUTE socket: Operation not permitted\n",
+  "interpretation": "Environment or host-policy capability restriction encountered before fixture execution. This tool result did not identify an approval-reviewer refusal. No root cause beyond that observation is inferred.",
+  "checks": [
+    {"id": "baseline_treatment_read_boundary", "status": "NOT_RUN"},
+    {"id": "evaluator_read_boundary", "status": "NOT_RUN"},
+    {"id": "home_host_read_boundary", "status": "NOT_RUN"},
+    {"id": "sandbox_symlink_escape", "status": "NOT_RUN"},
+    {"id": "network_namespace", "status": "NOT_RUN"},
+    {"id": "no_persistent_home", "status": "NOT_RUN"}
+  ],
+  "actual_model_runs": 0,
+  "workaround_attempted": false,
+  "probe_retried": false
+}

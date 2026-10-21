@@ -1,0 +1,1 @@
+{"algorithm":"grid","parameters":{"enemySpeed":[3,6],"enemyHP":[1,2]},"targets":{"competent_completion_rate":{"min":0.5,"max":0.9},"damage_taken":{"min":0,"max":2}},"seeds":[7,11,23,47,83],"profiles":["random","competent","strong"],"workers":2,"maxSteps":300,"maxCandidates":4}

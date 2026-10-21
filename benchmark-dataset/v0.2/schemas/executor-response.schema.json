@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact",
+    "usage"
+  ],
+  "properties": {
+    "artifact": {
+      "type": "object"
+    },
+    "usage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tokens",
+        "reasoning_tokens",
+        "tool_calls",
+        "steps",
+        "asset_bytes"
+      ],
+      "properties": {
+        "tokens": {
+          "type": "number",
+          "minimum": 0
+        },
+        "reasoning_tokens": {
+          "type": "number",
+          "minimum": 0
+        },
+        "tool_calls": {
+          "type": "number",
+          "minimum": 0
+        },
+        "steps": {
+          "type": "number",
+          "minimum": 0
+        },
+        "asset_bytes": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "model": {
+      "type": "string"
+    },
+    "model_settings": {
+      "type": "object"
+    }
+  },
+  "description": "Formal executor responses additionally require model and model_settings matching the frozen manifest; these are trusted adapter telemetry, not model artifact fields."
+}

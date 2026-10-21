@@ -1,0 +1,39 @@
+✔ relative paths reject traversal, absolute aliases, Windows drives and nulls (1.534328ms)
+✔ boundary inventory checks exact allowlist and missing files (7.917085ms)
+✔ baseline protected paths, symlink escapes, dangling symlinks and hardlinks are rejected without reading targets (3.52559ms)
+✔ workspace itself and any ancestor may not be a symlink (2.388386ms)
+✔ sandbox plan exposes only pinned regular runtime files and selected workspace (700.313679ms)
+✔ bounded transport measures actual offline stub output and exit failures (60.900618ms)
+✔ wall-time preemptively kills a hanging trusted stub (103.528252ms)
+✔ combined output cap preemptively stops stdout flood and bounds retained bytes (35.194107ms)
+✔ combined output cap preemptively stops stderr flood and bounds retained bytes (30.832321ms)
+✔ child process group is terminated on deadline, without claiming a process-count cap (605.442471ms)
+✔ normal parent exit also cleans up its same-group subprocesses (498.911911ms)
+✔ capability handshake is bound to frozen identity and explicitly forbids model invocation (0.82879ms)
+✔ boolean attestations and post-hoc counters cannot certify budget enforcement (9.532104ms)
+✔ broker response from another model, nonce or request is rejected (0.345423ms)
+✔ reservation prevents starting over-budget operations before any side effect (0.944523ms)
+✔ missing tokens usage rejected and failed attempt retained (0.3905ms)
+✔ missing reasoning_tokens usage rejected and failed attempt retained (0.224273ms)
+✔ missing tool_calls usage rejected and failed attempt retained (0.179436ms)
+✔ missing steps usage rejected and failed attempt retained (0.294156ms)
+✔ missing asset_bytes usage rejected and failed attempt retained (0.167399ms)
+✔ over-budget tokens usage rejected (0.496878ms)
+✔ over-budget reasoning_tokens usage rejected (0.280016ms)
+✔ over-budget tool_calls usage rejected (0.179727ms)
+✔ over-budget steps usage rejected (0.139758ms)
+✔ over-budget asset_bytes usage rejected (0.169221ms)
+✔ counter reset, receipt replay, forged source, and unreserved usage fail closed (1.638733ms)
+✔ per-operation reserved ceiling is enforced even when total budget remains (0.322829ms)
+✔ all attempts, first/final artifacts and monotonic cumulative counters survive repairs (0.660861ms)
+✔ counter reset across repair attempts cannot erase first-attempt cost (0.313004ms)
+✔ finishing while usage is missing or in flight cannot yield a completed attempt (0.432602ms)
+✔ immutable report refuses overwrite and cannot become formal evidence via caller booleans (47.459269ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2201.270631

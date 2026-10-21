@@ -1,0 +1,726 @@
+{
+  "version": "0.1.0",
+  "created_at": "2026-10-08T12:23:54.669Z",
+  "explicit_rebaseline": false,
+  "archetypes": [
+    "sokoban",
+    "falling_blocks",
+    "arcade_shooter",
+    "match3",
+    "merge2048",
+    "block_puzzle"
+  ],
+  "minimum_per_archetype": 10,
+  "required_categories": [
+    "normal",
+    "edge",
+    "terminal",
+    "complex_interaction",
+    "regression_baseline"
+  ],
+  "history_note": "Initial reference regression baseline. Historical pre-v0.1 replay archives do not exist; current discovered bugs are documented in independent audit.",
+  "cases": [
+    {
+      "id": "sokoban_walk_up",
+      "archetype": "sokoban",
+      "file": "sokoban--sokoban_walk_up.json",
+      "hash": "a39be82a9d26824a",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "sokoban_walk_up"
+    },
+    {
+      "id": "sokoban_push_up",
+      "archetype": "sokoban",
+      "file": "sokoban--sokoban_push_up.json",
+      "hash": "97e5bd19ed79845d",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "sokoban_push_up"
+    },
+    {
+      "id": "sokoban_final_push_up",
+      "archetype": "sokoban",
+      "file": "sokoban--sokoban_final_push_up.json",
+      "hash": "cb1cfd7a4a1fd8e8",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "terminal"
+      ],
+      "source_fixture": "sokoban_final_push_up"
+    },
+    {
+      "id": "sokoban_wall_block",
+      "archetype": "sokoban",
+      "file": "sokoban--sokoban_wall_block.json",
+      "hash": "2199b74e2250910e",
+      "categories": [
+        "regression_baseline",
+        "edge"
+      ],
+      "source_fixture": "sokoban_wall_block"
+    },
+    {
+      "id": "sokoban_cannot_push_two_boxes",
+      "archetype": "sokoban",
+      "file": "sokoban--sokoban_cannot_push_two_boxes.json",
+      "hash": "491980cebcd293b4",
+      "categories": [
+        "regression_baseline",
+        "edge",
+        "complex_interaction"
+      ],
+      "source_fixture": "sokoban_cannot_push_two_boxes"
+    },
+    {
+      "id": "sokoban_cannot_push_box_into_wall",
+      "archetype": "sokoban",
+      "file": "sokoban--sokoban_cannot_push_box_into_wall.json",
+      "hash": "2e4232c2bc684e2c",
+      "categories": [
+        "regression_baseline",
+        "edge",
+        "complex_interaction"
+      ],
+      "source_fixture": "sokoban_cannot_push_box_into_wall"
+    },
+    {
+      "id": "sokoban_two_boxes_one_already_placed",
+      "archetype": "sokoban",
+      "file": "sokoban--sokoban_two_boxes_one_already_placed.json",
+      "hash": "db3a1e5430e1d758",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "terminal",
+        "complex_interaction"
+      ],
+      "source_fixture": "sokoban_two_boxes_one_already_placed"
+    },
+    {
+      "id": "sokoban_walk_then_push",
+      "archetype": "sokoban",
+      "file": "sokoban--sokoban_walk_then_push.json",
+      "hash": "f1eed91fa6717753",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "terminal",
+        "complex_interaction"
+      ],
+      "source_fixture": "sokoban_walk_then_push"
+    },
+    {
+      "id": "sokoban_move_limit",
+      "archetype": "sokoban",
+      "file": "sokoban--sokoban_move_limit.json",
+      "hash": "6dc56b6555342693",
+      "categories": [
+        "regression_baseline",
+        "edge",
+        "terminal"
+      ],
+      "source_fixture": "sokoban_move_limit"
+    },
+    {
+      "id": "sokoban_unbounded_map_edge_no_wrap",
+      "archetype": "sokoban",
+      "file": "sokoban--sokoban_unbounded_map_edge_no_wrap.json",
+      "hash": "b33cb487ae28a9e5",
+      "categories": [
+        "regression_baseline",
+        "edge"
+      ],
+      "source_fixture": "sokoban_unbounded_map_edge_no_wrap"
+    },
+    {
+      "id": "falling-gravity-exact-tick",
+      "archetype": "falling_blocks",
+      "file": "falling_blocks--falling-gravity-exact-tick.json",
+      "hash": "6ad886b43451f7ac",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "falling-gravity-exact-tick"
+    },
+    {
+      "id": "falling-rotation",
+      "archetype": "falling_blocks",
+      "file": "falling_blocks--falling-rotation.json",
+      "hash": "1debb405fe796cd9",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "falling-rotation"
+    },
+    {
+      "id": "falling-hard-drop",
+      "archetype": "falling_blocks",
+      "file": "falling_blocks--falling-hard-drop.json",
+      "hash": "8465b380b1e49574",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "falling-hard-drop"
+    },
+    {
+      "id": "falling-hold",
+      "archetype": "falling_blocks",
+      "file": "falling_blocks--falling-hold.json",
+      "hash": "9af76e3470e8bab6",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "falling-hold"
+    },
+    {
+      "id": "falling-double-clear",
+      "archetype": "falling_blocks",
+      "file": "falling_blocks--falling-double-clear.json",
+      "hash": "cf6d59319ced94c1",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "terminal",
+        "complex_interaction"
+      ],
+      "source_fixture": "falling-double-clear"
+    },
+    {
+      "id": "falling-held-das",
+      "archetype": "falling_blocks",
+      "file": "falling_blocks--falling-held-das.json",
+      "hash": "3ad2219d9fb1bd17",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "complex_interaction"
+      ],
+      "source_fixture": "falling-held-das"
+    },
+    {
+      "id": "falling-hold-reset-after-lock",
+      "archetype": "falling_blocks",
+      "file": "falling_blocks--falling-hold-reset-after-lock.json",
+      "hash": "54034d3e37cf73b6",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "complex_interaction"
+      ],
+      "source_fixture": "falling-hold-reset-after-lock"
+    },
+    {
+      "id": "falling-lock-one-tick-before",
+      "archetype": "falling_blocks",
+      "file": "falling_blocks--falling-lock-one-tick-before.json",
+      "hash": "b281b5985a2dc0b4",
+      "categories": [
+        "regression_baseline",
+        "edge",
+        "complex_interaction"
+      ],
+      "source_fixture": "falling-lock-one-tick-before"
+    },
+    {
+      "id": "falling-lock-exact-tick",
+      "archetype": "falling_blocks",
+      "file": "falling_blocks--falling-lock-exact-tick.json",
+      "hash": "f4a714b08b9d90fa",
+      "categories": [
+        "regression_baseline",
+        "edge"
+      ],
+      "source_fixture": "falling-lock-exact-tick"
+    },
+    {
+      "id": "falling-spawn-top-out",
+      "archetype": "falling_blocks",
+      "file": "falling_blocks--falling-spawn-top-out.json",
+      "hash": "76a0074f71d38f25",
+      "categories": [
+        "regression_baseline",
+        "edge",
+        "terminal"
+      ],
+      "source_fixture": "falling-spawn-top-out"
+    },
+    {
+      "id": "shooter-player-move",
+      "archetype": "arcade_shooter",
+      "file": "arcade_shooter--shooter-player-move.json",
+      "hash": "487013c89f6a16b0",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "shooter-player-move"
+    },
+    {
+      "id": "shooter-swept-hit",
+      "archetype": "arcade_shooter",
+      "file": "arcade_shooter--shooter-swept-hit.json",
+      "hash": "f117481e1ba6141c",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "terminal"
+      ],
+      "source_fixture": "shooter-swept-hit"
+    },
+    {
+      "id": "shooter-wave-exact",
+      "archetype": "arcade_shooter",
+      "file": "arcade_shooter--shooter-wave-exact.json",
+      "hash": "c1cbb43ff8bf95f9",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "shooter-wave-exact"
+    },
+    {
+      "id": "shooter-player-death",
+      "archetype": "arcade_shooter",
+      "file": "arcade_shooter--shooter-player-death.json",
+      "hash": "79997f07a4bbfa37",
+      "categories": [
+        "regression_baseline",
+        "edge",
+        "terminal"
+      ],
+      "source_fixture": "shooter-player-death"
+    },
+    {
+      "id": "shooter-projectile-motion",
+      "archetype": "arcade_shooter",
+      "file": "arcade_shooter--shooter-projectile-motion.json",
+      "hash": "a7617c72e66af6e4",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "complex_interaction"
+      ],
+      "source_fixture": "shooter-projectile-motion"
+    },
+    {
+      "id": "shooter-enemy-chase",
+      "archetype": "arcade_shooter",
+      "file": "arcade_shooter--shooter-enemy-chase.json",
+      "hash": "a8a998467978fdd0",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "complex_interaction"
+      ],
+      "source_fixture": "shooter-enemy-chase"
+    },
+    {
+      "id": "shooter-multi-shot-kill",
+      "archetype": "arcade_shooter",
+      "file": "arcade_shooter--shooter-multi-shot-kill.json",
+      "hash": "4abcaaeca0247f40",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "terminal",
+        "complex_interaction"
+      ],
+      "source_fixture": "shooter-multi-shot-kill"
+    },
+    {
+      "id": "shooter-overlapping-enemy-tiebreak",
+      "archetype": "arcade_shooter",
+      "file": "arcade_shooter--shooter-overlapping-enemy-tiebreak.json",
+      "hash": "fb449edfc63683c3",
+      "categories": [
+        "regression_baseline",
+        "edge",
+        "complex_interaction"
+      ],
+      "source_fixture": "shooter-overlapping-enemy-tiebreak"
+    },
+    {
+      "id": "shooter-contact-before-cooldown",
+      "archetype": "arcade_shooter",
+      "file": "arcade_shooter--shooter-contact-before-cooldown.json",
+      "hash": "945824936b75b883",
+      "categories": [
+        "regression_baseline",
+        "edge"
+      ],
+      "source_fixture": "shooter-contact-before-cooldown"
+    },
+    {
+      "id": "shooter-cooldown-exact",
+      "archetype": "arcade_shooter",
+      "file": "arcade_shooter--shooter-cooldown-exact.json",
+      "hash": "b00dada6497972f8",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "shooter-cooldown-exact"
+    },
+    {
+      "id": "match3_horizontal_match_three",
+      "archetype": "match3",
+      "file": "match3--match3_horizontal_match_three.json",
+      "hash": "430fa202a578e636",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "match3_horizontal_match_three"
+    },
+    {
+      "id": "match3_score_objective_wins",
+      "archetype": "match3",
+      "file": "match3--match3_score_objective_wins.json",
+      "hash": "e1cf55a340991439",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "terminal"
+      ],
+      "source_fixture": "match3_score_objective_wins"
+    },
+    {
+      "id": "match3_layered_blocker_takes_one_hit_per_wave",
+      "archetype": "match3",
+      "file": "match3--match3_layered_blocker_takes_one_hit_per_wave.json",
+      "hash": "f23ba42652a162ce",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "match3_layered_blocker_takes_one_hit_per_wave"
+    },
+    {
+      "id": "match3_gravity_keeps_survivor_order",
+      "archetype": "match3",
+      "file": "match3--match3_gravity_keeps_survivor_order.json",
+      "hash": "f4e07ebb1d7400a5",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "match3_gravity_keeps_survivor_order"
+    },
+    {
+      "id": "match3_mask_hole_splits_gravity",
+      "archetype": "match3",
+      "file": "match3--match3_mask_hole_splits_gravity.json",
+      "hash": "6f7a3942ca813942",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "complex_interaction"
+      ],
+      "source_fixture": "match3_mask_hole_splits_gravity"
+    },
+    {
+      "id": "match3_same_seed_repeats_exact_refills",
+      "archetype": "match3",
+      "file": "match3--match3_same_seed_repeats_exact_refills.json",
+      "hash": "430fa202a578e636",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "complex_interaction"
+      ],
+      "source_fixture": "match3_same_seed_repeats_exact_refills"
+    },
+    {
+      "id": "match3_restore_resumes_rng_and_rules",
+      "archetype": "match3",
+      "file": "match3--match3_restore_resumes_rng_and_rules.json",
+      "hash": "faf0d4e9bffe4d7d",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "complex_interaction"
+      ],
+      "source_fixture": "match3_restore_resumes_rng_and_rules"
+    },
+    {
+      "id": "match3_second_cascade_doubles_clear_score",
+      "archetype": "match3",
+      "file": "match3--match3_second_cascade_doubles_clear_score.json",
+      "hash": "faf0d4e9bffe4d7d",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "complex_interaction"
+      ],
+      "source_fixture": "match3_second_cascade_doubles_clear_score"
+    },
+    {
+      "id": "match3_cascade_limit_is_explicit_terminal",
+      "archetype": "match3",
+      "file": "match3--match3_cascade_limit_is_explicit_terminal.json",
+      "hash": "ce794a8433325b72",
+      "categories": [
+        "regression_baseline",
+        "edge",
+        "terminal"
+      ],
+      "source_fixture": "match3_cascade_limit_is_explicit_terminal"
+    },
+    {
+      "id": "match3_terminal_state_is_stable",
+      "archetype": "match3",
+      "file": "match3--match3_terminal_state_is_stable.json",
+      "hash": "e977fa9d0349d021",
+      "categories": [
+        "regression_baseline",
+        "edge",
+        "terminal"
+      ],
+      "source_fixture": "match3_terminal_state_is_stable"
+    },
+    {
+      "id": "merge2048_compress_left",
+      "archetype": "merge2048",
+      "file": "merge2048--merge2048_compress_left.json",
+      "hash": "153c13b359b94275",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "merge2048_compress_left"
+    },
+    {
+      "id": "merge2048_double_pair",
+      "archetype": "merge2048",
+      "file": "merge2048--merge2048_double_pair.json",
+      "hash": "e30c5b7a6fa6cad8",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "merge2048_double_pair"
+    },
+    {
+      "id": "merge2048_triple_no_chain",
+      "archetype": "merge2048",
+      "file": "merge2048--merge2048_triple_no_chain.json",
+      "hash": "f703f3bd18d5eb79",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "merge2048_triple_no_chain"
+    },
+    {
+      "id": "merge2048_new_tile_no_chain",
+      "archetype": "merge2048",
+      "file": "merge2048--merge2048_new_tile_no_chain.json",
+      "hash": "1346b22919ed6cf3",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "merge2048_new_tile_no_chain"
+    },
+    {
+      "id": "merge2048_gapped_pair",
+      "archetype": "merge2048",
+      "file": "merge2048--merge2048_gapped_pair.json",
+      "hash": "6e347b218f4f8393",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "complex_interaction"
+      ],
+      "source_fixture": "merge2048_gapped_pair"
+    },
+    {
+      "id": "merge2048_two_rows",
+      "archetype": "merge2048",
+      "file": "merge2048--merge2048_two_rows.json",
+      "hash": "03e8b98c676c4c46",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "complex_interaction"
+      ],
+      "source_fixture": "merge2048_two_rows"
+    },
+    {
+      "id": "merge2048_target_challenge",
+      "archetype": "merge2048",
+      "file": "merge2048--merge2048_target_challenge.json",
+      "hash": "0d47523a0140e74c",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "terminal",
+        "complex_interaction"
+      ],
+      "source_fixture": "merge2048_target_challenge"
+    },
+    {
+      "id": "merge2048_unchanged_no_spawn",
+      "archetype": "merge2048",
+      "file": "merge2048--merge2048_unchanged_no_spawn.json",
+      "hash": "3f7b7049e3549403",
+      "categories": [
+        "regression_baseline",
+        "edge",
+        "complex_interaction"
+      ],
+      "source_fixture": "merge2048_unchanged_no_spawn"
+    },
+    {
+      "id": "merge2048_full_dead_board",
+      "archetype": "merge2048",
+      "file": "merge2048--merge2048_full_dead_board.json",
+      "hash": "aca6bc1ef1202a54",
+      "categories": [
+        "regression_baseline",
+        "edge",
+        "terminal"
+      ],
+      "source_fixture": "merge2048_full_dead_board"
+    },
+    {
+      "id": "merge2048_win_priority_over_move_limit",
+      "archetype": "merge2048",
+      "file": "merge2048--merge2048_win_priority_over_move_limit.json",
+      "hash": "9f8749122a03cfea",
+      "categories": [
+        "regression_baseline",
+        "edge",
+        "terminal"
+      ],
+      "source_fixture": "merge2048_win_priority_over_move_limit"
+    },
+    {
+      "id": "block_puzzle_place_dot",
+      "archetype": "block_puzzle",
+      "file": "block_puzzle--block_puzzle_place_dot.json",
+      "hash": "4575f817792b2221",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "block_puzzle_place_dot"
+    },
+    {
+      "id": "block_puzzle_row_clear",
+      "archetype": "block_puzzle",
+      "file": "block_puzzle--block_puzzle_row_clear.json",
+      "hash": "538a4d0f2e0e402d",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "block_puzzle_row_clear"
+    },
+    {
+      "id": "block_puzzle_row_column_intersection",
+      "archetype": "block_puzzle",
+      "file": "block_puzzle--block_puzzle_row_column_intersection.json",
+      "hash": "f6b17338da6b6d6e",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "block_puzzle_row_column_intersection"
+    },
+    {
+      "id": "block_puzzle_four_lines_simultaneous",
+      "archetype": "block_puzzle",
+      "file": "block_puzzle--block_puzzle_four_lines_simultaneous.json",
+      "hash": "364b733cffbc6f02",
+      "categories": [
+        "regression_baseline",
+        "normal"
+      ],
+      "source_fixture": "block_puzzle_four_lines_simultaneous"
+    },
+    {
+      "id": "block_puzzle_batch_order",
+      "archetype": "block_puzzle",
+      "file": "block_puzzle--block_puzzle_batch_order.json",
+      "hash": "aaf2a49b5b3f0cfd",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "complex_interaction"
+      ],
+      "source_fixture": "block_puzzle_batch_order"
+    },
+    {
+      "id": "block_puzzle_line_goal",
+      "archetype": "block_puzzle",
+      "file": "block_puzzle--block_puzzle_line_goal.json",
+      "hash": "f88f36efc0737695",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "terminal",
+        "complex_interaction"
+      ],
+      "source_fixture": "block_puzzle_line_goal"
+    },
+    {
+      "id": "block_puzzle_cycle_stream",
+      "archetype": "block_puzzle",
+      "file": "block_puzzle--block_puzzle_cycle_stream.json",
+      "hash": "72580ae5c7dfe6a9",
+      "categories": [
+        "regression_baseline",
+        "normal",
+        "complex_interaction"
+      ],
+      "source_fixture": "block_puzzle_cycle_stream"
+    },
+    {
+      "id": "block_puzzle_consumed_piece",
+      "archetype": "block_puzzle",
+      "file": "block_puzzle--block_puzzle_consumed_piece.json",
+      "hash": "dbb70fe75432a427",
+      "categories": [
+        "regression_baseline",
+        "edge",
+        "complex_interaction"
+      ],
+      "source_fixture": "block_puzzle_consumed_piece"
+    },
+    {
+      "id": "block_puzzle_no_placement",
+      "archetype": "block_puzzle",
+      "file": "block_puzzle--block_puzzle_no_placement.json",
+      "hash": "4bf791cbb24f1251",
+      "categories": [
+        "regression_baseline",
+        "edge",
+        "terminal"
+      ],
+      "source_fixture": "block_puzzle_no_placement"
+    },
+    {
+      "id": "block_puzzle_fixed_stream_complete",
+      "archetype": "block_puzzle",
+      "file": "block_puzzle--block_puzzle_fixed_stream_complete.json",
+      "hash": "1e5290dbabc0e62d",
+      "categories": [
+        "regression_baseline",
+        "edge",
+        "terminal"
+      ],
+      "source_fixture": "block_puzzle_fixed_stream_complete"
+    }
+  ]
+}

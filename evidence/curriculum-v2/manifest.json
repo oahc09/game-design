@@ -1,0 +1,283 @@
+{
+  "version": "measured-curriculum-v2-1.0.0",
+  "status": "BLOCKED",
+  "files": {
+    "blocked-diagnostics.mjs": {
+      "sha256": "a1d1b4ae69d79d9b5627162fcd2e0b1dbd390dc08a6059b236b2a79c7e83e16f",
+      "bytes": 6514
+    },
+    "blocked-report.json": {
+      "sha256": "483b5f3ebcff07ed74716a2760fbf9e952f5b422ed1d64064b758a73afceeac2",
+      "bytes": 7049
+    },
+    "candidate-freeze.json": {
+      "sha256": "9e6e04d030a92ebac4c2549a0fb2578e84b0a54818cc4e1d05feb5b7e87aa88c",
+      "bytes": 6787
+    },
+    "measured-curriculum-v2-input.json": {
+      "sha256": "e5314d670970fb44cb9fecff5c4d43c942374b79621349a4438fc3e7a7c41b16",
+      "bytes": 1612233
+    },
+    "postrun-diagnostics.json": {
+      "sha256": "6f3ca15b3adf3461cef3bce9d1baffe728254c7c437b6490e08def8bc43155ea",
+      "bytes": 75952
+    },
+    "preregistration.json": {
+      "sha256": "298fbf4b5cfdcd4068c1e465af66d58e2328048b843f5a601073454dd7832e19",
+      "bytes": 41360
+    },
+    "run-ledger.json": {
+      "sha256": "6724824a107b3761925a0b472ee8c50ba52b454dd875a1afe57537622b66ee4b",
+      "bytes": 11867
+    },
+    "source-provenance.json": {
+      "sha256": "8cfcca73671f262163b2ba0c828338ffdbf092f5298be2fc266388b39b855fba",
+      "bytes": 8541
+    },
+    "train/double-mixed-directions-moves-05-noisy-competent.json.gz": {
+      "sha256": "1c29cea02cb8f441106dccbc1c8b99e746544aca4bcb52e57d28e6aab791dd05",
+      "bytes": 20719
+    },
+    "train/double-mixed-directions-moves-06-noisy-competent.json.gz": {
+      "sha256": "774055a82aeaa235b0bdaf3d9388619cd531decf9ce5edbdd50fd147f63dcfb6",
+      "bytes": 20747
+    },
+    "train/double-mixed-directions-moves-07-noisy-competent.json.gz": {
+      "sha256": "f7bd5d53ff6b4a025b9f67a190cb7621c68e4de137a4bdde4bbd4dabd4a5c9cc",
+      "bytes": 20781
+    },
+    "train/double-mixed-directions-moves-08-noisy-competent.json.gz": {
+      "sha256": "9840b9927905242b81368bdb6921a3a2813281b8ee8a62ccd2726b96689a0ffc",
+      "bytes": 20815
+    },
+    "train/double-mixed-directions-moves-10-noisy-competent.json.gz": {
+      "sha256": "5fe5f89b2c3273fb7529cc69108ff648d76a68afded4c0ea9a82497bf03ed5bf",
+      "bytes": 20852
+    },
+    "train/double-mixed-directions-moves-13-noisy-competent.json.gz": {
+      "sha256": "375959bdd8d4dd6e990492dd906fab9b33951d4333154e3152815e57e69db627",
+      "bytes": 20927
+    },
+    "train/double-mixed-directions-moves-17-noisy-competent.json.gz": {
+      "sha256": "4a9b9130bfe37355e643943e37e8e9e520b9f1a523703ac63fddd46b2c5970f2",
+      "bytes": 20950
+    },
+    "train/double-offset-approach-moves-07-noisy-competent.json.gz": {
+      "sha256": "98034d8afd2a4654e7f0d7e358af758d681e9f7731576b74db39a174456cb501",
+      "bytes": 20724
+    },
+    "train/double-offset-approach-moves-08-noisy-competent.json.gz": {
+      "sha256": "613933df498829d4ee3e9c25c7bae02c76367a4d2b12bdd1dd3eaee96abefcd6",
+      "bytes": 20765
+    },
+    "train/double-offset-approach-moves-09-noisy-competent.json.gz": {
+      "sha256": "2668af6c6211b9f8ae334d1a5736263433ffa94d658d5ac1a93de79a7794af59",
+      "bytes": 20815
+    },
+    "train/double-offset-approach-moves-10-noisy-competent.json.gz": {
+      "sha256": "70c738e031d90495b3b8bc2c0f74a4278035eadc854828d3067a79377735ddac",
+      "bytes": 20827
+    },
+    "train/double-offset-approach-moves-12-noisy-competent.json.gz": {
+      "sha256": "009d0789c51f5b9508c692e1844be57fe400d3fd61e880aec4ad9e2a80b9feac",
+      "bytes": 20879
+    },
+    "train/double-offset-approach-moves-15-noisy-competent.json.gz": {
+      "sha256": "779af39284e6734c10c260a178788660dd2665aedc54161387540d866d836379",
+      "bytes": 20923
+    },
+    "train/double-offset-approach-moves-19-noisy-competent.json.gz": {
+      "sha256": "17b7dc055b9bb1d7d780d8279c87e8af6e51a6ac26c74eb9a521ff115a136b2b",
+      "bytes": 20932
+    },
+    "train/double-open-approach-moves-06-noisy-competent.json.gz": {
+      "sha256": "dc4b497d0d2ad3fd35f10d3d2804d2d3bf332e7ca0010006709ceb33a27c1852",
+      "bytes": 20730
+    },
+    "train/double-open-approach-moves-07-noisy-competent.json.gz": {
+      "sha256": "bd40ede11bd8bae95d00a32498f910500f37c0777d2ab07ba39749c7831f48ad",
+      "bytes": 20768
+    },
+    "train/double-open-approach-moves-08-noisy-competent.json.gz": {
+      "sha256": "10640c983f02e304a51d40b7b7db008cde3f630f159d0b443e47b10435efd0d8",
+      "bytes": 20774
+    },
+    "train/double-open-approach-moves-09-noisy-competent.json.gz": {
+      "sha256": "1e9b351cff24419274d0cf9d91229e66cd6d37c9fe4cf338e0a58ccc8fc57807",
+      "bytes": 20809
+    },
+    "train/double-open-approach-moves-11-noisy-competent.json.gz": {
+      "sha256": "2c3d97ca82d30fd58286ad2252c34c45f0eb839d60fa521f79b1eea936a0ad5c",
+      "bytes": 20919
+    },
+    "train/double-open-approach-moves-14-noisy-competent.json.gz": {
+      "sha256": "e9b679b077e460b78e587a57830ef39bedc3f327ad72b5fada1b2bb89adf190a",
+      "bytes": 20963
+    },
+    "train/double-open-approach-moves-18-noisy-competent.json.gz": {
+      "sha256": "abc88befe44d16954f4be0753d310a1f56674420af4b26988c8a575819cb7143",
+      "bytes": 20977
+    },
+    "train/double-reposition-moves-12-noisy-competent.json.gz": {
+      "sha256": "2dd796df8403cc0967f52583083fa73da9ef265baea09547db75f0aa254fb936",
+      "bytes": 20924
+    },
+    "train/double-reposition-moves-13-noisy-competent.json.gz": {
+      "sha256": "37661ac00d1a115befca23213014f356661687c39049364e9e48260d0115c6de",
+      "bytes": 20982
+    },
+    "train/double-reposition-moves-14-noisy-competent.json.gz": {
+      "sha256": "760df4d1e014e8c1512cec24c9d96d9ec5bf8cc7968c12e4e853afcdea22917c",
+      "bytes": 21005
+    },
+    "train/double-reposition-moves-15-noisy-competent.json.gz": {
+      "sha256": "0adc9f0c2279a0be2ad2341a69b4131932afaca0393cee625f5013c089d75c83",
+      "bytes": 21104
+    },
+    "train/double-reposition-moves-17-noisy-competent.json.gz": {
+      "sha256": "2370f52e0cbb683b480f8f94316c217a6a2477030a8cf10be995600ddb036bcf",
+      "bytes": 21171
+    },
+    "train/double-reposition-moves-20-noisy-competent.json.gz": {
+      "sha256": "fdaf8dbcc8cb0f904fef6c42b8d5ab0c8ce48564fec1dc8a06b94a6c35505335",
+      "bytes": 21214
+    },
+    "train/double-reposition-moves-24-noisy-competent.json.gz": {
+      "sha256": "1c36ba42cc12bbc023c4b01e3a0e57b88e3097b840b49ae327514a66a6b8423d",
+      "bytes": 21293
+    },
+    "train/double-separated-moves-07-noisy-competent.json.gz": {
+      "sha256": "c1e8877c9b7b7888a8f55289862a8a39eaa6cc5694b1effd16faf986cc8840bf",
+      "bytes": 20724
+    },
+    "train/double-separated-moves-08-noisy-competent.json.gz": {
+      "sha256": "de3707e71dbbc903d5fbd42f2785e13390c5240794897ff89925fe4026cc58e9",
+      "bytes": 20781
+    },
+    "train/double-separated-moves-09-noisy-competent.json.gz": {
+      "sha256": "0853218db024fdac6bcc77c884d59d423b9fd9f7deb94f7c3e515392c5fcbd5d",
+      "bytes": 20796
+    },
+    "train/double-separated-moves-10-noisy-competent.json.gz": {
+      "sha256": "2de419cdbae36c38ce1790b2ddc78d8edae686e5fa8d9ceef4efcfabb15f7b9f",
+      "bytes": 20846
+    },
+    "train/double-separated-moves-12-noisy-competent.json.gz": {
+      "sha256": "6296b8ea6ee07169a3803ddc4ebe23df7f20e12104cbc755459f47194f4ac1c5",
+      "bytes": 20929
+    },
+    "train/double-separated-moves-15-noisy-competent.json.gz": {
+      "sha256": "c6119222b0aa70432065d993162002f2277c98b90aa3cb2595b2a87700145057",
+      "bytes": 20980
+    },
+    "train/double-separated-moves-19-noisy-competent.json.gz": {
+      "sha256": "db8abd07ac0b9663728e7863754a3dd32996ef2abe953d00909e5f84f80fcf07",
+      "bytes": 21024
+    },
+    "train/single-adjacent-moves-01-noisy-competent.json.gz": {
+      "sha256": "1ae0aba1b8a40bdd089058b61c476f006cbc740fd708ed83b4bd8a5da99378bf",
+      "bytes": 20549
+    },
+    "train/single-adjacent-moves-02-noisy-competent.json.gz": {
+      "sha256": "510d8fab1bcc417e3f917a46fd3e27653959bd01c655ff5cb857d3997feaa840",
+      "bytes": 20522
+    },
+    "train/single-adjacent-moves-03-noisy-competent.json.gz": {
+      "sha256": "2908fb1a1384723ff4f047d8881479e91da6addb9f7c5964e378d7a0bda142d1",
+      "bytes": 20571
+    },
+    "train/single-adjacent-moves-04-noisy-competent.json.gz": {
+      "sha256": "428908a94ab72e09b7fefd7ab8408e64a4ea921681603862fc50e2c1073fa534",
+      "bytes": 20609
+    },
+    "train/single-adjacent-moves-06-noisy-competent.json.gz": {
+      "sha256": "8954aa1dd3cb59dd755ae42a31f0081a99f7f30d29294988058631403aef6b01",
+      "bytes": 20589
+    },
+    "train/single-adjacent-moves-09-noisy-competent.json.gz": {
+      "sha256": "9f431687e1572597067ff790077ea92c2d4b7a93259c4c9682372586621b1f22",
+      "bytes": 20576
+    },
+    "train/single-adjacent-moves-13-noisy-competent.json.gz": {
+      "sha256": "e107e5d63e7090973e6ff459807316c75df5fdbf936abc6ac2ddce98c728d5b2",
+      "bytes": 20554
+    },
+    "train/single-approach-moves-03-noisy-competent.json.gz": {
+      "sha256": "33f0d5a3f66ae360e002969106cfbb1372f03dd3310ebccc24fe8465ebf365fe",
+      "bytes": 20642
+    },
+    "train/single-approach-moves-04-noisy-competent.json.gz": {
+      "sha256": "6cb18dbe2bd4b9523811112e145c1807571d40cf1b1e8d1217b9e9ed7229dc74",
+      "bytes": 20646
+    },
+    "train/single-approach-moves-05-noisy-competent.json.gz": {
+      "sha256": "3784d622cc930c2fde7ea2bcf6810bdba8c1bb945bc5c48cea0f48dd3bfe4d9a",
+      "bytes": 20698
+    },
+    "train/single-approach-moves-06-noisy-competent.json.gz": {
+      "sha256": "deaf65f52b409985f7b090ae11adc8c65eac254f1c03e716847de9c100caa5e7",
+      "bytes": 20703
+    },
+    "train/single-approach-moves-08-noisy-competent.json.gz": {
+      "sha256": "0eca9cf4a6cd9ee75c75fc6fb0f7dc6813c6a4106aef272fb2602e1402d0ef94",
+      "bytes": 20733
+    },
+    "train/single-approach-moves-11-noisy-competent.json.gz": {
+      "sha256": "058541d960b0d35c65c6ae5358aa080ce617f2cc23f25e884e960f50b5b5d10d",
+      "bytes": 20735
+    },
+    "train/single-approach-moves-15-noisy-competent.json.gz": {
+      "sha256": "dbe8ef5ad930fc8413c464cebba0c0f96c938bb05502e0e4b8ea42019aafd260",
+      "bytes": 20735
+    },
+    "train/single-long-push-moves-03-noisy-competent.json.gz": {
+      "sha256": "22f9b17862752a222a8cf72f766ef431df3b4ae257c7d7618fe4eef99f4a07ba",
+      "bytes": 20641
+    },
+    "train/single-long-push-moves-04-noisy-competent.json.gz": {
+      "sha256": "b813e77cbf4ff75e6943536926b64403cfb973fff4f1666732ec7eb4d3046010",
+      "bytes": 20672
+    },
+    "train/single-long-push-moves-05-noisy-competent.json.gz": {
+      "sha256": "c328d11707c5869b7273ae56012d42a106940194bbb2e9b5e270eed0ae4cabd0",
+      "bytes": 20724
+    },
+    "train/single-long-push-moves-06-noisy-competent.json.gz": {
+      "sha256": "dbd03afe2cf6be21332f8fbbd133c1d0f95c67ffb730bccb87a234da37dca8dd",
+      "bytes": 20703
+    },
+    "train/single-long-push-moves-08-noisy-competent.json.gz": {
+      "sha256": "9d1758401dce874c1e6de6f036769377533300b586019836c1439b4c1ecde863",
+      "bytes": 20735
+    },
+    "train/single-long-push-moves-11-noisy-competent.json.gz": {
+      "sha256": "37a2b21141435778c4585f7bce8c1b7d1e6586fdf3da70de18d15ac6995f1ce6",
+      "bytes": 20758
+    },
+    "train/single-long-push-moves-15-noisy-competent.json.gz": {
+      "sha256": "f868ce8d1c32ea23daed9316933626139a9ab047225ab2a4616c4de35c3484d9",
+      "bytes": 20713
+    },
+    "training-summary.json": {
+      "sha256": "69324171a9aa71d920f85f4a4c536ed46082c08b6641cca9c9e8b3aee9592920",
+      "bytes": 664375
+    }
+  },
+  "artifact_bytes": 3599855,
+  "example_bytes": 1612233,
+  "total_bytes_including_example": 5212088,
+  "checks": {
+    "sources_unchanged": true,
+    "v1_untouched": true,
+    "one_registered_strategy": true,
+    "full_pool_retained": true,
+    "final_test_not_opened": true,
+    "under_episode_cap": true,
+    "proof_of_training_infeasibility": true,
+    "under_10_mib": true
+  },
+  "integrity_pass": true,
+  "final_test_point_targets_pass": null,
+  "final_test_all_adjusted_intervals_contained": null,
+  "scope": "Blocked experiment integrity only. No selected valid campaign, validation, final test, new controls or new replay witnesses were produced."
+}

@@ -1,0 +1,6576 @@
+{
+  "archetype": "merge2048",
+  "version": "1.0.0",
+  "description": "Authored conformance fixtures: exact rule expectations, with specific validation codes for broken content.",
+  "cases": [
+    {
+      "id": "merge2048_compress_left",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                0,
+                2,
+                0,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 0,
+          "mergeCount": 0,
+          "turn": 1
+        },
+        "events": [
+          "BoardShifted",
+          "TileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_compress_right",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                0,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "RIGHT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 0,
+          "mergeCount": 0,
+          "turn": 1
+        },
+        "events": [
+          "BoardShifted",
+          "TileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_compress_up",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                0,
+                0,
+                0,
+                0,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                4,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "UP"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 0,
+          "mergeCount": 0,
+          "turn": 1
+        },
+        "events": [
+          "BoardShifted",
+          "TileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_compress_down",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "DOWN"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 0,
+          "mergeCount": 0,
+          "turn": 1
+        },
+        "events": [
+          "BoardShifted",
+          "TileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_pair_left",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 4,
+          "mergeCount": 1,
+          "turn": 1
+        },
+        "events": [
+          "BoardShifted",
+          "TileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_pair_right",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "RIGHT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 4,
+          "mergeCount": 1,
+          "turn": 1
+        },
+        "events": [
+          "BoardShifted",
+          "TileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_pair_up",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                0,
+                0,
+                0,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "UP"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 4,
+          "mergeCount": 1,
+          "turn": 1
+        },
+        "events": [
+          "BoardShifted",
+          "TileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_pair_down",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                0,
+                0,
+                0,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "DOWN"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 4,
+          "mergeCount": 1,
+          "turn": 1
+        },
+        "events": [
+          "BoardShifted",
+          "TileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_double_pair",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                2,
+                2,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 8,
+          "mergeCount": 2,
+          "turn": 1
+        },
+        "events": [
+          "BoardShifted",
+          "TileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_triple_no_chain",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                2,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 4,
+          "mergeCount": 1,
+          "turn": 1
+        },
+        "events": [
+          "BoardShifted",
+          "TileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_new_tile_no_chain",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                2,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 4,
+          "mergeCount": 1,
+          "turn": 1
+        },
+        "events": [
+          "BoardShifted",
+          "TileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_adjacent_magnitudes",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                4,
+                4,
+                8,
+                8,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 24,
+          "mergeCount": 2,
+          "turn": 1
+        },
+        "events": [
+          "BoardShifted",
+          "TileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_gapped_pair",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                0,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 4,
+          "mergeCount": 1,
+          "turn": 1
+        },
+        "events": [
+          "BoardShifted",
+          "TileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_two_rows",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                2,
+                0,
+                0,
+                4,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 12,
+          "mergeCount": 2,
+          "turn": 1
+        },
+        "events": [
+          "BoardShifted",
+          "TileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_large_merge",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                512,
+                512,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 1024,
+          "mergeCount": 1,
+          "turn": 1
+        },
+        "events": [
+          "BoardShifted",
+          "TileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_no_cross_line_merge",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                0,
+                0,
+                0,
+                2,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 0,
+          "mergeCount": 0,
+          "turn": 1
+        },
+        "events": [
+          "BoardShifted",
+          "TileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_target_challenge",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                1024,
+                1024,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "terminal": {
+          "status": "WIN"
+        },
+        "state": {
+          "score": 2048
+        }
+      }
+    },
+    {
+      "id": "merge2048_continue_after_target",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 8,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": false,
+              "board": [
+                4,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "terminal": null,
+        "state": {
+          "score": 8
+        }
+      }
+    },
+    {
+      "id": "merge2048_board_size_two",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 2,
+              "target": 32,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                2,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 4,
+          "mergeCount": 1
+        }
+      }
+    },
+    {
+      "id": "merge2048_four_only_spawn",
+      "archetype": "merge2048",
+      "kind": "valid",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 4,
+                  "weight": 1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "spawnedValue": 4
+        }
+      }
+    },
+    {
+      "id": "merge2048_unchanged_no_spawn",
+      "archetype": "merge2048",
+      "kind": "edge",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "turn": 0,
+          "spawnedValue": 0
+        }
+      }
+    },
+    {
+      "id": "merge2048_invalid_direction",
+      "archetype": "merge2048",
+      "kind": "edge",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "DIAGONAL"
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "turn": 0
+        }
+      }
+    },
+    {
+      "id": "merge2048_full_dead_board",
+      "archetype": "merge2048",
+      "kind": "edge",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 2,
+              "target": 64,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                4,
+                8,
+                16
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": false,
+        "terminal": {
+          "status": "LOSE",
+          "reason": "NO_LEGAL_MOVE"
+        }
+      }
+    },
+    {
+      "id": "merge2048_full_board_still_mergeable",
+      "archetype": "merge2048",
+      "kind": "edge",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 2,
+              "target": 64,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                2,
+                8,
+                16
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 4
+        }
+      }
+    },
+    {
+      "id": "merge2048_initial_target",
+      "archetype": "merge2048",
+      "kind": "edge",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 2,
+              "target": 64,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                64,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "terminal": {
+          "status": "WIN"
+        }
+      }
+    },
+    {
+      "id": "merge2048_move_limit_loss",
+      "archetype": "merge2048",
+      "kind": "edge",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "terminal": {
+          "status": "LOSE",
+          "reason": "MOVE_LIMIT"
+        }
+      }
+    },
+    {
+      "id": "merge2048_win_priority_over_move_limit",
+      "archetype": "merge2048",
+      "kind": "edge",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 4,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "terminal": {
+          "status": "WIN"
+        }
+      }
+    },
+    {
+      "id": "merge2048_zero_initial_tiles",
+      "archetype": "merge2048",
+      "kind": "edge",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 0,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "terminal": {
+          "status": "LOSE",
+          "reason": "NO_LEGAL_MOVE"
+        }
+      }
+    },
+    {
+      "id": "merge2048_size_eight",
+      "archetype": "merge2048",
+      "kind": "edge",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 8,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "RIGHT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "score": 4
+        }
+      }
+    },
+    {
+      "id": "merge2048_tiny_positive_weight",
+      "archetype": "merge2048",
+      "kind": "edge",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.00001
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "LEFT"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "spawnedValue": 2
+        }
+      }
+    },
+    {
+      "id": "merge2048_size_small",
+      "archetype": "merge2048",
+      "kind": "broken",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 1,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "BOARD_SIZE"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_size_fraction",
+      "archetype": "merge2048",
+      "kind": "broken",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 3.5,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "BOARD_SIZE"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_ragged_board",
+      "archetype": "merge2048",
+      "kind": "broken",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                2
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "BOARD_SHAPE"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_negative_tile",
+      "archetype": "merge2048",
+      "kind": "broken",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                -2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "TILE_VALUE"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_non_power_tile",
+      "archetype": "merge2048",
+      "kind": "broken",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true,
+              "board": [
+                3,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "TILE_VALUE"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_non_power_target",
+      "archetype": "merge2048",
+      "kind": "broken",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 7,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "TARGET"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_too_many_initial",
+      "archetype": "merge2048",
+      "kind": "broken",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 17,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "INITIAL_TILES"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_zero_move_limit",
+      "archetype": "merge2048",
+      "kind": "broken",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0.9
+                },
+                {
+                  "value": 4,
+                  "weight": 0.1
+                }
+              ],
+              "moveLimit": 0,
+              "stopAtTarget": true
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "MOVE_LIMIT"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_empty_distribution",
+      "archetype": "merge2048",
+      "kind": "broken",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [],
+              "moveLimit": 1000,
+              "stopAtTarget": true
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "SPAWN_POLICY"
+        ]
+      }
+    },
+    {
+      "id": "merge2048_zero_weight",
+      "archetype": "merge2048",
+      "kind": "broken",
+      "seed": 21,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "merge2048-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "merge2048",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "merge2048"
+        },
+        "runtime": {
+          "simulation_mode": "TURN_BASED",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "discrete",
+          "values": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
+          ]
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "merge2048-challenge-001",
+          "type": "challenge",
+          "archetype": "merge2048",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "merge2048": {
+              "size": 4,
+              "target": 2048,
+              "initialTiles": 2,
+              "spawnDistribution": [
+                {
+                  "value": 2,
+                  "weight": 0
+                }
+              ],
+              "moveLimit": 1000,
+              "stopAtTarget": true
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "1.0.0"
+            },
+            {
+              "id": "greedy",
+              "version": "1.0.0"
+            },
+            {
+              "id": "heuristic",
+              "version": "1.0.0"
+            },
+            {
+              "id": "expectimax",
+              "version": "1.0.0"
+            }
+          ],
+          "metrics": [
+            "score",
+            "max_tile",
+            "target_rate",
+            "survival_moves",
+            "empty_cells",
+            "merge_efficiency"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "merge2048_v0.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [],
+      "expect": {
+        "validationErrors": [
+          "SPAWN_POLICY"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,542 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://game-design.local/schema/gameplay.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "id",
+        "version"
+      ],
+      "additionalProperties": false
+    },
+    "design": {
+      "type": "object",
+      "properties": {
+        "archetype": {
+          "type": "string",
+          "minLength": 1
+        },
+        "audience": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "additionalProperties": false
+        },
+        "session": {
+          "type": "object",
+          "properties": {
+            "target_minutes": {
+              "type": "object",
+              "properties": {
+                "min": {
+                  "type": "number"
+                },
+                "max": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "min",
+                "max"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "target_minutes"
+          ],
+          "additionalProperties": false
+        },
+        "pillars": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "complexity": {
+          "type": "object",
+          "properties": {
+            "action_budget": {
+              "type": "string",
+              "minLength": 1
+            },
+            "mechanic_budget": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "action_budget",
+            "mechanic_budget"
+          ],
+          "additionalProperties": false
+        },
+        "content_target": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "minLength": 1
+            },
+            "expected_count": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "type",
+            "expected_count"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "archetype",
+        "audience",
+        "session",
+        "pillars",
+        "complexity",
+        "content_target"
+      ],
+      "additionalProperties": false
+    },
+    "game": {
+      "type": "object",
+      "properties": {
+        "archetype": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "archetype"
+      ],
+      "additionalProperties": false
+    },
+    "runtime": {
+      "type": "object",
+      "properties": {
+        "simulation_mode": {
+          "enum": [
+            "TURN_BASED",
+            "EVENT_DRIVEN",
+            "FIXED_STEP",
+            "SIMULTANEOUS",
+            "AGENT_CYCLE"
+          ]
+        },
+        "tick_rate": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "simulation_mode"
+      ],
+      "additionalProperties": false
+    },
+    "action_space": {
+      "$ref": "#/$defs/action"
+    },
+    "observation": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "enum": [
+            "FULL_STATE",
+            "VISIBLE_STATE",
+            "PARTIAL",
+            "DELAYED",
+            "NOISY"
+          ]
+        },
+        "delay_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "noise": {
+          "type": [
+            "object",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "mode"
+      ],
+      "additionalProperties": false
+    },
+    "rng": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled"
+      ],
+      "additionalProperties": false
+    },
+    "content": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "archetype": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parameters": {
+          "type": "object"
+        },
+        "objectives": {
+          "type": "array",
+          "items": {}
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "extensions": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "archetype",
+        "parameters",
+        "objectives",
+        "dependencies",
+        "extensions"
+      ],
+      "additionalProperties": false
+    },
+    "evaluation": {
+      "type": "object",
+      "properties": {
+        "player_profiles": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "metrics": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "gates": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "seed_set": {
+          "type": "object",
+          "properties": {
+            "mode": {
+              "const": "fixed"
+            },
+            "values": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "required": [
+            "mode",
+            "values"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "player_profiles",
+        "metrics",
+        "gates",
+        "seed_set"
+      ],
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "rules_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "confidence": {
+                "enum": [
+                  "confirmed",
+                  "observed",
+                  "inferred",
+                  "suspected",
+                  "unknown"
+                ]
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "id",
+              "confidence"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "rules_version",
+        "assumptions"
+      ],
+      "additionalProperties": false
+    },
+    "adapter": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "version"
+      ],
+      "additionalProperties": false
+    },
+    "extensions": {
+      "type": "object"
+    },
+    "state": {
+      "type": "object",
+      "properties": {
+        "globals": {
+          "type": "array",
+          "items": {}
+        },
+        "entity_types": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "events": {
+      "type": "array",
+      "items": {}
+    },
+    "objectives": {
+      "type": "object",
+      "properties": {
+        "win": {
+          "type": "array",
+          "items": {}
+        },
+        "lose": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "metadata",
+    "design",
+    "game",
+    "runtime",
+    "action_space",
+    "observation",
+    "rng",
+    "content",
+    "evaluation",
+    "provenance",
+    "adapter",
+    "extensions"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "action": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "discrete"
+            },
+            "values": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "type",
+            "values"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "continuous"
+            },
+            "shape": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "type",
+            "shape",
+            "min",
+            "max"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "enum": [
+                "multi_discrete",
+                "multidiscrete"
+              ]
+            },
+            "values": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {}
+              }
+            }
+          },
+          "required": [
+            "type",
+            "values"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "composite"
+            },
+            "fields": {
+              "type": "object",
+              "minProperties": 1,
+              "additionalProperties": {
+                "$ref": "#/$defs/action"
+              }
+            }
+          },
+          "required": [
+            "type",
+            "fields"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "temporal"
+            },
+            "base": {
+              "$ref": "#/$defs/action"
+            }
+          },
+          "required": [
+            "type",
+            "base"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

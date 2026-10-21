@@ -1,0 +1,686 @@
+{
+  "version": "measured-curriculum-v3-1.0.0",
+  "registration_sha256": "7d3ecd499bacde19d83310e91016e6bc81bff4854e9f7e4820cb92e0f0837a15",
+  "events": [
+    {
+      "type": "RUN_STARTED_OR_RESUMED",
+      "at": "2026-10-08T13:42:58.091Z",
+      "source_hash": "1a0459915d7b13a728334025b2a1b550742a338ef6e655642470d661a3389ed0"
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:42:58.513Z",
+      "file": "train/single-adjacent-moves-03-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 471
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:42:58.820Z",
+      "file": "train/single-adjacent-moves-04-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 471
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:42:59.725Z",
+      "file": "train/single-approach-moves-05-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 414
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:43:00.639Z",
+      "file": "train/single-approach-moves-06-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 414
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:43:01.489Z",
+      "file": "train/single-long-push-moves-05-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 385
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:43:02.482Z",
+      "file": "train/single-long-push-moves-06-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 385
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:43:08.211Z",
+      "file": "train/double-separated-moves-09-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 288
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:43:14.358Z",
+      "file": "train/double-separated-moves-10-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 304
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:43:20.593Z",
+      "file": "train/double-separated-moves-12-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 407
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:43:30.286Z",
+      "file": "train/double-offset-approach-moves-09-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 328
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:43:40.509Z",
+      "file": "train/double-offset-approach-moves-10-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 328
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:43:51.031Z",
+      "file": "train/double-offset-approach-moves-12-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 409
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:43:55.180Z",
+      "file": "train/double-open-approach-moves-06-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 175
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:43:59.804Z",
+      "file": "train/double-open-approach-moves-07-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 175
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:04.806Z",
+      "file": "train/double-open-approach-moves-08-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 306
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:10.547Z",
+      "file": "train/double-open-approach-moves-11-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 380
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:14.061Z",
+      "file": "train/double-mixed-directions-moves-05-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 170
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:18.002Z",
+      "file": "train/double-mixed-directions-moves-06-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 170
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:22.455Z",
+      "file": "train/double-mixed-directions-moves-07-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 301
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:28.827Z",
+      "file": "train/double-mixed-directions-moves-10-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 383
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:29.174Z",
+      "file": "train/v3-two-push-rest-moves-02-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 340
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:29.577Z",
+      "file": "train/v3-two-push-rest-moves-03-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 340
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:30.063Z",
+      "file": "train/v3-two-push-rest-moves-04-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 436
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:31.580Z",
+      "file": "train/v3-four-decision-turn-moves-04-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 218
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:33.730Z",
+      "file": "train/v3-four-decision-turn-moves-05-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 218
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:35.926Z",
+      "file": "train/v3-four-decision-turn-moves-06-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 354
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:39.268Z",
+      "file": "train/v3-five-decision-turn-moves-05-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 177
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:43.328Z",
+      "file": "train/v3-five-decision-turn-moves-06-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 177
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:47.448Z",
+      "file": "train/v3-five-decision-turn-moves-07-noisy-competent.json.gz",
+      "n": 512,
+      "wins": 315
+    },
+    {
+      "type": "CANDIDATE_FROZEN",
+      "at": "2026-10-08T13:44:48.109Z",
+      "candidate_sha256": "4d4d522c5407e920496fa03052aa25ed7c2bf55b1d8d0940653a68929498b24f",
+      "ids": [
+        "single-adjacent-moves-03",
+        "single-approach-moves-05",
+        "double-offset-approach-moves-12",
+        "v3-four-decision-turn-moves-06",
+        "double-offset-approach-moves-09",
+        "double-open-approach-moves-08",
+        "v3-four-decision-turn-moves-04",
+        "v3-five-decision-turn-moves-05",
+        "v3-two-push-rest-moves-02",
+        "v3-five-decision-turn-moves-06"
+      ]
+    },
+    {
+      "type": "ATTEMPT_REGISTERED",
+      "at": "2026-10-08T13:44:48.122Z",
+      "attempt": 1
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:48.251Z",
+      "file": "validation/single-adjacent-moves-03-noisy-competent.json.gz",
+      "n": 256,
+      "wins": 238
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:48.692Z",
+      "file": "validation/single-approach-moves-05-noisy-competent.json.gz",
+      "n": 256,
+      "wins": 208
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:54.215Z",
+      "file": "validation/double-offset-approach-moves-12-noisy-competent.json.gz",
+      "n": 256,
+      "wins": 201
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:44:55.263Z",
+      "file": "validation/v3-four-decision-turn-moves-06-noisy-competent.json.gz",
+      "n": 256,
+      "wins": 178
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:45:00.259Z",
+      "file": "validation/double-offset-approach-moves-09-noisy-competent.json.gz",
+      "n": 256,
+      "wins": 153
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:45:02.678Z",
+      "file": "validation/double-open-approach-moves-08-noisy-competent.json.gz",
+      "n": 256,
+      "wins": 148
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:45:03.549Z",
+      "file": "validation/v3-four-decision-turn-moves-04-noisy-competent.json.gz",
+      "n": 256,
+      "wins": 114
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:45:05.140Z",
+      "file": "validation/v3-five-decision-turn-moves-05-noisy-competent.json.gz",
+      "n": 256,
+      "wins": 92
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:45:05.318Z",
+      "file": "validation/v3-two-push-rest-moves-02-noisy-competent.json.gz",
+      "n": 256,
+      "wins": 171
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:45:07.264Z",
+      "file": "validation/v3-five-decision-turn-moves-06-noisy-competent.json.gz",
+      "n": 256,
+      "wins": 92
+    },
+    {
+      "type": "VALIDATION_COMPLETE",
+      "at": "2026-10-08T13:45:07.264Z",
+      "retuned": false
+    },
+    {
+      "type": "FINAL_TEST_OPENED",
+      "at": "2026-10-08T13:45:07.265Z",
+      "candidate_sha256": "4d4d522c5407e920496fa03052aa25ed7c2bf55b1d8d0940653a68929498b24f",
+      "final_seed_digest": "b189c039b245299422a86fdf5a31ce9f34da6d8df310d820d822be6f3286a240"
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:45:07.736Z",
+      "file": "final-test/single-adjacent-moves-03-noisy-competent.json.gz",
+      "n": 1024,
+      "wins": 970
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:45:09.300Z",
+      "file": "final-test/single-approach-moves-05-noisy-competent.json.gz",
+      "n": 1024,
+      "wins": 882
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:45:30.616Z",
+      "file": "final-test/double-offset-approach-moves-12-noisy-competent.json.gz",
+      "n": 1024,
+      "wins": 813
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:45:34.708Z",
+      "file": "final-test/v3-four-decision-turn-moves-06-noisy-competent.json.gz",
+      "n": 1024,
+      "wins": 736
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:45:53.665Z",
+      "file": "final-test/double-offset-approach-moves-09-noisy-competent.json.gz",
+      "n": 1024,
+      "wins": 646
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:03.613Z",
+      "file": "final-test/double-open-approach-moves-08-noisy-competent.json.gz",
+      "n": 1024,
+      "wins": 637
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:06.923Z",
+      "file": "final-test/v3-four-decision-turn-moves-04-noisy-competent.json.gz",
+      "n": 1024,
+      "wins": 488
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:13.439Z",
+      "file": "final-test/v3-five-decision-turn-moves-05-noisy-competent.json.gz",
+      "n": 1024,
+      "wins": 371
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:14.138Z",
+      "file": "final-test/v3-two-push-rest-moves-02-noisy-competent.json.gz",
+      "n": 1024,
+      "wins": 728
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:21.724Z",
+      "file": "final-test/v3-five-decision-turn-moves-06-noisy-competent.json.gz",
+      "n": 1024,
+      "wins": 371
+    },
+    {
+      "type": "FINAL_TEST_COMPLETE",
+      "at": "2026-10-08T13:46:21.724Z",
+      "retuned": false
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:21.755Z",
+      "file": "controls/single-adjacent-moves-03-random.json.gz",
+      "n": 64,
+      "wins": 21
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:21.781Z",
+      "file": "controls/single-adjacent-moves-03-competent.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:21.806Z",
+      "file": "controls/single-adjacent-moves-03-strong.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:21.837Z",
+      "file": "controls/single-adjacent-moves-03-noisy-competent.json.gz",
+      "n": 64,
+      "wins": 62
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:21.893Z",
+      "file": "controls/single-approach-moves-05-random.json.gz",
+      "n": 64,
+      "wins": 7
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:21.969Z",
+      "file": "controls/single-approach-moves-05-competent.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:22.052Z",
+      "file": "controls/single-approach-moves-05-strong.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:22.145Z",
+      "file": "controls/single-approach-moves-05-noisy-competent.json.gz",
+      "n": 64,
+      "wins": 53
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:22.206Z",
+      "file": "controls/single-long-push-moves-05-random.json.gz",
+      "n": 64,
+      "wins": 2
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:22.296Z",
+      "file": "controls/single-long-push-moves-05-competent.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:22.375Z",
+      "file": "controls/single-long-push-moves-05-strong.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:22.475Z",
+      "file": "controls/single-long-push-moves-05-noisy-competent.json.gz",
+      "n": 64,
+      "wins": 55
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:22.549Z",
+      "file": "controls/double-separated-moves-09-random.json.gz",
+      "n": 64,
+      "wins": 0
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:23.091Z",
+      "file": "controls/double-separated-moves-09-competent.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:23.631Z",
+      "file": "controls/double-separated-moves-09-strong.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:24.256Z",
+      "file": "controls/double-separated-moves-09-noisy-competent.json.gz",
+      "n": 64,
+      "wins": 39
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:24.338Z",
+      "file": "controls/double-offset-approach-moves-09-random.json.gz",
+      "n": 64,
+      "wins": 0
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:25.321Z",
+      "file": "controls/double-offset-approach-moves-09-competent.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:26.287Z",
+      "file": "controls/double-offset-approach-moves-09-strong.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:27.396Z",
+      "file": "controls/double-offset-approach-moves-09-noisy-competent.json.gz",
+      "n": 64,
+      "wins": 39
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:27.479Z",
+      "file": "controls/double-open-approach-moves-08-random.json.gz",
+      "n": 64,
+      "wins": 0
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:27.928Z",
+      "file": "controls/double-open-approach-moves-08-competent.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:28.356Z",
+      "file": "controls/double-open-approach-moves-08-strong.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:28.939Z",
+      "file": "controls/double-open-approach-moves-08-noisy-competent.json.gz",
+      "n": 64,
+      "wins": 39
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:29.007Z",
+      "file": "controls/double-mixed-directions-moves-07-random.json.gz",
+      "n": 64,
+      "wins": 0
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:29.422Z",
+      "file": "controls/double-mixed-directions-moves-07-competent.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:29.818Z",
+      "file": "controls/double-mixed-directions-moves-07-strong.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:30.409Z",
+      "file": "controls/double-mixed-directions-moves-07-noisy-competent.json.gz",
+      "n": 64,
+      "wins": 41
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:30.453Z",
+      "file": "controls/v3-two-push-rest-moves-04-random.json.gz",
+      "n": 64,
+      "wins": 13
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:30.499Z",
+      "file": "controls/v3-two-push-rest-moves-04-competent.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:30.547Z",
+      "file": "controls/v3-two-push-rest-moves-04-strong.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:30.608Z",
+      "file": "controls/v3-two-push-rest-moves-04-noisy-competent.json.gz",
+      "n": 64,
+      "wins": 58
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:30.710Z",
+      "file": "controls/v3-four-decision-turn-moves-06-random.json.gz",
+      "n": 64,
+      "wins": 0
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:30.905Z",
+      "file": "controls/v3-four-decision-turn-moves-06-competent.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:31.086Z",
+      "file": "controls/v3-four-decision-turn-moves-06-strong.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:31.323Z",
+      "file": "controls/v3-four-decision-turn-moves-06-noisy-competent.json.gz",
+      "n": 64,
+      "wins": 47
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:31.423Z",
+      "file": "controls/v3-five-decision-turn-moves-07-random.json.gz",
+      "n": 64,
+      "wins": 0
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:31.831Z",
+      "file": "controls/v3-five-decision-turn-moves-07-competent.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:32.208Z",
+      "file": "controls/v3-five-decision-turn-moves-07-strong.json.gz",
+      "n": 64,
+      "wins": 64
+    },
+    {
+      "type": "MEASUREMENT_COMPLETE",
+      "at": "2026-10-08T13:46:32.736Z",
+      "file": "controls/v3-five-decision-turn-moves-07-noisy-competent.json.gz",
+      "n": 64,
+      "wins": 42
+    },
+    {
+      "type": "EXPERIMENT_COMPLETE",
+      "at": "2026-10-08T13:46:33.041Z",
+      "status": "FINAL_TEST_POINT_TARGETS_PASS",
+      "inference_status": "ALL_TEN_ADJUSTED_INTERVALS_INSIDE_ORIGINAL_BANDS"
+    }
+  ],
+  "attempts": [
+    {
+      "id": 1,
+      "candidate_sha256": "4d4d522c5407e920496fa03052aa25ed7c2bf55b1d8d0940653a68929498b24f",
+      "status": "FINAL_TEST_POINT_TARGETS_PASS"
+    }
+  ],
+  "simulation_calls": 30238
+}

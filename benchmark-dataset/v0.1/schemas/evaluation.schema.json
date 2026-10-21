@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "blind_id",
+    "artifact_digest",
+    "checks",
+    "metrics",
+    "issues",
+    "human",
+    "evidence"
+  ],
+  "properties": {
+    "blind_id": {
+      "type": "string"
+    },
+    "artifact_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "status",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "NOT_APPLICABLE",
+              "NOT_EVALUATED"
+            ]
+          },
+          "evidence": {
+            "type": "array"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "number",
+          "null"
+        ]
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "category",
+          "message"
+        ],
+        "properties": {
+          "category": {
+            "enum": [
+              "SKILL_ROUTING_FAILURE",
+              "KNOWLEDGE_FAILURE",
+              "SCHEMA_FAILURE",
+              "TOOL_FAILURE",
+              "RUNTIME_FAILURE",
+              "GENERATOR_FAILURE",
+              "SOLVER_FAILURE",
+              "METRIC_FAILURE",
+              "ENGINE_ADAPTER_FAILURE",
+              "LLM_REASONING_FAILURE"
+            ]
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "human": {
+      "type": "array"
+    },
+    "evidence": {
+      "type": "array"
+    }
+  }
+}

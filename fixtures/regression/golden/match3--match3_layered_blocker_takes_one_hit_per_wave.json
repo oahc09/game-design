@@ -1,0 +1,598 @@
+{
+  "replay_version": "0.1.0",
+  "game_spec_id": "match3-reference",
+  "rules_version": "match3_v0.1",
+  "archetype": "match3",
+  "seed": 1,
+  "spec": {
+    "schema_version": "0.1",
+    "metadata": {
+      "id": "match3-reference",
+      "version": "0.1.0"
+    },
+    "design": {
+      "archetype": "match3",
+      "audience": {
+        "type": "casual"
+      },
+      "session": {
+        "target_minutes": {
+          "min": 2,
+          "max": 5
+        }
+      },
+      "pillars": [
+        "readable_rules",
+        "meaningful_decisions"
+      ],
+      "complexity": {
+        "action_budget": "low",
+        "mechanic_budget": "medium"
+      },
+      "content_target": {
+        "type": "challenge",
+        "expected_count": 1
+      }
+    },
+    "game": {
+      "archetype": "match3"
+    },
+    "runtime": {
+      "simulation_mode": "EVENT_DRIVEN",
+      "tick_rate": 60
+    },
+    "action_space": {
+      "type": "composite",
+      "fields": {
+        "type": {
+          "type": "discrete",
+          "values": [
+            "SWAP"
+          ]
+        },
+        "from": {
+          "type": "multi_discrete",
+          "values": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        "to": {
+          "type": "multi_discrete",
+          "values": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        }
+      }
+    },
+    "observation": {
+      "mode": "VISIBLE_STATE",
+      "delay_ms": 0,
+      "noise": null
+    },
+    "rng": {
+      "enabled": true
+    },
+    "content": {
+      "id": "match3-challenge-001",
+      "type": "challenge",
+      "archetype": "match3",
+      "parameters": {},
+      "objectives": [],
+      "dependencies": [],
+      "extensions": {
+        "match3": {
+          "width": 5,
+          "height": 5,
+          "colors": 3,
+          "moves": 15,
+          "pointsPerGem": 10,
+          "maxCascades": 64,
+          "objectives": [
+            {
+              "type": "score",
+              "target": 300
+            }
+          ],
+          "board": [
+            [
+              1,
+              2,
+              0,
+              1,
+              2
+            ],
+            [
+              2,
+              null,
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              2,
+              0,
+              1,
+              2
+            ],
+            [
+              2,
+              1,
+              2,
+              0,
+              1
+            ]
+          ],
+          "blockers": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    "evaluation": {
+      "player_profiles": [
+        {
+          "id": "random",
+          "version": "0.1.0"
+        },
+        {
+          "id": "greedy",
+          "version": "0.1.0"
+        },
+        {
+          "id": "objective_greedy",
+          "version": "0.1.0"
+        },
+        {
+          "id": "short_planner",
+          "version": "0.1.0"
+        },
+        {
+          "id": "objective_planner",
+          "version": "0.1.0"
+        }
+      ],
+      "metrics": [
+        "completion_rate",
+        "moves_remaining",
+        "objective_progress_per_move",
+        "cascade_variance",
+        "legal_move_count"
+      ],
+      "gates": [
+        "schema",
+        "runtime",
+        "replay"
+      ],
+      "seed_set": {
+        "mode": "fixed",
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    "provenance": {
+      "rules_version": "match3_v0.1",
+      "assumptions": []
+    },
+    "adapter": {
+      "id": "web",
+      "version": "0.1"
+    },
+    "extensions": {}
+  },
+  "initial_content": {
+    "id": "match3-challenge-001",
+    "type": "challenge",
+    "archetype": "match3",
+    "parameters": {},
+    "objectives": [],
+    "dependencies": [],
+    "extensions": {
+      "match3": {
+        "width": 5,
+        "height": 5,
+        "colors": 3,
+        "moves": 15,
+        "pointsPerGem": 10,
+        "maxCascades": 64,
+        "objectives": [
+          {
+            "type": "score",
+            "target": 300
+          }
+        ],
+        "board": [
+          [
+            1,
+            2,
+            0,
+            1,
+            2
+          ],
+          [
+            2,
+            null,
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            2,
+            0,
+            1,
+            2
+          ],
+          [
+            2,
+            1,
+            2,
+            0,
+            1
+          ]
+        ],
+        "blockers": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    }
+  },
+  "initial_state_hash": "143ba1273435e2cb",
+  "actions": [
+    {
+      "tick": 0,
+      "action": {
+        "type": "SWAP",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          2,
+          3
+        ]
+      },
+      "accepted": true,
+      "state_hash": "f4bb478d86f09ba1",
+      "events": [
+        {
+          "type": "GemsSwapped",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ]
+        },
+        {
+          "type": "MatchDetected",
+          "cascade": 1,
+          "cells": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              2
+            ]
+          ]
+        },
+        {
+          "type": "GemsCleared",
+          "cascade": 1,
+          "cells": [
+            {
+              "x": 2,
+              "y": 0,
+              "color": 0
+            },
+            {
+              "x": 2,
+              "y": 1,
+              "color": 0
+            },
+            {
+              "x": 0,
+              "y": 2,
+              "color": 0
+            },
+            {
+              "x": 1,
+              "y": 2,
+              "color": 0
+            },
+            {
+              "x": 2,
+              "y": 2,
+              "color": 0
+            },
+            {
+              "x": 3,
+              "y": 2,
+              "color": 0
+            },
+            {
+              "x": 4,
+              "y": 2,
+              "color": 0
+            }
+          ],
+          "score": 70,
+          "totalScore": 70
+        },
+        {
+          "type": "BlockerDamaged",
+          "x": 1,
+          "y": 1,
+          "hp": 1,
+          "destroyed": false
+        },
+        {
+          "type": "GemFell",
+          "from": [
+            0,
+            1
+          ],
+          "to": [
+            0,
+            2
+          ],
+          "color": 2
+        },
+        {
+          "type": "GemFell",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "color": 1
+        },
+        {
+          "type": "GemRefilled",
+          "x": 0,
+          "y": 0,
+          "color": 1
+        },
+        {
+          "type": "GemRefilled",
+          "x": 1,
+          "y": 2,
+          "color": 0
+        },
+        {
+          "type": "GemRefilled",
+          "x": 2,
+          "y": 2,
+          "color": 1
+        },
+        {
+          "type": "GemRefilled",
+          "x": 2,
+          "y": 1,
+          "color": 2
+        },
+        {
+          "type": "GemRefilled",
+          "x": 2,
+          "y": 0,
+          "color": 2
+        },
+        {
+          "type": "GemFell",
+          "from": [
+            3,
+            1
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "color": 2
+        },
+        {
+          "type": "GemFell",
+          "from": [
+            3,
+            0
+          ],
+          "to": [
+            3,
+            1
+          ],
+          "color": 1
+        },
+        {
+          "type": "GemRefilled",
+          "x": 3,
+          "y": 0,
+          "color": 0
+        },
+        {
+          "type": "GemFell",
+          "from": [
+            4,
+            1
+          ],
+          "to": [
+            4,
+            2
+          ],
+          "color": 1
+        },
+        {
+          "type": "GemFell",
+          "from": [
+            4,
+            0
+          ],
+          "to": [
+            4,
+            1
+          ],
+          "color": 2
+        },
+        {
+          "type": "GemRefilled",
+          "x": 4,
+          "y": 0,
+          "color": 1
+        },
+        {
+          "type": "StateAdvanced",
+          "tick": 1,
+          "turn": 1,
+          "movesRemaining": 14,
+          "objectiveProgress": 0.23333333333333334
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "terminal": null,
+    "final_state_hash": "f4bb478d86f09ba1"
+  },
+  "state_hashes": [
+    "143ba1273435e2cb",
+    "f4bb478d86f09ba1"
+  ]
+}

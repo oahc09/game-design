@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://game-design.local/schema/design.json",
+  "type": "object",
+  "properties": {
+    "archetype": {
+      "type": "string",
+      "minLength": 1
+    },
+    "audience": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    "session": {
+      "type": "object",
+      "properties": {
+        "target_minutes": {
+          "type": "object",
+          "properties": {
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "min",
+            "max"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "target_minutes"
+      ],
+      "additionalProperties": false
+    },
+    "pillars": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "complexity": {
+      "type": "object",
+      "properties": {
+        "action_budget": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mechanic_budget": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "action_budget",
+        "mechanic_budget"
+      ],
+      "additionalProperties": false
+    },
+    "content_target": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "type",
+        "expected_count"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "archetype",
+    "audience",
+    "session",
+    "pillars",
+    "complexity",
+    "content_target"
+  ],
+  "additionalProperties": false
+}

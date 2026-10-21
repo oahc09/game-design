@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+/** Amend one narrative with measured evidence; its config and measurements are immutable. */
+import fs from 'node:fs/promises';import path from 'node:path';
+import {invokeLocalText,strictObject} from '../src/benchmark/local-text-model.mjs';
+import {writeNew,verifyCollection,collectFiles,appendReceipt,blindDesignPacket} from '../src/benchmark/evidence-collection.mjs';
+import {protocolDigest} from '../src/benchmark/task-protocols.mjs';import {runReplay} from '../src/core/replay.mjs';import {getArchetype} from '../src/archetypes/index.mjs';
+const [collection,taskId,executable,out]=process.argv.slice(2);if(!out)throw Error('Usage: node tools/local-design-text-amendment.mjs COLLECTION TASK_ID CODEX_EXECUTABLE NEW_OUTPUT');
+const dir=path.resolve(collection),dest=path.resolve(out),read=async file=>JSON.parse(await fs.readFile(path.join(dir,file),'utf8'));
+const originalManifest=await read('collection-manifest.json');if((await verifyCollection(dir,originalManifest)).status!=='PASS')throw Error('COLLECTION_CHANGED');
+const registration=await read('registration.json'),task=registration.tasks.find(t=>t.id===taskId);if(!task)throw Error('UNKNOWN_REGISTERED_TASK');
+const original=await read(`tasks/${taskId}/normalized-submission.json`),measurement=await read(`tasks/${taskId}/measurement.json`);
+if(!measurement.witness||runReplay(measurement.witness,getArchetype).status!=='PASS')throw Error('WIN_WITNESS_REQUIRED');
+await fs.mkdir(dest,{recursive:false});await fs.mkdir(path.join(dest,'tasks'));await fs.mkdir(path.join(dest,'tasks',taskId));await fs.mkdir(path.join(dest,'blind-packets'));
+const strings={type:'array',items:{type:'string'}},schema=strictObject({brief_zh:{type:'string'},assumptions:strings,tradeoffs:strings});
+const observed={configuration_json:original.configuration_json,witness_actions:measurement.witness.actions.map(a=>a.action),witness_pushes:measurement.witness.actions.flatMap(a=>a.events).filter(e=>e.type==='ObjectPushed').length,witness_terminal:measurement.witness.expected.terminal,episodes:measurement.episodes.map(e=>({seed:e.episode.seed,profile:e.requested_profile,outcome:e.episode.outcome,steps:e.episode.steps,replay_status:e.replay_check.status}))};
+await writeNew(dest,'amendment-registration.json',{kind:'TEXT_ONLY_POST_MEASUREMENT_AMENDMENT',task_id:taskId,original_collection_digest:originalManifest.digest,configuration_digest:protocolDigest(JSON.parse(original.configuration_json)),measurement_digest:protocolDigest(measurement),observed,new_independent_trials:0});
+const result=await invokeLocalText(executable,path.join(dest,'model-call'),`Produce a Chinese TEXT-ONLY amendment of this existing data-design proposal. Do not call tools, inspect files, browse or emit code. The supervisor locks the original configuration and measurements; do not propose a rule, map or parameter change. Correct quantitative and directional descriptions using the actual verified witness and public-seed results below. The original tradeoff incorrectly said only two pushes; actual witness has ${observed.witness_pushes}. Specify exact coordinates if useful, distinguish movement steps from pushes, and distinguish one verified solver path from all possible solutions. This is authored AFTER measurements: report observations without inventing human fairness, calibration, fun, new mechanics or formal M7. Keep assumptions and tradeoffs explicit; do not write a desired PASS verdict.\nOriginal proposal:${JSON.stringify(original)}\nActual measured facts:${JSON.stringify(observed)}`,schema);
+if(result.transport.status!=='PASS')throw Error('AMENDMENT_TRANSPORT_FAILED');
+const amended={...original,...result.answer};if(amended.configuration_json!==original.configuration_json)throw Error('CONFIGURATION_CHANGED');
+await writeNew(dest,`tasks/${taskId}/normalized-submission.json`,amended);await writeNew(dest,`tasks/${taskId}/measurement.json`,measurement);
+const packet=blindDesignPacket(task,amended,measurement,{phase:'POST_MEASUREMENT_TEXT_AMENDMENT'});await writeNew(dest,`blind-packets/${packet.blind_id}.json`,packet);
+const names=['amendment-registration.json','model-call/schema.json','model-call/request.json','model-call/events.jsonl','model-call/stderr.log','model-call/transport.json','model-call/submission.json',`tasks/${taskId}/normalized-submission.json`,`tasks/${taskId}/measurement.json`,`blind-packets/${packet.blind_id}.json`],files=await collectFiles(dest,names),ledger=[];
+appendReceipt(ledger,{task_id:taskId,packet_digest:packet.digest,submission_digest:protocolDigest(amended),measurement_digest:protocolDigest(measurement),files});
+const body={kind:'LOCAL_TEXT_AMENDMENT_COLLECTION',original_collection_digest:originalManifest.digest,files,ledger};await writeNew(dest,'collection-manifest.json',{...body,digest:protocolDigest(body)});
+await writeNew(dest,'amendment-report.json',{status:'MODEL_TEXT_AMENDED_REVIEW_REQUIRED',task_id:taskId,blind_id:packet.blind_id,packet_digest:packet.digest,configuration_unchanged:true,measurements_unchanged:true,transport:result.transport,new_independent_trials:0,formal_independent_review:false});
+console.log(JSON.stringify({status:'MODEL_TEXT_AMENDED_REVIEW_REQUIRED',task_id:taskId,configuration_unchanged:true,measurements_unchanged:true}));

@@ -1,0 +1,17 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs/promises';import path from 'node:path';import os from 'node:os';import {freezeBenchmark,verifyFreeze,runAB}from '../src/benchmark/ab.mjs';
+test('portable freeze detects additions and mutations using forward-slash manifest keys',async()=>{
+ const dir=await fs.mkdtemp(path.join(os.tmpdir(),'gd-portable-freeze-'));
+ try{
+  await fs.mkdir(path.join(dir,'nested','rules'),{recursive:true});
+  await fs.writeFile(path.join(dir,'nested','rules','case.json'),'original');
+  const {sha256}=await import('../src/benchmark/ab.mjs');
+  const payload={frozen_roots:['nested'],files:{'nested/rules/case.json':sha256('original')}};
+  const manifest={...payload,digest:sha256(payload)};
+  assert.deepEqual((await verifyFreeze(dir,manifest)).issues,[]);
+  await fs.writeFile(path.join(dir,'nested','rules','extra.json'),'added');
+  assert.deepEqual((await verifyFreeze(dir,manifest)).issues,[{code:'UNFROZEN_FILE_ADDED',path:'nested/rules/extra.json'}]);
+  await fs.writeFile(path.join(dir,'nested','rules','case.json'),'changed');
+  assert.ok((await verifyFreeze(dir,manifest)).issues.some(i=>i.code==='FROZEN_FILE_CHANGED'&&i.path==='nested/rules/case.json'));
+ }finally{await fs.rm(dir,{recursive:true,force:true});}
+});
+test('frozen dataset version drives tasks and checks without silently falling back to v0.1',async()=>{const dir=await fs.mkdtemp(path.join(os.tmpdir(),'gd-versioned-'));try{await fs.cp(new URL('../benchmark-dataset/v0.1/',import.meta.url),path.join(dir,'benchmark-dataset/v0.2'),{recursive:true});await fs.mkdir(path.join(dir,'skill'),{recursive:true});await fs.mkdir(path.join(dir,'src/skill'),{recursive:true});await fs.mkdir(path.join(dir,'neutral-engine'));await fs.mkdir(path.join(dir,'toolkit'));await fs.writeFile(path.join(dir,'skill/SKILL.md'),'fixture');await fs.writeFile(path.join(dir,'src/skill/index.mjs'),'export{}');await fs.writeFile(path.join(dir,'neutral-engine/engine.js'),'engine');await fs.writeFile(path.join(dir,'toolkit/index.mjs'),'export{}');const file=path.join(dir,'benchmark-dataset/v0.2/public/tasks.json'),tasks=JSON.parse(await fs.readFile(file,'utf8'));tasks[0].materials.version_probe='v0.2-only';await fs.writeFile(file,JSON.stringify(tasks));const manifest=await freezeBenchmark({root:dir,datasetRoot:'benchmark-dataset/v0.2',benchmarkVersion:'0.2.0',manifestPath:'benchmark-dataset/v0.2/test-freeze.json',enginePaths:['neutral-engine'],toolkitPaths:['toolkit'],versions:{}});assert.equal(manifest.dataset_root,'benchmark-dataset/v0.2');assert.equal(manifest.benchmark_version,'0.2.0');assert.equal((await verifyFreeze(dir,manifest)).valid,true);const seen=[];const result=await runAB({root:dir,manifest,mode:'smoke',outputDir:path.join(dir,'run'),tasks:[tasks[0]],executor:{execute:async r=>{seen.push(r.task.materials.version_probe);return {artifact:{note:'not a formal model result'},usage:{tokens:1,reasoning_tokens:0,tool_calls:0,steps:1,asset_bytes:1}};}},evaluator:{evaluate:async p=>({blind_id:p.blind_id,artifact_digest:p.artifact_digest,checks:[...new Set([...p.checks.required_checks,...p.checks.claim_guards])].map(id=>({id,status:'NOT_EVALUATED',evidence:[],reason:'infrastructure-only probe'})),metrics:{},issues:[],evidence:[]})}});assert.ok(seen.length>=2);assert.ok(seen.every(x=>x==='v0.2-only'));assert.equal(result.dataset_root,'benchmark-dataset/v0.2');assert.equal(result.no_effectiveness_claim,true);}finally{await fs.rm(dir,{recursive:true,force:true});}});

@@ -1,0 +1,304 @@
+TAP version 13
+# Subtest: 108 task / 494 criterion metadata is complete and every capture schema resolves
+ok 1 - 108 task / 494 criterion metadata is complete and every capture schema resolves
+  ---
+  duration_ms: 19.215026
+  type: 'test'
+  ...
+# Subtest: task IDs, original prompts and coverage ratios survive version migration; v0.1 is not rewritten
+ok 2 - task IDs, original prompts and coverage ratios survive version migration; v0.1 is not rewritten
+  ---
+  duration_ms: 1.447569
+  type: 'test'
+  ...
+# Subtest: missing criterion/fixture obligation or altered task protocol invalidates metadata
+ok 3 - missing criterion/fixture obligation or altered task protocol invalidates metadata
+  ---
+  duration_ms: 78.819159
+  type: 'test'
+  ...
+# Subtest: artifact_shape: valid supervisor control passes; defective and missing controls cannot pass
+ok 4 - artifact_shape: valid supervisor control passes; defective and missing controls cannot pass
+  ---
+  duration_ms: 4.584183
+  type: 'test'
+  ...
+# Subtest: native_rules: valid supervisor control passes; defective and missing controls cannot pass
+ok 5 - native_rules: valid supervisor control passes; defective and missing controls cannot pass
+  ---
+  duration_ms: 20.305745
+  type: 'test'
+  ...
+# Subtest: build: valid supervisor control passes; defective and missing controls cannot pass
+ok 6 - build: valid supervisor control passes; defective and missing controls cannot pass
+  ---
+  duration_ms: 3.187991
+  type: 'test'
+  ...
+# Subtest: generation: valid supervisor control passes; defective and missing controls cannot pass
+ok 7 - generation: valid supervisor control passes; defective and missing controls cannot pass
+  ---
+  duration_ms: 3.613673
+  type: 'test'
+  ...
+# Subtest: diversity: valid supervisor control passes; defective and missing controls cannot pass
+ok 8 - diversity: valid supervisor control passes; defective and missing controls cannot pass
+  ---
+  duration_ms: 3.667443
+  type: 'test'
+  ...
+# Subtest: episodes: valid supervisor control passes; defective and missing controls cannot pass
+ok 9 - episodes: valid supervisor control passes; defective and missing controls cannot pass
+  ---
+  duration_ms: 9.611334
+  type: 'test'
+  ...
+# Subtest: paired_runs: valid supervisor control passes; defective and missing controls cannot pass
+ok 10 - paired_runs: valid supervisor control passes; defective and missing controls cannot pass
+  ---
+  duration_ms: 2.510495
+  type: 'test'
+  ...
+# Subtest: sensitivity: valid supervisor control passes; defective and missing controls cannot pass
+ok 11 - sensitivity: valid supervisor control passes; defective and missing controls cannot pass
+  ---
+  duration_ms: 2.600629
+  type: 'test'
+  ...
+# Subtest: replay: valid supervisor control passes; defective and missing controls cannot pass
+ok 12 - replay: valid supervisor control passes; defective and missing controls cannot pass
+  ---
+  duration_ms: 1.687524
+  type: 'test'
+  ...
+# Subtest: observation: valid supervisor control passes; defective and missing controls cannot pass
+ok 13 - observation: valid supervisor control passes; defective and missing controls cannot pass
+  ---
+  duration_ms: 1.979708
+  type: 'test'
+  ...
+# Subtest: regression: valid supervisor control passes; defective and missing controls cannot pass
+ok 14 - regression: valid supervisor control passes; defective and missing controls cannot pass
+  ---
+  duration_ms: 1.65053
+  type: 'test'
+  ...
+# Subtest: defects: valid supervisor control passes; defective and missing controls cannot pass
+ok 15 - defects: valid supervisor control passes; defective and missing controls cannot pass
+  ---
+  duration_ms: 1.689227
+  type: 'test'
+  ...
+# Subtest: engine_parity: valid supervisor control passes; defective and missing controls cannot pass
+ok 16 - engine_parity: valid supervisor control passes; defective and missing controls cannot pass
+  ---
+  duration_ms: 1.779461
+  type: 'test'
+  ...
+# Subtest: extension: valid supervisor control passes; defective and missing controls cannot pass
+ok 17 - extension: valid supervisor control passes; defective and missing controls cannot pass
+  ---
+  duration_ms: 1.703689
+  type: 'test'
+  ...
+# Subtest: arithmetic: valid supervisor control passes; defective and missing controls cannot pass
+ok 18 - arithmetic: valid supervisor control passes; defective and missing controls cannot pass
+  ---
+  duration_ms: 2.363978
+  type: 'test'
+  ...
+# Subtest: independent fixture sokoban.reject-chain assertions reject concrete mutant
+ok 19 - independent fixture sokoban.reject-chain assertions reject concrete mutant
+  ---
+  duration_ms: 1.754734
+  type: 'test'
+  ...
+# Subtest: independent fixture sokoban.final-goal assertions reject concrete mutant
+ok 20 - independent fixture sokoban.final-goal assertions reject concrete mutant
+  ---
+  duration_ms: 1.840762
+  type: 'test'
+  ...
+# Subtest: independent fixture sokoban.reject-wall assertions reject concrete mutant
+ok 21 - independent fixture sokoban.reject-wall assertions reject concrete mutant
+  ---
+  duration_ms: 1.810297
+  type: 'test'
+  ...
+# Subtest: independent fixture falling.gravity-30 assertions reject concrete mutant
+ok 22 - independent fixture falling.gravity-30 assertions reject concrete mutant
+  ---
+  duration_ms: 7.752565
+  type: 'test'
+  ...
+# Subtest: independent fixture falling.lock-two assertions reject concrete mutant
+ok 23 - independent fixture falling.lock-two assertions reject concrete mutant
+  ---
+  duration_ms: 2.081039
+  type: 'test'
+  ...
+# Subtest: independent fixture shooter.single-hit assertions reject concrete mutant
+ok 24 - independent fixture shooter.single-hit assertions reject concrete mutant
+  ---
+  duration_ms: 1.809385
+  type: 'test'
+  ...
+# Subtest: independent fixture shooter.no-post-destroy-hit assertions reject concrete mutant
+ok 25 - independent fixture shooter.no-post-destroy-hit assertions reject concrete mutant
+  ---
+  duration_ms: 1.765239
+  type: 'test'
+  ...
+# Subtest: independent fixture match3.nonadjacent assertions reject concrete mutant
+ok 26 - independent fixture match3.nonadjacent assertions reject concrete mutant
+  ---
+  duration_ms: 1.635528
+  type: 'test'
+  ...
+# Subtest: independent fixture match3.resolution-order assertions reject concrete mutant
+ok 27 - independent fixture match3.resolution-order assertions reject concrete mutant
+  ---
+  duration_ms: 1.554487
+  type: 'test'
+  ...
+# Subtest: independent fixture 2048.merge-once assertions reject concrete mutant
+ok 28 - independent fixture 2048.merge-once assertions reject concrete mutant
+  ---
+  duration_ms: 1.636679
+  type: 'test'
+  ...
+# Subtest: independent fixture 2048.noop-no-spawn assertions reject concrete mutant
+ok 29 - independent fixture 2048.noop-no-spawn assertions reject concrete mutant
+  ---
+  duration_ms: 2.541672
+  type: 'test'
+  ...
+# Subtest: independent fixture block.cross-clear assertions reject concrete mutant
+ok 30 - independent fixture block.cross-clear assertions reject concrete mutant
+  ---
+  duration_ms: 1.741304
+  type: 'test'
+  ...
+# Subtest: independent fixture block.reject-overlap assertions reject concrete mutant
+ok 31 - independent fixture block.reject-overlap assertions reject concrete mutant
+  ---
+  duration_ms: 1.858939
+  type: 'test'
+  ...
+# Subtest: independent fixture water.partial-maximal assertions reject concrete mutant
+ok 32 - independent fixture water.partial-maximal assertions reject concrete mutant
+  ---
+  duration_ms: 1.965046
+  type: 'test'
+  ...
+# Subtest: independent fixture water.reject-color assertions reject concrete mutant
+ok 33 - independent fixture water.reject-color assertions reject concrete mutant
+  ---
+  duration_ms: 1.661817
+  type: 'test'
+  ...
+# Subtest: engine-native isolated callback needs no GameSpec and detects a rule-mutant candidate
+ok 34 - engine-native isolated callback needs no GameSpec and detects a rule-mutant candidate
+  ---
+  duration_ms: 3.431923
+  type: 'test'
+  ...
+# Subtest: native normalization supports declared engine fields and rejects absent clocks instead of inventing state
+ok 35 - native normalization supports declared engine fields and rejects absent clocks instead of inventing state
+  ---
+  duration_ms: 0.489346
+  type: 'test'
+  ...
+# Subtest: all 108 tasks stay unpassed without independent evidence, even with artifact PASS booleans
+ok 36 - all 108 tasks stay unpassed without independent evidence, even with artifact PASS booleans
+  ---
+  duration_ms: 16.329144
+  type: 'test'
+  ...
+# Subtest: blinded manual review requires exact artifact/rubric binding, complete answers, and a blinding disclosure
+ok 37 - blinded manual review requires exact artifact/rubric binding, complete answers, and a blinding disclosure
+  ---
+  duration_ms: 31.208935
+  type: 'test'
+  ...
+# Subtest: forged capture provenance cannot satisfy automatic obligations
+ok 38 - forged capture provenance cannot satisfy automatic obligations
+  ---
+  duration_ms: 17.27714
+  type: 'test'
+  ...
+# Subtest: metadata has explicit public grid and episode parameters without hidden target bands
+ok 39 - metadata has explicit public grid and episode parameters without hidden target bands
+  ---
+  duration_ms: 0.605639
+  type: 'test'
+  ...
+# Subtest: rejected RNG mutation is caught even when RNG is absent from normalized public fields
+ok 40 - rejected RNG mutation is caught even when RNG is absent from normalized public fields
+  ---
+  duration_ms: 1.255433
+  type: 'test'
+  ...
+# Subtest: deliberate ambiguity and resource starvation permit correct reviewed clarification without impossible runtime captures
+ok 41 - deliberate ambiguity and resource starvation permit correct reviewed clarification without impossible runtime captures
+  ---
+  duration_ms: 18.198417
+  type: 'test'
+  ...
+# Subtest: engine event parity names the events dimension and a missing control case cannot pass
+ok 42 - engine event parity names the events dimension and a missing control case cannot pass
+  ---
+  duration_ms: 2.132705
+  type: 'test'
+  ...
+# Subtest: defect labels and regression case sets cannot be changed by a capture provider
+ok 43 - defect labels and regression case sets cannot be changed by a capture provider
+  ---
+  duration_ms: 2.317259
+  type: 'test'
+  ...
+# Subtest: runner-compatible blind packets contain all frozen criteria and guards with bound PASS evidence
+ok 44 - runner-compatible blind packets contain all frozen criteria and guards with bound PASS evidence
+  ---
+  duration_ms: 11.331225
+  type: 'test'
+  ...
+# Subtest: structurally decidable checks do not require redundant human review
+ok 45 - structurally decidable checks do not require redundant human review
+  ---
+  duration_ms: 18.64137
+  type: 'test'
+  ...
+# Subtest: every automatic family enforces its frozen capture schema before semantic checks
+ok 46 - every automatic family enforces its frozen capture schema before semantic checks
+  ---
+  duration_ms: 41.963877
+  type: 'test'
+  ...
+# Subtest: nested malformed digests and required fields fail each applicable capture schema
+ok 47 - nested malformed digests and required fields fail each applicable capture schema
+  ---
+  duration_ms: 21.174584
+  type: 'test'
+  ...
+# Subtest: terminal wins cannot be censored and episodes cannot continue after a terminal step
+ok 48 - terminal wins cannot be censored and episodes cannot continue after a terminal step
+  ---
+  duration_ms: 3.223514
+  type: 'test'
+  ...
+# Subtest: digest fields reject trailing newlines as well as malformed hex
+ok 49 - digest fields reject trailing newlines as well as malformed hex
+  ---
+  duration_ms: 1.703388
+  type: 'test'
+  ...
+1..49
+# tests 49
+# suites 0
+# pass 49
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 503.191445

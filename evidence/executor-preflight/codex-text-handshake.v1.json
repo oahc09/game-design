@@ -1,0 +1,58 @@
+{
+  "kind": "EXPLORATORY_CLOUD_CODEX_TEXT_HANDSHAKE",
+  "authorization_reference": "User authorized cloud Codex on 2026-10-08",
+  "model_selected": "gpt-6.1-sol",
+  "model_snapshot_frozen": false,
+  "settings": {
+    "reasoning_effort": "low",
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "ignore_rules": true,
+    "project_doc_max_bytes": 0,
+    "disabled_features": [
+      "shell_tool",
+      "unified_exec",
+      "apps",
+      "browser_use",
+      "browser_use_external",
+      "in_app_browser",
+      "hooks",
+      "multi_agent",
+      "multi_agent_v2",
+      "memories",
+      "goals",
+      "image_generation",
+      "skill_search",
+      "skill_mcp_dependency_install",
+      "view_image",
+      "shell_snapshot"
+    ],
+    "skip_host_skill_discovery": true,
+    "web_search": "disabled"
+  },
+  "prompt": "This is one authorized transport-only cloud Codex handshake, not a benchmark. Do not use tools, access files, inspect the host or account, delegate, search, or perform any action. Return exactly {\"status\":\"READY\",\"purpose\":\"transport-only\"} and stop.",
+  "prompt_sha256": "9963d778806ad9ef89c7c970eb463eb6abef2939f209134f1f4da8f6856b174b",
+  "process": {
+    "status": "PROCESS_FAILURE",
+    "exit_code": 1,
+    "wall_time_ms": 10038.938714,
+    "output_bytes_observed": 236
+  },
+  "event_types": [],
+  "usage": [],
+  "final_outputs": [],
+  "observed_tool_events": 0,
+  "errors": [],
+  "stderr_summary": "WARNING: proceeding, even though we could not create PATH aliases: Read-only file system (os error 30)\nReading additional input from stdin...\nError: failed to initialize in-process app-server client: Read-only file system (os error 30)\n",
+  "formal_ready": false,
+  "budget_enforced": false,
+  "limits": {
+    "local_process_wall_time_ms": 90000,
+    "combined_output_bytes": 24000,
+    "provider_token_cap": "NOT_ESTABLISHED",
+    "reasoning_token_cap": "NOT_ESTABLISHED",
+    "remote_cancellation": "NOT_ESTABLISHED"
+  },
+  "scope": "Synthetic pure-text transport only. No A/B trial, no effectiveness evidence, no host-read isolation claim. No new account or payment route requested."
+}

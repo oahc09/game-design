@@ -1,0 +1,1468 @@
+[
+  {
+    "id": "routing-gd-001",
+    "input": {
+      "prompt": "Brainstorm three Sokoban mechanics for a two-minute phone session; give concepts only and explain one risk per concept.",
+      "archetype": "sokoban"
+    },
+    "expected": {
+      "task_type": "IDEATION",
+      "archetype": "sokoban",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Game Director",
+        "Gameplay Designer"
+      ],
+      "tools": [],
+      "forbidden_tools": [
+        "simulate",
+        "qa"
+      ]
+    }
+  },
+  {
+    "id": "routing-gd-002",
+    "input": {
+      "prompt": "Design a Sokoban tutorial for first-time players: one box, two turns before the first push, and an optional undo. State the audience and executable win condition.",
+      "archetype": "sokoban"
+    },
+    "expected": {
+      "task_type": "DESIGN",
+      "archetype": "sokoban",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Game Director",
+        "Gameplay Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "validate_spec",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-003",
+    "input": {
+      "prompt": "Formalize Sokoban push semantics when two boxes are adjacent. Define blocked pushes, non-mutating rejection, and winning on the final goal.",
+      "archetype": "sokoban"
+    },
+    "expected": {
+      "task_type": "RULE_FORMALIZATION",
+      "archetype": "sokoban",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "System Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "validate_spec",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-004",
+    "input": {
+      "prompt": "Generate six Sokoban levels that teach box ordering then route reopening. Supply a solution witness per accepted level and reject symmetric duplicates.",
+      "archetype": "sokoban"
+    },
+    "expected": {
+      "task_type": "CONTENT_GENERATION",
+      "archetype": "sokoban",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Level Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "generate_content",
+        "validate_content",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-005",
+    "input": {
+      "prompt": "Tune a Sokoban hint budget against completion and excess moves using random, greedy, and strong profiles. Compare zero, one, and three hints and report sensitivity.",
+      "archetype": "sokoban"
+    },
+    "expected": {
+      "task_type": "BALANCE",
+      "archetype": "sokoban",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Balance Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "tune_balance",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-006",
+    "input": {
+      "prompt": "Estimate Sokoban difficulty using minimum pushes and deadlock traps. A short solution is not automatically easy; contrast the two supplied corridor layouts.",
+      "archetype": "sokoban"
+    },
+    "expected": {
+      "task_type": "DIFFICULTY",
+      "archetype": "sokoban",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Balance Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "difficulty",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-007",
+    "input": {
+      "prompt": "Playtest Sokoban with action errors and one-step reaction delay. Compare successful and failed pushes without changing the authoritative rules.",
+      "archetype": "sokoban"
+    },
+    "expected": {
+      "task_type": "PLAYTEST",
+      "archetype": "sokoban",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-008",
+    "input": {
+      "prompt": "Audit a Sokoban crate pushed into a non-goal corner. The solver stopped after 100 nodes; the producer calls that proof of unsolvability. Reproduce what is actually established.",
+      "archetype": "sokoban"
+    },
+    "expected": {
+      "task_type": "QA",
+      "archetype": "sokoban",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay QA"
+      ],
+      "tools": [
+        "qa",
+        "regression"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-009",
+    "input": {
+      "prompt": "Port Sokoban to the web engine with arrow keys and restart. Compare every accepted and rejected action, terminal state, and displayed goals against reference traces.",
+      "archetype": "sokoban"
+    },
+    "expected": {
+      "task_type": "ENGINE_IMPLEMENTATION",
+      "archetype": "sokoban",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "System Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "adapter_verify",
+        "regression"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-010",
+    "input": {
+      "prompt": "Analyze an existing Sokoban campaign whose fifth level introduces two interacting boxes before either appears alone. Propose a curriculum repair with measurable coverage.",
+      "archetype": "sokoban"
+    },
+    "expected": {
+      "task_type": "EXISTING_GAME_ANALYSIS",
+      "archetype": "sokoban",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-011",
+    "input": {
+      "prompt": "Brainstorm Falling Blocks recovery challenges that reward clearing holes rather than raw speed; keep this to concepts and tradeoffs.",
+      "archetype": "falling_blocks"
+    },
+    "expected": {
+      "task_type": "IDEATION",
+      "archetype": "falling_blocks",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Game Director",
+        "Gameplay Designer"
+      ],
+      "tools": [],
+      "forbidden_tools": [
+        "simulate",
+        "qa"
+      ]
+    }
+  },
+  {
+    "id": "routing-gd-012",
+    "input": {
+      "prompt": "Design a Falling Blocks practice mode with a visible one-piece preview and no hold. Specify a 90-second session and a recoverable starting stack.",
+      "archetype": "falling_blocks"
+    },
+    "expected": {
+      "task_type": "DESIGN",
+      "archetype": "falling_blocks",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Game Director",
+        "Gameplay Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "validate_spec",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-013",
+    "input": {
+      "prompt": "Formalize Falling Blocks gravity, lock delay, and same-tick rotation ordering. The brief says both instant lock and two-tick lock; expose the conflict before choosing a rule.",
+      "archetype": "falling_blocks"
+    },
+    "expected": {
+      "task_type": "RULE_FORMALIZATION",
+      "archetype": "falling_blocks",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "System Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "validate_spec",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-014",
+    "input": {
+      "prompt": "Generate four Falling Blocks hole-recovery challenges with distinct cavity topology. Preserve a fixed piece stream and distinguish search budget exhaustion from impossibility.",
+      "archetype": "falling_blocks"
+    },
+    "expected": {
+      "task_type": "CONTENT_GENERATION",
+      "archetype": "falling_blocks",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Level Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "generate_content",
+        "validate_content",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-015",
+    "input": {
+      "prompt": "Tune Falling Blocks gravity ticks for three execution profiles while holding lock delay fixed. Identify the speed cliff and recommend a supported range with uncertainty.",
+      "archetype": "falling_blocks"
+    },
+    "expected": {
+      "task_type": "BALANCE",
+      "archetype": "falling_blocks",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Balance Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "tune_balance",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-016",
+    "input": {
+      "prompt": "Estimate Falling Blocks input pressure at 60 ticks per second with a 12-tick action delay. Compare the time needed to reach edge placements to remaining fall time.",
+      "archetype": "falling_blocks"
+    },
+    "expected": {
+      "task_type": "DIFFICULTY",
+      "archetype": "falling_blocks",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Balance Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "difficulty",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-017",
+    "input": {
+      "prompt": "Playtest Falling Blocks with random placement, shallow search, and delayed execution. Restrict all profiles to the visible next piece rather than the full queue.",
+      "archetype": "falling_blocks"
+    },
+    "expected": {
+      "task_type": "PLAYTEST",
+      "archetype": "falling_blocks",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-018",
+    "input": {
+      "prompt": "Audit a Falling Blocks replay where a rejected rotation consumes one RNG draw and the next piece changes. Minimize the trace and demonstrate restore parity.",
+      "archetype": "falling_blocks"
+    },
+    "expected": {
+      "task_type": "QA",
+      "archetype": "falling_blocks",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay QA"
+      ],
+      "tools": [
+        "qa",
+        "regression"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-019",
+    "input": {
+      "prompt": "Port Falling Blocks to the web engine and replay the same held inputs under 30, 60, and 144 render FPS. Verify lock ticks and line-clear feedback timing.",
+      "archetype": "falling_blocks"
+    },
+    "expected": {
+      "task_type": "ENGINE_IMPLEMENTATION",
+      "archetype": "falling_blocks",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "System Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "adapter_verify",
+        "regression"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-020",
+    "input": {
+      "prompt": "Analyze existing Falling Blocks scoring that rewards repeated soft-drop toggles without falling. Identify the exploit and a regression-safe correction.",
+      "archetype": "falling_blocks"
+    },
+    "expected": {
+      "task_type": "EXISTING_GAME_ANALYSIS",
+      "archetype": "falling_blocks",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-021",
+    "input": {
+      "prompt": "Brainstorm Arcade Shooter enemy patterns that create meaningful target choice with only movement and fire controls; no implementation requested.",
+      "archetype": "arcade_shooter"
+    },
+    "expected": {
+      "task_type": "IDEATION",
+      "archetype": "arcade_shooter",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Game Director",
+        "Gameplay Designer"
+      ],
+      "tools": [],
+      "forbidden_tools": [
+        "simulate",
+        "qa"
+      ]
+    }
+  },
+  {
+    "id": "routing-gd-022",
+    "input": {
+      "prompt": "Design an Arcade Shooter encounter with a fragile fast enemy and a slow armored enemy. Specify visible warnings, victory, defeat, and a three-minute target session.",
+      "archetype": "arcade_shooter"
+    },
+    "expected": {
+      "task_type": "DESIGN",
+      "archetype": "arcade_shooter",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Game Director",
+        "Gameplay Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "validate_spec",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-023",
+    "input": {
+      "prompt": "Formalize Arcade Shooter collision order when a projectile hits two overlapping enemies and the player dies on the same tick. State the terminal precedence explicitly.",
+      "archetype": "arcade_shooter"
+    },
+    "expected": {
+      "task_type": "RULE_FORMALIZATION",
+      "archetype": "arcade_shooter",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "System Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "validate_spec",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-024",
+    "input": {
+      "prompt": "Generate six Arcade Shooter waves alternating aimed pressure and movement recovery. Keep spawn patterns reproducible and include safe-path evidence rather than visual guesses.",
+      "archetype": "arcade_shooter"
+    },
+    "expected": {
+      "task_type": "CONTENT_GENERATION",
+      "archetype": "arcade_shooter",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Level Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "generate_content",
+        "validate_content",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-025",
+    "input": {
+      "prompt": "Tune Arcade Shooter fire cooldown and enemy health against time-to-kill and damage taken. Test their interaction and reject a dominant weapon setting.",
+      "archetype": "arcade_shooter"
+    },
+    "expected": {
+      "task_type": "BALANCE",
+      "archetype": "arcade_shooter",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Balance Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "tune_balance",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-026",
+    "input": {
+      "prompt": "Estimate Arcade Shooter reaction margin for a projectile warning lasting 180 ms with 220 ms execution delay. The request says harder is always better; identify the fairness conflict.",
+      "archetype": "arcade_shooter"
+    },
+    "expected": {
+      "task_type": "DIFFICULTY",
+      "archetype": "arcade_shooter",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Balance Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "difficulty",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-027",
+    "input": {
+      "prompt": "Playtest Arcade Shooter target selection and avoidance separately, across twelve seeds. Do not let either profile inspect enemies that have not spawned.",
+      "archetype": "arcade_shooter"
+    },
+    "expected": {
+      "task_type": "PLAYTEST",
+      "archetype": "arcade_shooter",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-028",
+    "input": {
+      "prompt": "Audit an Arcade Shooter projectile that deals damage again after destruction. Capture the earliest duplicate hit and distinguish gameplay failure from engine rendering lag.",
+      "archetype": "arcade_shooter"
+    },
+    "expected": {
+      "task_type": "QA",
+      "archetype": "arcade_shooter",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay QA"
+      ],
+      "tools": [
+        "qa",
+        "regression"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-029",
+    "input": {
+      "prompt": "Port Arcade Shooter to the web engine with normalized diagonal movement and held fire. Compare collision positions, event ordering, and keyboard-to-action timing.",
+      "archetype": "arcade_shooter"
+    },
+    "expected": {
+      "task_type": "ENGINE_IMPLEMENTATION",
+      "archetype": "arcade_shooter",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "System Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "adapter_verify",
+        "regression"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-030",
+    "input": {
+      "prompt": "Analyze existing Arcade Shooter footage and incomplete rules. List observed facts versus inferred spawn policy, then propose tests without upgrading guesses to confirmed facts.",
+      "archetype": "arcade_shooter"
+    },
+    "expected": {
+      "task_type": "EXISTING_GAME_ANALYSIS",
+      "archetype": "arcade_shooter",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-031",
+    "input": {
+      "prompt": "Brainstorm Match-3 objective combinations that create competing choices without introducing special tiles; include one low-complexity option.",
+      "archetype": "match3"
+    },
+    "expected": {
+      "task_type": "IDEATION",
+      "archetype": "match3",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Game Director",
+        "Gameplay Designer"
+      ],
+      "tools": [],
+      "forbidden_tools": [
+        "simulate",
+        "qa"
+      ]
+    }
+  },
+  {
+    "id": "routing-gd-032",
+    "input": {
+      "prompt": "Design a Match-3 color-collection challenge with limited moves, no starting matches, and at least one legal swap. Keep the blocker objective optional.",
+      "archetype": "match3"
+    },
+    "expected": {
+      "task_type": "DESIGN",
+      "archetype": "match3",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Game Director",
+        "Gameplay Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "validate_spec",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-033",
+    "input": {
+      "prompt": "Formalize Match-3 simultaneous matches, gravity, refill, and objective checks. Resolve whether invalid swaps consume moves and preserve seeded refill ordering.",
+      "archetype": "match3"
+    },
+    "expected": {
+      "task_type": "RULE_FORMALIZATION",
+      "archetype": "match3",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "System Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "validate_spec",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-034",
+    "input": {
+      "prompt": "Generate eight Match-3 boards with varied masks and blockers. The request guarantees every random refill wins; separate board validity from stochastic success and report rejection reasons.",
+      "archetype": "match3"
+    },
+    "expected": {
+      "task_type": "CONTENT_GENERATION",
+      "archetype": "match3",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Level Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "generate_content",
+        "validate_content",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-035",
+    "input": {
+      "prompt": "Tune Match-3 move limits and target counts with objective-greedy and short-planner profiles. Show the completion-rate interval and seed sensitivity before recommending a setting.",
+      "archetype": "match3"
+    },
+    "expected": {
+      "task_type": "BALANCE",
+      "archetype": "match3",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Balance Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "tune_balance",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-036",
+    "input": {
+      "prompt": "Estimate Match-3 difficulty for equally sized boards with different objective access delays. Compare move-value spread and cascade variance instead of level index.",
+      "archetype": "match3"
+    },
+    "expected": {
+      "task_type": "DIFFICULTY",
+      "archetype": "match3",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Balance Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "difficulty",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-037",
+    "input": {
+      "prompt": "Playtest Match-3 across fixed refill seeds with random, greedy, and objective-greedy profiles. Keep future refill tiles hidden and report policy divergence.",
+      "archetype": "match3"
+    },
+    "expected": {
+      "task_type": "PLAYTEST",
+      "archetype": "match3",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-038",
+    "input": {
+      "prompt": "Audit a Match-3 board with no legal swap and unfinished objectives. Determine whether shuffle or terminal loss is specified, and capture missing-rule evidence.",
+      "archetype": "match3"
+    },
+    "expected": {
+      "task_type": "QA",
+      "archetype": "match3",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay QA"
+      ],
+      "tools": [
+        "qa",
+        "regression"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-039",
+    "input": {
+      "prompt": "Port Match-3 to the web engine with drag swaps and cascades. Prevent input during resolution and verify terminal feedback waits for the authoritative objective check.",
+      "archetype": "match3"
+    },
+    "expected": {
+      "task_type": "ENGINE_IMPLEMENTATION",
+      "archetype": "match3",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "System Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "adapter_verify",
+        "regression"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-040",
+    "input": {
+      "prompt": "Analyze existing Match-3 retention claims based on one lucky seed. Identify unsupported conclusions, then propose a paired-seed comparison of the current move limit.",
+      "archetype": "match3"
+    },
+    "expected": {
+      "task_type": "EXISTING_GAME_ANALYSIS",
+      "archetype": "match3",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-041",
+    "input": {
+      "prompt": "Brainstorm 2048 challenge formats based on constrained starting boards, without claiming a best strategy or adding monetization.",
+      "archetype": "merge2048"
+    },
+    "expected": {
+      "task_type": "IDEATION",
+      "archetype": "merge2048",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Game Director",
+        "Gameplay Designer"
+      ],
+      "tools": [],
+      "forbidden_tools": [
+        "simulate",
+        "qa"
+      ]
+    }
+  },
+  {
+    "id": "routing-gd-042",
+    "input": {
+      "prompt": "Design a 2048 target challenge on a 4 by 4 board that ends at 128 and preserves ordinary merge-once semantics. Explain restart and loss conditions.",
+      "archetype": "merge2048"
+    },
+    "expected": {
+      "task_type": "DESIGN",
+      "archetype": "merge2048",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Game Director",
+        "Gameplay Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "validate_spec",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-043",
+    "input": {
+      "prompt": "Formalize 2048 left movement for [2,2,2,2] and [4,4,8,0]. Define whether a newly merged tile may merge again and when a random spawn occurs.",
+      "archetype": "merge2048"
+    },
+    "expected": {
+      "task_type": "RULE_FORMALIZATION",
+      "archetype": "merge2048",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "System Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "validate_spec",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-044",
+    "input": {
+      "prompt": "Generate five 2048 seeded challenges with different empty-cell distributions and a fixed spawn policy. Preserve target reachability evidence without promising all-seed solvability.",
+      "archetype": "merge2048"
+    },
+    "expected": {
+      "task_type": "CONTENT_GENERATION",
+      "archetype": "merge2048",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Level Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "generate_content",
+        "validate_content",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-045",
+    "input": {
+      "prompt": "Tune 2048 spawn-four probability over a preregistered parameter grid. Compare target rate, survival moves, and policy ordering on held-out seeds.",
+      "archetype": "merge2048"
+    },
+    "expected": {
+      "task_type": "BALANCE",
+      "archetype": "merge2048",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Balance Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "tune_balance",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-046",
+    "input": {
+      "prompt": "Estimate 2048 target difficulty under rare high-tile spawns. Separate starting-board structure from RNG-driven outcome variance and report sampling limitations.",
+      "archetype": "merge2048"
+    },
+    "expected": {
+      "task_type": "DIFFICULTY",
+      "archetype": "merge2048",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Balance Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "difficulty",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-047",
+    "input": {
+      "prompt": "Playtest 2048 greedy, monotonicity heuristic, and expectation-based policies with equal node budgets and no knowledge of future spawn positions.",
+      "archetype": "merge2048"
+    },
+    "expected": {
+      "task_type": "PLAYTEST",
+      "archetype": "merge2048",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-048",
+    "input": {
+      "prompt": "Audit 2048 no-op moves that spawn a new tile. Check tile-sum conservation, rejected-action RNG stability, and the full-board terminal condition.",
+      "archetype": "merge2048"
+    },
+    "expected": {
+      "task_type": "QA",
+      "archetype": "merge2048",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay QA"
+      ],
+      "tools": [
+        "qa",
+        "regression"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-049",
+    "input": {
+      "prompt": "Port 2048 to the web engine with swipe and arrow controls. Confirm one semantic move per gesture and score parity through chain merges.",
+      "archetype": "merge2048"
+    },
+    "expected": {
+      "task_type": "ENGINE_IMPLEMENTATION",
+      "archetype": "merge2048",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "System Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "adapter_verify",
+        "regression"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-050",
+    "input": {
+      "prompt": "Analyze an existing 2048 variant that labels bot win rate as human difficulty. Correct the interpretation and specify an exploratory human calibration plan.",
+      "archetype": "merge2048"
+    },
+    "expected": {
+      "task_type": "EXISTING_GAME_ANALYSIS",
+      "archetype": "merge2048",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-051",
+    "input": {
+      "prompt": "Brainstorm Block Puzzle batch-order challenges that create visible planning choices with three pieces and no rotations.",
+      "archetype": "block_puzzle"
+    },
+    "expected": {
+      "task_type": "IDEATION",
+      "archetype": "block_puzzle",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Game Director",
+        "Gameplay Designer"
+      ],
+      "tools": [],
+      "forbidden_tools": [
+        "simulate",
+        "qa"
+      ]
+    }
+  },
+  {
+    "id": "routing-gd-052",
+    "input": {
+      "prompt": "Design a Block Puzzle challenge with a three-piece batch and simultaneous row and column clearing. State whether new pieces arrive before the whole batch is used.",
+      "archetype": "block_puzzle"
+    },
+    "expected": {
+      "task_type": "DESIGN",
+      "archetype": "block_puzzle",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Game Director",
+        "Gameplay Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "validate_spec",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-053",
+    "input": {
+      "prompt": "Formalize Block Puzzle placement when the final cell completes both a row and column. Define scoring once per cell, batch consumption, and terminal detection.",
+      "archetype": "block_puzzle"
+    },
+    "expected": {
+      "task_type": "RULE_FORMALIZATION",
+      "archetype": "block_puzzle",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "System Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "validate_spec",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-054",
+    "input": {
+      "prompt": "Generate seven Block Puzzle boards covering bridge, cavity, and narrow-corridor placement problems. Supply exact batch witnesses and topology-based duplicate checks.",
+      "archetype": "block_puzzle"
+    },
+    "expected": {
+      "task_type": "CONTENT_GENERATION",
+      "archetype": "block_puzzle",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Level Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "generate_content",
+        "validate_content",
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-055",
+    "input": {
+      "prompt": "Tune Block Puzzle piece distributions against fragmentation and survival. Compare immediate-clear and batch-search policies using the same hidden future streams.",
+      "archetype": "block_puzzle"
+    },
+    "expected": {
+      "task_type": "BALANCE",
+      "archetype": "block_puzzle",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Balance Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "tune_balance",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-056",
+    "input": {
+      "prompt": "Estimate Block Puzzle forced-death horizon when every current piece fits alone but no complete batch ordering succeeds. Keep local legality separate from batch feasibility.",
+      "archetype": "block_puzzle"
+    },
+    "expected": {
+      "task_type": "DIFFICULTY",
+      "archetype": "block_puzzle",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Balance Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "difficulty",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-057",
+    "input": {
+      "prompt": "Playtest Block Puzzle with random placement, immediate clear, and batch search. Allow access only to the current batch and apply the same placement budget.",
+      "archetype": "block_puzzle"
+    },
+    "expected": {
+      "task_type": "PLAYTEST",
+      "archetype": "block_puzzle",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-058",
+    "input": {
+      "prompt": "Audit Block Puzzle terminal detection that ends the game when the first batch piece has no placement even though another piece clears space. Produce a counterexample.",
+      "archetype": "block_puzzle"
+    },
+    "expected": {
+      "task_type": "QA",
+      "archetype": "block_puzzle",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay QA"
+      ],
+      "tools": [
+        "qa",
+        "regression"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-059",
+    "input": {
+      "prompt": "Port Block Puzzle to the web engine with drag placement. Compare grid rounding, overlap rejection, simultaneous line events, and displayed batch inventory.",
+      "archetype": "block_puzzle"
+    },
+    "expected": {
+      "task_type": "ENGINE_IMPLEMENTATION",
+      "archetype": "block_puzzle",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "System Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "adapter_verify",
+        "regression"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-060",
+    "input": {
+      "prompt": "Analyze an existing Block Puzzle pack that reports every different file hash as diverse. Measure mirrored-layout duplication, mechanic reuse, and empty-region topology.",
+      "archetype": "block_puzzle"
+    },
+    "expected": {
+      "task_type": "EXISTING_GAME_ANALYSIS",
+      "archetype": "block_puzzle",
+      "archetype_status": "KNOWN",
+      "roles": [
+        "Gameplay Designer",
+        "Gameplay QA"
+      ],
+      "tools": [
+        "simulate",
+        "qa"
+      ],
+      "forbidden_tools": []
+    }
+  },
+  {
+    "id": "routing-gd-061",
+    "input": {
+      "prompt": "Formalize Water Sort with capacity-four tubes, maximal same-color pours, and partial fills. State whether pouring into an empty tube is optional or compulsory.",
+      "archetype": "water_sort"
+    },
+    "expected": {
+      "task_type": "RULE_FORMALIZATION",
+      "archetype": "water_sort",
+      "archetype_status": "EXPERIMENTAL_REQUIRED",
+      "roles": [
+        "System Designer"
+      ],
+      "tools": [
+        "registry_search",
+        "capability_mapping",
+        "experimental_package",
+        "extension_gate"
+      ],
+      "contract": "EXTENSION"
+    }
+  },
+  {
+    "id": "routing-gd-064",
+    "input": {
+      "prompt": "Tune Water Sort spare-tube count while holding color count fixed. Compare search effort, branching, and human hypotheses without claiming bot effort equals perceived difficulty.",
+      "archetype": "water_sort"
+    },
+    "expected": {
+      "task_type": "BALANCE",
+      "archetype": "water_sort",
+      "archetype_status": "EXPERIMENTAL_REQUIRED",
+      "roles": [
+        "System Designer"
+      ],
+      "tools": [
+        "registry_search",
+        "capability_mapping",
+        "experimental_package",
+        "extension_gate"
+      ],
+      "contract": "EXTENSION"
+    }
+  },
+  {
+    "id": "routing-gd-067",
+    "input": {
+      "prompt": "Formalize Platformer jump buffering, coyote time, and landing order at 60 Hz. The request specifies both two and five buffer ticks; record and resolve this conflict.",
+      "archetype": "platformer"
+    },
+    "expected": {
+      "task_type": "RULE_FORMALIZATION",
+      "archetype": "platformer",
+      "archetype_status": "EXPERIMENTAL_REQUIRED",
+      "roles": [
+        "System Designer"
+      ],
+      "tools": [
+        "registry_search",
+        "capability_mapping",
+        "experimental_package",
+        "extension_gate"
+      ],
+      "contract": "EXTENSION"
+    }
+  },
+  {
+    "id": "routing-gd-070",
+    "input": {
+      "prompt": "Tune Platformer jump height and horizontal acceleration for novice and precise execution profiles. Identify a parameter cliff where a mandatory ledge becomes unreachable.",
+      "archetype": "platformer"
+    },
+    "expected": {
+      "task_type": "BALANCE",
+      "archetype": "platformer",
+      "archetype_status": "EXPERIMENTAL_REQUIRED",
+      "roles": [
+        "System Designer"
+      ],
+      "tools": [
+        "registry_search",
+        "capability_mapping",
+        "experimental_package",
+        "extension_gate"
+      ],
+      "contract": "EXTENSION"
+    }
+  },
+  {
+    "id": "routing-gd-073",
+    "input": {
+      "prompt": "Formalize Tower Defense placement, range ties, projectile travel, and gold awards. Resolve a same-tick leak and final-enemy death without double reward.",
+      "archetype": "tower_defense"
+    },
+    "expected": {
+      "task_type": "RULE_FORMALIZATION",
+      "archetype": "tower_defense",
+      "archetype_status": "EXPERIMENTAL_REQUIRED",
+      "roles": [
+        "System Designer"
+      ],
+      "tools": [
+        "registry_search",
+        "capability_mapping",
+        "experimental_package",
+        "extension_gate"
+      ],
+      "contract": "EXTENSION"
+    }
+  },
+  {
+    "id": "routing-gd-076",
+    "input": {
+      "prompt": "Tune Tower Defense tower cost and cooldown against damage per gold. Evaluate two paths and multiple builds; flag a dominant tower instead of maximizing a single score.",
+      "archetype": "tower_defense"
+    },
+    "expected": {
+      "task_type": "BALANCE",
+      "archetype": "tower_defense",
+      "archetype_status": "EXPERIMENTAL_REQUIRED",
+      "roles": [
+        "System Designer"
+      ],
+      "tools": [
+        "registry_search",
+        "capability_mapping",
+        "experimental_package",
+        "extension_gate"
+      ],
+      "contract": "EXTENSION"
+    }
+  },
+  {
+    "id": "routing-gd-079",
+    "input": {
+      "prompt": "Formalize a Card Game with draw, play, discard, and pass phases. Define priority when a lethal effect and end-turn draw occur together; leave unspecified targeting rules open.",
+      "archetype": "card_game"
+    },
+    "expected": {
+      "task_type": "RULE_FORMALIZATION",
+      "archetype": "card_game",
+      "archetype_status": "EXPERIMENTAL_REQUIRED",
+      "roles": [
+        "System Designer"
+      ],
+      "tools": [
+        "registry_search",
+        "capability_mapping",
+        "experimental_package",
+        "extension_gate"
+      ],
+      "contract": "EXTENSION"
+    }
+  },
+  {
+    "id": "routing-gd-082",
+    "input": {
+      "prompt": "Tune Card Game card costs across aggressive, control, and resource-building profiles. Use paired shuffled decks and inspect matchup cycles rather than a global winner.",
+      "archetype": "card_game"
+    },
+    "expected": {
+      "task_type": "BALANCE",
+      "archetype": "card_game",
+      "archetype_status": "EXPERIMENTAL_REQUIRED",
+      "roles": [
+        "System Designer"
+      ],
+      "tools": [
+        "registry_search",
+        "capability_mapping",
+        "experimental_package",
+        "extension_gate"
+      ],
+      "contract": "EXTENSION"
+    }
+  }
+]

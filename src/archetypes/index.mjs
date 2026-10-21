@@ -1,0 +1,12 @@
+import * as sokoban from './sokoban.mjs';
+import * as falling_blocks from './falling_blocks.mjs';
+import * as arcade_shooter from './arcade_shooter.mjs';
+import * as match3 from './match3.mjs';
+import * as merge2048 from './merge2048.mjs';
+import * as block_puzzle from './block_puzzle.mjs';
+import {ArchetypeRegistry,defaultCapabilities} from '../core/registry.mjs';
+export const packages={sokoban,falling_blocks,arcade_shooter,match3,merge2048,block_puzzle};
+export const registry=new ArchetypeRegistry(defaultCapabilities());
+for(const pkg of Object.values(packages))registry.register(pkg);
+export const getArchetype=id=>registry.get(id);
+export const listArchetypes=()=>Object.keys(packages);

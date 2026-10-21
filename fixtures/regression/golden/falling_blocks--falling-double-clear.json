@@ -1,0 +1,877 @@
+{
+  "replay_version": "0.1.0",
+  "game_spec_id": "falling_blocks-reference",
+  "rules_version": "falling_blocks_v0.1",
+  "archetype": "falling_blocks",
+  "seed": 17,
+  "spec": {
+    "schema_version": "0.1",
+    "metadata": {
+      "id": "falling_blocks-reference",
+      "version": "0.1.0"
+    },
+    "design": {
+      "archetype": "falling_blocks",
+      "audience": {
+        "type": "casual"
+      },
+      "session": {
+        "target_minutes": {
+          "min": 2,
+          "max": 5
+        }
+      },
+      "pillars": [
+        "readable_rules",
+        "meaningful_decisions"
+      ],
+      "complexity": {
+        "action_budget": "low",
+        "mechanic_budget": "medium"
+      },
+      "content_target": {
+        "type": "challenge",
+        "expected_count": 1
+      }
+    },
+    "game": {
+      "archetype": "falling_blocks"
+    },
+    "runtime": {
+      "simulation_mode": "FIXED_STEP",
+      "tick_rate": 60
+    },
+    "action_space": {
+      "type": "composite",
+      "fields": {
+        "left": {
+          "type": "discrete",
+          "values": [
+            false,
+            true
+          ]
+        },
+        "right": {
+          "type": "discrete",
+          "values": [
+            false,
+            true
+          ]
+        },
+        "softDrop": {
+          "type": "discrete",
+          "values": [
+            false,
+            true
+          ]
+        },
+        "rotateCWPressed": {
+          "type": "discrete",
+          "values": [
+            false,
+            true
+          ]
+        },
+        "rotateCCWPressed": {
+          "type": "discrete",
+          "values": [
+            false,
+            true
+          ]
+        },
+        "hardDropPressed": {
+          "type": "discrete",
+          "values": [
+            false,
+            true
+          ]
+        },
+        "holdPressed": {
+          "type": "discrete",
+          "values": [
+            false,
+            true
+          ]
+        }
+      }
+    },
+    "observation": {
+      "mode": "VISIBLE_STATE",
+      "delay_ms": 0,
+      "noise": null
+    },
+    "rng": {
+      "enabled": true
+    },
+    "content": {
+      "id": "falling_blocks-challenge-001",
+      "type": "challenge",
+      "archetype": "falling_blocks",
+      "parameters": {},
+      "objectives": [],
+      "dependencies": [],
+      "extensions": {
+        "falling_blocks": {
+          "ruleset_version": "falling_blocks_v0.1",
+          "width": 10,
+          "height": 20,
+          "gravityTicks": 30,
+          "softDropTicks": 2,
+          "lockDelayTicks": 30,
+          "dasTicks": 10,
+          "arrTicks": 2,
+          "maxLockResets": 15,
+          "previewCount": 1,
+          "targetLines": 2,
+          "maxTicks": 18000,
+          "initialBoard": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "sequence": [
+            "O"
+          ]
+        }
+      }
+    },
+    "evaluation": {
+      "player_profiles": [
+        {
+          "id": "random",
+          "version": "placement-execution-1"
+        },
+        {
+          "id": "greedy",
+          "version": "placement-execution-1"
+        },
+        {
+          "id": "placement_search",
+          "version": "placement-execution-1"
+        }
+      ],
+      "metrics": [
+        "lines",
+        "holes",
+        "height",
+        "execution_margin",
+        "input_pressure"
+      ],
+      "gates": [
+        "schema",
+        "runtime",
+        "replay"
+      ],
+      "seed_set": {
+        "mode": "fixed",
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    "provenance": {
+      "rules_version": "falling_blocks_v0.1",
+      "assumptions": []
+    },
+    "adapter": {
+      "id": "web",
+      "version": "0.1"
+    },
+    "extensions": {}
+  },
+  "initial_content": {
+    "id": "falling_blocks-challenge-001",
+    "type": "challenge",
+    "archetype": "falling_blocks",
+    "parameters": {},
+    "objectives": [],
+    "dependencies": [],
+    "extensions": {
+      "falling_blocks": {
+        "ruleset_version": "falling_blocks_v0.1",
+        "width": 10,
+        "height": 20,
+        "gravityTicks": 30,
+        "softDropTicks": 2,
+        "lockDelayTicks": 30,
+        "dasTicks": 10,
+        "arrTicks": 2,
+        "maxLockResets": 15,
+        "previewCount": 1,
+        "targetLines": 2,
+        "maxTicks": 18000,
+        "initialBoard": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "sequence": [
+          "O"
+        ]
+      }
+    }
+  },
+  "initial_state_hash": "4c3e5c047863b38e",
+  "actions": [
+    {
+      "tick": 0,
+      "action": {
+        "hardDropPressed": true
+      },
+      "accepted": true,
+      "state_hash": "cfd6b35cab8172ae",
+      "events": [
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 1,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 2,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 3,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 4,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 5,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 6,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 7,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 8,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 9,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 10,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 11,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 12,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 13,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 14,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 15,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 16,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 17,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "PieceMoved",
+          "x": 4,
+          "y": 18,
+          "cause": "hard_drop"
+        },
+        {
+          "type": "HardDropped",
+          "distance": 18
+        },
+        {
+          "type": "PieceLocked",
+          "piece": {
+            "type": "O",
+            "x": 4,
+            "y": 18,
+            "rotation": 0
+          },
+          "cells": [
+            [
+              4,
+              18
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              4,
+              19
+            ],
+            [
+              5,
+              19
+            ]
+          ],
+          "tick": 1
+        },
+        {
+          "type": "LineCleared",
+          "rows": [
+            18,
+            19
+          ],
+          "count": 2,
+          "points": 300
+        },
+        {
+          "type": "ObjectiveCompleted",
+          "lines": 2
+        },
+        {
+          "type": "StateAdvanced",
+          "tick": 1,
+          "gravityAccumulator": 0,
+          "lockTicks": 0,
+          "score": 336,
+          "holdUsed": false
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "terminal": {
+      "status": "WIN",
+      "reason": "LINE_TARGET"
+    },
+    "final_state_hash": "cfd6b35cab8172ae"
+  },
+  "state_hashes": [
+    "4c3e5c047863b38e",
+    "cfd6b35cab8172ae"
+  ]
+}

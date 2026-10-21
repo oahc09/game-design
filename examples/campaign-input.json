@@ -1,0 +1,374 @@
+{
+  "mechanics": [
+    "move",
+    "push"
+  ],
+  "dependencies": {
+    "push": [
+      "move"
+    ]
+  },
+  "contents": [
+    {
+      "id": "i-move",
+      "content": {
+        "id": "i-move",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {},
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#####",
+              "#@$.#",
+              "#####"
+            ],
+            "maxMoves": 10
+          }
+        }
+      },
+      "mechanics": [
+        "move"
+      ],
+      "evaluation": {
+        "competent_completion_rate": 0.9,
+        "seeds": [
+          1,
+          2,
+          3
+        ],
+        "profile_version": "synthetic-protocol-fixture-not-observed"
+      }
+    },
+    {
+      "id": "p-move",
+      "content": {
+        "id": "p-move",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {},
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#####",
+              "#@$.#",
+              "#####"
+            ],
+            "maxMoves": 10
+          }
+        }
+      },
+      "mechanics": [
+        "move"
+      ],
+      "evaluation": {
+        "competent_completion_rate": 0.8,
+        "seeds": [
+          1,
+          2,
+          3
+        ],
+        "profile_version": "synthetic-protocol-fixture-not-observed"
+      }
+    },
+    {
+      "id": "i-push",
+      "content": {
+        "id": "i-push",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {},
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#####",
+              "#@$.#",
+              "#####"
+            ],
+            "maxMoves": 10
+          }
+        }
+      },
+      "mechanics": [
+        "move",
+        "push"
+      ],
+      "evaluation": {
+        "competent_completion_rate": 0.9,
+        "seeds": [
+          1,
+          2,
+          3
+        ],
+        "profile_version": "synthetic-protocol-fixture-not-observed"
+      }
+    },
+    {
+      "id": "p-push",
+      "content": {
+        "id": "p-push",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {},
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#####",
+              "#@$.#",
+              "#####"
+            ],
+            "maxMoves": 10
+          }
+        }
+      },
+      "mechanics": [
+        "push"
+      ],
+      "evaluation": {
+        "competent_completion_rate": 0.8,
+        "seeds": [
+          1,
+          2,
+          3
+        ],
+        "profile_version": "synthetic-protocol-fixture-not-observed"
+      }
+    },
+    {
+      "id": "combine",
+      "content": {
+        "id": "combine",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {},
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#####",
+              "#@$.#",
+              "#####"
+            ],
+            "maxMoves": 10
+          }
+        }
+      },
+      "mechanics": [
+        "move",
+        "push"
+      ],
+      "evaluation": {
+        "competent_completion_rate": 0.65,
+        "seeds": [
+          1,
+          2,
+          3
+        ],
+        "profile_version": "synthetic-protocol-fixture-not-observed"
+      }
+    },
+    {
+      "id": "twist",
+      "content": {
+        "id": "twist",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {},
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#####",
+              "#.$@#",
+              "#####"
+            ],
+            "maxMoves": 10
+          }
+        }
+      },
+      "mechanics": [
+        "move",
+        "push"
+      ],
+      "evaluation": {
+        "competent_completion_rate": 0.6,
+        "seeds": [
+          1,
+          2,
+          3
+        ],
+        "profile_version": "synthetic-protocol-fixture-not-observed"
+      },
+      "twist": {
+        "field": "extensions.sokoban.map"
+      }
+    },
+    {
+      "id": "pressure",
+      "content": {
+        "id": "pressure",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {},
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#####",
+              "#@$.#",
+              "#####"
+            ],
+            "maxMoves": 5
+          }
+        }
+      },
+      "mechanics": [
+        "move",
+        "push"
+      ],
+      "evaluation": {
+        "competent_completion_rate": 0.44999999999999996,
+        "seeds": [
+          1,
+          2,
+          3
+        ],
+        "profile_version": "synthetic-protocol-fixture-not-observed"
+      },
+      "pressure": {
+        "metric": "move_limit",
+        "direction": "lower"
+      }
+    },
+    {
+      "id": "mastery",
+      "content": {
+        "id": "mastery",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {},
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#####",
+              "#@$.#",
+              "#####"
+            ],
+            "maxMoves": 10
+          }
+        }
+      },
+      "mechanics": [
+        "move",
+        "push"
+      ],
+      "evaluation": {
+        "competent_completion_rate": 0.35,
+        "seeds": [
+          1,
+          2,
+          3
+        ],
+        "profile_version": "synthetic-protocol-fixture-not-observed"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "move",
+          "push"
+        ]
+      }
+    },
+    {
+      "id": "rest",
+      "content": {
+        "id": "rest",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {},
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#####",
+              "#@$.#",
+              "#####"
+            ],
+            "maxMoves": 10
+          }
+        }
+      },
+      "mechanics": [
+        "move"
+      ],
+      "evaluation": {
+        "competent_completion_rate": 0.7,
+        "seeds": [
+          1,
+          2,
+          3
+        ],
+        "profile_version": "synthetic-protocol-fixture-not-observed"
+      }
+    },
+    {
+      "id": "exam",
+      "content": {
+        "id": "exam",
+        "type": "challenge",
+        "archetype": "sokoban",
+        "parameters": {},
+        "objectives": [],
+        "dependencies": [],
+        "extensions": {
+          "sokoban": {
+            "map": [
+              "#####",
+              "#@$.#",
+              "#####"
+            ],
+            "maxMoves": 10
+          }
+        }
+      },
+      "mechanics": [
+        "move",
+        "push"
+      ],
+      "evaluation": {
+        "competent_completion_rate": 0.35,
+        "seeds": [
+          1,
+          2,
+          3
+        ],
+        "profile_version": "synthetic-protocol-fixture-not-observed"
+      },
+      "assessment": {
+        "outcome": "WIN",
+        "mechanics": [
+          "move",
+          "push"
+        ]
+      }
+    }
+  ],
+  "tolerance": 0.01,
+  "learningAssumptions": [
+    "SYNTHETIC_PROTOCOL_FIXTURE: supplied rates are test data, not observed players. Replace with measured episodes before production use."
+  ]
+}

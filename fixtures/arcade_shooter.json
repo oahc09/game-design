@@ -1,0 +1,7477 @@
+{
+  "archetype": "arcade_shooter",
+  "version": "0.1.1",
+  "cases": [
+    {
+      "id": "shooter-player-move",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "move": [
+            1,
+            0
+          ]
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "events": [
+          "EntityMoved"
+        ],
+        "state": {
+          "player": {
+            "x": 50.4,
+            "y": 80
+          }
+        }
+      }
+    },
+    {
+      "id": "shooter-fire",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "fire": true
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "events": [
+          "ProjectileSpawned",
+          "ProjectileMoved"
+        ],
+        "state": {
+          "shots": 1
+        }
+      }
+    },
+    {
+      "id": "shooter-cooldown",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "fire": true
+        },
+        {
+          "fire": true
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "shots": 1
+        }
+      }
+    },
+    {
+      "id": "shooter-cooldown-exact",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "fire": true
+        },
+        {
+          "fire": true
+        },
+        {
+          "fire": true
+        },
+        {
+          "fire": true
+        },
+        {
+          "fire": true
+        },
+        {
+          "fire": true
+        },
+        {
+          "fire": true
+        },
+        {
+          "fire": true
+        },
+        {
+          "fire": true
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "shots": 2
+        }
+      }
+    },
+    {
+      "id": "shooter-swept-hit",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 1200,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 1,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 50,
+                  "y": 70
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "fire": true
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "terminal": "WIN",
+        "events": [
+          "DamageApplied",
+          "EntityDestroyed",
+          "ObjectiveCompleted"
+        ],
+        "state": {
+          "kills": 1,
+          "hits": 1
+        }
+      }
+    },
+    {
+      "id": "shooter-single-hit-not-kill",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 1200,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 50,
+                  "y": 70
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "fire": true
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "kills": 0,
+          "hits": 1
+        }
+      }
+    },
+    {
+      "id": "shooter-wait-for-wave",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [],
+              "spawns": [
+                {
+                  "tick": 2,
+                  "x": 20,
+                  "y": 20
+                }
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "NOOP",
+        "NOOP"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "terminal": null,
+          "spawnIndex": 0
+        }
+      }
+    },
+    {
+      "id": "shooter-wave-exact",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [],
+              "spawns": [
+                {
+                  "tick": 2,
+                  "x": 20,
+                  "y": 20
+                }
+              ]
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "NOOP",
+        "NOOP",
+        "NOOP"
+      ],
+      "expect": {
+        "accepted": true,
+        "events": [
+          "EnemySpawned"
+        ],
+        "state": {
+          "spawnIndex": 1
+        }
+      }
+    },
+    {
+      "id": "shooter-player-death",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 1,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 50,
+                  "y": 80
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "NOOP"
+      ],
+      "expect": {
+        "accepted": true,
+        "terminal": "LOSE",
+        "events": [
+          "DamageApplied",
+          "GameEnded"
+        ]
+      }
+    },
+    {
+      "id": "shooter-time-limit",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 1,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "NOOP"
+      ],
+      "expect": {
+        "accepted": true,
+        "terminal": "LOSE"
+      }
+    },
+    {
+      "id": "shooter-invalid-unknown",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "ATTACK"
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "tick": 0
+        }
+      }
+    },
+    {
+      "id": "shooter-invalid-wrong-fire",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "fire": 1
+        }
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "tick": 0
+        }
+      }
+    },
+    {
+      "id": "shooter-invalid-invalid-move",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "move": [
+            2,
+            0
+          ]
+        }
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "tick": 0
+        }
+      }
+    },
+    {
+      "id": "shooter-invalid-missing-vector-coordinate",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "move": [
+            1
+          ]
+        }
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "tick": 0
+        }
+      }
+    },
+    {
+      "id": "shooter-invalid-invalid-aim",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "aim": [
+            null,
+            0
+          ]
+        }
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "tick": 0
+        }
+      }
+    },
+    {
+      "id": "shooter-invalid-null",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        null
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "tick": 0
+        }
+      }
+    },
+    {
+      "id": "shooter-invalid-array",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        []
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "tick": 0
+        }
+      }
+    },
+    {
+      "id": "shooter-invalid-extra-field",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "teleport": true
+        }
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "tick": 0
+        }
+      }
+    },
+    {
+      "id": "shooter-move-left",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "move": [
+            -1,
+            0
+          ]
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": {
+            "x": 49.6,
+            "y": 80
+          }
+        }
+      }
+    },
+    {
+      "id": "shooter-move-up",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "move": [
+            0,
+            -1
+          ]
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": {
+            "x": 50,
+            "y": 79.6
+          }
+        }
+      }
+    },
+    {
+      "id": "shooter-move-down",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "move": [
+            0,
+            1
+          ]
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": {
+            "x": 50,
+            "y": 80.4
+          }
+        }
+      }
+    },
+    {
+      "id": "shooter-aim-right",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "aim": [
+            1,
+            0
+          ],
+          "fire": true
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": {
+            "aim": [
+              1,
+              0
+            ]
+          },
+          "shots": 1
+        },
+        "events": [
+          "ProjectileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "shooter-aim-left",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "aim": [
+            -1,
+            0
+          ],
+          "fire": true
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": {
+            "aim": [
+              -1,
+              0
+            ]
+          },
+          "shots": 1
+        },
+        "events": [
+          "ProjectileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "shooter-aim-down",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "aim": [
+            0,
+            1
+          ],
+          "fire": true
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": {
+            "aim": [
+              0,
+              1
+            ]
+          },
+          "shots": 1
+        },
+        "events": [
+          "ProjectileSpawned"
+        ]
+      }
+    },
+    {
+      "id": "shooter-projectile-motion",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "fire": true
+        },
+        "NOOP"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "tick": 2,
+          "shots": 1
+        },
+        "events": [
+          "ProjectileMoved"
+        ]
+      }
+    },
+    {
+      "id": "shooter-enemy-chase",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 6,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 50,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "NOOP"
+      ],
+      "expect": {
+        "accepted": true,
+        "events": [
+          "EntityMoved"
+        ],
+        "state": {
+          "tick": 1
+        }
+      }
+    },
+    {
+      "id": "shooter-enemy-fire",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 1,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 50,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "NOOP"
+      ],
+      "expect": {
+        "accepted": true,
+        "events": [
+          "ProjectileSpawned"
+        ],
+        "state": {
+          "shots": 0
+        }
+      }
+    },
+    {
+      "id": "shooter-contact-damage",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 50,
+                  "y": 80
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "NOOP"
+      ],
+      "expect": {
+        "accepted": true,
+        "events": [
+          "DamageApplied"
+        ],
+        "state": {
+          "damageTaken": 1,
+          "player": {
+            "hp": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "shooter-contact-cooldown-exact",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 3,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 50,
+                  "y": 80
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "NOOP",
+        "NOOP",
+        "NOOP",
+        "NOOP"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "damageTaken": 2,
+          "player": {
+            "hp": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "shooter-damage-clamped-to-hp",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 1200,
+              "projectileRadius": 0.5,
+              "projectileDamage": 10,
+              "fireIntervalTicks": 8,
+              "enemyHP": 1,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 50,
+                  "y": 70
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "fire": true
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "terminal": "WIN",
+        "state": {
+          "hits": 1,
+          "kills": 1
+        }
+      }
+    },
+    {
+      "id": "shooter-multi-shot-kill",
+      "kind": "valid",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 1200,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 1,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 50,
+                  "y": 70
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "fire": true
+        },
+        {
+          "fire": true
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "terminal": "WIN",
+        "state": {
+          "shots": 2,
+          "hits": 2,
+          "kills": 1
+        }
+      }
+    },
+    {
+      "id": "shooter-boundary-left",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 2,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "move": [
+            -1,
+            0
+          ]
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": {
+            "x": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "shooter-boundary-right",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 98,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "move": [
+            1,
+            0
+          ]
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": {
+            "x": 98
+          }
+        }
+      }
+    },
+    {
+      "id": "shooter-boundary-top",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 2,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "move": [
+            0,
+            -1
+          ]
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": {
+            "y": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "shooter-boundary-bottom",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 98,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "move": [
+            0,
+            1
+          ]
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": {
+            "y": 98
+          }
+        }
+      }
+    },
+    {
+      "id": "shooter-zero-aim-retains-direction",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "aim": [
+            0,
+            0
+          ],
+          "fire": true
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "player": {
+            "aim": [
+              0,
+              -1
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "shooter-overlapping-enemy-tiebreak",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 1200,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 1,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 50,
+                  "y": 70
+                },
+                {
+                  "x": 50,
+                  "y": 70
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "fire": true
+        }
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "hits": 1,
+          "kills": 1,
+          "terminal": null
+        }
+      }
+    },
+    {
+      "id": "shooter-contact-before-cooldown",
+      "kind": "edge",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 3,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 50,
+                  "y": 80
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        "NOOP",
+        "NOOP",
+        "NOOP"
+      ],
+      "expect": {
+        "accepted": true,
+        "state": {
+          "damageTaken": 1,
+          "player": {
+            "hp": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "shooter-invalid-aim-length",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "aim": [
+            0,
+            1,
+            0
+          ]
+        }
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "tick": 0
+        }
+      }
+    },
+    {
+      "id": "shooter-invalid-fire-object",
+      "kind": "broken",
+      "seed": 17,
+      "spec": {
+        "schema_version": "0.1",
+        "metadata": {
+          "id": "arcade_shooter-reference",
+          "version": "0.1.0"
+        },
+        "design": {
+          "archetype": "arcade_shooter",
+          "audience": {
+            "type": "casual"
+          },
+          "session": {
+            "target_minutes": {
+              "min": 2,
+              "max": 5
+            }
+          },
+          "pillars": [
+            "readable_rules",
+            "meaningful_decisions"
+          ],
+          "complexity": {
+            "action_budget": "low",
+            "mechanic_budget": "medium"
+          },
+          "content_target": {
+            "type": "challenge",
+            "expected_count": 1
+          }
+        },
+        "game": {
+          "archetype": "arcade_shooter"
+        },
+        "runtime": {
+          "simulation_mode": "FIXED_STEP",
+          "tick_rate": 60
+        },
+        "action_space": {
+          "type": "composite",
+          "fields": {
+            "move": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "aim": {
+              "type": "continuous",
+              "shape": [
+                2
+              ],
+              "min": -1,
+              "max": 1
+            },
+            "fire": {
+              "type": "discrete",
+              "values": [
+                false,
+                true
+              ]
+            }
+          }
+        },
+        "observation": {
+          "mode": "VISIBLE_STATE",
+          "delay_ms": 0,
+          "noise": null
+        },
+        "rng": {
+          "enabled": true
+        },
+        "content": {
+          "id": "arcade_shooter-challenge-001",
+          "type": "challenge",
+          "archetype": "arcade_shooter",
+          "parameters": {},
+          "objectives": [],
+          "dependencies": [],
+          "extensions": {
+            "arcade_shooter": {
+              "ruleset_version": "arcade_shooter_v0.1.1",
+              "width": 100,
+              "height": 100,
+              "playerX": 50,
+              "playerY": 80,
+              "playerHP": 3,
+              "playerRadius": 2,
+              "playerSpeed": 24,
+              "projectileSpeed": 90,
+              "projectileRadius": 0.5,
+              "projectileDamage": 1,
+              "fireIntervalTicks": 8,
+              "enemyHP": 2,
+              "enemyRadius": 2.5,
+              "enemySpeed": 0,
+              "enemyFireIntervalTicks": 0,
+              "enemyProjectileSpeed": 30,
+              "enemyDamage": 1,
+              "contactIntervalTicks": 60,
+              "maxTicks": 7200,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                },
+                {
+                  "x": 50,
+                  "y": 15
+                },
+                {
+                  "x": 80,
+                  "y": 20
+                }
+              ],
+              "spawns": []
+            }
+          }
+        },
+        "evaluation": {
+          "player_profiles": [
+            {
+              "id": "random",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "greedy",
+              "version": "aim-avoidance-1"
+            },
+            {
+              "id": "tactical",
+              "version": "aim-avoidance-1"
+            }
+          ],
+          "metrics": [
+            "kills",
+            "accuracy",
+            "ttk",
+            "reaction_margin",
+            "threat_density",
+            "safe_path_reachability"
+          ],
+          "gates": [
+            "schema",
+            "runtime",
+            "replay"
+          ],
+          "seed_set": {
+            "mode": "fixed",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "provenance": {
+          "rules_version": "arcade_shooter_v0.1.1",
+          "assumptions": []
+        },
+        "adapter": {
+          "id": "web",
+          "version": "0.1"
+        },
+        "extensions": {}
+      },
+      "actions": [
+        {
+          "fire": {
+            "pressed": true
+          }
+        }
+      ],
+      "expect": {
+        "accepted": false,
+        "state": {
+          "tick": 0
+        }
+      }
+    }
+  ]
+}

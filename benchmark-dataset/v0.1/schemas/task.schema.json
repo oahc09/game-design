@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "archetype",
+    "task_type",
+    "difficulty",
+    "unseen",
+    "multi_stage",
+    "adversarial",
+    "prompt",
+    "materials",
+    "deliverables",
+    "success_criteria",
+    "stages",
+    "seed_set",
+    "expected_materials",
+    "language",
+    "source"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^gd-[0-9]{3}$"
+    },
+    "archetype": {
+      "type": "string"
+    },
+    "task_type": {
+      "enum": [
+        "IDEATION",
+        "DESIGN",
+        "RULE_FORMALIZATION",
+        "CONTENT_GENERATION",
+        "BALANCE",
+        "DIFFICULTY",
+        "PLAYTEST",
+        "QA",
+        "ENGINE_IMPLEMENTATION",
+        "EXISTING_GAME_ANALYSIS"
+      ]
+    },
+    "difficulty": {
+      "enum": [
+        "Basic",
+        "Intermediate",
+        "Advanced",
+        "Composite"
+      ]
+    },
+    "unseen": {
+      "type": "boolean"
+    },
+    "multi_stage": {
+      "type": "boolean"
+    },
+    "adversarial": {
+      "type": "boolean"
+    },
+    "prompt": {
+      "type": "string",
+      "minLength": 70
+    },
+    "materials": {
+      "type": "object"
+    },
+    "deliverables": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "success_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "expected_materials": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "seed_set": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "integer"
+      }
+    },
+    "language": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    }
+  }
+}

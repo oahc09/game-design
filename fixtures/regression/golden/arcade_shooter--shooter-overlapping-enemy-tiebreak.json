@@ -1,0 +1,282 @@
+{
+  "replay_version": "0.1.0",
+  "game_spec_id": "arcade_shooter-reference",
+  "rules_version": "arcade_shooter_v0.1.1",
+  "archetype": "arcade_shooter",
+  "seed": 17,
+  "spec": {
+    "schema_version": "0.1",
+    "metadata": {
+      "id": "arcade_shooter-reference",
+      "version": "0.1.0"
+    },
+    "design": {
+      "archetype": "arcade_shooter",
+      "audience": {
+        "type": "casual"
+      },
+      "session": {
+        "target_minutes": {
+          "min": 2,
+          "max": 5
+        }
+      },
+      "pillars": [
+        "readable_rules",
+        "meaningful_decisions"
+      ],
+      "complexity": {
+        "action_budget": "low",
+        "mechanic_budget": "medium"
+      },
+      "content_target": {
+        "type": "challenge",
+        "expected_count": 1
+      }
+    },
+    "game": {
+      "archetype": "arcade_shooter"
+    },
+    "runtime": {
+      "simulation_mode": "FIXED_STEP",
+      "tick_rate": 60
+    },
+    "action_space": {
+      "type": "composite",
+      "fields": {
+        "move": {
+          "type": "continuous",
+          "shape": [
+            2
+          ],
+          "min": -1,
+          "max": 1
+        },
+        "aim": {
+          "type": "continuous",
+          "shape": [
+            2
+          ],
+          "min": -1,
+          "max": 1
+        },
+        "fire": {
+          "type": "discrete",
+          "values": [
+            false,
+            true
+          ]
+        }
+      }
+    },
+    "observation": {
+      "mode": "VISIBLE_STATE",
+      "delay_ms": 0,
+      "noise": null
+    },
+    "rng": {
+      "enabled": true
+    },
+    "content": {
+      "id": "arcade_shooter-challenge-001",
+      "type": "challenge",
+      "archetype": "arcade_shooter",
+      "parameters": {},
+      "objectives": [],
+      "dependencies": [],
+      "extensions": {
+        "arcade_shooter": {
+          "ruleset_version": "arcade_shooter_v0.1.1",
+          "width": 100,
+          "height": 100,
+          "playerX": 50,
+          "playerY": 80,
+          "playerHP": 3,
+          "playerRadius": 2,
+          "playerSpeed": 24,
+          "projectileSpeed": 1200,
+          "projectileRadius": 0.5,
+          "projectileDamage": 1,
+          "fireIntervalTicks": 8,
+          "enemyHP": 1,
+          "enemyRadius": 2.5,
+          "enemySpeed": 0,
+          "enemyFireIntervalTicks": 0,
+          "enemyProjectileSpeed": 30,
+          "enemyDamage": 1,
+          "contactIntervalTicks": 60,
+          "maxTicks": 7200,
+          "enemies": [
+            {
+              "x": 50,
+              "y": 70
+            },
+            {
+              "x": 50,
+              "y": 70
+            }
+          ],
+          "spawns": []
+        }
+      }
+    },
+    "evaluation": {
+      "player_profiles": [
+        {
+          "id": "random",
+          "version": "aim-avoidance-1"
+        },
+        {
+          "id": "greedy",
+          "version": "aim-avoidance-1"
+        },
+        {
+          "id": "tactical",
+          "version": "aim-avoidance-1"
+        }
+      ],
+      "metrics": [
+        "kills",
+        "accuracy",
+        "ttk",
+        "reaction_margin",
+        "threat_density",
+        "safe_path_reachability"
+      ],
+      "gates": [
+        "schema",
+        "runtime",
+        "replay"
+      ],
+      "seed_set": {
+        "mode": "fixed",
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    "provenance": {
+      "rules_version": "arcade_shooter_v0.1.1",
+      "assumptions": []
+    },
+    "adapter": {
+      "id": "web",
+      "version": "0.1"
+    },
+    "extensions": {}
+  },
+  "initial_content": {
+    "id": "arcade_shooter-challenge-001",
+    "type": "challenge",
+    "archetype": "arcade_shooter",
+    "parameters": {},
+    "objectives": [],
+    "dependencies": [],
+    "extensions": {
+      "arcade_shooter": {
+        "ruleset_version": "arcade_shooter_v0.1.1",
+        "width": 100,
+        "height": 100,
+        "playerX": 50,
+        "playerY": 80,
+        "playerHP": 3,
+        "playerRadius": 2,
+        "playerSpeed": 24,
+        "projectileSpeed": 1200,
+        "projectileRadius": 0.5,
+        "projectileDamage": 1,
+        "fireIntervalTicks": 8,
+        "enemyHP": 1,
+        "enemyRadius": 2.5,
+        "enemySpeed": 0,
+        "enemyFireIntervalTicks": 0,
+        "enemyProjectileSpeed": 30,
+        "enemyDamage": 1,
+        "contactIntervalTicks": 60,
+        "maxTicks": 7200,
+        "enemies": [
+          {
+            "x": 50,
+            "y": 70
+          },
+          {
+            "x": 50,
+            "y": 70
+          }
+        ],
+        "spawns": []
+      }
+    }
+  },
+  "initial_state_hash": "75f315c9481619b5",
+  "actions": [
+    {
+      "tick": 0,
+      "action": {
+        "fire": true
+      },
+      "accepted": true,
+      "state_hash": "ae80630e1ed26564",
+      "events": [
+        {
+          "type": "ProjectileSpawned",
+          "projectile": {
+            "id": 3,
+            "owner": "player",
+            "x": 50,
+            "y": 80,
+            "vx": 0,
+            "vy": -1200,
+            "radius": 0.5,
+            "damage": 1,
+            "spawnTick": 0
+          }
+        },
+        {
+          "type": "ProjectileMoved",
+          "id": 3,
+          "x": 50,
+          "y": 60
+        },
+        {
+          "type": "DamageApplied",
+          "targetId": 1,
+          "sourceId": 3,
+          "amount": 1,
+          "hp": 0,
+          "time": 0.35
+        },
+        {
+          "type": "EntityDestroyed",
+          "id": 3,
+          "entityType": "projectile"
+        },
+        {
+          "type": "EntityDestroyed",
+          "id": 1,
+          "entityType": "enemy"
+        },
+        {
+          "type": "StateAdvanced",
+          "tick": 1,
+          "score": 100,
+          "shots": 1,
+          "hits": 1,
+          "playerCooldown": 8
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "terminal": null,
+    "final_state_hash": "ae80630e1ed26564"
+  },
+  "state_hashes": [
+    "75f315c9481619b5",
+    "ae80630e1ed26564"
+  ]
+}

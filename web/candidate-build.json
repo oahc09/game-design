@@ -1,0 +1,59 @@
+{
+  "kind": "CANDIDATE_BROWSER_BUILD",
+  "records": [
+    {
+      "archetype": "sokoban",
+      "url": "./candidates/sokoban.js",
+      "sha256": "a943a218cde5718e462d2afbd986f8b232a72e977dec308b27d6be46c4408e86",
+      "collection_digest": "d185db20d1869022595c210501f9e17f3a3729a74a44298eb9801428214bb91a"
+    },
+    {
+      "archetype": "match3",
+      "url": "./candidates/match3.js",
+      "sha256": "46b2b149169bf409af1f2967fc63607f563ce2d162e81993d4a8700996bea8b3",
+      "collection_digest": "bec93b25861cb67513f1e9d802b87fa0d9b05ef6eb659305c540db0fede77330"
+    },
+    {
+      "archetype": "falling_blocks",
+      "url": "./candidates/falling_blocks.js",
+      "sha256": "ffbb73f87ec5f087224f4623db87a867278043b33a0161fe0f329ed00a370d2f",
+      "collection_digest": "67bf058564b54189713b318da05a48bc23bb7696b026f50af9814b0552e4aec9"
+    },
+    {
+      "archetype": "arcade_shooter",
+      "url": "./candidates/arcade_shooter.js",
+      "sha256": "0afe9065364e92fe67f43f654bc00d0fac30bc6a065f674f992a8052b1484ccd",
+      "collection_digest": "e8828aad98e6cffed4b8a9f423ae716de25940d67ff4cad4ee913c3720a70d1a"
+    },
+    {
+      "archetype": "merge2048",
+      "url": "./candidates/merge2048.js",
+      "sha256": "aa88fa97b78488b28642fe7a9b6437972b8e611493893c50a4a7415928dce3aa",
+      "collection_digest": "366d47215fdfa0e0b568981bfec7fc342083d8348e9c210fd419dfb9461b6f50"
+    },
+    {
+      "archetype": "block_puzzle",
+      "url": "./candidates/block_puzzle.js",
+      "sha256": "b03b1213cb571f180b16caee85de0bc74eb20af55a9ede818a5c84392953582d",
+      "collection_digest": "b5e86376cb5eec2f33200305f7f19cae84ef73bd7d8c44e07949ff3329a0cd09"
+    }
+  ],
+  "imports": {
+    "quickjs-emscripten": "/node_modules/quickjs-emscripten/dist/index.mjs",
+    "quickjs-emscripten-core": "/node_modules/quickjs-emscripten-core/dist/index.mjs",
+    "@jitl/quickjs-ffi-types": "/node_modules/@jitl/quickjs-ffi-types/dist/index.mjs",
+    "@jitl/quickjs-wasmfile-release-sync": "/node_modules/@jitl/quickjs-wasmfile-release-sync/dist/index.mjs",
+    "@jitl/quickjs-wasmfile-release-sync/ffi": "/node_modules/@jitl/quickjs-wasmfile-release-sync/dist/ffi.mjs",
+    "@jitl/quickjs-wasmfile-release-sync/emscripten-module": "/node_modules/@jitl/quickjs-wasmfile-release-sync/dist/emscripten-module.browser.mjs",
+    "@jitl/quickjs-wasmfile-debug-sync": "/node_modules/@jitl/quickjs-wasmfile-debug-sync/dist/index.mjs",
+    "@jitl/quickjs-wasmfile-debug-sync/ffi": "/node_modules/@jitl/quickjs-wasmfile-debug-sync/dist/ffi.mjs",
+    "@jitl/quickjs-wasmfile-debug-sync/emscripten-module": "/node_modules/@jitl/quickjs-wasmfile-debug-sync/dist/emscripten-module.browser.mjs",
+    "@jitl/quickjs-wasmfile-release-asyncify": "/node_modules/@jitl/quickjs-wasmfile-release-asyncify/dist/index.mjs",
+    "@jitl/quickjs-wasmfile-release-asyncify/ffi": "/node_modules/@jitl/quickjs-wasmfile-release-asyncify/dist/ffi.mjs",
+    "@jitl/quickjs-wasmfile-release-asyncify/emscripten-module": "/node_modules/@jitl/quickjs-wasmfile-release-asyncify/dist/emscripten-module.browser.mjs",
+    "@jitl/quickjs-wasmfile-debug-asyncify": "/node_modules/@jitl/quickjs-wasmfile-debug-asyncify/dist/index.mjs",
+    "@jitl/quickjs-wasmfile-debug-asyncify/ffi": "/node_modules/@jitl/quickjs-wasmfile-debug-asyncify/dist/ffi.mjs",
+    "@jitl/quickjs-wasmfile-debug-asyncify/emscripten-module": "/node_modules/@jitl/quickjs-wasmfile-debug-asyncify/dist/emscripten-module.browser.mjs"
+  },
+  "external_trust": "UNVERIFIED"
+}

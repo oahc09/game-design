@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://game-design.local/schema/game.json",
+  "type": "object",
+  "properties": {
+    "archetype": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "archetype"
+  ],
+  "additionalProperties": false
+}

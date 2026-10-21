@@ -1,0 +1,785 @@
+{
+  "source": "input/Game-Design-Skill-v0.1-M0-M7-Master-Plan(1).md",
+  "source_index": "docs/plan-section-index.json",
+  "scope": "Grouped executable requirement trace. Read entire source section index for all source headings. A row cannot certify broader claims than its evidence.",
+  "final_master_gate": "BLOCKED",
+  "requirements": [
+    {
+      "id": "M0-schema",
+      "phase": "M0",
+      "requirement": "Six gameplay sub-specs, strict extensions, metadata identity and provenance",
+      "source_section": "Part I §§4–15",
+      "implementation": [
+        "schemas/",
+        "src/core/schema.mjs",
+        "src/core/validate.mjs"
+      ],
+      "evidence": [
+        "tests/core.test.mjs",
+        "tests/core-fixtures.test.mjs",
+        "evidence/schema.json"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "Fail-closed JSON Schema subset, not complete draft2020-12."
+      ]
+    },
+    {
+      "id": "M0-modes",
+      "phase": "M0",
+      "requirement": "Generic action/simulation/observation contract",
+      "source_section": "Part I §§8–10,17–20",
+      "implementation": [
+        "src/core/contracts.d.ts",
+        "src/core/index.mjs"
+      ],
+      "evidence": [
+        "tests/core.test.mjs",
+        "tests/independent-audit.test.mjs"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "SIMULTANEOUS/AGENT_CYCLE schema-only as allowed M0; PARTIAL/NOISY human-perception semantics unsupported."
+      ]
+    },
+    {
+      "id": "M0-rng",
+      "phase": "M0",
+      "requirement": "Seeded RNG snapshot/restore; canonical serialization/hash",
+      "source_section": "Part I §§18,21,23",
+      "implementation": [
+        "src/core/index.mjs"
+      ],
+      "evidence": [
+        "tests/core.test.mjs",
+        "tests/grid-archetypes.test.mjs",
+        "tests/realtime-archetypes.test.mjs"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": []
+    },
+    {
+      "id": "M0-replay",
+      "phase": "M0",
+      "requirement": "Unified tick replay and repeated reproduction",
+      "source_section": "Part I §22,M0-005",
+      "implementation": [
+        "src/core/replay.mjs",
+        "src/framework/simulation.mjs"
+      ],
+      "evidence": [
+        "tests/replay-foundation.test.mjs",
+        "tests/independent-audit.test.mjs",
+        "evidence/golden.json"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": []
+    },
+    {
+      "id": "M0-registry",
+      "phase": "M0",
+      "requirement": "Capability/archetype registration, dependencies/conflicts/cycles, dummy extension",
+      "source_section": "Part I §§24–25",
+      "implementation": [
+        "src/core/registry.mjs",
+        "src/archetypes/index.mjs"
+      ],
+      "evidence": [
+        "tests/core.test.mjs"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": []
+    },
+    {
+      "id": "M0-sokoban",
+      "phase": "M0",
+      "requirement": "Executable probe rules and negative branch tests",
+      "source_section": "Part I §§26–28",
+      "implementation": [
+        "src/archetypes/sokoban.mjs"
+      ],
+      "evidence": [
+        "evidence/benchmark.json",
+        "tests/grid-archetypes.test.mjs"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": []
+    },
+    {
+      "id": "M0-falling_blocks",
+      "phase": "M0",
+      "requirement": "Executable probe rules and negative branch tests",
+      "source_section": "Part I §§26–28",
+      "implementation": [
+        "src/archetypes/falling_blocks.mjs"
+      ],
+      "evidence": [
+        "evidence/benchmark.json",
+        "tests/realtime-archetypes.test.mjs"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": []
+    },
+    {
+      "id": "M0-arcade_shooter",
+      "phase": "M0",
+      "requirement": "Executable probe rules and negative branch tests",
+      "source_section": "Part I §§26–28",
+      "implementation": [
+        "src/archetypes/arcade_shooter.mjs"
+      ],
+      "evidence": [
+        "evidence/benchmark.json",
+        "tests/realtime-archetypes.test.mjs"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": []
+    },
+    {
+      "id": "M0-runner",
+      "phase": "M0",
+      "requirement": "Machine-readable gates, failure taxonomy and evidence; distinguish infra",
+      "source_section": "Part I §§29–45",
+      "implementation": [
+        "src/benchmark/runner.mjs",
+        "src/qa/index.mjs"
+      ],
+      "evidence": [
+        "tests/qa-core.test.mjs",
+        "evidence/benchmark.json"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": []
+    },
+    {
+      "id": "M0-stress",
+      "phase": "M0",
+      "requirement": "Four future-type paper capability/action mappings without core changes",
+      "source_section": "Part I §§49–50",
+      "implementation": [
+        "docs/stress/"
+      ],
+      "evidence": [
+        "tests/stress.test.mjs"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "Paper mappings are not runtime support."
+      ]
+    },
+    {
+      "id": "M0-freeze",
+      "phase": "M0",
+      "requirement": "Independent architecture freeze review",
+      "source_section": "Part I §§56–59",
+      "implementation": [
+        "docs/M0-core-freeze-review.md"
+      ],
+      "evidence": [
+        "docs/independent-plan-audit.md"
+      ],
+      "status": "FREEZE_WITH_EXPLICIT_LIMITATIONS",
+      "limitations": []
+    },
+    {
+      "id": "M1-sokoban",
+      "phase": "M1",
+      "requirement": "Reference runtime, generator, >=3 players, metrics, validators and40authored cases",
+      "source_section": "Part II §§3–7",
+      "implementation": [
+        "src/archetypes/sokoban.mjs",
+        "examples/sokoban/spec.json"
+      ],
+      "evidence": [
+        "evidence/benchmark.json"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "Reference rules are bounded and versioned; generators do not imply human playability."
+      ]
+    },
+    {
+      "id": "M1-match3",
+      "phase": "M1",
+      "requirement": "Reference runtime, generator, >=3 players, metrics, validators and40authored cases",
+      "source_section": "Part II §§3–7",
+      "implementation": [
+        "src/archetypes/match3.mjs",
+        "examples/match3/spec.json"
+      ],
+      "evidence": [
+        "evidence/benchmark.json"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "Reference rules are bounded and versioned; generators do not imply human playability."
+      ]
+    },
+    {
+      "id": "M1-merge2048",
+      "phase": "M1",
+      "requirement": "Reference runtime, generator, >=3 players, metrics, validators and40authored cases",
+      "source_section": "Part II §§3–7",
+      "implementation": [
+        "src/archetypes/merge2048.mjs",
+        "examples/merge2048/spec.json"
+      ],
+      "evidence": [
+        "evidence/benchmark.json"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "Reference rules are bounded and versioned; generators do not imply human playability."
+      ]
+    },
+    {
+      "id": "M1-block_puzzle",
+      "phase": "M1",
+      "requirement": "Reference runtime, generator, >=3 players, metrics, validators and40authored cases",
+      "source_section": "Part II §§3–7",
+      "implementation": [
+        "src/archetypes/block_puzzle.mjs",
+        "examples/block_puzzle/spec.json"
+      ],
+      "evidence": [
+        "evidence/benchmark.json"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "Reference rules are bounded and versioned; generators do not imply human playability."
+      ]
+    },
+    {
+      "id": "M1-falling_blocks",
+      "phase": "M1",
+      "requirement": "Reference runtime, generator, >=3 players, metrics, validators and40authored cases",
+      "source_section": "Part II §§3–7",
+      "implementation": [
+        "src/archetypes/falling_blocks.mjs",
+        "examples/falling_blocks/spec.json"
+      ],
+      "evidence": [
+        "evidence/benchmark.json"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "Reference rules are bounded and versioned; generators do not imply human playability."
+      ]
+    },
+    {
+      "id": "M1-arcade_shooter",
+      "phase": "M1",
+      "requirement": "Reference runtime, generator, >=3 players, metrics, validators and40authored cases",
+      "source_section": "Part II §§3–7",
+      "implementation": [
+        "src/archetypes/arcade_shooter.mjs",
+        "examples/arcade_shooter/spec.json"
+      ],
+      "evidence": [
+        "evidence/benchmark.json"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "Reference rules are bounded and versioned; generators do not imply human playability."
+      ]
+    },
+    {
+      "id": "M1-regression",
+      "phase": "M1",
+      "requirement": "Shared content/runtime/evaluation protocol; no private core",
+      "source_section": "Part II §§6–9",
+      "implementation": [
+        "docs/M1-six-archetypes-report.md"
+      ],
+      "evidence": [
+        "tests/independent-audit.test.mjs",
+        "evidence/schema.json"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": []
+    },
+    {
+      "id": "M2-generate",
+      "phase": "M2",
+      "requirement": "Bounded seeded candidates/rejections/measurable controls",
+      "source_section": "Part II §§10–11",
+      "implementation": [
+        "src/framework/generation.mjs"
+      ],
+      "evidence": [
+        "tests/framework.test.mjs",
+        "reports/framework-evidence.json"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": []
+    },
+    {
+      "id": "M2-solve",
+      "phase": "M2",
+      "requirement": "Budgeted BFS/DFS/A*/Dijkstra/beam and explicit statuses",
+      "source_section": "Part II §12",
+      "implementation": [
+        "src/framework/solver.mjs"
+      ],
+      "evidence": [
+        "tests/framework.test.mjs"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "Generic MCTS/Expectimax unsupported; domain2048 Expectimax works. Synchronous callback cannot be preempted mid-call."
+      ]
+    },
+    {
+      "id": "M2-players",
+      "phase": "M2",
+      "requirement": "Versioned public observation/decision/execution profiles and feedback",
+      "source_section": "Part II §13",
+      "implementation": [
+        "src/framework/player.mjs"
+      ],
+      "evidence": [
+        "tests/framework.test.mjs",
+        "tests/independent-audit.test.mjs"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "No adaptive learning or calibrated human personas; unsupported profile semantics fail closed."
+      ]
+    },
+    {
+      "id": "M2-batch",
+      "phase": "M2",
+      "requirement": "Actual parallel seeds, resumable evidence and trace modes",
+      "source_section": "Part II §§14–15",
+      "implementation": [
+        "src/framework/batch.mjs",
+        "src/framework/simulation.mjs"
+      ],
+      "evidence": [
+        "tests/framework.test.mjs",
+        "reports/framework-evidence.json"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": []
+    },
+    {
+      "id": "M2-advanced",
+      "phase": "M2",
+      "requirement": "Domain A*/reverse generation, planners, expectimax, batch/placement and shooter policies",
+      "source_section": "Part II §16",
+      "implementation": [
+        "src/archetypes/"
+      ],
+      "evidence": [
+        "tests/grid-archetypes.test.mjs",
+        "tests/match3.test.mjs",
+        "tests/realtime-archetypes.test.mjs"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": []
+    },
+    {
+      "id": "M3-quality",
+      "phase": "M3",
+      "requirement": "Eight-dimension quality vector, confidence/applicability",
+      "source_section": "Part II §§20–21",
+      "implementation": [
+        "src/framework/metrics.mjs"
+      ],
+      "evidence": [
+        "tests/framework.test.mjs",
+        "reports/framework-evidence.json"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": []
+    },
+    {
+      "id": "M3-difficulty",
+      "phase": "M3",
+      "requirement": "Observed difficulty distributions, bands, profile discrimination",
+      "source_section": "Part II §§22–23",
+      "implementation": [
+        "src/framework/metrics.mjs"
+      ],
+      "evidence": [
+        "tests/framework.test.mjs",
+        "reports/framework-evidence.json",
+        "evidence/curriculum/"
+      ],
+      "status": "EXPLORATORY_MEASURED",
+      "limitations": [
+        "No human calibration; representative-corpus generalization not established."
+      ]
+    },
+    {
+      "id": "M3-decision",
+      "phase": "M3",
+      "requirement": "Best-minus-median and observed decision quality statistics",
+      "source_section": "Part II §24",
+      "implementation": [
+        "src/framework/metrics.mjs",
+        "src/archetypes/match3.mjs"
+      ],
+      "evidence": [
+        "tests/framework.test.mjs",
+        "tests/match3.test.mjs",
+        "tests/independent-audit.test.mjs"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "Action-value evidence absent => N/A; frequent actions are not proven dominant strategy."
+      ]
+    },
+    {
+      "id": "M3-diversity",
+      "phase": "M3",
+      "requirement": "Geometric/structural/mechanical diversity and target error",
+      "source_section": "Part II §§25–26",
+      "implementation": [
+        "src/framework/metrics.mjs",
+        "src/framework/generation.mjs"
+      ],
+      "evidence": [
+        "tests/framework.test.mjs",
+        "evidence/skill/forward-exercise/"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "Perceptual novelty and human strategy diversity not inferred from hashes."
+      ]
+    },
+    {
+      "id": "M3-balance",
+      "phase": "M3",
+      "requirement": "Grid/random search, Pareto and sensitivity interaction analysis",
+      "source_section": "Part II §27",
+      "implementation": [
+        "src/framework/balance.mjs"
+      ],
+      "evidence": [
+        "tests/framework.test.mjs",
+        "evidence/skill/forward-exercise/shooter/"
+      ],
+      "status": "EXPLORATORY_MEASURED",
+      "limitations": [
+        "Bayesian/evolutionary algorithms not implemented; optional advanced methods remain unsupported."
+      ]
+    },
+    {
+      "id": "M3-curriculum",
+      "phase": "M3",
+      "requirement": "Dependency-aware eight-stage measured content selection/validation",
+      "source_section": "Part II §28",
+      "implementation": [
+        "src/framework/campaign.mjs",
+        "tools/measure-curriculum.mjs"
+      ],
+      "evidence": [
+        "tests/framework.test.mjs",
+        "tests/curriculum-evidence.test.mjs",
+        "evidence/curriculum/",
+        "evidence/curriculum-v3/",
+        "docs/curriculum-v3-calibration.md"
+      ],
+      "status": "EXPLORATORY_MEASURED",
+      "limitations": [
+        "Mechanic annotations are author-defined; real human learning/mastery not proven.",
+        "V3 original point bands and adjusted intervals pass under the synthetic persona; seven layouts, no human transfer proof."
+      ]
+    },
+    {
+      "id": "M3-packs",
+      "phase": "M3",
+      "requirement": "Six domain metric packs including bounded optional proofs",
+      "source_section": "Part II §29",
+      "implementation": [
+        "src/archetypes/"
+      ],
+      "evidence": [
+        "tests/grid-archetypes.test.mjs",
+        "tests/realtime-archetypes.test.mjs",
+        "tests/independent-audit.test.mjs"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "Minimum pushes only with optimal proof; forced-death horizon visible batch only; global safe paths discretized/bounded; weapon claims paired replay-verified episodes."
+      ]
+    },
+    {
+      "id": "M3-broad-quality",
+      "phase": "M3",
+      "requirement": "Stable difficulty ordering/control/robustness across representative corpus",
+      "source_section": "Part II §§30–31",
+      "implementation": [
+        "tools/measure-curriculum.mjs",
+        "docs/measured-curriculum.md"
+      ],
+      "evidence": [
+        "evidence/curriculum/"
+      ],
+      "status": "PARTIAL_EXPLORATORY",
+      "limitations": [
+        "Longer multi-seed corpus is executable; external generalization and human quality conclusions not established."
+      ]
+    },
+    {
+      "id": "M4-qa",
+      "phase": "M4",
+      "requirement": "Taxonomy, properties, fuzzing, diagnosis and counterexamples",
+      "source_section": "Part II §§33–39",
+      "implementation": [
+        "src/qa/index.mjs",
+        "src/qa/mutations.mjs"
+      ],
+      "evidence": [
+        "evidence/qa.json",
+        "tests/qa-core.test.mjs",
+        "tests/independent-audit.test.mjs"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "Taxonomy entries do not imply universal exploit/resource/infinite-loop detectors across arbitrary future games."
+      ]
+    },
+    {
+      "id": "M4-golden",
+      "phase": "M4",
+      "requirement": "60 critical goldens with coverage/tamper/rebaseline controls",
+      "source_section": "Part II §§35–36",
+      "implementation": [
+        "src/qa/golden.mjs",
+        "fixtures/regression/golden/"
+      ],
+      "evidence": [
+        "evidence/golden.json"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "Initial baseline; no pre-v0.1 historical archives exist."
+      ]
+    },
+    {
+      "id": "M4-certification",
+      "phase": "M4",
+      "requirement": "Evidence-first release gating and empty-suite rejection",
+      "source_section": "Part II §§40–44",
+      "implementation": [
+        "src/qa/index.mjs",
+        "docs/M4-gameplay-qa-certification.md"
+      ],
+      "evidence": [
+        "evidence/verification.json"
+      ],
+      "status": "CERTIFIED_WITH_LIMITATIONS",
+      "limitations": []
+    },
+    {
+      "id": "M5-adapter",
+      "phase": "M5",
+      "requirement": "Real engine adapter shares authoritative logic",
+      "source_section": "Part II §§45–48,51–52",
+      "implementation": [
+        "src/adapters/web.mjs",
+        "web/",
+        "vendor/cocosair/"
+      ],
+      "evidence": [
+        "evidence/browser/fidelity.json"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "CocosAirJS Web only; Unity/Godot/CocosCreatorEditor explicitly unsupported."
+      ]
+    },
+    {
+      "id": "M5-differential",
+      "phase": "M5",
+      "requirement": "Exact state/event/terminal and render-FPS parity",
+      "source_section": "Part II §§49,53–54",
+      "implementation": [
+        "tools/browser-fidelity.cjs"
+      ],
+      "evidence": [
+        "evidence/browser/fidelity.json",
+        "evidence/browser.log"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": []
+    },
+    {
+      "id": "M5-input-visual",
+      "phase": "M5",
+      "requirement": "Native engine rendering and keyboard/touch/pause/blur checks",
+      "source_section": "Part II §50",
+      "implementation": [
+        "web/",
+        "tools/browser-fidelity.cjs"
+      ],
+      "evidence": [
+        "evidence/browser/"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": [
+        "Hardware end-to-end input latency not instrumented; no human visual evaluation."
+      ]
+    },
+    {
+      "id": "M6-routing",
+      "phase": "M6",
+      "requirement": "Skill entry, roles/tools/contracts and unknown-archetype flow",
+      "source_section": "Part II §§56–66",
+      "implementation": [
+        "SKILL.md",
+        "skill/",
+        "src/skill/"
+      ],
+      "evidence": [
+        "tests/skill-benchmark.test.mjs",
+        "evidence/skill/routing-results.json"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": []
+    },
+    {
+      "id": "M6-model-behavior",
+      "phase": "M6",
+      "requirement": "Real AI applies skill and cites generated evidence",
+      "source_section": "Part II §67",
+      "implementation": [
+        "skill/SKILL.md"
+      ],
+      "evidence": [
+        "evidence/skill/forward-exercise/"
+      ],
+      "status": "PARTIAL_EXPLORATORY",
+      "limitations": [
+        "One real three-part task exercise;68heuristic routing cases are not68independent model trials."
+      ]
+    },
+    {
+      "id": "M7-dataset",
+      "phase": "M7",
+      "requirement": ">=100 frozen tasks with unseen/multistage/adversarial coverage",
+      "source_section": "Part III §§7.3–7.5",
+      "implementation": [
+        "benchmark-dataset/v0.1/"
+      ],
+      "evidence": [
+        "tests/skill-benchmark.test.mjs"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": []
+    },
+    {
+      "id": "M7-exposure",
+      "phase": "M7",
+      "requirement": "AI+sameEngine versus AI+sameEngine+fullSkill; instruction ablation separate",
+      "source_section": "Part III §§7.2,7.12",
+      "implementation": [
+        "src/benchmark/ab.mjs",
+        "benchmark-dataset/engine-starter/"
+      ],
+      "evidence": [
+        "tests/skill-benchmark.test.mjs",
+        "tests/independent-audit.test.mjs"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": []
+    },
+    {
+      "id": "M7-execution",
+      "phase": "M7",
+      "requirement": "Equal budgets/isolation/attempts and infrastructure denominator",
+      "source_section": "Part III §§7.10–7.12",
+      "implementation": [
+        "src/benchmark/ab.mjs",
+        "src/benchmark/executor-preflight.mjs"
+      ],
+      "evidence": [
+        "tests/skill-benchmark.test.mjs",
+        "evidence/executor-preflight/",
+        "tests/executor-integration.test.mjs"
+      ],
+      "status": "RUNNER_VERIFIED_FORMAL_NOT_RUN",
+      "limitations": [
+        "Cloud Codex is authorized; one text transport attempt failed before model initialization. Actual isolation/provider hard caps and production broker remain blocked/unverified."
+      ]
+    },
+    {
+      "id": "M7-automatic",
+      "phase": "M7",
+      "requirement": "Concrete independent automatic measurements and tamper tests",
+      "source_section": "Part III §§7.7,7.9,7.16",
+      "implementation": [
+        "src/benchmark/ab-evaluator.mjs",
+        "src/benchmark/automatic-checkers.mjs",
+        "src/benchmark/task-protocols.mjs",
+        "benchmark-dataset/v0.2/evaluator/"
+      ],
+      "evidence": [
+        "tests/automatic-checkers.test.mjs",
+        "docs/automatic-evaluation-coverage.md",
+        "tests/task-protocols.test.mjs",
+        "tests/v02-independent.test.mjs"
+      ],
+      "status": "TASK_PROTOCOLS_VERIFIED_REAL_CAPTURES_PENDING",
+      "limitations": [
+        "Task-specific prose semantics/unseen-code quality/subjective visuals require configured blind review; no self-reported model pass flags accepted."
+      ]
+    },
+    {
+      "id": "M7-aggregate",
+      "phase": "M7",
+      "requirement": "All failures retained,first/final,breakdowns,uncertainty and diagnosis",
+      "source_section": "Part III §§7.16–7.18",
+      "implementation": [
+        "src/benchmark/ab.mjs"
+      ],
+      "evidence": [
+        "tests/skill-benchmark.test.mjs"
+      ],
+      "status": "EXECUTABLE_VERIFIED",
+      "limitations": []
+    },
+    {
+      "id": "M7-formal-trials",
+      "phase": "M7",
+      "requirement": "Full108task paired real-model experiment",
+      "source_section": "Part III §7.22",
+      "implementation": [],
+      "evidence": [],
+      "status": "NOT_RUN",
+      "limitations": [
+        "No model calls fabricated; freeze exact model/settings and audited executor/evaluator; authorize named external-agent route before actual use."
+      ]
+    },
+    {
+      "id": "M7-human",
+      "phase": "M7",
+      "requirement": "Exploratory real-participant blind experience evaluation",
+      "source_section": "Part III §7.8",
+      "implementation": [
+        "benchmark-dataset/v0.1/human-protocol.json"
+      ],
+      "evidence": [],
+      "status": "NOT_RUN",
+      "limitations": [
+        "No participants observed; rubric/protocol is not human evidence."
+      ]
+    },
+    {
+      "id": "M7-ablation",
+      "phase": "M7",
+      "requirement": "Optional module-removal studies",
+      "source_section": "Part III §7.19",
+      "implementation": [
+        "src/benchmark/ab.mjs"
+      ],
+      "evidence": [],
+      "status": "OPTIONAL_NOT_RUN",
+      "limitations": [
+        "Instruction-layer exposure mode prepared; QA/player/reference removal studies not executed."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "kind": "OFFLINE_EXECUTOR_PREFLIGHT",
+  "created_at": "2026-10-08T13:29:31.313Z",
+  "status": "BLOCKED",
+  "node_version": "v24.19.0",
+  "source_hashes": {
+    "src/benchmark/executor-preflight.mjs": "c79c81ee2e9eb86b3cf9e72e86eda8b8f357d1d63cd4347298c013bc1e56f7ef",
+    "tools/executor-preflight.mjs": "cb9f932cd598984eeccaf0fd2ef3684d18f697ce5769006be9d34166f76936ac",
+    "tests/executor-preflight.test.mjs": "3fcb57e081db73b1d1c6dbca8ce68e95356c6641bd488fa2579071fc5902195c"
+  },
+  "isolation": {
+    "status": "BLOCKED",
+    "observed_at": "2026-10-08T13:19:13Z",
+    "source": "Actual benign shell probe, exit status captured by executor",
+    "bwrap_version": "bubblewrap 0.12.0",
+    "command": [
+      "bwrap",
+      "--unshare-all",
+      "--die-with-parent",
+      "--new-session",
+      "--ro-bind",
+      "/usr",
+      "/usr",
+      "--ro-bind",
+      "/bin",
+      "/bin",
+      "--ro-bind",
+      "/lib",
+      "/lib",
+      "--ro-bind",
+      "/lib64",
+      "/lib64",
+      "--proc",
+      "/proc",
+      "--dev",
+      "/dev",
+      "--tmpfs",
+      "/tmp",
+      "--clearenv",
+      "--setenv",
+      "PATH",
+      "/usr/bin:/bin",
+      "--",
+      "/usr/bin/true"
+    ],
+    "exit_code": 1,
+    "stderr": "bwrap: loopback: Failed to create NETLINK_ROUTE socket: Operation not permitted\n",
+    "interpretation": "Environment or host-policy capability restriction encountered before fixture execution. This tool result did not identify an approval-reviewer refusal. No root cause beyond that observation is inferred.",
+    "checks": [
+      {
+        "id": "baseline_treatment_read_boundary",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "evaluator_read_boundary",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "home_host_read_boundary",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "sandbox_symlink_escape",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "network_namespace",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "no_persistent_home",
+        "status": "NOT_RUN"
+      }
+    ],
+    "actual_model_runs": 0,
+    "workaround_attempted": false,
+    "probe_retried": false,
+    "reused_observation_digest": "b8c81f5b667e3a00036e06e8c40aae4f4f36280b53670298d5b8dd8a8da9ed7c"
+  },
+  "fixtures": {
+    "round_trip": {
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "signal": null,
+      "pid": 18,
+      "stdout": "{\"fixture\":\"trusted-offline-stub\",\"ok\":true}",
+      "stderr": "",
+      "output_bytes_observed": 44,
+      "output_bytes_retained": 44,
+      "wall_time_ms": 39.02075500000001,
+      "error": null,
+      "process_count_enforced": false
+    },
+    "wall_time": {
+      "status": "WALL_TIME_LIMIT",
+      "exit_code": null,
+      "signal": "SIGKILL",
+      "pid": 25,
+      "stdout": "",
+      "stderr": "",
+      "output_bytes_observed": 0,
+      "output_bytes_retained": 0,
+      "wall_time_ms": 102.42456100000001,
+      "error": null,
+      "process_count_enforced": false
+    },
+    "stdout_limit": {
+      "status": "OUTPUT_LIMIT",
+      "exit_code": null,
+      "signal": "SIGKILL",
+      "pid": 32,
+      "stdout": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "stderr": "",
+      "output_bytes_observed": 4096,
+      "output_bytes_retained": 128,
+      "wall_time_ms": 43.735044999999985,
+      "error": null,
+      "process_count_enforced": false
+    },
+    "stderr_limit": {
+      "status": "OUTPUT_LIMIT",
+      "exit_code": null,
+      "signal": "SIGKILL",
+      "pid": 39,
+      "stdout": "",
+      "stderr": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "output_bytes_observed": 4096,
+      "output_bytes_retained": 128,
+      "wall_time_ms": 42.310085000000015,
+      "error": null,
+      "process_count_enforced": false
+    }
+  },
+  "checks": {
+    "round_trip": true,
+    "wall_time_preemption": true,
+    "stdout_preemption": true,
+    "stderr_preemption": true
+  },
+  "limits": {
+    "wall_time_ms": {
+      "status": "OFFLINE_STUB_MEASURED",
+      "enforcement": "parent-process deadline and process-group SIGKILL",
+      "remote_cancellation_guaranteed": false
+    },
+    "output_bytes": {
+      "status": "OFFLINE_STUB_MEASURED",
+      "enforcement": "combined streams retained-byte cap plus process-group SIGKILL",
+      "os_pipe_burst_overshoot": true
+    },
+    "processes": {
+      "status": "UNSUPPORTED",
+      "reason": "Process-group cleanup is not a process-count cap; use externally configured cgroup pids.max or equivalent."
+    },
+    "tokens": {
+      "status": "NOT_IMPLEMENTED",
+      "reason": "Requires authorized provider broker with input accounting and enforceable generation ceilings."
+    },
+    "reasoning_tokens": {
+      "status": "NOT_IMPLEMENTED",
+      "reason": "Reasoning effort is not a token cap; requires a provider-enforced bound or conservative combined-output reservation."
+    },
+    "tool_calls": {
+      "status": "PROTOCOL_ONLY",
+      "reason": "Reservations are checked before admission; exclusive broker ownership still needs integration audit."
+    },
+    "steps": {
+      "status": "PROTOCOL_ONLY",
+      "reason": "Freeze step definition and route every admitted action through broker."
+    },
+    "asset_bytes": {
+      "status": "PROTOCOL_ONLY",
+      "reason": "No writable-volume quota is installed; byte receipts after file creation are post-hoc."
+    }
+  },
+  "broker_handshake_template": {
+    "protocol_version": "executor-preflight-1.0.0",
+    "operation": "CAPABILITIES_ONLY",
+    "allow_model_invocation": false,
+    "trial_id": "preflight-template-only",
+    "nonce": "template-not-a-live-session",
+    "model": "UNSELECTED_SNAPSHOT",
+    "model_settings": {
+      "status": "UNFROZEN"
+    },
+    "budget": {
+      "max_attempts": 2,
+      "wall_time_ms": 300000,
+      "tokens": 24000,
+      "reasoning_tokens": 12000,
+      "tool_calls": 80,
+      "steps": 120,
+      "asset_bytes": 2000000
+    },
+    "required_hard_limits": [
+      "tokens",
+      "reasoning_tokens",
+      "tool_calls",
+      "steps",
+      "asset_bytes",
+      "wall_time_ms",
+      "processes",
+      "output_bytes"
+    ],
+    "telemetry": {
+      "authority": "broker_supervisor_only",
+      "counters": "monotonic_task_cumulative",
+      "fields": [
+        "tokens",
+        "reasoning_tokens",
+        "tool_calls",
+        "steps",
+        "asset_bytes"
+      ],
+      "reservation_required": true,
+      "sequence_required": true,
+      "attempts": "all_first_and_final"
+    },
+    "request_digest": "77810b380cd3649467ef401391df0ad1355ada6aff0640dfd2039a2686c519ef"
+  },
+  "budget_enforced": false,
+  "required_gates": [
+    "Supported measured OS read/network isolation",
+    "Enforced process-count and filesystem-byte ceilings",
+    "Authorized broker with authenticated monotonic usage and true provider token/reasoning caps",
+    "Frozen actual model snapshot and settings",
+    "Independent isolated evaluator and artifact retention integration"
+  ],
+  "scope": "Offline infrastructure only. No model calls, no accounts, no credentials, no purchases, no effectiveness result.",
+  "version": "executor-preflight-1.0.0",
+  "actual_model_runs": 0,
+  "formal_ready": false,
+  "digest": "d7e9024e6b1243176692e0de8c8086fc75fb9507d55fb3a383104f939cc6588c"
+}

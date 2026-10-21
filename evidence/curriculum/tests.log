@@ -1,0 +1,15 @@
+✔ empirical artifacts bind executable sources before/after and persist under 10 MiB (19.725537ms)
+✔ six-archetype dataset has ten distinct seeds and three explicit resolved policy profiles (2.230442ms)
+✔ every measured pool rate recomputes from real per-seed outcomes and mechanics match initial contents (15.953858ms)
+✔ the dependency-safe campaign is regenerated from measured input, with real twist, pressure and rest (12.577686ms)
+✔ held-out measurements use disjoint seeds, do not retune, and expose constraint failures honestly (1.209466ms)
+✔ all selected replay witnesses reproduce step hashes, events and terminal outcomes (197.015499ms)
+✔ a fresh deterministic subset independently recomputes outcomes, metrics and final hashes (3224.986515ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3601.001543

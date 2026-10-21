@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_id",
+    "variant",
+    "blind_id",
+    "archetype",
+    "task_type",
+    "difficulty",
+    "unseen",
+    "manifest_digest",
+    "study_kind",
+    "timestamp",
+    "status",
+    "eligible",
+    "attempts",
+    "first_attempt_success",
+    "final_success",
+    "repair_count",
+    "automatic",
+    "human",
+    "issues",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "blind_id": {
+      "type": "string"
+    },
+    "archetype": {
+      "type": "string"
+    },
+    "task_type": {
+      "type": "string"
+    },
+    "difficulty": {
+      "type": "string"
+    },
+    "manifest_digest": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "variant": {
+      "enum": [
+        "baseline",
+        "treatment"
+      ]
+    },
+    "study_kind": {
+      "enum": [
+        "FORMAL_AB",
+        "INFRASTRUCTURE_SMOKE"
+      ]
+    },
+    "status": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "INFRA_FAILURE",
+        "BENCHMARK_INVALID"
+      ]
+    },
+    "unseen": {
+      "type": "boolean"
+    },
+    "eligible": {
+      "type": "boolean"
+    },
+    "attempts": {
+      "type": "array"
+    },
+    "first_attempt_success": {
+      "type": "boolean"
+    },
+    "final_success": {
+      "type": "boolean"
+    },
+    "repair_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "automatic": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "number",
+          "null"
+        ]
+      }
+    },
+    "human": {
+      "type": "array"
+    },
+    "issues": {
+      "type": "array"
+    },
+    "evidence": {
+      "type": "array"
+    },
+    "usage": {
+      "type": "object"
+    },
+    "infra_failure": {
+      "type": "object"
+    },
+    "original_outcome": {
+      "type": "object"
+    }
+  }
+}

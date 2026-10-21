@@ -1,0 +1,29 @@
+{
+  "kind": "EXECUTOR_READINESS_SUMMARY",
+  "status": "BLOCKED",
+  "focused_tests": 32,
+  "combined_tests": {
+    "total": 148,
+    "pass": 148,
+    "fail": 0
+  },
+  "native_sandbox_fixture_runs_completed": 0,
+  "cloud_codex_transport_launch_attempts": 1,
+  "completed_model_runs": 0,
+  "model_usage_observed": false,
+  "model_request_status": "NOT_REACHED_INITIALIZATION_FAILED",
+  "formal_ab_trials": 0,
+  "os_isolation_certified": false,
+  "budget_enforcement_certified": false,
+  "boundary_checks": "NOT_RUN_BECAUSE_SANDBOX_INITIALIZATION_FAILED",
+  "credentials_read_by_assistant": false,
+  "credential_files_copied": false,
+  "new_accounts_or_payment_routes": 0,
+  "evidence_sha256": {
+    "bubblewrap-capability-observation.json": "b8c81f5b667e3a00036e06e8c40aae4f4f36280b53670298d5b8dd8a8da9ed7c",
+    "codex-native-sandbox-observation.json": "1ca68c637765aa1065448d38d59c8e5bdd4f004757b2e1041fab443148284331",
+    "codex-text-handshake.v1.json": "41dacd46f20edfa5d90569720c2d25be53a233781849b7f9f9c4dd442702dc97",
+    "offline-audit.final.json": "f40d3dbdbeb0ce18e6ff28ae41674da330e94b67f506c2e628f4022a300e4130",
+    "integration-tests.final.tap": "e195566e387e1a5768fb19e8a88dd2d1fa13625bf28a4ea705bc5f3e2e72b228"
+  }
+}

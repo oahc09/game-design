@@ -1,0 +1,7568 @@
+[
+  {
+    "id": "gd-001",
+    "archetype": "sokoban",
+    "task_type": "IDEATION",
+    "difficulty": "Basic",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Brainstorm three Sokoban mechanics for a two-minute phone session; give concepts only and explain one risk per concept.",
+    "materials": {
+      "grid": [
+        "#######",
+        "# . . #",
+        "# $$  #",
+        "#  @  #",
+        "#######"
+      ],
+      "legend": {
+        "#": "wall",
+        ".": "goal",
+        "$": "box",
+        "@": "player"
+      },
+      "rule_note": "Only push one box into empty floor; reject blocked pushes without mutation."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "scope_preserved",
+      "assumptions_explicit"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-002",
+    "archetype": "sokoban",
+    "task_type": "DESIGN",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Design a Sokoban tutorial for first-time players: one box, two turns before the first push, and an optional undo. State the audience and executable win condition.",
+    "materials": {
+      "grid": [
+        "#######",
+        "# . . #",
+        "# $$  #",
+        "#  @  #",
+        "#######"
+      ],
+      "legend": {
+        "#": "wall",
+        ".": "goal",
+        "$": "box",
+        "@": "player"
+      },
+      "rule_note": "Only push one box into empty floor; reject blocked pushes without mutation."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-003",
+    "archetype": "sokoban",
+    "task_type": "RULE_FORMALIZATION",
+    "difficulty": "Basic",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Formalize Sokoban push semantics when two boxes are adjacent. Define blocked pushes, non-mutating rejection, and winning on the final goal.",
+    "materials": {
+      "grid": [
+        "#######",
+        "# . . #",
+        "# $$  #",
+        "#  @  #",
+        "#######"
+      ],
+      "legend": {
+        "#": "wall",
+        ".": "goal",
+        "$": "box",
+        "@": "player"
+      },
+      "rule_note": "Only push one box into empty floor; reject blocked pushes without mutation."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-004",
+    "archetype": "sokoban",
+    "task_type": "CONTENT_GENERATION",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Generate six Sokoban levels that teach box ordering then route reopening. Supply a solution witness per accepted level and reject symmetric duplicates.",
+    "materials": {
+      "grid": [
+        "#######",
+        "# . . #",
+        "# $$  #",
+        "#  @  #",
+        "#######"
+      ],
+      "legend": {
+        "#": "wall",
+        ".": "goal",
+        "$": "box",
+        "@": "player"
+      },
+      "rule_note": "Only push one box into empty floor; reject blocked pushes without mutation."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-005",
+    "archetype": "sokoban",
+    "task_type": "BALANCE",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Tune a Sokoban hint budget against completion and excess moves using random, greedy, and strong profiles. Compare zero, one, and three hints and report sensitivity.",
+    "materials": {
+      "grid": [
+        "#######",
+        "# . . #",
+        "# $$  #",
+        "#  @  #",
+        "#######"
+      ],
+      "legend": {
+        "#": "wall",
+        ".": "goal",
+        "$": "box",
+        "@": "player"
+      },
+      "rule_note": "Only push one box into empty floor; reject blocked pushes without mutation."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-006",
+    "archetype": "sokoban",
+    "task_type": "DIFFICULTY",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Estimate Sokoban difficulty using minimum pushes and deadlock traps. A short solution is not automatically easy; contrast the two supplied corridor layouts.",
+    "materials": {
+      "grid": [
+        "#######",
+        "# . . #",
+        "# $$  #",
+        "#  @  #",
+        "#######"
+      ],
+      "legend": {
+        "#": "wall",
+        ".": "goal",
+        "$": "box",
+        "@": "player"
+      },
+      "rule_note": "Only push one box into empty floor; reject blocked pushes without mutation."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "difficulty_control",
+      "knowledge_boundary",
+      "uncertainty"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-007",
+    "archetype": "sokoban",
+    "task_type": "PLAYTEST",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Playtest Sokoban with action errors and one-step reaction delay. Compare successful and failed pushes without changing the authoritative rules.",
+    "materials": {
+      "grid": [
+        "#######",
+        "# . . #",
+        "# $$  #",
+        "#  @  #",
+        "#######"
+      ],
+      "legend": {
+        "#": "wall",
+        ".": "goal",
+        "$": "box",
+        "@": "player"
+      },
+      "rule_note": "Only push one box into empty floor; reject blocked pushes without mutation."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "knowledge_boundary",
+      "paired_seeds",
+      "metric_valid",
+      "replay"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-008",
+    "archetype": "sokoban",
+    "task_type": "QA",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": true,
+    "prompt": "Audit a Sokoban crate pushed into a non-goal corner. The solver stopped after 100 nodes; the producer calls that proof of unsolvability. Reproduce what is actually established.",
+    "materials": {
+      "grid": [
+        "#######",
+        "# . . #",
+        "# $$  #",
+        "#  @  #",
+        "#######"
+      ],
+      "legend": {
+        "#": "wall",
+        ".": "goal",
+        "$": "box",
+        "@": "player"
+      },
+      "rule_note": "Only push one box into empty floor; reject blocked pushes without mutation."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-009",
+    "archetype": "sokoban",
+    "task_type": "ENGINE_IMPLEMENTATION",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Port Sokoban to the web engine with arrow keys and restart. Compare every accepted and rejected action, terminal state, and displayed goals against reference traces.",
+    "materials": {
+      "grid": [
+        "#######",
+        "# . . #",
+        "# $$  #",
+        "#  @  #",
+        "#######"
+      ],
+      "legend": {
+        "#": "wall",
+        ".": "goal",
+        "$": "box",
+        "@": "player"
+      },
+      "rule_note": "Only push one box into empty floor; reject blocked pushes without mutation."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-010",
+    "archetype": "sokoban",
+    "task_type": "EXISTING_GAME_ANALYSIS",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": true,
+    "prompt": "Analyze an existing Sokoban campaign whose fifth level introduces two interacting boxes before either appears alone. Propose a curriculum repair with measurable coverage.",
+    "materials": {
+      "grid": [
+        "#######",
+        "# . . #",
+        "# $$  #",
+        "#  @  #",
+        "#######"
+      ],
+      "legend": {
+        "#": "wall",
+        ".": "goal",
+        "$": "box",
+        "@": "player"
+      },
+      "rule_note": "Only push one box into empty floor; reject blocked pushes without mutation."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "assumptions_explicit",
+      "metric_valid",
+      "evidence_complete"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-011",
+    "archetype": "falling_blocks",
+    "task_type": "IDEATION",
+    "difficulty": "Basic",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Brainstorm Falling Blocks recovery challenges that reward clearing holes rather than raw speed; keep this to concepts and tradeoffs.",
+    "materials": {
+      "board_width": 10,
+      "board_height": 20,
+      "tick_rate": 60,
+      "gravity_ticks": 30,
+      "lock_ticks": 2,
+      "visible_preview_count": 1,
+      "rule_note": "Held input is sampled at exact ticks; future pieces are hidden."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "scope_preserved",
+      "assumptions_explicit"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-012",
+    "archetype": "falling_blocks",
+    "task_type": "DESIGN",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Design a Falling Blocks practice mode with a visible one-piece preview and no hold. Specify a 90-second session and a recoverable starting stack.",
+    "materials": {
+      "board_width": 10,
+      "board_height": 20,
+      "tick_rate": 60,
+      "gravity_ticks": 30,
+      "lock_ticks": 2,
+      "visible_preview_count": 1,
+      "rule_note": "Held input is sampled at exact ticks; future pieces are hidden."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-013",
+    "archetype": "falling_blocks",
+    "task_type": "RULE_FORMALIZATION",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Formalize Falling Blocks gravity, lock delay, and same-tick rotation ordering. The brief says both instant lock and two-tick lock; expose the conflict before choosing a rule.",
+    "materials": {
+      "board_width": 10,
+      "board_height": 20,
+      "tick_rate": 60,
+      "gravity_ticks": 30,
+      "lock_ticks": 2,
+      "visible_preview_count": 1,
+      "rule_note": "Held input is sampled at exact ticks; future pieces are hidden."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-014",
+    "archetype": "falling_blocks",
+    "task_type": "CONTENT_GENERATION",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Generate four Falling Blocks hole-recovery challenges with distinct cavity topology. Preserve a fixed piece stream and distinguish search budget exhaustion from impossibility.",
+    "materials": {
+      "board_width": 10,
+      "board_height": 20,
+      "tick_rate": 60,
+      "gravity_ticks": 30,
+      "lock_ticks": 2,
+      "visible_preview_count": 1,
+      "rule_note": "Held input is sampled at exact ticks; future pieces are hidden."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-015",
+    "archetype": "falling_blocks",
+    "task_type": "BALANCE",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Tune Falling Blocks gravity ticks for three execution profiles while holding lock delay fixed. Identify the speed cliff and recommend a supported range with uncertainty.",
+    "materials": {
+      "board_width": 10,
+      "board_height": 20,
+      "tick_rate": 60,
+      "gravity_ticks": 30,
+      "lock_ticks": 2,
+      "visible_preview_count": 1,
+      "rule_note": "Held input is sampled at exact ticks; future pieces are hidden."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-016",
+    "archetype": "falling_blocks",
+    "task_type": "DIFFICULTY",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Estimate Falling Blocks input pressure at 60 ticks per second with a 12-tick action delay. Compare the time needed to reach edge placements to remaining fall time.",
+    "materials": {
+      "board_width": 10,
+      "board_height": 20,
+      "tick_rate": 60,
+      "gravity_ticks": 30,
+      "lock_ticks": 2,
+      "visible_preview_count": 1,
+      "rule_note": "Held input is sampled at exact ticks; future pieces are hidden."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "difficulty_control",
+      "knowledge_boundary",
+      "uncertainty"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-017",
+    "archetype": "falling_blocks",
+    "task_type": "PLAYTEST",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Playtest Falling Blocks with random placement, shallow search, and delayed execution. Restrict all profiles to the visible next piece rather than the full queue.",
+    "materials": {
+      "board_width": 10,
+      "board_height": 20,
+      "tick_rate": 60,
+      "gravity_ticks": 30,
+      "lock_ticks": 2,
+      "visible_preview_count": 1,
+      "rule_note": "Held input is sampled at exact ticks; future pieces are hidden."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "knowledge_boundary",
+      "paired_seeds",
+      "metric_valid",
+      "replay"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-018",
+    "archetype": "falling_blocks",
+    "task_type": "QA",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": true,
+    "prompt": "Audit a Falling Blocks replay where a rejected rotation consumes one RNG draw and the next piece changes. Minimize the trace and demonstrate restore parity.",
+    "materials": {
+      "board_width": 10,
+      "board_height": 20,
+      "tick_rate": 60,
+      "gravity_ticks": 30,
+      "lock_ticks": 2,
+      "visible_preview_count": 1,
+      "rule_note": "Held input is sampled at exact ticks; future pieces are hidden."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-019",
+    "archetype": "falling_blocks",
+    "task_type": "ENGINE_IMPLEMENTATION",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Port Falling Blocks to the web engine and replay the same held inputs under 30, 60, and 144 render FPS. Verify lock ticks and line-clear feedback timing.",
+    "materials": {
+      "board_width": 10,
+      "board_height": 20,
+      "tick_rate": 60,
+      "gravity_ticks": 30,
+      "lock_ticks": 2,
+      "visible_preview_count": 1,
+      "rule_note": "Held input is sampled at exact ticks; future pieces are hidden."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-020",
+    "archetype": "falling_blocks",
+    "task_type": "EXISTING_GAME_ANALYSIS",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": true,
+    "prompt": "Analyze existing Falling Blocks scoring that rewards repeated soft-drop toggles without falling. Identify the exploit and a regression-safe correction.",
+    "materials": {
+      "board_width": 10,
+      "board_height": 20,
+      "tick_rate": 60,
+      "gravity_ticks": 30,
+      "lock_ticks": 2,
+      "visible_preview_count": 1,
+      "rule_note": "Held input is sampled at exact ticks; future pieces are hidden."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "assumptions_explicit",
+      "metric_valid",
+      "evidence_complete"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-021",
+    "archetype": "arcade_shooter",
+    "task_type": "IDEATION",
+    "difficulty": "Basic",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Brainstorm Arcade Shooter enemy patterns that create meaningful target choice with only movement and fire controls; no implementation requested.",
+    "materials": {
+      "tick_rate": 60,
+      "bounds": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "player": {
+        "position": [
+          50,
+          80
+        ],
+        "health": 3
+      },
+      "rule_note": "One projectile may damage at most one target once; ordering must be specified."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "scope_preserved",
+      "assumptions_explicit"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-022",
+    "archetype": "arcade_shooter",
+    "task_type": "DESIGN",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Design an Arcade Shooter encounter with a fragile fast enemy and a slow armored enemy. Specify visible warnings, victory, defeat, and a three-minute target session.",
+    "materials": {
+      "tick_rate": 60,
+      "bounds": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "player": {
+        "position": [
+          50,
+          80
+        ],
+        "health": 3
+      },
+      "rule_note": "One projectile may damage at most one target once; ordering must be specified."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-023",
+    "archetype": "arcade_shooter",
+    "task_type": "RULE_FORMALIZATION",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Formalize Arcade Shooter collision order when a projectile hits two overlapping enemies and the player dies on the same tick. State the terminal precedence explicitly.",
+    "materials": {
+      "tick_rate": 60,
+      "bounds": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "player": {
+        "position": [
+          50,
+          80
+        ],
+        "health": 3
+      },
+      "rule_note": "One projectile may damage at most one target once; ordering must be specified."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-024",
+    "archetype": "arcade_shooter",
+    "task_type": "CONTENT_GENERATION",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Generate six Arcade Shooter waves alternating aimed pressure and movement recovery. Keep spawn patterns reproducible and include safe-path evidence rather than visual guesses.",
+    "materials": {
+      "tick_rate": 60,
+      "bounds": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "player": {
+        "position": [
+          50,
+          80
+        ],
+        "health": 3
+      },
+      "rule_note": "One projectile may damage at most one target once; ordering must be specified."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-025",
+    "archetype": "arcade_shooter",
+    "task_type": "BALANCE",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Tune Arcade Shooter fire cooldown and enemy health against time-to-kill and damage taken. Test their interaction and reject a dominant weapon setting.",
+    "materials": {
+      "tick_rate": 60,
+      "bounds": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "player": {
+        "position": [
+          50,
+          80
+        ],
+        "health": 3
+      },
+      "rule_note": "One projectile may damage at most one target once; ordering must be specified."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-026",
+    "archetype": "arcade_shooter",
+    "task_type": "DIFFICULTY",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Estimate Arcade Shooter reaction margin for a projectile warning lasting 180 ms with 220 ms execution delay. The request says harder is always better; identify the fairness conflict.",
+    "materials": {
+      "tick_rate": 60,
+      "bounds": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "player": {
+        "position": [
+          50,
+          80
+        ],
+        "health": 3
+      },
+      "rule_note": "One projectile may damage at most one target once; ordering must be specified."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "difficulty_control",
+      "knowledge_boundary",
+      "uncertainty"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-027",
+    "archetype": "arcade_shooter",
+    "task_type": "PLAYTEST",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Playtest Arcade Shooter target selection and avoidance separately, across twelve seeds. Do not let either profile inspect enemies that have not spawned.",
+    "materials": {
+      "tick_rate": 60,
+      "bounds": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "player": {
+        "position": [
+          50,
+          80
+        ],
+        "health": 3
+      },
+      "rule_note": "One projectile may damage at most one target once; ordering must be specified."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "knowledge_boundary",
+      "paired_seeds",
+      "metric_valid",
+      "replay"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-028",
+    "archetype": "arcade_shooter",
+    "task_type": "QA",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": true,
+    "prompt": "Audit an Arcade Shooter projectile that deals damage again after destruction. Capture the earliest duplicate hit and distinguish gameplay failure from engine rendering lag.",
+    "materials": {
+      "tick_rate": 60,
+      "bounds": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "player": {
+        "position": [
+          50,
+          80
+        ],
+        "health": 3
+      },
+      "rule_note": "One projectile may damage at most one target once; ordering must be specified."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-029",
+    "archetype": "arcade_shooter",
+    "task_type": "ENGINE_IMPLEMENTATION",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Port Arcade Shooter to the web engine with normalized diagonal movement and held fire. Compare collision positions, event ordering, and keyboard-to-action timing.",
+    "materials": {
+      "tick_rate": 60,
+      "bounds": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "player": {
+        "position": [
+          50,
+          80
+        ],
+        "health": 3
+      },
+      "rule_note": "One projectile may damage at most one target once; ordering must be specified."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-030",
+    "archetype": "arcade_shooter",
+    "task_type": "EXISTING_GAME_ANALYSIS",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": true,
+    "prompt": "Analyze existing Arcade Shooter footage and incomplete rules. List observed facts versus inferred spawn policy, then propose tests without upgrading guesses to confirmed facts.",
+    "materials": {
+      "tick_rate": 60,
+      "bounds": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "player": {
+        "position": [
+          50,
+          80
+        ],
+        "health": 3
+      },
+      "rule_note": "One projectile may damage at most one target once; ordering must be specified."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "assumptions_explicit",
+      "metric_valid",
+      "evidence_complete"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-031",
+    "archetype": "match3",
+    "task_type": "IDEATION",
+    "difficulty": "Basic",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Brainstorm Match-3 objective combinations that create competing choices without introducing special tiles; include one low-complexity option.",
+    "materials": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1,
+          0
+        ]
+      ],
+      "moves": 12,
+      "colors": 3,
+      "rule_note": "Adjacent swaps only; gravity and seeded refill resolve before objectives."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "scope_preserved",
+      "assumptions_explicit"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-032",
+    "archetype": "match3",
+    "task_type": "DESIGN",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Design a Match-3 color-collection challenge with limited moves, no starting matches, and at least one legal swap. Keep the blocker objective optional.",
+    "materials": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1,
+          0
+        ]
+      ],
+      "moves": 12,
+      "colors": 3,
+      "rule_note": "Adjacent swaps only; gravity and seeded refill resolve before objectives."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-033",
+    "archetype": "match3",
+    "task_type": "RULE_FORMALIZATION",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Formalize Match-3 simultaneous matches, gravity, refill, and objective checks. Resolve whether invalid swaps consume moves and preserve seeded refill ordering.",
+    "materials": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1,
+          0
+        ]
+      ],
+      "moves": 12,
+      "colors": 3,
+      "rule_note": "Adjacent swaps only; gravity and seeded refill resolve before objectives."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-034",
+    "archetype": "match3",
+    "task_type": "CONTENT_GENERATION",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Generate eight Match-3 boards with varied masks and blockers. The request guarantees every random refill wins; separate board validity from stochastic success and report rejection reasons.",
+    "materials": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1,
+          0
+        ]
+      ],
+      "moves": 12,
+      "colors": 3,
+      "rule_note": "Adjacent swaps only; gravity and seeded refill resolve before objectives."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-035",
+    "archetype": "match3",
+    "task_type": "BALANCE",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Tune Match-3 move limits and target counts with objective-greedy and short-planner profiles. Show the completion-rate interval and seed sensitivity before recommending a setting.",
+    "materials": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1,
+          0
+        ]
+      ],
+      "moves": 12,
+      "colors": 3,
+      "rule_note": "Adjacent swaps only; gravity and seeded refill resolve before objectives."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-036",
+    "archetype": "match3",
+    "task_type": "DIFFICULTY",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Estimate Match-3 difficulty for equally sized boards with different objective access delays. Compare move-value spread and cascade variance instead of level index.",
+    "materials": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1,
+          0
+        ]
+      ],
+      "moves": 12,
+      "colors": 3,
+      "rule_note": "Adjacent swaps only; gravity and seeded refill resolve before objectives."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "difficulty_control",
+      "knowledge_boundary",
+      "uncertainty"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-037",
+    "archetype": "match3",
+    "task_type": "PLAYTEST",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Playtest Match-3 across fixed refill seeds with random, greedy, and objective-greedy profiles. Keep future refill tiles hidden and report policy divergence.",
+    "materials": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1,
+          0
+        ]
+      ],
+      "moves": 12,
+      "colors": 3,
+      "rule_note": "Adjacent swaps only; gravity and seeded refill resolve before objectives."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "knowledge_boundary",
+      "paired_seeds",
+      "metric_valid",
+      "replay"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-038",
+    "archetype": "match3",
+    "task_type": "QA",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": true,
+    "prompt": "Audit a Match-3 board with no legal swap and unfinished objectives. Determine whether shuffle or terminal loss is specified, and capture missing-rule evidence.",
+    "materials": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1,
+          0
+        ]
+      ],
+      "moves": 12,
+      "colors": 3,
+      "rule_note": "Adjacent swaps only; gravity and seeded refill resolve before objectives."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-039",
+    "archetype": "match3",
+    "task_type": "ENGINE_IMPLEMENTATION",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Port Match-3 to the web engine with drag swaps and cascades. Prevent input during resolution and verify terminal feedback waits for the authoritative objective check.",
+    "materials": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1,
+          0
+        ]
+      ],
+      "moves": 12,
+      "colors": 3,
+      "rule_note": "Adjacent swaps only; gravity and seeded refill resolve before objectives."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-040",
+    "archetype": "match3",
+    "task_type": "EXISTING_GAME_ANALYSIS",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": true,
+    "prompt": "Analyze existing Match-3 retention claims based on one lucky seed. Identify unsupported conclusions, then propose a paired-seed comparison of the current move limit.",
+    "materials": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1,
+          0
+        ]
+      ],
+      "moves": 12,
+      "colors": 3,
+      "rule_note": "Adjacent swaps only; gravity and seeded refill resolve before objectives."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "assumptions_explicit",
+      "metric_valid",
+      "evidence_complete"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-041",
+    "archetype": "merge2048",
+    "task_type": "IDEATION",
+    "difficulty": "Basic",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Brainstorm 2048 challenge formats based on constrained starting boards, without claiming a best strategy or adding monetization.",
+    "materials": {
+      "board": [
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          4,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "spawn_four_probability": 0.1,
+      "target": 128,
+      "rule_note": "Each source tile merges at most once; no spawn after no-op."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "scope_preserved",
+      "assumptions_explicit"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-042",
+    "archetype": "merge2048",
+    "task_type": "DESIGN",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Design a 2048 target challenge on a 4 by 4 board that ends at 128 and preserves ordinary merge-once semantics. Explain restart and loss conditions.",
+    "materials": {
+      "board": [
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          4,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "spawn_four_probability": 0.1,
+      "target": 128,
+      "rule_note": "Each source tile merges at most once; no spawn after no-op."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-043",
+    "archetype": "merge2048",
+    "task_type": "RULE_FORMALIZATION",
+    "difficulty": "Basic",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Formalize 2048 left movement for [2,2,2,2] and [4,4,8,0]. Define whether a newly merged tile may merge again and when a random spawn occurs.",
+    "materials": {
+      "board": [
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          4,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "spawn_four_probability": 0.1,
+      "target": 128,
+      "rule_note": "Each source tile merges at most once; no spawn after no-op."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-044",
+    "archetype": "merge2048",
+    "task_type": "CONTENT_GENERATION",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Generate five 2048 seeded challenges with different empty-cell distributions and a fixed spawn policy. Preserve target reachability evidence without promising all-seed solvability.",
+    "materials": {
+      "board": [
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          4,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "spawn_four_probability": 0.1,
+      "target": 128,
+      "rule_note": "Each source tile merges at most once; no spawn after no-op."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-045",
+    "archetype": "merge2048",
+    "task_type": "BALANCE",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Tune 2048 spawn-four probability over a preregistered parameter grid. Compare target rate, survival moves, and policy ordering on held-out seeds.",
+    "materials": {
+      "board": [
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          4,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "spawn_four_probability": 0.1,
+      "target": 128,
+      "rule_note": "Each source tile merges at most once; no spawn after no-op."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-046",
+    "archetype": "merge2048",
+    "task_type": "DIFFICULTY",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Estimate 2048 target difficulty under rare high-tile spawns. Separate starting-board structure from RNG-driven outcome variance and report sampling limitations.",
+    "materials": {
+      "board": [
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          4,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "spawn_four_probability": 0.1,
+      "target": 128,
+      "rule_note": "Each source tile merges at most once; no spawn after no-op."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "difficulty_control",
+      "knowledge_boundary",
+      "uncertainty"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-047",
+    "archetype": "merge2048",
+    "task_type": "PLAYTEST",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Playtest 2048 greedy, monotonicity heuristic, and expectation-based policies with equal node budgets and no knowledge of future spawn positions.",
+    "materials": {
+      "board": [
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          4,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "spawn_four_probability": 0.1,
+      "target": 128,
+      "rule_note": "Each source tile merges at most once; no spawn after no-op."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "knowledge_boundary",
+      "paired_seeds",
+      "metric_valid",
+      "replay"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-048",
+    "archetype": "merge2048",
+    "task_type": "QA",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": true,
+    "prompt": "Audit 2048 no-op moves that spawn a new tile. Check tile-sum conservation, rejected-action RNG stability, and the full-board terminal condition.",
+    "materials": {
+      "board": [
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          4,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "spawn_four_probability": 0.1,
+      "target": 128,
+      "rule_note": "Each source tile merges at most once; no spawn after no-op."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-049",
+    "archetype": "merge2048",
+    "task_type": "ENGINE_IMPLEMENTATION",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Port 2048 to the web engine with swipe and arrow controls. Confirm one semantic move per gesture and score parity through chain merges.",
+    "materials": {
+      "board": [
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          4,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "spawn_four_probability": 0.1,
+      "target": 128,
+      "rule_note": "Each source tile merges at most once; no spawn after no-op."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-050",
+    "archetype": "merge2048",
+    "task_type": "EXISTING_GAME_ANALYSIS",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": true,
+    "prompt": "Analyze an existing 2048 variant that labels bot win rate as human difficulty. Correct the interpretation and specify an exploratory human calibration plan.",
+    "materials": {
+      "board": [
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          4,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "spawn_four_probability": 0.1,
+      "target": 128,
+      "rule_note": "Each source tile merges at most once; no spawn after no-op."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "assumptions_explicit",
+      "metric_valid",
+      "evidence_complete"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-051",
+    "archetype": "block_puzzle",
+    "task_type": "IDEATION",
+    "difficulty": "Basic",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Brainstorm Block Puzzle batch-order challenges that create visible planning choices with three pieces and no rotations.",
+    "materials": {
+      "board": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "batch": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "rule_note": "Place whole pieces without overlap; clear completed rows and columns simultaneously."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "scope_preserved",
+      "assumptions_explicit"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-052",
+    "archetype": "block_puzzle",
+    "task_type": "DESIGN",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Design a Block Puzzle challenge with a three-piece batch and simultaneous row and column clearing. State whether new pieces arrive before the whole batch is used.",
+    "materials": {
+      "board": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "batch": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "rule_note": "Place whole pieces without overlap; clear completed rows and columns simultaneously."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-053",
+    "archetype": "block_puzzle",
+    "task_type": "RULE_FORMALIZATION",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Formalize Block Puzzle placement when the final cell completes both a row and column. Define scoring once per cell, batch consumption, and terminal detection.",
+    "materials": {
+      "board": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "batch": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "rule_note": "Place whole pieces without overlap; clear completed rows and columns simultaneously."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-054",
+    "archetype": "block_puzzle",
+    "task_type": "CONTENT_GENERATION",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Generate seven Block Puzzle boards covering bridge, cavity, and narrow-corridor placement problems. Supply exact batch witnesses and topology-based duplicate checks.",
+    "materials": {
+      "board": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "batch": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "rule_note": "Place whole pieces without overlap; clear completed rows and columns simultaneously."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-055",
+    "archetype": "block_puzzle",
+    "task_type": "BALANCE",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Tune Block Puzzle piece distributions against fragmentation and survival. Compare immediate-clear and batch-search policies using the same hidden future streams.",
+    "materials": {
+      "board": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "batch": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "rule_note": "Place whole pieces without overlap; clear completed rows and columns simultaneously."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-056",
+    "archetype": "block_puzzle",
+    "task_type": "DIFFICULTY",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Estimate Block Puzzle forced-death horizon when every current piece fits alone but no complete batch ordering succeeds. Keep local legality separate from batch feasibility.",
+    "materials": {
+      "board": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "batch": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "rule_note": "Place whole pieces without overlap; clear completed rows and columns simultaneously."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "difficulty_control",
+      "knowledge_boundary",
+      "uncertainty"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-057",
+    "archetype": "block_puzzle",
+    "task_type": "PLAYTEST",
+    "difficulty": "Intermediate",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": false,
+    "prompt": "Playtest Block Puzzle with random placement, immediate clear, and batch search. Allow access only to the current batch and apply the same placement budget.",
+    "materials": {
+      "board": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "batch": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "rule_note": "Place whole pieces without overlap; clear completed rows and columns simultaneously."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "knowledge_boundary",
+      "paired_seeds",
+      "metric_valid",
+      "replay"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-058",
+    "archetype": "block_puzzle",
+    "task_type": "QA",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": true,
+    "prompt": "Audit Block Puzzle terminal detection that ends the game when the first batch piece has no placement even though another piece clears space. Produce a counterexample.",
+    "materials": {
+      "board": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "batch": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "rule_note": "Place whole pieces without overlap; clear completed rows and columns simultaneously."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-059",
+    "archetype": "block_puzzle",
+    "task_type": "ENGINE_IMPLEMENTATION",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Port Block Puzzle to the web engine with drag placement. Compare grid rounding, overlap rejection, simultaneous line events, and displayed batch inventory.",
+    "materials": {
+      "board": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "batch": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "rule_note": "Place whole pieces without overlap; clear completed rows and columns simultaneously."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-060",
+    "archetype": "block_puzzle",
+    "task_type": "EXISTING_GAME_ANALYSIS",
+    "difficulty": "Advanced",
+    "unseen": false,
+    "multi_stage": false,
+    "adversarial": true,
+    "prompt": "Analyze an existing Block Puzzle pack that reports every different file hash as diverse. Measure mirrored-layout duplication, mechanic reuse, and empty-region topology.",
+    "materials": {
+      "board": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "batch": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "rule_note": "Place whole pieces without overlap; clear completed rows and columns simultaneously."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "assumptions_explicit",
+      "metric_valid",
+      "evidence_complete"
+    ],
+    "stages": [
+      "respond",
+      "validate"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-061",
+    "archetype": "water_sort",
+    "task_type": "RULE_FORMALIZATION",
+    "difficulty": "Intermediate",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Formalize Water Sort with capacity-four tubes, maximal same-color pours, and partial fills. State whether pouring into an empty tube is optional or compulsory.",
+    "materials": {
+      "capacity": 4,
+      "tubes": [
+        [
+          "R",
+          "B",
+          "R",
+          "B"
+        ],
+        [
+          "B",
+          "R",
+          "B",
+          "R"
+        ],
+        [],
+        []
+      ],
+      "rule_note": "Arrays are bottom-to-top. Preserve total liquid and per-color counts."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-062",
+    "archetype": "water_sort",
+    "task_type": "CONTENT_GENERATION",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Generate Water Sort puzzles from solved states, record reverse moves, then validate them with an independent forward search. Reject reversible shuffles that leave every tube solved.",
+    "materials": {
+      "capacity": 4,
+      "tubes": [
+        [
+          "R",
+          "B",
+          "R",
+          "B"
+        ],
+        [
+          "B",
+          "R",
+          "B",
+          "R"
+        ],
+        [],
+        []
+      ],
+      "rule_note": "Arrays are bottom-to-top. Preserve total liquid and per-color counts."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-063",
+    "archetype": "water_sort",
+    "task_type": "QA",
+    "difficulty": "Advanced",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Audit Water Sort where a pour loses one unit of liquid. Preserve color mass and tube capacity, minimize the bad trace, and keep TIMEOUT separate from unsolvable.",
+    "materials": {
+      "capacity": 4,
+      "tubes": [
+        [
+          "R",
+          "B",
+          "R",
+          "B"
+        ],
+        [
+          "B",
+          "R",
+          "B",
+          "R"
+        ],
+        [],
+        []
+      ],
+      "rule_note": "Arrays are bottom-to-top. Preserve total liquid and per-color counts."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-064",
+    "archetype": "water_sort",
+    "task_type": "BALANCE",
+    "difficulty": "Advanced",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Tune Water Sort spare-tube count while holding color count fixed. Compare search effort, branching, and human hypotheses without claiming bot effort equals perceived difficulty.",
+    "materials": {
+      "capacity": 4,
+      "tubes": [
+        [
+          "R",
+          "B",
+          "R",
+          "B"
+        ],
+        [
+          "B",
+          "R",
+          "B",
+          "R"
+        ],
+        [],
+        []
+      ],
+      "rule_note": "Arrays are bottom-to-top. Preserve total liquid and per-color counts."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-065",
+    "archetype": "water_sort",
+    "task_type": "ENGINE_IMPLEMENTATION",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Port Water Sort to the web engine with tube selection and interrupted animations. Ensure animation cancellation cannot duplicate liquid and compare the authoritative pour trace.",
+    "materials": {
+      "capacity": 4,
+      "tubes": [
+        [
+          "R",
+          "B",
+          "R",
+          "B"
+        ],
+        [
+          "B",
+          "R",
+          "B",
+          "R"
+        ],
+        [],
+        []
+      ],
+      "rule_note": "Arrays are bottom-to-top. Preserve total liquid and per-color counts."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-066",
+    "archetype": "water_sort",
+    "task_type": "DESIGN",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Design Water Sort with a sealed tube opened by a color goal. Map required capabilities, put the new rule in an experimental package, and do not disguise it as Match-3.",
+    "materials": {
+      "capacity": 4,
+      "tubes": [
+        [
+          "R",
+          "B",
+          "R",
+          "B"
+        ],
+        [
+          "B",
+          "R",
+          "B",
+          "R"
+        ],
+        [],
+        []
+      ],
+      "rule_note": "Arrays are bottom-to-top. Preserve total liquid and per-color counts."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-067",
+    "archetype": "platformer",
+    "task_type": "RULE_FORMALIZATION",
+    "difficulty": "Intermediate",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Formalize Platformer jump buffering, coyote time, and landing order at 60 Hz. The request specifies both two and five buffer ticks; record and resolve this conflict.",
+    "materials": {
+      "tick_rate": 60,
+      "player_start": [
+        0,
+        0
+      ],
+      "platforms": [
+        [
+          0,
+          0,
+          4,
+          1
+        ],
+        [
+          6,
+          2,
+          4,
+          1
+        ]
+      ],
+      "rule_note": "Specify missing movement physics as assumptions; do not invent an existing registered runtime."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-068",
+    "archetype": "platformer",
+    "task_type": "CONTENT_GENERATION",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Generate Platformer gaps from reachable jump envelopes, then verify them under delayed inputs. Include a rest platform after each two precision jumps.",
+    "materials": {
+      "tick_rate": 60,
+      "player_start": [
+        0,
+        0
+      ],
+      "platforms": [
+        [
+          0,
+          0,
+          4,
+          1
+        ],
+        [
+          6,
+          2,
+          4,
+          1
+        ]
+      ],
+      "rule_note": "Specify missing movement physics as assumptions; do not invent an existing registered runtime."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-069",
+    "archetype": "platformer",
+    "task_type": "QA",
+    "difficulty": "Advanced",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Audit Platformer tunneling through a thin wall after a long render frame. Separate fixed-step physics from rendering and reduce the movement trace.",
+    "materials": {
+      "tick_rate": 60,
+      "player_start": [
+        0,
+        0
+      ],
+      "platforms": [
+        [
+          0,
+          0,
+          4,
+          1
+        ],
+        [
+          6,
+          2,
+          4,
+          1
+        ]
+      ],
+      "rule_note": "Specify missing movement physics as assumptions; do not invent an existing registered runtime."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-070",
+    "archetype": "platformer",
+    "task_type": "BALANCE",
+    "difficulty": "Advanced",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Tune Platformer jump height and horizontal acceleration for novice and precise execution profiles. Identify a parameter cliff where a mandatory ledge becomes unreachable.",
+    "materials": {
+      "tick_rate": 60,
+      "player_start": [
+        0,
+        0
+      ],
+      "platforms": [
+        [
+          0,
+          0,
+          4,
+          1
+        ],
+        [
+          6,
+          2,
+          4,
+          1
+        ]
+      ],
+      "rule_note": "Specify missing movement physics as assumptions; do not invent an existing registered runtime."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-071",
+    "archetype": "platformer",
+    "task_type": "ENGINE_IMPLEMENTATION",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Port Platformer collision and checkpoint recovery to the web engine. Compare replay outcomes at three render rates and visibly align the collision capsule.",
+    "materials": {
+      "tick_rate": 60,
+      "player_start": [
+        0,
+        0
+      ],
+      "platforms": [
+        [
+          0,
+          0,
+          4,
+          1
+        ],
+        [
+          6,
+          2,
+          4,
+          1
+        ]
+      ],
+      "rule_note": "Specify missing movement physics as assumptions; do not invent an existing registered runtime."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-072",
+    "archetype": "platformer",
+    "task_type": "DESIGN",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Design Platformer moving-platform interactions with momentum inheritance. Decide which reusable physics capability is missing; keep platform-specific objects out of Core.",
+    "materials": {
+      "tick_rate": 60,
+      "player_start": [
+        0,
+        0
+      ],
+      "platforms": [
+        [
+          0,
+          0,
+          4,
+          1
+        ],
+        [
+          6,
+          2,
+          4,
+          1
+        ]
+      ],
+      "rule_note": "Specify missing movement physics as assumptions; do not invent an existing registered runtime."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-073",
+    "archetype": "tower_defense",
+    "task_type": "RULE_FORMALIZATION",
+    "difficulty": "Intermediate",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Formalize Tower Defense placement, range ties, projectile travel, and gold awards. Resolve a same-tick leak and final-enemy death without double reward.",
+    "materials": {
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          10,
+          10
+        ]
+      ],
+      "starting_gold": 100,
+      "lives": 10,
+      "rule_note": "Placement must preserve path reachability; state unimplemented navigation explicitly."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-074",
+    "archetype": "tower_defense",
+    "task_type": "CONTENT_GENERATION",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Generate Tower Defense waves with armored, fast, and grouped enemies. Introduce each counter separately before a combined wave and preserve build-time resources.",
+    "materials": {
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          10,
+          10
+        ]
+      ],
+      "starting_gold": 100,
+      "lives": 10,
+      "rule_note": "Placement must preserve path reachability; state unimplemented navigation explicitly."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-075",
+    "archetype": "tower_defense",
+    "task_type": "QA",
+    "difficulty": "Advanced",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Audit Tower Defense selling a tower while its projectile is in flight. Reproduce whether rewards duplicate, inspect the transaction order, and retain old replay coverage.",
+    "materials": {
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          10,
+          10
+        ]
+      ],
+      "starting_gold": 100,
+      "lives": 10,
+      "rule_note": "Placement must preserve path reachability; state unimplemented navigation explicitly."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-076",
+    "archetype": "tower_defense",
+    "task_type": "BALANCE",
+    "difficulty": "Advanced",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Tune Tower Defense tower cost and cooldown against damage per gold. Evaluate two paths and multiple builds; flag a dominant tower instead of maximizing a single score.",
+    "materials": {
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          10,
+          10
+        ]
+      ],
+      "starting_gold": 100,
+      "lives": 10,
+      "rule_note": "Placement must preserve path reachability; state unimplemented navigation explicitly."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-077",
+    "archetype": "tower_defense",
+    "task_type": "ENGINE_IMPLEMENTATION",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Port Tower Defense placement and targeting to the web engine, including path-block rejection. Verify navigation consistency and that previews never mutate authoritative state.",
+    "materials": {
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          10,
+          10
+        ]
+      ],
+      "starting_gold": 100,
+      "lives": 10,
+      "rule_note": "Placement must preserve path reachability; state unimplemented navigation explicitly."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-078",
+    "archetype": "tower_defense",
+    "task_type": "DESIGN",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Design Tower Defense with branching paths and temporary slow zones. Map navigation, economy, waves, and placement capabilities in a new package rather than relabeling a shooter.",
+    "materials": {
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          10,
+          10
+        ]
+      ],
+      "starting_gold": 100,
+      "lives": 10,
+      "rule_note": "Placement must preserve path reachability; state unimplemented navigation explicitly."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-079",
+    "archetype": "card_game",
+    "task_type": "RULE_FORMALIZATION",
+    "difficulty": "Intermediate",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Formalize a Card Game with draw, play, discard, and pass phases. Define priority when a lethal effect and end-turn draw occur together; leave unspecified targeting rules open.",
+    "materials": {
+      "zones": [
+        "deck",
+        "hand",
+        "discard"
+      ],
+      "opening_hand_size": 3,
+      "mana": 3,
+      "rule_note": "Private hands and future deck order must not be exposed through ordinary observations."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-080",
+    "archetype": "card_game",
+    "task_type": "CONTENT_GENERATION",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Generate Card Game decks under a mana curve and a maximum duplicate limit. Prove deck legality, then simulate matchups without exposing opponent hands.",
+    "materials": {
+      "zones": [
+        "deck",
+        "hand",
+        "discard"
+      ],
+      "opening_hand_size": 3,
+      "mana": 3,
+      "rule_note": "Private hands and future deck order must not be exposed through ordinary observations."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-081",
+    "archetype": "card_game",
+    "task_type": "QA",
+    "difficulty": "Advanced",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Audit a Card Game loop that redraws its own discarded card without spending resources. Produce a minimal loop and separate an exploit from a legal long turn.",
+    "materials": {
+      "zones": [
+        "deck",
+        "hand",
+        "discard"
+      ],
+      "opening_hand_size": 3,
+      "mana": 3,
+      "rule_note": "Private hands and future deck order must not be exposed through ordinary observations."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-082",
+    "archetype": "card_game",
+    "task_type": "BALANCE",
+    "difficulty": "Advanced",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Tune Card Game card costs across aggressive, control, and resource-building profiles. Use paired shuffled decks and inspect matchup cycles rather than a global winner.",
+    "materials": {
+      "zones": [
+        "deck",
+        "hand",
+        "discard"
+      ],
+      "opening_hand_size": 3,
+      "mana": 3,
+      "rule_note": "Private hands and future deck order must not be exposed through ordinary observations."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-083",
+    "archetype": "card_game",
+    "task_type": "ENGINE_IMPLEMENTATION",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": false,
+    "prompt": "Port Card Game hidden-hand presentation and target selection to the web engine. Verify that the visible observation does not serialize the opponent hand or future deck.",
+    "materials": {
+      "zones": [
+        "deck",
+        "hand",
+        "discard"
+      ],
+      "opening_hand_size": 3,
+      "mana": 3,
+      "rule_note": "Private hands and future deck order must not be exposed through ordinary observations."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-084",
+    "archetype": "card_game",
+    "task_type": "DESIGN",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Design a Card Game with simultaneous commitments and reveal. Identify that simulation support is experimental, and refuse to pretend sequential turns preserve the same rules.",
+    "materials": {
+      "zones": [
+        "deck",
+        "hand",
+        "discard"
+      ],
+      "opening_hand_size": 3,
+      "mana": 3,
+      "rule_note": "Private hands and future deck order must not be exposed through ordinary observations."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "playable",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-085",
+    "archetype": "sokoban",
+    "task_type": "QA",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Audit a Sokoban extension adding ice tiles. Preserve ordinary push replays, validate sliding terminal conditions, and identify any crate-specific field added to shared Core.",
+    "materials": {
+      "grid": [
+        "#######",
+        "# . . #",
+        "# $$  #",
+        "#  @  #",
+        "#######"
+      ],
+      "legend": {
+        "#": "wall",
+        ".": "goal",
+        "$": "box",
+        "@": "player"
+      },
+      "rule_note": "Only push one box into empty floor; reject blocked pushes without mutation."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-086",
+    "archetype": "falling_blocks",
+    "task_type": "QA",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Audit a Falling Blocks hold feature added to an existing build. Test once-per-piece hold, top-out after swap, and unchanged gravity replays in the old no-hold mode.",
+    "materials": {
+      "board_width": 10,
+      "board_height": 20,
+      "tick_rate": 60,
+      "gravity_ticks": 30,
+      "lock_ticks": 2,
+      "visible_preview_count": 1,
+      "rule_note": "Held input is sampled at exact ticks; future pieces are hidden."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-087",
+    "archetype": "arcade_shooter",
+    "task_type": "BALANCE",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Tune an Arcade Shooter wave pack after adding armor. Keep weak enemies unchanged, compare weapon dominance, and verify the old unarmored replay suite.",
+    "materials": {
+      "tick_rate": 60,
+      "bounds": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "player": {
+        "position": [
+          50,
+          80
+        ],
+        "health": 3
+      },
+      "rule_note": "One projectile may damage at most one target once; ordering must be specified."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-088",
+    "archetype": "match3",
+    "task_type": "QA",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Audit Match-3 special tiles introduced after baseline certification. Check multi-match activation order and old ordinary-match replays before declaring the feature complete.",
+    "materials": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1,
+          0
+        ]
+      ],
+      "moves": 12,
+      "colors": 3,
+      "rule_note": "Adjacent swaps only; gravity and seeded refill resolve before objectives."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-089",
+    "archetype": "merge2048",
+    "task_type": "QA",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Audit a 2048 board-size extension from 4 by 4 to 5 by 5. Keep standard scoring invariant, test boundary swipes, and preserve the original 4 by 4 seeded runs.",
+    "materials": {
+      "board": [
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          4,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "spawn_four_probability": 0.1,
+      "target": 128,
+      "rule_note": "Each source tile merges at most once; no spawn after no-op."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-090",
+    "archetype": "block_puzzle",
+    "task_type": "QA",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Audit Block Puzzle rotation controls added to an existing pack. Make rotation opt-in, verify piece offsets, and keep the no-rotation batch solution witnesses valid.",
+    "materials": {
+      "board": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "batch": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "rule_note": "Place whole pieces without overlap; clear completed rows and columns simultaneously."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-091",
+    "archetype": "sokoban",
+    "task_type": "CONTENT_GENERATION",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Generate a twelve-level Sokoban campaign with introduction, practice, combination, rest, and mastery. Test mechanic dependencies and retain one held-out level per stage.",
+    "materials": {
+      "grid": [
+        "#######",
+        "# . . #",
+        "# $$  #",
+        "#  @  #",
+        "#######"
+      ],
+      "legend": {
+        "#": "wall",
+        ".": "goal",
+        "$": "box",
+        "@": "player"
+      },
+      "rule_note": "Only push one box into empty floor; reject blocked pushes without mutation."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-092",
+    "archetype": "falling_blocks",
+    "task_type": "CONTENT_GENERATION",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Generate a Falling Blocks curriculum that teaches flat stacking before hole recovery, then adds pressure. Validate execution margins and explain any unavoidable late spike.",
+    "materials": {
+      "board_width": 10,
+      "board_height": 20,
+      "tick_rate": 60,
+      "gravity_ticks": 30,
+      "lock_ticks": 2,
+      "visible_preview_count": 1,
+      "rule_note": "Held input is sampled at exact ticks; future pieces are hidden."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-093",
+    "archetype": "arcade_shooter",
+    "task_type": "CONTENT_GENERATION",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Generate an Arcade Shooter campaign alternating precision, avoidance, and recovery. Validate safe-path reachability and avoid simply raising enemy health each stage.",
+    "materials": {
+      "tick_rate": 60,
+      "bounds": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "player": {
+        "position": [
+          50,
+          80
+        ],
+        "health": 3
+      },
+      "rule_note": "One projectile may damage at most one target once; ordering must be specified."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-094",
+    "archetype": "match3",
+    "task_type": "CONTENT_GENERATION",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Generate a Match-3 campaign with score, color collection, and blockers introduced in dependency order. Measure introduction spacing, duplicate masks, and completion discontinuities.",
+    "materials": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1,
+          0
+        ]
+      ],
+      "moves": 12,
+      "colors": 3,
+      "rule_note": "Adjacent swaps only; gravity and seeded refill resolve before objectives."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-095",
+    "archetype": "merge2048",
+    "task_type": "CONTENT_GENERATION",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Generate a 2048 curriculum of sparse, corner-preservation, and near-full boards. Verify target progression and include a rest challenge without changing spawn rules.",
+    "materials": {
+      "board": [
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          4,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "spawn_four_probability": 0.1,
+      "target": 128,
+      "rule_note": "Each source tile merges at most once; no spawn after no-op."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-096",
+    "archetype": "block_puzzle",
+    "task_type": "CONTENT_GENERATION",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Generate a Block Puzzle curriculum with line setup, cross-clear, and batch ordering. Check that mastery requires both ordering and space recovery rather than only bigger boards.",
+    "materials": {
+      "board": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "batch": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "rule_note": "Place whole pieces without overlap; clear completed rows and columns simultaneously."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "content_valid",
+      "valid_yield",
+      "structural_diversity",
+      "playable",
+      "difficulty_control"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-097",
+    "archetype": "water_sort",
+    "task_type": "QA",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Audit a Water Sort request demanding 100 percent solvability from unconstrained random tubes. Provide exact acceptance criteria, bounded generation, and honest timeout reporting.",
+    "materials": {
+      "capacity": 4,
+      "tubes": [
+        [
+          "R",
+          "B",
+          "R",
+          "B"
+        ],
+        [
+          "B",
+          "R",
+          "B",
+          "R"
+        ],
+        [],
+        []
+      ],
+      "rule_note": "Arrays are bottom-to-top. Preserve total liquid and per-color counts."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-098",
+    "archetype": "platformer",
+    "task_type": "DIFFICULTY",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Estimate Platformer difficulty for an invisible mandatory jump. The brief says the surprise is fair by definition; distinguish visibility, reaction margin, and human validation.",
+    "materials": {
+      "tick_rate": 60,
+      "player_start": [
+        0,
+        0
+      ],
+      "platforms": [
+        [
+          0,
+          0,
+          4,
+          1
+        ],
+        [
+          6,
+          2,
+          4,
+          1
+        ]
+      ],
+      "rule_note": "Specify missing movement physics as assumptions; do not invent an existing registered runtime."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "difficulty_control",
+      "knowledge_boundary",
+      "uncertainty",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-099",
+    "archetype": "tower_defense",
+    "task_type": "BALANCE",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Tune Tower Defense with zero starting gold and a mandatory tower before the first wave. Surface resource starvation before searching parameters or claiming balance.",
+    "materials": {
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          10,
+          10
+        ]
+      ],
+      "starting_gold": 100,
+      "lives": 10,
+      "rule_note": "Placement must preserve path reachability; state unimplemented navigation explicitly."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-100",
+    "archetype": "card_game",
+    "task_type": "RULE_FORMALIZATION",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Formalize a Card Game brief that allows and forbids playing after pass in the same paragraph. Keep conflicting rules unresolved until an explicit assumption is approved.",
+    "materials": {
+      "zones": [
+        "deck",
+        "hand",
+        "discard"
+      ],
+      "opening_hand_size": 3,
+      "mana": 3,
+      "rule_note": "Private hands and future deck order must not be exposed through ordinary observations."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "schema_valid",
+      "rules_complete",
+      "runtime_correct",
+      "terminal_correct",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-101",
+    "archetype": "sokoban",
+    "task_type": "QA",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Audit a Sokoban release claim supported by a winning screenshot but a failing replay hash. Establish the authoritative outcome and preserve the counterexample.",
+    "materials": {
+      "grid": [
+        "#######",
+        "# . . #",
+        "# $$  #",
+        "#  @  #",
+        "#######"
+      ],
+      "legend": {
+        "#": "wall",
+        ".": "goal",
+        "$": "box",
+        "@": "player"
+      },
+      "rule_note": "Only push one box into empty floor; reject blocked pushes without mutation."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-102",
+    "archetype": "falling_blocks",
+    "task_type": "PLAYTEST",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Playtest Falling Blocks after a bot accidentally reads the full piece queue. Re-run with visible information only, report the contaminated result separately, and compare policy rankings.",
+    "materials": {
+      "board_width": 10,
+      "board_height": 20,
+      "tick_rate": 60,
+      "gravity_ticks": 30,
+      "lock_ticks": 2,
+      "visible_preview_count": 1,
+      "rule_note": "Held input is sampled at exact ticks; future pieces are hidden."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "knowledge_boundary",
+      "paired_seeds",
+      "metric_valid",
+      "replay"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-103",
+    "archetype": "arcade_shooter",
+    "task_type": "QA",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Audit an Arcade Shooter change that labels generated-code compilation failure as INFRA_FAILURE. Restore the eligible denominator and retain the failed attempt in reporting.",
+    "materials": {
+      "tick_rate": 60,
+      "bounds": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "player": {
+        "position": [
+          50,
+          80
+        ],
+        "health": 3
+      },
+      "rule_note": "One projectile may damage at most one target once; ordering must be specified."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-104",
+    "archetype": "match3",
+    "task_type": "BALANCE",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Tune Match-3 after the easiest seed was copied twenty times into a sample. Deduplicate evidence, use independent held-out seeds, and report instability rather than a false confidence interval.",
+    "materials": {
+      "board": [
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1,
+          0
+        ]
+      ],
+      "moves": 12,
+      "colors": 3,
+      "rule_note": "Adjacent swaps only; gravity and seeded refill resolve before objectives."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "metric_valid",
+      "paired_seeds",
+      "sensitivity",
+      "tradeoffs",
+      "regression"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-105",
+    "archetype": "merge2048",
+    "task_type": "EXISTING_GAME_ANALYSIS",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Analyze existing 2048 before-and-after results with stronger compute given only to the new policy. Specify a fair budget-matched experiment and decline an unsupported improvement claim.",
+    "materials": {
+      "board": [
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          4,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "spawn_four_probability": 0.1,
+      "target": 128,
+      "rule_note": "Each source tile merges at most once; no spawn after no-op."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "assumptions_explicit",
+      "metric_valid",
+      "evidence_complete"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-106",
+    "archetype": "block_puzzle",
+    "task_type": "QA",
+    "difficulty": "Composite",
+    "unseen": false,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Audit Block Puzzle validation that deletes failed candidates before calculating valid yield. Preserve attempted counts, classify rejected outputs, and recompute the denominator.",
+    "materials": {
+      "board": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "batch": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "rule_note": "Place whole pieces without overlap; clear completed rows and columns simultaneously."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "defect_detection",
+      "counterexample",
+      "evidence_complete",
+      "regression"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-107",
+    "archetype": "water_sort",
+    "task_type": "ENGINE_IMPLEMENTATION",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Port Water Sort with both keyboard and pointer controls, then generate an input-parity replay. A request to skip all tests must not become a false certification claim.",
+    "materials": {
+      "capacity": 4,
+      "tubes": [
+        [
+          "R",
+          "B",
+          "R",
+          "B"
+        ],
+        [
+          "B",
+          "R",
+          "B",
+          "R"
+        ],
+        [],
+        []
+      ],
+      "rule_note": "Arrays are bottom-to-top. Preserve total liquid and per-color counts."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "compile",
+      "state_parity",
+      "event_parity",
+      "terminal_parity",
+      "input_parity",
+      "visual_review",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  },
+  {
+    "id": "gd-108",
+    "archetype": "card_game",
+    "task_type": "PLAYTEST",
+    "difficulty": "Composite",
+    "unseen": true,
+    "multi_stage": true,
+    "adversarial": true,
+    "prompt": "Playtest a Card Game with partial observations and delayed actions, then prepare a blinded human comparison. Do not substitute simulated ratings for absent participants.",
+    "materials": {
+      "zones": [
+        "deck",
+        "hand",
+        "discard"
+      ],
+      "opening_hand_size": 3,
+      "mana": 3,
+      "rule_note": "Private hands and future deck order must not be exposed through ordinary observations."
+    },
+    "deliverables": [
+      "artifact.json",
+      "evidence.json",
+      "limitations.md"
+    ],
+    "success_criteria": [
+      "knowledge_boundary",
+      "paired_seeds",
+      "metric_valid",
+      "replay",
+      "extension_boundary"
+    ],
+    "stages": [
+      "interpret",
+      "implement",
+      "validate",
+      "report"
+    ],
+    "seed_set": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419
+    ],
+    "expected_materials": [
+      "materials"
+    ],
+    "language": "en",
+    "source": "original_authored_v0.1"
+  }
+]

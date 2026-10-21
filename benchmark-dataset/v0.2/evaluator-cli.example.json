@@ -1,0 +1,6 @@
+{
+  "dataset_root": ".",
+  "captures": {},
+  "reviews": {},
+  "warning": "Populate only from supervisor-owned, artifact-bound captures and independent review. Empty maps never pass."
+}
