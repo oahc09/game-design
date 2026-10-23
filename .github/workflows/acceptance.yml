@@ -42,7 +42,7 @@ jobs:
         shell: bash
         run: |
           npm install --prefix "$RUNNER_TEMP/gd-browser" --no-package-lock --ignore-scripts --no-audit --no-fund playwright@1.62.1
-          node "$RUNNER_TEMP/gd-browser/node_modules/playwright/cli.js" install --with-deps chromium
+          node -e 'const fs=require("node:fs"),path=require("node:path");const browser=process.platform==="win32"?path.join(process.env.ProgramFiles,"Google/Chrome/Application/chrome.exe"):"/usr/bin/google-chrome";fs.accessSync(browser);fs.appendFileSync(process.env.GITHUB_ENV,"GD_BROWSER_EXECUTABLE="+browser+"\n");'
           echo "NODE_PATH=$RUNNER_TEMP/gd-browser/node_modules" >> "$GITHUB_ENV"
       - run: npm run acceptance -- --browser
       - uses: actions/upload-artifact@v4
