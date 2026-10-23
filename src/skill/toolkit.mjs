@@ -39,8 +39,8 @@ export function createToolkitTools({browserVerifier=null,extensionVerifier=null,
   },
   adapter_verify:async input=>{
    const records=[];for(const spec of specs(input)){
-    const identity=specIdentity(spec),episodes=(input.outputs?.simulate?.data??[]).flatMap(r=>r.episodes).filter(e=>hash(e.replay?.spec??null)===identity.spec_hash);
-    const sequences=episodes.length?episodes.map(e=>({seed:e.seed,actions:e.replay.actions.map(a=>a.action)})):[{seed:input.context.seed??1,actions:input.context.actions??[]}];
+    const identity=specIdentity(spec),replays=[...(input.outputs?.qa?.data??[]).map(r=>r.evidence?.replay),...(input.outputs?.simulate?.data??[]).flatMap(r=>r.episodes.map(e=>e.replay))].filter(r=>r&&hash(r.spec)===identity.spec_hash);
+    const sequences=replays.length?replays.map(r=>({seed:r.seed,actions:r.actions.map(a=>a.action)})):[{seed:input.context.seed??1,actions:input.context.actions??[]}];
     const headless=sequences.map(sequence=>differential(spec,sequence));
     if(headless.some(r=>r.status!=='PASS')){records.push({...identity,headless,status:'FAIL'});continue;}
     if(!browserVerifier){records.push({...identity,headless,input_visual:'NOT_VERIFIED',status:'UNVERIFIED'});continue;}

@@ -19,6 +19,7 @@ test('actual shooter tuning, QA, build and adapter share the recommended spec; s
  outputs.simulate=await tools.simulate({context,outputs});outputs.tune_balance=await tools.tune_balance({context,outputs});assert.equal(outputs.tune_balance.status,'PASS');const current=outputs.tune_balance.data.recommended.spec;assert.notEqual(hash(current),hash(context.spec));
  for(const key of ['qa','build_project','adapter_verify']){outputs[key]=await tools[key]({context,outputs});assert.equal(outputs[key].status,'PASS');assert(outputs[key].effective_specs.every(s=>s.spec_hash===hash(current)));}
  assert.deepEqual(observed,[hash(current),hash(current)]);
+ assert(outputs.adapter_verify.data[0].headless.every(r=>r.transitions>0),'engine replays actual post-tune QA actions');
  const route=routeTask('调优射击游戏的数值，再接入引擎'),execution={outputs,receipts:route.steps.map(s=>({tool:s.tool,status:'PASS',evidence:['synthetic-binding-test']}))},output={...Object.fromEntries(route.required_outputs.map(k=>[k,{}])),status:'COMPLETED',effective_spec:current};assert.equal(validateOutputContract(route,output,execution).valid,true);
  output.effective_spec=context.spec;assert(validateOutputContract(route,output,execution).issues.some(i=>i.code==='FINAL_SPEC_BINDING_MISMATCH'));
  const stale=createToolkitTools({browserVerifier:async()=>({status:'PASS',checked_spec_hash:hash(context.spec)})});assert.equal((await stale.adapter_verify({context,outputs})).status,'FAIL');
