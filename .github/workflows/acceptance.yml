@@ -38,6 +38,9 @@ jobs:
         with:
           node-version: 24
       - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Install Chinese browser fonts
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends fonts-noto-cjk
       - name: Install isolated browser tools
         shell: bash
         run: |

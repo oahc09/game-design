@@ -50,3 +50,5 @@ npm run acceptance -- --browser
 GitHub Actions 核心矩阵 Windows/Linux × Node 20/24，另有 Node 24 的双平台浏览器作业。Playwright 工具安装在 runner 临时目录，不加入核心 package-lock；CI 使用镜像自带 Chrome，通过 GD_BROWSER_EXECUTABLE 指定并记录实际版本，避免另行下载整套浏览器。本机也支持同一入口。下载工件包含日志、当前源码清单及不带 node_modules 的分发 tar.gz。Actions 是否完成以实际运行结论为准，配置文件存在不等于 CI 已通过。
 
 浏览器脚本检查参考/候选两页、六类主要真实输入、暂停/重开/失焦、30/60/144 Hz 固定步长、移动可视区域；另用页面导出核对新生成/调优规格。截图是助手视觉复核，不是结构化真人研究，也不验证所有设备、硬件延迟或完整商业产品。正式 trials 0，外部评审 UNVERIFIED，正式 M7 BLOCKED。
+
+截图复核曾发现 Linux 镜像缺少中文字形，自动交互通过但中文显示为方框；该轮不作为视觉验收通过。Linux 浏览器作业补充 fonts-noto-cjk，并在脚本中检查实际 CJK 字体匹配后重新采集截图。字体仅安装于临时 CI runner，不修改本机或游戏样式。

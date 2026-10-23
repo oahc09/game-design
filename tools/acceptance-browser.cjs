@@ -1,11 +1,12 @@
 /** Isolated Playwright dependency via NODE_PATH; Browser plugin not available. */
-const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('node:fs/promises'),path=require('node:path'),net=require('node:net'),{spawn}=require('node:child_process');
+const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('node:fs/promises'),path=require('node:path'),net=require('node:net'),{spawn,execFileSync}=require('node:child_process');
 (async()=>{
  const out=path.resolve(process.argv[2]),root=path.resolve(__dirname,'..');await fs.mkdir(out,{recursive:true});
  const {getArchetype}=await import('../src/archetypes/index.mjs'),{hash}=await import('../src/core/index.mjs'),{createToolkitTools,effectiveSpecs}=await import('../src/skill/toolkit.mjs');
  const reserve=net.createServer();await new Promise(ok=>reserve.listen(0,'127.0.0.1',ok));const port=reserve.address().port;await new Promise(ok=>reserve.close(ok));
  const server=spawn(process.execPath,['tools/serve.mjs'],{cwd:root,env:{...process.env,PORT:String(port)},stdio:'ignore',windowsHide:true});let browser;const report={status:'FAIL',browser_tools:require('playwright/package.json').version,browser_fallback:'Browser plugin not available',cases:[],warnings:[],errors:[],screenshots:[],scope:'Browser automation and visual evidence; no human participant or formal trial'};
  try{
+  if(process.platform==='linux'){report.cjk_font=execFileSync('fc-match',['-f','%{family}','sans:lang=zh-cn'],{encoding:'utf8'});assert(/Noto.*CJK/.test(report.cjk_font),'Linux browser acceptance requires the CI CJK font package');}
   const base=`http://127.0.0.1:${port}`;let ready=false;for(let i=0;i<100;i++){try{if((await fetch(base)).ok){ready=true;break;}}catch{}await new Promise(ok=>setTimeout(ok,50));}assert(ready,'owned server startup');
   browser=await chromium.launch({headless:true,executablePath:process.env.GD_BROWSER_EXECUTABLE||undefined,args:['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});report.browser_version=browser.version();report.browser_executable=process.env.GD_BROWSER_EXECUTABLE||'Playwright-managed Chromium';
   const page=await browser.newPage({viewport:{width:1280,height:1050},acceptDownloads:true});page.on('pageerror',e=>report.errors.push(e.message));page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text());if(m.type()==='warning')report.warnings.push(m.text());});
