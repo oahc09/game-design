@@ -13,7 +13,7 @@
     "tools/game-design.mjs", "tools/serve.mjs", "tools/verify-install.mjs",
     "package.json", "package-lock.json"
   ],
-  "exclude": ["src/framework/evidence.mjs"],
+  "exclude": ["src/framework/evidence.mjs", "fixtures/historical-source"],
   "excluded_commands": ["ab-validate", "ab-freeze", "ab-verify", "ab-run", "ab-report"],
   "notice": "Experimental skill and runtime evaluation bundle. Project source is MIT licensed; third-party notices apply independently. Operational key/model services are excluded; formal qualification remains BLOCKED."
 }

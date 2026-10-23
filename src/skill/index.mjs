@@ -1,11 +1,12 @@
 /** Operational, deterministic routing. This is a conservative heuristic, not an LLM. */
+import {hash} from '../core/index.mjs';
 export const SKILL_VERSION = '0.1.0';
 export const TASK_TYPES = ['IDEATION','DESIGN','RULE_FORMALIZATION','CONTENT_GENERATION','BALANCE','DIFFICULTY','PLAYTEST','QA','ENGINE_IMPLEMENTATION','EXISTING_GAME_ANALYSIS'];
 export const KNOWN_ARCHETYPES = ['sokoban','falling_blocks','arcade_shooter','match3','merge2048','block_puzzle'];
 const aliases = {
   sokoban: /\bsokoban\b|推箱子/i,
   falling_blocks: /falling[_ -]blocks|\btetris\b|俄罗斯方块/i,
-  arcade_shooter: /arcade[_ -]shooter|\bshooter\b|射击/i,
+  arcade_shooter: /arcade[_ -]shooter|\bshooter\b|射击|打飞机/i,
   match3: /match[_ -]?3|match[_ -]three|三消/i,
   merge2048: /merge[_ -]?2048|\b2048\b/i,
   block_puzzle: /block[_ -]puzzle|方块拼图/i,
@@ -58,14 +59,17 @@ export const OUTPUT_CONTRACTS = {
  ANALYSIS:['findings','assumptions','metric_comparison','validation_plan','evidence'],
  EXTENSION:['registry_search','capability_mapping','experimental_package','extension_gate','open_questions'],
 };
-function taskText(task) { return typeof task === 'string' ? task : task?.prompt ?? task?.text ?? ''; }
+function taskText(task) { return (typeof task === 'string' ? task : task?.prompt ?? task?.text ?? '').replace(/^\s*(?:(?:请)?(?:使用|调用|用)|please\s+use|use)?\s*(?:\$game-design\b|game[ -]design\s+skill\b)\s*[,，:：]?\s*/i,''); }
+const ideasOnly=text=>/(?:只|仅)[^，。；,;]*(?:创意|点子)|(?:ideas?|concepts?)\s+only/i.test(text);
+const noBuild=text=>/(?:不要|无需|暂不|不需要)[^，。；,;]*(?:写代码|构建|实现|生成.*HTML)|(?:do not|don't)\s+(?:build|code|implement)/i.test(text);
+const playable=text=>!ideasOnly(text)&&!noBuild(text)&&(/可玩(?:的|耍的)?|playable|交付[^，。；,;]*\bHTML\b/i.test(text)||/(?:生成|做|制作|开发|构建)\s*(?:一个|一款|个)?[^，。；,;]*(?:小游戏|游戏)|\b(?:build|create)\b[^.;]*\bgame\b/i.test(text));
 export function classifyTask(task) {
  const text=taskText(task);
  if (task?.task_type && !TASK_TYPES.includes(task.task_type)) throw new TypeError(`Unknown task_type: ${task.task_type}`);
  const matched=TASK_TYPES.filter(t=>patterns[t].test(text)).sort((a,b)=>text.search(patterns[a])-text.search(patterns[b]));
- const primary=task?.task_type ?? matched[0] ?? 'DESIGN';
+ const primary=task?.task_type ?? (ideasOnly(text)?'IDEATION':playable(text)?'ENGINE_IMPLEMENTATION':matched[0]) ?? 'DESIGN';
  return {primary, task_types:[primary,...matched.filter(t=>t!==primary)], confidence:task?.task_type?'explicit':matched.length===1?'heuristic':'needs_review',
-  reasons:matched.map(t=>({task_type:t,source:'intent_pattern'})), needs_clarification:!text.trim() || (!task?.task_type && matched.length===0)};
+  reasons:matched.map(t=>({task_type:t,source:'intent_pattern'})), needs_clarification:!text.trim() || (ideasOnly(text)&&primary!=='IDEATION') || (noBuild(text)&&primary==='ENGINE_IMPLEMENTATION') || (!task?.task_type && matched.length===0&&!playable(text)&&!ideasOnly(text))};
 }
 export function resolveArchetype(task, registry=KNOWN_ARCHETYPES) {
  const explicit=typeof task==='object' ? task.archetype ?? task.spec?.game?.archetype : null;
@@ -81,12 +85,14 @@ export function resolveArchetype(task, registry=KNOWN_ARCHETYPES) {
 export function routeTask(task, options={}) {
  const classification=classifyTask(task), archetype=resolveArchetype(task,options.registry??KNOWN_ARCHETYPES), text=taskText(task);
  const definition=routeDefinitions[classification.primary];
- const secondaryPatterns={IDEATION:/^(?:brainstorm|suggest ideas|提出创意)/i,DESIGN:/^(?:design|设计)/i,RULE_FORMALIZATION:/^(?:formalize|formalise|define rules|形式化)/i,CONTENT_GENERATION:/^(?:generate|create .*levels|生成)/i,BALANCE:/^(?:tune|balance|调优|平衡)/i,DIFFICULTY:/^(?:estimate .*difficulty|measure .*difficulty|评估难度)/i,PLAYTEST:/^(?:playtest|simulate|试玩|模拟)/i,QA:/^(?:audit|test for|run qa|verify regressions|审计|测试)/i,ENGINE_IMPLEMENTATION:/^(?:implement|port|integrate|落地|移植)/i,EXISTING_GAME_ANALYSIS:/^(?:analyze|analyse|diagnose|分析|诊断)/i};
- const secondaryTypes=[...new Set(text.split(/\b(?:and then|and|then)\b|[;；]|然后|并且|并|再/i).slice(1).flatMap(clause=>Object.entries(secondaryPatterns).filter(([,re])=>re.test(clause.trim())).map(([type])=>type)))].filter(t=>t!==classification.primary);
+ const secondaryPatterns={IDEATION:/^(?:brainstorm|suggest ideas|提出创意)/i,DESIGN:/^(?:design|设计)/i,RULE_FORMALIZATION:/^(?:formalize|formalise|define rules|形式化)/i,CONTENT_GENERATION:/^(?:generate|create .*levels|生成)/i,BALANCE:/^(?:tune|balance|调优|平衡)/i,DIFFICULTY:/^(?:estimate .*difficulty|measure .*difficulty|评估难度)/i,PLAYTEST:/^(?:playtest|simulate|试玩|模拟)/i,QA:/^(?:audit|test for|run qa|verify regressions|审计|测试)/i,ENGINE_IMPLEMENTATION:/^(?:implement|port|integrate|落地|移植|接入引擎|集成引擎)/i,EXISTING_GAME_ANALYSIS:/^(?:analyze|analyse|diagnose|分析|诊断)/i};
+ const secondaryTypes=ideasOnly(text)?[]:[...new Set(text.split(/\b(?:and then|and|then)\b|[;；,，]|然后|并且|并|再/i).slice(1).flatMap(clause=>Object.entries(secondaryPatterns).filter(([,re])=>re.test(clause.trim())).map(([type])=>type)))].filter(t=>t!==classification.primary);
+ if(playable(text)&&classification.primary!=='ENGINE_IMPLEMENTATION'&&!secondaryTypes.includes('ENGINE_IMPLEMENTATION'))secondaryTypes.push('ENGINE_IMPLEMENTATION');
  let roles=[...definition.roles], tools=[...definition.tools], contract=definition.contract;
  const contracts=[contract];
  for(const type of secondaryTypes){const d=routeDefinitions[type];roles.push(...d.roles);tools.push(...d.tools);contracts.push(d.contract);}
- if(secondaryTypes.length){const order=['registry_search','capability_mapping','experimental_package','extension_gate','validate_spec','generate_content','validate_content','solve','simulate','campaign','difficulty','tune_balance','qa','adapter_verify','regression'];tools.sort((a,b)=>order.indexOf(a)-order.indexOf(b));contract='COMPOSITE';}
+ if(playable(text))tools.splice(tools.indexOf('adapter_verify'),0,'build_project');
+ if(secondaryTypes.length){const order=['registry_search','capability_mapping','experimental_package','extension_gate','validate_spec','generate_content','validate_content','solve','simulate','campaign','difficulty','tune_balance','qa','build_project','adapter_verify','regression'];tools.sort((a,b)=>order.indexOf(a)-order.indexOf(b));contract='COMPOSITE';}
  const advisory=classification.primary==='IDEATION'&&!secondaryTypes.length;
  const narrative=/narrative|story|dialogue|剧情|叙事/i.test(text);
  if(narrative) roles.splice(roles.includes('Game Director')?1:0,0,'Narrative Designer');
@@ -133,6 +139,12 @@ export function validateOutputContract(route, output, execution={receipts:[]}) {
  if(route.status!=='ROUTED'&&output?.status==='COMPLETED')issues.push({code:'UNRESOLVED_TASK'});
  if(output?.solver_status==='TIMEOUT'&&output?.solvability==='UNSOLVABLE')issues.push({code:'TIMEOUT_IS_NOT_UNSOLVABLE'});
  if(output?.human_conclusion&&output?.evidence_source==='bot')issues.push({code:'BOT_IS_NOT_HUMAN'});
+ const latest=['adapter_verify','build_project','qa','tune_balance','validate_content','simulate','validate_spec'].map(key=>execution.outputs?.[key]).find(r=>r?.effective_specs?.length);
+ if(output?.status==='COMPLETED'&&latest){
+  const expected=latest.effective_specs,actual=output.effective_specs??(output.effective_spec?[{spec_hash:hash(output.effective_spec)}]:[]);
+  if(!expected.length||actual.length!==expected.length||expected.some(e=>!actual.some(a=>a.spec_hash===e.spec_hash)))issues.push({code:'FINAL_SPEC_BINDING_MISMATCH'});
+  if(output.game_spec&&(expected.length!==1||hash(output.game_spec)!==expected[0].spec_hash))issues.push({code:'FINAL_SPEC_BINDING_MISMATCH'});
+ }
  if(Object.hasOwn(output??{},'fun_score'))issues.push({code:'SINGLE_FUN_SCORE_FORBIDDEN'});
  if(output?.statistical_conclusion && (output.seed_set?.length??0)<2)issues.push({code:'INSUFFICIENT_SEEDS'});
  if(route.human_review_required && output?.human_verified===true && !output?.human_evidence?.length)issues.push({code:'MISSING_HUMAN_EVIDENCE'});

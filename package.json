@@ -16,7 +16,8 @@
     "validate": "node tools/game-design.mjs validate-all",
     "benchmark": "node tools/game-design.mjs benchmark",
     "qa": "node tools/game-design.mjs qa",
-    "serve": "node tools/serve.mjs"
+    "serve": "node tools/serve.mjs",
+    "acceptance": "node tools/acceptance.mjs"
   },
   "devDependencies": {
     "quickjs-emscripten": "0.32.0"

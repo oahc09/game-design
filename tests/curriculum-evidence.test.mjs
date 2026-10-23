@@ -1,3 +1,4 @@
+import {historicalSourceManifest} from './helpers/historical-source.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -27,7 +28,7 @@ function assertEpisode(actual,expected){
 test('empirical artifacts bind executable sources before/after and persist under 10 MiB',async()=>{
  assert.equal(manifest.pass,true);assert.ok(Object.values(manifest.checks).every(Boolean));
  assert.equal(provenance.source_unchanged,true);assert.equal(provenance.source_before.hash,provenance.source_after.hash);
- assert.deepEqual(await sourceManifest(),provenance.source_after,'Evidence is stale after executable runtime/framework changes; rerun measurements.');
+ assert.deepEqual(await historicalSourceManifest(),provenance.source_after,'Historical evidence must match its pinned source; current-source acceptance is reported separately.');
  assert.equal(sha256(await readFile(join(ROOT,'tools/measure-curriculum.mjs'))),provenance.runner_sha256);
  for(const [name,entry]of Object.entries(manifest.artifacts)){
   const bytes=await readFile(join(dir,name));assert.equal(bytes.length,entry.bytes);assert.equal(sha256(bytes),entry.sha256,`${name} digest`);

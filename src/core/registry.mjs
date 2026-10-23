@@ -1,4 +1,4 @@
-import {validateSchema} from './schema.mjs';
+import {validateSchema,validateSchemaDefinition} from './schema.mjs';
 export class RegistryError extends Error{constructor(code,message){super(message);this.code=code;}}
 export class CapabilityRegistry{
  constructor(){this.items=new Map();}
@@ -8,7 +8,7 @@ export class CapabilityRegistry{
 }
 export class ExtensionRegistry{
  constructor(){this.items=new Map();}
- register(id,schema){if(this.items.has(id))throw new RegistryError('DUPLICATE_EXTENSION',id);if(schema.additionalProperties!==false)throw new RegistryError('SCHEMA_INVALID','Extension root must be closed');this.items.set(id,schema);return this;}
+ register(id,schema){if(this.items.has(id))throw new RegistryError('DUPLICATE_EXTENSION',id);if(validateSchemaDefinition(schema).length||schema.additionalProperties!==false)throw new RegistryError('SCHEMA_INVALID','Extension schema must be supported and its root closed');this.items.set(id,schema);return this;}
  validate(extensions,path='extensions'){let errors=[];for(const [id,value]of Object.entries(extensions??{})){if(!this.items.has(id))errors.push({code:'EXTENSION_NOT_FOUND',path:`${path}.${id}`,message:'Unregistered extension'});else errors.push(...validateSchema(value,this.items.get(id),`${path}.${id}`));}return errors;}
 }
 export class ArchetypeRegistry{

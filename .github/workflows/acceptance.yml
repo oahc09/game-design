@@ -1,0 +1,53 @@
+name: Engineering acceptance
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  core:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [20, 24]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm run acceptance
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: acceptance-${{ matrix.os }}-node${{ matrix.node }}
+          path: acceptance/
+          if-no-files-found: error
+  browser:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Install isolated browser tools
+        shell: bash
+        run: |
+          npm install --prefix "$RUNNER_TEMP/gd-browser" --no-package-lock --ignore-scripts --no-audit --no-fund playwright@1.62.1
+          node "$RUNNER_TEMP/gd-browser/node_modules/playwright/cli.js" install --with-deps chromium
+          echo "NODE_PATH=$RUNNER_TEMP/gd-browser/node_modules" >> "$GITHUB_ENV"
+      - run: npm run acceptance -- --browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: acceptance-browser-${{ matrix.os }}
+          path: acceptance/
+          if-no-files-found: error

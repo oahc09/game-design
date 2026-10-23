@@ -3,6 +3,7 @@
 /dist/
 /output/
 /results/
+/acceptance/
 /reports/
 /.local-archive/
 *.log

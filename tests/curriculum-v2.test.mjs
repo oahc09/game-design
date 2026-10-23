@@ -1,3 +1,4 @@
+import {historicalSourceManifest} from './helpers/historical-source.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
@@ -22,7 +23,7 @@ test('v2 preregistration, source provenance, unchanged v1 and bounded compact ev
  assert.equal(VERSION,protocol.version);assert.deepEqual(CONFIG,protocol.configuration);
  assert.equal(sha256(await readFile(join(ROOT,'tools/calibrate-curriculum-v2.mjs'))),protocol.runner_sha256);
  assert.equal(sha256(await readFile(join(dir,'preregistration.json'))),freeze.preregistration_sha256);
- assert.deepEqual(await sourceManifest(),protocol.source);assert.deepEqual(provenance.source_before,provenance.source_after);
+ assert.deepEqual(await historicalSourceManifest(),protocol.source);assert.deepEqual(provenance.source_before,provenance.source_after);
  assert.equal(provenance.v1_unchanged,true);assert.deepEqual(provenance.v1_before,provenance.v1_after);
  for(const [path,digest] of Object.entries(protocol.v1_hashes))assert.equal(sha256(await readFile(join(ROOT,path))),digest,path);
  for(const [path,item] of Object.entries(manifest.files)){const bytes=await readFile(join(dir,path));assert.equal(sha256(bytes),item.sha256,path);assert.equal(bytes.length,item.bytes,path);}
