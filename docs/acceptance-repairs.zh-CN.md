@@ -34,6 +34,7 @@ projectBuilder 是真实构建接入接口，未接入时 UNVERIFIED；不会把
 Schema/注册源码改变后，原课程证据不能继续声称绑定当前源码。保留全部原课程数据、摘要、阈值和来源冻结；fixtures/historical-source/9fde0aa.json.gz 保存基线 24 份运行源文件及原课程 v2 测试字节，用于按原摘要验证历史完整性。原课程样本的重新执行与回放检查继续使用当前 Runtime。历史源码新鲜度明确为 STALE_SOURCE_DO_NOT_PROMOTE，未通过重新写冻结或替换历史数据获得当前认证。
 
 新验收使用 npm run acceptance：必须在干净 Git checkout，输出 acceptance/<commit>/<platform>-node<major>/manifest.json。记录当前提交、逐文件 SHA256、环境、套件计数、命令/退出码、日志/截图/分发包索引与摘要，检查前后源码不变；空套件、失败、跳过或缺少产物均不能通过。历史套件的源绑定断言改为核对其固定归档，当前源码绑定由此新报告承担，两者不混为一个冻结资格。
+验收同时检查命令退出码与 JSON 报告：规则/fixture 必须为 CERTIFIED，规格/Golden 必须为 PASS，非空且全部通过；命令零退出不能掩盖报告中的失败。
 
 CI 首次 Windows 作业出现系统临时路径别名被严格边界比较拒绝的问题；验收脚本只解析可信系统临时目录的 realpath，再创建本轮独占的临时根，记录原路径与解析路径。被测工作区参数不自动解析，越界链接拒绝断言继续执行。后续适配差分复用调优后 QA 的真实动作回放，不能只检查初始状态。
 

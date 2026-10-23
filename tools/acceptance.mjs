@@ -30,7 +30,9 @@ try{
  if(!count('tests')||count('pass')!==count('tests')||count('skipped')||count('cancelled'))checks.at(-1).status='FAIL';
  for(const [name,args]of [['specs',['validate-all']],['rules',['benchmark']],['fixtures',['benchmark','fixtures']],['golden',['golden-verify']]]){
   const file=path.join(out,name+'.json');await run(name,['tools/game-design.mjs',...args,'--out',file]);
-  const r=JSON.parse(await fs.readFile(file,'utf8'));if((r.summary?.total??r.results?.length??0)<1)checks.at(-1).status='FAIL';
+  const r=JSON.parse(await fs.readFile(file,'utf8')),summary=r.summary??{status:r.status,total:r.results?.length??0,passed:r.results?.filter(x=>x.status==='PASS').length??0};
+  checks.at(-1).report_summary=summary;
+  if(summary.total<1||summary.passed!==summary.total||(summary.failed??0)>0||!['PASS','CERTIFIED'].includes(summary.status))checks.at(-1).status='FAIL';
  }
  const directory=path.join(root,'dist','acceptance-'+job);
  await run('bundle',['tools/package-skill.mjs',directory]);
