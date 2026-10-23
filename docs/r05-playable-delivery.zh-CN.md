@@ -36,6 +36,7 @@ tools/acceptance-playable.mjs 按六类各三次独立工程请求执行：构�
 打飞机三关均有真实输入胜利回放；其余玩法首关有完整胜利，其他关有加载和实际操作检查；每类均有失败、重开、暂停、失焦和移动布局检查。未据此证明所有后续关卡的人类难度或完整通关率。内容追加的推箱子新关只检查声明的加载与前三步，不将资源受限的完整求解误当无解。
 
 R05 工程状态与数值目标分开：报告状态 PASS_ENGINEERING_ONLY 仅表示交付链路通过。数值样本的预设 competent_completion_rate 目标带仍为 0.5–0.9；六次参数修改的初轮样本均为 1.0，OUT_OF_CONTROL_RANGE 保留，不改带宽、不冻结新推荐、不称为校准通过。样本少，不能用该结果推出总体难度或娱乐性。
+单次数值交付 API 同样返回 PASS_ENGINEERING_ONLY，output.status 保持 UNVERIFIED，CLI 非零退出；不能只看已有构建文件就把未达标推荐当完整成功。CI 的 PASS 表示工程验收通过，r05-index 中另列 numerical_gate，原难度门槛未被放宽。
 
 ## 真实发现与修复记录
 
