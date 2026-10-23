@@ -67,7 +67,7 @@ export function classifyTask(task) {
  const text=taskText(task);
  if (task?.task_type && !TASK_TYPES.includes(task.task_type)) throw new TypeError(`Unknown task_type: ${task.task_type}`);
  const matched=TASK_TYPES.filter(t=>patterns[t].test(text)).sort((a,b)=>text.search(patterns[a])-text.search(patterns[b]));
- const primary=task?.task_type ?? (ideasOnly(text)?'IDEATION':playable(text)?'ENGINE_IMPLEMENTATION':matched[0]) ?? 'DESIGN';
+ const primary=task?.task_type ?? (ideasOnly(text)?'IDEATION':playable(text)&&(!matched[0]||['DESIGN','CONTENT_GENERATION','ENGINE_IMPLEMENTATION'].includes(matched[0]))?'ENGINE_IMPLEMENTATION':matched[0]) ?? 'DESIGN';
  return {primary, task_types:[primary,...matched.filter(t=>t!==primary)], confidence:task?.task_type?'explicit':matched.length===1?'heuristic':'needs_review',
   reasons:matched.map(t=>({task_type:t,source:'intent_pattern'})), needs_clarification:!text.trim() || (ideasOnly(text)&&primary!=='IDEATION') || (noBuild(text)&&primary==='ENGINE_IMPLEMENTATION') || (!task?.task_type && matched.length===0&&!playable(text)&&!ideasOnly(text))};
 }

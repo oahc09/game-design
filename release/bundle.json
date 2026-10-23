@@ -4,12 +4,12 @@
   "include": [
     "LICENSE", "SKILL.md", "agents/openai.yaml", "skill/references",
     "src/core", "src/archetypes", "src/framework", "src/adapters/web.mjs", "src/qa",
-    "src/skill/index.mjs", "src/skill/toolkit.mjs",
+    "src/skill",
     "src/benchmark/runner.mjs", "src/benchmark/provenance.mjs",
     "schemas", "examples", "fixtures",
     "vendor/cocosair",
     "web/index.html", "web/app.mjs", "web/style.css", "web/candidate.html",
-    "web/candidate-adapter.mjs", "web/candidate-build.json", "web/candidates",
+    "web/candidate-adapter.mjs", "web/candidate-build.json", "web/candidates", "web/player",
     "tools/game-design.mjs", "tools/serve.mjs", "tools/verify-install.mjs",
     "package.json", "package-lock.json"
   ],

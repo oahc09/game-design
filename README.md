@@ -1,5 +1,7 @@
 # Game Design Skill v0.2
 
+R05 已接入真实独立项目构建器：`node tools/game-design.mjs playable "使用 Game Design Skill 生成一个打飞机小游戏" --directory output/games --out output/build-result.json`。进入返回的游戏目录执行 `npm start`；六类支持、浏览器验证、内容扩展和数值修改见 [R05 可玩交付](docs/r05-playable-delivery.zh-CN.md)。工程交付与难度目标达标分别记录，正式 M7 仍 BLOCKED。
+
 仓库整理说明见 [repository-maintenance](docs/repository-maintenance.zh-CN.md)。源码采用 [MIT](LICENSE)，工程版本仍为 0.2.0。仓库只保留复现必需的精简证据，历史模型日志和运行工作区留在开发机；正式 trials 为 0，外部评审 UNVERIFIED。
 
 

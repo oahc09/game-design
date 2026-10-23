@@ -21,6 +21,16 @@ npm run serve
 
 ## 常用命令与产物
 
+### 独立可玩项目
+
+```powershell
+node tools/game-design.mjs playable "使用 Game Design Skill 生成一个打飞机小游戏" --directory output/games --out output/build-result.json
+```
+
+结果中的 build_artifact.directory 是完整游戏目录，进入该目录运行 npm start。默认六类玩法均提供三份内容，含开始、操作、胜负、重开和移动端布局。无需原开发仓库或 npm install。没有浏览器检查时总体仍为 UNVERIFIED、命令非零退出；不能用已写出的文件冒充验收通过。
+
+需要自动验收时加 --verify-browser --evidence output/browser-evidence，通过 NODE_PATH 提供独立 Playwright 1.62.1，可用 GD_BROWSER_EXECUTABLE 指定 Chrome。缺少浏览器依赖时保留失败，不修改核心依赖或降低门槛。生成内容/数值重构入口分别为 --extend-from 与 --source-project/--balance；构建成功不代表难度目标带达标。
+
 | 命令 | 用途 | 产物/写入 |
 | --- | --- | --- |
 | `node tools/game-design.mjs help` | 查看CLI入口 | stdout，测试包不含正式ab-*执行材料 |
