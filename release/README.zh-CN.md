@@ -1,5 +1,7 @@
 # Game Design 0.2.0 内部评估测试包
 
+这里的 0.2.0 是 **Package version**，也是 release-manifest.json 中 version 的含义。Skill 路由／输出契约协议单独使用 SKILL_VERSION=0.1.0，写入 routeTask(...).skill_version；它不是分发包版本。[工程基线](https://github.com/oahc09/game-design/commit/5cd27c52a3a5626e9d9861da8b45896552e4ec1d)固定为 5cd27c52a3a5626e9d9861da8b45896552e4ec1d。两者在新研究 provenance 中分别记录，不在本轮改号或替代正式研究资格。
+
 这是完整文件夹形式的实验性Skill与可执行工具包。可用于六类玩法的设计、规则验证、内容生成、有界调优、模拟、QA、回放与CocosAirJS开发演示。它未完成正式A/B、结构化真人或生产认证。当前源码沿用仓库 MIT 许可证，见[DISTRIBUTION-NOTICE.md](DISTRIBUTION-NOTICE.md)。
 
 ## 安装与验证

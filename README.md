@@ -1,4 +1,8 @@
-# Game Design Skill v0.2
+# Game Design Skill（Package 0.2.0）
+
+**Engineering Baseline = `5cd27c52a3a5626e9d9861da8b45896552e4ec1d`**。六个干净环境 CI 作业通过；基线来源、Git 对象和已知限制见 [工程基线 manifest](release/engineering-baseline.json)。当前工作重点切换到 [M7 正式资格与效果验证](docs/M7-engineering-baseline.zh-CN.md)，停止扩展玩法和开发期调优。基线工程通过不代表 Skill 相对普通 AI + Engine 已有增益。
+
+版本是两个独立概念：`package.json.version`／分发 manifest 的 `version` 为 **Package version 0.2.0**；`src/skill/index.mjs` 的 `SKILL_VERSION` 为 **Skill 路由／输出契约协议版本 0.1.0**，输出字段为 `routeTask(...).skill_version`。后者不是整个分发包的版本。M7 provenance 分别记录 `versions.package=0.2.0` 和 `versions.skill=0.1.0`，并绑定实际源码摘要，不以版本号替代文件身份。本轮不改变两个版本值。
 
 R05 已接入真实独立项目构建器：`node tools/game-design.mjs playable "使用 Game Design Skill 生成一个打飞机小游戏" --directory output/games --out output/build-result.json`。进入返回的游戏目录执行 `npm start`；六类支持、浏览器验证、内容扩展和数值修改见 [R05 可玩交付](docs/r05-playable-delivery.zh-CN.md)。工程交付与难度目标达标分别记录，正式 M7 仍 BLOCKED。
 

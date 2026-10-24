@@ -1,0 +1,183 @@
+{
+  "kind": "ENGINEERING_BASELINE",
+  "recorded_at": "2026-10-24T15:31:10.301Z",
+  "engineering_baseline_commit": "5cd27c52a3a5626e9d9861da8b45896552e4ec1d",
+  "engineering_baseline_tree": "5461676697e1467f4973d698b7c284a268506b36",
+  "purpose": "Immutable accepted engineering reference for M7 qualification; not a qualified research snapshot or effectiveness result.",
+  "versions": {
+    "package_version": "0.2.0",
+    "skill_protocol_version": "0.1.0",
+    "skill_protocol_field": "routeTask(...).skill_version",
+    "independent_version_domains": true,
+    "dataset_preparation_version": "0.2.0"
+  },
+  "acceptance": {
+    "status": "PASS",
+    "workflow_run_id": 40103501547,
+    "workflow_url": "https://github.com/oahc09/game-design/actions/runs/40103501547",
+    "source_manifest_sha256": "fc5ac136288c3de4626fd92e85ffe8dd5c647d17bb4ffcaa5f031f041613fb1f",
+    "core_matrix": {
+      "platforms": [
+        "windows",
+        "linux"
+      ],
+      "node_major": [
+        20,
+        24
+      ]
+    },
+    "browser_matrix": {
+      "platforms": [
+        "windows",
+        "linux"
+      ],
+      "node_major": [
+        24
+      ]
+    },
+    "jobs_success": 6,
+    "tests_per_suite": 771,
+    "failed_tests": 0,
+    "skipped_tests": 0
+  },
+  "protected_components": {
+    "Schema": [
+      "schemas",
+      "src/core/schema.mjs",
+      "src/core/validate.mjs"
+    ],
+    "Router": [
+      "src/skill"
+    ],
+    "Runtime": [
+      "src/core",
+      "src/archetypes"
+    ],
+    "Generator": [
+      "src/framework"
+    ],
+    "Evaluator": [
+      "src/benchmark",
+      "src/qa",
+      "benchmark-dataset/v0.2/evaluator",
+      "benchmark-dataset/v0.2/rubric.json",
+      "benchmark-dataset/v0.2/schemas"
+    ],
+    "EngineAdapter": [
+      "src/adapters",
+      "web",
+      "vendor"
+    ]
+  },
+  "additional_frozen_inputs": [
+    "tools",
+    "SKILL.md",
+    "skill",
+    "agents",
+    "package.json",
+    "package-lock.json",
+    "benchmark-dataset/v0.2",
+    "benchmark-dataset/engine-starter"
+  ],
+  "git_objects": {
+    "SKILL.md": {
+      "git_object": "90dfeefe16ea11cd5f90c59c8a575cf0f2121e90"
+    },
+    "agents": {
+      "git_object": "1e7f11f42487c7cb2d74813e198308fa894780c3"
+    },
+    "benchmark-dataset/engine-starter": {
+      "git_object": "48fec8253ed7aa48ad0168ea66a8dd69ec8f7ca5"
+    },
+    "benchmark-dataset/v0.2": {
+      "git_object": "cdfc657f4b850eed94e8a3687f2ab21b6dcd6ee9"
+    },
+    "benchmark-dataset/v0.2/evaluator": {
+      "git_object": "8853095f9afb92759373013d054ff943a1a4afe2"
+    },
+    "benchmark-dataset/v0.2/rubric.json": {
+      "git_object": "6ce3b08fec01cf48c394f0b6d7fcce69624824be"
+    },
+    "benchmark-dataset/v0.2/schemas": {
+      "git_object": "32b53a24f122ff5501ebeee6a9d0062b6cb78ed5"
+    },
+    "package-lock.json": {
+      "git_object": "5f6c6fa8237af43920fa63deabb6dbc3a1495687"
+    },
+    "package.json": {
+      "git_object": "b285217f35c209371ed6637093266bfb89dfba4a"
+    },
+    "schemas": {
+      "git_object": "70fdcd26408d070ef1cda63f8a3cda76c32da4d1"
+    },
+    "skill": {
+      "git_object": "53d04c6a6805f89aff46346960edd3070b265d78"
+    },
+    "src/adapters": {
+      "git_object": "bc6c1ec74203de0e866b3e3540cf6ac56d9c9ce8"
+    },
+    "src/archetypes": {
+      "git_object": "3f7233b9f727c7b207a0814fd453623f8b87d85d"
+    },
+    "src/benchmark": {
+      "git_object": "b3a7337a1cd9d53af32cf83a8d00615d2a8f0cd9"
+    },
+    "src/core": {
+      "git_object": "43e2426d471851f5bc84a69cefdcfacf4397ecaa"
+    },
+    "src/core/schema.mjs": {
+      "git_object": "764825415f8e259086a52a3b0eadd6826eb28acd"
+    },
+    "src/core/validate.mjs": {
+      "git_object": "32ac6022b2fc72f069103aabfb21999c7e7b5252"
+    },
+    "src/framework": {
+      "git_object": "fd2383ce690047e99d32a214c0fac66d7b49dc21"
+    },
+    "src/qa": {
+      "git_object": "4f964855808c4f39f4efa17a06e6d8c2fa425e75"
+    },
+    "src/skill": {
+      "git_object": "8a9c5d47203412928326567847164c018c8678fa"
+    },
+    "tools": {
+      "git_object": "094f32642970fe0eede6005ff71837a4370765c4"
+    },
+    "vendor": {
+      "git_object": "a4fdebffc6a10be0f2f6d235674e0a6653407253"
+    },
+    "web": {
+      "git_object": "5a7bcda911e84392572fc60ae571c33f72626864"
+    }
+  },
+  "change_policy": {
+    "during_m7": "Do not modify benchmark inputs or protected implementations during a registered study.",
+    "implementation_or_input_change": "Register a new Benchmark version and new research snapshot; retain old snapshots, failed attempts and invalidation reasons.",
+    "metadata_only": "This record and descriptive documentation do not redefine the pinned engineering commit."
+  },
+  "next_phase": "M7_PREFLIGHT",
+  "research_snapshot": "NOT_CREATED",
+  "formal_execution": "BLOCKED",
+  "formal_trials": 0,
+  "external_review": "UNVERIFIED",
+  "excluded_from_formal_trials": [
+    "R05 deterministic engineering workflows",
+    "R05 model-assisted workflows and their plan/report turns",
+    "CI tests and browser automation",
+    "unstructured user play feedback"
+  ],
+  "known_limitations": [
+    "R05 registered numerical search met sampled bands for 2/6 archetypes only.",
+    "2048 had a separate holdout failure; sample success is not stable calibration.",
+    "Later content units except shooter have limited input coverage, not complete campaign validation.",
+    "No formal same-model A/B effectiveness evidence or structured human study."
+  ],
+  "operational_constraints": {
+    "requested_model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "exact_model_snapshot": "UNVERIFIED",
+    "windows_sandbox": false,
+    "expand_archetypes": false,
+    "continue_development_tuning": false
+  }
+}
