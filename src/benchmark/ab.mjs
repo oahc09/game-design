@@ -1,9 +1,9 @@
 import {createHash,randomBytes,verify as verifySignature} from 'node:crypto';
 import {readFile,writeFile,appendFile,mkdir,readdir,stat,copyFile,access,lstat,realpath,open} from 'node:fs/promises';
 import {resolve,join,relative,dirname,isAbsolute} from 'node:path';
-import {inspectWorkspaceBoundary,buildOfflineSandboxPlan,runBoundedProcess,createUsageLedger,HARD_LIMIT_FIELDS} from './executor-preflight.mjs';
+import {inspectWorkspaceBoundary,buildOfflineSandboxPlan,runBoundedProcess,createUsageLedger,HARD_LIMIT_FIELDS,safeRelativePath} from './executor-preflight.mjs';
 
-export const BENCHMARK_VERSION='0.1.0';
+export const BENCHMARK_VERSION='0.3.0';
 export const FAILURE_CATEGORIES=['SKILL_ROUTING_FAILURE','KNOWLEDGE_FAILURE','SCHEMA_FAILURE','TOOL_FAILURE','RUNTIME_FAILURE','GENERATOR_FAILURE','SOLVER_FAILURE','METRIC_FAILURE','ENGINE_ADAPTER_FAILURE','LLM_REASONING_FAILURE'];
 export const INFRA_CODES=['FIXTURE_CORRUPT','ENGINE_STARTUP_FAILURE','MATERIALS_MISSING','RUNNER_UNAVAILABLE'];
 export const EXPERIMENTS=['full_skill','instruction_ablation'];
@@ -40,7 +40,7 @@ export async function freezeBenchmark({root,datasetRoot='benchmark-dataset/v0.1'
  const tasks=JSON.parse(await readFile(join(root,datasetRoot,'public/tasks.json'),'utf8'));const validation=validateDataset(tasks);assert(validation.valid,validation.issues.join('; '));
  assert(EXPERIMENTS.includes(experiment),'Unknown experiment exposure profile');
  if(executionAudit)contained(root,executionAudit);
- const required=[...(executionAudit?[executionAudit]:[]),datasetRoot+'/public',datasetRoot+'/evaluator',datasetRoot+'/schemas',datasetRoot+'/rubric.json',datasetRoot+'/human-protocol.json','skill','src/skill',...enginePaths,...toolkitPaths];
+ const required=[...(executionAudit?[executionAudit]:[]),datasetRoot+'/public',datasetRoot+'/evaluator',datasetRoot+'/schemas',datasetRoot+'/rubric.json',datasetRoot+'/human-protocol.json','SKILL.md','skill','src/skill',...enginePaths,...toolkitPaths];
  const paths=[...new Set((await Promise.all([...required,...files].map(p=>filesUnder(root,p)))).flat())].sort();
  const hashes={};for(const path of paths)hashes[path]=sha256(await readFile(contained(root,path)));
  for(const k of Object.keys(DEFAULT_BUDGET))assert(Number.isInteger(budget[k])&&budget[k]>0,`Invalid budget ${k}`);
@@ -75,18 +75,19 @@ export function formalPrerequisites(manifest,executor,evaluator,auditReceipt){
  if(manifest.exposure_protocol?.experiment==='full_skill'&&(!evaluator?.attestation?.engine_native_outputs_supported||!evaluator?.attestation?.public_output_contract_only))missing.push('arm_neutral_output_evaluation');
  return {ready:!missing.length,missing:[...new Set(missing)]};
 }
-export const PUBLIC_TOOLKIT=['src/core','src/archetypes','src/framework','src/adapters','src/qa','src/benchmark/runner.mjs','src/benchmark/provenance.mjs','schemas','web','vendor','examples','tools','package.json','docs/IMPLEMENTATION-CONTRACT.md'];
+export const PUBLIC_REGRESSION_FIXTURES='fixtures/regression/golden';
+export const PUBLIC_TOOLKIT=['src/core','src/archetypes','src/framework','src/adapters','src/qa','src/benchmark/runner.mjs','src/benchmark/provenance.mjs','schemas','web','vendor','examples','tools','package.json','LICENSE','docs/IMPLEMENTATION-CONTRACT.md',PUBLIC_REGRESSION_FIXTURES];
 /** Allowlist export prevents accidental loading of developer tests, hidden assets, or other arm outputs. */
 export async function prepareWorkspace({root,workspace,task,variant,experiment='full_skill',enginePaths=PUBLIC_ENGINE,toolkitPaths=PUBLIC_TOOLKIT}){
  assert(['baseline','treatment'].includes(variant),'Unknown variant');assert(EXPERIMENTS.includes(experiment),'Unknown experiment exposure profile');
  let ancestor=resolve(workspace);while(true){try{await lstat(ancestor);break;}catch(error){if(error.code!=='ENOENT')throw error;ancestor=dirname(ancestor);}}assert(await realpath(ancestor)===ancestor,'Workspace symlink ancestor forbidden');
  await mkdir(workspace,{recursive:true,mode:0o700});const initial=await inspectWorkspaceBoundary(workspace,{expectedFiles:[]});assert(initial.valid&&(await readdir(workspace)).length===0,'Workspace must be new or empty with no links or extra files');
  const copied=[],sharedEngineHashes={};
- for(const p of enginePaths){assert((p==='benchmark-dataset/engine-starter'||!p.startsWith('benchmark-dataset/'))&&!/(^|\/)(src|skill|references|fixtures|tests|schemas|web|tools|examples|evaluator)(\/|$)/.test(p),`Engine exposure contains toolkit material: ${p}`);for(const path of await filesUnder(root,p)){const dest=contained(workspace,path);await mkdir(dirname(dest),{recursive:true});await copyFile(contained(root,path),dest);copied.push(path);sharedEngineHashes[path]=sha256(await readFile(dest));}}
- for(const p of variant==='treatment'||experiment==='instruction_ablation'?toolkitPaths:[]){assert(['src/benchmark/runner.mjs','src/benchmark/provenance.mjs'].includes(p)||!/(^|\/)(skill|references|fixtures|tests|benchmark-dataset|benchmark)(\/|$)/.test(p),`Toolkit path contains protected material: ${p}`);
+ for(const p of enginePaths){safeRelativePath(p);assert((p==='benchmark-dataset/engine-starter'||!p.startsWith('benchmark-dataset/'))&&!/(^|\/)(src|skill|references|fixtures|tests|schemas|web|tools|examples|evaluator)(\/|$)/.test(p),`Engine exposure contains toolkit material: ${p}`);for(const path of await filesUnder(root,p)){const dest=contained(workspace,path);await mkdir(dirname(dest),{recursive:true});await copyFile(contained(root,path),dest);copied.push(path);sharedEngineHashes[path]=sha256(await readFile(dest));}}
+ for(const p of variant==='treatment'||experiment==='instruction_ablation'?toolkitPaths:[]){safeRelativePath(p);assert(['src/benchmark/runner.mjs','src/benchmark/provenance.mjs',PUBLIC_REGRESSION_FIXTURES].includes(p)||!/(^|\/)(skill|references|fixtures|tests|benchmark-dataset|benchmark)(\/|$)/.test(p),`Toolkit path contains protected material: ${p}`);
   for(const path of await filesUnder(root,p)){const dest=contained(workspace,path);await mkdir(dirname(dest),{recursive:true});await copyFile(contained(root,path),dest);copied.push(path);}
  }
- if(variant==='treatment')for(const path of [...await filesUnder(root,'skill'),...await filesUnder(root,'src/skill')]){const dest=contained(workspace,path);await mkdir(dirname(dest),{recursive:true});await copyFile(contained(root,path),dest);copied.push(path);}
+ if(variant==='treatment')for(const path of [...await filesUnder(root,'SKILL.md'),...await filesUnder(root,'skill'),...await filesUnder(root,'src/skill')]){const dest=contained(workspace,path);await mkdir(dirname(dest),{recursive:true});await copyFile(contained(root,path),dest);copied.push(path);}
  await writeFile(join(workspace,'task.json'),JSON.stringify(publicTask(task),null,2),{flag:'wx'});
  const expectedFiles=[...new Set(copied),'task.json'],inventory=await inspectWorkspaceBoundary(workspace,{expectedFiles});assert(inventory.valid,`Workspace inventory failed: ${JSON.stringify(inventory.issues)}`);
  return {workspace,experiment,inventory,expected_files:expectedFiles,files:[...new Set(copied)],shared_engine_digest:sha256(sharedEngineHashes),manifest_digest:sha256([...new Set(copied)].sort())};

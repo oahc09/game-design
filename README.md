@@ -4,6 +4,8 @@
 
 版本是两个独立概念：`package.json.version`／分发 manifest 的 `version` 为 **Package version 0.2.0**；`src/skill/index.mjs` 的 `SKILL_VERSION` 为 **Skill 路由／输出契约协议版本 0.1.0**，输出字段为 `routeTask(...).skill_version`。后者不是整个分发包的版本。M7 provenance 分别记录 `versions.package=0.2.0` 和 `versions.skill=0.1.0`，并绑定实际源码摘要，不以版本号替代文件身份。本轮不改变两个版本值。
 
+M7 材料阻塞的修复另登记为 [Benchmark 0.3.0](benchmark-dataset/v0.3/registration.json)，不替换 5cd27c5 工程基线或 v0.1/v0.2 历史冻结。复用原 108 项 v0.2 数据，新增独立的数据锁；材料与真实交付验证见 [修复记录](docs/M7-preflight-v03-repair.zh-CN.md)。正式执行仍 BLOCKED，R05、CI 和 Preflight 不计正式 trials。
+
 R05 已接入真实独立项目构建器：`node tools/game-design.mjs playable "使用 Game Design Skill 生成一个打飞机小游戏" --directory output/games --out output/build-result.json`。进入返回的游戏目录执行 `npm start`；六类支持、浏览器验证、内容扩展和数值修改见 [R05 可玩交付](docs/r05-playable-delivery.zh-CN.md)。工程交付与难度目标达标分别记录，正式 M7 仍 BLOCKED。
 
 仓库整理说明见 [repository-maintenance](docs/repository-maintenance.zh-CN.md)。源码采用 [MIT](LICENSE)，工程版本仍为 0.2.0。仓库只保留复现必需的精简证据，历史模型日志和运行工作区留在开发机；正式 trials 为 0，外部评审 UNVERIFIED。

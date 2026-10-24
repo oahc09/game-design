@@ -1,0 +1,29 @@
+{
+  "benchmark_version": "0.3.0",
+  "study_kind": "PREFLIGHT_MATERIAL_REPAIR",
+  "status": "PREPARATION_BLOCKED_EXTERNAL_QUALIFICATION",
+  "engineering_baseline": "5cd27c52a3a5626e9d9861da8b45896552e4ec1d",
+  "dataset_root": "benchmark-dataset/v0.2",
+  "dataset_content_changed": false,
+  "package_version": "0.2.0",
+  "skill_protocol_version": "0.1.0",
+  "changes": [
+    "Treatment explicitly receives the current root SKILL.md in addition to the historical compatibility tree.",
+    "The toolkit receives only the existing public fixtures/regression/golden replay directory; other fixture and evaluator paths remain prohibited.",
+    "The toolkit receives the root MIT LICENSE required by the unchanged standalone project builder.",
+    "Engine/toolkit resource paths must be canonical relative paths so Windows separators cannot bypass material allowlists.",
+    "A fresh dataset-only lock records unchanged v0.2 task/evaluation inputs under this new Benchmark version."
+  ],
+  "public_regression_material": {
+    "path": "fixtures/regression/golden",
+    "purpose": "Existing public known-archetype runtime regression replays, not formal task answers or hidden evaluator assets.",
+    "full_skill_baseline_receives": false,
+    "full_skill_treatment_receives": true,
+    "instruction_ablation": "Shared as toolkit material; still a separately registered secondary experiment."
+  },
+  "research_snapshot": "NOT_CREATED",
+  "formal_execution": "BLOCKED",
+  "formal_trials": 0,
+  "external_review": "UNVERIFIED",
+  "policy": "Retain the original engineering baseline and v0.1/v0.2 freezes. New implementation needs fresh engineering evidence and actual external qualification before a new research snapshot; development checks never count as formal trials."
+}

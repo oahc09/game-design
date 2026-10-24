@@ -249,7 +249,7 @@ test('independent: primary full-skill baseline excludes all gameplay toolkit but
 
 test('independent: frozen exposure protocol cannot switch from full skill to shared-toolkit ablation',async()=>{
  const dir=await mkdtemp(join(tmpdir(),'gd-exposure-freeze-'));
- for(const path of ['benchmark-dataset/v0.1','skill','src/skill'])await cp(join(root,path),join(dir,path),{recursive:true,filter:p=>!p.endsWith('freeze.json')});
+ for(const path of ['benchmark-dataset/v0.1','SKILL.md','skill','src/skill'])await cp(join(root,path),join(dir,path),{recursive:true,filter:p=>!p.endsWith('freeze.json')});
  await mkdir(join(dir,'neutral-engine'),{recursive:true});await writeFile(join(dir,'neutral-engine/engine.mjs'),'export const version=1;');
  await mkdir(join(dir,'toolkit'),{recursive:true});await writeFile(join(dir,'toolkit/runtime.mjs'),'export const toolkit=1;');
  const manifest=await freezeBenchmark({root:dir,enginePaths:['neutral-engine'],toolkitPaths:['toolkit'],experiment:'full_skill',versions:{skill:'0.1.0'}});

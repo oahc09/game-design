@@ -59,6 +59,8 @@ M7 Preflight
 
 2026-10-24 已从固定基线执行一对静态材料导出检查，发现当前 Skill 根入口与可玩入口必读依赖未进入标准 Treatment 导出；另有 v0.2 dataset-lock 文档引用待核对。见 [本轮 Preflight 记录](M7-preflight-20261024.zh-CN.md)。工程基线不变，新增资格阻塞保留，未修改导出器或直接放行 fixtures。
 
+2026-10-25 用户授权解决这些阻塞后，派生实现另登记为 Benchmark 0.3.0：明确导出当前入口、窄范围公开 Golden 回放及根许可证，并为原 v0.2 数据生成新的独立数据锁。原基线及上述历史检查保持不变，具体范围与新验收见 [v0.3 修复记录](M7-preflight-v03-repair.zh-CN.md)。这不改变历史失败，也不自动获得正式外部资格。
+
 ## 正式执行与计数
 
 主实验使用 `full_skill`：Baseline 为同模型 + 同版 Engine + 中性材料；Treatment 才获得完整 Skill 工具包和指令。`instruction_ablation` 是另行登记的次要比较，不替代主实验。两组不接触隐藏评价器、答案或对方产物；独立 evaluator 按同一公开任务契约判定，不要求 Baseline 使用 Skill 内部格式。
