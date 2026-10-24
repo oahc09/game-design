@@ -36,7 +36,21 @@ tools/acceptance-playable.mjs 按六类各三次独立工程请求执行：构�
 打飞机三关均有真实输入胜利回放；其余玩法首关有完整胜利，其他关有加载和实际操作检查；每类均有失败、重开、暂停、失焦和移动布局检查。未据此证明所有后续关卡的人类难度或完整通关率。内容追加的推箱子新关只检查声明的加载与前三步，不将资源受限的完整求解误当无解。
 
 R05 工程状态与数值目标分开：报告状态 PASS_ENGINEERING_ONLY 仅表示交付链路通过。数值样本的预设 competent_completion_rate 目标带仍为 0.5–0.9；六次参数修改的初轮样本均为 1.0，OUT_OF_CONTROL_RANGE 保留，不改带宽、不冻结新推荐、不称为校准通过。样本少，不能用该结果推出总体难度或娱乐性。
-单次数值交付 API 同样返回 PASS_ENGINEERING_ONLY，output.status 保持 UNVERIFIED，CLI 非零退出；不能只看已有构建文件就把未达标推荐当完整成功。CI 的 PASS 表示工程验收通过，r05-index 中另列 numerical_gate，原难度门槛未被放宽。
+单次数值交付 API 同样返回 PASS_ENGINEERING_ONLY，output.status 保持 UNVERIFIED，CLI 非零退出；不能只看已有构建文件就把未达标推荐当完整成功。训练、留出必须同时在原目标带内，才返回 PASS_ON_FIT_AND_HOLDOUT_SAMPLES；留出失败返回 HOLDOUT_OUT_OF_CONTROL_RANGE。可通过 balance.heldoutSeeds 提供预先登记的新留出种子；拒绝空集、重复及训练／留出重叠。默认仍是 101/211，旧冻结文件不改写。CI 的 PASS 表示工程验收通过，r05-index 中另列 numerical_gate，原难度门槛未被放宽。
+
+## 独立模型辅助流程
+
+```powershell
+# 沿用已配置的本地 CLI 入口；CODEX_EXECUTABLE 是可执行文件路径。
+# 浏览器仍需上文 NODE_PATH / GD_BROWSER_EXECUTABLE。
+node tools/local-playable-workflows.mjs CODEX_EXECUTABLE output/r05-model-new-run
+```
+
+每次使用新输出目录，先登记六类 × 构建／追加内容／数值修改共 18 条独立请求，再执行。各请求有独立上下文中的方案和实测后报告两个模型调用，使用 gpt-6-luna / high；不是把一次批量回答拆成 18 个样本。模型只输出有界数据，由可信宿主执行固定工具；不能将其表述为模型自主编写了引擎代码。数值任务只搜索一个已登记参数的三个值，原目标带为 0.5–0.9，训练 17/42，另登记留出 701/809/907/1009。参数域来自公开开发诊断，任务不声称从未见过。
+
+输出包括 registration.json、每项 request/events/transport/submission、实测压缩报告、独立项目 tar.gz、浏览器截图和输入回放，以及 collector-ledger.jsonl、collection-manifest.json、待评审 packets。本地散列链只能检查文件完整性，不能代替生产信任根或独立签名。模型报告与实测字段绑定通过，也不等于语义独立评审；external_review 始终 UNVERIFIED。
+
+需要有序停止时，在该输出目录创建名为 STOP 的文件；已有请求完成采集后不再开始新请求，汇总保留 NOT_RUN。CLI 或 provider 失败保留原始记录，不用模型重试抹去失败；修复后使用新目录重新登记。模型调用次数、已完成 turn、任务状态、工程状态和数值状态分别记录，未满足数值门槛时整体命令非零退出。provider 硬预算、精确快照和远端取消未获认证，正式 trials 仍为 0。
 
 ## 真实发现与修复记录
 
@@ -54,4 +68,4 @@ R05 工程状态与数值目标分开：报告状态 PASS_ENGINEERING_ONLY 仅�
 
 npm run acceptance -- --browser 在干净提交上执行原完整测试、规格、规则、Golden、分发安装、原两页浏览器检查及 R05。Windows/Linux 的浏览器作业包含这些新流程；产物存于 acceptance/<commit>/<job>/r05。运行前后源码摘要必须一致，失败/空套件/跳过不得变绿。
 
-这些是 18 次确定性工程工作流，模型调用为 0，不是 18 个独立模型效果样本，更不是正式 108 项/216 trials。助手看截图不是结构化真人研究。正式 trials=0，外部评审 UNVERIFIED，正式 M7 BLOCKED。Spine 资产和 orientation 13 的既有引擎警告保留；本轮玩法未使用 Spine。
+原 CI 的 18 次确定性工程工作流，模型调用为 0；本页新增的模型辅助流程另以 coverage-report.json 记录实际调用和逐项结果，不能合并计数为模型效果样本，更不是正式 108 项/216 trials。助手看截图不是结构化真人研究。正式 trials=0，外部评审 UNVERIFIED，正式 M7 BLOCKED。Spine 资产和 orientation 13 的既有引擎警告保留；本轮玩法未使用 Spine。
