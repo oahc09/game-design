@@ -1,0 +1,14 @@
+{
+  "kind": "PUBLIC_OPERATOR_INPUTS_TEMPLATE",
+  "status": "NOT_CONFIGURED_NOT_EXECUTABLE",
+  "credential_policy": "Public metadata/paths only. Do not put API keys, login tokens, cookies, private keys, or participant identities here.",
+  "operator_module": {"path": null, "export": "createExecutor", "sha256": null},
+  "existing_route": {"model": "gpt-6-luna", "reasoning_effort": "high", "exact_snapshot_attestation": null, "provider_identity_evidence": null},
+  "authorization": {"provider_already_authorized": null, "maximum_total_cost": null, "currency": null, "authorization_reference": null},
+  "execution_audit": {"signed_public_artifact_path": null, "environment_id": null, "auditor_key_id": null, "auditor_public_key": null, "expiry": null},
+  "capability_evidence": {"pre_admission_token_caps": null, "reasoning_cap_or_conservative_combined_cap": null, "authenticated_usage": null, "cancellation_and_reconciliation": null, "cross_attempt_budget": null, "os_isolation": null, "process_limit": null, "asset_byte_limit": null},
+  "independent_collector": {"public_config_path": null, "registered_public_key_id": null, "independence_evidence": null},
+  "independent_evaluator": {"public_config_path": null, "version": null, "arm_neutrality_and_isolation_evidence": null},
+  "human_study": {"authorized_coordinator_reference": null, "recruitment_authorized": false, "consent_and_anonymous_record_plan": null},
+  "warning": "Filling these fields does not establish qualification. Existing freeze/hash/signature/current-environment checks and negative controls must actually pass before provider execution. This file is not an ab-run configuration."
+}

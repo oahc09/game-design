@@ -1,0 +1,104 @@
+{
+  "kind": "PUBLIC_MATERIAL_RESEARCH_PREFLIGHT",
+  "observed_at": "2026-11-01T10:40:37.786Z",
+  "source_commit": "637e383783123d97bc05b235f1a5be125a9faba1",
+  "actual_model_calls": 0,
+  "formal_trials": 0,
+  "credential_reads": 0,
+  "source_hashes": {
+    "docs/development-evaluations/20261101-feedback-v1/registration.json": "d9e1f0afa2e1cc9d77b2ac479fd76fdcca634567df7465908acd29635b3ffdff",
+    "benchmark-dataset/v0.2/freeze.json": "0492b8a8a243a64aa3e0775338cb914f001c2bd3a65c3ef34ace484d65a68885",
+    "benchmark-dataset/v0.3/dataset-lock.json": "7fe74d0c6b3630be53dd7a96a0451487ed9b5aff0028ed11033fad29ba9c1c6c",
+    "benchmark-dataset/v0.2/runner-config.example.json": "5adb513ab368f178a0f65d7570b98a013129c622e09be79ee527098f3ff6c1ed",
+    "benchmark-dataset/v0.2/human-protocol.json": "12795088c5afc70be4824293f06882291856ebcd768233c766de3175db3a9132"
+  },
+  "development": {
+    "status": "BLOCKED_PROVIDER_QUALIFICATION",
+    "exposure": "instruction_ablation/2.0.0",
+    "arms": 2,
+    "max_attempts_per_arm": 3,
+    "maximum_model_attempts": 6,
+    "budget_per_arm": {
+      "wall_time_ms": 300000,
+      "tokens": 24000,
+      "reasoning_tokens": 12000,
+      "tool_calls": 80,
+      "steps": 120,
+      "asset_bytes": 2000000
+    },
+    "total_declared_tokens": 48000,
+    "total_declared_reasoning_tokens": 24000,
+    "cost_authorization": "No new monetary spend ceiling established; awaiting narrowly authorized transport pilot separately",
+    "enforcement": "NOT_VERIFIED; declared budget is not provider enforcement"
+  },
+  "formal": {
+    "status": "BLOCKED",
+    "task_count": 108,
+    "trial_count": 216,
+    "max_attempts_per_trial": 2,
+    "maximum_model_attempts": 432,
+    "budget_per_trial": {
+      "max_attempts": 2,
+      "wall_time_ms": 300000,
+      "tokens": 24000,
+      "reasoning_tokens": 12000,
+      "tool_calls": 80,
+      "steps": 120,
+      "asset_bytes": 2000000
+    },
+    "total_declared_tokens": 5184000,
+    "freeze_status": "BLOCKED_MISSING_PREREQUISITES",
+    "model": null,
+    "model_settings": null,
+    "execution_audit": null,
+    "gate": {
+      "ready": false,
+      "missing": [
+        "model",
+        "model_settings",
+        "complete_frozen_manifest",
+        "executor",
+        "frozen_trusted_executor_audit",
+        "executor_os_isolation",
+        "executor_budget_enforcement",
+        "enforceable_broker_interface",
+        "matching_frozen_model",
+        "independent_isolated_evaluator",
+        "matching_evaluator",
+        "arm_neutral_output_evaluation"
+      ]
+    },
+    "operator_module_configured": false,
+    "operator_module_imported": false,
+    "example_executor": "Deliberate process.exit(2) placeholder; not a provider",
+    "dataset_v03": "Dataset-only lock, not a research snapshot"
+  },
+  "human": {
+    "status": "NOT_RUN",
+    "planned_adult_participants": 16,
+    "tasks": 8,
+    "actual_participants": 0,
+    "contact_authorization": false,
+    "consent_and_private_data": "No recruitment/contact/personal data collected"
+  },
+  "current_environment": {
+    "cli": "codex-cli 0.166.0-alpha.1",
+    "command_probe": "version/help only",
+    "provider_route_from_existing_scripts": {
+      "model": "gpt-6-luna",
+      "reasoning_effort": "high"
+    },
+    "authenticated_identity_or_snapshot": "NOT_INSPECTED_OR_ATTESTED",
+    "os_boundary": "Historical blocked observation reused; no prohibited probe retried",
+    "other_environment_used": false
+  },
+  "next_required_public_inputs": [
+    "Operator-owned broker module path and frozen hash (no credentials)",
+    "Existing authorized provider/model snapshot and total spend approval",
+    "Independent signed current-host audit plus public trust key/environment ID",
+    "Audited provider preemptive caps, authenticated usage and cancellation reconciliation",
+    "Independent collector/evaluator public configuration and eligibility evidence",
+    "Separately authorized adult recruitment/consent coordinator for original human protocol"
+  ],
+  "scope": "Read-only public configuration diagnosis plus safe offline fixture/export execution. Not production qualification or model effectiveness evidence."
+}
