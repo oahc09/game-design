@@ -4,6 +4,7 @@ import {validateSpec} from '../core/validate.mjs';
 import {registry} from '../archetypes/index.mjs';
 import {validateTaskSpecs} from '../framework/task-contract.mjs';
 import {simulateBatch} from '../framework/batch.mjs';
+import {validateSimulationReplays} from '../framework/replay-validation.mjs';
 export const DEVELOPMENT_FEEDBACK_VERSION='bounded-development-feedback-1.0.0';
 export function validateDevelopmentRegistration(r){
  if(r?.version!==DEVELOPMENT_FEEDBACK_VERSION||r.formal_trials!==0||r.kind!=='DEVELOPMENT_PREREGISTRATION')throw Error('INVALID_DEVELOPMENT_REGISTRATION');
@@ -20,10 +21,10 @@ export async function evaluateDevelopmentAttempt(registration,specs,{comparison=
  const base={schema_valid,task_contract_pass:task.task_contract_pass,task_validation:task,rules_valid:'UNVERIFIED',numeric_gate:'NOT_RUN',browser_gate:'NOT_RUN',formal_trials:0};
  if(!schema_valid||!task.task_contract_pass)return {...base,status:'REJECTED',schema};
  const measurements=[];
- for(const spec of specs){const batch=await simulateBatch(spec,{seeds:comparison?r.comparison_seeds:r.fit_seeds,profiles:['competent'],maxSteps:r.max_steps,workers:1,traceMode:'summary'});measurements.push({spec_hash:hash(spec),batch,completion_rate:batch.aggregate.completion_rate});}
- const rules_valid=measurements.every(m=>m.batch.complete&&m.batch.episodes.every(e=>e.outcome!=='INVALID'));
+ for(const spec of specs){const batch=await simulateBatch(spec,{seeds:comparison?r.comparison_seeds:r.fit_seeds,profiles:['competent'],maxSteps:r.max_steps,workers:1,traceMode:'summary'});measurements.push({spec_hash:hash(spec),batch,completion_rate:batch.aggregate.completion_rate,rules_validation:validateSimulationReplays(spec,batch)});}
+ const rules_valid=measurements.every(m=>m.rules_validation.status==='PASS');
  const pass=rules_valid&&measurements.every(m=>m.completion_rate>=r.numeric_target.min&&m.completion_rate<=r.numeric_target.max);
- return {...base,status:pass?'SAMPLE_TARGET_MET':'SAMPLE_TARGET_NOT_MET',rules_valid,numeric_gate:pass?'PASS_ON_REGISTERED_SAMPLES':'OUT_OF_CONTROL_RANGE',measurements,seed_scope:comparison?'FINAL_COMPARISON':'PUBLIC_FIT',interpretation:'Not evidence of general Skill advantage, human experience, or formal M7 qualification.'};
+ return {...base,status:!rules_valid?'RULES_INVALID':pass?'SAMPLE_TARGET_MET':'SAMPLE_TARGET_NOT_MET',rules_valid,numeric_gate:!rules_valid?'NOT_RUN_RULES_INVALID':pass?'PASS_ON_REGISTERED_SAMPLES':'OUT_OF_CONTROL_RANGE',measurements,seed_scope:comparison?'FINAL_COMPARISON':'PUBLIC_FIT',interpretation:'Not evidence of general Skill advantage, human experience, or formal M7 qualification.'};
 }
 export function createDevelopmentFeedbackController(registration){
  const r=clone(validateDevelopmentRegistration(registration)),records={baseline:[],treatment:[]},pending=new Set();

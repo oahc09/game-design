@@ -6,3 +6,4 @@ export * from './generation.mjs';
 export * from './metrics.mjs';
 export * from './balance.mjs';
 export * from './campaign.mjs';
+export * from './replay-validation.mjs';
