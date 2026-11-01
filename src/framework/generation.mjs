@@ -21,7 +21,9 @@ export function materializeSpec(spec, content, seed = 1) {
 export function generateContent(spec, seed = 1, controls = {}) {
   validateSeed(seed);
   const archetype = getArchetype(spec.game?.archetype ?? spec.design?.archetype);
-  const count = controls.count ?? 1, maxAttempts = controls.max_attempts ?? count * 20;
+  if(controls.task_contract?.requested_count!=null&&controls.count!=null&&controls.count!==controls.task_contract.requested_count)throw Error('REQUESTED_COUNT_CONFLICT');
+  if(controls.task_contract?.spawn_bounds&&controls.custom?.spawn_bounds&&canonical(controls.task_contract.spawn_bounds)!==canonical(controls.custom.spawn_bounds))throw Error('CONFLICTING_SPAWN_BOUNDS');
+  const count = controls.count ?? controls.task_contract?.requested_count ?? 1, maxAttempts = controls.max_attempts ?? count * 20;
   if (!Number.isInteger(count) || count < 1 || count > 1000 || !Number.isInteger(maxAttempts) || maxAttempts < 0 || maxAttempts > 10000) throw new TypeError('Invalid generation count/attempt budget');
   if (controls.difficulty_target && (typeof controls.difficulty_target !== 'object' || Array.isArray(controls.difficulty_target))) throw new TypeError('difficulty_target must contain measurable metric bands');
   const unknown = Object.keys(controls).filter(key => !envelopeKeys.has(key));

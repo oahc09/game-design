@@ -74,3 +74,9 @@ test('explicit original read-only permission survives relabeling the effective f
  const c=normalizeTaskContract({prompt:'生成打飞机小游戏',permissions:{mode:'read_only'}},{archetype:'arcade_shooter'});c.permissions.mode='write';assert.equal(validateTaskSpecs(c,[shooter()]).status,'FAIL');
  const {createProjectBuilder}=await import('../src/skill/project-builder.mjs');await assert.rejects(createProjectBuilder({outputRoot:'/must-not-write'})({spec:shooter(),task_contract:c}),/READ_ONLY_PERMISSION/);
 });
+test('raw controlled-generation entry preserves requested count and rejects conflicting controls',()=>{
+ const task_contract=normalizeTaskContract('生成20关',{archetype:'arcade_shooter',spawn_bounds:bounds});
+ assert.throws(()=>generateContent(shooter(),77,{count:2,task_contract}),/REQUESTED_COUNT_CONFLICT/);
+ assert.throws(()=>generateContent(shooter(),77,{task_contract,custom:{spawn_bounds:{...bounds,max_x:80}}}),/CONFLICTING_SPAWN_BOUNDS/);
+ const partial=generateContent(shooter(),77,{task_contract,max_attempts:1});assert.equal(partial.diagnostics.requested_count,20);assert.equal(partial.candidates.length,1);
+});
