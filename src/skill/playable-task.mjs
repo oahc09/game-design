@@ -9,7 +9,7 @@ import {simulateBatch} from '../framework/batch.mjs';
 import {controllability} from '../framework/metrics.mjs';
 import {effectiveSpecs} from './toolkit.mjs';
 import {createProjectBuilder,verifyPlayableBuild} from './project-builder.mjs';
-import {hash,canonical} from '../core/index.mjs';
+import {hash,canonical,validateSeedSet} from '../core/index.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 export function evaluatePlayableNumerics(tuning,heldout){
  if(!tuning)return {status:'NOT_REQUESTED',fit:null,heldout:null};
@@ -19,7 +19,7 @@ export function evaluatePlayableNumerics(tuning,heldout){
 }
 export async function executePlayableTask(prompt,{outputRoot,browserVerifier=null,spec=null,project=null,balance=null}={}){
  const heldoutSeeds=balance?.heldoutSeeds??[101,211];
- if(balance&&(!Array.isArray(heldoutSeeds)||!heldoutSeeds.length||heldoutSeeds.some(seed=>!Number.isInteger(seed))||new Set(heldoutSeeds).size!==heldoutSeeds.length))throw Error('INVALID_HOLDOUT_SEEDS');
+ if(balance){try{validateSeedSet(heldoutSeeds);}catch(cause){throw Error('INVALID_HOLDOUT_SEEDS',{cause});}if(balance.seeds!==undefined)validateSeedSet(balance.seeds);}
  if(balance?.seeds?.some(seed=>heldoutSeeds.includes(seed)))throw Error('FIT_HOLDOUT_SEED_OVERLAP');
  const route=routeTask(prompt);if(route.status!=='ROUTED'||route.constraints.advisory_only||route.archetype.status!=='KNOWN')return {status:'BLOCKED',reason:'PLAYABLE_ROUTE_REQUIRED',route};
  if(!route.steps.some(s=>s.tool==='build_project'))return {status:'BLOCKED',reason:'REQUEST_HAS_NO_BUILD_OPERATION',route};

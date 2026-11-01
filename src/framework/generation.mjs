@@ -1,4 +1,4 @@
-import { clone, hash, canonical } from '../core/index.mjs';
+import { clone, hash, canonical, validateSeed, validateSeedSet } from '../core/index.mjs';
 import { getArchetype } from '../archetypes/index.mjs';
 import { solve } from './solver.mjs';
 import { simulateEpisode } from './simulation.mjs';
@@ -17,6 +17,7 @@ export function materializeSpec(spec, content, seed = 1) {
 }
 /** Bounded rejection sampling. Controls are measured or explicitly rejected; no nominal hard/easy labels. */
 export function generateContent(spec, seed = 1, controls = {}) {
+  validateSeed(seed);
   const archetype = getArchetype(spec.game?.archetype ?? spec.design?.archetype);
   const count = controls.count ?? 1, maxAttempts = controls.max_attempts ?? count * 20;
   if (!Number.isInteger(count) || count < 1 || count > 1000 || !Number.isInteger(maxAttempts) || maxAttempts < 0 || maxAttempts > 10000) throw new TypeError('Invalid generation count/attempt budget');
@@ -46,7 +47,7 @@ export function generateContent(spec, seed = 1, controls = {}) {
   if (unknown.length) return { candidates, rejected: [reject('OUT_OF_CONTROL_RANGE', 0, { code: 'UNSUPPORTED_CONTROL', controls: unknown })],
     diagnostics: { version: GENERATOR_FRAMEWORK_VERSION, seed, attempts: 0, unsupported_controls: unknown, requested: controls } };
   const evaluation = { seeds: [1, 2, 3], maxSteps: 200, ...controls.evaluation };
-  if (!Array.isArray(evaluation.seeds) || !evaluation.seeds.length || evaluation.seeds.some(s => !Number.isInteger(s))) throw new TypeError('Control evaluation requires a nonempty integer seed set');
+  validateSeedSet(evaluation.seeds);
   let attempts = 0;
   while (attempts < maxAttempts && candidates.length < count) {
     const attempt = ++attempts, candidateSeed = derivedSeed(seed, attempt);
