@@ -13,7 +13,7 @@ export function resolvePlayerProfile(spec, input = 'competent') {
     ...(typeof input === 'object' ? input : {}), archetype_policy_version: archetype.manifest.playerModelVersion ?? archetype.manifest.version });
 }
 export function episodeIdentity(spec, options = {}) {
-  validateSeed(options.seed ?? 1); if(options.playerSeed != null)validateSeed(options.playerSeed);
+  validateSeed(options.seed===undefined?1:options.seed); if(options.playerSeed != null)validateSeed(options.playerSeed);
   return hash({ spec, seed: options.seed ?? 1, repeat: options.repeat ?? 0,
     profile: resolvePlayerProfile(spec, options.profile ?? 'competent'), maxSteps: options.maxSteps ?? 500,
     traceMode: options.traceMode ?? 'summary', sampleEvery: options.sampleEvery ?? 10,

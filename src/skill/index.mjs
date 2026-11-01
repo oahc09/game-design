@@ -1,5 +1,6 @@
 /** Operational, deterministic routing. This is a conservative heuristic, not an LLM. */
 import {hash} from '../core/index.mjs';
+import {normalizeTaskContract,readOnlyRequest} from '../framework/task-contract.mjs';
 export const SKILL_VERSION = '0.1.0';
 export const TASK_TYPES = ['IDEATION','DESIGN','RULE_FORMALIZATION','CONTENT_GENERATION','BALANCE','DIFFICULTY','PLAYTEST','QA','ENGINE_IMPLEMENTATION','EXISTING_GAME_ANALYSIS'];
 export const KNOWN_ARCHETYPES = ['sokoban','falling_blocks','arcade_shooter','match3','merge2048','block_puzzle'];
@@ -61,7 +62,7 @@ export const OUTPUT_CONTRACTS = {
 };
 function taskText(task) { return (typeof task === 'string' ? task : task?.prompt ?? task?.text ?? '').replace(/^\s*(?:(?:请)?(?:使用|调用|用)|please\s+use|use)?\s*(?:\$game-design\b|game[ -]design\s+skill\b)\s*[,，:：]?\s*/i,''); }
 const ideasOnly=text=>/(?:只|仅)[^，。；,;]*(?:创意|点子)|(?:ideas?|concepts?)\s+only/i.test(text);
-const noBuild=text=>/(?:不要|无需|暂不|不需要)[^，。；,;]*(?:写代码|构建|实现|生成.*HTML)|(?:do not|don't)\s+(?:build|code|implement)/i.test(text);
+const noBuild=text=>readOnlyRequest(text)||/(?:不要|无需|暂不|不需要)[^，。；,;]*(?:写代码|构建|实现|生成.*HTML)|(?:do not|don't)\s+(?:build|code|implement)/i.test(text);
 const playable=text=>!ideasOnly(text)&&!noBuild(text)&&(/可玩(?:的|耍的)?|playable|交付[^，。；,;]*\bHTML\b/i.test(text)||/(?:生成|做|制作|开发|构建)\s*(?:一个|一款|个)?[^，。；,;]*(?:小游戏|游戏)|\b(?:build|create)\b[^.;]*\bgame\b/i.test(text));
 export function classifyTask(task) {
  const text=taskText(task);
@@ -111,8 +112,10 @@ export function routeTask(task, options={}) {
  if([classification.primary,...secondaryTypes].some(t=>['BALANCE','DIFFICULTY'].includes(t)))references.push('balance/tuning.md');
  if(classification.primary==='CONTENT_GENERATION')references.push('level-design/generation.md');
  references.push('mechanics/runtime-contract.md');
+ const task_contract=normalizeTaskContract(task,{archetype:archetype.id});
+ if(task_contract.permissions.mode==='read_only')tools=tools.filter(t=>!['build_project','experimental_package','adapter_verify'].includes(t));
  const steps=[...new Set(tools)].map((tool,index)=>({id:`step-${index+1}`,tool,required:true,requires:index?[`step-${index}`]:[]}));
- return {skill_version:SKILL_VERSION,classification,archetype,roles:[...new Set(roles)],steps,output_contract:contract,
+ return {task_contract,skill_version:SKILL_VERSION,classification,archetype,roles:[...new Set(roles)],steps,output_contract:contract,
   required_outputs:contract==='COMPOSITE'?[...new Set(contracts.flatMap(c=>OUTPUT_CONTRACTS[c]))]:OUTPUT_CONTRACTS[contract],output_contracts:contract==='COMPOSITE'?[...new Set(contracts)]:[contract],secondary_task_types:secondaryTypes,references,human_review_required:humanReview,
   status:classification.needs_clarification || (!advisory && archetype.needs_clarification)?'NEEDS_CLARIFICATION':'ROUTED',
   constraints:{advisory_only:advisory,solver_timeout_is_unknown:true,bot_is_not_human:true,require_evidence:!advisory,core_game_fields_forbidden:true}};
@@ -121,6 +124,7 @@ export async function executeRoute(route, tools, context={}) {
  if(route.status!=='ROUTED') return {status:'BLOCKED',reason:route.status,receipts:[],outputs:{}};
  const receipts=[],outputs={};
  for(const step of route.steps){
+  if((route.task_contract?.permissions.mode==='read_only'||context.task_contract?.permissions.mode==='read_only')&&!['validate_spec','simulate','qa','regression','difficulty','solve','registry_search','capability_mapping','validate_content'].includes(step.tool))return {status:'BLOCKED',reason:'READ_ONLY_PERMISSION',tool:step.tool,receipts,outputs};
   if(typeof tools[step.tool]!=='function')return {status:'BLOCKED',reason:'TOOL_UNAVAILABLE',tool:step.tool,receipts,outputs};
   try {
    const result=await tools[step.tool]({context,outputs,route});

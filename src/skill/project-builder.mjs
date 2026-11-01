@@ -1,9 +1,10 @@
+import {normalizeTaskContract,validateTaskSpecs} from '../framework/task-contract.mjs';
 /** Real filesystem builder. Only validated specs and allowlisted repository assets are copied. */
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
-import {canonical,hash,clone} from '../core/index.mjs';
+import {canonical,hash,clone,validateSeed} from '../core/index.mjs';
 import {registry} from '../archetypes/index.mjs';
 import {validateSpec} from '../core/validate.mjs';
 import {projectLevels,projectThemes} from './project-content.mjs';
@@ -18,6 +19,11 @@ export async function verifyPlayableBuild(directory,manifestSha256=null){
 }
 export function createProjectBuilder({outputRoot=path.join(root,'output/playable')}={}){
  return async context=>{
+  validateSeed(context.seed===undefined?42:context.seed);
+  const contract=context.task_contract??normalizeTaskContract('',{archetype:context.spec.game.archetype});
+  if(contract.permissions.mode==='read_only')throw Error('READ_ONLY_PERMISSION');
+  const taskCheck=validateTaskSpecs(contract,context.project?.levels?.map(l=>l.spec)??[context.spec],{project:context.project});
+  if(taskCheck.status!=='PASS')throw Object.assign(Error('TASK_CONTRACT_FAILED'),{taskCheck});
   const id=context.spec.game.archetype,levels=clone(context.project?.levels??projectLevels(id,context.spec)),theme=projectThemes[id];if(!theme)throw Error('PLAYABLE_VIEW_NOT_IMPLEMENTED:'+id);
   if(!context.project?.levels?.[0]?.spec||hash(context.project.levels[0].spec)!==hash(context.spec))levels[0].description=theme.objective;
   levels[0].spec=clone(context.spec);
@@ -27,7 +33,7 @@ export function createProjectBuilder({outputRoot=path.join(root,'output/playable
   await fs.mkdir(outputRoot,{recursive:true});const directory=await fs.mkdtemp(path.join(path.resolve(outputRoot),id+'-'+hash(context.spec).slice(0,8)+'-')),files=[];
   async function write(relative,bytes){await fs.mkdir(path.dirname(path.join(directory,relative)),{recursive:true});await fs.writeFile(path.join(directory,relative),bytes,{flag:'wx'});files.push({path:relative,bytes:Buffer.byteLength(bytes),sha256:sha(bytes)});}
   async function copy(source,destination=source){const s=await fs.lstat(path.join(root,source));if(s.isSymbolicLink())throw Error('BUILD_SOURCE_LINK');if(s.isDirectory())for(const name of (await fs.readdir(path.join(root,source))).sort())await copy(source+'/'+name,destination+'/'+name);else await write(destination,await fs.readFile(path.join(root,source)));}
-  for(const asset of ['src/core','src/archetypes','src/adapters/web.mjs','vendor/cocosair','LICENSE'])await copy(asset);
+  for(const asset of ['src/core','src/archetypes','src/adapters/web.mjs','src/framework/task-contract.mjs','vendor/cocosair','LICENSE'])await copy(asset);
   for(const name of ['index.html','player.mjs','style.css','serve.mjs'])await copy('web/player/'+name,name);
   await write('project.json',JSON.stringify(project,null,2)+'\n');
   await write('package.json',JSON.stringify({name:'game-design-playable',version:'0.2.0',private:true,type:'module',scripts:{start:'node serve.mjs'}},null,2)+'\n');
