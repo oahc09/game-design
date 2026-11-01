@@ -26,11 +26,11 @@ export async function evaluateDevelopmentAttempt(registration,specs,{comparison=
  return {...base,status:pass?'SAMPLE_TARGET_MET':'SAMPLE_TARGET_NOT_MET',rules_valid,numeric_gate:pass?'PASS_ON_REGISTERED_SAMPLES':'OUT_OF_CONTROL_RANGE',measurements,seed_scope:comparison?'FINAL_COMPARISON':'PUBLIC_FIT',interpretation:'Not evidence of general Skill advantage, human experience, or formal M7 qualification.'};
 }
 export function createDevelopmentFeedbackController(registration){
- const r=clone(validateDevelopmentRegistration(registration)),records={baseline:[],treatment:[]};
+ const r=clone(validateDevelopmentRegistration(registration)),records={baseline:[],treatment:[]},pending=new Set();
  function rows(arm){if(!Object.hasOwn(records,arm))throw Error('UNKNOWN_ARM');return records[arm];}
  return {
   nextRequest(arm){const attempts=rows(arm);if(attempts.length>=r.max_attempts_per_arm)return null;return {protocol:r.version,registration_hash:hash(r),arm,attempt:attempts.length+1,task_contract:clone(r.task_contract),fit_seeds:clone(r.fit_seeds),numeric_target:clone(r.numeric_target),budget:clone(r.budget_per_arm),remaining_attempts:r.max_attempts_per_arm-attempts.length,feedback:attempts.length?clone(attempts.at(-1).feedback):null};},
-  async record(arm,specs){const attempts=rows(arm);if(attempts.length>=r.max_attempts_per_arm)throw Error('ATTEMPT_BUDGET_EXHAUSTED');const artifact=clone(specs),feedback=await evaluateDevelopmentAttempt(r,artifact);attempts.push({attempt:attempts.length+1,artifact_hash:hash(artifact),artifact,feedback});return clone(attempts.at(-1));},
+  async record(arm,specs){const attempts=rows(arm);if(pending.has(arm))throw Error('ATTEMPT_IN_PROGRESS');if(attempts.length>=r.max_attempts_per_arm)throw Error('ATTEMPT_BUDGET_EXHAUSTED');const artifact=clone(specs),entry={attempt:attempts.length+1,artifact_hash:hash(artifact),artifact,feedback:{status:'IN_PROGRESS'}};attempts.push(entry);pending.add(arm);try{entry.feedback=await evaluateDevelopmentAttempt(r,artifact);}catch(error){entry.feedback={status:'EVALUATION_ERROR',message:error.message};}finally{pending.delete(arm);}return clone(entry);},
   snapshot(){return {kind:'OFFLINE_FEEDBACK_LEDGER',registration_hash:hash(r),records:clone(records),provider_execution:'NOT_PERFORMED',formal_trials:0,status:'UNVERIFIED'};},
  };
 }

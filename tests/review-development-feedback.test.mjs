@@ -15,3 +15,6 @@ test('offline evaluator runs real measurements and separates numeric samples fro
  const result=await evaluateDevelopmentAttempt(r,generated.candidates.map(c=>materializeSpec(spec,c)));
  assert.equal(result.schema_valid,true);assert.equal(result.task_contract_pass,true);assert.equal(result.rules_valid,true);assert.equal(result.measurements.length,3);assert.equal(result.browser_gate,'NOT_RUN');assert.equal(result.formal_trials,0);assert.equal(result.seed_scope,'PUBLIC_FIT');for(const row of result.measurements)assert.deepEqual(row.batch.episodes.map(e=>e.seed).sort((a,b)=>a-b),r.fit_seeds);
 });
+test('overlapping feedback measurements cannot reuse or exceed an attempt slot',async()=>{
+ const c=createDevelopmentFeedbackController(r),first=c.record('baseline',[]);await assert.rejects(c.record('baseline',[]),/IN_PROGRESS/);await first;assert.equal(c.snapshot().records.baseline.length,1);assert.equal(c.nextRequest('baseline').attempt,2);
+});
