@@ -6,8 +6,19 @@ export function canonical(x){
  return JSON.stringify(walk(x));
 }
 export function hash(x){let a=2166136261>>>0,b=2246822507>>>0;for(const c of canonical(x)){const n=c.codePointAt(0);a=Math.imul(a^n,16777619)>>>0;b=Math.imul(b^n,3266489909)>>>0;}return a.toString(16).padStart(8,'0')+b.toString(16).padStart(8,'0');}
+/** Public seeds use one exact uint32 domain; reject aliasing before RNG coercion. */
+export function validateSeed(seed){
+ if(!Number.isSafeInteger(seed)||seed<0||seed>0xffffffff)throw new RangeError('Seed must be a uint32 safe integer');
+ return seed;
+}
+export function validateSeedSet(seeds){
+ if(!Array.isArray(seeds)||!seeds.length)throw new TypeError('A nonempty uint32 seed set is required');
+ seeds.forEach(validateSeed);
+ if(new Set(seeds).size!==seeds.length)throw new TypeError('Seed set contains duplicates; use runCount for repeated trials');
+ return seeds;
+}
 export class SeededRng{
- constructor(seed=1){this.restore(seed>>>0);}
+ constructor(seed=1){this.restore(validateSeed(seed));}
  nextFloat(){let t=this.state+=0x6D2B79F5;this.state>>>=0;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;}
  nextInt(min,max){if(!Number.isSafeInteger(min)||!Number.isSafeInteger(max)||max<=min)throw new RangeError('RNG range must be nonempty integer interval');return min+Math.floor(this.nextFloat()*(max-min));}
  snapshot(){return this.state>>>0;}

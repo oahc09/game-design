@@ -1,4 +1,4 @@
-import { clone, hash, canonical, VERSIONS } from '../core/index.mjs';
+import { clone, hash, canonical, VERSIONS, validateSeed, validateSeedSet } from '../core/index.mjs';
 import { getArchetype } from '../archetypes/index.mjs';
 import { PlayerModel, normalizeProfile, PLAYER_VERSION } from './player.mjs';
 import { decisionMetrics, summarizeEpisodes } from './metrics.mjs';
@@ -13,6 +13,7 @@ export function resolvePlayerProfile(spec, input = 'competent') {
     ...(typeof input === 'object' ? input : {}), archetype_policy_version: archetype.manifest.playerModelVersion ?? archetype.manifest.version });
 }
 export function episodeIdentity(spec, options = {}) {
+  validateSeed(options.seed===undefined?1:options.seed); if(options.playerSeed != null)validateSeed(options.playerSeed);
   return hash({ spec, seed: options.seed ?? 1, repeat: options.repeat ?? 0,
     profile: resolvePlayerProfile(spec, options.profile ?? 'competent'), maxSteps: options.maxSteps ?? 500,
     traceMode: options.traceMode ?? 'summary', sampleEvery: options.sampleEvery ?? 10,
@@ -80,7 +81,7 @@ export function createEpisodeJobs(spec, options = {}) {
   const seeds = options.seeds ?? spec.evaluation?.seed_set?.values ?? [1, 2, 3];
   const profiles = options.profiles ?? [options.profile ?? 'competent'];
   const runCount = options.runCount ?? 1;
-  if (!Array.isArray(seeds) || !seeds.length || seeds.some(s => !Number.isInteger(s))) throw new TypeError('A nonempty integer seed set is required');
+  validateSeedSet(seeds);
   if (!Array.isArray(profiles) || !profiles.length || !Number.isInteger(runCount) || runCount < 1) throw new TypeError('Nonempty profiles and positive runCount required');
   if (new Set(seeds).size !== seeds.length) throw new TypeError('Seed set contains duplicates; use runCount for repeated trials');
   if (new Set(profiles.map(p => normalizeProfile(p).id)).size !== profiles.length) throw new TypeError('Duplicate player profile ID; give each configuration a distinct id');

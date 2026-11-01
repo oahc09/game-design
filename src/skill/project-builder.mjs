@@ -1,9 +1,10 @@
+import {normalizeTaskContract,validateTaskSpecs,contractReadOnly} from '../framework/task-contract.mjs';
 /** Real filesystem builder. Only validated specs and allowlisted repository assets are copied. */
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
-import {canonical,hash,clone} from '../core/index.mjs';
+import {canonical,hash,clone,validateSeed} from '../core/index.mjs';
 import {registry} from '../archetypes/index.mjs';
 import {validateSpec} from '../core/validate.mjs';
 import {projectLevels,projectThemes} from './project-content.mjs';
@@ -18,21 +19,26 @@ export async function verifyPlayableBuild(directory,manifestSha256=null){
 }
 export function createProjectBuilder({outputRoot=path.join(root,'output/playable')}={}){
  return async context=>{
+  validateSeed(context.seed===undefined?42:context.seed);
+  const contract=context.task_contract??normalizeTaskContract('',{archetype:context.spec.game.archetype});
+  if(contractReadOnly(contract))throw Error('READ_ONLY_PERMISSION');
+  const taskCheck=validateTaskSpecs(contract,[context.spec,...(context.project?.levels?.map(l=>l.spec)??[])],{project:context.project});
+  if(taskCheck.status!=='PASS')throw Object.assign(Error('TASK_CONTRACT_FAILED'),{taskCheck});
   const id=context.spec.game.archetype,levels=clone(context.project?.levels??projectLevels(id,context.spec)),theme=projectThemes[id];if(!theme)throw Error('PLAYABLE_VIEW_NOT_IMPLEMENTED:'+id);
   if(!context.project?.levels?.[0]?.spec||hash(context.project.levels[0].spec)!==hash(context.spec))levels[0].description=theme.objective;
   levels[0].spec=clone(context.spec);
   if(!levels.length||hash(levels[0].spec)!==hash(context.spec))throw Error('PRIMARY_BUILD_SPEC_MISMATCH');
   for(const l of levels){const v=validateSpec(l.spec,registry);if(v.status!=='PASS')throw Object.assign(Error('BUILD_SPEC_INVALID'),{issues:v.issues});}
-  const project={format:'PLAYABLE_PROJECT_V1',archetype:id,seed:context.seed??42,theme,levels:clone(levels),defaults:{content_units:levels.length,source:'development content, not frozen research calibration'},formal_gate:'BLOCKED'};
+  const project={format:'PLAYABLE_PROJECT_V1',task_contract:clone(contract),archetype:id,seed:context.seed??42,theme,levels:clone(levels),defaults:{content_units:levels.length,source:'development content, not frozen research calibration'},formal_gate:'BLOCKED'};
   await fs.mkdir(outputRoot,{recursive:true});const directory=await fs.mkdtemp(path.join(path.resolve(outputRoot),id+'-'+hash(context.spec).slice(0,8)+'-')),files=[];
   async function write(relative,bytes){await fs.mkdir(path.dirname(path.join(directory,relative)),{recursive:true});await fs.writeFile(path.join(directory,relative),bytes,{flag:'wx'});files.push({path:relative,bytes:Buffer.byteLength(bytes),sha256:sha(bytes)});}
   async function copy(source,destination=source){const s=await fs.lstat(path.join(root,source));if(s.isSymbolicLink())throw Error('BUILD_SOURCE_LINK');if(s.isDirectory())for(const name of (await fs.readdir(path.join(root,source))).sort())await copy(source+'/'+name,destination+'/'+name);else await write(destination,await fs.readFile(path.join(root,source)));}
-  for(const asset of ['src/core','src/archetypes','src/adapters/web.mjs','vendor/cocosair','LICENSE'])await copy(asset);
+  for(const asset of ['src/core','src/archetypes','src/adapters/web.mjs','src/framework/task-contract.mjs','vendor/cocosair','LICENSE'])await copy(asset);
   for(const name of ['index.html','player.mjs','style.css','serve.mjs'])await copy('web/player/'+name,name);
   await write('project.json',JSON.stringify(project,null,2)+'\n');
   await write('package.json',JSON.stringify({name:'game-design-playable',version:'0.2.0',private:true,type:'module',scripts:{start:'node serve.mjs'}},null,2)+'\n');
   await write('README.md',`# ${theme.title}\n\n在此目录运行 npm start，然后打开终端输出的本机地址。无需 npm install 或开发仓库。\n\n${theme.controls}\n\n${levels.length} 个内容单元；开始、暂停、完成/失败与重开均在页面内。开发用途，未进行真人研究或正式效果认证。许可见 LICENSE 和 vendor/cocosair。\n`);
-  const manifest={format:'PLAYABLE_BUILD_V1',primary_spec_hash:hash(context.spec),levels:levels.map(l=>({id:l.id,spec_hash:hash(l.spec),spec_sha256:sha(canonical(l.spec)),rules_version:l.spec.provenance.rules_version})),files:files.sort((a,b)=>a.path.localeCompare(b.path)),engine:{name:'CocosAirJS',version:'1.0.0',revision:100},formal_trials:0,external_review:'UNVERIFIED'};
+  const manifest={format:'PLAYABLE_BUILD_V1',task_contract_hash:hash(contract),primary_spec_hash:hash(context.spec),levels:levels.map(l=>({id:l.id,spec_hash:hash(l.spec),spec_sha256:sha(canonical(l.spec)),rules_version:l.spec.provenance.rules_version})),files:files.sort((a,b)=>a.path.localeCompare(b.path)),engine:{name:'CocosAirJS',version:'1.0.0',revision:100},formal_trials:0,external_review:'UNVERIFIED'};
   await fs.writeFile(path.join(directory,'build-manifest.json'),JSON.stringify(manifest,null,2)+'\n',{flag:'wx'});await verifyPlayableBuild(directory);
   return {status:'PASS',checked_spec_hash:hash(context.spec),build_artifact:{directory,entry:'index.html',manifest:'build-manifest.json',manifest_sha256:sha(await fs.readFile(path.join(directory,'build-manifest.json')))},levels:manifest.levels};
  };

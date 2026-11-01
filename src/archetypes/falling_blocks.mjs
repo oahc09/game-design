@@ -1,4 +1,4 @@
-import { BaseRuntime, SeededRng, clone, makeSpec } from '../core/index.mjs';
+import { BaseRuntime, SeededRng, validateSeed, clone, makeSpec } from '../core/index.mjs';
 
 /** Deliberately NOT Guideline Tetris. Rotation is clockwise in an NxN box,
  * horizontal kicks [0,-1,1,-2,2], no vertical kicks; seven-bag after a supplied
@@ -246,7 +246,7 @@ export function chooseAction(observation,profile='greedy',rng=new SeededRng(1),b
   if(settings.action_error_rate&&rng.nextFloat()<settings.action_error_rate)return rng.nextFloat()<.5?{left:true}:{right:true};
   return clone(choices[0].first);
 }
-export function generate(spec,seed,controls={}) {
+export function generate(spec,seed=1,controls={}) {validateSeed(seed);
   const supported=['count','max_attempts','garbage_rows','gravity_ticks','target_lines','width','height'];
   const unsupported=Object.keys(controls).filter(k=>!supported.includes(k));
   if(unsupported.length)return {candidates:[],rejected:[{reason:'OUT_OF_CONTROL_RANGE',controls:unsupported}],diagnostics:{attempts:0,unsupportedControls:unsupported}};

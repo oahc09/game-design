@@ -1,0 +1,825 @@
+{
+  "status": "PASS_ENGINEERING_ONLY",
+  "engineering_status": "PASS",
+  "numerical_gate": "OUT_OF_CONTROL_RANGE",
+  "kind": "R05_DEVELOPMENT_WORKFLOWS",
+  "brief": {
+    "content_units": 3,
+    "extension_count": 2,
+    "seed": 42,
+    "fit_seeds": [
+      17,
+      42
+    ],
+    "heldout_seeds": [
+      101,
+      211
+    ],
+    "gate": "Valid real build, exact candidate identity, real input, at least one win and loss, restart/pause/blur/mobile, all content units loaded and operated",
+    "qualification": "Engineering workflows only; no human or model-effectiveness inference"
+  },
+  "source_revision": "c9683a8e218dd5fbce8dbc782706f3a635e56f8eac4cba6c16d0cd0f62b7aca6",
+  "source_unchanged": true,
+  "attempts": [
+    {
+      "id": "arcade_shooter",
+      "kind": "build",
+      "prompt": "\u4f7f\u7528 Game Design Skill \u751f\u6210\u4e00\u4e2a\u6253\u98de\u673a\u5c0f\u6e38\u620f",
+      "status": "PASS",
+      "report": "arcade_shooter-build.json.gz",
+      "build_manifest_sha256": "3a475dfe42ab83bb01aed6a9618b3d744b1f5a287dcd1df0f037edcc093007ad",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "2ff60a1edd13a0da",
+          "spec_sha256": "73e57d3a2b02e47840abe319b05e2ad06fdfba49d08f5f260336cf46677d9f82",
+          "rules_version": "arcade_shooter_v0.1.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "aaaa571af881cb54",
+          "spec_sha256": "0d7b8fbf38b298a9349e0b1a8594cd3196924218e89951412dc8fbe99a0440ae",
+          "rules_version": "arcade_shooter_v0.1.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "8fe2f8ccf4837cea",
+          "spec_sha256": "63c16e2a015638b50577a99b748619694b0a8ede0ab8c7066201783e22027a87",
+          "rules_version": "arcade_shooter_v0.1.1"
+        }
+      ],
+      "archive": "arcade_shooter-build.tar.gz"
+    },
+    {
+      "id": "arcade_shooter",
+      "kind": "content",
+      "prompt": "\u4e3a\u5c04\u51fb\u751f\u62102\u4e2a\u65b0\u5173\u5361\u5185\u5bb9\u5305",
+      "status": "PASS",
+      "report": "arcade_shooter-content.json.gz",
+      "build_manifest_sha256": "50b0d3070b9f06765ef61ebbf9f5460f1ee72dceead777f25f156707ef67d3e2",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "2ff60a1edd13a0da",
+          "spec_sha256": "73e57d3a2b02e47840abe319b05e2ad06fdfba49d08f5f260336cf46677d9f82",
+          "rules_version": "arcade_shooter_v0.1.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "aaaa571af881cb54",
+          "spec_sha256": "0d7b8fbf38b298a9349e0b1a8594cd3196924218e89951412dc8fbe99a0440ae",
+          "rules_version": "arcade_shooter_v0.1.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "8fe2f8ccf4837cea",
+          "spec_sha256": "63c16e2a015638b50577a99b748619694b0a8ede0ab8c7066201783e22027a87",
+          "rules_version": "arcade_shooter_v0.1.1"
+        },
+        {
+          "id": "level-4",
+          "spec_hash": "4c1e4f712a4497cf",
+          "spec_sha256": "82df7b4497bbf504edfb80b5fd216a1d285347667a31e3077bfdf210b3356ec4",
+          "rules_version": "arcade_shooter_v0.1.1"
+        },
+        {
+          "id": "level-5",
+          "spec_hash": "361a437f1f65726d",
+          "spec_sha256": "1fe5af0dfac0045ffe3f6ed73cff375c0de91800378919d5db93dd99e7dd2244",
+          "rules_version": "arcade_shooter_v0.1.1"
+        }
+      ],
+      "archive": "arcade_shooter-content.tar.gz",
+      "content_package": {
+        "requested": 2,
+        "delivered": 2,
+        "prior_content_units": 3,
+        "total_content_units": 5,
+        "new_spec_hashes": [
+          "4c1e4f712a4497cf",
+          "361a437f1f65726d"
+        ],
+        "duplicate_count": 0
+      }
+    },
+    {
+      "id": "arcade_shooter",
+      "kind": "modify",
+      "prompt": "\u8c03\u4f18\u5c04\u51fb\u9996\u5173\u6570\u503c\uff0c\u518d\u63a5\u5165\u5f15\u64ce\uff0c\u4ea4\u4ed8\u53ef\u73a9\u7684 HTML",
+      "status": "PASS_ENGINEERING_ONLY",
+      "report": "arcade_shooter-modify.json.gz",
+      "build_manifest_sha256": "cfdc07b477a1f161185037420021ff9a9912bf2f0452c81b22e21ce903a858ee",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "177b2edc886da3f0",
+          "spec_sha256": "286aa780c980a90a3c3378067931ded7545870a7e4ec016601d667da1f7588d6",
+          "rules_version": "arcade_shooter_v0.1.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "aaaa571af881cb54",
+          "spec_sha256": "0d7b8fbf38b298a9349e0b1a8594cd3196924218e89951412dc8fbe99a0440ae",
+          "rules_version": "arcade_shooter_v0.1.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "8fe2f8ccf4837cea",
+          "spec_sha256": "63c16e2a015638b50577a99b748619694b0a8ede0ab8c7066201783e22027a87",
+          "rules_version": "arcade_shooter_v0.1.1"
+        }
+      ],
+      "archive": "arcade_shooter-modify.tar.gz",
+      "parameter_change": {
+        "enemySpeed": 6
+      },
+      "target_errors": {
+        "comparisons": [
+          {
+            "metric": "competent_completion_rate",
+            "requested": {
+              "min": 0.5,
+              "max": 0.9
+            },
+            "actual": 1,
+            "error": 0.09999999999999998,
+            "applicable": true,
+            "status": "OUT_OF_CONTROL_RANGE"
+          }
+        ],
+        "verified": true,
+        "in_range": false
+      },
+      "numerical_gate": "OUT_OF_CONTROL_RANGE",
+      "numeric_status": "EXPLORATORY_SAMPLES_NOT_A_DIFFICULTY_CERTIFICATION"
+    },
+    {
+      "id": "sokoban",
+      "kind": "build",
+      "prompt": "\u4f7f\u7528 Game Design Skill \u751f\u6210\u4e00\u4e2a\u63a8\u7bb1\u5b50\u5c0f\u6e38\u620f",
+      "status": "PASS",
+      "report": "sokoban-build.json.gz",
+      "build_manifest_sha256": "ec84769beafc57b1810cd306bcec3ec799b50b6a85f694c9e7df010ac8309658",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "03da2bc1cf16a8ed",
+          "spec_sha256": "00f93bbe2109d0fe6213b645b421288828872ec0932f4d1206da9cd47526d29c",
+          "rules_version": "sokoban_v0.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "40c120f30fe251c3",
+          "spec_sha256": "22c4eaccdd4e507e00dcdb1b5e8c583d0d309463fbe470210a87fc71da575d5a",
+          "rules_version": "sokoban_v0.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "8bde89529343dfd8",
+          "spec_sha256": "1a518a7c52eff47680e402ac40bf6c20527e084a156812dc1bea39409171b838",
+          "rules_version": "sokoban_v0.1"
+        }
+      ],
+      "archive": "sokoban-build.tar.gz"
+    },
+    {
+      "id": "sokoban",
+      "kind": "content",
+      "prompt": "\u4e3a\u63a8\u7bb1\u5b50\u751f\u62102\u4e2a\u65b0\u5173\u5361\u5185\u5bb9\u5305",
+      "status": "PASS",
+      "report": "sokoban-content.json.gz",
+      "build_manifest_sha256": "602820e91bb6f03cedabd2ff5bce25714ef0482910e220d5e77a5a96e69de6b8",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "03da2bc1cf16a8ed",
+          "spec_sha256": "00f93bbe2109d0fe6213b645b421288828872ec0932f4d1206da9cd47526d29c",
+          "rules_version": "sokoban_v0.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "40c120f30fe251c3",
+          "spec_sha256": "22c4eaccdd4e507e00dcdb1b5e8c583d0d309463fbe470210a87fc71da575d5a",
+          "rules_version": "sokoban_v0.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "8bde89529343dfd8",
+          "spec_sha256": "1a518a7c52eff47680e402ac40bf6c20527e084a156812dc1bea39409171b838",
+          "rules_version": "sokoban_v0.1"
+        },
+        {
+          "id": "level-4",
+          "spec_hash": "5f701f144c89f6d8",
+          "spec_sha256": "1e363a277ad60ff38df718c768c9589ff9ec41ffcea6ec05e04c08fbefc0ff66",
+          "rules_version": "sokoban_v0.1"
+        },
+        {
+          "id": "level-5",
+          "spec_hash": "7d99accf3b5f4f07",
+          "spec_sha256": "79002a1e14607a384038b2536c7a137e7b575a4667b4f576671e0f1a120f6165",
+          "rules_version": "sokoban_v0.1"
+        }
+      ],
+      "archive": "sokoban-content.tar.gz",
+      "content_package": {
+        "requested": 2,
+        "delivered": 2,
+        "prior_content_units": 3,
+        "total_content_units": 5,
+        "new_spec_hashes": [
+          "5f701f144c89f6d8",
+          "7d99accf3b5f4f07"
+        ],
+        "duplicate_count": 0
+      }
+    },
+    {
+      "id": "sokoban",
+      "kind": "modify",
+      "prompt": "\u8c03\u4f18\u63a8\u7bb1\u5b50\u9996\u5173\u6570\u503c\uff0c\u518d\u63a5\u5165\u5f15\u64ce\uff0c\u4ea4\u4ed8\u53ef\u73a9\u7684 HTML",
+      "status": "PASS_ENGINEERING_ONLY",
+      "report": "sokoban-modify.json.gz",
+      "build_manifest_sha256": "a05862e9fbde0daf7a71afe83ff877b644067de67a1e269b1103fd809a0a7d61",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "a5163208ec73fd8a",
+          "spec_sha256": "5529422e698371c6e3195151ff47e7b4a53cbb5e8346addfda39f2016051b60f",
+          "rules_version": "sokoban_v0.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "40c120f30fe251c3",
+          "spec_sha256": "22c4eaccdd4e507e00dcdb1b5e8c583d0d309463fbe470210a87fc71da575d5a",
+          "rules_version": "sokoban_v0.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "8bde89529343dfd8",
+          "spec_sha256": "1a518a7c52eff47680e402ac40bf6c20527e084a156812dc1bea39409171b838",
+          "rules_version": "sokoban_v0.1"
+        }
+      ],
+      "archive": "sokoban-modify.tar.gz",
+      "parameter_change": {
+        "maxMoves": 50
+      },
+      "target_errors": {
+        "comparisons": [
+          {
+            "metric": "competent_completion_rate",
+            "requested": {
+              "min": 0.5,
+              "max": 0.9
+            },
+            "actual": 1,
+            "error": 0.09999999999999998,
+            "applicable": true,
+            "status": "OUT_OF_CONTROL_RANGE"
+          }
+        ],
+        "verified": true,
+        "in_range": false
+      },
+      "numerical_gate": "OUT_OF_CONTROL_RANGE",
+      "numeric_status": "EXPLORATORY_SAMPLES_NOT_A_DIFFICULTY_CERTIFICATION"
+    },
+    {
+      "id": "falling_blocks",
+      "kind": "build",
+      "prompt": "\u4f7f\u7528 Game Design Skill \u751f\u6210\u4e00\u4e2a\u4fc4\u7f57\u65af\u65b9\u5757\u5c0f\u6e38\u620f",
+      "status": "PASS",
+      "report": "falling_blocks-build.json.gz",
+      "build_manifest_sha256": "46fb27e4b15f8357943be8bc77a51ee5a4e9644a38167ce84b9c870eef8c17db",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "fecb8a5fc471fcc7",
+          "spec_sha256": "7664872851bfbc8021ee4ae1ed3c005cede4fa984530c9a76ea996c47ef7a62a",
+          "rules_version": "falling_blocks_v0.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "131602f975d2b119",
+          "spec_sha256": "497dede7b7a02076101393fea3bc39582be538b73fa4c24d1c583da33aa3e7b0",
+          "rules_version": "falling_blocks_v0.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "3c98e53164c3c74f",
+          "spec_sha256": "dbc9bd6442a6d8fed04b56128758af2f32e5ba70cc9be9d5fbed44e320638319",
+          "rules_version": "falling_blocks_v0.1"
+        }
+      ],
+      "archive": "falling_blocks-build.tar.gz"
+    },
+    {
+      "id": "falling_blocks",
+      "kind": "content",
+      "prompt": "\u4e3a\u4fc4\u7f57\u65af\u65b9\u5757\u751f\u62102\u4e2a\u65b0\u5173\u5361\u5185\u5bb9\u5305",
+      "status": "PASS",
+      "report": "falling_blocks-content.json.gz",
+      "build_manifest_sha256": "9e4dede9b0f7b7d7771322fe129d8cd62c1d9f694685d2315da3f52666fbf728",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "fecb8a5fc471fcc7",
+          "spec_sha256": "7664872851bfbc8021ee4ae1ed3c005cede4fa984530c9a76ea996c47ef7a62a",
+          "rules_version": "falling_blocks_v0.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "131602f975d2b119",
+          "spec_sha256": "497dede7b7a02076101393fea3bc39582be538b73fa4c24d1c583da33aa3e7b0",
+          "rules_version": "falling_blocks_v0.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "3c98e53164c3c74f",
+          "spec_sha256": "dbc9bd6442a6d8fed04b56128758af2f32e5ba70cc9be9d5fbed44e320638319",
+          "rules_version": "falling_blocks_v0.1"
+        },
+        {
+          "id": "level-4",
+          "spec_hash": "97e7ab5824da8814",
+          "spec_sha256": "4b3fe4dcb2ea416cb11ce2d9e46287019f5ab330cc9ffbd7fdc5c88ff26a28e5",
+          "rules_version": "falling_blocks_v0.1"
+        },
+        {
+          "id": "level-5",
+          "spec_hash": "097f2f319e790abf",
+          "spec_sha256": "fbec331041ca1b150670d50cfc3864529f93eb42d5563e8f200390e95756dddc",
+          "rules_version": "falling_blocks_v0.1"
+        }
+      ],
+      "archive": "falling_blocks-content.tar.gz",
+      "content_package": {
+        "requested": 2,
+        "delivered": 2,
+        "prior_content_units": 3,
+        "total_content_units": 5,
+        "new_spec_hashes": [
+          "97e7ab5824da8814",
+          "097f2f319e790abf"
+        ],
+        "duplicate_count": 0
+      }
+    },
+    {
+      "id": "falling_blocks",
+      "kind": "modify",
+      "prompt": "\u8c03\u4f18\u4fc4\u7f57\u65af\u65b9\u5757\u9996\u5173\u6570\u503c\uff0c\u518d\u63a5\u5165\u5f15\u64ce\uff0c\u4ea4\u4ed8\u53ef\u73a9\u7684 HTML",
+      "status": "PASS_ENGINEERING_ONLY",
+      "report": "falling_blocks-modify.json.gz",
+      "build_manifest_sha256": "721d9871154c1f388c6437f4bd29c56780d1501da30042f4ab0c0a892c003efd",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "75739514b63e3aca",
+          "spec_sha256": "416803535f2ba451437df85e0289d2a5363f1d5b83d3a72a3abf888e8fe66219",
+          "rules_version": "falling_blocks_v0.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "131602f975d2b119",
+          "spec_sha256": "497dede7b7a02076101393fea3bc39582be538b73fa4c24d1c583da33aa3e7b0",
+          "rules_version": "falling_blocks_v0.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "3c98e53164c3c74f",
+          "spec_sha256": "dbc9bd6442a6d8fed04b56128758af2f32e5ba70cc9be9d5fbed44e320638319",
+          "rules_version": "falling_blocks_v0.1"
+        }
+      ],
+      "archive": "falling_blocks-modify.tar.gz",
+      "parameter_change": {
+        "gravityTicks": 20
+      },
+      "target_errors": {
+        "comparisons": [
+          {
+            "metric": "competent_completion_rate",
+            "requested": {
+              "min": 0.5,
+              "max": 0.9
+            },
+            "actual": 1,
+            "error": 0.09999999999999998,
+            "applicable": true,
+            "status": "OUT_OF_CONTROL_RANGE"
+          }
+        ],
+        "verified": true,
+        "in_range": false
+      },
+      "numerical_gate": "OUT_OF_CONTROL_RANGE",
+      "numeric_status": "EXPLORATORY_SAMPLES_NOT_A_DIFFICULTY_CERTIFICATION"
+    },
+    {
+      "id": "match3",
+      "kind": "build",
+      "prompt": "\u4f7f\u7528 Game Design Skill \u751f\u6210\u4e00\u4e2a\u4e09\u6d88\u5c0f\u6e38\u620f",
+      "status": "PASS",
+      "report": "match3-build.json.gz",
+      "build_manifest_sha256": "fc4c6b165763a3d19b35244e2a4ad6e1de0a53e33f3b1d43c4759535b900a945",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "70422e0b93f64051",
+          "spec_sha256": "f097aedd54a4303ab4c8322bff01a3ee7ebd8c9194429e0765bbf8a916ab6063",
+          "rules_version": "match3_v0.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "8b2136696973441d",
+          "spec_sha256": "d87ab5b5dfa9922869a3983020f8e3c46d8c6dbd403a1fc8454afa4f44cc652b",
+          "rules_version": "match3_v0.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "dc2826baeb5ea0a4",
+          "spec_sha256": "b89082a40b3a6b1920d5b4ede31104b2c51793540e8da00bdde754759f780c02",
+          "rules_version": "match3_v0.1"
+        }
+      ],
+      "archive": "match3-build.tar.gz"
+    },
+    {
+      "id": "match3",
+      "kind": "content",
+      "prompt": "\u4e3a\u4e09\u6d88\u751f\u62102\u4e2a\u65b0\u5173\u5361\u5185\u5bb9\u5305",
+      "status": "PASS",
+      "report": "match3-content.json.gz",
+      "build_manifest_sha256": "c4561df4c151d9152c6ab3f8e14f68c44dbc43e7c76443a3681819888f0580a9",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "70422e0b93f64051",
+          "spec_sha256": "f097aedd54a4303ab4c8322bff01a3ee7ebd8c9194429e0765bbf8a916ab6063",
+          "rules_version": "match3_v0.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "8b2136696973441d",
+          "spec_sha256": "d87ab5b5dfa9922869a3983020f8e3c46d8c6dbd403a1fc8454afa4f44cc652b",
+          "rules_version": "match3_v0.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "dc2826baeb5ea0a4",
+          "spec_sha256": "b89082a40b3a6b1920d5b4ede31104b2c51793540e8da00bdde754759f780c02",
+          "rules_version": "match3_v0.1"
+        },
+        {
+          "id": "level-4",
+          "spec_hash": "2eb213dc0a929942",
+          "spec_sha256": "0b0178f05cb461419c8a81a677d0cdaafe29310ee07d3a742bc24de218e05c3f",
+          "rules_version": "match3_v0.1"
+        },
+        {
+          "id": "level-5",
+          "spec_hash": "cb3ae7997bbf8507",
+          "spec_sha256": "c4441f7ccee8fd26f1754f0c8d72480b3378d64c388be58a6c0bc0172f3e6c55",
+          "rules_version": "match3_v0.1"
+        }
+      ],
+      "archive": "match3-content.tar.gz",
+      "content_package": {
+        "requested": 2,
+        "delivered": 2,
+        "prior_content_units": 3,
+        "total_content_units": 5,
+        "new_spec_hashes": [
+          "2eb213dc0a929942",
+          "cb3ae7997bbf8507"
+        ],
+        "duplicate_count": 0
+      }
+    },
+    {
+      "id": "match3",
+      "kind": "modify",
+      "prompt": "\u8c03\u4f18\u4e09\u6d88\u9996\u5173\u6570\u503c\uff0c\u518d\u63a5\u5165\u5f15\u64ce\uff0c\u4ea4\u4ed8\u53ef\u73a9\u7684 HTML",
+      "status": "PASS_ENGINEERING_ONLY",
+      "report": "match3-modify.json.gz",
+      "build_manifest_sha256": "00b0cfe7d5952cfae69d732f418917c16025ebc42f1c556b4d2a324fe31814aa",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "c85be3b8098395ae",
+          "spec_sha256": "b44c86f41765e28bd2c49b7b8e7a26aca0b09dd6d2a92925defb3b611eadf52c",
+          "rules_version": "match3_v0.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "8b2136696973441d",
+          "spec_sha256": "d87ab5b5dfa9922869a3983020f8e3c46d8c6dbd403a1fc8454afa4f44cc652b",
+          "rules_version": "match3_v0.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "dc2826baeb5ea0a4",
+          "spec_sha256": "b89082a40b3a6b1920d5b4ede31104b2c51793540e8da00bdde754759f780c02",
+          "rules_version": "match3_v0.1"
+        }
+      ],
+      "archive": "match3-modify.tar.gz",
+      "parameter_change": {
+        "moves": 12
+      },
+      "target_errors": {
+        "comparisons": [
+          {
+            "metric": "competent_completion_rate",
+            "requested": {
+              "min": 0.5,
+              "max": 0.9
+            },
+            "actual": 1,
+            "error": 0.09999999999999998,
+            "applicable": true,
+            "status": "OUT_OF_CONTROL_RANGE"
+          }
+        ],
+        "verified": true,
+        "in_range": false
+      },
+      "numerical_gate": "OUT_OF_CONTROL_RANGE",
+      "numeric_status": "EXPLORATORY_SAMPLES_NOT_A_DIFFICULTY_CERTIFICATION"
+    },
+    {
+      "id": "merge2048",
+      "kind": "build",
+      "prompt": "\u4f7f\u7528 Game Design Skill \u751f\u6210\u4e00\u4e2a2048\u5c0f\u6e38\u620f",
+      "status": "PASS",
+      "report": "merge2048-build.json.gz",
+      "build_manifest_sha256": "97913bcf688a955e90d880cac4638ea3f12a60ced3b89988b088158f81e0c0a0",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "b4876c90809c74d6",
+          "spec_sha256": "d2855ddce8c5b641719584d0c0d36414d9ce491627209cecc0ae94a986897749",
+          "rules_version": "merge2048_v0.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "babc8dfe219db130",
+          "spec_sha256": "ed828e2aac209882c8958f5e6098f00412da7dd15b35bf1d452e24003cec7cd4",
+          "rules_version": "merge2048_v0.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "7408f9ca8c58002a",
+          "spec_sha256": "6d2e4733770b089dc2bd4cff0765f710ef2d2184c9e55b417422b48d786221b2",
+          "rules_version": "merge2048_v0.1"
+        }
+      ],
+      "archive": "merge2048-build.tar.gz"
+    },
+    {
+      "id": "merge2048",
+      "kind": "content",
+      "prompt": "\u4e3a2048\u751f\u62102\u4e2a\u65b0\u5173\u5361\u5185\u5bb9\u5305",
+      "status": "PASS",
+      "report": "merge2048-content.json.gz",
+      "build_manifest_sha256": "08ee97a5a08b6de35061f23e5550703ef52b1d4419e7bc71f49f51791d89fdbb",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "b4876c90809c74d6",
+          "spec_sha256": "d2855ddce8c5b641719584d0c0d36414d9ce491627209cecc0ae94a986897749",
+          "rules_version": "merge2048_v0.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "babc8dfe219db130",
+          "spec_sha256": "ed828e2aac209882c8958f5e6098f00412da7dd15b35bf1d452e24003cec7cd4",
+          "rules_version": "merge2048_v0.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "7408f9ca8c58002a",
+          "spec_sha256": "6d2e4733770b089dc2bd4cff0765f710ef2d2184c9e55b417422b48d786221b2",
+          "rules_version": "merge2048_v0.1"
+        },
+        {
+          "id": "level-4",
+          "spec_hash": "9c2661a832a15988",
+          "spec_sha256": "2d8537faf1c6bf932cf005ab64b5468e8d66f7599c1c5f0090c9195c2e12f84a",
+          "rules_version": "merge2048_v0.1"
+        },
+        {
+          "id": "level-5",
+          "spec_hash": "1c9b44938ed2c9bf",
+          "spec_sha256": "4d60fc57ccc60dd4fb54576a39c4cb3095c78a4995f5d21ae9a55d09c999f138",
+          "rules_version": "merge2048_v0.1"
+        }
+      ],
+      "archive": "merge2048-content.tar.gz",
+      "content_package": {
+        "requested": 2,
+        "delivered": 2,
+        "prior_content_units": 3,
+        "total_content_units": 5,
+        "new_spec_hashes": [
+          "9c2661a832a15988",
+          "1c9b44938ed2c9bf"
+        ],
+        "duplicate_count": 0
+      }
+    },
+    {
+      "id": "merge2048",
+      "kind": "modify",
+      "prompt": "\u8c03\u4f182048\u9996\u5173\u6570\u503c\uff0c\u518d\u63a5\u5165\u5f15\u64ce\uff0c\u4ea4\u4ed8\u53ef\u73a9\u7684 HTML",
+      "status": "PASS_ENGINEERING_ONLY",
+      "report": "merge2048-modify.json.gz",
+      "build_manifest_sha256": "8cfe24ee168c568d868d48a2f99f77617841a4b8ee25bf0537fca6bac61dff51",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "321a6f2584068cb1",
+          "spec_sha256": "969aa42118ce9fa4f1bf997a622e80d294ccea21e07e0741828b9ccdeeaa261f",
+          "rules_version": "merge2048_v0.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "babc8dfe219db130",
+          "spec_sha256": "ed828e2aac209882c8958f5e6098f00412da7dd15b35bf1d452e24003cec7cd4",
+          "rules_version": "merge2048_v0.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "7408f9ca8c58002a",
+          "spec_sha256": "6d2e4733770b089dc2bd4cff0765f710ef2d2184c9e55b417422b48d786221b2",
+          "rules_version": "merge2048_v0.1"
+        }
+      ],
+      "archive": "merge2048-modify.tar.gz",
+      "parameter_change": {
+        "moveLimit": 250
+      },
+      "target_errors": {
+        "comparisons": [
+          {
+            "metric": "competent_completion_rate",
+            "requested": {
+              "min": 0.5,
+              "max": 0.9
+            },
+            "actual": 1,
+            "error": 0.09999999999999998,
+            "applicable": true,
+            "status": "OUT_OF_CONTROL_RANGE"
+          }
+        ],
+        "verified": true,
+        "in_range": false
+      },
+      "numerical_gate": "OUT_OF_CONTROL_RANGE",
+      "numeric_status": "EXPLORATORY_SAMPLES_NOT_A_DIFFICULTY_CERTIFICATION"
+    },
+    {
+      "id": "block_puzzle",
+      "kind": "build",
+      "prompt": "\u4f7f\u7528 Game Design Skill \u751f\u6210\u4e00\u4e2a\u65b9\u5757\u62fc\u56fe\u5c0f\u6e38\u620f",
+      "status": "PASS",
+      "report": "block_puzzle-build.json.gz",
+      "build_manifest_sha256": "4349d74bc413cddafd6def88b362e2a7d7cc3f051b88e50a6bfcda10e3497f5c",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "a87afac70adbe497",
+          "spec_sha256": "297fb495549478af9b99932cbea54f9a5944149c0d055427d2b27176686b7f39",
+          "rules_version": "block_puzzle_v0.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "3e47e59db5d0d68f",
+          "spec_sha256": "e16d2239458305698bfd079c7323f4051381817a495834e444f96db37e51d073",
+          "rules_version": "block_puzzle_v0.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "769c0bdd99b25b5d",
+          "spec_sha256": "d844107062de6935d96e2b2e13ad0af3b801f2439c11e0ed73e457a1ac853de1",
+          "rules_version": "block_puzzle_v0.1"
+        }
+      ],
+      "archive": "block_puzzle-build.tar.gz"
+    },
+    {
+      "id": "block_puzzle",
+      "kind": "content",
+      "prompt": "\u4e3a\u65b9\u5757\u62fc\u56fe\u751f\u62102\u4e2a\u65b0\u5173\u5361\u5185\u5bb9\u5305",
+      "status": "PASS",
+      "report": "block_puzzle-content.json.gz",
+      "build_manifest_sha256": "55ec46fec6abf73619d969688b6a737f320472a3c778793163224a97419c15f8",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "a87afac70adbe497",
+          "spec_sha256": "297fb495549478af9b99932cbea54f9a5944149c0d055427d2b27176686b7f39",
+          "rules_version": "block_puzzle_v0.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "3e47e59db5d0d68f",
+          "spec_sha256": "e16d2239458305698bfd079c7323f4051381817a495834e444f96db37e51d073",
+          "rules_version": "block_puzzle_v0.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "769c0bdd99b25b5d",
+          "spec_sha256": "d844107062de6935d96e2b2e13ad0af3b801f2439c11e0ed73e457a1ac853de1",
+          "rules_version": "block_puzzle_v0.1"
+        },
+        {
+          "id": "level-4",
+          "spec_hash": "f0dc3893efafcc19",
+          "spec_sha256": "f95cce95d9650a1b96389f359161d5a5ddedd63c239b53ef19733463996f4d64",
+          "rules_version": "block_puzzle_v0.1"
+        },
+        {
+          "id": "level-5",
+          "spec_hash": "658da047ef257843",
+          "spec_sha256": "a70dfde3d8dc2b25226741f196b20f4d6674702d477417b1a1e601f0b16fc96d",
+          "rules_version": "block_puzzle_v0.1"
+        }
+      ],
+      "archive": "block_puzzle-content.tar.gz",
+      "content_package": {
+        "requested": 2,
+        "delivered": 2,
+        "prior_content_units": 3,
+        "total_content_units": 5,
+        "new_spec_hashes": [
+          "f0dc3893efafcc19",
+          "658da047ef257843"
+        ],
+        "duplicate_count": 0
+      }
+    },
+    {
+      "id": "block_puzzle",
+      "kind": "modify",
+      "prompt": "\u8c03\u4f18\u65b9\u5757\u62fc\u56fe\u9996\u5173\u6570\u503c\uff0c\u518d\u63a5\u5165\u5f15\u64ce\uff0c\u4ea4\u4ed8\u53ef\u73a9\u7684 HTML",
+      "status": "PASS_ENGINEERING_ONLY",
+      "report": "block_puzzle-modify.json.gz",
+      "build_manifest_sha256": "156efdfe0c038c4b369d81c761278d8458dadadeb6f4f9fd2b15a06031927001",
+      "levels": [
+        {
+          "id": "level-1",
+          "spec_hash": "e5c437d642a2a92e",
+          "spec_sha256": "4fe4912144300be0c7e3a4369491f7823d91f64b7c2aaaa677e8058c025fbc1f",
+          "rules_version": "block_puzzle_v0.1"
+        },
+        {
+          "id": "level-2",
+          "spec_hash": "3e47e59db5d0d68f",
+          "spec_sha256": "e16d2239458305698bfd079c7323f4051381817a495834e444f96db37e51d073",
+          "rules_version": "block_puzzle_v0.1"
+        },
+        {
+          "id": "level-3",
+          "spec_hash": "769c0bdd99b25b5d",
+          "spec_sha256": "d844107062de6935d96e2b2e13ad0af3b801f2439c11e0ed73e457a1ac853de1",
+          "rules_version": "block_puzzle_v0.1"
+        }
+      ],
+      "archive": "block_puzzle-modify.tar.gz",
+      "parameter_change": {
+        "targetLines": 3
+      },
+      "target_errors": {
+        "comparisons": [
+          {
+            "metric": "competent_completion_rate",
+            "requested": {
+              "min": 0.5,
+              "max": 0.9
+            },
+            "actual": 1,
+            "error": 0.09999999999999998,
+            "applicable": true,
+            "status": "OUT_OF_CONTROL_RANGE"
+          }
+        ],
+        "verified": true,
+        "in_range": false
+      },
+      "numerical_gate": "OUT_OF_CONTROL_RANGE",
+      "numeric_status": "EXPLORATORY_SAMPLES_NOT_A_DIFFICULTY_CERTIFICATION"
+    }
+  ],
+  "model_calls": 0,
+  "formal_trials": 0,
+  "external_review": "UNVERIFIED",
+  "limitations": [
+    "First content unit has full win/loss UI witnesses; shooter has win witnesses for all units. Other later units have loaded-state and real-input checks, not complete campaign difficulty validation.",
+    "Numerical changes have fit/heldout data; target-band failures remain visible and are not certified balanced.",
+    "No human participant study."
+  ]
+}

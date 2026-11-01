@@ -1,4 +1,4 @@
-import { BaseRuntime, SeededRng, clone, canonical, hash, makeSpec } from '../core/index.mjs';
+import { BaseRuntime, SeededRng, validateSeed, clone, canonical, hash, makeSpec } from '../core/index.mjs';
 
 /** Match-3 reference rules: blockers occupy cells; adjacent clears damage each
  * blocker once per wave. Mask holes and surviving blockers split gravity into
@@ -288,7 +288,7 @@ export function chooseAction(observation,profile='greedy',rng=new SeededRng(1),b
   }
   return clone(best);
 }
-export function generate(spec=exampleSpec(),seed=1,controls={}) {
+export function generate(spec=exampleSpec(),seed=1,controls={}) {validateSeed(seed);
   const supported=['count','max_attempts','width','height','colors','moves','mask','blockers','hole_count','blocker_count','blocker_hp','objectives','refillWeights'];
   const unsupported=Object.keys(controls).filter(k=>!supported.includes(k));
   if(unsupported.length) return {candidates:[],rejected:[{reason:'UNSUPPORTED_CONTROL',controls:unsupported}],diagnostics:{attempts:0,unsupported_controls:unsupported}};

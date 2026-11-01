@@ -1,0 +1,85 @@
+{
+  "tested_commit": "bca1b5cf5211aa17994837d027dd5e30cd2be854",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 4492,
+      "sha256": "8f2335a534a90dca153390c9be7695bd4ec64659f684a50b6e1d3d4a5d4a9ae6"
+    },
+    {
+      "path": "acceptance-summary.json",
+      "bytes": 9239,
+      "sha256": "3c71e40af4a6e603aa694a632f0e8c2b36e8b293a590cec5e310b7eb37dfda37"
+    },
+    {
+      "path": "browser-index.json",
+      "bytes": 29432,
+      "sha256": "401c58a59b935fb9fa865e69819e64b534810ed98eb51f1837b9fb76f8af8925"
+    },
+    {
+      "path": "browser-reports.json.gz",
+      "bytes": 2754,
+      "sha256": "ad1e96800dc4c56d1ef43807068bef5f95bab21c9f57190c3eddb5341c25ff29"
+    },
+    {
+      "path": "bundle-install.log.gz",
+      "bytes": 123,
+      "sha256": "7d4a30d926e9f2974afb5b9839fd63ebdf39a1097cc01e3ae048668d64312493"
+    },
+    {
+      "path": "bundle-smoke.log.gz",
+      "bytes": 448,
+      "sha256": "42c1d642e345fb96b53eb68fb2eb3cda9fd5f2c8ac4797e1e7af2aa2ee2f7acc"
+    },
+    {
+      "path": "bundle.log.gz",
+      "bytes": 179,
+      "sha256": "80d5dc28561caf68dfac8ec2be6d5cabe35c33cc64e358106d30d368ecde679b"
+    },
+    {
+      "path": "fixtures.log.gz",
+      "bytes": 118286,
+      "sha256": "59dcb30314f7acde8be5d414c9a25035422bc8b8483db9c2e91672a90967933d"
+    },
+    {
+      "path": "golden.log.gz",
+      "bytes": 5606,
+      "sha256": "127642bbe265518a3fef5a4f6bb046866381966dcfba8142bc2cb74ab0fb3c5b"
+    },
+    {
+      "path": "manifest.json.gz",
+      "bytes": 33478,
+      "sha256": "6ab29381c50f3c7ab73ddd290cc82f86bbb15827424471f54f1774c89c904b55"
+    },
+    {
+      "path": "rules.log.gz",
+      "bytes": 109340,
+      "sha256": "f2f8dda74126b8714cfa09bd16c79918a196b200d1933a365eb2f4019ebef2c7"
+    },
+    {
+      "path": "screenshots.json",
+      "bytes": 370,
+      "sha256": "66f89dfdf200ffb42c2f12cf4b30d88abbb10b2c44a93c77739890f23a621804"
+    },
+    {
+      "path": "shooter-mobile.png",
+      "bytes": 59099,
+      "sha256": "77729a1cba1584b3faf4082204c78d8b6687f00ceb049e05a18b0b33751d2fa7"
+    },
+    {
+      "path": "sokoban-desktop.png",
+      "bytes": 110201,
+      "sha256": "0273ec24d20b051715427b174782aa63c9dffc99ecca4cda8e693b8ccebb3c27"
+    },
+    {
+      "path": "specs.log.gz",
+      "bytes": 330,
+      "sha256": "1283e5143b242ed323c13d1185d265ca0c69ec293346a982ca0b8f599f64bb6a"
+    },
+    {
+      "path": "tests.log.gz",
+      "bytes": 28328,
+      "sha256": "b0f278f67d8c94ca9000ad5288cdc59b027edb28bac4e7edb2b9c1418b5c7ebd"
+    }
+  ]
+}

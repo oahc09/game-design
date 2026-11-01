@@ -1,4 +1,4 @@
-import { clone, SeededRng, canonical } from '../core/index.mjs';
+import { clone, SeededRng, canonical, validateSeed, validateSeedSet } from '../core/index.mjs';
 import { getArchetype } from '../archetypes/index.mjs';
 import { simulateBatch } from './batch.mjs';
 import { controllability } from './metrics.mjs';
@@ -70,6 +70,8 @@ export function sensitivityAnalysis(candidates, parameterNames, metricNames, opt
     caveat: 'Empirical local or endpoint sensitivity, not causal extrapolation. Missing matching parameter cells are not imputed.' };
 }
 export async function tuneBalance(spec, options = {}) {
+  validateSeed(options.searchSeed===undefined?1:options.searchSeed);
+  if(options.seeds!==undefined)validateSeedSet(options.seeds);
   const algorithm = options.algorithm ?? 'grid';
   if (!['grid', 'random'].includes(algorithm)) throw new Error(`UNSUPPORTED_BALANCE_ALGORITHM: ${algorithm}`);
   const parameters = options.parameters ?? {}, targets = options.targets ?? {};

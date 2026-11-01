@@ -1,3 +1,4 @@
+import {validateSeed} from '../core/index.mjs';
 import { canonical, clone } from '../core/index.mjs';
 import { getArchetype } from '../archetypes/index.mjs';
 
@@ -95,6 +96,7 @@ export function search(problem, options = {}) {
 
 /** Runtime solver is explicitly an offline fixed-seed oracle, never a PlayerModel. */
 export function solve(spec, options = {}) {
+  validateSeed(options.seed===undefined?1:options.seed);
   const archetype = getArchetype(spec.game?.archetype ?? spec.design?.archetype);
   const issues = archetype.validateContent(spec.content);
   if (issues.length) return { status: 'INVALID_STATE', reason: 'CONTENT_INVALID', issues, actions: [], solver_version: SOLVER_VERSION };

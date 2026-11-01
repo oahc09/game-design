@@ -1,4 +1,5 @@
-import { BaseRuntime, SeededRng, clone, canonical, hash, makeSpec } from '../core/index.mjs';
+import {validateSpawnBounds} from '../framework/task-contract.mjs';
+import { BaseRuntime, SeededRng, validateSeed, clone, canonical, hash, makeSpec } from '../core/index.mjs';
 import { runReplay } from '../core/replay.mjs';
 
 /** Reference rules v0.1.1: IEEE-754 doubles, 1e-9 collision tolerance, dt=1/60.
@@ -262,13 +263,14 @@ export function chooseAction(observation,profile='greedy',rng=new SeededRng(1),b
   if(settings.action_error_rate&&rng.nextFloat()<settings.action_error_rate)return clone(noopAction);
   return {move,aim,fire:true};
 }
-export function generate(spec,seed,controls={}) {
-  const supported=['count','max_attempts','enemy_count','enemy_speed','enemy_hp','fire_interval_ticks','wave_delay_ticks'];
+export function generate(spec,seed=1,controls={}) {validateSeed(seed);
+  const supported=['count','max_attempts','enemy_count','enemy_speed','enemy_hp','fire_interval_ticks','wave_delay_ticks','spawn_bounds'];
   const unsupported=Object.keys(controls).filter(k=>!supported.includes(k));
   if(unsupported.length)return {candidates:[],rejected:[{reason:'OUT_OF_CONTROL_RANGE',controls:unsupported}],diagnostics:{attempts:0,unsupportedControls:unsupported}};
   const invalidControls=[];
   for(const key of ['count','max_attempts'])if(controls[key]!==undefined&&(!Number.isInteger(controls[key])||controls[key]<(key==='count'?1:0)||controls[key]>(key==='count'?100:1000)))invalidControls.push(key);
   if(invalidControls.length)return {candidates:[],rejected:[{reason:'OUT_OF_CONTROL_RANGE',controls:invalidControls}],diagnostics:{attempts:0,unsupportedControls:[]}};
+  if(controls.spawn_bounds!==undefined)validateSpawnBounds(controls.spawn_bounds);
   const rng=new SeededRng(seed),candidates=[],rejected=[];
   const count=Math.max(1,Math.min(100,Math.floor(controls.count??1))),max=Math.max(0,Math.min(1000,Math.floor(controls.max_attempts??count*3)));
   let attempts=0;
@@ -278,8 +280,10 @@ export function generate(spec,seed,controls={}) {
     if(!Number.isInteger(n)||n<1||n>100){rejected.push({attempt:attempts,reason:'OUT_OF_CONTROL_RANGE',control:'enemy_count'});continue;}
     c.enemySpeed=controls.enemy_speed??c.enemySpeed;c.enemyHP=controls.enemy_hp??c.enemyHP;c.enemyFireIntervalTicks=controls.fire_interval_ticks??c.enemyFireIntervalTicks;
     c.enemies=[];c.spawns=[];
+    const b=controls.spawn_bounds,region=b?{min_x:Math.max(b.min_x,c.enemyRadius),max_x:Math.min(b.max_x,c.width-c.enemyRadius),min_y:Math.max(b.min_y,c.enemyRadius),max_y:Math.min(b.max_y,c.height-c.enemyRadius)}:null;
+    if(region&&(region.min_x>region.max_x||region.min_y>region.max_y)){rejected.push({attempt:attempts,reason:'EMPTY_SPAWN_BOUNDS_INTERSECTION',requested:b,region});break;}
     for(let i=0;i<n;i++) {
-      const enemy={x:c.enemyRadius+rng.nextFloat()*(c.width-2*c.enemyRadius),y:c.enemyRadius+rng.nextFloat()*(c.height*.35-c.enemyRadius)};
+      const enemy=region?{x:region.min_x+rng.nextFloat()*(region.max_x-region.min_x),y:region.min_y+rng.nextFloat()*(region.max_y-region.min_y)}:{x:c.enemyRadius+rng.nextFloat()*(c.width-2*c.enemyRadius),y:c.enemyRadius+rng.nextFloat()*(c.height*.35-c.enemyRadius)};
       if(controls.wave_delay_ticks&&i>=Math.ceil(n/2))c.spawns.push({...enemy,tick:controls.wave_delay_ticks});else c.enemies.push(enemy);
     }
     content.extensions.arcade_shooter=c;content.id=`shooter-${seed}-${attempts}`;

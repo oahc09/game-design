@@ -1,0 +1,12 @@
+[
+  {
+    "path": "shooter-mobile.png",
+    "original": "browser/arcade_shooter-GkQBkI/mobile.png",
+    "sha256": "77729a1cba1584b3faf4082204c78d8b6687f00ceb049e05a18b0b33751d2fa7"
+  },
+  {
+    "path": "sokoban-desktop.png",
+    "original": "browser/sokoban-86CAUe/normal-play.png",
+    "sha256": "0273ec24d20b051715427b174782aa63c9dffc99ecca4cda8e693b8ccebb3c27"
+  }
+]

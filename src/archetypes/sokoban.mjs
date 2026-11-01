@@ -1,4 +1,4 @@
-import {BaseRuntime, SeededRng, clone, hash, makeSpec} from '../core/index.mjs';
+import {BaseRuntime, SeededRng, validateSeed, clone, hash, makeSpec} from '../core/index.mjs';
 
 export const manifest = {id:'sokoban',version:'1.0.0',rulesVersion:'sokoban_v0.1',simulationModes:['TURN_BASED'],requiredCapabilities:['grid','turn_based'],contentTypes:['level','challenge'],playerModels:['random','greedy','astar'],playerModelVersion:'1.0.0',metricVersion:'1.0.0',generatorVersion:'1.0.0'};
 export const extensionSchema = {type:'object',properties:{map:{type:'array',minItems:3,items:{type:'string',minLength:3}},maxMoves:{type:'integer',minimum:1}},required:['map'],additionalProperties:false};
@@ -65,7 +65,7 @@ export function chooseAction(obs,profile='greedy',rng=new SeededRng(1),budget={}
   return actions.map((a,i)=>{const s=move(obs,a),pushed=obs.boxes.includes(s.player);return {a,i,v:(detectDeadlock(s).deadlocked?-1e6:0)-heuristic(s)*20+(pushed?3:0)-Math.min(...s.boxes.map(b=>distance(s,s.player,b)))};}).sort((a,b)=>b.v-a.v||a.i-b.i)[0].a;
 }
 export function exampleSpec(overrides={}){const spec=makeSpec('sokoban','TURN_BASED',{map:['########','# .  . #','# $  $ #','#  @   #','########'],maxMoves:120,...overrides},{type:'discrete',values:Object.keys(DIRS)});spec.evaluation.player_profiles=manifest.playerModels.map(id=>({id,version:manifest.playerModelVersion}));spec.evaluation.metrics=["completion_rate", "moves", "pushes", "deadlock_traps", "box_switches", "branching"];return spec;}
-export function generate(spec,seed,controls={}){
+export function generate(spec,seed=1,controls={}){validateSeed(seed);
   const supported=['width','height','boxes','pulls','max_attempts','count'],unsupported_controls=Object.keys(controls).filter(k=>!supported.includes(k)),r=new SeededRng(seed),candidates=[],rejected=[],count=controls.count??1,max=controls.max_attempts??40,w=controls.width??7,h=controls.height??6,n=controls.boxes??2,pulls=controls.pulls??20;
   if(![w,h,n,pulls,count,max].every(Number.isInteger)||w<5||h<5||w*h>1024||n<1||n>(w-2)*(h-2)-4||pulls<1||pulls>200||count<1||count>100||max<1||max>1000)return {candidates:[],rejected:[{reason:'INVALID',message:'Invalid size, box count, pull count, count, or attempt bound.'}],diagnostics:{attempts:0,unsupported_controls}};
   let attempts=0;const seen=new Set();

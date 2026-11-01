@@ -45,7 +45,7 @@ export async function freezeBenchmark({root,datasetRoot='benchmark-dataset/v0.1'
  const hashes={};for(const path of paths)hashes[path]=sha256(await readFile(contained(root,path)));
  for(const k of Object.keys(DEFAULT_BUDGET))assert(Number.isInteger(budget[k])&&budget[k]>0,`Invalid budget ${k}`);
  const missing=REQUIRED_VERSIONS.filter(k=>!versions[k]);
- const exposure={version:'1.0.0',experiment,shared_engine_paths:[...enginePaths],toolkit_paths:[...toolkitPaths],baseline:experiment==='full_skill'?['engine','engine_docs','neutral_starter','public_task']:['engine','engine_docs','neutral_starter','toolkit','public_task'],treatment:['engine','engine_docs','neutral_starter','toolkit','skill','public_task'],primary_full_skill_comparison:experiment==='full_skill'};
+ const exposure={version:experiment==='instruction_ablation'?'2.0.0':'1.0.0',...(experiment==='instruction_ablation'?{shared_execution_paths:[...SHARED_EXECUTION_MODULES],treatment_instruction_paths:[...TREATMENT_INSTRUCTIONS]}:{}),experiment,shared_engine_paths:[...enginePaths],toolkit_paths:[...toolkitPaths],baseline:experiment==='full_skill'?['engine','engine_docs','neutral_starter','public_task']:['engine','engine_docs','neutral_starter','toolkit','public_task'],treatment:['engine','engine_docs','neutral_starter','toolkit','skill','public_task'],primary_full_skill_comparison:experiment==='full_skill'};
  const manifest={execution_audit:executionAudit,dataset_root:datasetRoot,exposure_protocol:exposure,benchmark_version:benchmarkVersion,study_kind:studyKind,status:missing.length?'BLOCKED_MISSING_PREREQUISITES':'FROZEN',created_at:timestamp,versions,budget:jsonCopy(budget),seed_set:tasks[0].seed_set,coverage:validation.coverage,missing_prerequisites:missing,frozen_roots:[...required,...files],files:hashes,task_ids:tasks.map(t=>t.id),model_execution_discovery:{codex_cli:'present',chatgpt_login:'present_at_2026-10-08_preflight',frozen_model_snapshot:'not_specified',actual_model_runs:0,human_participants:0},freeze_policy:'append-only; corrections require a new version; never remove failed trials'};
  manifest.digest=sha256(manifest);const path=contained(root,manifestPath);await mkdir(dirname(path),{recursive:true});await writeFile(path,JSON.stringify(manifest,null,2)+'\n',{flag:'wx'});return manifest;
 }
@@ -60,7 +60,7 @@ export async function verifyFreeze(root,manifest){
 const verifiedExecutorAudits=new WeakMap();
 export function formalPrerequisites(manifest,executor,evaluator,auditReceipt){
  const missing=[...(manifest.missing_prerequisites??[])];
- if(!EXPERIMENTS.includes(manifest.exposure_protocol?.experiment)||manifest.exposure_protocol?.version!=='1.0.0')missing.push('frozen_exposure_protocol');
+ if(!EXPERIMENTS.includes(manifest.exposure_protocol?.experiment)||!validExposureProtocol(manifest.exposure_protocol))missing.push('frozen_exposure_protocol');
  if(manifest.status!=='FROZEN')missing.push('complete_frozen_manifest');
  if(!executor?.execute)missing.push('executor');
  const audit=verifiedExecutorAudits.get(auditReceipt);
@@ -77,8 +77,16 @@ export function formalPrerequisites(manifest,executor,evaluator,auditReceipt){
 }
 export const PUBLIC_REGRESSION_FIXTURES='fixtures/regression/golden';
 export const PUBLIC_TOOLKIT=['src/core','src/archetypes','src/framework','src/adapters','src/qa','src/benchmark/runner.mjs','src/benchmark/provenance.mjs','schemas','web','vendor','examples','tools','package.json','LICENSE','docs/IMPLEMENTATION-CONTRACT.md',PUBLIC_REGRESSION_FIXTURES];
+/** v2 separates executable dependencies from optional natural-language instructions.
+ * Keep PUBLIC_TOOLKIT and protocol v1 unchanged for historical frozen experiments. */
+export const SHARED_EXECUTION_MODULES=Object.freeze(['src/skill/index.mjs','src/skill/toolkit.mjs','src/skill/playable-task.mjs','src/skill/project-builder.mjs','src/skill/project-browser.mjs','src/skill/project-content.mjs']);
+export const TREATMENT_INSTRUCTIONS=Object.freeze(['SKILL.md','skill']);
+function validExposureProtocol(exposure){
+ return exposure?.version==='1.0.0'||(exposure?.version==='2.0.0'&&exposure.experiment==='instruction_ablation'&&stable(exposure.shared_execution_paths)===stable(SHARED_EXECUTION_MODULES)&&stable(exposure.treatment_instruction_paths)===stable(TREATMENT_INSTRUCTIONS));
+}
 /** Allowlist export prevents accidental loading of developer tests, hidden assets, or other arm outputs. */
-export async function prepareWorkspace({root,workspace,task,variant,experiment='full_skill',enginePaths=PUBLIC_ENGINE,toolkitPaths=PUBLIC_TOOLKIT}){
+export async function prepareWorkspace({root,workspace,task,variant,experiment='full_skill',enginePaths=PUBLIC_ENGINE,toolkitPaths=PUBLIC_TOOLKIT,exposureVersion=experiment==='instruction_ablation'?'2.0.0':'1.0.0'}){
+ assert(exposureVersion==='1.0.0'||(exposureVersion==='2.0.0'&&experiment==='instruction_ablation'),'Unknown exposure protocol version');
  assert(['baseline','treatment'].includes(variant),'Unknown variant');assert(EXPERIMENTS.includes(experiment),'Unknown experiment exposure profile');
  let ancestor=resolve(workspace);while(true){try{await lstat(ancestor);break;}catch(error){if(error.code!=='ENOENT')throw error;ancestor=dirname(ancestor);}}assert(await realpath(ancestor)===ancestor,'Workspace symlink ancestor forbidden');
  await mkdir(workspace,{recursive:true,mode:0o700});const initial=await inspectWorkspaceBoundary(workspace,{expectedFiles:[]});assert(initial.valid&&(await readdir(workspace)).length===0,'Workspace must be new or empty with no links or extra files');
@@ -87,10 +95,12 @@ export async function prepareWorkspace({root,workspace,task,variant,experiment='
  for(const p of variant==='treatment'||experiment==='instruction_ablation'?toolkitPaths:[]){safeRelativePath(p);assert(['src/benchmark/runner.mjs','src/benchmark/provenance.mjs',PUBLIC_REGRESSION_FIXTURES].includes(p)||!/(^|\/)(skill|references|fixtures|tests|benchmark-dataset|benchmark)(\/|$)/.test(p),`Toolkit path contains protected material: ${p}`);
   for(const path of await filesUnder(root,p)){const dest=contained(workspace,path);await mkdir(dirname(dest),{recursive:true});await copyFile(contained(root,path),dest);copied.push(path);}
  }
- if(variant==='treatment')for(const path of [...await filesUnder(root,'SKILL.md'),...await filesUnder(root,'skill'),...await filesUnder(root,'src/skill')]){const dest=contained(workspace,path);await mkdir(dirname(dest),{recursive:true});await copyFile(contained(root,path),dest);copied.push(path);}
+ const extraRoots=exposureVersion==='2.0.0'?[...SHARED_EXECUTION_MODULES,...(variant==='treatment'?TREATMENT_INSTRUCTIONS:[])]:variant==='treatment'?['SKILL.md','skill','src/skill']:[];
+ for(const path of (await Promise.all(extraRoots.map(p=>filesUnder(root,p)))).flat()){if(exposureVersion==='2.0.0'&&path.startsWith('skill/'))assert(path.endsWith('.md'),`Non-instruction material in treatment instructions: ${path}`);const dest=contained(workspace,path);await mkdir(dirname(dest),{recursive:true});await copyFile(contained(root,path),dest);copied.push(path);}
  await writeFile(join(workspace,'task.json'),JSON.stringify(publicTask(task),null,2),{flag:'wx'});
  const expectedFiles=[...new Set(copied),'task.json'],inventory=await inspectWorkspaceBoundary(workspace,{expectedFiles});assert(inventory.valid,`Workspace inventory failed: ${JSON.stringify(inventory.issues)}`);
- return {workspace,experiment,inventory,expected_files:expectedFiles,files:[...new Set(copied)],shared_engine_digest:sha256(sharedEngineHashes),manifest_digest:sha256([...new Set(copied)].sort())};
+ const executionHashes={};for(const path of [...new Set(copied)].sort())if(path!=='SKILL.md'&&!path.startsWith('skill/'))executionHashes[path]=sha256(await readFile(contained(workspace,path)));
+ return {workspace,experiment,exposure_protocol_version:exposureVersion,shared_execution_digest:exposureVersion==='2.0.0'?sha256(executionHashes):null,inventory,expected_files:expectedFiles,files:[...new Set(copied)],shared_engine_digest:sha256(sharedEngineHashes),manifest_digest:sha256([...new Set(copied)].sort())};
 }
 export function publicTask(task){const {id,archetype,task_type,difficulty,prompt,materials,deliverables,success_criteria,stages,seed_set}=task;return jsonCopy({id,archetype,task_type,difficulty,prompt,materials,deliverables,success_criteria,stages,seed_set});}
 async function executeJSON(command,args,input,{cwd,timeout=300000,maxBytes=8*1024*1024,env={}}={}){
@@ -190,6 +200,7 @@ export async function runAB({root,manifest,executor,evaluator,outputDir,tasks:re
  const exposure=manifest.exposure_protocol??{};const experiment=requestedExperiment??exposure.experiment??'full_skill',enginePaths=requestedEnginePaths??exposure.shared_engine_paths??PUBLIC_ENGINE,toolkitPaths=requestedToolkitPaths??exposure.toolkit_paths??PUBLIC_TOOLKIT;
  assert(EXPERIMENTS.includes(experiment),'Unknown experiment exposure profile');
  assert(experiment===exposure.experiment,'Experiment differs from frozen exposure protocol');
+ assert(validExposureProtocol(exposure),'Unsupported frozen exposure protocol');
  assert(stable(enginePaths)===stable(exposure.shared_engine_paths)&&stable(toolkitPaths)===stable(exposure.toolkit_paths),'Resources differ from frozen exposure protocol');
  const auditReceipt=mode==='formal'?await verifyExecutorAudit({root,manifest,executor,auditTrust}):null;
  const prerequisites=formalPrerequisites(manifest,executor,evaluator,auditReceipt);if(mode==='formal'&&!auditReceipt.valid)prerequisites.missing.push(...auditReceipt.issues.map(i=>i.code));
@@ -209,17 +220,18 @@ export async function runAB({root,manifest,executor,evaluator,outputDir,tasks:re
  const results=[],blindMap=[],schedule=shuffle(tasks,orderSeed),usedBlindIds=new Set();
  const makeId=()=>{let id;do{id=randomBytes(12).toString('hex');}while(usedBlindIds.has(id));usedBlindIds.add(id);return id;};
  for(const task of schedule){
-  let sharedEngineDigest=null;
+  let sharedEngineDigest=null,sharedExecutionDigest=null;
   let pre={ok:true};try{pre=preflight?await preflight(publicTask(task)):{ok:mode!=='formal',code:'RUNNER_UNAVAILABLE',message:'Formal preflight required'};}catch(error){pre={ok:false,code:'RUNNER_UNAVAILABLE',message:error.message};}
   assert(pre.ok||INFRA_CODES.includes(pre.code),'Preflight cannot relabel a model failure as infrastructure');
   for(const variant of shuffle(['baseline','treatment'],orderSeed+Number(task.id.replace(/\D/g,'')))){
    const blindId=makeId();blindMap.push({blind_id:blindId,task_id:task.id,variant});await appendFile(join(outputDir,'blind-key.private.jsonl'),JSON.stringify(blindMap.at(-1))+'\n');
    const base={schema_version:'1',task_id:task.id,variant,blind_id:blindId,archetype:task.archetype,task_type:task.task_type,difficulty:task.difficulty,unseen:task.unseen,manifest_digest:manifest.digest,study_kind:mode==='formal'?'FORMAL_AB':'INFRASTRUCTURE_SMOKE',timestamp:new Date().toISOString()};
    if(!pre.ok){results.push({...base,status:'INFRA_FAILURE',eligible:false,infra_failure:pre,attempts:[],first_attempt_success:false,final_success:false,repair_count:0,automatic:{},human:[],issues:[],evidence:[]});await appendFile(join(outputDir,'results.partial.jsonl'),JSON.stringify(results.at(-1))+'\n');continue;}
-   const workspace=join(outputDir,'workspaces',blindId);const prepared=await prepareWorkspace({root,workspace,task,variant,experiment,enginePaths,toolkitPaths});
+   const workspace=join(outputDir,'workspaces',blindId);const prepared=await prepareWorkspace({root,workspace,task,variant,experiment,enginePaths,toolkitPaths,exposureVersion:exposure.version});
    if(sharedEngineDigest!==null)assert(prepared.shared_engine_digest===sharedEngineDigest,'Engine/docs/starter bytes differ between arms');sharedEngineDigest=prepared.shared_engine_digest;
+   if(exposure.version==='2.0.0'){if(sharedExecutionDigest!==null)assert(prepared.shared_execution_digest===sharedExecutionDigest,'Executable toolkit bytes differ between arms');sharedExecutionDigest=prepared.shared_execution_digest;}
    if(mode==='formal')for(const path of prepared.files)assert(manifest.files[path],`Unfrozen model input ${path}`);
-   await journal('WORKSPACE_PREPARED',{blind_id:blindId,expected_files:prepared.expected_files,inventory:prepared.inventory});
+   await journal('WORKSPACE_PREPARED',{blind_id:blindId,expected_files:prepared.expected_files,inventory:prepared.inventory,exposure_protocol_version:prepared.exposure_protocol_version,shared_execution_digest:prepared.shared_execution_digest});
    let executorMs=0;const attempts=[],spent=Object.fromEntries(USAGE_FIELDS.map(f=>[f,0]));let last=null,brokerSession=null;
    const binding={trial_id:blindId,source_id:executor.identity?.broker_digest??'smoke-test-supervisor-broker',nonce:randomBytes(24).toString('hex')};
    const meter=executor.broker?createUsageLedger({trialId:blindId,budget:manifest.budget,sourceId:binding.source_id,nonce:binding.nonce}):null;
