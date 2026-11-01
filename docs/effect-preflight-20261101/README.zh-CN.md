@@ -44,3 +44,19 @@
 ## 状态边界
 
 本目录是新的接入诊断，不是效果结果。真实模型调用0、正式trial0、真人0。未创建新的 research freeze；原配置门槛没有降低。精确已观测/未观测状态以 `readiness.json` 和原始离线/导出记录为准。
+
+## 后续：用户明确授权的一次 transport 诊断（10:44 UTC）
+
+以上是10:38–10:43的初始预检。随后用户对“1次现有CLI纯文本、无工具、60秒、可能消耗额度且无法保证远端取消”的明确询问回复允许；授权消息引用保留在 `transport-single-authorized/request.json`。
+
+实际执行 **1次**，沿用 `gpt-6-luna/high`；设置本次进程只读/无工具与60秒进程截止，未更改全局配置、认证或模型路由。约 **5.201秒** 后退出1，启动失败：
+
+```text
+Error: failed to initialize in-process app-server client: Read-only file system (os error 30)
+```
+
+没有完成的模型turn、答复、usage或工具事件。stdout为空；没有usage必须记为 **UNKNOWN，不是0成本**。没有自动重试、提权、改HOME、复制凭据、读取session、迁移环境或改走其他provider。此次不计D或M7，也没有取得可用于效果比较的设计产物。
+
+原始命令/最小prompt、redacted stdout/stderr、时间与摘要保存在 `transport-single-authorized/`。这一次授权已经消耗，不能据此继续尝试不同启动变体。
+
+可行动下一步：当前CLI的受支持app-server初始化需要由环境/平台运营方修复其只读文件系统前置条件，之后还需要另行授权新诊断；或者提供当前环境内**已存在且获授权**的合格broker及前述公开接入资料。仅让CLI能启动仍不补齐D/E的token硬帽、独立隔离/采集评审和真人门禁。现有用户禁止迁环境/Windows Sandbox的约束继续有效。
