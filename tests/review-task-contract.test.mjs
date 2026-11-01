@@ -47,3 +47,30 @@ test('real extension pipeline delivers requested one and twenty, retaining missi
  const levels=projectLevels('arcade_shooter'),build=await createProjectBuilder({outputRoot:out})({spec:levels[0].spec,project:{levels}});
  for(const count of [1,20]){const result=await extendPlayableTask(`为射击生成${count}个新关卡内容包`,{buildArtifact:build.build_artifact,outputRoot:out});assert.equal(result.status,'UNVERIFIED');assert.equal(result.content_package.requested,count);assert.equal(result.content_package.delivered,count);assert.equal((await verifyPlayableBuild(result.build.build_artifact.directory)).project.levels.length,3+count);}
 });
+test('structured parameters cannot silently override text archetype, bounds or no-build permission',async()=>{
+ const route=routeTask({prompt:'生成打飞机小游戏',archetype:'sokoban'});assert.equal(route.status,'NEEDS_CLARIFICATION');
+ assert.throws(()=>normalizeTaskContract({archetype:'sokoban'},{archetype:'arcade_shooter'}),/CONFLICTING_REQUEST_ARCHETYPE/);
+ assert.throws(()=>normalizeTaskContract({spawn_bounds:bounds},{spawn_bounds:{...bounds,max_x:80}}),/CONFLICTING_SPAWN_BOUNDS/);
+ const noBuild=routeTask({prompt:'分析射击游戏，不要构建',task_type:'ENGINE_IMPLEMENTATION'});assert.equal(noBuild.task_contract.permissions.mode,'read_only');
+ const result=await executeRoute({...noBuild,status:'ROUTED',steps:[{tool:'build_project'}]},{build_project(){assert.fail('not authorized')}});assert.equal(result.reason,'READ_ONLY_PERMISSION');
+});
+test('partial generation retains twenty as denominator and never reports successful fulfillment',async()=>{
+ const {createToolkitTools}=await import('../src/skill/toolkit.mjs');const task_contract=normalizeTaskContract('生成20关',{archetype:'arcade_shooter'});
+ const result=await createToolkitTools().generate_content({context:{spec:shooter(),seed:77,task_contract,controls:{count:20,max_attempts:1}},outputs:{}});
+ assert.equal(result.status,'FAIL');assert.equal(result.data.diagnostics.requested_count,20);assert.equal(result.data.candidates.length,1);
+});
+test('direct toolkit context cannot weaken a routed permission or requested quantity',async()=>{
+ const {createToolkitTools}=await import('../src/skill/toolkit.mjs');const tools=createToolkitTools(),route=routeTask('生成打飞机小游戏，只读');
+ const context={spec:shooter(),task_contract:{...route.task_contract,permissions:{mode:'write'}}};const result=await tools.build_project({route,context,outputs:{}});assert.equal(result.status,'FAIL');assert.equal(result.data.reason,'READ_ONLY_PERMISSION');
+ const countRoute=routeTask('生成20关打飞机');assert.throws(()=>tools.generate_content({route:countRoute,context:{spec:shooter(),task_contract:{...countRoute.task_contract,requested_count:2}},outputs:{}}),/CONFLICTING_TASK_CONTRACT/);
+});
+test('merged routed contract reaches builder and source read-only cannot be relabeled write',async()=>{
+ const {createToolkitTools}=await import('../src/skill/toolkit.mjs'),{hash}=await import('../src/core/index.mjs');let seen;
+ const route=routeTask('生成打飞机小游戏'),spec=shooter();await createToolkitTools({projectBuilder:async c=>{seen=c.task_contract;return {status:'PASS',checked_spec_hash:hash(c.spec),build_artifact:{directory:'test-double-not-a-real-build'}};}}).build_project({route,context:{spec},outputs:{}});assert.deepEqual(seen,route.task_contract);
+ const original=normalizeTaskContract('只读诊断',{archetype:'arcade_shooter'}),forged={...original,permissions:{mode:'write'}};assert.equal(validateTaskSpecs(forged,[spec]).status,'FAIL');
+ const result=await executeRoute({status:'ROUTED',task_contract:forged,steps:[{tool:'build_project'}]},{build_project(){assert.fail('must not execute')}});assert.equal(result.reason,'READ_ONLY_PERMISSION');
+});
+test('explicit original read-only permission survives relabeling the effective field',async()=>{
+ const c=normalizeTaskContract({prompt:'生成打飞机小游戏',permissions:{mode:'read_only'}},{archetype:'arcade_shooter'});c.permissions.mode='write';assert.equal(validateTaskSpecs(c,[shooter()]).status,'FAIL');
+ const {createProjectBuilder}=await import('../src/skill/project-builder.mjs');await assert.rejects(createProjectBuilder({outputRoot:'/must-not-write'})({spec:shooter(),task_contract:c}),/READ_ONLY_PERMISSION/);
+});

@@ -1,6 +1,6 @@
 /** Operational, deterministic routing. This is a conservative heuristic, not an LLM. */
 import {hash} from '../core/index.mjs';
-import {normalizeTaskContract,readOnlyRequest} from '../framework/task-contract.mjs';
+import {normalizeTaskContract,readOnlyRequest,contractReadOnly} from '../framework/task-contract.mjs';
 export const SKILL_VERSION = '0.1.0';
 export const TASK_TYPES = ['IDEATION','DESIGN','RULE_FORMALIZATION','CONTENT_GENERATION','BALANCE','DIFFICULTY','PLAYTEST','QA','ENGINE_IMPLEMENTATION','EXISTING_GAME_ANALYSIS'];
 export const KNOWN_ARCHETYPES = ['sokoban','falling_blocks','arcade_shooter','match3','merge2048','block_puzzle'];
@@ -75,6 +75,7 @@ export function classifyTask(task) {
 export function resolveArchetype(task, registry=KNOWN_ARCHETYPES) {
  const explicit=typeof task==='object' ? task.archetype ?? task.spec?.game?.archetype : null;
  const matches=Object.entries(aliases).filter(([,re])=>re.test(taskText(task))).map(([id])=>id);
+ if(explicit&&matches.some(id=>id!==explicit))return {status:'AMBIGUOUS',id:null,candidates:[...new Set([explicit,...matches])],capabilities:[],missing_capabilities:[],needs_clarification:true};
  const candidates=explicit?[explicit]:matches;
  if(candidates.length!==1) return {status:candidates.length?'AMBIGUOUS':'UNSPECIFIED',id:null,candidates,capabilities:[],missing_capabilities:[],needs_clarification:true};
  const id=candidates[0], known=registry.includes(id), required=capabilities[id]??[];
@@ -124,7 +125,7 @@ export async function executeRoute(route, tools, context={}) {
  if(route.status!=='ROUTED') return {status:'BLOCKED',reason:route.status,receipts:[],outputs:{}};
  const receipts=[],outputs={};
  for(const step of route.steps){
-  if((route.task_contract?.permissions.mode==='read_only'||context.task_contract?.permissions.mode==='read_only')&&!['validate_spec','simulate','qa','regression','difficulty','solve','registry_search','capability_mapping','validate_content'].includes(step.tool))return {status:'BLOCKED',reason:'READ_ONLY_PERMISSION',tool:step.tool,receipts,outputs};
+  if((contractReadOnly(route.task_contract)||contractReadOnly(context.task_contract))&&!['validate_spec','simulate','qa','regression','difficulty','solve','registry_search','capability_mapping','validate_content'].includes(step.tool))return {status:'BLOCKED',reason:'READ_ONLY_PERMISSION',tool:step.tool,receipts,outputs};
   if(typeof tools[step.tool]!=='function')return {status:'BLOCKED',reason:'TOOL_UNAVAILABLE',tool:step.tool,receipts,outputs};
   try {
    const result=await tools[step.tool]({context,outputs,route});

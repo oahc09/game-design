@@ -15,3 +15,7 @@ test('accepted old seeds preserve exact generator stream',()=>{
  const expected=new Map([[0,[.26642920868471265,.0003297457005828619,.2232720274478197]],[17,[.6771502960473299,.19265692122280598,.5313839064911008]],[42,[.6011037519201636,.44829055899754167,.8524657934904099]],[4294967295,[.8964226141106337,.189478256739676,.7156526781618595]]]);
  for(const [seed,values] of expected){const rng=new SeededRng(seed);assert.deepEqual(values.map(()=>rng.nextFloat()),values);}
 });
+test('public generator and solver entry points reject aliases even before early invalid-control exits',async()=>{
+ const {getArchetype}=await import('../src/archetypes/index.mjs'),{projectLevels}=await import('../src/skill/project-content.mjs'),{solve}=await import('../src/framework/solver.mjs'),{generateContent}=await import('../src/framework/generation.mjs');
+ for(const name of ['sokoban','falling_blocks','arcade_shooter','match3','merge2048','block_puzzle']){const spec=projectLevels(name)[0].spec;for(const seed of [-1,4294967313,1.2,null]){assert.throws(()=>getArchetype(name).generate(spec,seed,{unknown:true}),/uint32/);assert.throws(()=>generateContent(spec,seed,{unknown:true}),/uint32/);assert.throws(()=>solve(spec,{seed}),/uint32/);}}
+});

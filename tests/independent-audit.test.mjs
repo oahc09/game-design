@@ -166,14 +166,23 @@ test('independent: evaluator does not confuse different object-shaped player pro
  assert.equal(r.checks[0].status,'FAIL');
 });
 
-test('independent: named instruction ablation shares toolkit while only treatment gets skill',async()=>{
+test('independent: v2 instruction ablation shares executable tools; v1 retains historical exports',async()=>{
  const tasks=JSON.parse(await readFile(join(root,'benchmark-dataset/v0.1/public/tasks.json'),'utf8'));
  const dir=await mkdtemp(join(tmpdir(),'gd-ab-export-'));
  const base=await prepareWorkspace({root,workspace:join(dir,'baseline'),task:tasks[0],variant:'baseline',experiment:'instruction_ablation'}),treatment=await prepareWorkspace({root,workspace:join(dir,'treatment'),task:tasks[0],variant:'treatment',experiment:'instruction_ablation'});
  for(const file of ['web/app.mjs','vendor/cocosair/cocosair.module.js','tools/game-design.mjs','src/archetypes/sokoban.mjs']){
   assert.ok(base.files.includes(file));assert.ok(treatment.files.includes(file));assert.deepEqual(await readFile(join(dir,'baseline',file)),await readFile(join(dir,'treatment',file)));
  }
- assert.ok(!base.files.some(p=>p.startsWith('skill/')||p.startsWith('src/skill/')));assert.ok(treatment.files.includes('src/skill/index.mjs'));
+ assert.equal(base.exposure_protocol_version,'2.0.0');
+ assert.ok(!base.files.some(p=>p==='SKILL.md'||p.startsWith('skill/')));assert.ok(treatment.files.includes('SKILL.md'));
+ for(const file of ['index.mjs','toolkit.mjs','playable-task.mjs','project-builder.mjs','project-browser.mjs','project-content.mjs']){const p='src/skill/'+file;assert.ok(base.files.includes(p));assert.ok(treatment.files.includes(p));assert.deepEqual(await readFile(join(dir,'baseline',p)),await readFile(join(dir,'treatment',p)));}
+ assert.equal(base.shared_execution_digest,treatment.shared_execution_digest);
+ for(const arm of [base,treatment])assert.ok(!arm.files.includes('src/skill/model-routing-review.mjs'));
+ const legacy=await prepareWorkspace({root,workspace:join(dir,'legacy-baseline'),task:tasks[0],variant:'baseline',experiment:'instruction_ablation',exposureVersion:'1.0.0'});
+ assert.equal(legacy.exposure_protocol_version,'1.0.0');assert.equal(legacy.shared_execution_digest,null);
+ assert.ok(!legacy.files.some(p=>p==='SKILL.md'||p.startsWith('skill/')||p.startsWith('src/skill/')));
+ const legacyTreatment=await prepareWorkspace({root,workspace:join(dir,'legacy-treatment'),task:tasks[0],variant:'treatment',experiment:'instruction_ablation',exposureVersion:'1.0.0'});
+ assert.ok(legacyTreatment.files.includes('src/skill/index.mjs'));assert.ok(legacyTreatment.files.includes('SKILL.md'));
  for(const arm of ['baseline','treatment']){const output=JSON.parse(execFileSync(process.execPath,[join(dir,arm,'tools/game-design.mjs'),'validate-all'],{cwd:join(dir,arm),encoding:'utf8'}));assert.equal(output.status,'PASS');assert.match(output.artifact_provenance.source_revision,/^[0-9a-f]{64}$/);}
  for(const list of [base.files,treatment.files])assert.ok(!list.some(p=>(p.startsWith('benchmark-dataset/')&&!p.startsWith('benchmark-dataset/engine-starter/'))||p.startsWith('tests/')||p==='src/benchmark/ab-evaluator.mjs'));
 });

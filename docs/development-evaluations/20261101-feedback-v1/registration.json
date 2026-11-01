@@ -1,0 +1,66 @@
+{
+  "version": "bounded-development-feedback-1.0.0",
+  "kind": "DEVELOPMENT_PREREGISTRATION",
+  "created_at": "2026-11-01T09:53:00Z",
+  "source_checkpoint": "815cbb316ef371c94ee9d2959918ce5e99f3cfa4",
+  "status": "BLOCKED_PROVIDER_QUALIFICATION",
+  "formal_trials": 0,
+  "task_contract": {
+    "version": "task-contract-1.0.0",
+    "source": "Generate 3 shooter levels with enemy centers in x=10..90, y=8..30; retain rejected candidates and report each gate separately.",
+    "source_hash": "62ad2ba46d89dd0a",
+    "permissions": {
+      "mode": "write"
+    },
+    "archetype": "arcade_shooter",
+    "requested_count": 3,
+    "spawn_bounds": {
+      "min_x": 10,
+      "max_x": 90,
+      "min_y": 8,
+      "max_y": 30
+    }
+  },
+  "fit_seeds": [
+    307,
+    401,
+    503,
+    601
+  ],
+  "comparison_seeds": [
+    701,
+    809,
+    907,
+    1009
+  ],
+  "excluded_prior_seeds": [
+    17,
+    42,
+    101,
+    211
+  ],
+  "max_attempts_per_arm": 3,
+  "max_steps": 900,
+  "numeric_target": {
+    "min": 0.5,
+    "max": 0.9
+  },
+  "budget_per_arm": {
+    "wall_time_ms": 300000,
+    "tokens": 24000,
+    "reasoning_tokens": 12000,
+    "tool_calls": 80,
+    "steps": 120,
+    "asset_bytes": 2000000
+  },
+  "feedback_policy": "Both arms receive identical public constraints and their own schema/rules/task/numeric measurements after each attempt. Comparison seeds evaluated only after final artifact selection, never fed back.",
+  "exposure_protocol": "instruction_ablation/2.0.0",
+  "qualification_required": [
+    "frozen current source and exposure",
+    "verified provider identity and unchanged routing",
+    "trusted independent usage and hard budget enforcement",
+    "audited isolation and artifact collection",
+    "independent review eligibility"
+  ],
+  "historical_result": "docs/proxy-evaluations/20261101 is immutable; this is a separate development registration, not formal M7 or a reclassification of the old failure."
+}
