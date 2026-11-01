@@ -1,0 +1,158 @@
+{
+  "kind": "EXPLORATORY_PROXY_AB_COMPARISON",
+  "flow_status": "COMPLETED",
+  "acceptance_status": "NOT_PASSED",
+  "paired_tasks": 1,
+  "completed_designs": 2,
+  "content_units": 6,
+  "evaluation_episodes": 24,
+  "executor_model": "gpt-6-luna",
+  "executor_effort": "high",
+  "reviewer_model": "gpt-6.1-terra",
+  "reviewer_effort": "medium",
+  "reviewers": 2,
+  "arms": [
+    {
+      "condition": "without_skill",
+      "blind_id": "782774ad-6daf-433e-9e79-9e9c63341226",
+      "generation_method": "manual_native_configuration",
+      "browser_status": "PASS",
+      "position_constraints_passed": 3,
+      "levels": 3,
+      "out_of_bounds_enemies": 0,
+      "numeric_bands_passed": 0,
+      "fit_rates": [
+        1,
+        1,
+        1
+      ],
+      "comparison_rates": [
+        1,
+        1,
+        1
+      ],
+      "budget_compliance": "UNVERIFIED",
+      "known_generation_tool_calls": 0,
+      "total_agent_tool_calls": "UNVERIFIED",
+      "ratings": [
+        {
+          "reviewer": "reviewer-1",
+          "scores": {
+            "task_fulfillment": 1,
+            "progression_support": 2,
+            "clarity": 2,
+            "evidence_honesty": 2
+          },
+          "preferred": true
+        },
+        {
+          "reviewer": "reviewer-2",
+          "scores": {
+            "task_fulfillment": 2,
+            "progression_support": 2,
+            "clarity": 2,
+            "evidence_honesty": 1
+          },
+          "preferred": true
+        }
+      ]
+    },
+    {
+      "condition": "with_skill",
+      "blind_id": "03101801-bb65-45e1-bfd1-6987b6aeea9f",
+      "generation_method": "registered_generator",
+      "browser_status": "PASS",
+      "position_constraints_passed": 0,
+      "levels": 3,
+      "out_of_bounds_enemies": 8,
+      "numeric_bands_passed": 0,
+      "fit_rates": [
+        1,
+        1,
+        1
+      ],
+      "comparison_rates": [
+        1,
+        1,
+        1
+      ],
+      "budget_compliance": "UNVERIFIED",
+      "known_generation_tool_calls": 3,
+      "total_agent_tool_calls": "UNVERIFIED",
+      "ratings": [
+        {
+          "reviewer": "reviewer-1",
+          "scores": {
+            "task_fulfillment": 1,
+            "progression_support": 1,
+            "clarity": 2,
+            "evidence_honesty": 2
+          },
+          "preferred": false
+        },
+        {
+          "reviewer": "reviewer-2",
+          "scores": {
+            "task_fulfillment": 1,
+            "progression_support": 1,
+            "clarity": 2,
+            "evidence_honesty": 1
+          },
+          "preferred": false
+        }
+      ]
+    }
+  ],
+  "reviewer_preferences": [
+    {
+      "reviewer": "reviewer-1",
+      "condition": "without_skill",
+      "reason": "公开坐标约束全部符合，且两组固定种子威胁密度均逐关上升；另一产物三关均越界且 fit 后两关威胁密度持平。两者数值门槛均失败，偏好不代表验收通过。"
+    },
+    {
+      "reviewer": "reviewer-2",
+      "condition": "without_skill",
+      "reason": "该产物三关坐标均符合公开边界，且两组固定种子下威胁密度随关卡递增；另一个产物三关均有坐标越界，fit 后两关威胁密度持平。两者浏览器记录均 PASS，数值目标均 FAIL。"
+    }
+  ],
+  "conclusion": "No observed Skill advantage in this single one-shot content-design pair. Both render/input checks pass and both miss numerical bands; the Skill-assisted generator output violates public spawn bounds in all three levels. Two procedural blind proxy reviewers prefer the no-Skill design.",
+  "scope": "Native level configuration design with shared supervisor rendering, not engine-code implementation or the formal full_skill study.",
+  "constraints_unchanged": true,
+  "source_unchanged": true,
+  "baseline_budget_equality": "UNVERIFIED",
+  "provider_hard_budget_attested": false,
+  "exact_model_snapshot_attested": false,
+  "procedural_blinding_only": true,
+  "unblinded_after_review_seal": true,
+  "limitations": [
+    "One design pair only; the three levels and repeated seeds are not independent task pairs.",
+    "Same-family proxy judges and procedural access restrictions do not prove human validity or perfect blinding.",
+    "No tool-output feedback/repair turn was provided; result does not cover the full iterative Skill workflow.",
+    "Token/total-tool-call telemetry is absent for host generation; no efficiency or original-budget compliance claim.",
+    "Public fixed comparison seeds were reused development seeds, not a new unseen holdout set.",
+    "Both groups use identical supervisor-owned reference rendering only after submission; baseline generation had no Skill instructions or tools supplied."
+  ],
+  "attempt_history": [
+    {
+      "run": "../proxy-ab-20261101-01",
+      "status": "LAUNCH_INFRA_FAILURE",
+      "completed_model_turns": 0
+    },
+    {
+      "run": "../proxy-ab-20261101-02",
+      "status": "PAIRED_CLI_TIMEOUT",
+      "completed_model_turns": 0,
+      "remote_usage": "UNKNOWN",
+      "remote_cancellation_guaranteed": false
+    },
+    {
+      "run": ".",
+      "status": "HOST_GENERATION_AND_BLIND_REVIEW_COMPLETED",
+      "completed_designs": 2
+    }
+  ],
+  "human_participants": 0,
+  "formal_trials": 0,
+  "formal_gate": "BLOCKED",
+  "external_review": "UNVERIFIED"
+}

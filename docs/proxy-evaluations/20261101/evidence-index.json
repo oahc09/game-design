@@ -1,0 +1,28 @@
+{
+  "kind": "LOCAL_EVIDENCE_REFERENCES",
+  "collection_digest": "23dabb1bafc398ca237853bfda8b1929adbb1be6cf659828a8403506db44fad1",
+  "collection_files": 133,
+  "integrity_status": "PASS",
+  "review_seals": {
+    "sealed_at": "2026-11-01T03:17:39.416Z",
+    "reviews": [
+      {
+        "path": "reviewer-1/review.json",
+        "sha256": "505c6b18031518951ae69bffe0c5830ffaa6de08fd10cff072df5e1a59fc4874"
+      },
+      {
+        "path": "reviewer-2/review.json",
+        "sha256": "baab32fceae117c3c65e527ef742deb36e1808ae9ab24026914ee9efb674f713"
+      }
+    ],
+    "scope": "Both reports sealed before controller decoding conditions for comparison. Local integrity only, not production trust."
+  },
+  "archive_sha256": "a71c0df647e16f16fbab04c3a110a0b5875d82dfeb633e6ac2ecc6132047e1ab",
+  "archive_bytes": 17782546,
+  "local_archive": "output/proxy-ab-evidence-20261101.tar.gz",
+  "local_raw_collection": "output/proxy-ab-20261101-03",
+  "raw_evidence_shipped_in_git": false,
+  "formal_trials": 0,
+  "authentication": "LOCAL_SUPERVISOR_ONLY",
+  "external_review": "UNVERIFIED"
+}

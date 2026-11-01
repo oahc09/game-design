@@ -1,0 +1,85 @@
+{
+  "kind": "EXPLORATORY_PROXY_AB",
+  "created_at": "2026-11-01T03:12:31.839Z",
+  "source_commit": "eb9e8655b669e9642174e3c676e64c78b651c02b",
+  "source_revision": "33a6853d41848fb2f98e898e16cd0c24c4f34fcb9ab18f9678c16e1a6b290dd6",
+  "executor_model": "gpt-6-luna",
+  "executor_effort": "high",
+  "reviewer_model": "gpt-6.1-terra",
+  "reviewer_effort": "medium",
+  "task": {
+    "id": "proxy-shooter-three-stage-design",
+    "request": "设计一个可玩的打飞机小游戏的三个不同关卡，逐步提高压力，方向键/WASD移动、空格/鼠标开火，完成清敌目标；交付三份原生关卡配置，披露假设和局限。",
+    "scope": "Content design only; the same supervisor-owned engine/render host assembles both submitted configurations after generation. No engine implementation ability comparison.",
+    "rules": {
+      "world": {
+        "width": 100,
+        "height": 130,
+        "playerX": 50,
+        "playerY": 108
+      },
+      "controls": "Aim at visible enemies and fire; avoid enemy/projectile contact.",
+      "goal": "Destroy every enemy, survive. Failure on lost health or timeout.",
+      "fixed_seed": 42,
+      "maxTicks": 3600,
+      "parameter_meanings": {
+        "enemy_hp": "integer hit points",
+        "enemy_speed": "positive movement speed",
+        "fire_interval_ticks": "enemy fire cooldown",
+        "enemies": "initial spawn locations; x=10..90, y=8..30"
+      }
+    },
+    "required_levels": 3,
+    "gate": "Valid configs, 3 structurally distinct levels, browser real-input win/loss/restart/pause/mobile, unchanged numeric target 0.5..0.9 reported separately.",
+    "profiles": [
+      "competent"
+    ],
+    "fit_seeds": [
+      17,
+      42
+    ],
+    "comparison_seeds": [
+      101,
+      211
+    ],
+    "maxSteps": 900,
+    "target": {
+      "competent_completion_rate": {
+        "min": 0.5,
+        "max": 0.9
+      }
+    }
+  },
+  "rubric": {
+    "instruction": "Review only visible anonymous artifacts and supplied measurements. Scores are model judgments, never human experience scores.",
+    "dimensions": {
+      "task_fulfillment": "0 absent/broken,1 partial,2 meets public deliverable",
+      "progression_support": "0 no evidence,1 mixed/limited,2 observable stage differentiation with sensible measured pressure progression",
+      "clarity": "0 unclear,1 some ambiguity,2 goals/controls/state clear in evidence",
+      "evidence_honesty": "0 unsupported claims,1 limitations incomplete,2 observed facts and uncertainty distinguished"
+    },
+    "pass_gate": "No new numerical acceptance threshold; retain original numeric-band verdicts and actual failures.",
+    "pair_count": 1
+  },
+  "attempts_per_arm": 1,
+  "limits": {
+    "tokens": 24000,
+    "reasoning_tokens": 12000,
+    "wall_ms": 300000,
+    "tool_calls": 80,
+    "steps": 120,
+    "asset_bytes": 2000000,
+    "max_attempts": 2
+  },
+  "provider_hard_budget_attested": false,
+  "exact_model_snapshot_attested": false,
+  "formal_trials": 0,
+  "human_participants": 0,
+  "formal_gate": "BLOCKED",
+  "external_review": "UNVERIFIED",
+  "design": "One pair, content-design comparison with shared neutral post-submission rendering. Not the formal full_skill intervention, no population/statistical effect claim. Generation and judgment use distinct fresh contexts; exactly two proxy judges.",
+  "generation_transport": "host_subagent",
+  "previous_run": "../proxy-ab-20261101-02",
+  "previous_run_status": "PAIRED_INFRA_FAILURE_NO_COMPLETED_MODEL_TURNS",
+  "token_budget_evidence": "UNVERIFIED; no usage telemetry from host subagents"
+}

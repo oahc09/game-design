@@ -1,0 +1,327 @@
+{
+  "kind": "UNBLINDED_PROXY_DESIGN_ARTIFACTS",
+  "source_commit": "eb9e8655b669e9642174e3c676e64c78b651c02b",
+  "artifacts": [
+    {
+      "condition": "without_skill",
+      "blind_id": "782774ad-6daf-433e-9e79-9e9c63341226",
+      "levels": [
+        {
+          "title": "关卡一：中央编队",
+          "config": {
+            "ruleset_version": "arcade_shooter_v0.1.1",
+            "width": 100,
+            "height": 130,
+            "playerX": 50,
+            "playerY": 108,
+            "playerHP": 3,
+            "playerRadius": 2,
+            "playerSpeed": 24,
+            "projectileSpeed": 90,
+            "projectileRadius": 0.5,
+            "projectileDamage": 1,
+            "fireIntervalTicks": 8,
+            "enemyHP": 1,
+            "enemyRadius": 2.5,
+            "enemySpeed": 4,
+            "enemyFireIntervalTicks": 180,
+            "enemyProjectileSpeed": 30,
+            "enemyDamage": 1,
+            "contactIntervalTicks": 60,
+            "maxTicks": 3600,
+            "enemies": [
+              {
+                "x": 30,
+                "y": 14
+              },
+              {
+                "x": 50,
+                "y": 20
+              },
+              {
+                "x": 70,
+                "y": 14
+              }
+            ],
+            "spawns": []
+          }
+        },
+        {
+          "title": "关卡二：交错来袭",
+          "config": {
+            "ruleset_version": "arcade_shooter_v0.1.1",
+            "width": 100,
+            "height": 130,
+            "playerX": 50,
+            "playerY": 108,
+            "playerHP": 3,
+            "playerRadius": 2,
+            "playerSpeed": 24,
+            "projectileSpeed": 90,
+            "projectileRadius": 0.5,
+            "projectileDamage": 1,
+            "fireIntervalTicks": 8,
+            "enemyHP": 2,
+            "enemyRadius": 2.5,
+            "enemySpeed": 7,
+            "enemyFireIntervalTicks": 110,
+            "enemyProjectileSpeed": 30,
+            "enemyDamage": 1,
+            "contactIntervalTicks": 60,
+            "maxTicks": 3600,
+            "enemies": [
+              {
+                "x": 18,
+                "y": 10
+              },
+              {
+                "x": 38,
+                "y": 22
+              },
+              {
+                "x": 50,
+                "y": 12
+              },
+              {
+                "x": 62,
+                "y": 22
+              },
+              {
+                "x": 82,
+                "y": 10
+              }
+            ],
+            "spawns": []
+          }
+        },
+        {
+          "title": "关卡三：双翼合围",
+          "config": {
+            "ruleset_version": "arcade_shooter_v0.1.1",
+            "width": 100,
+            "height": 130,
+            "playerX": 50,
+            "playerY": 108,
+            "playerHP": 3,
+            "playerRadius": 2,
+            "playerSpeed": 24,
+            "projectileSpeed": 90,
+            "projectileRadius": 0.5,
+            "projectileDamage": 1,
+            "fireIntervalTicks": 8,
+            "enemyHP": 3,
+            "enemyRadius": 2.5,
+            "enemySpeed": 9,
+            "enemyFireIntervalTicks": 75,
+            "enemyProjectileSpeed": 30,
+            "enemyDamage": 1,
+            "contactIntervalTicks": 60,
+            "maxTicks": 3600,
+            "enemies": [
+              {
+                "x": 12,
+                "y": 10
+              },
+              {
+                "x": 22,
+                "y": 24
+              },
+              {
+                "x": 34,
+                "y": 14
+              },
+              {
+                "x": 50,
+                "y": 26
+              },
+              {
+                "x": 66,
+                "y": 14
+              },
+              {
+                "x": 78,
+                "y": 24
+              },
+              {
+                "x": 88,
+                "y": 10
+              }
+            ],
+            "spawns": []
+          }
+        }
+      ],
+      "assumptions": [
+        "每关初始敌人数由 enemy_count 与 enemies 数组共同确定，两者保持一致。",
+        "更短的 fire_interval_ticks 表示敌方更频繁开火；更高的 enemy_speed 表示移动更快。",
+        "三个配置中的敌人均在给定位置同时生成；其后行为由共享运行时规则决定。"
+      ],
+      "limitations": [
+        "未提供生命值、子弹伤害、敌人移动轨迹和敌弹速度的规则，因此无法从配置推断实际通关难度。",
+        "没有运行时、真实输入或种子评估证据；未测量通关率、公平性或玩家体验。",
+        "递增的敌人数、耐久、速度与开火频率表达预期压力梯度，实际效果尚未验证。"
+      ]
+    },
+    {
+      "condition": "with_skill",
+      "blind_id": "03101801-bb65-45e1-bfd1-6987b6aeea9f",
+      "levels": [
+        {
+          "title": "起航：清理前哨",
+          "config": {
+            "ruleset_version": "arcade_shooter_v0.1.1",
+            "width": 100,
+            "height": 130,
+            "playerX": 50,
+            "playerY": 108,
+            "playerHP": 3,
+            "playerRadius": 2,
+            "playerSpeed": 24,
+            "projectileSpeed": 90,
+            "projectileRadius": 0.5,
+            "projectileDamage": 1,
+            "fireIntervalTicks": 8,
+            "enemyHP": 1,
+            "enemyRadius": 2.5,
+            "enemySpeed": 4,
+            "enemyFireIntervalTicks": 180,
+            "enemyProjectileSpeed": 30,
+            "enemyDamage": 1,
+            "contactIntervalTicks": 60,
+            "maxTicks": 3600,
+            "enemies": [
+              {
+                "x": 63.786290334537625,
+                "y": 26.655372938606888
+              },
+              {
+                "x": 39.75928202737123,
+                "y": 17.64788122382015
+              },
+              {
+                "x": 90.52493886090815,
+                "y": 25.586015806999058
+              }
+            ],
+            "spawns": []
+          }
+        },
+        {
+          "title": "推进：交叉火力",
+          "config": {
+            "ruleset_version": "arcade_shooter_v0.1.1",
+            "width": 100,
+            "height": 130,
+            "playerX": 50,
+            "playerY": 108,
+            "playerHP": 3,
+            "playerRadius": 2,
+            "playerSpeed": 24,
+            "projectileSpeed": 90,
+            "projectileRadius": 0.5,
+            "projectileDamage": 1,
+            "fireIntervalTicks": 8,
+            "enemyHP": 2,
+            "enemyRadius": 2.5,
+            "enemySpeed": 7,
+            "enemyFireIntervalTicks": 120,
+            "enemyProjectileSpeed": 30,
+            "enemyDamage": 1,
+            "contactIntervalTicks": 60,
+            "maxTicks": 3600,
+            "enemies": [
+              {
+                "x": 43.872240270720795,
+                "y": 28.135523571399972
+              },
+              {
+                "x": 71.16977099678479,
+                "y": 10.861835811519995
+              },
+              {
+                "x": 53.10118151712231,
+                "y": 33.09182945336215
+              },
+              {
+                "x": 15.04523726995103,
+                "y": 14.96187732485123
+              },
+              {
+                "x": 84.44252391695045,
+                "y": 7.593535865424201
+              }
+            ],
+            "spawns": []
+          }
+        },
+        {
+          "title": "决战：密集编队",
+          "config": {
+            "ruleset_version": "arcade_shooter_v0.1.1",
+            "width": 100,
+            "height": 130,
+            "playerX": 50,
+            "playerY": 108,
+            "playerHP": 3,
+            "playerRadius": 2,
+            "playerSpeed": 24,
+            "projectileSpeed": 90,
+            "projectileRadius": 0.5,
+            "projectileDamage": 1,
+            "fireIntervalTicks": 8,
+            "enemyHP": 3,
+            "enemyRadius": 2.5,
+            "enemySpeed": 10,
+            "enemyFireIntervalTicks": 75,
+            "enemyProjectileSpeed": 30,
+            "enemyDamage": 1,
+            "contactIntervalTicks": 60,
+            "maxTicks": 3600,
+            "enemies": [
+              {
+                "x": 80.71651461301371,
+                "y": 31.578141048084944
+              },
+              {
+                "x": 8.249474767362699,
+                "y": 12.612406653119251
+              },
+              {
+                "x": 88.93328731879592,
+                "y": 34.66036015585996
+              },
+              {
+                "x": 4.704150623874739,
+                "y": 24.000624791253358
+              },
+              {
+                "x": 60.173896056367084,
+                "y": 6.74441652931273
+              },
+              {
+                "x": 58.88109487015754,
+                "y": 28.969685481395572
+              },
+              {
+                "x": 47.068528283853084,
+                "y": 20.54651022842154
+              }
+            ],
+            "spawns": []
+          }
+        }
+      ],
+      "assumptions": [
+        "每关使用同一套玩家移动与开火规则，敌人初始数量、生命值、移动速度和开火间隔决定关卡压力。",
+        "敌人开火间隔越短、移速越高、生命值与数量越大，预期压力越高；关卡配置按此方向逐级递增。",
+        "选择有界内容生成器，提交的敌人坐标仅作满足输入结构的占位；最终位置由宿主生成器决定。"
+      ],
+      "limitations": [
+        "没有运行生成器、游戏运行时或玩家模拟，无法确认生成后的可玩性、通关率、失败率或关卡间实际压力差。",
+        "敌人移动路径、射击行为、玩家火力与生命值、碰撞判定等未由任务参数完整定义，参数并非经校准的难度值。",
+        "浏览器真实输入、胜负、重开、暂停和移动端验收，以及 0.5..0.9 通关率目标均未验证。"
+      ]
+    }
+  ],
+  "formal_trials": 0
+}
