@@ -1,0 +1,286 @@
+{
+  "kind": "CURRENT_COMMIT_ENGINEERING_ACCEPTANCE",
+  "commit": "bca1b5cf5211aa17994837d027dd5e30cd2be854",
+  "source_unchanged": true,
+  "clean_checkout": true,
+  "environment": {
+    "platform": "linux",
+    "node": "v24.22.1",
+    "original_temp": "/tmp",
+    "resolved_temp": "/tmp",
+    "owned_temp": "/tmp/gd-acceptance-N7uY6k"
+  },
+  "checks": [
+    {
+      "name": "tests",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test",
+        "--test-reporter=tap",
+        "tests/automatic-checkers.test.mjs",
+        "tests/campaign-boundary.test.mjs",
+        "tests/candidate-browser.test.mjs",
+        "tests/choice-calibration.test.mjs",
+        "tests/content-balance.test.mjs",
+        "tests/core-fixtures.test.mjs",
+        "tests/core.test.mjs",
+        "tests/curriculum-evidence.test.mjs",
+        "tests/curriculum-v2.test.mjs",
+        "tests/curriculum-v3.test.mjs",
+        "tests/data-design.test.mjs",
+        "tests/evidence-collection.test.mjs",
+        "tests/executor-integration.test.mjs",
+        "tests/executor-preflight.test.mjs",
+        "tests/framework.test.mjs",
+        "tests/frozen-analysis.test.mjs",
+        "tests/grid-archetypes.test.mjs",
+        "tests/ideation-playtest.test.mjs",
+        "tests/independent-audit.test.mjs",
+        "tests/interpolation-calibration.test.mjs",
+        "tests/local-tool-broker.test.mjs",
+        "tests/m7-materials.test.mjs",
+        "tests/match3.test.mjs",
+        "tests/model-routing-review.test.mjs",
+        "tests/native-output.test.mjs",
+        "tests/playable-workflows.test.mjs",
+        "tests/project-builder.test.mjs",
+        "tests/qa-core.test.mjs",
+        "tests/quality-calibration.test.mjs",
+        "tests/realtime-archetypes.test.mjs",
+        "tests/refined-quality-calibration.test.mjs",
+        "tests/replay-foundation.test.mjs",
+        "tests/review-ablation-exposure.test.mjs",
+        "tests/review-development-feedback.test.mjs",
+        "tests/review-seed-domain.test.mjs",
+        "tests/review-task-contract.test.mjs",
+        "tests/robust-quality-calibration.test.mjs",
+        "tests/routing-acceptance.test.mjs",
+        "tests/schema-semantics.test.mjs",
+        "tests/signed-evidence.test.mjs",
+        "tests/skill-benchmark.test.mjs",
+        "tests/stress.test.mjs",
+        "tests/task-protocols.test.mjs",
+        "tests/teaching-repair-calibration.test.mjs",
+        "tests/toolkit-binding.test.mjs",
+        "tests/v02-independent.test.mjs",
+        "tests/versioned-dataset.test.mjs",
+        "tests/wasm-candidate.test.mjs",
+        "tests/windows-isolation.test.mjs"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "error": null,
+      "status": "PASS",
+      "log": "tests.log",
+      "log_sha256": "4b6c807f64a4a552a09796ecd906aa1346fe0cd88a4bff4beaa8b3ab2d8d81d6",
+      "counts": {
+        "tests": 796,
+        "pass": 796,
+        "fail": 0,
+        "skipped": 0,
+        "cancelled": 0
+      }
+    },
+    {
+      "name": "specs",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "tools/game-design.mjs",
+        "validate-all",
+        "--out",
+        "/workspace/scratch/62d43a81bbde/game-design-review-20261101/acceptance/bca1b5cf5211aa17994837d027dd5e30cd2be854/linux-node24/specs.json"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "error": null,
+      "status": "PASS",
+      "log": "specs.log",
+      "log_sha256": "b8a4091afa315524b825be442e8b129eb7e7dce018a75ded3a13396220098e2d",
+      "report_summary": {
+        "status": "PASS",
+        "total": 6,
+        "passed": 6
+      }
+    },
+    {
+      "name": "rules",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "tools/game-design.mjs",
+        "benchmark",
+        "--out",
+        "/workspace/scratch/62d43a81bbde/game-design-review-20261101/acceptance/bca1b5cf5211aa17994837d027dd5e30cd2be854/linux-node24/rules.json"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "error": null,
+      "status": "PASS",
+      "log": "rules.log",
+      "log_sha256": "2a3925174aca894147b235e4f93f73cc3b12192289fc8ad00904e92bef7b0b86",
+      "report_summary": {
+        "status": "CERTIFIED",
+        "total": 240,
+        "passed": 240,
+        "failed": 0,
+        "limitations": [],
+        "issues": []
+      }
+    },
+    {
+      "name": "fixtures",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "tools/game-design.mjs",
+        "benchmark",
+        "fixtures",
+        "--out",
+        "/workspace/scratch/62d43a81bbde/game-design-review-20261101/acceptance/bca1b5cf5211aa17994837d027dd5e30cd2be854/linux-node24/fixtures.json"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "error": null,
+      "status": "PASS",
+      "log": "fixtures.log",
+      "log_sha256": "29a24fe5844b2eaba6d478236f9b393ed377e4dfeb1adbfae3f74491edc42ef1",
+      "report_summary": {
+        "status": "CERTIFIED",
+        "total": 320,
+        "passed": 320,
+        "failed": 0,
+        "limitations": [],
+        "issues": []
+      }
+    },
+    {
+      "name": "golden",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "tools/game-design.mjs",
+        "golden-verify",
+        "--out",
+        "/workspace/scratch/62d43a81bbde/game-design-review-20261101/acceptance/bca1b5cf5211aa17994837d027dd5e30cd2be854/linux-node24/golden.json"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "error": null,
+      "status": "PASS",
+      "log": "golden.log",
+      "log_sha256": "80ca07d981c3344b683aa275b5c346ebcdc7a4b71aad29d70810e2d2673929b1",
+      "report_summary": {
+        "status": "PASS",
+        "total": 60,
+        "passed": 60
+      }
+    },
+    {
+      "name": "bundle",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "tools/package-skill.mjs",
+        "/workspace/scratch/62d43a81bbde/game-design-review-20261101/dist/acceptance-linux-node24"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "error": null,
+      "status": "PASS",
+      "log": "bundle.log",
+      "log_sha256": "d65270b6c3942608180446249ded2a87252952b2b74980fc3709d1f79bdecd9a"
+    },
+    {
+      "name": "bundle-archive",
+      "status": "PASS",
+      "command": [
+        "tar",
+        "-czf",
+        "game-design-evaluation.tar.gz",
+        "-C",
+        "dist/acceptance-linux-node24",
+        "game-design"
+      ]
+    },
+    {
+      "name": "bundle-install",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/lib/node_modules/npm/bin/npm-cli.js",
+        "ci",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "cwd": "dist/acceptance-linux-node24/game-design",
+      "exit_code": 0,
+      "error": null,
+      "status": "PASS",
+      "log": "bundle-install.log",
+      "log_sha256": "12fe2b76b0990d19d52d8b12cebd85e591aac7a8cbc06aec13e97e8e9f4e077d"
+    },
+    {
+      "name": "bundle-smoke",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "tools/verify-install.mjs"
+      ],
+      "cwd": "dist/acceptance-linux-node24/game-design",
+      "exit_code": 0,
+      "error": null,
+      "status": "PASS",
+      "log": "bundle-smoke.log",
+      "log_sha256": "7472567aa7d9e0a5a4f1225b903291405c0f51e805d99ac5d7330364f9b5b215"
+    }
+  ],
+  "status": "PASS",
+  "formal_trials": 0,
+  "external_review": "UNVERIFIED",
+  "formal_gate": "BLOCKED",
+  "created_at": "2026-11-01T10:08:46.973Z",
+  "source_digest": "913f6e61e86d908e318dd6751588057839b1e8a44fbe7022e7252a93ae8f1d22",
+  "source_file_count": 634,
+  "compressed_evidence": [
+    {
+      "path": "bundle-install.log.gz",
+      "sha256": "7d4a30d926e9f2974afb5b9839fd63ebdf39a1097cc01e3ae048668d64312493",
+      "bytes": 123
+    },
+    {
+      "path": "bundle-smoke.log.gz",
+      "sha256": "42c1d642e345fb96b53eb68fb2eb3cda9fd5f2c8ac4797e1e7af2aa2ee2f7acc",
+      "bytes": 448
+    },
+    {
+      "path": "bundle.log.gz",
+      "sha256": "80d5dc28561caf68dfac8ec2be6d5cabe35c33cc64e358106d30d368ecde679b",
+      "bytes": 179
+    },
+    {
+      "path": "fixtures.log.gz",
+      "sha256": "59dcb30314f7acde8be5d414c9a25035422bc8b8483db9c2e91672a90967933d",
+      "bytes": 118286
+    },
+    {
+      "path": "golden.log.gz",
+      "sha256": "127642bbe265518a3fef5a4f6bb046866381966dcfba8142bc2cb74ab0fb3c5b",
+      "bytes": 5606
+    },
+    {
+      "path": "manifest.json.gz",
+      "sha256": "6ab29381c50f3c7ab73ddd290cc82f86bbb15827424471f54f1774c89c904b55",
+      "bytes": 33478
+    },
+    {
+      "path": "rules.log.gz",
+      "sha256": "f2f8dda74126b8714cfa09bd16c79918a196b200d1933a365eb2f4019ebef2c7",
+      "bytes": 109340
+    },
+    {
+      "path": "specs.log.gz",
+      "sha256": "1283e5143b242ed323c13d1185d265ca0c69ec293346a982ca0b8f599f64bb6a",
+      "bytes": 330
+    },
+    {
+      "path": "tests.log.gz",
+      "sha256": "b0f278f67d8c94ca9000ad5288cdc59b027edb28bac4e7edb2b9c1418b5c7ebd",
+      "bytes": 28328
+    }
+  ]
+}
