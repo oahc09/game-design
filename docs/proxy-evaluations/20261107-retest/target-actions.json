@@ -1,0 +1,132 @@
+{
+  "gd-009": [
+    {
+      "key": "r",
+      "ms": 30
+    },
+    {
+      "key": "ArrowLeft",
+      "ms": 30
+    },
+    {
+      "key": "r",
+      "ms": 30
+    },
+    {
+      "key": "ArrowLeft",
+      "ms": 30
+    },
+    {
+      "key": "R",
+      "ms": 30
+    },
+    {
+      "click": [
+        0.95,
+        0.95
+      ]
+    },
+    {
+      "key": "ArrowLeft",
+      "ms": 30
+    },
+    {
+      "key": "r",
+      "ms": 30
+    },
+    {
+      "key": "p",
+      "ms": 30
+    },
+    {
+      "key": "ArrowLeft",
+      "ms": 30
+    },
+    {
+      "key": "r",
+      "ms": 30
+    },
+    {
+      "key": "ArrowLeft",
+      "ms": 30
+    },
+    {
+      "key": "ArrowUp",
+      "ms": 30
+    },
+    {
+      "key": "ArrowRight",
+      "ms": 30
+    },
+    {
+      "key": "ArrowDown",
+      "ms": 30
+    },
+    {
+      "key": "ArrowRight",
+      "ms": 30
+    },
+    {
+      "key": "ArrowUp",
+      "ms": 30
+    },
+    {
+      "key": "r",
+      "ms": 30
+    },
+    {
+      "key": "ArrowLeft",
+      "ms": 30
+    },
+    {
+      "key": "r",
+      "ms": 30
+    }
+  ],
+  "gd-019": [
+    {
+      "key": "p",
+      "ms": 30
+    },
+    {
+      "key": "ArrowLeft",
+      "ms": 30
+    },
+    {
+      "key": "p",
+      "ms": 30
+    },
+    {
+      "key": "Space",
+      "ms": 30
+    },
+    {
+      "key": "p",
+      "ms": 30
+    },
+    {
+      "key": "r",
+      "ms": 30
+    },
+    {
+      "key": "p",
+      "ms": 30
+    },
+    {
+      "key": "ArrowDown",
+      "ms": 30
+    },
+    {
+      "key": "p",
+      "ms": 30
+    },
+    {
+      "key": "Space",
+      "ms": 30
+    },
+    {
+      "key": "p",
+      "ms": 30
+    }
+  ]
+}

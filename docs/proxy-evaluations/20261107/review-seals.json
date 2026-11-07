@@ -1,0 +1,86 @@
+{
+  "created_at": "2026-11-07T05:19:39.967Z",
+  "reviews": [
+    {
+      "agent_id": "proxy-01",
+      "file": "reviews/proxy-01/report.json",
+      "sha256": "82c99ab0eb9f05a6044241474681df810776911855c5d3934425f179a1468bd4"
+    },
+    {
+      "agent_id": "proxy-02",
+      "file": "reviews/proxy-02/report.json",
+      "sha256": "41cd1ce1ca36d41bd7aca05f893c10d6ebcebf40440e87764c37c1c901c89f03"
+    },
+    {
+      "agent_id": "proxy-03",
+      "file": "reviews/proxy-03/report.json",
+      "sha256": "0bb0645fc1c792f6e8fe3e8b3cdd71c1be93538527fcd2e4689039f939e45f2d"
+    },
+    {
+      "agent_id": "proxy-04",
+      "file": "reviews/proxy-04/report.json",
+      "sha256": "ac6f2464f643adc7c916acab955d16f85b8651d65757daada91883f38d178e06"
+    },
+    {
+      "agent_id": "proxy-05",
+      "file": "reviews/proxy-05/report.json",
+      "sha256": "b4dc5826574058a8655fba26beeb6ef9cba94b2dc08baf62f593256dca4e11e1"
+    },
+    {
+      "agent_id": "proxy-06",
+      "file": "reviews/proxy-06/report.json",
+      "sha256": "18dc24d80b9553c85c79456bbb028472d82dea6788ad8a7965a7da8cb3232e1f"
+    },
+    {
+      "agent_id": "proxy-07",
+      "file": "reviews/proxy-07/report.json",
+      "sha256": "4d30a848328c6ce7707d8972e2565ad1be3f4b666da70cf84d8b5491f4220cc8"
+    },
+    {
+      "agent_id": "proxy-08",
+      "file": "reviews/proxy-08/report.json",
+      "sha256": "4721256b541de1dff8f0acf8d14e664ec1833a8cd3b43d5a6870f4003ede1dbf"
+    },
+    {
+      "agent_id": "proxy-09",
+      "file": "reviews/proxy-09/report.json",
+      "sha256": "7fc8461ee356b132f75613b922c8c587e4ba4125906bc797d49c00626011cf38"
+    },
+    {
+      "agent_id": "proxy-10",
+      "file": "reviews/proxy-10/report.json",
+      "sha256": "e8040a0637f5e9da82def428d17ca5900c1aa8b32430ca284495c112a70c22aa"
+    },
+    {
+      "agent_id": "proxy-11",
+      "file": "reviews/proxy-11/report.json",
+      "sha256": "59faa53fba7104ca386f2dafad502a6ea01cb8b71b85b90ae05c4e2f32c5f014"
+    },
+    {
+      "agent_id": "proxy-12",
+      "file": "reviews/proxy-12/report.json",
+      "sha256": "da16f6e2ab8ffc2fe9d4f2d92dc764d9a20ad230a4454608bff29e3983dcf472"
+    },
+    {
+      "agent_id": "proxy-13",
+      "file": "reviews/proxy-13/report.json",
+      "sha256": "2869995566a2ad6ed902615a960dc574dc9c24cd840038c1831add434cbdab36"
+    },
+    {
+      "agent_id": "proxy-14",
+      "file": "reviews/proxy-14/report.json",
+      "sha256": "6e55e0d9c1bd3f2f85aba081f3a163b2807781a58a40aa3c70642ae3b6e856f5"
+    },
+    {
+      "agent_id": "proxy-15",
+      "file": "reviews/proxy-15/report.json",
+      "sha256": "17c5ea35da6a4e73b8f9166502d51a9165e928529c7ddbfae40c11088aa986ad"
+    },
+    {
+      "agent_id": "proxy-16",
+      "file": "reviews/proxy-16/report.json",
+      "sha256": "8cfde5ca007540a5a4321b56b8314c71e8148e9e022613c1bb9cba62c4f48520"
+    }
+  ],
+  "scope": "Controller-local integrity, sealed before aggregate unblinding; no external trust attestation"
+}

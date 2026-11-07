@@ -1,0 +1,13 @@
+{
+  "kind": "LOCAL_EVIDENCE_REFERENCES",
+  "collection_digest": "c28cfaaa956b6b70403e9c144671e5f2c25cc6d9848d20d8c178f33d4d0d1d73",
+  "collection_files": 3692,
+  "integrity_status": "PASS",
+  "local_raw_collection": "output/agent-proxy-20261107-01",
+  "raw_evidence_shipped_in_git": false,
+  "local_archive": "output/agent-proxy-evidence-20261107-01.tar.gz",
+  "archive_bytes": 41745166,
+  "archive_sha256": "55f5aaa581b0119e13993a1bd103011dbe73c34bbcc12bbae53c24713c8d8159",
+  "external_review": "UNVERIFIED",
+  "formal_trials": 0
+}

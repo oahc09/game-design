@@ -1,0 +1,1758 @@
+{
+  "kind": "AGENT_TARGETED_REPAIR_RETEST",
+  "cohort": "20261107-02",
+  "parent_cohort": "20261107-01",
+  "status": "FLOW_COMPLETED",
+  "targeted_repair_gate": "PASS",
+  "full_task_acceptance": "NOT_CERTIFIED",
+  "formal_trials": 0,
+  "formal_gate": "BLOCKED",
+  "external_review": "UNVERIFIED",
+  "human_participation_required": false,
+  "model": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "max_parallel_reviewers": 3,
+  "serial_task_execution_verified": true,
+  "completed_agents": 16,
+  "paired_reviews": 32,
+  "version_observations": 64,
+  "failures": 0,
+  "groups": [
+    {
+      "task_id": "gd-009",
+      "arm": "baseline",
+      "n": 16,
+      "pass": 16,
+      "fail": 0,
+      "unverified": 0
+    },
+    {
+      "task_id": "gd-009",
+      "arm": "treatment",
+      "n": 16,
+      "pass": 16,
+      "fail": 0,
+      "unverified": 0
+    },
+    {
+      "task_id": "gd-019",
+      "arm": "baseline",
+      "n": 16,
+      "pass": 16,
+      "fail": 0,
+      "unverified": 0
+    },
+    {
+      "task_id": "gd-019",
+      "arm": "treatment",
+      "n": 16,
+      "pass": 16,
+      "fail": 0,
+      "unverified": 0
+    }
+  ],
+  "results": [
+    {
+      "agent_id": "proxy-01",
+      "task_id": "gd-009",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "2c6b371c-0e0d-42f3-a6bc-f4d29e6d3d65",
+      "artifact_digest": "c17ed454c6addb2d979ac2b439060db1007e5f4f552f5f96ce06e1e179193c65",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows initial board, movement, completed Sokoban state with all boxes on goals and win cue; observations record the solved terminal followed by restart to initial boxes/player and terminal null.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-01",
+      "task_id": "gd-009",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "bfb3b603-1409-46d7-ac51-b2ec9a06debf",
+      "artifact_digest": "93da1c589232d6dcd288ee6055e9207c2e92e07a07e4f8833c1d989888f816b2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows initial board, movement, completed Sokoban state with all boxes on goals and win cue; observations record the solved terminal followed by restart to initial boxes/player and terminal null.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-01",
+      "task_id": "gd-019",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "693031d6-e32b-48c6-a290-995f260b3089",
+      "artifact_digest": "7aefd9d0cfdf38d0c10435f02298a858e140a99d48d47ae99f41cdd356dc22e3",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full initial screenshots show the active piece on the board with no future-piece preview; Y has a blank side panel, and X shows no side preview region. Interaction screenshots likewise show no next-piece preview. Checker also confirms public state/facade and post-reset hide future information.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-01",
+      "task_id": "gd-019",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "8919c7c9-8dad-4888-aacb-6f36724e12e3",
+      "artifact_digest": "261e531f3f6ba89dd5dfa9eb24dfe3858c4124ca9c6c379e5265e855c2f933d2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full initial screenshots show the active piece on the board with no future-piece preview; Y has a blank side panel, and X shows no side preview region. Interaction screenshots likewise show no next-piece preview. Checker also confirms public state/facade and post-reset hide future information.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-02",
+      "task_id": "gd-009",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "2c6b371c-0e0d-42f3-a6bc-f4d29e6d3d65",
+      "artifact_digest": "c17ed454c6addb2d979ac2b439060db1007e5f4f552f5f96ce06e1e179193c65",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows initial grid and movement, then both boxes on the two goals with the visible \"All goals filled!\" win cue. Targeted state evidence also shows restart from terminal and resumed movement.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-02",
+      "task_id": "gd-009",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "bfb3b603-1409-46d7-ac51-b2ec9a06debf",
+      "artifact_digest": "93da1c589232d6dcd288ee6055e9207c2e92e07a07e4f8833c1d989888f816b2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows initial grid and movement, then both green goal cells occupied by boxes and visible \"Solved! All crates on goals.\" cue. Targeted state evidence also shows terminal restart and resumed movement.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-02",
+      "task_id": "gd-019",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "693031d6-e32b-48c6-a290-995f260b3089",
+      "artifact_digest": "7aefd9d0cfdf38d0c10435f02298a858e140a99d48d47ae99f41cdd356dc22e3",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Initial and interaction screenshots show the active/placed pieces on the board and no next-piece preview. No future-piece hint is visible in the text HUD or surrounding board area.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-02",
+      "task_id": "gd-019",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "8919c7c9-8dad-4888-aacb-6f36724e12e3",
+      "artifact_digest": "261e531f3f6ba89dd5dfa9eb24dfe3858c4124ca9c6c379e5265e855c2f933d2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Initial and interaction screenshots show the board and adjacent side region; the side region is blank with no next-piece preview, and the HUD contains no future-piece hint.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-03",
+      "task_id": "gd-009",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "2c6b371c-0e0d-42f3-a6bc-f4d29e6d3d65",
+      "artifact_digest": "c17ed454c6addb2d979ac2b439060db1007e5f4f552f5f96ce06e1e179193c65",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows an initial board, a moved player with goals still visible, and a solved board with both crates on green goal cells and a win cue. Captured public snapshots show terminal WIN then terminal null with initial player/box positions after restart.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-03",
+      "task_id": "gd-009",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "bfb3b603-1409-46d7-ac51-b2ec9a06debf",
+      "artifact_digest": "93da1c589232d6dcd288ee6055e9207c2e92e07a07e4f8833c1d989888f816b2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows an initial board, a moved player with goals still visible, and a solved board with both crates on green goal cells and a win cue. Captured public snapshots show terminal WIN then terminal null with initial player/box positions after restart.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-03",
+      "task_id": "gd-019",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "693031d6-e32b-48c6-a290-995f260b3089",
+      "artifact_digest": "7aefd9d0cfdf38d0c10435f02298a858e140a99d48d47ae99f41cdd356dc22e3",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Initial and interaction screenshots show the board and adjacent side panel area; neither displays a next-piece preview. Captured public state and facade field lists omit preview/queue/next-piece data, including after restart.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-03",
+      "task_id": "gd-019",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "8919c7c9-8dad-4888-aacb-6f36724e12e3",
+      "artifact_digest": "261e531f3f6ba89dd5dfa9eb24dfe3858c4124ca9c6c379e5265e855c2f933d2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Initial and interaction screenshots show the board and adjacent side panel area; neither displays a next-piece preview. Captured public state and facade field lists omit preview/queue/next-piece data, including after restart.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-04",
+      "task_id": "gd-009",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "2c6b371c-0e0d-42f3-a6bc-f4d29e6d3d65",
+      "artifact_digest": "c17ed454c6addb2d979ac2b439060db1007e5f4f552f5f96ce06e1e179193c65",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Comparison contact sheet shows initial board, a moved player in the middle frame, and both boxes on the goals with an all-goals-filled cue in the bottom frame. Observation snapshots record an actual solved state followed by terminal restart to initial positions and tick 0.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-04",
+      "task_id": "gd-009",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "bfb3b603-1409-46d7-ac51-b2ec9a06debf",
+      "artifact_digest": "93da1c589232d6dcd288ee6055e9207c2e92e07a07e4f8833c1d989888f816b2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Comparison contact sheet shows initial board, a moved player in the middle frame, and both boxes on green goals with a solved cue in the bottom frame. Observation snapshots record an actual solved state followed by terminal restart to initial positions and tick 0.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-04",
+      "task_id": "gd-019",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "693031d6-e32b-48c6-a290-995f260b3089",
+      "artifact_digest": "7aefd9d0cfdf38d0c10435f02298a858e140a99d48d47ae99f41cdd356dc22e3",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Comparison contact sheet shows the board at initial and interaction states. The full visible side region beside the board is blank in both frames, and HUD text contains only lines, tick, controls; no future-piece preview is visible. Public facade snapshots expose current active piece and board without a future-piece field, including post-reset snapshot.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-04",
+      "task_id": "gd-019",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "8919c7c9-8dad-4888-aacb-6f36724e12e3",
+      "artifact_digest": "261e531f3f6ba89dd5dfa9eb24dfe3858c4124ca9c6c379e5265e855c2f933d2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Comparison contact sheet shows the board at initial and interaction states. The full visible side region beside the board is blank in both frames, and HUD text contains only lines, tick, controls; no future-piece preview is visible. Public facade snapshots expose current active piece and board without a future-piece field, including post-reset snapshot.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-05",
+      "task_id": "gd-009",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "2c6b371c-0e0d-42f3-a6bc-f4d29e6d3d65",
+      "artifact_digest": "c17ed454c6addb2d979ac2b439060db1007e5f4f552f5f96ce06e1e179193c65",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "The sheet shows initial board, a changed player position, and the solved cue “All goals filled!”; parsed observations also record win then reset to initial state.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-05",
+      "task_id": "gd-009",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "bfb3b603-1409-46d7-ac51-b2ec9a06debf",
+      "artifact_digest": "93da1c589232d6dcd288ee6055e9207c2e92e07a07e4f8833c1d989888f816b2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "The sheet shows goal occupancy in green and “Solved! All crates on goals.”; parsed observations record both boxes on goal cells, terminal WIN, then restart to the initial state.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-05",
+      "task_id": "gd-019",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "693031d6-e32b-48c6-a290-995f260b3089",
+      "artifact_digest": "7aefd9d0cfdf38d0c10435f02298a858e140a99d48d47ae99f41cdd356dc22e3",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows only the active piece in the field at initial and interaction; the text-rendered board has no next-piece display. Observed public state and facade checks confirm future data absent after reset.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-05",
+      "task_id": "gd-019",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "8919c7c9-8dad-4888-aacb-6f36724e12e3",
+      "artifact_digest": "261e531f3f6ba89dd5dfa9eb24dfe3858c4124ca9c6c379e5265e855c2f933d2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows the initial and interaction boards with an empty side region and no next-piece preview. Observed public state and facade checks confirm future data absent after reset.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-06",
+      "task_id": "gd-009",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "2c6b371c-0e0d-42f3-a6bc-f4d29e6d3d65",
+      "artifact_digest": "c17ed454c6addb2d979ac2b439060db1007e5f4f552f5f96ce06e1e179193c65",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Initial board shows both boxes and both goals; middle screenshot shows player movement; final screenshot shows boxes occupying goals and a visible solved cue. Observation snapshots record terminal WIN followed by restart to tick 0 and resumed movement.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-06",
+      "task_id": "gd-009",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "bfb3b603-1409-46d7-ac51-b2ec9a06debf",
+      "artifact_digest": "93da1c589232d6dcd288ee6055e9207c2e92e07a07e4f8833c1d989888f816b2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Initial board shows both boxes and both goals; middle screenshot shows player movement; final screenshot shows boxes occupying goals and solved feedback. Observation snapshots record terminal WIN followed by restart to tick 0 and resumed movement.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-06",
+      "task_id": "gd-019",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "693031d6-e32b-48c6-a290-995f260b3089",
+      "artifact_digest": "7aefd9d0cfdf38d0c10435f02298a858e140a99d48d47ae99f41cdd356dc22e3",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Initial and interaction screenshots show the board and active pieces; no future-piece preview is visible. Observation snapshots and public facade checks report no future-piece information, including after restart.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-06",
+      "task_id": "gd-019",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "8919c7c9-8dad-4888-aacb-6f36724e12e3",
+      "artifact_digest": "261e531f3f6ba89dd5dfa9eb24dfe3858c4124ca9c6c379e5265e855c2f933d2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full initial and interaction screenshots show the board plus a blank side panel with no next-piece preview; no crop obscures the panel. Observation snapshots and public facade checks report no future-piece information, including after restart.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-07",
+      "task_id": "gd-009",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "2c6b371c-0e0d-42f3-a6bc-f4d29e6d3d65",
+      "artifact_digest": "c17ed454c6addb2d979ac2b439060db1007e5f4f552f5f96ce06e1e179193c65",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows the starting board with two goals and two boxes, a player move, then the bottom win frame with both boxes on the goal locations and the All goals filled cue. Observation state records a solved terminal and then a restart to the initial positions.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-07",
+      "task_id": "gd-009",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "bfb3b603-1409-46d7-ac51-b2ec9a06debf",
+      "artifact_digest": "93da1c589232d6dcd288ee6055e9207c2e92e07a07e4f8833c1d989888f816b2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows the starting board with two goals and two boxes, a player move, then the bottom Solved! All crates on goals frame, with both boxes on goal tiles. Observation state records terminal WIN and then a restart to initial state.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-07",
+      "task_id": "gd-019",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "693031d6-e32b-48c6-a290-995f260b3089",
+      "artifact_digest": "7aefd9d0cfdf38d0c10435f02298a858e140a99d48d47ae99f41cdd356dc22e3",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full initial and interaction screenshots show the ASCII board with the active piece and no next-piece preview area or future piece; public state and facade snapshots expose no future-piece field, including post-reset.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-07",
+      "task_id": "gd-019",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "8919c7c9-8dad-4888-aacb-6f36724e12e3",
+      "artifact_digest": "261e531f3f6ba89dd5dfa9eb24dfe3858c4124ca9c6c379e5265e855c2f933d2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full initial and interaction screenshots show the board and a blank right-side panel with no next-piece preview; public state and facade snapshots expose no future-piece field, including post-reset.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-08",
+      "task_id": "gd-009",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "2c6b371c-0e0d-42f3-a6bc-f4d29e6d3d65",
+      "artifact_digest": "c17ed454c6addb2d979ac2b439060db1007e5f4f552f5f96ce06e1e179193c65",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows a pre-win board with moved player, a solved board with both crates occupying the two goals and explicit solved cue, then a post-restart board restored to the initial crate/player layout; observations include intermediate state progression and terminal reset to tick 0.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-08",
+      "task_id": "gd-009",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "bfb3b603-1409-46d7-ac51-b2ec9a06debf",
+      "artifact_digest": "93da1c589232d6dcd288ee6055e9207c2e92e07a07e4f8833c1d989888f816b2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows a pre-win board with moved player, a solved board with both crates occupying the two goals and explicit solved cue, then a post-restart board restored to the initial crate/player layout; observations include intermediate state progression and terminal reset to tick 0.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-08",
+      "task_id": "gd-019",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "693031d6-e32b-48c6-a290-995f260b3089",
+      "artifact_digest": "7aefd9d0cfdf38d0c10435f02298a858e140a99d48d47ae99f41cdd356dc22e3",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full initial screenshot shows the board and adjacent side region: no next-piece preview appears. Interaction screenshot also has no future-piece preview; observed public states expose the active piece/current board and no next queue field, including after restart as checked by machine flags.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-08",
+      "task_id": "gd-019",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "8919c7c9-8dad-4888-aacb-6f36724e12e3",
+      "artifact_digest": "261e531f3f6ba89dd5dfa9eb24dfe3858c4124ca9c6c379e5265e855c2f933d2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full initial screenshot shows the board and adjacent side region: no next-piece preview appears. Interaction screenshot also has no future-piece preview; observed public states expose the active piece/current board and no next queue field, including after restart as checked by machine flags.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-09",
+      "task_id": "gd-009",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "bfb3b603-1409-46d7-ac51-b2ec9a06debf",
+      "artifact_digest": "93da1c589232d6dcd288ee6055e9207c2e92e07a07e4f8833c1d989888f816b2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows initial board, player move, both boxes occupying the green goal tiles with solved cue; observation also records terminal reset to initial positions and resumed input.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-09",
+      "task_id": "gd-009",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "2c6b371c-0e0d-42f3-a6bc-f4d29e6d3d65",
+      "artifact_digest": "c17ed454c6addb2d979ac2b439060db1007e5f4f552f5f96ce06e1e179193c65",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows initial board, player move, both boxes on the goals and solved cue; observation also records terminal reset to initial positions and resumed input.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-09",
+      "task_id": "gd-019",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "8919c7c9-8dad-4888-aacb-6f36724e12e3",
+      "artifact_digest": "261e531f3f6ba89dd5dfa9eb24dfe3858c4124ca9c6c379e5265e855c2f933d2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full board and right side panel are visible in the contact sheet; right side panel is blank, and the HUD contains only game, line, tick and control text with no next-piece preview. The interaction after reset shows the active piece only.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-09",
+      "task_id": "gd-019",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "693031d6-e32b-48c6-a290-995f260b3089",
+      "artifact_digest": "7aefd9d0cfdf38d0c10435f02298a858e140a99d48d47ae99f41cdd356dc22e3",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full text board and HUD are visible; no next-piece preview appears in the board text or HUD. The interaction after reset shows the active piece only.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-10",
+      "task_id": "gd-009",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "2c6b371c-0e0d-42f3-a6bc-f4d29e6d3d65",
+      "artifact_digest": "c17ed454c6addb2d979ac2b439060db1007e5f4f552f5f96ce06e1e179193c65",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Initial board and move are visible; interaction screenshot shows the player moved. Win screenshot shows both crates on the green goals and solved feedback. Final screenshot shows initial board restored after restart.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-10",
+      "task_id": "gd-009",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "bfb3b603-1409-46d7-ac51-b2ec9a06debf",
+      "artifact_digest": "93da1c589232d6dcd288ee6055e9207c2e92e07a07e4f8833c1d989888f816b2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Initial board and move are visible; interaction screenshot shows the player moved. Win screenshot shows both crates on goals and “All goals filled!” feedback. Final screenshot shows initial board restored after restart.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-10",
+      "task_id": "gd-019",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "693031d6-e32b-48c6-a290-995f260b3089",
+      "artifact_digest": "7aefd9d0cfdf38d0c10435f02298a858e140a99d48d47ae99f41cdd356dc22e3",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Initial and interaction screenshots show the game board with an adjacent side panel region left blank; no next-piece preview is visible. Public observation snapshots also expose no future-piece field.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-10",
+      "task_id": "gd-019",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "8919c7c9-8dad-4888-aacb-6f36724e12e3",
+      "artifact_digest": "261e531f3f6ba89dd5dfa9eb24dfe3858c4124ca9c6c379e5265e855c2f933d2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Initial and interaction screenshots show only the board and HUD, with no next-piece preview region/content visible. Public observation snapshots also expose no future-piece field.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-11",
+      "task_id": "gd-009",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "bfb3b603-1409-46d7-ac51-b2ec9a06debf",
+      "artifact_digest": "93da1c589232d6dcd288ee6055e9207c2e92e07a07e4f8833c1d989888f816b2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows initial board, a moved player before restart, boxes occupying both goals with solved green goal tiles and a win cue; final state returns to original player and box positions. Checker includes moved-before-restart and terminal-restart checks.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-11",
+      "task_id": "gd-009",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "2c6b371c-0e0d-42f3-a6bc-f4d29e6d3d65",
+      "artifact_digest": "c17ed454c6addb2d979ac2b439060db1007e5f4f552f5f96ce06e1e179193c65",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows initial board, player moved before restart, boxes on both goals and visible win cue; final state returns to the original layout. Goals are visible initially; checker confirms terminal restart and resumed input.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-11",
+      "task_id": "gd-019",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "8919c7c9-8dad-4888-aacb-6f36724e12e3",
+      "artifact_digest": "261e531f3f6ba89dd5dfa9eb24dfe3858c4124ca9c6c379e5265e855c2f933d2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Initial and interaction screenshots show an active piece and accumulated locked blocks; side panel is empty, with no next-piece preview. Public snapshots/facade checks pass future-hiding including after reset.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-11",
+      "task_id": "gd-019",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "693031d6-e32b-48c6-a290-995f260b3089",
+      "artifact_digest": "7aefd9d0cfdf38d0c10435f02298a858e140a99d48d47ae99f41cdd356dc22e3",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Initial and interaction screenshots show active pieces and board changes; side panel is empty, with no next-piece preview. Public snapshots/facade checks pass future-hiding including after reset.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-12",
+      "task_id": "gd-009",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "2c6b371c-0e0d-42f3-a6bc-f4d29e6d3d65",
+      "artifact_digest": "c17ed454c6addb2d979ac2b439060db1007e5f4f552f5f96ce06e1e179193c65",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Observed contact sheet showing initial board and moved player, then solved state with both boxes on goals and win feedback. Observation snapshots record terminal won state followed by restart to the initial player/box/goal positions with terminal cleared.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-12",
+      "task_id": "gd-009",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "bfb3b603-1409-46d7-ac51-b2ec9a06debf",
+      "artifact_digest": "93da1c589232d6dcd288ee6055e9207c2e92e07a07e4f8833c1d989888f816b2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Observed contact sheet showing initial board and moved player, then solved state with both boxes on goals and win feedback. Observation snapshots record terminal won state followed by restart to the initial player/box/goal positions with terminal cleared.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-12",
+      "task_id": "gd-019",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "693031d6-e32b-48c6-a290-995f260b3089",
+      "artifact_digest": "7aefd9d0cfdf38d0c10435f02298a858e140a99d48d47ae99f41cdd356dc22e3",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Inspected full initial screenshots and comparison contact sheet: X board and empty side region show no next-piece preview; Y board has no preview region or future-piece text. Observation snapshots and public facade states expose only board and active piece fields; checker reports future data hidden after reset.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-12",
+      "task_id": "gd-019",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "8919c7c9-8dad-4888-aacb-6f36724e12e3",
+      "artifact_digest": "261e531f3f6ba89dd5dfa9eb24dfe3858c4124ca9c6c379e5265e855c2f933d2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Inspected full initial screenshots and comparison contact sheet: X board and empty side region show no next-piece preview; Y board has no preview region or future-piece text. Observation snapshots and public facade states expose only board and active piece fields; checker reports future data hidden after reset.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-13",
+      "task_id": "gd-009",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "bfb3b603-1409-46d7-ac51-b2ec9a06debf",
+      "artifact_digest": "93da1c589232d6dcd288ee6055e9207c2e92e07a07e4f8833c1d989888f816b2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "The full contact sheet shows initial state, player movement, both boxes visibly occupying the two goals at win, terminal success feedback, and restart to the initial state.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-13",
+      "task_id": "gd-009",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "2c6b371c-0e0d-42f3-a6bc-f4d29e6d3d65",
+      "artifact_digest": "c17ed454c6addb2d979ac2b439060db1007e5f4f552f5f96ce06e1e179193c65",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "The full contact sheet shows initial state, player movement, both boxes visibly occupying the two goals at win, terminal success feedback, and restart to the initial state.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-13",
+      "task_id": "gd-019",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "8919c7c9-8dad-4888-aacb-6f36724e12e3",
+      "artifact_digest": "261e531f3f6ba89dd5dfa9eb24dfe3858c4124ca9c6c379e5265e855c2f933d2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full board and side/HUD area inspected in initial and interaction screenshots; active and locked pieces are visible, while the adjacent side region contains no next-piece preview.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-13",
+      "task_id": "gd-019",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "693031d6-e32b-48c6-a290-995f260b3089",
+      "artifact_digest": "7aefd9d0cfdf38d0c10435f02298a858e140a99d48d47ae99f41cdd356dc22e3",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full board and side/HUD area inspected in initial and interaction screenshots; active and locked pieces are visible, while the adjacent side region contains no next-piece preview.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-14",
+      "task_id": "gd-009",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "bfb3b603-1409-46d7-ac51-b2ec9a06debf",
+      "artifact_digest": "93da1c589232d6dcd288ee6055e9207c2e92e07a07e4f8833c1d989888f816b2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full initial and interaction screenshots show the active piece on the board and an empty right-side region with no next-piece preview; public snapshots/facade fields omit future-piece information through restart.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-14",
+      "task_id": "gd-009",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "2c6b371c-0e0d-42f3-a6bc-f4d29e6d3d65",
+      "artifact_digest": "c17ed454c6addb2d979ac2b439060db1007e5f4f552f5f96ce06e1e179193c65",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full initial and interaction screenshots show only the active piece on the text board and no next-piece preview; public snapshots/facade fields omit future-piece information through restart.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-14",
+      "task_id": "gd-019",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "8919c7c9-8dad-4888-aacb-6f36724e12e3",
+      "artifact_digest": "261e531f3f6ba89dd5dfa9eb24dfe3858c4124ca9c6c379e5265e855c2f933d2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full initial and interaction screenshots show the active piece on the board and an empty right-side region with no next-piece preview; public snapshots/facade fields omit future-piece information through restart.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-14",
+      "task_id": "gd-019",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "693031d6-e32b-48c6-a290-995f260b3089",
+      "artifact_digest": "7aefd9d0cfdf38d0c10435f02298a858e140a99d48d47ae99f41cdd356dc22e3",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full initial and interaction screenshots show only the active piece on the text board and no next-piece preview; public snapshots/facade fields omit future-piece information through restart.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-15",
+      "task_id": "gd-009",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "bfb3b603-1409-46d7-ac51-b2ec9a06debf",
+      "artifact_digest": "93da1c589232d6dcd288ee6055e9207c2e92e07a07e4f8833c1d989888f816b2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows initial board, focused movement, solved state with both crates on goals and win cue, then reset board; observed states confirm movement, win terminal, and restart reset.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-15",
+      "task_id": "gd-009",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "2c6b371c-0e0d-42f3-a6bc-f4d29e6d3d65",
+      "artifact_digest": "c17ed454c6addb2d979ac2b439060db1007e5f4f552f5f96ce06e1e179193c65",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Contact sheet shows initial board, focused movement, solved state with both crates on goals and win cue, then reset board; observed states confirm movement, win terminal, and restart reset.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-15",
+      "task_id": "gd-019",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "8919c7c9-8dad-4888-aacb-6f36724e12e3",
+      "artifact_digest": "261e531f3f6ba89dd5dfa9eb24dfe3858c4124ca9c6c379e5265e855c2f933d2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full initial screenshots show the active piece and board; the X sidebar is empty and Y renders no next-piece region. Interaction screenshots likewise show no upcoming-piece preview; state/facade checks report future fields hidden.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-15",
+      "task_id": "gd-019",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "693031d6-e32b-48c6-a290-995f260b3089",
+      "artifact_digest": "7aefd9d0cfdf38d0c10435f02298a858e140a99d48d47ae99f41cdd356dc22e3",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full initial screenshots show the active piece and board; the X sidebar is empty and Y renders no next-piece region. Interaction screenshots likewise show no upcoming-piece preview; state/facade checks report future fields hidden.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-16",
+      "task_id": "gd-009",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "2c6b371c-0e0d-42f3-a6bc-f4d29e6d3d65",
+      "artifact_digest": "c17ed454c6addb2d979ac2b439060db1007e5f4f552f5f96ce06e1e179193c65",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Screenshot shows the player move from the initial layout, both boxes occupy the two goal cells at win, and solved feedback is visible; observations also show restart returns player/boxes/goals to initial positions and terminal null.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-16",
+      "task_id": "gd-009",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "bfb3b603-1409-46d7-ac51-b2ec9a06debf",
+      "artifact_digest": "93da1c589232d6dcd288ee6055e9207c2e92e07a07e4f8833c1d989888f816b2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "initial_present": true,
+        "moved_before_restart": true,
+        "lowercase_restart": true,
+        "uppercase_restart": true,
+        "canvas_focus_verified": true,
+        "focused_move": true,
+        "focused_restart": true,
+        "paused_move_blocked": true,
+        "paused_restart": true,
+        "win_reached": true,
+        "terminal_restart": true,
+        "resumed_after_restart": true,
+        "final_restart": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Screenshot shows both boxes occupy the two goal cells at win and All goals filled feedback; observations show a focused movement and restart returning player/boxes/goals to initial positions with terminal null.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-16",
+      "task_id": "gd-019",
+      "label": "X",
+      "arm": "baseline",
+      "blind_id": "693031d6-e32b-48c6-a290-995f260b3089",
+      "artifact_digest": "7aefd9d0cfdf38d0c10435f02298a858e140a99d48d47ae99f41cdd356dc22e3",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full initial and interaction screenshots show the board and adjacent side region; no next-piece preview is visible. Public state/facade snapshots contain no future-piece field, including after reset.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    },
+    {
+      "agent_id": "proxy-16",
+      "task_id": "gd-019",
+      "label": "Y",
+      "arm": "treatment",
+      "blind_id": "8919c7c9-8dad-4888-aacb-6f36724e12e3",
+      "artifact_digest": "261e531f3f6ba89dd5dfa9eb24dfe3858c4124ca9c6c379e5265e855c2f933d2",
+      "target_status": "PASS",
+      "machine_status": "PASS",
+      "machine_checks": {
+        "observed": true,
+        "all_snapshots_present": true,
+        "public_states_hide_future": true,
+        "public_facade_hides_future": true,
+        "post_reset_hides_future": true
+      },
+      "visual_targets_met": true,
+      "visual_observation": "Full initial and interaction screenshots show the board and HUD; no next-piece preview is visible. Public state/facade snapshots contain no future-piece field, including after reset.",
+      "limitations": [
+        "Original full task obligations beyond repair are NOT_EVALUATED; no human or formal result."
+      ]
+    }
+  ],
+  "limitations": [
+    "This is a targeted regression retest of controller-repaired descendants, not a fresh generation or efficacy A/B.",
+    "Same fixed two task pairs and one model family; repeated proxy observations are correlated.",
+    "Core runtime/configuration and six other tasks unchanged; full original parity/FPS/seed gates beyond repairs NOT_EVALUATED.",
+    "Provider hard budgets/exact snapshot and audited production isolation/capture/review not qualified."
+  ]
+}

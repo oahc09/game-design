@@ -1,0 +1,4 @@
+# Keep byte-bound evidence/code snapshots unchanged, including their CRLF bytes.
+*.mjs -text whitespace=cr-at-eol
+# The inherited candidate snapshot includes its original blank line at EOF.
+candidate-files/** -text whitespace=cr-at-eol,-blank-at-eof

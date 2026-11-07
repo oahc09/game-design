@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "seed": 11,
+  "steps": 360,
+  "events": 425,
+  "scope": "Native model trace unchanged except removal of public preview; underlying queue/config/runtime unchanged; not full FPS or complete task certification"
+}

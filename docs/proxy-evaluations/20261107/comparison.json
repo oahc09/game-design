@@ -1,0 +1,3194 @@
+{
+  "kind": "EXPLORATORY_AGENT_PROXY_EVALUATION",
+  "status": "FLOW_COMPLETED",
+  "acceptance_status": "NOT_CERTIFIED",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "completed_agents": 16,
+  "task_pairs": 8,
+  "paired_assessments": 128,
+  "version_observations": 256,
+  "requested_concurrency": 8,
+  "effective_reviewer_concurrency": 3,
+  "formal_trials": 0,
+  "human_participants": 0,
+  "human_participation_required_for_proxy_completion": false,
+  "formal_gate": "BLOCKED",
+  "external_review": "UNVERIFIED",
+  "exact_snapshot_attested": false,
+  "provider_hard_budget_attested": false,
+  "generation_contexts": 2,
+  "generation_context_scope": "One context per arm, eight tasks serially; public-browser error repair retained",
+  "first_attempt_runtime_failures": [
+    {
+      "arm": "baseline",
+      "task_id": "gd-071",
+      "error": "ReferenceError: events is not defined",
+      "repair_attempt": 2
+    },
+    {
+      "arm": "treatment",
+      "task_id": "gd-019",
+      "error": "INVALID_CONTENT: initialBoard must be empty array or height x width matrix",
+      "repair_attempt": 2
+    }
+  ],
+  "per_task": [
+    {
+      "task_id": "gd-009",
+      "paired_reviews": 16,
+      "proxy_preferences": {
+        "baseline": 1,
+        "treatment": 11,
+        "tie": 4,
+        "unmeasured": 0
+      },
+      "posthoc_turnbased_restart_audit": {
+        "baseline": [
+          {
+            "agent_id": "proxy-01",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 3,
+            "after_tick": 3
+          },
+          {
+            "agent_id": "proxy-02",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 3,
+            "after_tick": 3
+          },
+          {
+            "agent_id": "proxy-03",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 3,
+            "after_tick": 3
+          },
+          {
+            "agent_id": "proxy-04",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 3,
+            "after_tick": 3
+          },
+          {
+            "agent_id": "proxy-05",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 2,
+            "after_tick": 2
+          },
+          {
+            "agent_id": "proxy-06",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 3,
+            "after_tick": 3
+          },
+          {
+            "agent_id": "proxy-07",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 2,
+            "after_tick": 2
+          },
+          {
+            "agent_id": "proxy-08",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 1,
+            "after_tick": 1
+          },
+          {
+            "agent_id": "proxy-09",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 4,
+            "after_tick": 4
+          },
+          {
+            "agent_id": "proxy-10",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 1,
+            "after_tick": 1
+          },
+          {
+            "agent_id": "proxy-11",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 3,
+            "after_tick": 3
+          },
+          {
+            "agent_id": "proxy-12",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 2,
+            "after_tick": 2
+          },
+          {
+            "agent_id": "proxy-13",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 1,
+            "after_tick": 1
+          },
+          {
+            "agent_id": "proxy-14",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 2,
+            "after_tick": 2
+          },
+          {
+            "agent_id": "proxy-15",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 2,
+            "after_tick": 2
+          },
+          {
+            "agent_id": "proxy-16",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 3,
+            "after_tick": 3
+          }
+        ],
+        "treatment": [
+          {
+            "agent_id": "proxy-01",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": true,
+            "before_tick": 3,
+            "after_tick": 0
+          },
+          {
+            "agent_id": "proxy-02",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 5,
+            "after_tick": 5
+          },
+          {
+            "agent_id": "proxy-03",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": false,
+            "before_tick": 5,
+            "after_tick": 5
+          },
+          {
+            "agent_id": "proxy-04",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": true,
+            "before_tick": 3,
+            "after_tick": 0
+          },
+          {
+            "agent_id": "proxy-05",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": true,
+            "before_tick": 2,
+            "after_tick": 0
+          },
+          {
+            "agent_id": "proxy-06",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": true,
+            "before_tick": 3,
+            "after_tick": 0
+          },
+          {
+            "agent_id": "proxy-07",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": true,
+            "before_tick": 2,
+            "after_tick": 0
+          },
+          {
+            "agent_id": "proxy-08",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": true,
+            "before_tick": 1,
+            "after_tick": 0
+          },
+          {
+            "agent_id": "proxy-09",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": true,
+            "before_tick": 4,
+            "after_tick": 0
+          },
+          {
+            "agent_id": "proxy-10",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": true,
+            "before_tick": 1,
+            "after_tick": 0
+          },
+          {
+            "agent_id": "proxy-11",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": true,
+            "before_tick": 3,
+            "after_tick": 0
+          },
+          {
+            "agent_id": "proxy-12",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": true,
+            "before_tick": 2,
+            "after_tick": 0
+          },
+          {
+            "agent_id": "proxy-13",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": true,
+            "before_tick": 1,
+            "after_tick": 0
+          },
+          {
+            "agent_id": "proxy-14",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": true,
+            "before_tick": 2,
+            "after_tick": 0
+          },
+          {
+            "agent_id": "proxy-15",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": true,
+            "before_tick": 2,
+            "after_tick": 0
+          },
+          {
+            "agent_id": "proxy-16",
+            "has_restart_action": true,
+            "progressed_before_restart": true,
+            "restored_initial_state": true,
+            "before_tick": 3,
+            "after_tick": 0
+          }
+        ]
+      },
+      "arms": {
+        "baseline": {
+          "observations": 16,
+          "statuses": {
+            "OBSERVED": 16
+          },
+          "state_observed_n": 16,
+          "dimensions": {
+            "rule_understanding_cost": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.4375,
+              "median": 4,
+              "values": [
+                1,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5,
+                5,
+                5
+              ]
+            },
+            "first_use_ease": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.9375,
+              "median": 4,
+              "values": [
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5,
+                5,
+                5
+              ]
+            },
+            "gameplay_variety": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "repetition": {
+              "measured_n": 2,
+              "missing_n": 14,
+              "mean": 4.5,
+              "median": 4.5,
+              "values": [
+                4,
+                5
+              ]
+            },
+            "perceived_difficulty": {
+              "measured_n": 7,
+              "missing_n": 9,
+              "mean": 3.2857142857142856,
+              "median": 3,
+              "values": [
+                2,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4
+              ]
+            },
+            "fairness": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "decision_agency": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.8125,
+              "median": 4,
+              "values": [
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5,
+                5
+              ]
+            },
+            "continue_playing_intent": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            }
+          }
+        },
+        "treatment": {
+          "observations": 16,
+          "statuses": {
+            "OBSERVED": 16
+          },
+          "state_observed_n": 16,
+          "dimensions": {
+            "rule_understanding_cost": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 2.5,
+              "median": 2,
+              "values": [
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4
+              ]
+            },
+            "first_use_ease": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 4.75,
+              "median": 5,
+              "values": [
+                2,
+                2,
+                4,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                6,
+                6,
+                6
+              ]
+            },
+            "gameplay_variety": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "repetition": {
+              "measured_n": 2,
+              "missing_n": 14,
+              "mean": 4.5,
+              "median": 4.5,
+              "values": [
+                4,
+                5
+              ]
+            },
+            "perceived_difficulty": {
+              "measured_n": 7,
+              "missing_n": 9,
+              "mean": 3.2857142857142856,
+              "median": 3,
+              "values": [
+                2,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4
+              ]
+            },
+            "fairness": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "decision_agency": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 4.25,
+              "median": 4,
+              "values": [
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5
+              ]
+            },
+            "continue_playing_intent": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            }
+          }
+        }
+      },
+      "issues": [
+        {
+          "agent_id": "proxy-01",
+          "arm": "treatment",
+          "description": "Input sequence produced only one state-changing move in Y; restart and pause did not visibly change state in sampled snapshots.",
+          "evidence": "Y snapshots: tick 0 initially, tick 1 after action-4, tick 1 after action-7; no errors reported. This is a short harness observation, not a full input-parity check."
+        },
+        {
+          "agent_id": "proxy-02",
+          "arm": "baseline",
+          "description": "No textual explanation of goal/crate symbols or visible move count; the visual board is relatively small in the captured view.",
+          "evidence": "Initial and interaction panels in comparison.png; state text only lists controls."
+        },
+        {
+          "agent_id": "proxy-02",
+          "arm": "treatment",
+          "description": "Displayed state uses numeric cell indices and does not expose explicit goal-occupancy or terminal feedback in this nonterminal sequence; pointer directional input was not exercised.",
+          "evidence": "Observed snapshots show boxes [9,18], goals [9,11], terminal null; interaction moved player and count to 5."
+        },
+        {
+          "agent_id": "proxy-03",
+          "arm": "baseline",
+          "description": "After the observed actions, board differs from initial layout; restart key at the end did not return visible state to initial.",
+          "evidence": "observations.json snapshots: initial tick 0; action-4 tick 3; action-8 tick 3, player [3,2], boxes [[2,1],[4,2]]."
+        },
+        {
+          "agent_id": "proxy-05",
+          "arm": "baseline",
+          "description": "R did not visibly restart after two moves.",
+          "evidence": "X observations action-0/action-1 place player at [4,3] then [4,2]; after action-2 (R), player remains [4,2] and tick remains 2."
+        },
+        {
+          "agent_id": "proxy-07",
+          "arm": "baseline",
+          "description": "Visible instruction text identifies movement/restart/pause but does not explain the goal or push rule.",
+          "evidence": "Initial screenshot and text; state exposed goals and boxes but no occupancy/event feedback."
+        },
+        {
+          "agent_id": "proxy-09",
+          "arm": "baseline",
+          "description": "按R后观察状态未重启。",
+          "evidence": "action-3与action-4的tick、player、boxes相同，均为tick 4；与Y的R操作后恢复tick 0不同。"
+        },
+        {
+          "agent_id": "proxy-09",
+          "arm": "baseline",
+          "description": "可访问文本状态中的grid在移动和推动后仍是初始字符图，未反映当前player/boxes字段。",
+          "evidence": "action-0到action-3的player/boxes发生变化，但每个snapshot的state.grid均保持原始图案。截图接触表拍摄的是初始与最终（按R后的）画面，不能据此判断移动过程中的画布占位是否同步。"
+        },
+        {
+          "agent_id": "proxy-11",
+          "arm": "baseline",
+          "evidence": "observations.json: action-3 remained tick=3, player=[2,3], boxes=[[1,2],[3,1]], while initial tick=0 and player=[3,3].",
+          "description": "R restart did not restore the initial state after the three arrow actions."
+        },
+        {
+          "agent_id": "proxy-12",
+          "arm": "baseline",
+          "description": "R restart did not reset the captured state after two accepted moves; the final snapshot remained at tick 2 with player [2,2] and boxes [[1,2],[3,1]]. Displayed grid text remained the initial board during moves, so displayed occupancy did not reflect authoritative state.",
+          "evidence": "observations.json action-0/action-1/action-2 states and text; comparison.png interaction frame"
+        },
+        {
+          "agent_id": "proxy-13",
+          "arm": "baseline",
+          "description": "R did not restore the initial player position in the captured final state.",
+          "evidence": "initial player [3,3], after ArrowRight player [4,3], after R still [4,3]; tick remained 1."
+        },
+        {
+          "agent_id": "proxy-15",
+          "arm": "baseline",
+          "description": "R 操作后快照仍为 tick 2、玩家位置 [4,2]，未恢复初始状态。",
+          "evidence": "observations.json X action-3: tick=2, player=[4,2]; initial tick=0, player=[3,3]."
+        },
+        {
+          "agent_id": "proxy-16",
+          "arm": "baseline",
+          "evidence": "gd-009/observations.json：action-4 与 action-3 的 tick 均为 3、player 均为 [3,2]；comparison.png 底部 X 仍显示移动后的棋盘。",
+          "description": "R 重启键后状态没有恢复到初始局面，tick 和玩家/箱子位置保持不变。"
+        }
+      ]
+    },
+    {
+      "task_id": "gd-019",
+      "paired_reviews": 16,
+      "proxy_preferences": {
+        "baseline": 2,
+        "treatment": 8,
+        "tie": 6,
+        "unmeasured": 0
+      },
+      "posthoc_turnbased_restart_audit": null,
+      "arms": {
+        "baseline": {
+          "observations": 16,
+          "statuses": {
+            "OBSERVED": 16
+          },
+          "state_observed_n": 16,
+          "dimensions": {
+            "rule_understanding_cost": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 2.75,
+              "median": 3,
+              "values": [
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4
+              ]
+            },
+            "fairness": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "gameplay_variety": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 4,
+              "median": 4,
+              "values": [
+                4
+              ]
+            },
+            "continue_playing_intent": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "repetition": {
+              "measured_n": 2,
+              "missing_n": 14,
+              "mean": 4,
+              "median": 4,
+              "values": [
+                3,
+                5
+              ]
+            },
+            "first_use_ease": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.6875,
+              "median": 4,
+              "values": [
+                2,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5
+              ]
+            },
+            "decision_agency": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.5625,
+              "median": 4,
+              "values": [
+                2,
+                2,
+                2,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5
+              ]
+            },
+            "perceived_difficulty": {
+              "measured_n": 6,
+              "missing_n": 10,
+              "mean": 3.1666666666666665,
+              "median": 3,
+              "values": [
+                3,
+                3,
+                3,
+                3,
+                3,
+                4
+              ]
+            }
+          }
+        },
+        "treatment": {
+          "observations": 16,
+          "statuses": {
+            "OBSERVED": 16
+          },
+          "state_observed_n": 16,
+          "dimensions": {
+            "rule_understanding_cost": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 2.5625,
+              "median": 2.5,
+              "values": [
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4
+              ]
+            },
+            "fairness": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "gameplay_variety": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 4,
+              "median": 4,
+              "values": [
+                4
+              ]
+            },
+            "continue_playing_intent": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "repetition": {
+              "measured_n": 2,
+              "missing_n": 14,
+              "mean": 4,
+              "median": 4,
+              "values": [
+                3,
+                5
+              ]
+            },
+            "first_use_ease": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.625,
+              "median": 4,
+              "values": [
+                2,
+                2,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5
+              ]
+            },
+            "decision_agency": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.9375,
+              "median": 4,
+              "values": [
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5
+              ]
+            },
+            "perceived_difficulty": {
+              "measured_n": 7,
+              "missing_n": 9,
+              "mean": 3.7142857142857144,
+              "median": 3,
+              "values": [
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                6
+              ]
+            }
+          }
+        }
+      },
+      "issues": [
+        {
+          "agent_id": "proxy-01",
+          "arm": "treatment",
+          "description": "The initial snapshot was already at tick 86 with an active piece, while Y began at tick 0. The subsequent sampled states are not a controlled same-tick replay.",
+          "evidence": "X initial snapshot tick=86, Y initial tick=0; harness waited 1200ms after navigation. X later reached tick 156 before restart and tick 5 after restart. Y reached tick 38 after action-4 and tick 2 after action-5."
+        },
+        {
+          "agent_id": "proxy-02",
+          "arm": "treatment",
+          "description": "The active play advanced rapidly and reached TOP_OUT after several locked pieces in the brief sequence.",
+          "evidence": "See captured initial/interaction states and comparison image."
+        },
+        {
+          "agent_id": "proxy-02",
+          "arm": "baseline",
+          "description": "Board is very small in the captured view and the observed short sequence left locked_piece_count at 0; gameplay progression was difficult to assess.",
+          "evidence": "See captured initial/interaction states and comparison image."
+        },
+        {
+          "agent_id": "proxy-03",
+          "arm": "baseline",
+          "description": "Y board and piece glyphs appear as compact ASCII in the actual comparison screenshot, reducing at-a-glance readability.",
+          "evidence": "comparison.png shows X large colored grid and Y narrow text board; observations show both accepted brief keyboard input without errors."
+        },
+        {
+          "agent_id": "proxy-06",
+          "arm": "treatment",
+          "evidence": "See task observations and comparison image.",
+          "description": "The same short controls yielded X advancing to 12 locked pieces and LOSE/TOP_OUT while Y remained at 0 locked pieces and tick 33; this is an observed difference, not an FPS comparison."
+        },
+        {
+          "agent_id": "proxy-06",
+          "arm": "baseline",
+          "evidence": "See task observations and comparison image.",
+          "description": "The same short controls yielded X advancing to 12 locked pieces and LOSE/TOP_OUT while Y remained at 0 locked pieces and tick 33; this is an observed difference, not an FPS comparison."
+        },
+        {
+          "agent_id": "proxy-07",
+          "arm": "treatment",
+          "description": "At initial capture, X had already advanced to tick 86 with active piece at y=2, indicating time passed before the first action; this brief capture cannot verify render-rate independence.",
+          "evidence": "Initial snapshot tick 86; no fixed-FPS replay."
+        },
+        {
+          "agent_id": "proxy-08",
+          "arm": "treatment",
+          "description": "The initial captured state was already at tick 86 and the run reached TOP_OUT at tick 149 during the short observation window.",
+          "evidence": "gd-019/observations.json X initial tick=86; final terminal=LOSE reason=TOP_OUT, locked_piece_count=12."
+        },
+        {
+          "agent_id": "proxy-08",
+          "arm": "baseline",
+          "description": "The canvas board is small relative to the available screenshot area, limiting legibility.",
+          "evidence": "gd-019/comparison.png Y side shows the board occupying a small fraction of the page."
+        },
+        {
+          "agent_id": "proxy-09",
+          "arm": "treatment",
+          "description": "初始快照时页面tick已是86，先于代理输入发生了明显时间推进；浏览器时间与游戏tick的映射难以由短观察解释。",
+          "evidence": "initial snapshot tick=86；后续action-0/action-1分别tick=107/120，说明操作期间也有推进。"
+        },
+        {
+          "agent_id": "proxy-09",
+          "arm": "treatment",
+          "description": "单次Space按键操作后锁定块计数从0跃迁到12，超过可由一块放置直接解释的数量；实际原因未观察到。",
+          "evidence": "action-2 snapshot locked_piece_count=12，lines=0；前一snapshot locked_piece_count=0。"
+        },
+        {
+          "agent_id": "proxy-10",
+          "arm": "treatment",
+          "description": "A next-piece preview is visible although the public rule says future pieces are hidden.",
+          "evidence": "X initial snapshot includes preview [\"I\"]; X initial screenshot shows a preview piece."
+        },
+        {
+          "agent_id": "proxy-14",
+          "arm": "baseline",
+          "description": "本次 Space 输入后活动方块与 tick 均未变化；短观察无法判明是否存在其他硬降键。",
+          "evidence": "gd-019/observations.json action-3"
+        },
+        {
+          "agent_id": "proxy-15",
+          "arm": "treatment",
+          "description": "初始快照已处于 tick 86，短序列后推进至 tick 144 并锁定7块；相较Y的初始tick 0至32，观察起点和模拟进度不一致，不能据此比较FPS或节奏。",
+          "evidence": "observations.json X initial tick=86, final tick=144, locked_piece_count=7; Y initial tick=0, final tick=32, locked_piece_count=0."
+        },
+        {
+          "agent_id": "proxy-16",
+          "arm": "baseline",
+          "evidence": "gd-019/observations.json action-2；comparison.png 的 Y 列交互图未显示已堆叠方块。",
+          "description": "短序列中按 Space 后未观察到明确的方块锁定或新块生成；当前观测只显示活动方块继续处于顶部附近。"
+        }
+      ]
+    },
+    {
+      "task_id": "gd-029",
+      "paired_reviews": 16,
+      "proxy_preferences": {
+        "baseline": 0,
+        "treatment": 14,
+        "tie": 2,
+        "unmeasured": 0
+      },
+      "posthoc_turnbased_restart_audit": null,
+      "arms": {
+        "baseline": {
+          "observations": 16,
+          "statuses": {
+            "OBSERVED": 16
+          },
+          "state_observed_n": 16,
+          "dimensions": {
+            "repetition": {
+              "measured_n": 2,
+              "missing_n": 14,
+              "mean": 5,
+              "median": 5,
+              "values": [
+                5,
+                5
+              ]
+            },
+            "gameplay_variety": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 4,
+              "median": 4,
+              "values": [
+                4
+              ]
+            },
+            "perceived_difficulty": {
+              "measured_n": 6,
+              "missing_n": 10,
+              "mean": 3,
+              "median": 3,
+              "values": [
+                3,
+                3,
+                3,
+                3,
+                3,
+                3
+              ]
+            },
+            "decision_agency": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 2.6875,
+              "median": 2,
+              "values": [
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4
+              ]
+            },
+            "fairness": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "rule_understanding_cost": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.125,
+              "median": 3,
+              "values": [
+                1,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5
+              ]
+            },
+            "first_use_ease": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.3125,
+              "median": 3,
+              "values": [
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                5,
+                5,
+                6
+              ]
+            },
+            "continue_playing_intent": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            }
+          }
+        },
+        "treatment": {
+          "observations": 16,
+          "statuses": {
+            "OBSERVED": 16
+          },
+          "state_observed_n": 16,
+          "dimensions": {
+            "repetition": {
+              "measured_n": 2,
+              "missing_n": 14,
+              "mean": 3.5,
+              "median": 3.5,
+              "values": [
+                3,
+                4
+              ]
+            },
+            "gameplay_variety": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 4,
+              "median": 4,
+              "values": [
+                4
+              ]
+            },
+            "perceived_difficulty": {
+              "measured_n": 7,
+              "missing_n": 9,
+              "mean": 3.142857142857143,
+              "median": 3,
+              "values": [
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4
+              ]
+            },
+            "decision_agency": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 4.0625,
+              "median": 4,
+              "values": [
+                2,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5,
+                5,
+                5,
+                5
+              ]
+            },
+            "fairness": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "rule_understanding_cost": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 2.5,
+              "median": 2,
+              "values": [
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4
+              ]
+            },
+            "first_use_ease": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 4.125,
+              "median": 4,
+              "values": [
+                2,
+                2,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5
+              ]
+            },
+            "continue_playing_intent": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            }
+          }
+        }
+      },
+      "issues": [
+        {
+          "agent_id": "proxy-01",
+          "arm": "treatment",
+          "description": "X initial simulation had advanced before first snapshot.",
+          "evidence": "X initial tick 86; Y initial tick 0. Short sequence is not synchronized."
+        },
+        {
+          "agent_id": "proxy-01",
+          "arm": "baseline",
+          "description": "The comparison presents a JSON state dump rather than an obvious gameplay HUD.",
+          "evidence": "Y comparison initial and interaction panels show JSON fields; extracted body text likewise begins with serialized JSON."
+        },
+        {
+          "agent_id": "proxy-02",
+          "arm": "treatment",
+          "description": "The quick run showed incoming projectiles and movement/fire; it did not establish broader encounter variety or survival difficulty.",
+          "evidence": "See captured initial/interaction states and comparison image."
+        },
+        {
+          "agent_id": "proxy-02",
+          "arm": "baseline",
+          "description": "The visible page rendered a large raw JSON state rather than the game scene, despite state changes being observable.",
+          "evidence": "See captured initial/interaction states and comparison image."
+        },
+        {
+          "agent_id": "proxy-03",
+          "arm": "baseline",
+          "description": "Y renders serialized state text in the game view, which obscures the playfield presentation.",
+          "evidence": "comparison.png shows enemies and player on X; Y shows JSON state text. Both observations have no browser errors."
+        },
+        {
+          "agent_id": "proxy-04",
+          "arm": "baseline",
+          "evidence": "Y remained player [50,80], enemies unchanged, and projectiles [] through snapshots.",
+          "description": "Movement and fire did not visibly affect player or projectiles during tested actions."
+        },
+        {
+          "agent_id": "proxy-05",
+          "arm": "baseline",
+          "evidence": "Y action-2 at tick 59 reports projectiles: [] while Space was held for 350 ms.",
+          "description": "No projectiles appeared in the snapshots during the held Space action."
+        },
+        {
+          "agent_id": "proxy-06",
+          "arm": "treatment",
+          "evidence": "See task observations and comparison image.",
+          "description": "X registered 4 player shots after Space hold; Y had no projectile entries and player movement was small (position changed 50,80 to 51,79)."
+        },
+        {
+          "agent_id": "proxy-06",
+          "arm": "baseline",
+          "evidence": "See task observations and comparison image.",
+          "description": "X registered 4 player shots after Space hold; Y had no projectile entries and player movement was small (position changed 50,80 to 51,79)."
+        },
+        {
+          "agent_id": "proxy-07",
+          "arm": "treatment",
+          "description": "At initial capture game had advanced to tick 85 and included enemy projectiles before interaction; no held-fire shots registered in this short run.",
+          "evidence": "Initial tick 85; shots 0 in state snapshots."
+        },
+        {
+          "agent_id": "proxy-07",
+          "arm": "baseline",
+          "description": "The visible page presents state JSON rather than an arcade playfield.",
+          "evidence": "Comparison screenshot shows JSON text panel; state tick advanced 0 to 6, player/enemy positions and projectiles unchanged."
+        },
+        {
+          "agent_id": "proxy-08",
+          "arm": "baseline",
+          "description": "The page renders raw JSON instead of a graphical playfield; captured state showed no change after movement/fire inputs.",
+          "evidence": "gd-029/comparison.png Y column is JSON text; observations.json Y start tick=0 and end tick=35, unchanged player/enemy/projectile state."
+        },
+        {
+          "agent_id": "proxy-09",
+          "arm": "baseline",
+          "description": "Space射击按键在此次持有期间没有可见效果。",
+          "evidence": "action-1在tick 8到23期间按住Space；初末projectiles均为空数组且cooldown仍为0。"
+        },
+        {
+          "agent_id": "proxy-09",
+          "arm": "treatment",
+          "description": "进入初始快照前模拟已推进较多tick，敌人和敌方弹体已有移动；不支持与Y作严格初态对照。",
+          "evidence": "initial tick=86，player仍在(50,80)，敌人已位移且projectiles含3枚敌方弹体。"
+        },
+        {
+          "agent_id": "proxy-11",
+          "arm": "baseline",
+          "evidence": "observations.json: tick 0→50, player [50,80]→[51,79]; no shots field or player projectiles visible in saved state.",
+          "description": "The brief inputs produced very little observed movement and no recorded shots in the available snapshot fields."
+        },
+        {
+          "agent_id": "proxy-12",
+          "arm": "baseline",
+          "description": "The visible surface presented a serialized JSON state block rather than a playable shooter scene. Arrow input changed state only slightly and no player projectiles appeared during held fire.",
+          "evidence": "comparison.png and gd-029/observations.json, Y snapshots"
+        },
+        {
+          "agent_id": "proxy-14",
+          "arm": "baseline",
+          "description": "界面呈现状态 JSON 文本而非可视化游戏场景；本轮 Space 后仍无弹丸。",
+          "evidence": "gd-029/observations.json initial/action-2; gd-029/comparison.png"
+        },
+        {
+          "agent_id": "proxy-15",
+          "arm": "baseline",
+          "description": "短按住 Space 序列中，Y 连续快照 projectiles 仍为0；X 的同类按键期间 shots 从0增至4。",
+          "evidence": "observations.json Y action-2 tick=34 projectiles=0、action-3 tick=42 projectiles=0；X action-2 tick=143 shots=4."
+        },
+        {
+          "agent_id": "proxy-16",
+          "arm": "baseline",
+          "description": "浏览器可视内容以状态 JSON 为主，且测试的 Space 输入没有可见攻击结果或 shots 计数变化。",
+          "evidence": "gd-029/comparison.png 左列；observations.json action-1/action-2 中 projectiles 仍为空，未出现 shots 字段。"
+        }
+      ]
+    },
+    {
+      "task_id": "gd-039",
+      "paired_reviews": 16,
+      "proxy_preferences": {
+        "baseline": 0,
+        "treatment": 2,
+        "tie": 13,
+        "unmeasured": 1
+      },
+      "posthoc_turnbased_restart_audit": null,
+      "arms": {
+        "baseline": {
+          "observations": 16,
+          "statuses": {
+            "OBSERVED": 16
+          },
+          "state_observed_n": 16,
+          "dimensions": {
+            "gameplay_variety": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 3,
+              "median": 3,
+              "values": [
+                3
+              ]
+            },
+            "continue_playing_intent": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "rule_understanding_cost": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 2.875,
+              "median": 3,
+              "values": [
+                2,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4
+              ]
+            },
+            "decision_agency": {
+              "measured_n": 14,
+              "missing_n": 2,
+              "mean": 2.4285714285714284,
+              "median": 2,
+              "values": [
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                4,
+                4
+              ]
+            },
+            "fairness": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "perceived_difficulty": {
+              "measured_n": 4,
+              "missing_n": 12,
+              "mean": 3.25,
+              "median": 3,
+              "values": [
+                3,
+                3,
+                3,
+                4
+              ]
+            },
+            "repetition": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 5,
+              "median": 5,
+              "values": [
+                5
+              ]
+            },
+            "first_use_ease": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.4375,
+              "median": 3,
+              "values": [
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ]
+            }
+          }
+        },
+        "treatment": {
+          "observations": 16,
+          "statuses": {
+            "OBSERVED": 16
+          },
+          "state_observed_n": 16,
+          "dimensions": {
+            "gameplay_variety": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 3,
+              "median": 3,
+              "values": [
+                3
+              ]
+            },
+            "continue_playing_intent": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "rule_understanding_cost": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 2.9375,
+              "median": 3,
+              "values": [
+                2,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4
+              ]
+            },
+            "decision_agency": {
+              "measured_n": 14,
+              "missing_n": 2,
+              "mean": 2.4285714285714284,
+              "median": 2,
+              "values": [
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                4,
+                4
+              ]
+            },
+            "fairness": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "perceived_difficulty": {
+              "measured_n": 4,
+              "missing_n": 12,
+              "mean": 3.25,
+              "median": 3,
+              "values": [
+                3,
+                3,
+                3,
+                4
+              ]
+            },
+            "repetition": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 5,
+              "median": 5,
+              "values": [
+                5
+              ]
+            },
+            "first_use_ease": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.5,
+              "median": 3,
+              "values": [
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5
+              ]
+            }
+          }
+        }
+      },
+      "issues": [
+        {
+          "agent_id": "proxy-01",
+          "arm": "treatment",
+          "description": "Submitted drags did not result in an observed board change.",
+          "evidence": "Both initial and final snapshots show same board, moves=12, score=0; no errors were reported."
+        },
+        {
+          "agent_id": "proxy-01",
+          "arm": "baseline",
+          "description": "Submitted drags did not result in an observed board change.",
+          "evidence": "Both initial and final snapshots show same board, moves=12, score=0; no errors were reported."
+        },
+        {
+          "agent_id": "proxy-02",
+          "arm": "treatment",
+          "description": "Attempted interaction left board, score and move count unchanged; no successful match was observed.",
+          "evidence": "See captured initial/interaction states and comparison image."
+        },
+        {
+          "agent_id": "proxy-02",
+          "arm": "baseline",
+          "description": "Attempted interaction left board, score and move count unchanged; no successful match was observed.",
+          "evidence": "See captured initial/interaction states and comparison image."
+        },
+        {
+          "agent_id": "proxy-03",
+          "arm": "treatment",
+          "description": "The drag attempts left moves at 12 and score at 0 on both, so successful match feedback was not observed.",
+          "evidence": "observations.json both show moves 12, score 0 and equivalent board; comparison.png shows clear colored gems."
+        },
+        {
+          "agent_id": "proxy-04",
+          "arm": "treatment",
+          "evidence": "All snapshots show identical board, moves 12, score 0.",
+          "description": "Attempted drags did not alter the displayed board."
+        },
+        {
+          "agent_id": "proxy-04",
+          "arm": "baseline",
+          "evidence": "All snapshots show identical board, moves 12, score 0.",
+          "description": "Attempted drags did not alter the displayed board."
+        },
+        {
+          "agent_id": "proxy-06",
+          "arm": "treatment",
+          "evidence": "See task observations and comparison image.",
+          "description": "The drag and click sequence left board, moves (12), score (0), and tick unchanged in both."
+        },
+        {
+          "agent_id": "proxy-06",
+          "arm": "baseline",
+          "evidence": "See task observations and comparison image.",
+          "description": "The drag and click sequence left board, moves (12), score (0), and tick unchanged in both."
+        },
+        {
+          "agent_id": "proxy-16",
+          "arm": "baseline",
+          "evidence": "gd-039/observations.json action-0/action-1/action-2 的 board、moves=12、score=0 均相同；comparison.png 上下棋盘一致。",
+          "description": "两次相邻宝石拖动后棋盘状态未发生变化，无法观察交换或消除反馈。"
+        },
+        {
+          "agent_id": "proxy-16",
+          "arm": "treatment",
+          "evidence": "gd-039/observations.json action-0/action-1/action-2 的 board、moves=12、score=0 均相同；comparison.png 上下棋盘一致。",
+          "description": "两次相邻宝石拖动后棋盘状态未发生变化，无法观察交换或消除反馈。"
+        }
+      ]
+    },
+    {
+      "task_id": "gd-065",
+      "paired_reviews": 16,
+      "proxy_preferences": {
+        "baseline": 1,
+        "treatment": 13,
+        "tie": 2,
+        "unmeasured": 0
+      },
+      "posthoc_turnbased_restart_audit": null,
+      "arms": {
+        "baseline": {
+          "observations": 16,
+          "statuses": {
+            "OBSERVED": 16
+          },
+          "state_observed_n": 16,
+          "dimensions": {
+            "gameplay_variety": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 3,
+              "median": 3,
+              "values": [
+                3
+              ]
+            },
+            "continue_playing_intent": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "rule_understanding_cost": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.4375,
+              "median": 3,
+              "values": [
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                5,
+                5
+              ]
+            },
+            "decision_agency": {
+              "measured_n": 15,
+              "missing_n": 1,
+              "mean": 2.4,
+              "median": 3,
+              "values": [
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3
+              ]
+            },
+            "fairness": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "first_use_ease": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.25,
+              "median": 3,
+              "values": [
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                5
+              ]
+            },
+            "perceived_difficulty": {
+              "measured_n": 4,
+              "missing_n": 12,
+              "mean": 3.25,
+              "median": 3,
+              "values": [
+                3,
+                3,
+                3,
+                4
+              ]
+            },
+            "repetition": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 5,
+              "median": 5,
+              "values": [
+                5
+              ]
+            }
+          }
+        },
+        "treatment": {
+          "observations": 16,
+          "statuses": {
+            "OBSERVED": 16
+          },
+          "state_observed_n": 16,
+          "dimensions": {
+            "gameplay_variety": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 3,
+              "median": 3,
+              "values": [
+                3
+              ]
+            },
+            "continue_playing_intent": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "rule_understanding_cost": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 2.9375,
+              "median": 3,
+              "values": [
+                2,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4
+              ]
+            },
+            "decision_agency": {
+              "measured_n": 15,
+              "missing_n": 1,
+              "mean": 3.2666666666666666,
+              "median": 3,
+              "values": [
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                5,
+                5
+              ]
+            },
+            "fairness": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "first_use_ease": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.6875,
+              "median": 4,
+              "values": [
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5,
+                5,
+                5
+              ]
+            },
+            "perceived_difficulty": {
+              "measured_n": 4,
+              "missing_n": 12,
+              "mean": 3.25,
+              "median": 3,
+              "values": [
+                3,
+                3,
+                3,
+                4
+              ]
+            },
+            "repetition": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 5,
+              "median": 5,
+              "values": [
+                5
+              ]
+            }
+          }
+        }
+      },
+      "issues": [
+        {
+          "agent_id": "proxy-01",
+          "arm": "treatment",
+          "description": "A single pour was observed, but animation interruption behavior was not exercised.",
+          "evidence": "X final observed tube state: source [B,R,B], destination [R]; tick 1."
+        },
+        {
+          "agent_id": "proxy-01",
+          "arm": "baseline",
+          "description": "Y did not reflect the submitted pointer interactions in state.",
+          "evidence": "Y snapshots remained tick=0 with the initial tube contents; comparison shows unchanged tubes."
+        },
+        {
+          "agent_id": "proxy-02",
+          "arm": "treatment",
+          "description": "The short generic input sequence did not visibly alter tube contents or tick.",
+          "evidence": "See captured initial/interaction states and comparison image."
+        },
+        {
+          "agent_id": "proxy-02",
+          "arm": "baseline",
+          "description": "Only generic source/target text appeared; no keyboard selection or pour effect was confirmed.",
+          "evidence": "See captured initial/interaction states and comparison image."
+        },
+        {
+          "agent_id": "proxy-03",
+          "arm": "treatment",
+          "description": "The short pointer sequence left both tube states unchanged; successful pour rules and feedback remain unobserved.",
+          "evidence": "observations.json final tube arrays unchanged; X text includes keyboard arrows, Enter, Esc; Y says only select source then target."
+        },
+        {
+          "agent_id": "proxy-05",
+          "arm": "baseline",
+          "description": "The attempted tube clicks did not change selection or tube contents.",
+          "evidence": "Y snapshots action-0 through action-3 retain the original tubes and selected:null."
+        },
+        {
+          "agent_id": "proxy-06",
+          "arm": "treatment",
+          "evidence": "See task observations and comparison image.",
+          "description": "Same pointer sequence changed Y tick 0 to 1 and moved a red liquid unit into tube 4; X remained tick 0."
+        },
+        {
+          "agent_id": "proxy-06",
+          "arm": "baseline",
+          "evidence": "See task observations and comparison image.",
+          "description": "Same pointer sequence changed Y tick 0 to 1 and moved a red liquid unit into tube 4; X remained tick 0."
+        },
+        {
+          "agent_id": "proxy-11",
+          "arm": "baseline",
+          "description": "Two pointer clicks produced no selected tube or state change in this run.",
+          "evidence": "observations.json: tick stayed 0; tube arrays remained unchanged after action sequence."
+        },
+        {
+          "agent_id": "proxy-12",
+          "arm": "treatment",
+          "description": "A source-to-empty-tube pour changed tube contents, but the later R action did not restore the initial tubes; tick remained 1.",
+          "evidence": "gd-065/observations.json X action-1/action-3"
+        },
+        {
+          "agent_id": "proxy-12",
+          "arm": "baseline",
+          "description": "After clicking a source tube, selected became 1; the next chosen pointer position did not complete a pour. Escape left selected=1 and R then cleared selection but did not change board (board had not changed).",
+          "evidence": "gd-065/observations.json Y action-0 through action-3"
+        },
+        {
+          "agent_id": "proxy-15",
+          "arm": "baseline",
+          "evidence": "observations.json Y action-0 selected=1；action-1 tubes 与初始相同。",
+          "description": "两次点击后所选管仍为1，管内容未变化；未观察到倒液。"
+        },
+        {
+          "agent_id": "proxy-16",
+          "arm": "baseline",
+          "evidence": "gd-065/observations.json action-0/action-1：tick=0、selected=null 且 tubes 不变；comparison.png Y 列无选择标记。",
+          "description": "对两个管子的点击没有改变状态或显示选中。"
+        },
+        {
+          "agent_id": "proxy-16",
+          "arm": "treatment",
+          "evidence": "gd-065/observations.json action-1 到 action-3 的 tubes 仍为 [R,B,R]、[B,R,B,R]、[B]、[]；comparison.png 底部 X 的第三管仍有一格液体。",
+          "description": "操作后 Escape 与 R 没有将已倒液的局面恢复至初始状态。"
+        }
+      ]
+    },
+    {
+      "task_id": "gd-071",
+      "paired_reviews": 16,
+      "proxy_preferences": {
+        "baseline": 3,
+        "treatment": 11,
+        "tie": 2,
+        "unmeasured": 0
+      },
+      "posthoc_turnbased_restart_audit": null,
+      "arms": {
+        "baseline": {
+          "observations": 16,
+          "statuses": {
+            "OBSERVED": 16
+          },
+          "state_observed_n": 16,
+          "dimensions": {
+            "repetition": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 5,
+              "median": 5,
+              "values": [
+                5
+              ]
+            },
+            "decision_agency": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.0625,
+              "median": 3,
+              "values": [
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                5
+              ]
+            },
+            "perceived_difficulty": {
+              "measured_n": 6,
+              "missing_n": 10,
+              "mean": 3.3333333333333335,
+              "median": 3,
+              "values": [
+                3,
+                3,
+                3,
+                3,
+                4,
+                4
+              ]
+            },
+            "gameplay_variety": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 3,
+              "median": 3,
+              "values": [
+                3
+              ]
+            },
+            "fairness": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "rule_understanding_cost": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 2.875,
+              "median": 3,
+              "values": [
+                2,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4
+              ]
+            },
+            "first_use_ease": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.3125,
+              "median": 3,
+              "values": [
+                2,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                5,
+                5,
+                5,
+                5
+              ]
+            },
+            "continue_playing_intent": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            }
+          }
+        },
+        "treatment": {
+          "observations": 16,
+          "statuses": {
+            "OBSERVED": 16
+          },
+          "state_observed_n": 16,
+          "dimensions": {
+            "repetition": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 4,
+              "median": 4,
+              "values": [
+                4
+              ]
+            },
+            "decision_agency": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.1875,
+              "median": 3,
+              "values": [
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                5
+              ]
+            },
+            "perceived_difficulty": {
+              "measured_n": 6,
+              "missing_n": 10,
+              "mean": 3.6666666666666665,
+              "median": 3.5,
+              "values": [
+                3,
+                3,
+                3,
+                4,
+                4,
+                5
+              ]
+            },
+            "gameplay_variety": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 3,
+              "median": 3,
+              "values": [
+                3
+              ]
+            },
+            "fairness": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "rule_understanding_cost": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 2.625,
+              "median": 2,
+              "values": [
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4
+              ]
+            },
+            "first_use_ease": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.3125,
+              "median": 3,
+              "values": [
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                5,
+                5
+              ]
+            },
+            "continue_playing_intent": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            }
+          }
+        }
+      },
+      "issues": [
+        {
+          "agent_id": "proxy-01",
+          "arm": "treatment",
+          "evidence": "X initial tick=86, player y≈24.94, velocity y≈34.4; Y starts tick=0 at x=0,y=1.",
+          "description": "X initial state was already advanced and airborne before first snapshot."
+        },
+        {
+          "agent_id": "proxy-01",
+          "arm": "baseline",
+          "evidence": "Y comparison panel shows player coordinates, velocity, grounded, checkpoint text.",
+          "description": "Y visible output is a text-only state readout in the comparison image."
+        },
+        {
+          "agent_id": "proxy-02",
+          "arm": "treatment",
+          "description": "Player was airborne at capture and the brief movement did not confirm a landing or checkpoint transfer.",
+          "evidence": "See captured initial/interaction states and comparison image."
+        },
+        {
+          "agent_id": "proxy-02",
+          "arm": "baseline",
+          "description": "The panel exposed position/velocity text without a visible player/platform scene; restart returned to the initial grounded state.",
+          "evidence": "See captured initial/interaction states and comparison image."
+        },
+        {
+          "agent_id": "proxy-03",
+          "arm": "baseline",
+          "description": "Y view is text-only in the comparison image; X remained airborne around the starting position after the brief sequence.",
+          "evidence": "comparison.png shows graphical platforms on X and player-state text on Y; observations show no errors and no terminal state."
+        },
+        {
+          "agent_id": "proxy-05",
+          "arm": "treatment",
+          "evidence": "X snapshots initial tick 86 y=24.94 and action-3 tick 168 y=94.64, grounded=false; comparison screenshot also shows player outside visible play area.",
+          "description": "Player was already airborne at y≈24.94 in the initial snapshot and continued upward to y≈94.64 during the sequence, far beyond displayed platforms."
+        },
+        {
+          "agent_id": "proxy-06",
+          "arm": "treatment",
+          "evidence": "See task observations and comparison image.",
+          "description": "X player state moved substantially during the short window (y from 24.37 to 85.87); Y ended at x=0.36,y=1 grounded. These observations do not establish collision correctness."
+        },
+        {
+          "agent_id": "proxy-06",
+          "arm": "baseline",
+          "evidence": "See task observations and comparison image.",
+          "description": "X player state moved substantially during the short window (y from 24.37 to 85.87); Y ended at x=0.36,y=1 grounded. These observations do not establish collision correctness."
+        },
+        {
+          "agent_id": "proxy-08",
+          "arm": "treatment",
+          "description": "Initial state is already airborne at a large vertical coordinate, and the player appears outside the visible platform area during the sampled run.",
+          "evidence": "gd-071/observations.json initial tick=85, y=24.37; final tick=151, y=76.51; comparison.png X player is not visible."
+        },
+        {
+          "agent_id": "proxy-08",
+          "arm": "baseline",
+          "description": "The rendered page displays state text instead of a visual platform scene.",
+          "evidence": "gd-071/comparison.png Y side contains only player, velocity, grounded and checkpoint text."
+        },
+        {
+          "agent_id": "proxy-09",
+          "arm": "baseline",
+          "description": "截图呈现为状态文字，没有可辨认的平台、角色或地形图形。",
+          "evidence": "comparison.png左侧初始和交互画面均为纯色区域与PLAYER状态文本；JSON仍显示player/velocity/grounded状态。"
+        },
+        {
+          "agent_id": "proxy-09",
+          "arm": "treatment",
+          "description": "Initial snapshot occurred after substantial simulation progression, leaving the player airborne high above the level. This limits interpretation of jump and checkpoint controls.",
+          "evidence": "Initial tick=86, player y≈24.94, grounded=false; after C, checkpoint remained {x:0,y:0}."
+        },
+        {
+          "agent_id": "proxy-11",
+          "arm": "treatment",
+          "evidence": "observations.json action-2: tick 234, player y=183.3, grounded=false; screenshot shows both platform surfaces.",
+          "description": "During the sequence the player remained airborne while vertical position increased to about 183.3, despite the scene showing platforms."
+        },
+        {
+          "agent_id": "proxy-12",
+          "arm": "treatment",
+          "description": "During the short sequence, state reported the player airborne at y=63.94 with velocity y=55.2; no collision/recovery was assessed.",
+          "evidence": "gd-071/observations.json X action-3"
+        },
+        {
+          "agent_id": "proxy-15",
+          "arm": "treatment",
+          "description": "短序列后玩家 y=66.74、vy=56.4，仍 airborne；明显超出可见平台所在区域，快照未显示碰撞或终止。",
+          "evidence": "observations.json X action-3: player.y=66.7399999999999, velocity.y=56.399999999999864, grounded=false; comparison.png interaction shows no player on visible platforms."
+        },
+        {
+          "agent_id": "proxy-16",
+          "arm": "baseline",
+          "evidence": "gd-071/comparison.png Y 列；observations.json 中玩家 x 仅由 0 变为 0.18/0.36。",
+          "description": "主要画面仅呈现 player/velocity/grounded/checkpoint 的文本状态，没有可见平台或角色。"
+        },
+        {
+          "agent_id": "proxy-16",
+          "arm": "treatment",
+          "evidence": "gd-071/observations.json action-3 tick=3、player y=0.04、grounded=false。",
+          "description": "R 重启后初始位置落在非地面位置，数 tick 后状态显示 airborne；短观测无法判定预期重生点。"
+        }
+      ]
+    },
+    {
+      "task_id": "gd-107",
+      "paired_reviews": 16,
+      "proxy_preferences": {
+        "baseline": 4,
+        "treatment": 8,
+        "tie": 4,
+        "unmeasured": 0
+      },
+      "posthoc_turnbased_restart_audit": null,
+      "arms": {
+        "baseline": {
+          "observations": 16,
+          "statuses": {
+            "OBSERVED": 16
+          },
+          "state_observed_n": 16,
+          "dimensions": {
+            "gameplay_variety": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 3,
+              "median": 3,
+              "values": [
+                3
+              ]
+            },
+            "continue_playing_intent": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "rule_understanding_cost": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.4375,
+              "median": 3,
+              "values": [
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                5,
+                5,
+                5
+              ]
+            },
+            "first_use_ease": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.75,
+              "median": 4,
+              "values": [
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5,
+                5,
+                5,
+                5
+              ]
+            },
+            "fairness": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "decision_agency": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.125,
+              "median": 3,
+              "values": [
+                1,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5
+              ]
+            },
+            "perceived_difficulty": {
+              "measured_n": 5,
+              "missing_n": 11,
+              "mean": 3.2,
+              "median": 3,
+              "values": [
+                3,
+                3,
+                3,
+                3,
+                4
+              ]
+            },
+            "repetition": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 5,
+              "median": 5,
+              "values": [
+                5
+              ]
+            }
+          }
+        },
+        "treatment": {
+          "observations": 16,
+          "statuses": {
+            "OBSERVED": 16
+          },
+          "state_observed_n": 16,
+          "dimensions": {
+            "gameplay_variety": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 3,
+              "median": 3,
+              "values": [
+                3
+              ]
+            },
+            "continue_playing_intent": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "rule_understanding_cost": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 2.75,
+              "median": 2.5,
+              "values": [
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                5
+              ]
+            },
+            "first_use_ease": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.625,
+              "median": 3.5,
+              "values": [
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5,
+                5,
+                6
+              ]
+            },
+            "fairness": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "decision_agency": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.5,
+              "median": 3,
+              "values": [
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                5,
+                5,
+                5,
+                5
+              ]
+            },
+            "perceived_difficulty": {
+              "measured_n": 5,
+              "missing_n": 11,
+              "mean": 3.2,
+              "median": 3,
+              "values": [
+                3,
+                3,
+                3,
+                3,
+                4
+              ]
+            },
+            "repetition": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 5,
+              "median": 5,
+              "values": [
+                5
+              ]
+            }
+          }
+        }
+      },
+      "issues": [
+        {
+          "agent_id": "proxy-01",
+          "arm": "baseline",
+          "description": "X supplied text does not describe its listed keyboard/pointer control mapping.",
+          "evidence": "Assignment controls list click or 1-4; extracted X body text only says select source then target; submitted digit keys and arrows left contents unchanged."
+        },
+        {
+          "agent_id": "proxy-01",
+          "arm": "treatment",
+          "description": "Submitted keyboard sequence did not alter selected state or tube contents.",
+          "evidence": "Y snapshots remained tick 0 with original contents, despite key sequence."
+        },
+        {
+          "agent_id": "proxy-02",
+          "arm": "baseline",
+          "description": "No tube change was observed during the short sequence.",
+          "evidence": "See captured initial/interaction states and comparison image."
+        },
+        {
+          "agent_id": "proxy-02",
+          "arm": "treatment",
+          "description": "Observed source/destination progression and one pour; full solving flow was not exercised.",
+          "evidence": "See captured initial/interaction states and comparison image."
+        },
+        {
+          "agent_id": "proxy-03",
+          "arm": "baseline",
+          "description": "X instructions omit the keyboard-selection and cancellation options visible in Y.",
+          "evidence": "Y observations text changes from Select source tube to Select destination; comparison.png shows selection indicator; X remained generic."
+        },
+        {
+          "agent_id": "proxy-05",
+          "arm": "treatment",
+          "description": "Digit keys did not change tubes in this sequence.",
+          "evidence": "Y action-0/action-1 snapshots retain the starting tubes and tick 0."
+        },
+        {
+          "agent_id": "proxy-06",
+          "arm": "baseline",
+          "evidence": "See task observations and comparison image.",
+          "description": "X advanced to tick 2 and transferred liquid into the two empty tubes; Y remained tick 0 on the same sequence."
+        },
+        {
+          "agent_id": "proxy-06",
+          "arm": "treatment",
+          "evidence": "See task observations and comparison image.",
+          "description": "X advanced to tick 2 and transferred liquid into the two empty tubes; Y remained tick 0 on the same sequence."
+        },
+        {
+          "agent_id": "proxy-11",
+          "arm": "treatment",
+          "description": "Arrow/digit input and pointer selection sequence showed a highlight but did not alter tube contents.",
+          "evidence": "comparison.png shows highlighted source/destination; observations.json retains tick 0 and original tubes."
+        },
+        {
+          "agent_id": "proxy-12",
+          "arm": "treatment",
+          "description": "One source-to-destination pour changed tube contents. R left the game at tick 1 with the poured state still present.",
+          "evidence": "gd-107/observations.json Y action-3/action-4"
+        },
+        {
+          "agent_id": "proxy-15",
+          "arm": "treatment",
+          "evidence": "observations.json Y action-1 tick=1, third tube contains B; no test status in captured visible UI.",
+          "description": "Y 有一次点击造成状态变化，但本次证据未包含自动生成的输入 parity replay、测试覆盖结果或认证状态。"
+        },
+        {
+          "agent_id": "proxy-15",
+          "arm": "baseline",
+          "evidence": "observations.json X action-1 tubes unchanged, tick=0; comparison.png shows unchanged tubes.",
+          "description": "同序列点击后管内容保持原样，未观察到倒液；UI 没有展示测试认证/跳过状态，无法据此判断相关声明。"
+        },
+        {
+          "agent_id": "proxy-16",
+          "arm": "treatment",
+          "evidence": "gd-107/observations.json action-2 tubes 仍为 [R,B,R]、[B,R,B,R]、[B]、[]；comparison.png 左下仍显示倒液结果。",
+          "description": "R 未将已改变的液体状态恢复到初始状态。"
+        },
+        {
+          "agent_id": "proxy-16",
+          "arm": "baseline",
+          "evidence": "gd-107/observations.json action-0/action-1：selected=null、tick=0、tubes 不变；comparison.png X 列无选择高亮。",
+          "description": "两次指针点击未选中管子或触发倒液。"
+        }
+      ]
+    },
+    {
+      "task_id": "gd-108",
+      "paired_reviews": 16,
+      "proxy_preferences": {
+        "baseline": 1,
+        "treatment": 14,
+        "tie": 1,
+        "unmeasured": 0
+      },
+      "posthoc_turnbased_restart_audit": null,
+      "arms": {
+        "baseline": {
+          "observations": 16,
+          "statuses": {
+            "OBSERVED": 16
+          },
+          "state_observed_n": 16,
+          "dimensions": {
+            "gameplay_variety": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 4,
+              "median": 4,
+              "values": [
+                4
+              ]
+            },
+            "continue_playing_intent": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "repetition": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 4,
+              "median": 4,
+              "values": [
+                4
+              ]
+            },
+            "first_use_ease": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.5,
+              "median": 3,
+              "values": [
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5,
+                5
+              ]
+            },
+            "rule_understanding_cost": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 2.9375,
+              "median": 3,
+              "values": [
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4
+              ]
+            },
+            "decision_agency": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.1875,
+              "median": 3,
+              "values": [
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ]
+            },
+            "perceived_difficulty": {
+              "measured_n": 5,
+              "missing_n": 11,
+              "mean": 3.2,
+              "median": 3,
+              "values": [
+                3,
+                3,
+                3,
+                3,
+                4
+              ]
+            },
+            "fairness": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            }
+          }
+        },
+        "treatment": {
+          "observations": 16,
+          "statuses": {
+            "OBSERVED": 16
+          },
+          "state_observed_n": 16,
+          "dimensions": {
+            "gameplay_variety": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 4,
+              "median": 4,
+              "values": [
+                4
+              ]
+            },
+            "continue_playing_intent": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            },
+            "repetition": {
+              "measured_n": 1,
+              "missing_n": 15,
+              "mean": 4,
+              "median": 4,
+              "values": [
+                4
+              ]
+            },
+            "first_use_ease": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 4.125,
+              "median": 4,
+              "values": [
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5,
+                5,
+                5,
+                5,
+                5
+              ]
+            },
+            "rule_understanding_cost": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 2.6875,
+              "median": 2,
+              "values": [
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                5
+              ]
+            },
+            "decision_agency": {
+              "measured_n": 16,
+              "missing_n": 0,
+              "mean": 3.875,
+              "median": 4,
+              "values": [
+                2,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                5,
+                5,
+                5,
+                5
+              ]
+            },
+            "perceived_difficulty": {
+              "measured_n": 5,
+              "missing_n": 11,
+              "mean": 3.2,
+              "median": 3,
+              "values": [
+                3,
+                3,
+                3,
+                3,
+                4
+              ]
+            },
+            "fairness": {
+              "measured_n": 0,
+              "missing_n": 16,
+              "mean": null,
+              "median": null,
+              "values": []
+            }
+          }
+        }
+      },
+      "issues": [
+        {
+          "agent_id": "proxy-01",
+          "arm": "treatment",
+          "description": "Provided blinded-comparison preparation is a plan/specification only, with no frozen executable profile source; actual human outcomes remain absent.",
+          "evidence": "Assignment prepared_documents include a plan marked not executed and policy-profiles.json status SPECIFICATION_ONLY_NOT_FROZEN; states zero participants and no frozen source."
+        },
+        {
+          "agent_id": "proxy-02",
+          "arm": "baseline",
+          "description": "Visible cards and pass button; only a short sequence, so delayed-action and observation-boundary behavior were not established.",
+          "evidence": "See captured initial/interaction states and comparison image."
+        },
+        {
+          "agent_id": "proxy-02",
+          "arm": "treatment",
+          "description": "Turn, mana, health and hand/deck counts changed; concealed-information statement is explicit. No delayed policy or human comparison occurred.",
+          "evidence": "See captured initial/interaction states and comparison image."
+        },
+        {
+          "agent_id": "proxy-03",
+          "arm": "baseline",
+          "description": "A click/Enter/Space sequence advanced the round, but the exact played/pass action was not sufficiently isolated to claim action parity.",
+          "evidence": "observations.json X turn 0 to 1 with mana 3; Y turn 0 to 1 with mana 2. comparison.png shows distinct card designs and controls."
+        },
+        {
+          "agent_id": "proxy-05",
+          "arm": "baseline",
+          "evidence": "X action-0 zones show Guard discarded with mana 2 but opponent health remains 10; action-1/action-2 later snapshots remain at tick 8/14.",
+          "description": "Click attempt did not visibly play a card; later Enter pass changed turn/state."
+        },
+        {
+          "agent_id": "proxy-05",
+          "arm": "treatment",
+          "evidence": "Assignment-provided prepared documents blinded-human-comparison-plan.md and policy-profiles.json.",
+          "description": "The supplied human comparison plan is clearly marked not executed with participant count 0; the associated policy profile is specification-only and says executable policy source was not frozen."
+        },
+        {
+          "agent_id": "proxy-06",
+          "arm": "baseline",
+          "evidence": "See task observations and comparison image.",
+          "description": "X snapshot shows opponentHealth 8 while zone/hand/mana remained static; Y snapshot shows mana 2 and hand_count 2 with discard_count 1; no human comparison was conducted."
+        },
+        {
+          "agent_id": "proxy-06",
+          "arm": "treatment",
+          "evidence": "See task observations and comparison image.",
+          "description": "X snapshot shows opponentHealth 8 while zone/hand/mana remained static; Y snapshot shows mana 2 and hand_count 2 with discard_count 1; no human comparison was conducted."
+        },
+        {
+          "agent_id": "proxy-09",
+          "arm": "treatment",
+          "description": "Assignment-provided preparation documents describe a blinded protocol as not executed and policy profiles as specification-only, with no executable policy source frozen.",
+          "evidence": "Prepared document blinded-human-comparison-plan.md says current participant count is 0 and no ratings fabricated; policy-profiles.json says SPECIFICATION_ONLY_NOT_FROZEN and no executable policy source frozen."
+        },
+        {
+          "agent_id": "proxy-10",
+          "arm": "treatment",
+          "description": "A blinded human comparison plan is supplied, but the accompanying profile document says policies are specification-only and no executable source was frozen; no human participants were observed.",
+          "evidence": "assignment prepared_documents include blinded-human-comparison-plan.md and policy-profiles.json with SPECIFICATION_ONLY_NOT_FROZEN; browser task has 0 participants."
+        },
+        {
+          "agent_id": "proxy-11",
+          "arm": "treatment",
+          "evidence": "assignment.json prepared_documents: policy-profiles.json status SPECIFICATION_ONLY_NOT_FROZEN; source_freeze says no executable policy source was frozen. Plan states participant count 0.",
+          "description": "A draft blinded-comparison plan is provided, but the associated policy profiles are specification-only and no executable source/configuration freeze is recorded."
+        },
+        {
+          "agent_id": "proxy-12",
+          "arm": "baseline",
+          "description": "A card click did not change hand/mana/discard; during later ticks rival health changed from 10 to 9 without a recorded user card action.",
+          "evidence": "gd-108/observations.json X action-0/action-1"
+        },
+        {
+          "agent_id": "proxy-13",
+          "arm": "treatment",
+          "description": "Prepared comparison plan exists, but policy profile file marks itself specification-only and says executable source was not frozen.",
+          "evidence": "Assignment prepared_documents: blinded-human-comparison-plan.md and policy-profiles.json with status SPECIFICATION_ONLY_NOT_FROZEN; participant count 0."
+        },
+        {
+          "agent_id": "proxy-14",
+          "arm": "treatment",
+          "description": "随附的 blinded-human-comparison-plan.md 明示尚未执行且参与者为 0；policy-profiles.json 状态为 SPECIFICATION_ONLY_NOT_FROZEN，未冻结执行策略来源/配置/观测摘要。",
+          "evidence": "assignment.json prepared_documents"
+        },
+        {
+          "agent_id": "proxy-14",
+          "arm": "baseline",
+          "description": "未提供 blinded human comparison preparation document。",
+          "evidence": "assignment.json prepared_documents: []"
+        },
+        {
+          "agent_id": "proxy-15",
+          "arm": "treatment",
+          "evidence": "assignment.json Y prepared_documents: plan says not executed, current participant count 0; profiles status SPECIFICATION_ONLY_NOT_FROZEN.",
+          "description": "分配材料包含 blinded-human-comparison-plan，但文档标明未执行；policy-profiles.json 标为 SPECIFICATION_ONLY_NOT_FROZEN，因此这里只是方案准备，非冻结配置或人类结果。"
+        },
+        {
+          "agent_id": "proxy-16",
+          "arm": "treatment",
+          "evidence": "gd-108/observations.json Y 的所有快照均 tick=0、phase=MAIN、mana=3、hand_count=3；assignment.json 的 prepared_documents 中 policy-profiles.json 声明未冻结 executable policy。",
+          "description": "ArrowRight、Enter、Space 的短序列未改变可观测状态；此外提供的盲测计划中策略配置仍标记 SPECIFICATION_ONLY_NOT_FROZEN。"
+        },
+        {
+          "agent_id": "proxy-16",
+          "arm": "baseline",
+          "evidence": "assignment.json X prepared_documents=[]；gd-108/observations.json action-1 tick 从 0 增至 1。",
+          "description": "未提供用于盲测比较的准备文档；浏览器短测只确认 Enter 过牌有效。"
+        }
+      ]
+    }
+  ],
+  "controller_verified_observations": [
+    {
+      "task_id": "gd-009",
+      "arm": "baseline",
+      "artifact_digest": "ab05fa1b5e5ba0d15065de28eb771f4577483256c221671beb045f50ca4eca72",
+      "observation": "UI R handler maps to restart but its accepted-key guard omits restart; captured progressed-state sessions show no reset. See posthoc_turnbased_restart_audit.",
+      "scope": "Existing public restart requirement; post-hoc descriptive source/state cross-check, raw proxy ratings unchanged."
+    },
+    {
+      "task_id": "gd-019",
+      "arm": "treatment",
+      "artifact_digest": "498837cfeb0a1223a5f34f51d741761cce630620678000c09df692d7a95f7434",
+      "observation": "Public rule says future pieces are hidden; adapter previewCount=1 and renderer displays the next piece. Independently observed by proxy-10.",
+      "scope": "Public task/source/screenshot cross-check; frozen candidate not repaired after review."
+    }
+  ],
+  "limitations": [
+    "All reviewers share one model family and task materials; repeated ratings are correlated, not 16 humans or population samples.",
+    "Short input sequences and screenshots do not establish complete state/event/input/terminal parity, FPS invariance, calibrated difficulty, defect recall, diversity, or human experience.",
+    "Budget and exact snapshot are unverified; task runtime usage from host agents is unavailable.",
+    "Blinding is procedural; visual/input architecture may reveal source.",
+    "Human intentions/outcomes are unmeasured; gd-108 comparison preparation must be assessed separately and does not require actual recruitment.",
+    "Presentation-order groups were scheduled in numeric batches; order and batch effects are not independently isolated.",
+    "A post-hoc Sokoban restart audit compares captured initial/before/after snapshots; it is a descriptive check of the existing restart requirement, not a new primary metric.",
+    "Raw proxy judgments may misread screenshots/state transitions; retain disagreements and prioritize captured behavior over self-awarded PASS claims.",
+    "Browser live render loops coexist with advanceTime inputs; initial simulation ticks are not aligned across candidates, so do not infer FPS parity, difficulty, win-rate or speed advantage.",
+    "Proxy sessions open each candidate UI default scenario; the complete paired public seed/profile/repeat matrix is not executed and UI defaults are not certified as seed-matched.",
+    "No automatic certification of Skill gain or v1 readiness from proxy preferences."
+  ]
+}

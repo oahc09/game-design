@@ -1,0 +1,53 @@
+{
+  "kind": "AGENT_TARGETED_REPAIR_RETEST",
+  "cohort": "20261107-02",
+  "date": "2026-11-07",
+  "parent_cohort": "20261107-01",
+  "parent_source_commit": "cc7995635b3057c587a8764b033e33ac3effd5bd",
+  "delivery_remote_observed": "651261e",
+  "status": "FLOW_COMPLETED",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "planned_agents": 16,
+  "completed_agents": 16,
+  "task_ids": [
+    "gd-009",
+    "gd-019"
+  ],
+  "planned_paired_reviews": 32,
+  "planned_version_observations": 64,
+  "max_parallel_reviewers": 3,
+  "tasks_serial_per_agent": true,
+  "order_groups": {
+    "XY": 8,
+    "YX": 8
+  },
+  "formal_trials": 0,
+  "formal_gate": "BLOCKED",
+  "external_review": "UNVERIFIED",
+  "human_participation_required": false,
+  "exact_snapshot_attested": false,
+  "provider_hard_budget_attested": false,
+  "unchanged_other_tasks": [
+    "gd-029",
+    "gd-039",
+    "gd-065",
+    "gd-071",
+    "gd-107",
+    "gd-108"
+  ],
+  "scope": "Issue closure on repaired descendants, not a new full-skill efficacy experiment. Full original task gates unchanged; checks outside repairs remain NOT_EVALUATED.",
+  "target_actions_sha256": "01352bc12383afab2da5780e2f25797fda9823729fcb4b43cb530a2e2baededc",
+  "target_checker_sha256": "cd2d4cdc3652325f83ee8bd5547baea884983942971097d10baaa3ce0c7adad3",
+  "parent_result_unchanged": true,
+  "local_evidence": "output/agent-proxy-20261107-02",
+  "candidate_freeze_digest": "2f335a23b8e55fc7ffd13884ede3c2857aa6d344123244750366ba0a701dda6a",
+  "repair_executor_model": "gpt-6-luna",
+  "repair_reasoning_effort": "high",
+  "repair_transport": "host_subagent",
+  "completed_paired_reviews": 32,
+  "completed_version_observations": 64,
+  "targeted_repair_gate": "PASS",
+  "full_task_acceptance": "NOT_CERTIFIED",
+  "serial_task_execution_verified": true
+}

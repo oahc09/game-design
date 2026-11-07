@@ -1,0 +1,369 @@
+{
+  "kind": "EXPLORATORY_AGENT_EXPERIENCE_PROTOCOL",
+  "date": "2026-11-07",
+  "source_commit": "cc7995635b3057c587a8764b033e33ac3effd5bd",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "exact_snapshot_attested": false,
+  "provider_hard_budget_attested": false,
+  "planned_agents": 16,
+  "completed_agents": 16,
+  "requested_parallel_agents": 8,
+  "active_agent_capacity_including_controller": 4,
+  "effective_parallel_reviewers": 3,
+  "tasks_serial_per_agent": true,
+  "versions_serial_per_task": true,
+  "task_ids": [
+    "gd-009",
+    "gd-019",
+    "gd-029",
+    "gd-039",
+    "gd-065",
+    "gd-071",
+    "gd-107",
+    "gd-108"
+  ],
+  "planned_paired_assessments": 128,
+  "planned_version_observations": 256,
+  "ready_paired_task_packets": 8,
+  "status": "FLOW_COMPLETED",
+  "missing_required_task_packets": [],
+  "historical_proxy_pair_is_not_task_equivalent": true,
+  "evidence_type": "agent_proxy",
+  "formal_trials": 0,
+  "human_participants": 0,
+  "formal_gate": "BLOCKED",
+  "external_review": "UNVERIFIED",
+  "frozen_inputs_modified": false,
+  "assignments": [
+    {
+      "agent_id": "proxy-01",
+      "batch": 1,
+      "order": [
+        "X",
+        "Y"
+      ],
+      "task_ids": [
+        "gd-009",
+        "gd-019",
+        "gd-029",
+        "gd-039",
+        "gd-065",
+        "gd-071",
+        "gd-107",
+        "gd-108"
+      ],
+      "status": "COMPLETED_VALIDATED"
+    },
+    {
+      "agent_id": "proxy-02",
+      "batch": 1,
+      "order": [
+        "X",
+        "Y"
+      ],
+      "task_ids": [
+        "gd-009",
+        "gd-019",
+        "gd-029",
+        "gd-039",
+        "gd-065",
+        "gd-071",
+        "gd-107",
+        "gd-108"
+      ],
+      "status": "COMPLETED_VALIDATED"
+    },
+    {
+      "agent_id": "proxy-03",
+      "batch": 1,
+      "order": [
+        "X",
+        "Y"
+      ],
+      "task_ids": [
+        "gd-009",
+        "gd-019",
+        "gd-029",
+        "gd-039",
+        "gd-065",
+        "gd-071",
+        "gd-107",
+        "gd-108"
+      ],
+      "status": "COMPLETED_VALIDATED"
+    },
+    {
+      "agent_id": "proxy-04",
+      "batch": 2,
+      "order": [
+        "X",
+        "Y"
+      ],
+      "task_ids": [
+        "gd-009",
+        "gd-019",
+        "gd-029",
+        "gd-039",
+        "gd-065",
+        "gd-071",
+        "gd-107",
+        "gd-108"
+      ],
+      "status": "COMPLETED_VALIDATED"
+    },
+    {
+      "agent_id": "proxy-05",
+      "batch": 2,
+      "order": [
+        "X",
+        "Y"
+      ],
+      "task_ids": [
+        "gd-009",
+        "gd-019",
+        "gd-029",
+        "gd-039",
+        "gd-065",
+        "gd-071",
+        "gd-107",
+        "gd-108"
+      ],
+      "status": "COMPLETED_VALIDATED"
+    },
+    {
+      "agent_id": "proxy-06",
+      "batch": 2,
+      "order": [
+        "X",
+        "Y"
+      ],
+      "task_ids": [
+        "gd-009",
+        "gd-019",
+        "gd-029",
+        "gd-039",
+        "gd-065",
+        "gd-071",
+        "gd-107",
+        "gd-108"
+      ],
+      "status": "COMPLETED_VALIDATED"
+    },
+    {
+      "agent_id": "proxy-07",
+      "batch": 3,
+      "order": [
+        "X",
+        "Y"
+      ],
+      "task_ids": [
+        "gd-009",
+        "gd-019",
+        "gd-029",
+        "gd-039",
+        "gd-065",
+        "gd-071",
+        "gd-107",
+        "gd-108"
+      ],
+      "status": "COMPLETED_VALIDATED"
+    },
+    {
+      "agent_id": "proxy-08",
+      "batch": 3,
+      "order": [
+        "X",
+        "Y"
+      ],
+      "task_ids": [
+        "gd-009",
+        "gd-019",
+        "gd-029",
+        "gd-039",
+        "gd-065",
+        "gd-071",
+        "gd-107",
+        "gd-108"
+      ],
+      "status": "COMPLETED_VALIDATED"
+    },
+    {
+      "agent_id": "proxy-09",
+      "batch": 3,
+      "order": [
+        "Y",
+        "X"
+      ],
+      "task_ids": [
+        "gd-009",
+        "gd-019",
+        "gd-029",
+        "gd-039",
+        "gd-065",
+        "gd-071",
+        "gd-107",
+        "gd-108"
+      ],
+      "status": "COMPLETED_VALIDATED"
+    },
+    {
+      "agent_id": "proxy-10",
+      "batch": 4,
+      "order": [
+        "Y",
+        "X"
+      ],
+      "task_ids": [
+        "gd-009",
+        "gd-019",
+        "gd-029",
+        "gd-039",
+        "gd-065",
+        "gd-071",
+        "gd-107",
+        "gd-108"
+      ],
+      "status": "COMPLETED_VALIDATED"
+    },
+    {
+      "agent_id": "proxy-11",
+      "batch": 4,
+      "order": [
+        "Y",
+        "X"
+      ],
+      "task_ids": [
+        "gd-009",
+        "gd-019",
+        "gd-029",
+        "gd-039",
+        "gd-065",
+        "gd-071",
+        "gd-107",
+        "gd-108"
+      ],
+      "status": "COMPLETED_VALIDATED"
+    },
+    {
+      "agent_id": "proxy-12",
+      "batch": 4,
+      "order": [
+        "Y",
+        "X"
+      ],
+      "task_ids": [
+        "gd-009",
+        "gd-019",
+        "gd-029",
+        "gd-039",
+        "gd-065",
+        "gd-071",
+        "gd-107",
+        "gd-108"
+      ],
+      "status": "COMPLETED_VALIDATED"
+    },
+    {
+      "agent_id": "proxy-13",
+      "batch": 5,
+      "order": [
+        "Y",
+        "X"
+      ],
+      "task_ids": [
+        "gd-009",
+        "gd-019",
+        "gd-029",
+        "gd-039",
+        "gd-065",
+        "gd-071",
+        "gd-107",
+        "gd-108"
+      ],
+      "status": "COMPLETED_VALIDATED"
+    },
+    {
+      "agent_id": "proxy-14",
+      "batch": 5,
+      "order": [
+        "Y",
+        "X"
+      ],
+      "task_ids": [
+        "gd-009",
+        "gd-019",
+        "gd-029",
+        "gd-039",
+        "gd-065",
+        "gd-071",
+        "gd-107",
+        "gd-108"
+      ],
+      "status": "COMPLETED_VALIDATED"
+    },
+    {
+      "agent_id": "proxy-15",
+      "batch": 5,
+      "order": [
+        "Y",
+        "X"
+      ],
+      "task_ids": [
+        "gd-009",
+        "gd-019",
+        "gd-029",
+        "gd-039",
+        "gd-065",
+        "gd-071",
+        "gd-107",
+        "gd-108"
+      ],
+      "status": "COMPLETED_VALIDATED"
+    },
+    {
+      "agent_id": "proxy-16",
+      "batch": 6,
+      "order": [
+        "Y",
+        "X"
+      ],
+      "task_ids": [
+        "gd-009",
+        "gd-019",
+        "gd-029",
+        "gd-039",
+        "gd-065",
+        "gd-071",
+        "gd-107",
+        "gd-108"
+      ],
+      "status": "COMPLETED_VALIDATED"
+    }
+  ],
+  "human_participation_required_for_proxy_completion": false,
+  "local_evidence_directory": "output/agent-proxy-20261107-01",
+  "generation_context_scope": "One fresh generator context per arm; eight tasks sequentially; cross-task context correlation disclosed",
+  "proxy_protocol_id": "agent-experience-20261107",
+  "dataset_lock_sha256": "7fe74d0c6b3630be53dd7a96a0451487ed9b5aff0028ed11033fad29ba9c1c6c",
+  "original_limits": {
+    "tokens": 24000,
+    "reasoning_tokens": 12000,
+    "tool_calls": 80,
+    "steps": 120,
+    "asset_bytes": 2000000,
+    "wall_ms": 300000,
+    "max_attempts": 2
+  },
+  "repair_policy": "Same public browser smoke for both arms; at most one model repair after initial failure, preserve first attempt; no hidden feedback; hard budget compliance UNVERIFIED",
+  "candidate_freeze_digest": "05e38e94c704e91dc70da431b789da02f7f449b441c2742e98bb314532a81d12",
+  "scheduling": "rolling_pool_max_3",
+  "batch_labels_are_planned_groups": true,
+  "acceptance_status": "NOT_CERTIFIED",
+  "completed_paired_assessments": 128,
+  "completed_version_observations": 256,
+  "final_public_browser_smoke": {
+    "baseline": "8 scripts executed after one retained repair; complete task acceptance not certified",
+    "treatment": "8 scripts executed after one retained repair; complete task acceptance not certified"
+  }
+}
