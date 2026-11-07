@@ -1,0 +1,85 @@
+{
+  "reviews": [
+    {
+      "agent_id": "proxy-01",
+      "path": "reviews/proxy-01/report.json",
+      "sha256": "b723c14fddd7dce2d1c4d5553b544798055d68b62b9e69bd968f3ff30287d059"
+    },
+    {
+      "agent_id": "proxy-02",
+      "path": "reviews/proxy-02/report.json",
+      "sha256": "ea5bf9bd85cf25f569f8e43a357a7a36fef8e2c6fcaf6854a2e38c9dc4d5c95f"
+    },
+    {
+      "agent_id": "proxy-03",
+      "path": "reviews/proxy-03/report.json",
+      "sha256": "3f4f6d16810e21b686f9b0e2d8061ce73ed39db4123ae140de374a3ef8494788"
+    },
+    {
+      "agent_id": "proxy-04",
+      "path": "reviews/proxy-04/report.json",
+      "sha256": "bbd8b42314bc4c06dea2e530ec782c628c4cc8e0a908935bc33870735cb4cacc"
+    },
+    {
+      "agent_id": "proxy-05",
+      "path": "reviews/proxy-05/report.json",
+      "sha256": "3277d3691db3e986f3a91037a6bf3e27a8f11e61a3c9ef6e45409f869c3275da"
+    },
+    {
+      "agent_id": "proxy-06",
+      "path": "reviews/proxy-06/report.json",
+      "sha256": "283b1c2d68ea19c1020c372e9010062f82e8b43314a3d1b9cdb86eb6a808aa6b"
+    },
+    {
+      "agent_id": "proxy-07",
+      "path": "reviews/proxy-07/report.json",
+      "sha256": "cb472644a772ed79696c2f880f98fc4d649ace00d29ea83440f57153cc728ff2"
+    },
+    {
+      "agent_id": "proxy-08",
+      "path": "reviews/proxy-08/report.json",
+      "sha256": "2452d3958723851d3421b5979887852cbe6ee22b9f8e0d37a37399c2be0ef18e"
+    },
+    {
+      "agent_id": "proxy-09",
+      "path": "reviews/proxy-09/report.json",
+      "sha256": "ab972c41ca6af80a52e1a91652f9abd3bea2a5e9ff91205adc5dc3b29687fc7f"
+    },
+    {
+      "agent_id": "proxy-10",
+      "path": "reviews/proxy-10/report.json",
+      "sha256": "43302199e85c74ba83777d85d544706ebfaad4df747d46d9283dc4e8a444e760"
+    },
+    {
+      "agent_id": "proxy-11",
+      "path": "reviews/proxy-11/report.json",
+      "sha256": "cf59860f8a87ee90f28c1ed054724ead0879812664ea55d1ccf66aca95908d68"
+    },
+    {
+      "agent_id": "proxy-12",
+      "path": "reviews/proxy-12/report.json",
+      "sha256": "1c42f040c10468e8224bc97d25793c47c8669059a7901eff31f4797cc9d9d057"
+    },
+    {
+      "agent_id": "proxy-13",
+      "path": "reviews/proxy-13/report.json",
+      "sha256": "c1fc262d12e041b6a5df97d3d29eb46a6d71d24edff9917bd1b51d65953dbf28"
+    },
+    {
+      "agent_id": "proxy-14",
+      "path": "reviews/proxy-14/report.json",
+      "sha256": "5a0cad26d98a1687c057d97910286be859c052a3b0fe57084a4a55f8abd3906c"
+    },
+    {
+      "agent_id": "proxy-15",
+      "path": "reviews/proxy-15/report.json",
+      "sha256": "b8d25e137c7d4c37db699b556556aca9b888823a54a2ef2bb78b6e57ab575fe2"
+    },
+    {
+      "agent_id": "proxy-16",
+      "path": "reviews/proxy-16/report.json",
+      "sha256": "3e079785ac92cf7e46c111418c9cc0fca2743f1fa684a9cb9df68b3bfa8be8ff"
+    }
+  ],
+  "scope": "Local immutable report hashes before group aggregation; not external attestation"
+}

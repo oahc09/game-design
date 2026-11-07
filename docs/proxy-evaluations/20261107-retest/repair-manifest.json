@@ -1,0 +1,33 @@
+{
+  "kind": "CONTROLLER_REPAIRED_CANDIDATES",
+  "parent_cohort": "20261107-01",
+  "cohort": "20261107-02",
+  "changes": [
+    {
+      "path": "baseline/gd-009/submission/main.mjs",
+      "parent_sha256": "7ea888d2abf83ab7879053fb3394eb06623fc18643d91d4a069344b62d91c53e",
+      "repaired_sha256": "70d2eef596304b9fb89382c9f93fe2afb76ac70e0f13b069c5c5fee32775e4fb",
+      "patch_file": "candidate-files/baseline/gd-009/submission/main.mjs"
+    },
+    {
+      "path": "treatment/gd-009/submission/main.mjs",
+      "parent_sha256": "2ce36f51d66a7a9b8a14192598da42df620bc45d050fb4ce768ecece0781e076",
+      "repaired_sha256": "a3c644b3b080dcfafa22ac197bfb006fa00ed81c5996b5f75430bfccd6e6481e",
+      "patch_file": "candidate-files/treatment/gd-009/submission/main.mjs"
+    },
+    {
+      "path": "treatment/gd-019/submission/game.mjs",
+      "parent_sha256": "fd5e6291ef1f7f805d732c8688e4a0fab75d41c8b6ed758646b3b84892a66f09",
+      "repaired_sha256": "4f5dba675aa1f98250f59dc30b0327d3d4c7543d82fb6d901dafe253667d94c4",
+      "patch_file": "candidate-files/treatment/gd-019/submission/game.mjs"
+    },
+    {
+      "path": "treatment/gd-019/submission/main.mjs",
+      "parent_sha256": "b6899565e395b9448260a48d083cf9c471a72bbd528b4d3709ce807b6e5d4811",
+      "repaired_sha256": "740026b90480e9b9450c9a6f027d6a0c56471b638b32f00b6dfaad81ec93ab18",
+      "patch_file": "candidate-files/treatment/gd-019/submission/main.mjs"
+    }
+  ],
+  "frozen_toolkit_and_configs_unchanged": true,
+  "not_fresh_model_generation": true
+}

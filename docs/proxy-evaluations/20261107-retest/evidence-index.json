@@ -1,0 +1,12 @@
+{
+  "kind": "LOCAL_REPAIR_RETEST_EVIDENCE",
+  "collection_digest": "b1063a3aa23166090a7577bbabe4056997ee0d17f22a15418fe4ab4467bbb8dc",
+  "collection_files": 1068,
+  "integrity_status": "PASS",
+  "local_archive": "output/agent-proxy-evidence-20261107-02.tar.gz",
+  "archive_bytes": 11844385,
+  "archive_sha256": "63f76fe9cd7d1515369e93ef46c304be31cfd08a87dc24097b4bc5dde8f9abcc",
+  "raw_evidence_shipped_in_git": false,
+  "external_review": "UNVERIFIED",
+  "formal_trials": 0
+}

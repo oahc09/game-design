@@ -1,5 +1,9 @@
 # M7 fair A/B benchmark protocol
 
+> Execution-plan update (2026-11-07): the user replaced the planned participant activity with 16 GPT-6 Luna / high proxy agents. The separately registered [agent proxy protocol](M7-agent-proxy-protocol.zh-CN.md) preserves this formal protocol and its frozen human requirements. Proxy observations are not human data or formal trials; the current host allows three concurrent reviewers plus the controller, rather than the requested eight reviewers. The proxy cohort completed eight task-matched candidate pairs and 16 reviewer contexts (128 paired assessments, 256 version observations); see the [results](proxy-evaluations/20261107/README.zh-CN.md). Proxy flow completion does not certify full task acceptance or formal execution qualification.
+
+> Repair retest (2026-11-07, cohort 20261107-02): four disposable candidate modules were minimally repaired, then 16 GPT-6 Luna / high proxy agents completed 32 paired targeted retests / 64 version observations. See [repair scope and results](proxy-evaluations/20261107-retest/README.zh-CN.md). Prior results and frozen materials remain intact; targeted repair PASS does not certify complete original tasks or formal M7.
+
 > Current Benchmark preparation version: 0.3.0, reusing the unchanged v0.2 task dataset. The [v0.3 registration](../benchmark-dataset/v0.3/registration.json) records material-export repairs derived from engineering baseline 5cd27c5; it is not a qualified research snapshot. Task-specific capture and blind-review contracts are described in [task-evaluation-matrix.md](task-evaluation-matrix.md). The historical cloud-only authorization is superseded on 2026-10-09: the user authorized local execution with GPT-6 Luna / high. Local transport has succeeded; formal executor isolation, provider caps, exact model snapshot and independent review remain unverified. Historical v0.1/v0.2 inputs remain preserved.
 
 ## Status and scope
