@@ -1,0 +1,45 @@
+{
+  "kind": "AGENT_STUDY_READINESS",
+  "study_id": "M7-AGENT-20261114-01",
+  "registration_validation": "PASS",
+  "input_files_verified": 262,
+  "qualification": "BLOCKED",
+  "services_configured": {
+    "broker": false,
+    "isolation": false,
+    "collector": false,
+    "evaluator": false
+  },
+  "configured_means_qualified": false,
+  "existing_formal_gate": {
+    "manifest": "benchmark-dataset/v0.2/freeze.json",
+    "scope": "Preserved preparation manifest with no configured real executor/evaluator; this is not a research snapshot for the new study",
+    "ready": false,
+    "missing": [
+      "model",
+      "model_settings",
+      "complete_frozen_manifest",
+      "executor",
+      "frozen_trusted_executor_audit",
+      "executor_os_isolation",
+      "executor_budget_enforcement",
+      "enforceable_broker_interface",
+      "matching_frozen_model",
+      "independent_isolated_evaluator",
+      "matching_evaluator",
+      "arm_neutral_output_evaluation"
+    ]
+  },
+  "additional_required": [
+    "current audited independent collector",
+    "independent evaluator public trust registration",
+    "approved spend ceiling",
+    "new complete research snapshot including Agent protocol"
+  ],
+  "formal_trials": 0,
+  "completed_agents": 0,
+  "human_participants": 0,
+  "external_review": "UNVERIFIED",
+  "model_calls": 0,
+  "qualification_service_requests": 0
+}

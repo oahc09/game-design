@@ -1,0 +1,37 @@
+{
+  "scope": "read-only path lookup and installed distribution listing; no candidate, model or isolation attack probe",
+  "platform": "win32",
+  "node": "v24.14.0",
+  "probes": [
+    {
+      "name": "public_executable_inventory",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-NonInteractive",
+        "-Command",
+        "Get-Command codex,node,docker,podman,wsl,bwrap -ErrorAction SilentlyContinue | Select-Object Name,Source | ConvertTo-Json -Compress"
+      ],
+      "exit_code": 1,
+      "stdout": "[{\"Name\":\"codex.ps1\",\"Source\":\"C:\\\\Users\\\\caosh\\\\AppData\\\\Roaming\\\\npm\\\\codex.ps1\"},{\"Name\":\"node.exe\",\"Source\":\"D:\\\\Program Files\\\\nodejs\\\\node.exe\"},{\"Name\":\"wsl.exe\",\"Source\":\"C:\\\\Windows\\\\system32\\\\wsl.exe\"}]\r\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "installed_wsl_distributions",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-NonInteractive",
+        "-Command",
+        "wsl --list --quiet"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "windows_sandbox_enabled": false,
+  "interpretation": "A present executable or installed distribution is not OS isolation qualification. WSL empty listing supplies no executable Linux worker."
+}

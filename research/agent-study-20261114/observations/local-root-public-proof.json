@@ -1,0 +1,20 @@
+{
+  "kind": "HISTORICAL_PUBLIC_PROOF_REVERIFIED",
+  "collector_id": "7bdd7540-2d21-4f50-b1c3-555eb4469928",
+  "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA8T/00TOOM+RFHwGQX7WNgGVAmEU8LU7rEBdWpk+4SFE=\n-----END PUBLIC KEY-----\n",
+  "public_key_sha256": "785fec4dedc6b2ac263cba9b5748bf3214f02d14250aae1973a3653e0ffdc20b",
+  "signed_evidence_sha256": "365b5cb13f07e58ed63cc586b6d8525c38ca0968a76e5bf7fb532cca0f5599ea",
+  "signature": "4mJl+axCjsmTj9T/77UxU/rL22c2BQwHydr97WumrO3oOIvBtsoJkH6UYipUSNKHDBqrsDZC5oG2eGvlaVXeCQ==",
+  "observed_now": {
+    "signature_valid": true,
+    "evidence_content_matches": true,
+    "key_fingerprint_matches": true
+  },
+  "source": "existing project evidence/production-gates-20261014-01; known public files only",
+  "production_qualified": false,
+  "independent_collector_service_configured": false,
+  "private_key_read": false,
+  "private_key_created": false,
+  "new_signature_created": false,
+  "limit": "Verification of an old signed local artifact is not a live independent collector endpoint or production enrollment."
+}

@@ -40,3 +40,9 @@
 后续修复候选已完成原公开条件的完整回放、30/60/144 渲染 delta 调度和同 seed／profile 或 case／control 配对。16 个候选的 3,888 条引擎执行、288 次卡牌执行及 146 项源码语义 rubric 通过；第二次完整执行只作为重放，不增加独立样本。详见 [八任务验收报告](proxy-evaluations/20261114-full-eight/README.zh-CN.md)。
 
 本轮不新增偏好效果结论，不回填或合并父轮结果。旧失败版、监督打包纠正及原始证据保留；源码可泄盲，评审据实标记。仅实验候选和采集控制器有修改，根实现、工程历史基线 5cd27c5、配置和版本不变。公开留出种子已曝光，不能作为新的独立研究留出。正式 M7 仍 BLOCKED、formal trials 0、外部评审 UNVERIFIED；不把 R05、CI 或本轮本地记录计入正式试验。
+
+## 20261114：新 Agent 研究登记
+
+用户已要求完成 Agent 研究登记及真实资格接入。新的 [M7-AGENT-20261114-01](../research/agent-study-20261114/README.zh-CN.md) 单独登记为研究准备版本 0.4.0-agent.1，原 runner 实现 0.3.0、Package 0.2.0、Skill 协议 0.1.0 和既有冻结保持不变。保留108任务／216 trials及原门槛，参与者阶段采用16个新Agent、八任务、128配对观察；实际并行受当前三评审槽位限制。真人招募不作为此Agent研究的阻塞，旧真人协议及其发布要求留作历史，不以代理数据补填真人指标。
+
+登记及输入完整性验证通过不等于执行资格通过。真实broker、隔离launcher、生产collector和独立evaluator尚未配置；公开本地签名已复核，但生产信任仍未取得。正式执行BLOCKED、trials0、外部评审UNVERIFIED，新research snapshot未创建，旧结果不重分类。

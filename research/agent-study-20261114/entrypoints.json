@@ -1,0 +1,69 @@
+{
+  "kind": "ACTUAL_ENTRYPOINT_AVAILABILITY",
+  "observed_date": "2026-11-14",
+  "timezone": "Asia/Shanghai",
+  "status": "BLOCKED_EXTERNAL_QUALIFICATION",
+  "discovery_scope": "Repository public configs, tool capability metadata, known public project proof files and read-only executable/distribution inventory. No credential/session/config-cache search, account creation, purchases or external operator contact.",
+  "services": {
+    "broker": {
+      "entrypoint": null,
+      "status": "NOT_CONFIGURED",
+      "repository_example": "benchmark-dataset/v0.2/runner-config.example.json",
+      "example_executor": "node -e process.exit(2) is an intentional non-provider placeholder",
+      "public_provider_api_reference": "https://api.openai.com/v1/responses",
+      "reference_is_not_an_authenticated_qualified_broker": true,
+      "missing": [
+        "operator-owned createExecutor module with frozen hash",
+        "authorized existing provider identity",
+        "exact model snapshot attestation",
+        "preemptive cumulative input/output/reasoning accounting",
+        "authenticated usage",
+        "remote cancellation and reconciliation",
+        "approved total spend ceiling"
+      ]
+    },
+    "isolation": {
+      "entrypoint": null,
+      "status": "NO_QUALIFIED_LAUNCHER",
+      "observations": "observations/host-discovery.json",
+      "os_probe": "NOT_RUN; no supported launcher/runtime manifest configured; Windows Sandbox not used",
+      "missing": [
+        "existing launcher module",
+        "environment ID",
+        "independent signed current-environment audit",
+        "read/symlink/network/process/asset quota evidence"
+      ]
+    },
+    "collector": {
+      "entrypoint": null,
+      "status": "LOCAL_PUBLIC_PROOF_ONLY_NOT_PRODUCTION",
+      "local_public_proof": "observations/local-root-public-proof.json",
+      "collector_proposal_id": "7bdd7540-2d21-4f50-b1c3-555eb4469928",
+      "public_key_sha256": "785fec4dedc6b2ac263cba9b5748bf3214f02d14250aae1973a3653e0ffdc20b",
+      "production_qualified": false,
+      "missing": [
+        "independently operated live collection service",
+        "out-of-band public trust-root enrollment",
+        "scope/audit/revocation policy",
+        "current isolation and artifact/telemetry binding proof"
+      ]
+    },
+    "evaluator": {
+      "entrypoint": null,
+      "status": "NO_INDEPENDENT_SERVICE",
+      "repository_example": "benchmark-dataset/v0.2/evaluator-cli.example.json",
+      "missing": [
+        "operator-owned isolated service/config",
+        "registered public verification key",
+        "independence and neutral engine-native/toolkit-native evaluation evidence",
+        "matching frozen evaluator identity"
+      ]
+    }
+  },
+  "actual_provider_requests": 0,
+  "actual_service_requests": 0,
+  "credential_reads": 0,
+  "formal_trials": 0,
+  "formal_status": "BLOCKED",
+  "external_review": "UNVERIFIED"
+}

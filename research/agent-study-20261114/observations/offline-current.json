@@ -1,0 +1,180 @@
+{
+  "kind": "OFFLINE_EXECUTOR_PREFLIGHT",
+  "created_at": "2026-11-14T14:34:07.565Z",
+  "status": "BLOCKED",
+  "node_version": "v24.14.0",
+  "source_hashes": {
+    "src/benchmark/executor-preflight.mjs": "0c32cf160af82f1398b53f60352804c6fd571e7187e6e785a33ae62619f118ee",
+    "tools/executor-preflight.mjs": "cb9f932cd598984eeccaf0fd2ef3684d18f697ce5769006be9d34166f76936ac",
+    "tests/executor-preflight.test.mjs": "ea1c66f91807a6e71f5e6a51df5654c9445fb3e1ad2ee65a515ac3f5e55c7342"
+  },
+  "isolation": {
+    "status": "NOT_RUN",
+    "reason": "No sandbox probe requested. Static fixtures do not establish OS isolation.",
+    "checks": []
+  },
+  "fixtures": {
+    "round_trip": {
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "signal": null,
+      "pid": 41920,
+      "stdout": "{\"fixture\":\"trusted-offline-stub\",\"ok\":true}",
+      "stderr": "",
+      "output_bytes_observed": 44,
+      "output_bytes_retained": 44,
+      "wall_time_ms": 56.9166,
+      "error": null,
+      "process_count_enforced": false
+    },
+    "wall_time": {
+      "status": "WALL_TIME_LIMIT",
+      "exit_code": null,
+      "signal": "SIGKILL",
+      "pid": 16220,
+      "stdout": "",
+      "stderr": "",
+      "output_bytes_observed": 0,
+      "output_bytes_retained": 0,
+      "wall_time_ms": 122.99799999999999,
+      "error": null,
+      "process_count_enforced": false
+    },
+    "stdout_limit": {
+      "status": "OUTPUT_LIMIT",
+      "exit_code": null,
+      "signal": "SIGKILL",
+      "pid": 41220,
+      "stdout": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "stderr": "",
+      "output_bytes_observed": 4096,
+      "output_bytes_retained": 128,
+      "wall_time_ms": 63.280100000000004,
+      "error": null,
+      "process_count_enforced": false
+    },
+    "stderr_limit": {
+      "status": "OUTPUT_LIMIT",
+      "exit_code": null,
+      "signal": "SIGKILL",
+      "pid": 9132,
+      "stdout": "",
+      "stderr": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "output_bytes_observed": 4096,
+      "output_bytes_retained": 128,
+      "wall_time_ms": 47.442200000000014,
+      "error": null,
+      "process_count_enforced": false
+    }
+  },
+  "checks": {
+    "round_trip": true,
+    "wall_time_preemption": true,
+    "stdout_preemption": true,
+    "stderr_preemption": true
+  },
+  "limits": {
+    "wall_time_ms": {
+      "status": "OFFLINE_STUB_MEASURED",
+      "enforcement": "parent-process deadline and process-group SIGKILL",
+      "remote_cancellation_guaranteed": false
+    },
+    "output_bytes": {
+      "status": "OFFLINE_STUB_MEASURED",
+      "enforcement": "combined streams retained-byte cap plus process-group SIGKILL",
+      "os_pipe_burst_overshoot": true
+    },
+    "processes": {
+      "status": "UNSUPPORTED",
+      "reason": "Process-group cleanup is not a process-count cap; use externally configured cgroup pids.max or equivalent."
+    },
+    "tokens": {
+      "status": "NOT_IMPLEMENTED",
+      "reason": "Requires authorized provider broker with input accounting and enforceable generation ceilings."
+    },
+    "reasoning_tokens": {
+      "status": "NOT_IMPLEMENTED",
+      "reason": "Reasoning effort is not a token cap; requires a provider-enforced bound or conservative combined-output reservation."
+    },
+    "tool_calls": {
+      "status": "PROTOCOL_ONLY",
+      "reason": "Reservations are checked before admission; exclusive broker ownership still needs integration audit."
+    },
+    "steps": {
+      "status": "PROTOCOL_ONLY",
+      "reason": "Freeze step definition and route every admitted action through broker."
+    },
+    "asset_bytes": {
+      "status": "PROTOCOL_ONLY",
+      "reason": "No writable-volume quota is installed; byte receipts after file creation are post-hoc."
+    }
+  },
+  "broker_handshake_template": {
+    "protocol_version": "executor-preflight-1.0.0",
+    "operation": "CAPABILITIES_ONLY",
+    "allow_model_invocation": false,
+    "trial_id": "preflight-template-only",
+    "nonce": "template-not-a-live-session",
+    "model": "UNSELECTED_SNAPSHOT",
+    "model_settings": {
+      "status": "UNFROZEN"
+    },
+    "budget": {
+      "max_attempts": 2,
+      "wall_time_ms": 300000,
+      "tokens": 24000,
+      "reasoning_tokens": 12000,
+      "tool_calls": 80,
+      "steps": 120,
+      "asset_bytes": 2000000
+    },
+    "required_hard_limits": [
+      "tokens",
+      "reasoning_tokens",
+      "tool_calls",
+      "steps",
+      "asset_bytes",
+      "wall_time_ms",
+      "processes",
+      "output_bytes"
+    ],
+    "hard_limits": {
+      "tokens": 24000,
+      "reasoning_tokens": 12000,
+      "tool_calls": 80,
+      "steps": 120,
+      "asset_bytes": 2000000,
+      "wall_time_ms": 300000,
+      "processes": 16,
+      "output_bytes": 8388608
+    },
+    "telemetry": {
+      "authority": "broker_supervisor_only",
+      "counters": "monotonic_task_cumulative",
+      "fields": [
+        "tokens",
+        "reasoning_tokens",
+        "tool_calls",
+        "steps",
+        "asset_bytes"
+      ],
+      "reservation_required": true,
+      "sequence_required": true,
+      "attempts": "all_first_and_final"
+    },
+    "request_digest": "36b290b3cb2b93ccd7a662eebba80ad441bb82ff68f62d22f72e1324fd181f41"
+  },
+  "budget_enforced": false,
+  "required_gates": [
+    "Supported measured OS read/network isolation",
+    "Enforced process-count and filesystem-byte ceilings",
+    "Authorized broker with authenticated monotonic usage and true provider token/reasoning caps",
+    "Frozen actual model snapshot and settings",
+    "Independent isolated evaluator and artifact retention integration"
+  ],
+  "scope": "Offline infrastructure only. No model calls, no accounts, no credentials, no purchases, no effectiveness result.",
+  "version": "executor-preflight-1.0.0",
+  "actual_model_runs": 0,
+  "formal_ready": false,
+  "digest": "b15791f25f91ce4eea751b68face3018edbf7af36ce620a1c6fa13c765e4c574"
+}

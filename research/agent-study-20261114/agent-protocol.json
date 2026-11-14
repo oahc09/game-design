@@ -1,0 +1,503 @@
+{
+  "version": "agent-study-protocol-1.0.0",
+  "study_kind": "AGENT_BASED_EFFECTIVENESS_STUDY",
+  "participant_type": "agent_proxy",
+  "human_participants_required": false,
+  "human_inference_permitted": false,
+  "model": {
+    "route": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "exact_snapshot": null,
+    "qualification": "UNVERIFIED"
+  },
+  "formal_generation": {
+    "experiment": "full_skill",
+    "task_ids": [
+      "gd-001",
+      "gd-002",
+      "gd-003",
+      "gd-004",
+      "gd-005",
+      "gd-006",
+      "gd-007",
+      "gd-008",
+      "gd-009",
+      "gd-010",
+      "gd-011",
+      "gd-012",
+      "gd-013",
+      "gd-014",
+      "gd-015",
+      "gd-016",
+      "gd-017",
+      "gd-018",
+      "gd-019",
+      "gd-020",
+      "gd-021",
+      "gd-022",
+      "gd-023",
+      "gd-024",
+      "gd-025",
+      "gd-026",
+      "gd-027",
+      "gd-028",
+      "gd-029",
+      "gd-030",
+      "gd-031",
+      "gd-032",
+      "gd-033",
+      "gd-034",
+      "gd-035",
+      "gd-036",
+      "gd-037",
+      "gd-038",
+      "gd-039",
+      "gd-040",
+      "gd-041",
+      "gd-042",
+      "gd-043",
+      "gd-044",
+      "gd-045",
+      "gd-046",
+      "gd-047",
+      "gd-048",
+      "gd-049",
+      "gd-050",
+      "gd-051",
+      "gd-052",
+      "gd-053",
+      "gd-054",
+      "gd-055",
+      "gd-056",
+      "gd-057",
+      "gd-058",
+      "gd-059",
+      "gd-060",
+      "gd-061",
+      "gd-062",
+      "gd-063",
+      "gd-064",
+      "gd-065",
+      "gd-066",
+      "gd-067",
+      "gd-068",
+      "gd-069",
+      "gd-070",
+      "gd-071",
+      "gd-072",
+      "gd-073",
+      "gd-074",
+      "gd-075",
+      "gd-076",
+      "gd-077",
+      "gd-078",
+      "gd-079",
+      "gd-080",
+      "gd-081",
+      "gd-082",
+      "gd-083",
+      "gd-084",
+      "gd-085",
+      "gd-086",
+      "gd-087",
+      "gd-088",
+      "gd-089",
+      "gd-090",
+      "gd-091",
+      "gd-092",
+      "gd-093",
+      "gd-094",
+      "gd-095",
+      "gd-096",
+      "gd-097",
+      "gd-098",
+      "gd-099",
+      "gd-100",
+      "gd-101",
+      "gd-102",
+      "gd-103",
+      "gd-104",
+      "gd-105",
+      "gd-106",
+      "gd-107",
+      "gd-108"
+    ],
+    "planned_tasks": 108,
+    "arms": [
+      "baseline",
+      "treatment"
+    ],
+    "planned_arm_trials": 216,
+    "budget_per_trial": {
+      "max_attempts": 2,
+      "wall_time_ms": 300000,
+      "tokens": 24000,
+      "reasoning_tokens": 12000,
+      "tool_calls": 80,
+      "steps": 120,
+      "asset_bytes": 2000000
+    },
+    "budget_scope": "all attempts combined; original max_attempts=2",
+    "exposure": {
+      "baseline": [
+        "same qualified model",
+        "same frozen engine and neutral documentation",
+        "neutral starter",
+        "identical public task"
+      ],
+      "treatment": [
+        "same qualified model",
+        "same frozen engine and neutral documentation",
+        "neutral starter",
+        "identical public task",
+        "full Skill and allowed Toolkit"
+      ],
+      "shared_engine_paths": [
+        "vendor",
+        "benchmark-dataset/engine-starter"
+      ],
+      "treatment_toolkit_paths": [
+        "src/core",
+        "src/archetypes",
+        "src/framework",
+        "src/adapters",
+        "src/qa",
+        "src/benchmark/runner.mjs",
+        "src/benchmark/provenance.mjs",
+        "schemas",
+        "web",
+        "vendor",
+        "examples",
+        "tools",
+        "package.json",
+        "LICENSE",
+        "docs/IMPLEMENTATION-CONTRACT.md",
+        "fixtures/regression/golden"
+      ],
+      "exposure_implementation": "existing full_skill export only; instruction_ablation is not the primary experiment"
+    },
+    "task_acceptance": "unchanged v0.2 public contracts, evaluator obligations, rubric and numerical thresholds",
+    "candidate_policy": "Generate fresh candidates after qualified research freeze. No known corrected candidate or archived result counts as a new trial.",
+    "order_seed": 739391
+  },
+  "agent_observation": {
+    "planned_agents": 16,
+    "completed_agents": 0,
+    "task_ids": [
+      "gd-009",
+      "gd-019",
+      "gd-029",
+      "gd-039",
+      "gd-065",
+      "gd-071",
+      "gd-107",
+      "gd-108"
+    ],
+    "planned_paired_assessments": 128,
+    "planned_version_observations": 256,
+    "requested_parallel_agents": 8,
+    "available_slots_including_controller": 4,
+    "maximum_active_reviewers_now": 3,
+    "scheduling": "rolling concurrency <=3; tasks and versions serial within each fresh agent context; never nested agents to evade capacity",
+    "assignment": [
+      {
+        "planned_agent_id": "agent-01",
+        "order": [
+          "X",
+          "Y"
+        ]
+      },
+      {
+        "planned_agent_id": "agent-02",
+        "order": [
+          "X",
+          "Y"
+        ]
+      },
+      {
+        "planned_agent_id": "agent-03",
+        "order": [
+          "X",
+          "Y"
+        ]
+      },
+      {
+        "planned_agent_id": "agent-04",
+        "order": [
+          "X",
+          "Y"
+        ]
+      },
+      {
+        "planned_agent_id": "agent-05",
+        "order": [
+          "X",
+          "Y"
+        ]
+      },
+      {
+        "planned_agent_id": "agent-06",
+        "order": [
+          "X",
+          "Y"
+        ]
+      },
+      {
+        "planned_agent_id": "agent-07",
+        "order": [
+          "X",
+          "Y"
+        ]
+      },
+      {
+        "planned_agent_id": "agent-08",
+        "order": [
+          "X",
+          "Y"
+        ]
+      },
+      {
+        "planned_agent_id": "agent-09",
+        "order": [
+          "Y",
+          "X"
+        ]
+      },
+      {
+        "planned_agent_id": "agent-10",
+        "order": [
+          "Y",
+          "X"
+        ]
+      },
+      {
+        "planned_agent_id": "agent-11",
+        "order": [
+          "Y",
+          "X"
+        ]
+      },
+      {
+        "planned_agent_id": "agent-12",
+        "order": [
+          "Y",
+          "X"
+        ]
+      },
+      {
+        "planned_agent_id": "agent-13",
+        "order": [
+          "Y",
+          "X"
+        ]
+      },
+      {
+        "planned_agent_id": "agent-14",
+        "order": [
+          "Y",
+          "X"
+        ]
+      },
+      {
+        "planned_agent_id": "agent-15",
+        "order": [
+          "Y",
+          "X"
+        ]
+      },
+      {
+        "planned_agent_id": "agent-16",
+        "order": [
+          "Y",
+          "X"
+        ]
+      }
+    ],
+    "assignment_meaning": "X/Y are blind labels; a supervisor-private randomized mapping to arms is generated only after actual candidates exist",
+    "session_budget": {
+      "max_attempts": 1,
+      "wall_time_ms": 300000,
+      "tokens": 24000,
+      "reasoning_tokens": 12000,
+      "tool_calls": 80,
+      "steps": 120,
+      "asset_bytes": 2000000
+    },
+    "session_budget_scope": "one read-only version observation; separate from generation trials; wall_time_ms=300000; no feedback repair/retry",
+    "runtime_task_budget": "subject to qualified broker metering for review calls as well; current high setting is not a hard cap",
+    "observations": [
+      "rule_understanding_cost",
+      "first_use_ease",
+      "gameplay_variety",
+      "repetition",
+      "perceived_difficulty",
+      "fairness",
+      "decision_agency",
+      "continue_playing_intent"
+    ],
+    "scale": {
+      "min": 1,
+      "max": 7,
+      "anchors": "1 = very low, 7 = very high for the named dimension. Difficulty/repetition are descriptive, not inherently better higher."
+    },
+    "measurement_policy": "Only evidence-backed agent_proxy judgments. Null plus reason when unmeasured. No fabricated novice/expert identities, human motivations, consent, comprehension time or human abandonment. Actual tool elapsed time/actions/completion are separately labelled automation behavior.",
+    "required_record_fields": [
+      "agent_id",
+      "task_id",
+      "blind_id",
+      "artifact_digest",
+      "source_revision",
+      "model_snapshot",
+      "model_settings",
+      "policy_digest",
+      "profile",
+      "seed",
+      "fps",
+      "input_digest",
+      "execution_evidence",
+      "order",
+      "blinding_broken",
+      "rating_or_null",
+      "reason",
+      "actual_elapsed_ms",
+      "status"
+    ],
+    "reviewer_access": "Playable artifact and neutral public instructions only. No source-informed prior reports, arm key, hidden evaluator, other submissions or prior conversations.",
+    "reviewer_role_separation": "Candidate builders/repairers cannot act as blind experience reviewers. Technical semantic evaluator may inspect source only within independently isolated service; log source-induced disclosure.",
+    "context_policy": "16 fresh contexts, one per agent. New snapshots and operational independence still require actual qualification; same-model agents are correlated proxies."
+  },
+  "analysis": {
+    "primary_metrics": [
+      {
+        "id": "rule_correctness",
+        "title": "Rule correctness",
+        "direction": "higher",
+        "unit": "proportion",
+        "definition": "schema, transitions, rule completeness, objectives, terminal"
+      },
+      {
+        "id": "playable_task_success",
+        "title": "Playable task success",
+        "direction": "higher",
+        "unit": "proportion",
+        "definition": "validated solution or preregistered stochastic threshold, no hard/soft lock"
+      },
+      {
+        "id": "valid_content_yield",
+        "title": "Valid content yield",
+        "direction": "higher",
+        "unit": "proportion",
+        "definition": "valid accepted candidates / all attempted candidates including rejected outputs"
+      },
+      {
+        "id": "difficulty_control_error",
+        "title": "Difficulty control error",
+        "direction": "lower",
+        "unit": "absolute_error",
+        "definition": "absolute measured target deviation, profile and seed protocol fixed"
+      },
+      {
+        "id": "content_diversity",
+        "title": "Content diversity",
+        "direction": "higher",
+        "unit": "feature_distance",
+        "definition": "topology/mechanics/solution features normalized for symmetric equivalents; not file hashes"
+      },
+      {
+        "id": "qa_defect_detection",
+        "title": "QA defect detection",
+        "direction": "higher",
+        "unit": "recall",
+        "definition": "known reproducible defects detected / all injected known defects; also report false positives"
+      },
+      {
+        "id": "engine_fidelity",
+        "title": "Engine fidelity",
+        "direction": "higher",
+        "unit": "proportion",
+        "definition": "state, event, terminal and input parity; visual review separately marked"
+      },
+      {
+        "id": "human_experience",
+        "title": "Human experience measures",
+        "direction": "mixed",
+        "unit": "vector",
+        "definition": "eight separate human ratings; no simulated human or scalar fun score"
+      }
+    ],
+    "statistics": {
+      "binomial_ci": "Wilson 95%",
+      "paired_effect": "within-task treatment minus baseline; descriptive mean and normal-approximation CI, unstable at n<30",
+      "continuous": "sample size, mean, median, full distribution and descriptive normal-approximation CI",
+      "multiple_metrics": "No post-hoc primary selection; report all applicable primary metrics and avoid population-general causal claims from convenience tasks"
+    },
+    "denominator_policy": {
+      "include": [
+        "loaded task",
+        "base runtime starts",
+        "complete intended materials",
+        "working runner"
+      ],
+      "exclude_only": [
+        "FIXTURE_CORRUPT",
+        "ENGINE_STARTUP_FAILURE",
+        "MATERIALS_MISSING",
+        "RUNNER_UNAVAILABLE"
+      ],
+      "must_include_failures": [
+        "model-generated compile failure",
+        "runtime crash",
+        "invalid generation",
+        "false solver claim",
+        "wrong routing",
+        "tool budget exhaustion"
+      ]
+    },
+    "failure_categories": [
+      "SKILL_ROUTING_FAILURE",
+      "KNOWLEDGE_FAILURE",
+      "SCHEMA_FAILURE",
+      "TOOL_FAILURE",
+      "RUNTIME_FAILURE",
+      "GENERATOR_FAILURE",
+      "SOLVER_FAILURE",
+      "METRIC_FAILURE",
+      "ENGINE_ADAPTER_FAILURE",
+      "LLM_REASONING_FAILURE"
+    ],
+    "report_fields": [
+      "first_attempt_success",
+      "final_success",
+      "repair_count",
+      "all_attempts",
+      "all_measured_primary_metrics",
+      "per_task_paired_differences",
+      "archetype/task_type/difficulty/known_unseen_breakdowns",
+      "missing_and_infrastructure_failures",
+      "blinding_and_order_effects"
+    ],
+    "agent_analysis": "Keep every experience dimension separate. Summarize per task and per agent/order; 128 assessments are repeated observations on eight tasks, not 128 independent task samples. Do not infer human-population effects or declare Skill superior by selecting one favorable metric.",
+    "stopping": "All108 matched tasks retained,16 registered agent contexts and128 paired assessments observed or explicitly missing/blocked. No optional stopping for favorable results. Freeze defects invalidate affected data; preserve every attempt, issue new version/snapshot before further execution."
+  },
+  "prior_exposure": {
+    "known_local_eight_task_results": "docs/proxy-evaluations/20261114-full-eight/verification-summary.json",
+    "previous_agent_proxy": "docs/proxy-evaluations/20261107/registration.json",
+    "all_previous_formal_credit": 0,
+    "public_held_out_seeds_already_observed": true,
+    "policy": "Reuse original published seeds for comparability only; cannot claim a fresh unseen holdout. Preserve known/unseen labels as task taxonomy, not proof of prior non-exposure."
+  },
+  "release_policy": "Agent evidence may support only an explicitly labelled agent-based effectiveness claim after every qualification gate passes. Original human-study release rule remains unmet and is not silently marked PASS; v1.0 readiness requires a separately explicit scope decision. No automatic version bump or release.",
+  "qualification": {
+    "required": [
+      "audited_os_isolation",
+      "provider_exact_model_snapshot",
+      "cross_attempt_preemptive_budget_and_authenticated_usage",
+      "remote_cancellation_and_reconciliation",
+      "independent_production_collector",
+      "independent_isolated_arm_neutral_evaluator",
+      "complete_new_research_snapshot"
+    ],
+    "windows_sandbox": false,
+    "environment_policy": "Current environment and existing authorized services only; no credentials, accounts, permission changes or external messages created by this registration."
+  }
+}
