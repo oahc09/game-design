@@ -1,0 +1,75 @@
+{
+  "task_id": "gd-108",
+  "entrypoint": "submission/index.html",
+  "runtime": "submission/game.mjs",
+  "controls": [
+    "Click a card to play",
+    "Enter pass",
+    "R restart",
+    "P pause"
+  ],
+  "semantic_event_mapping": {
+    "DRAW": "native DRAW records a card moved from the hidden deck to the current player hand",
+    "PLAY": "native PLAY records a validated card play and its visible card identity",
+    "DISCARD": "native DISCARD records the played card entering the visible discard zone",
+    "PASS": "native PASS ends the active player turn and switches to the other player without dealing damage",
+    "REVEAL": "No REVEAL event is emitted: when active_player changes, the newly active player hand becomes the current visible hand; there is no separate reveal action or event."
+  },
+  "assumptions": [
+    "Two players alternate through active_player player1/player2. Each has a private hand and separate deck.",
+    "By default, both decks are copies of cards shuffled independently with deterministic seeds seed and seed+1; an explicit content.zones.deck array supplies player1 exact deck order.",
+    "opening_hand_size defaults to 3. Only the active player hand is rendered/exposed by the current-player helper; snapshots expose its count. Opponent hand and future deck orders remain hidden.",
+    "Each player starts at 3 mana by default; passing switches active player, resets the incoming player mana to 3, and changes neither health total. Passing does not draw.",
+    "Card plays retain the existing cost 1 and draw-one-after-play rule. Scout, Guard and Bolt deal 2 opponent damage; Strike deals 3; Mend heals 2 bounded by the active player maximum health.",
+    "Terminal is set when either player health reaches 0 and includes status, reason player_health_zero, and winner player ID.",
+    "There is no separate reveal mechanic or REVEAL event; hand visibility follows active_player.",
+    "Delayed action payload and future deck order are hidden from observations.",
+    "Human comparison is prepared only; no participant outcomes exist and remain unmeasured.",
+    "Source/usage and provider claims remain unverified."
+  ],
+  "blinded_comparison_plan": {
+    "path": "submission/blinded-comparison-plan.md",
+    "status": "PREPARED_NOT_EXECUTED",
+    "participants": 0,
+    "ratings": 0,
+    "recruitment": "NOT_PLANNED"
+  },
+  "extension_metadata": {
+    "capabilities": [
+      "delayed_partial_observation",
+      "blinded_human_protocol"
+    ],
+    "blinded_comparison_plan": "submission/blinded-comparison-plan.md",
+    "human_execution_status": "PREPARED_NOT_EXECUTED",
+    "participants": 0,
+    "ratings": 0
+  },
+  "visible_action_contract": {
+    "entrypoint": "window.__acceptance.visibleActions()",
+    "source": "cached from enabled DOM controls after rendering for the active player",
+    "fields": [
+      "action",
+      "text",
+      "cost",
+      "damage",
+      "heal"
+    ],
+    "mend": "actual health-bounded gain"
+  },
+  "visible_state_contract": {
+    "entrypoint": "window.__acceptance.visibleState()",
+    "source": "cached from the last rendered DOM state attributes",
+    "fields": [
+      "tick",
+      "active_player",
+      "mana",
+      "health",
+      "opponent_health"
+    ]
+  },
+  "terminal_contract": {
+    "status": "won or lost",
+    "reason": "player_health_zero",
+    "winner": "player1 or player2"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "task": "gd-071",
+  "scope": "v5 treatment candidate only",
+  "changes": [
+    "Changed world-to-screen projection to increase screen y with world y.",
+    "Drew platform tops at projected tuple y and positive screen height.",
+    "Projected capsule feet to player.y and its top to player.y-capsule.height; drew checkpoint marker in same y-down coordinates."
+  ],
+  "checks": {
+    "node_syntax": "PASS: node --check submission/main.mjs",
+    "browser": "NOT_RUN; root owns review",
+    "evaluator": "NOT_RUN"
+  },
+  "preserved": [
+    "No game physics, gravity, speed, jump, collision, checkpoint, or input rules changed.",
+    "Only v5 treatment gd-071 renderer and its metadata/evidence were modified."
+  ],
+  "claims": "No visual or full acceptance pass claimed."
+}

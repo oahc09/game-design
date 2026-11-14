@@ -1,0 +1,22 @@
+{
+  "task_id": "gd-065",
+  "entrypoint": "submission/index.html",
+  "runtime": "submission/game.mjs",
+  "controls": [
+    "Pointer tube selection",
+    "Arrow keys + Enter selection",
+    "Escape cancels selection",
+    "R restart",
+    "P pause"
+  ],
+  "assumptions": [
+    "Implements a new experimental water_sort package because the supplied registry has no Water Sort runtime.",
+    "Arrays are bottom-to-top; pours move the maximal contiguous top color group that fits into an empty or same-color destination.",
+    "A solved tube is empty or full and monochromatic; all tubes must be solved for victory.",
+    "Animation visuals derive only from authoritative state; no liquid animation mutates game data.",
+    "Added public pour action alias, live acceptance logging and center-of-tube pointer projection; interruption/cancel changes selection only, never liquid state.",
+    "A single 240 ms visual-only pour cue begins after the native pour commits; Escape cancels the cue without changing authoritative tubes. RAF and advanceTime share the same cue timer."
+  ],
+  "engine": "CocosAirJS 1.0.0 revision 100",
+  "package_status": "EXPERIMENTAL_EXTENSION_GATE_NOT_RUN"
+}

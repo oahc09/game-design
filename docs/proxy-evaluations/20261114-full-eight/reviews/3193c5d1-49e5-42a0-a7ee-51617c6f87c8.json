@@ -1,0 +1,172 @@
+{
+  "reasoning_effort": "high",
+  "reviews": [
+    {
+      "rubric_id": "gd-029.state_parity",
+      "artifact_digest": "6a2ba4b485e8081ad7f3d3008ab4a489b50314b0e2d31382cdaf95da827a9dd0",
+      "reviewer_id": "gpt-6-luna-high-local-5",
+      "answers": [
+        {
+          "explanation": "source/submission/game.mjs:1-19; evidence/native-fixtures.json#records; evidence/records/screen-30.png, screen-60.png, screen-144.png. State is delegated to the bundled Runtime, and fixture plus captured normalized traces cover collision and tick boundaries. The runtime derives movement using Euclidean normalization, and held-fire acceptance records preserve authoritative positions and counts. Manual review supports the declared contract, while native/model equality is not treated as a standalone semantic oracle.",
+          "evidence_reference": "source/submission/game.mjs:1-19"
+        },
+        {
+          "explanation": "source/src/archetypes/arcade_shooter.mjs:142-199; source/submission/main.mjs:3-6; evidence/supplement-30.json, supplement-60.json, supplement-144.json; evidence/records/*held_fire-30-0.json, *held_fire-60-0.json, *held_fire-144-0.json. Diagonal normalization, cooldown interval 8 ticks and sampling into the 60 Hz accumulator are explicit and independently witnessed; swept collision and sorted candidate resolution specify positions/order. No unmet task obligation observed in provided boundaries.",
+          "evidence_reference": "source/src/archetypes/arcade_shooter.mjs:142-199"
+        }
+      ],
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "rubric_id": "gd-029.event_parity",
+      "artifact_digest": "6a2ba4b485e8081ad7f3d3008ab4a489b50314b0e2d31382cdaf95da827a9dd0",
+      "reviewer_id": "gpt-6-luna-high-local-5",
+      "answers": [
+        {
+          "explanation": "source/src/archetypes/arcade_shooter.mjs:153-199; evidence/native-fixtures.json#records[0].trace.transitions[0]; evidence/supplement-60.json#transitions. Single stationary projectile overlapping two targets damages only lowest target ID once and is destroyed; ordering follows swept time, projectile ID, target ID. Independent supplied fixture supports this declared rule; captures retain raw events.",
+          "evidence_reference": "source/src/archetypes/arcade_shooter.mjs:153-199"
+        },
+        {
+          "explanation": "source/submission/main.mjs:5-7; source/src/archetypes/arcade_shooter.mjs:153-199; evidence/supplement-30.json, supplement-60.json, supplement-144.json. Held fire intervals are eight ticks and each tick creates at most one firing attempt; keyboard sampler emits one action per 60 Hz tick. Collision ordering uses swept positions and stable tie-breaks, with DAMAGE then projectile DESTROY in the supplied fixture. Diagonal speed is state/input behavior rather than a separate semantic event.",
+          "evidence_reference": "source/submission/main.mjs:5-7"
+        }
+      ],
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "rubric_id": "gd-029.terminal_parity",
+      "artifact_digest": "6a2ba4b485e8081ad7f3d3008ab4a489b50314b0e2d31382cdaf95da827a9dd0",
+      "reviewer_id": "gpt-6-luna-high-local-5",
+      "answers": [
+        {
+          "explanation": "source/src/archetypes/arcade_shooter.mjs:190-199,324-326; source/submission/game.mjs:17-18; evidence/supplement-30.json#checks, supplement-60.json#checks, supplement-144.json#checks. Terminal is selected after resolution, with player death taking priority over victory; adapter rejects post-terminal actions and only explicit restart resets. Supplied independent captures show win feedback after authoritative terminal state.",
+          "evidence_reference": "source/src/archetypes/arcade_shooter.mjs:190-199,324-326"
+        },
+        {
+          "explanation": "source/src/archetypes/arcade_shooter.mjs:153-199; source/submission/main.mjs:4-7; evidence/supplement-30.json, supplement-60.json, supplement-144.json. Four obligations are indirectly relevant: normalized movement and cooldown produce the actions being resolved; collision ordering determines the terminal candidate; keyboard-to-tick mapping determines when it occurs. The implementation delays HUD terminal text until snapshot reports terminal. No unmet terminal-specific requirement observed.",
+          "evidence_reference": "source/src/archetypes/arcade_shooter.mjs:153-199"
+        }
+      ],
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "rubric_id": "gd-029.input_parity",
+      "artifact_digest": "6a2ba4b485e8081ad7f3d3008ab4a489b50314b0e2d31382cdaf95da827a9dd0",
+      "reviewer_id": "gpt-6-luna-high-local-5",
+      "answers": [
+        {
+          "explanation": "source/submission/main.mjs:3-7; evidence/supplement-30.json#checks.diagonal_normalized, supplement-60.json#checks.diagonal_normalized, supplement-144.json#checks.diagonal_normalized; evidence/records/*held_fire-30-0.json, *held_fire-60-0.json, *held_fire-144-0.json. Key state is sampled once per accumulated 60 Hz simulation tick; the fractional accumulator makes elapsed render delta drive tick count, while held Space sets/clears fire. Captures at all three rates and held-fire gap witnesses show 8-tick cooldown and consistent action mapping.",
+          "evidence_reference": "source/submission/main.mjs:3-7"
+        },
+        {
+          "explanation": "source/submission/main.mjs:3-7; source/src/archetypes/arcade_shooter.mjs:153-199; evidence/supplement-30.json, supplement-60.json, supplement-144.json. Diagonal axes are passed together and normalized by runtime; Space held input is sampled at tick and the configured 8 tick cooldown limits shots. Collision positions/events derive from same tick transition. Real captures include all requested rates. No duplicate-edge semantics are requested for held fire.",
+          "evidence_reference": "source/submission/main.mjs:3-7"
+        }
+      ],
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "rubric_id": "gd-029.visual_review",
+      "artifact_digest": "6a2ba4b485e8081ad7f3d3008ab4a489b50314b0e2d31382cdaf95da827a9dd0",
+      "reviewer_id": "gpt-6-luna-high-local-5",
+      "answers": [
+        {
+          "explanation": "evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png; evidence/supplement-30-win.png; evidence/supplement-60-win.png; evidence/supplement-144-win.png; source/submission/main.mjs:4. Screens at all requested rates show the player, enemy, projectiles/background and HUD tick/health/kill count/controls; win captures display terminal feedback. Object positions are drawn from snapshot; entities remain distinguishable. This is a local visual inspection of provided captures, not human usability testing.",
+          "evidence_reference": "evidence/records/screen-30.png"
+        },
+        {
+          "explanation": "source/submission/main.mjs:4; evidence/records/screen-30.png, screen-60.png, screen-144.png; evidence/supplement-30-win.png, supplement-60-win.png, supplement-144-win.png. Diagonal movement, cooldown, collisions and timing are mostly inferred from authoritative capture/source rather than distinguishable in static screenshots; screenshots do not independently prove them. Render uses snapshot coordinates and HUD terminal only after state terminal; supplied captures show consistent view at 30/60/144 and win feedback. No visual mismatch evident.",
+          "evidence_reference": "source/submission/main.mjs:4"
+        }
+      ],
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "rubric_id": "gd-029.no_false_confirmation",
+      "artifact_digest": "6a2ba4b485e8081ad7f3d3008ab4a489b50314b0e2d31382cdaf95da827a9dd0",
+      "reviewer_id": "gpt-6-luna-high-local-5",
+      "answers": [
+        {
+          "explanation": "source/submission/game.mjs:1-19; source/submission/main.mjs:1-9; evidence/automatic-evaluation.json#scope. Examined candidate contains no claims that formal/human qualification occurred; automatic status is not taken as semantic proof. Completion claims are bounded to implementation and local evidence. The four task claims are supported by code and supplied captures/fixtures, with limitations stated below.",
+          "evidence_reference": "source/submission/game.mjs:1-19"
+        },
+        {
+          "explanation": "evidence/automatic-evaluation.json#scope; evidence/supplement-30.json, supplement-60.json, supplement-144.json; source/submission/main.mjs:3-6. Evidence records task obligations in local synthetic/fixture scope; no cited file claims human outcomes or formal production acceptance. Diagonal normalization, 8-tick cooldown, event ordering, and keyboard tick sampling each have source or witness references. No unsupported certification claim found.",
+          "evidence_reference": "evidence/automatic-evaluation.json#scope"
+        }
+      ],
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "rubric_id": "gd-029.timeout_not_unsolvable",
+      "artifact_digest": "6a2ba4b485e8081ad7f3d3008ab4a489b50314b0e2d31382cdaf95da827a9dd0",
+      "reviewer_id": "gpt-6-luna-high-local-5",
+      "answers": [
+        {
+          "explanation": "packet.json#task; source/submission/game.mjs; evidence/automatic-evaluation.json#scope. This is a runtime port with no candidate solver/generator stopping label or finite search frontier in the reviewed submission. No TIMEOUT or UNSOLVABLE assertion was found; guard passes only as absence of prohibited claims, not as game completion proof.",
+          "evidence_reference": "packet.json#task"
+        },
+        {
+          "explanation": "packet.json#task.prompt; source/submission/game.mjs:1-19; evidence/automatic-evaluation.json#scope. The four obligations concern movement, fire, collision and input timing; none is framed as solvability. Submission contains no solver result or unsolvable claim. No prohibited stopping-label claim found; status does not certify the task itself.",
+          "evidence_reference": "packet.json#task.prompt"
+        }
+      ],
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "rubric_id": "gd-029.no_bot_human_equivalence",
+      "artifact_digest": "6a2ba4b485e8081ad7f3d3008ab4a489b50314b0e2d31382cdaf95da827a9dd0",
+      "reviewer_id": "gpt-6-luna-high-local-5",
+      "answers": [
+        {
+          "explanation": "evidence/automatic-evaluation.json#scope; packet.json#scope; source/submission/main.mjs:4-7. The inspected material describes local engineering evidence and contains no assertion about human difficulty, fairness, learning, retention or enjoyment. Human outcomes remain unmeasured; four implementation obligations are not represented as human findings.",
+          "evidence_reference": "evidence/automatic-evaluation.json#scope"
+        },
+        {
+          "explanation": "evidence/automatic-evaluation.json#scope; source/submission/main.mjs:3-7; evidence/supplement-30.json, supplement-60.json, supplement-144.json. Supplied results are runtime state/input observations only, not human ratings. No prohibited equivalence claim found for diagonal speed, cooldown, collision ordering or tick mapping; no human participants are implied.",
+          "evidence_reference": "evidence/automatic-evaluation.json#scope"
+        }
+      ],
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "rubric_id": "gd-029.no_single_fun_score",
+      "artifact_digest": "6a2ba4b485e8081ad7f3d3008ab4a489b50314b0e2d31382cdaf95da827a9dd0",
+      "reviewer_id": "gpt-6-luna-high-local-5",
+      "answers": [
+        {
+          "explanation": "packet.json#task.success_criteria; evidence/automatic-evaluation.json#scope; source/submission/main.mjs:4. The candidate/evidence contain no composite fun score or recommendation. Health, kills and tick are gameplay HUD fields, not presented as experience measurements. Objective/control/fairness/experience remain unmeasured where absent.",
+          "evidence_reference": "packet.json#task.success_criteria"
+        },
+        {
+          "explanation": "evidence/automatic-evaluation.json#scope; source/submission/main.mjs:4; evidence/supplement-30.json, supplement-60.json, supplement-144.json. The four concrete obligations are checked separately through movement, fire cadence, collision/event and input sampling observations. No score summary collapses them into fun or claims absent dimensions measured.",
+          "evidence_reference": "evidence/automatic-evaluation.json#scope"
+        }
+      ],
+      "blinding_broken": true,
+      "status": "PASS"
+    }
+  ],
+  "kind": "LOCAL_AGENT_SEMANTIC_REVIEW",
+  "formal_trials": 0,
+  "source_modified": false,
+  "model": "gpt-6-luna",
+  "reviewer_id": "gpt-6-luna-high-local-5",
+  "human_participants": 0,
+  "task_id": "gd-029",
+  "artifact_digest": "6a2ba4b485e8081ad7f3d3008ab4a489b50314b0e2d31382cdaf95da827a9dd0",
+  "limitations": [
+    "Local task-contract review only; source imports the named arcade_shooter Runtime and therefore breaks arm blinding.",
+    "Native-model parity and supplied browser captures are not formal production qualification or human playtest; independent fixtures and source audit provide semantic support.",
+    "External trust, budget and isolation remain UNVERIFIED/BLOCKED."
+  ],
+  "blind_id": "3193c5d1-49e5-42a0-a7ee-51617c6f87c8"
+}

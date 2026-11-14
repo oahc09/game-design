@@ -1,0 +1,146 @@
+[
+  {
+    "blind_id": "e1a2a9ca-b420-471d-953c-ce2f06cde720",
+    "id": "gd-009",
+    "arm": "baseline",
+    "status": "PASS",
+    "manual_rubrics": 9,
+    "failed": [],
+    "missing": []
+  },
+  {
+    "blind_id": "d2851e5c-ab72-4cc2-938d-62a2800d610d",
+    "id": "gd-009",
+    "arm": "treatment",
+    "status": "PASS",
+    "manual_rubrics": 9,
+    "failed": [],
+    "missing": []
+  },
+  {
+    "blind_id": "cf4ae63a-5ffa-4a25-9c52-d89847c98ce8",
+    "id": "gd-019",
+    "arm": "treatment",
+    "status": "PASS",
+    "manual_rubrics": 9,
+    "failed": [],
+    "missing": []
+  },
+  {
+    "blind_id": "a9fa243b-e906-412b-8471-828cef02167c",
+    "id": "gd-019",
+    "arm": "baseline",
+    "status": "PASS",
+    "manual_rubrics": 9,
+    "failed": [],
+    "missing": []
+  },
+  {
+    "blind_id": "3193c5d1-49e5-42a0-a7ee-51617c6f87c8",
+    "id": "gd-029",
+    "arm": "treatment",
+    "status": "PASS",
+    "manual_rubrics": 9,
+    "failed": [],
+    "missing": []
+  },
+  {
+    "blind_id": "0f0be325-8f6e-472d-b0ca-8a35469ed00f",
+    "id": "gd-029",
+    "arm": "baseline",
+    "status": "PASS",
+    "manual_rubrics": 9,
+    "failed": [],
+    "missing": []
+  },
+  {
+    "blind_id": "4e33da66-b89c-4210-882e-d188acb7b00d",
+    "id": "gd-039",
+    "arm": "treatment",
+    "status": "PASS",
+    "manual_rubrics": 9,
+    "failed": [],
+    "missing": []
+  },
+  {
+    "blind_id": "fed589a5-427c-41a3-82e3-908a926eab93",
+    "id": "gd-039",
+    "arm": "baseline",
+    "status": "PASS",
+    "manual_rubrics": 9,
+    "failed": [],
+    "missing": []
+  },
+  {
+    "blind_id": "793c2deb-2f4c-4bbb-bffd-0ac7c1924286",
+    "id": "gd-065",
+    "arm": "treatment",
+    "status": "PASS",
+    "manual_rubrics": 10,
+    "failed": [],
+    "missing": []
+  },
+  {
+    "blind_id": "7c6caa74-adf4-4432-9af9-439e00e6ed79",
+    "id": "gd-065",
+    "arm": "baseline",
+    "status": "PASS",
+    "manual_rubrics": 10,
+    "failed": [],
+    "missing": []
+  },
+  {
+    "blind_id": "da161fec-1143-48eb-b96b-74c1556b77c1",
+    "id": "gd-071",
+    "arm": "baseline",
+    "status": "PASS",
+    "manual_rubrics": 10,
+    "failed": [],
+    "missing": []
+  },
+  {
+    "blind_id": "e4d50e42-1035-4e13-b367-75c92dbedf9e",
+    "id": "gd-071",
+    "arm": "treatment",
+    "status": "PASS",
+    "manual_rubrics": 10,
+    "failed": [],
+    "missing": []
+  },
+  {
+    "blind_id": "464e5cc1-887e-46e9-91ba-dda83d22ef9b",
+    "id": "gd-107",
+    "arm": "treatment",
+    "status": "PASS",
+    "manual_rubrics": 10,
+    "failed": [],
+    "missing": []
+  },
+  {
+    "blind_id": "54ca19bb-ed8b-4953-af88-4ceb49cb21fd",
+    "id": "gd-107",
+    "arm": "baseline",
+    "status": "PASS",
+    "manual_rubrics": 10,
+    "failed": [],
+    "missing": []
+  },
+  {
+    "blind_id": "e71d2eb9-deee-4c97-9c81-c39d02414fdf",
+    "id": "gd-108",
+    "arm": "treatment",
+    "status": "PASS",
+    "manual_rubrics": 7,
+    "failed": [],
+    "missing": []
+  },
+  {
+    "blind_id": "7e471fe9-d7ca-4c5e-97aa-ba469afa8e1d",
+    "id": "gd-108",
+    "arm": "baseline",
+    "status": "PASS",
+    "manual_rubrics": 7,
+    "failed": [],
+    "missing": []
+  }
+]

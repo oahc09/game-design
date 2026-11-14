@@ -1,0 +1,16 @@
+{
+  "task_id": "gd-019",
+  "attempted": [
+    "Implemented deterministic falling-block state, fixed tick gravity, lock and line clear events, input adapter and CocosAirJS bootstrap.",
+    "v3 correction: restored exactly one public next-piece preview as a copied shape matrix derived without advancing the native sequence.",
+    "Local native preview smoke: count remained one, repeated snapshots were stable, and the preview matched the shape spawned after lock."
+  ],
+  "checks": {
+    "node_syntax": "PASS: node --check submission/game.mjs and submission/main.mjs exit 0; static syntax only.",
+    "browser_runtime": "NOT_RUN",
+    "fps_replay_parity": "NOT_RUN",
+    "visual_review": "NOT_RUN",
+    "local_preview_sequence_smoke": "PASS: local sequence consistency smoke only; not evaluator certification."
+  },
+  "certification": null
+}

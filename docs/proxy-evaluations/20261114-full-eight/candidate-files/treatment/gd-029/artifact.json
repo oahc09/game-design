@@ -1,0 +1,20 @@
+{
+  "task_id": "gd-029",
+  "entrypoint": "submission/index.html",
+  "runtime": "submission/game.mjs",
+  "controls": [
+    "WASD or arrow keys move",
+    "Hold Space fire",
+    "R restart",
+    "P pause"
+  ],
+  "assumptions": [
+    "Uses toolkit arcade_shooter runtime through createGame adapter.",
+    "Runtime fixed tick is 60 Hz; diagonal input is normalized by the toolkit.",
+    "Public player/enemy fixture positions are mapped from [x,y] or x/y fields.",
+    "Shooting uses the runtime default upward aim; collision and event ordering are delegated to its rules.",
+    "Added the same-instance acceptance snapshot/step/frame/log hook around the rendered game and preserved the actual held movement/fire sampler path.",
+    "Public bounds use [originX,originY,width,height]; player, enemy and projectile positions are adapted into local runtime coordinates and projected back to public coordinates. Public seeded projectiles without velocity are stationary until a declared velocity is supplied."
+  ],
+  "engine": "CocosAirJS 1.0.0 revision 100"
+}

@@ -1,0 +1,552 @@
+{
+  "kind": "OBSERVED_CARD_PROFILE_METRICS",
+  "artifact_digest": "d38f16a3e3b685a40beabb4ce168b6cbca48570039e56603f6e980ab903089cc",
+  "definitions": {
+    "denominator": "all12 planned first captures per profile/FPS, including censored",
+    "perspective": "P0 subject versus actual P1 fixed immediate opponent",
+    "delay": "one subject decision opportunity, first no-input recorded separately from rejected native action",
+    "comparison": "different submitted game rules; descriptive only, not Skill causal gain, human effect or formal M7"
+  },
+  "rows": [
+    {
+      "fps": 30,
+      "profile": "immediate",
+      "episode_count": 12,
+      "wins": 10,
+      "losses": 2,
+      "censored_count": 0,
+      "completion_rate": 0.8333333333333334,
+      "matchup_win_rate": 0.8333333333333334,
+      "mean_decision_opportunities": 27.916666666666668,
+      "mean_native_attempts": 27.916666666666668,
+      "mean_mana_spent": 11.5,
+      "opponent_decisions": 160,
+      "policy_digest": "78df973fe783925037b3018ecde68269848e670aedb32029862f53462c04c112",
+      "policy_config_digest": "df0b185d23e33797d619f961e55450aef8ea5699b90766e2edbd2430eca1c712",
+      "records": [
+        {
+          "seed": 11,
+          "input_digest": "5362008a0387c45aa43d99d22eb17cd516ebbe6104192c6bade2dd1f3396c240",
+          "outcome": "WIN",
+          "trace_digest": "c86a91b5faba7e6f07b0c93b1183457a9fa2e44f100501a1f9c0c66302d1c695"
+        },
+        {
+          "seed": 29,
+          "input_digest": "a9f39146f08e945e26be352e264a00cdb82c0acfcc301f7acdfa695625eb491f",
+          "outcome": "WIN",
+          "trace_digest": "4a869c740e9aa1724345998a3b0d1ccebff1ef7306077e784e95ca5845aba856"
+        },
+        {
+          "seed": 47,
+          "input_digest": "a363d8e60fb68284907a395380d1e3d87a921e66bbc6993d14a9b8c5318beeb8",
+          "outcome": "WIN",
+          "trace_digest": "bc4ca3cc0340f3c183fda1d5ad5d40d98ffaada97152d740d0b72406bdd0f779"
+        },
+        {
+          "seed": 71,
+          "input_digest": "9e8361eb6e1766fe684e1577d7ba413cb45870adf29bcd7d273f85eddfc83492",
+          "outcome": "WIN",
+          "trace_digest": "b4b69c6d00cdec535fa8c6654597db643b0230233e644aca889ca96800e6c8d9"
+        },
+        {
+          "seed": 101,
+          "input_digest": "412cfea7aee6b89d6cab64b382b2a5adff4263cce0c780df153cd9fc50f4edca",
+          "outcome": "WIN",
+          "trace_digest": "fe6f8cd423e38f3adb9550d058b6db20f9138e07b992e16c90ea17b5bca7a45a"
+        },
+        {
+          "seed": 131,
+          "input_digest": "01bf1440c3c5f053e4d368714159c5d792ef9d3f849fc150dcf76ce8b97bc8ce",
+          "outcome": "WIN",
+          "trace_digest": "a9e755700f86524fd04f8268ca7bb9f0ac6105b03e36e8861d7a5cdf0621792d"
+        },
+        {
+          "seed": 173,
+          "input_digest": "aafec8e63df163e4a24982aa90aefdc95d490dc55e46a36637f2895bfad83994",
+          "outcome": "WIN",
+          "trace_digest": "aeeab9a780cc1e8bee094fa993e698a8634ba4fea58f4435f68f3f3acb8e95a0"
+        },
+        {
+          "seed": 211,
+          "input_digest": "549c8b895ba0920a3d77bd2cd4e3a5f4addbbdaabace7cd94f46e1b4697f77ee",
+          "outcome": "WIN",
+          "trace_digest": "9c5534c9daac0d55b428d7540e395bcd5cccf40b579c96b3e9a1e8593df2ea89"
+        },
+        {
+          "seed": 257,
+          "input_digest": "bf604f13007c46314a22aa91c4dce208657da7fd6762b4800d15ee402ddd5d41",
+          "outcome": "LOSS",
+          "trace_digest": "765ecf282a28575e8abed4c6940a75c5c407c6d780b5b8a3f834196ae02472ff"
+        },
+        {
+          "seed": 307,
+          "input_digest": "2579f95f8ee96d996335a2718ba8d49e8c9f6cfb567456eadd246a0759cc0b75",
+          "outcome": "WIN",
+          "trace_digest": "ec3ab2db30c55a4732a4da89e744c6c686d7c748b8c6103c3c9151281466ed2a"
+        },
+        {
+          "seed": 359,
+          "input_digest": "7e13a51afefd690279cf45592d1d7dc03518654ec3362bb39aa3ffe766553649",
+          "outcome": "LOSS",
+          "trace_digest": "8296c7b474eaa5f482632321582f0f6da63d3ac01fb0b5940c5dee77327dc8d5"
+        },
+        {
+          "seed": 419,
+          "input_digest": "ee6af6ad25f0c15fb43d4ce3fe1063303865a92f5d24d70e0fe7ab049799d9f9",
+          "outcome": "WIN",
+          "trace_digest": "5d2c1f88f2b43011bad0b9077def767202a3c648dc9d870e07b5b0878b57fba6"
+        }
+      ]
+    },
+    {
+      "fps": 30,
+      "profile": "delayed",
+      "episode_count": 12,
+      "wins": 0,
+      "losses": 12,
+      "censored_count": 0,
+      "completion_rate": 0,
+      "matchup_win_rate": 0,
+      "mean_decision_opportunities": 32.166666666666664,
+      "mean_native_attempts": 31.166666666666668,
+      "mean_mana_spent": 7.083333333333333,
+      "opponent_decisions": 179,
+      "policy_digest": "78df973fe783925037b3018ecde68269848e670aedb32029862f53462c04c112",
+      "policy_config_digest": "f4001d654283c793be6c0e3d321df1c0a6b57656cdec0f805c96163fa30275e0",
+      "records": [
+        {
+          "seed": 11,
+          "input_digest": "ba12ea753dd1e467256f7b82364295b6a09cd8ec0fe31043d29d24166e743e17",
+          "outcome": "LOSS",
+          "trace_digest": "84413e6fa82d72773911415eb7504fb4c919f0ce5a1fe820f0cce850d622a844"
+        },
+        {
+          "seed": 29,
+          "input_digest": "feb014b20c9d336ff86588d74e7a690a882741150fed06cc401e5a8251eefac4",
+          "outcome": "LOSS",
+          "trace_digest": "949ffe09066e83d41400bb331acdd67295165e9dda9e89aa6d10db3188061b83"
+        },
+        {
+          "seed": 47,
+          "input_digest": "c66531f08f3816ba069f0031b3fb301611cc0f499ef22d6c47796efe0f0042b9",
+          "outcome": "LOSS",
+          "trace_digest": "9cc9a07ecfd08a0b4c33b93e1b0a4a64ee68b0351b4b07b0a10adf071387089d"
+        },
+        {
+          "seed": 71,
+          "input_digest": "b545bce223d1a353da3b165205f518627371e4c7f3606118ffb6a7f906a5d6a8",
+          "outcome": "LOSS",
+          "trace_digest": "c4e6020123b59efbf3f2a48476b278963ae89a0ad469fb0ba4044bc66024641b"
+        },
+        {
+          "seed": 101,
+          "input_digest": "bfa0e5ba2cc3a6af96668175fc48c56c0c0e1fde7543d6c41e45d7601141aeaf",
+          "outcome": "LOSS",
+          "trace_digest": "fe1190cd461a50804020a28f05f1b2388c73ea6391cf80f415472e21ddaa4d3f"
+        },
+        {
+          "seed": 131,
+          "input_digest": "8e7ef02ec84bb7d62a173e79781d9a133602c26e9b0625b722dc28e2b79b6dd7",
+          "outcome": "LOSS",
+          "trace_digest": "3bc58ece263b60d7b8b1666c158fb7a55faf37a75d1790a1cc23b28367ace5bf"
+        },
+        {
+          "seed": 173,
+          "input_digest": "6cb76cdff6ca58047b1676cc3408cda1d1332b1e7081e62dd0bdb00e28479bc1",
+          "outcome": "LOSS",
+          "trace_digest": "53b10deadddd2f8f57b658ccf90f2c4610dadbe582e3a05a44beff2a4a2bfee9"
+        },
+        {
+          "seed": 211,
+          "input_digest": "d428e0f97ac5d3a748ac7240c8af0b9e8a4e63a27054d69cb69be961d063a8cd",
+          "outcome": "LOSS",
+          "trace_digest": "5b2a1339d6c5ab1969214029d2f88bbbe9e6a4066b21e930fd6117382115e021"
+        },
+        {
+          "seed": 257,
+          "input_digest": "e2b439929284676b4ea6056f3cb584b5b9b022252ccada0a4cf22d20d5f24eee",
+          "outcome": "LOSS",
+          "trace_digest": "ca492e968aac6f09a92b65f6059e7a6f7ed21cc7109aae81111aba8856fa73ce"
+        },
+        {
+          "seed": 307,
+          "input_digest": "f9fd32f1e4016735e77122a92b028e732117ac612d25e73ba421320075cdec64",
+          "outcome": "LOSS",
+          "trace_digest": "0c57e8339d015d13a4374f2cdf5e6e704acc57973120c80b2cb1d61a8bc893b4"
+        },
+        {
+          "seed": 359,
+          "input_digest": "b288d60373068afd8023cf538ce49b894a5c08254d81381d0ed051a44f22b33c",
+          "outcome": "LOSS",
+          "trace_digest": "83385ec82c02cb2957b92fe9feb136bb2352228202844f0482c1883d7a29081c"
+        },
+        {
+          "seed": 419,
+          "input_digest": "a38fd1e0cbdf73c2c0985a60cf8c97c7551369bc43b9c7fbf37cb794be443e1d",
+          "outcome": "LOSS",
+          "trace_digest": "da2efc44b18ce212a46c896ee60499d831ef55a6a46423fd3b34baf1e86395bf"
+        }
+      ]
+    },
+    {
+      "fps": 60,
+      "profile": "immediate",
+      "episode_count": 12,
+      "wins": 10,
+      "losses": 2,
+      "censored_count": 0,
+      "completion_rate": 0.8333333333333334,
+      "matchup_win_rate": 0.8333333333333334,
+      "mean_decision_opportunities": 27.916666666666668,
+      "mean_native_attempts": 27.916666666666668,
+      "mean_mana_spent": 11.5,
+      "opponent_decisions": 160,
+      "policy_digest": "78df973fe783925037b3018ecde68269848e670aedb32029862f53462c04c112",
+      "policy_config_digest": "df0b185d23e33797d619f961e55450aef8ea5699b90766e2edbd2430eca1c712",
+      "records": [
+        {
+          "seed": 11,
+          "input_digest": "5362008a0387c45aa43d99d22eb17cd516ebbe6104192c6bade2dd1f3396c240",
+          "outcome": "WIN",
+          "trace_digest": "c86a91b5faba7e6f07b0c93b1183457a9fa2e44f100501a1f9c0c66302d1c695"
+        },
+        {
+          "seed": 29,
+          "input_digest": "a9f39146f08e945e26be352e264a00cdb82c0acfcc301f7acdfa695625eb491f",
+          "outcome": "WIN",
+          "trace_digest": "4a869c740e9aa1724345998a3b0d1ccebff1ef7306077e784e95ca5845aba856"
+        },
+        {
+          "seed": 47,
+          "input_digest": "a363d8e60fb68284907a395380d1e3d87a921e66bbc6993d14a9b8c5318beeb8",
+          "outcome": "WIN",
+          "trace_digest": "bc4ca3cc0340f3c183fda1d5ad5d40d98ffaada97152d740d0b72406bdd0f779"
+        },
+        {
+          "seed": 71,
+          "input_digest": "9e8361eb6e1766fe684e1577d7ba413cb45870adf29bcd7d273f85eddfc83492",
+          "outcome": "WIN",
+          "trace_digest": "b4b69c6d00cdec535fa8c6654597db643b0230233e644aca889ca96800e6c8d9"
+        },
+        {
+          "seed": 101,
+          "input_digest": "412cfea7aee6b89d6cab64b382b2a5adff4263cce0c780df153cd9fc50f4edca",
+          "outcome": "WIN",
+          "trace_digest": "fe6f8cd423e38f3adb9550d058b6db20f9138e07b992e16c90ea17b5bca7a45a"
+        },
+        {
+          "seed": 131,
+          "input_digest": "01bf1440c3c5f053e4d368714159c5d792ef9d3f849fc150dcf76ce8b97bc8ce",
+          "outcome": "WIN",
+          "trace_digest": "a9e755700f86524fd04f8268ca7bb9f0ac6105b03e36e8861d7a5cdf0621792d"
+        },
+        {
+          "seed": 173,
+          "input_digest": "aafec8e63df163e4a24982aa90aefdc95d490dc55e46a36637f2895bfad83994",
+          "outcome": "WIN",
+          "trace_digest": "aeeab9a780cc1e8bee094fa993e698a8634ba4fea58f4435f68f3f3acb8e95a0"
+        },
+        {
+          "seed": 211,
+          "input_digest": "549c8b895ba0920a3d77bd2cd4e3a5f4addbbdaabace7cd94f46e1b4697f77ee",
+          "outcome": "WIN",
+          "trace_digest": "9c5534c9daac0d55b428d7540e395bcd5cccf40b579c96b3e9a1e8593df2ea89"
+        },
+        {
+          "seed": 257,
+          "input_digest": "bf604f13007c46314a22aa91c4dce208657da7fd6762b4800d15ee402ddd5d41",
+          "outcome": "LOSS",
+          "trace_digest": "765ecf282a28575e8abed4c6940a75c5c407c6d780b5b8a3f834196ae02472ff"
+        },
+        {
+          "seed": 307,
+          "input_digest": "2579f95f8ee96d996335a2718ba8d49e8c9f6cfb567456eadd246a0759cc0b75",
+          "outcome": "WIN",
+          "trace_digest": "ec3ab2db30c55a4732a4da89e744c6c686d7c748b8c6103c3c9151281466ed2a"
+        },
+        {
+          "seed": 359,
+          "input_digest": "7e13a51afefd690279cf45592d1d7dc03518654ec3362bb39aa3ffe766553649",
+          "outcome": "LOSS",
+          "trace_digest": "8296c7b474eaa5f482632321582f0f6da63d3ac01fb0b5940c5dee77327dc8d5"
+        },
+        {
+          "seed": 419,
+          "input_digest": "ee6af6ad25f0c15fb43d4ce3fe1063303865a92f5d24d70e0fe7ab049799d9f9",
+          "outcome": "WIN",
+          "trace_digest": "5d2c1f88f2b43011bad0b9077def767202a3c648dc9d870e07b5b0878b57fba6"
+        }
+      ]
+    },
+    {
+      "fps": 60,
+      "profile": "delayed",
+      "episode_count": 12,
+      "wins": 0,
+      "losses": 12,
+      "censored_count": 0,
+      "completion_rate": 0,
+      "matchup_win_rate": 0,
+      "mean_decision_opportunities": 32.166666666666664,
+      "mean_native_attempts": 31.166666666666668,
+      "mean_mana_spent": 7.083333333333333,
+      "opponent_decisions": 179,
+      "policy_digest": "78df973fe783925037b3018ecde68269848e670aedb32029862f53462c04c112",
+      "policy_config_digest": "f4001d654283c793be6c0e3d321df1c0a6b57656cdec0f805c96163fa30275e0",
+      "records": [
+        {
+          "seed": 11,
+          "input_digest": "ba12ea753dd1e467256f7b82364295b6a09cd8ec0fe31043d29d24166e743e17",
+          "outcome": "LOSS",
+          "trace_digest": "84413e6fa82d72773911415eb7504fb4c919f0ce5a1fe820f0cce850d622a844"
+        },
+        {
+          "seed": 29,
+          "input_digest": "feb014b20c9d336ff86588d74e7a690a882741150fed06cc401e5a8251eefac4",
+          "outcome": "LOSS",
+          "trace_digest": "949ffe09066e83d41400bb331acdd67295165e9dda9e89aa6d10db3188061b83"
+        },
+        {
+          "seed": 47,
+          "input_digest": "c66531f08f3816ba069f0031b3fb301611cc0f499ef22d6c47796efe0f0042b9",
+          "outcome": "LOSS",
+          "trace_digest": "9cc9a07ecfd08a0b4c33b93e1b0a4a64ee68b0351b4b07b0a10adf071387089d"
+        },
+        {
+          "seed": 71,
+          "input_digest": "b545bce223d1a353da3b165205f518627371e4c7f3606118ffb6a7f906a5d6a8",
+          "outcome": "LOSS",
+          "trace_digest": "c4e6020123b59efbf3f2a48476b278963ae89a0ad469fb0ba4044bc66024641b"
+        },
+        {
+          "seed": 101,
+          "input_digest": "bfa0e5ba2cc3a6af96668175fc48c56c0c0e1fde7543d6c41e45d7601141aeaf",
+          "outcome": "LOSS",
+          "trace_digest": "fe1190cd461a50804020a28f05f1b2388c73ea6391cf80f415472e21ddaa4d3f"
+        },
+        {
+          "seed": 131,
+          "input_digest": "8e7ef02ec84bb7d62a173e79781d9a133602c26e9b0625b722dc28e2b79b6dd7",
+          "outcome": "LOSS",
+          "trace_digest": "3bc58ece263b60d7b8b1666c158fb7a55faf37a75d1790a1cc23b28367ace5bf"
+        },
+        {
+          "seed": 173,
+          "input_digest": "6cb76cdff6ca58047b1676cc3408cda1d1332b1e7081e62dd0bdb00e28479bc1",
+          "outcome": "LOSS",
+          "trace_digest": "53b10deadddd2f8f57b658ccf90f2c4610dadbe582e3a05a44beff2a4a2bfee9"
+        },
+        {
+          "seed": 211,
+          "input_digest": "d428e0f97ac5d3a748ac7240c8af0b9e8a4e63a27054d69cb69be961d063a8cd",
+          "outcome": "LOSS",
+          "trace_digest": "5b2a1339d6c5ab1969214029d2f88bbbe9e6a4066b21e930fd6117382115e021"
+        },
+        {
+          "seed": 257,
+          "input_digest": "e2b439929284676b4ea6056f3cb584b5b9b022252ccada0a4cf22d20d5f24eee",
+          "outcome": "LOSS",
+          "trace_digest": "ca492e968aac6f09a92b65f6059e7a6f7ed21cc7109aae81111aba8856fa73ce"
+        },
+        {
+          "seed": 307,
+          "input_digest": "f9fd32f1e4016735e77122a92b028e732117ac612d25e73ba421320075cdec64",
+          "outcome": "LOSS",
+          "trace_digest": "0c57e8339d015d13a4374f2cdf5e6e704acc57973120c80b2cb1d61a8bc893b4"
+        },
+        {
+          "seed": 359,
+          "input_digest": "b288d60373068afd8023cf538ce49b894a5c08254d81381d0ed051a44f22b33c",
+          "outcome": "LOSS",
+          "trace_digest": "83385ec82c02cb2957b92fe9feb136bb2352228202844f0482c1883d7a29081c"
+        },
+        {
+          "seed": 419,
+          "input_digest": "a38fd1e0cbdf73c2c0985a60cf8c97c7551369bc43b9c7fbf37cb794be443e1d",
+          "outcome": "LOSS",
+          "trace_digest": "da2efc44b18ce212a46c896ee60499d831ef55a6a46423fd3b34baf1e86395bf"
+        }
+      ]
+    },
+    {
+      "fps": 144,
+      "profile": "immediate",
+      "episode_count": 12,
+      "wins": 10,
+      "losses": 2,
+      "censored_count": 0,
+      "completion_rate": 0.8333333333333334,
+      "matchup_win_rate": 0.8333333333333334,
+      "mean_decision_opportunities": 27.916666666666668,
+      "mean_native_attempts": 27.916666666666668,
+      "mean_mana_spent": 11.5,
+      "opponent_decisions": 160,
+      "policy_digest": "78df973fe783925037b3018ecde68269848e670aedb32029862f53462c04c112",
+      "policy_config_digest": "df0b185d23e33797d619f961e55450aef8ea5699b90766e2edbd2430eca1c712",
+      "records": [
+        {
+          "seed": 11,
+          "input_digest": "5362008a0387c45aa43d99d22eb17cd516ebbe6104192c6bade2dd1f3396c240",
+          "outcome": "WIN",
+          "trace_digest": "c86a91b5faba7e6f07b0c93b1183457a9fa2e44f100501a1f9c0c66302d1c695"
+        },
+        {
+          "seed": 29,
+          "input_digest": "a9f39146f08e945e26be352e264a00cdb82c0acfcc301f7acdfa695625eb491f",
+          "outcome": "WIN",
+          "trace_digest": "4a869c740e9aa1724345998a3b0d1ccebff1ef7306077e784e95ca5845aba856"
+        },
+        {
+          "seed": 47,
+          "input_digest": "a363d8e60fb68284907a395380d1e3d87a921e66bbc6993d14a9b8c5318beeb8",
+          "outcome": "WIN",
+          "trace_digest": "bc4ca3cc0340f3c183fda1d5ad5d40d98ffaada97152d740d0b72406bdd0f779"
+        },
+        {
+          "seed": 71,
+          "input_digest": "9e8361eb6e1766fe684e1577d7ba413cb45870adf29bcd7d273f85eddfc83492",
+          "outcome": "WIN",
+          "trace_digest": "b4b69c6d00cdec535fa8c6654597db643b0230233e644aca889ca96800e6c8d9"
+        },
+        {
+          "seed": 101,
+          "input_digest": "412cfea7aee6b89d6cab64b382b2a5adff4263cce0c780df153cd9fc50f4edca",
+          "outcome": "WIN",
+          "trace_digest": "fe6f8cd423e38f3adb9550d058b6db20f9138e07b992e16c90ea17b5bca7a45a"
+        },
+        {
+          "seed": 131,
+          "input_digest": "01bf1440c3c5f053e4d368714159c5d792ef9d3f849fc150dcf76ce8b97bc8ce",
+          "outcome": "WIN",
+          "trace_digest": "a9e755700f86524fd04f8268ca7bb9f0ac6105b03e36e8861d7a5cdf0621792d"
+        },
+        {
+          "seed": 173,
+          "input_digest": "aafec8e63df163e4a24982aa90aefdc95d490dc55e46a36637f2895bfad83994",
+          "outcome": "WIN",
+          "trace_digest": "aeeab9a780cc1e8bee094fa993e698a8634ba4fea58f4435f68f3f3acb8e95a0"
+        },
+        {
+          "seed": 211,
+          "input_digest": "549c8b895ba0920a3d77bd2cd4e3a5f4addbbdaabace7cd94f46e1b4697f77ee",
+          "outcome": "WIN",
+          "trace_digest": "9c5534c9daac0d55b428d7540e395bcd5cccf40b579c96b3e9a1e8593df2ea89"
+        },
+        {
+          "seed": 257,
+          "input_digest": "bf604f13007c46314a22aa91c4dce208657da7fd6762b4800d15ee402ddd5d41",
+          "outcome": "LOSS",
+          "trace_digest": "765ecf282a28575e8abed4c6940a75c5c407c6d780b5b8a3f834196ae02472ff"
+        },
+        {
+          "seed": 307,
+          "input_digest": "2579f95f8ee96d996335a2718ba8d49e8c9f6cfb567456eadd246a0759cc0b75",
+          "outcome": "WIN",
+          "trace_digest": "ec3ab2db30c55a4732a4da89e744c6c686d7c748b8c6103c3c9151281466ed2a"
+        },
+        {
+          "seed": 359,
+          "input_digest": "7e13a51afefd690279cf45592d1d7dc03518654ec3362bb39aa3ffe766553649",
+          "outcome": "LOSS",
+          "trace_digest": "8296c7b474eaa5f482632321582f0f6da63d3ac01fb0b5940c5dee77327dc8d5"
+        },
+        {
+          "seed": 419,
+          "input_digest": "ee6af6ad25f0c15fb43d4ce3fe1063303865a92f5d24d70e0fe7ab049799d9f9",
+          "outcome": "WIN",
+          "trace_digest": "5d2c1f88f2b43011bad0b9077def767202a3c648dc9d870e07b5b0878b57fba6"
+        }
+      ]
+    },
+    {
+      "fps": 144,
+      "profile": "delayed",
+      "episode_count": 12,
+      "wins": 0,
+      "losses": 12,
+      "censored_count": 0,
+      "completion_rate": 0,
+      "matchup_win_rate": 0,
+      "mean_decision_opportunities": 32.166666666666664,
+      "mean_native_attempts": 31.166666666666668,
+      "mean_mana_spent": 7.083333333333333,
+      "opponent_decisions": 179,
+      "policy_digest": "78df973fe783925037b3018ecde68269848e670aedb32029862f53462c04c112",
+      "policy_config_digest": "f4001d654283c793be6c0e3d321df1c0a6b57656cdec0f805c96163fa30275e0",
+      "records": [
+        {
+          "seed": 11,
+          "input_digest": "ba12ea753dd1e467256f7b82364295b6a09cd8ec0fe31043d29d24166e743e17",
+          "outcome": "LOSS",
+          "trace_digest": "84413e6fa82d72773911415eb7504fb4c919f0ce5a1fe820f0cce850d622a844"
+        },
+        {
+          "seed": 29,
+          "input_digest": "feb014b20c9d336ff86588d74e7a690a882741150fed06cc401e5a8251eefac4",
+          "outcome": "LOSS",
+          "trace_digest": "949ffe09066e83d41400bb331acdd67295165e9dda9e89aa6d10db3188061b83"
+        },
+        {
+          "seed": 47,
+          "input_digest": "c66531f08f3816ba069f0031b3fb301611cc0f499ef22d6c47796efe0f0042b9",
+          "outcome": "LOSS",
+          "trace_digest": "9cc9a07ecfd08a0b4c33b93e1b0a4a64ee68b0351b4b07b0a10adf071387089d"
+        },
+        {
+          "seed": 71,
+          "input_digest": "b545bce223d1a353da3b165205f518627371e4c7f3606118ffb6a7f906a5d6a8",
+          "outcome": "LOSS",
+          "trace_digest": "c4e6020123b59efbf3f2a48476b278963ae89a0ad469fb0ba4044bc66024641b"
+        },
+        {
+          "seed": 101,
+          "input_digest": "bfa0e5ba2cc3a6af96668175fc48c56c0c0e1fde7543d6c41e45d7601141aeaf",
+          "outcome": "LOSS",
+          "trace_digest": "fe1190cd461a50804020a28f05f1b2388c73ea6391cf80f415472e21ddaa4d3f"
+        },
+        {
+          "seed": 131,
+          "input_digest": "8e7ef02ec84bb7d62a173e79781d9a133602c26e9b0625b722dc28e2b79b6dd7",
+          "outcome": "LOSS",
+          "trace_digest": "3bc58ece263b60d7b8b1666c158fb7a55faf37a75d1790a1cc23b28367ace5bf"
+        },
+        {
+          "seed": 173,
+          "input_digest": "6cb76cdff6ca58047b1676cc3408cda1d1332b1e7081e62dd0bdb00e28479bc1",
+          "outcome": "LOSS",
+          "trace_digest": "53b10deadddd2f8f57b658ccf90f2c4610dadbe582e3a05a44beff2a4a2bfee9"
+        },
+        {
+          "seed": 211,
+          "input_digest": "d428e0f97ac5d3a748ac7240c8af0b9e8a4e63a27054d69cb69be961d063a8cd",
+          "outcome": "LOSS",
+          "trace_digest": "5b2a1339d6c5ab1969214029d2f88bbbe9e6a4066b21e930fd6117382115e021"
+        },
+        {
+          "seed": 257,
+          "input_digest": "e2b439929284676b4ea6056f3cb584b5b9b022252ccada0a4cf22d20d5f24eee",
+          "outcome": "LOSS",
+          "trace_digest": "ca492e968aac6f09a92b65f6059e7a6f7ed21cc7109aae81111aba8856fa73ce"
+        },
+        {
+          "seed": 307,
+          "input_digest": "f9fd32f1e4016735e77122a92b028e732117ac612d25e73ba421320075cdec64",
+          "outcome": "LOSS",
+          "trace_digest": "0c57e8339d015d13a4374f2cdf5e6e704acc57973120c80b2cb1d61a8bc893b4"
+        },
+        {
+          "seed": 359,
+          "input_digest": "b288d60373068afd8023cf538ce49b894a5c08254d81381d0ed051a44f22b33c",
+          "outcome": "LOSS",
+          "trace_digest": "83385ec82c02cb2957b92fe9feb136bb2352228202844f0482c1883d7a29081c"
+        },
+        {
+          "seed": 419,
+          "input_digest": "a38fd1e0cbdf73c2c0985a60cf8c97c7551369bc43b9c7fbf37cb794be443e1d",
+          "outcome": "LOSS",
+          "trace_digest": "da2efc44b18ce212a46c896ee60499d831ef55a6a46423fd3b34baf1e86395bf"
+        }
+      ]
+    }
+  ]
+}

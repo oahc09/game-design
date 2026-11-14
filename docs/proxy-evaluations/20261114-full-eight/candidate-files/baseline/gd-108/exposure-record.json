@@ -1,0 +1,47 @@
+{
+  "workspace": "E:\\AIProMax\\Y2026M10\\game-design\\output\\agent-proxy-20261107-01\\generation\\baseline\\gd-108",
+  "experiment": "full_skill",
+  "inventory": {
+    "valid": true,
+    "issues": [],
+    "files": [
+      "benchmark-dataset/engine-starter/ENGINE.md",
+      "benchmark-dataset/engine-starter/OUTPUT-CONTRACT.md",
+      "benchmark-dataset/engine-starter/index.html",
+      "benchmark-dataset/engine-starter/main.mjs",
+      "benchmark-dataset/engine-starter/serve.mjs",
+      "task.json",
+      "vendor/cocosair/LICENSE",
+      "vendor/cocosair/THIRD_PARTY_LICENSES.md",
+      "vendor/cocosair/cocosair.module.js",
+      "vendor/cocosair/provenance.json"
+    ],
+    "bytes": 6562035,
+    "scope": "Static prelaunch inspection; parent must own a quiescent staging directory until namespace creation."
+  },
+  "expected_files": [
+    "vendor/cocosair/LICENSE",
+    "vendor/cocosair/THIRD_PARTY_LICENSES.md",
+    "vendor/cocosair/cocosair.module.js",
+    "vendor/cocosair/provenance.json",
+    "benchmark-dataset/engine-starter/ENGINE.md",
+    "benchmark-dataset/engine-starter/OUTPUT-CONTRACT.md",
+    "benchmark-dataset/engine-starter/index.html",
+    "benchmark-dataset/engine-starter/main.mjs",
+    "benchmark-dataset/engine-starter/serve.mjs",
+    "task.json"
+  ],
+  "files": [
+    "vendor/cocosair/LICENSE",
+    "vendor/cocosair/THIRD_PARTY_LICENSES.md",
+    "vendor/cocosair/cocosair.module.js",
+    "vendor/cocosair/provenance.json",
+    "benchmark-dataset/engine-starter/ENGINE.md",
+    "benchmark-dataset/engine-starter/OUTPUT-CONTRACT.md",
+    "benchmark-dataset/engine-starter/index.html",
+    "benchmark-dataset/engine-starter/main.mjs",
+    "benchmark-dataset/engine-starter/serve.mjs"
+  ],
+  "shared_engine_digest": "18473d4c23652e4274f6afa2987622e29d741b4ffe0595b1f41ded5b51665746",
+  "manifest_digest": "5f4cb65eaaf7a4d9a9d5e28815bf10f0b5291d08526536890830de70b6a6bf02"
+}

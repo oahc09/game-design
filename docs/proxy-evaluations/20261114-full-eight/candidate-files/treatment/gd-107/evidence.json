@@ -1,0 +1,24 @@
+{
+  "task_id": "gd-107",
+  "status": "EXPERIMENTAL_IMPLEMENTED_UNVERIFIED",
+  "attempted_work": [
+    "Read task, engine contracts, Game Design Skill and unknown-archetype protocol; confirmed Water Sort is not registered.",
+    "Implemented CocosAirJS UI and shared keyboard/pointer action mapping.",
+    "Created an input-parity replay plan as an unexecuted fixture; did not skip checks or certify outcomes.",
+    "Applied the authorized minimal public-contract repair in submission modules and recorded unverified status; automatic browser/evaluator PASS is not claimed.",
+    "R key restart is a canonical native transition recorded with before/after snapshots; only supervisor reset clears the case log.",
+    "Final audit routed every live UI and fixed-step game.step call through stepLive; keyboard input listeners run in window capture phase.",
+    "Reset the initial tube cursor during supervisor reset and UI restart for repeatable keyboard replay."
+  ],
+  "checks": {
+    "node_syntax": "PASS (node --check submission/main.mjs after cursor reset)",
+    "browser_startup": "NOT_RUN",
+    "input_parity_replay": "NOT_RUN",
+    "pour_trace_parity": "NOT_RUN",
+    "schema_extension_gate": "NOT_RUN",
+    "visual_review": "NOT_RUN",
+    "keyboard_replay_after_reset": "NOT_RUN under browser supervisor after fix"
+  },
+  "source_selection_context": "This candidate was authored after prior task candidates in the same generation context; sequence context may affect selection.",
+  "model_authored_pass_claims": false
+}

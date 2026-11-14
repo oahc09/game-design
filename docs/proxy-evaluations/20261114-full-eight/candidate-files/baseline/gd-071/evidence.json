@@ -1,0 +1,22 @@
+{
+  "task_id": "gd-071",
+  "attempted": [
+    "Attempt 1: implemented fixed-step platform movement/collision, checkpoint restore, event and state adapter, visible capsule telemetry, and CocosAirJS bootstrap.",
+    "Public browser smoke exposed ReferenceError: events is not defined in step return.",
+    "Attempt 2: corrected return payload to use the existing local event array ev.",
+    "node --check submission/game.mjs returned exit code 0 after the correction.",
+    "v2 repair: resolve initial capsule/platform overlap from existing geometry, preserve horizontal side collision resolution, and emit LAND only on airborne-to-grounded transition.",
+    "Local native smoke: public default spawn resolved to floor; jump emitted JUMP; landing emitted one LAND; standing emitted none; checkpoint restore returned to the captured location and grounded state."
+  ],
+  "checks": {
+    "node_syntax": "PASS: node --check submission/game.mjs and submission/main.mjs exit 0; static syntax only.",
+    "browser_runtime": "Initial public smoke FAILED with ReferenceError: events is not defined; after repair, browser smoke NOT_RUN.",
+    "fps_replay_parity": "NOT_RUN",
+    "capsule_alignment": "NOT_RUN",
+    "local_native_smoke": "PASS: local, bounded smoke from public default spawn verified jump, airborne-to-grounded LAND once, no repeated LAND while standing, explicit checkpoint capture, and checkpoint recovery.",
+    "v2_browser_runtime": "NOT_RUN",
+    "v2_fps_replay_parity": "NOT_RUN",
+    "v2_capsule_alignment": "NOT_RUN"
+  },
+  "certification": null
+}

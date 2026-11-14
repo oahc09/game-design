@@ -1,0 +1,19 @@
+{
+  "task_id": "gd-107",
+  "entrypoint": "submission/index.html",
+  "runtime": "submission/game.mjs",
+  "controls": [
+    "Click tubes or press keys 1-9 to select source and destination",
+    "R restart"
+  ],
+  "semantic_event_mapping": {
+    "POUR": "native POUR records a single accepted maximal source-to-destination transfer"
+  },
+  "assumptions": [
+    "Keyboard and pointer selection resolve through the same native numeric selection actions.",
+    "Maximal contiguous same-color run pours into empty or same-color destination space.",
+    "Visual liquid is read-only; no model-authored certification claim is made.",
+    "Source and usage budgets are unverified."
+  ],
+  "invalid_index_behavior": "Numeric selection and explicit source/destination indices are zero-based integers; invalid values reject without mutation or events."
+}

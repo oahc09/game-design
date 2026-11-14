@@ -1,0 +1,10 @@
+# Repair findings: gd-065
+
+- Native maximal contiguous pours and color/capacity conservation were already present. The public `{type:'pour',from,to}` action was not accepted, and reset/state setup was not instrumented in the UI. The old tube click flow could leave a stale selected tube after pouring.
+- Added the public action alias, kept rejected pours mutation-free, clear selection on successful transfer, and routed UI source/destination selection and direct actions through one live transition recorder. Rendering reflects authoritative tube arrays immediately; cancellation cannot replay or duplicate liquid because there is no separate liquid mutation in a visual animation.
+- Assumptions: pour transfers the maximal contiguous top run that fits; completed tubes are empty or full and single-color; a win occurs when every tube meets that condition. Visual liquid order remains bottom-to-top. Source/usage budgets are unverified.
+- Verification: `node --check` passed for both submission modules. Browser interaction, pointer geometry, conservation under supervisor fixtures, and visual review remain pending; no success claim made.
+- Follow-up: number-key tube selection and pointer selection both call the same native numeric selection action and are recorded as transitions.
+- Follow-up: visible instructions and artifact controls now advertise numeric tube selection. A successful native pour starts a visual-only cue; Escape cancels that cue without changing the committed tube state. `visualState()` reports actual active/progress/cancel-count values. Both RAF and `frame(ms)` advance the same cue timer.
+- Follow-up guard: after terminal, all ordinary actions including otherwise legal pours reject without state/event changes; restart remains accepted and is handled first.
+- Follow-up: numeric tube selection and explicit `from`/`to` require integer indices in `[0,tubes.length)`; invalid indices reject with empty events and unchanged state. Existing terminal guard, restart, and maximal-pour rules are unchanged.

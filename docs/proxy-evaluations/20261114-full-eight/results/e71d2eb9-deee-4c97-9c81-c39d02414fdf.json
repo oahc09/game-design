@@ -1,0 +1,647 @@
+{
+  "blind_id": "e71d2eb9-deee-4c97-9c81-c39d02414fdf",
+  "arm": "treatment",
+  "task_id": "gd-108",
+  "artifact_digest": "d38f16a3e3b685a40beabb4ce168b6cbca48570039e56603f6e980ab903089cc",
+  "status": "PASS",
+  "failed": [],
+  "missing": [],
+  "manual_rubrics": 7,
+  "report_digest": "e5f2dd27d535a9c2b145005118139ad851802aac9ca9d0d7ef249ec71d08a81f",
+  "review_report": "review-packages/e71d2eb9-deee-4c97-9c81-c39d02414fdf/report-updated.json",
+  "results": [
+    {
+      "condition": 30,
+      "task_id": "gd-108",
+      "artifact_digest": "d38f16a3e3b685a40beabb4ce168b6cbca48570039e56603f6e980ab903089cc",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "knowledge_boundary",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.knowledge_boundary.observation",
+              "family": "observation",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "ec846f2342a4dd6cacc49c00cf050bd9fdc8029bab801863b0597ff2055730e7"
+            },
+            {
+              "id": "gd-108.knowledge_boundary",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "50ddf958df59b8cb7d524c5e131d34fd04e09a67aa8ca218faaced827d6a900b",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "paired_seeds",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.paired_seeds.paired_runs",
+              "family": "paired_runs",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "treatment@30": {
+                  "completion_rate": 0.4166666666666667,
+                  "mean_steps": 30.041666666666668,
+                  "episode_count": 24,
+                  "censored_count": 0
+                },
+                "treatment@60": {
+                  "completion_rate": 0.4166666666666667,
+                  "mean_steps": 30.041666666666668,
+                  "episode_count": 24,
+                  "censored_count": 0
+                },
+                "treatment@144": {
+                  "completion_rate": 0.4166666666666667,
+                  "mean_steps": 30.041666666666668,
+                  "episode_count": 24,
+                  "censored_count": 0
+                },
+                "baseline@30": {
+                  "completion_rate": 0.5,
+                  "mean_steps": 12.25,
+                  "episode_count": 24,
+                  "censored_count": 0
+                },
+                "baseline@60": {
+                  "completion_rate": 0.5,
+                  "mean_steps": 12.25,
+                  "episode_count": 24,
+                  "censored_count": 0
+                },
+                "baseline@144": {
+                  "completion_rate": 0.5,
+                  "mean_steps": 12.25,
+                  "episode_count": 24,
+                  "censored_count": 0
+                }
+              },
+              "evidence_digest": "1dee9dea6ac858658471071edd5da0169de4e588e678d585bcfe25484ba9b02e"
+            }
+          ]
+        },
+        {
+          "id": "metric_valid",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.metric_valid.episodes",
+              "family": "episodes",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "single": {
+                  "completion_rate": 0.4166666666666667,
+                  "mean_steps": 30.041666666666668,
+                  "episode_count": 24,
+                  "censored_count": 0
+                }
+              },
+              "evidence_digest": "e3b2f75234b8525e4fc5410aa8490c6d42b980d7d147cc165f8d43d71476b1e5"
+            },
+            {
+              "id": "gd-108.metric_valid",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "86a56240895b3fbc4c845b89056a44d1aed3c0b103c11aecc922c7103bc7f144",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "replay",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.replay.replay",
+              "family": "replay",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "de8dbb54f73459aa296a73a19522eda823cd87c8436b9bcbe1f2b32eefd3b72c"
+            }
+          ]
+        },
+        {
+          "id": "extension_boundary",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.extension_boundary.extension",
+              "family": "extension",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6189555134b68a722a07088ac712e00ee98af91b86a63bfad8b795191de946fb"
+            },
+            {
+              "id": "gd-108.extension_boundary",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "a77f87a223168aae1b0ac6d5427c1e0948989d7871e03a341952b72093070529",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "no_false_confirmation",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.no_false_confirmation",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "f50f63a4a62bdeaa6d60458d294c0d3dfb20efc95d7ab20231f7b851a6dbff9a",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "timeout_not_unsolvable",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.timeout_not_unsolvable",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "b2218b8268550ea7b8e1b6728830c3826752fd8ce578acb371e997f3c541e8c6",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "no_bot_human_equivalence",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.no_bot_human_equivalence",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "b0488a8ab88c2b3703c6b6d44ac26b6cf6414f48aecfc40175c88558a822cc08",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "no_single_fun_score",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.no_single_fun_score",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "5fe0a63ff58d73e55f2b3620d5ae194fa0aad37ca39ee42d506f5da31f7001af",
+              "blinding_broken": true
+            }
+          ]
+        }
+      ],
+      "scope": "v0.2 protocol preparation; synthetic smokes are not model trials, runtime certification, or participant observations"
+    },
+    {
+      "condition": 60,
+      "task_id": "gd-108",
+      "artifact_digest": "d38f16a3e3b685a40beabb4ce168b6cbca48570039e56603f6e980ab903089cc",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "knowledge_boundary",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.knowledge_boundary.observation",
+              "family": "observation",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "ec846f2342a4dd6cacc49c00cf050bd9fdc8029bab801863b0597ff2055730e7"
+            },
+            {
+              "id": "gd-108.knowledge_boundary",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "50ddf958df59b8cb7d524c5e131d34fd04e09a67aa8ca218faaced827d6a900b",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "paired_seeds",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.paired_seeds.paired_runs",
+              "family": "paired_runs",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "treatment@30": {
+                  "completion_rate": 0.4166666666666667,
+                  "mean_steps": 30.041666666666668,
+                  "episode_count": 24,
+                  "censored_count": 0
+                },
+                "treatment@60": {
+                  "completion_rate": 0.4166666666666667,
+                  "mean_steps": 30.041666666666668,
+                  "episode_count": 24,
+                  "censored_count": 0
+                },
+                "treatment@144": {
+                  "completion_rate": 0.4166666666666667,
+                  "mean_steps": 30.041666666666668,
+                  "episode_count": 24,
+                  "censored_count": 0
+                },
+                "baseline@30": {
+                  "completion_rate": 0.5,
+                  "mean_steps": 12.25,
+                  "episode_count": 24,
+                  "censored_count": 0
+                },
+                "baseline@60": {
+                  "completion_rate": 0.5,
+                  "mean_steps": 12.25,
+                  "episode_count": 24,
+                  "censored_count": 0
+                },
+                "baseline@144": {
+                  "completion_rate": 0.5,
+                  "mean_steps": 12.25,
+                  "episode_count": 24,
+                  "censored_count": 0
+                }
+              },
+              "evidence_digest": "1dee9dea6ac858658471071edd5da0169de4e588e678d585bcfe25484ba9b02e"
+            }
+          ]
+        },
+        {
+          "id": "metric_valid",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.metric_valid.episodes",
+              "family": "episodes",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "single": {
+                  "completion_rate": 0.4166666666666667,
+                  "mean_steps": 30.041666666666668,
+                  "episode_count": 24,
+                  "censored_count": 0
+                }
+              },
+              "evidence_digest": "93057a2f0cff14b25d8e4668790316bdf172b8b37e73a194e818626dc600b38b"
+            },
+            {
+              "id": "gd-108.metric_valid",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "86a56240895b3fbc4c845b89056a44d1aed3c0b103c11aecc922c7103bc7f144",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "replay",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.replay.replay",
+              "family": "replay",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "de8dbb54f73459aa296a73a19522eda823cd87c8436b9bcbe1f2b32eefd3b72c"
+            }
+          ]
+        },
+        {
+          "id": "extension_boundary",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.extension_boundary.extension",
+              "family": "extension",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6189555134b68a722a07088ac712e00ee98af91b86a63bfad8b795191de946fb"
+            },
+            {
+              "id": "gd-108.extension_boundary",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "a77f87a223168aae1b0ac6d5427c1e0948989d7871e03a341952b72093070529",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "no_false_confirmation",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.no_false_confirmation",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "f50f63a4a62bdeaa6d60458d294c0d3dfb20efc95d7ab20231f7b851a6dbff9a",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "timeout_not_unsolvable",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.timeout_not_unsolvable",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "b2218b8268550ea7b8e1b6728830c3826752fd8ce578acb371e997f3c541e8c6",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "no_bot_human_equivalence",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.no_bot_human_equivalence",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "b0488a8ab88c2b3703c6b6d44ac26b6cf6414f48aecfc40175c88558a822cc08",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "no_single_fun_score",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.no_single_fun_score",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "5fe0a63ff58d73e55f2b3620d5ae194fa0aad37ca39ee42d506f5da31f7001af",
+              "blinding_broken": true
+            }
+          ]
+        }
+      ],
+      "scope": "v0.2 protocol preparation; synthetic smokes are not model trials, runtime certification, or participant observations"
+    },
+    {
+      "condition": 144,
+      "task_id": "gd-108",
+      "artifact_digest": "d38f16a3e3b685a40beabb4ce168b6cbca48570039e56603f6e980ab903089cc",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "knowledge_boundary",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.knowledge_boundary.observation",
+              "family": "observation",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "ec846f2342a4dd6cacc49c00cf050bd9fdc8029bab801863b0597ff2055730e7"
+            },
+            {
+              "id": "gd-108.knowledge_boundary",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "50ddf958df59b8cb7d524c5e131d34fd04e09a67aa8ca218faaced827d6a900b",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "paired_seeds",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.paired_seeds.paired_runs",
+              "family": "paired_runs",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "treatment@30": {
+                  "completion_rate": 0.4166666666666667,
+                  "mean_steps": 30.041666666666668,
+                  "episode_count": 24,
+                  "censored_count": 0
+                },
+                "treatment@60": {
+                  "completion_rate": 0.4166666666666667,
+                  "mean_steps": 30.041666666666668,
+                  "episode_count": 24,
+                  "censored_count": 0
+                },
+                "treatment@144": {
+                  "completion_rate": 0.4166666666666667,
+                  "mean_steps": 30.041666666666668,
+                  "episode_count": 24,
+                  "censored_count": 0
+                },
+                "baseline@30": {
+                  "completion_rate": 0.5,
+                  "mean_steps": 12.25,
+                  "episode_count": 24,
+                  "censored_count": 0
+                },
+                "baseline@60": {
+                  "completion_rate": 0.5,
+                  "mean_steps": 12.25,
+                  "episode_count": 24,
+                  "censored_count": 0
+                },
+                "baseline@144": {
+                  "completion_rate": 0.5,
+                  "mean_steps": 12.25,
+                  "episode_count": 24,
+                  "censored_count": 0
+                }
+              },
+              "evidence_digest": "1dee9dea6ac858658471071edd5da0169de4e588e678d585bcfe25484ba9b02e"
+            }
+          ]
+        },
+        {
+          "id": "metric_valid",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.metric_valid.episodes",
+              "family": "episodes",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "single": {
+                  "completion_rate": 0.4166666666666667,
+                  "mean_steps": 30.041666666666668,
+                  "episode_count": 24,
+                  "censored_count": 0
+                }
+              },
+              "evidence_digest": "81c7363e7bd7d2d12dd5e2ea15042ddbeecf20fca0b2d4a7f40c5cdf209aaddf"
+            },
+            {
+              "id": "gd-108.metric_valid",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "86a56240895b3fbc4c845b89056a44d1aed3c0b103c11aecc922c7103bc7f144",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "replay",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.replay.replay",
+              "family": "replay",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "de8dbb54f73459aa296a73a19522eda823cd87c8436b9bcbe1f2b32eefd3b72c"
+            }
+          ]
+        },
+        {
+          "id": "extension_boundary",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.extension_boundary.extension",
+              "family": "extension",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6189555134b68a722a07088ac712e00ee98af91b86a63bfad8b795191de946fb"
+            },
+            {
+              "id": "gd-108.extension_boundary",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "a77f87a223168aae1b0ac6d5427c1e0948989d7871e03a341952b72093070529",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "no_false_confirmation",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.no_false_confirmation",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "f50f63a4a62bdeaa6d60458d294c0d3dfb20efc95d7ab20231f7b851a6dbff9a",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "timeout_not_unsolvable",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.timeout_not_unsolvable",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "b2218b8268550ea7b8e1b6728830c3826752fd8ce578acb371e997f3c541e8c6",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "no_bot_human_equivalence",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.no_bot_human_equivalence",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "b0488a8ab88c2b3703c6b6d44ac26b6cf6414f48aecfc40175c88558a822cc08",
+              "blinding_broken": true
+            }
+          ]
+        },
+        {
+          "id": "no_single_fun_score",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-108.no_single_fun_score",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "5fe0a63ff58d73e55f2b3620d5ae194fa0aad37ca39ee42d506f5da31f7001af",
+              "blinding_broken": true
+            }
+          ]
+        }
+      ],
+      "scope": "v0.2 protocol preparation; synthetic smokes are not model trials, runtime certification, or participant observations"
+    }
+  ],
+  "scope": "LOCAL_TASK_CONTRACT_ONLY",
+  "formal_trials": 0,
+  "external_review": "UNVERIFIED"
+}

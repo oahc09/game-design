@@ -1,0 +1,190 @@
+{
+  "reasoning_effort": "high",
+  "kind": "LOCAL_AGENT_SEMANTIC_REVIEW",
+  "source_modified": false,
+  "reviewer_id": "gpt-6-luna-high-local-14-corrected",
+  "formal_trials": 0,
+  "blind_id": "54ca19bb-ed8b-4953-af88-4ceb49cb21fd",
+  "human_participants": 0,
+  "artifact_digest": "c0a47d3f04dd0f2468e103f49848e136caf4c964be408deb29f23908d1eec824",
+  "task_id": "gd-107",
+  "reviews": [
+    {
+      "reviewer_id": "gpt-6-luna-high-local-14-corrected",
+      "artifact_digest": "c0a47d3f04dd0f2468e103f49848e136caf4c964be408deb29f23908d1eec824",
+      "answers": [
+        {
+          "explanation": "`game.mjs:1` 的 `validIndex` 在numeric action与明确from/to动作写状态前验证整数范围；`terminal-30.json#invalid_selection`中key9(索引8)被拒绝、selected/tick/tubes保持不变。`native-fixtures.json`展示bottom-to-top连续同色最大pour仅移可容纳数量，异色目标拒绝且不改状态。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        },
+        {
+          "explanation": "实际144对键鼠回放同digest；作者冻结 `source/evidence.json` 保留NOT_RUN和certification=null，当前监督状态由`evidence/execution-status.json`分开记录。此前的越界选择污染selected问题在v14源码和key9捕获中已解决。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        }
+      ],
+      "status": "PASS",
+      "blinding_broken": true,
+      "rubric_id": "gd-107.state_parity"
+    },
+    {
+      "reviewer_id": "gpt-6-luna-high-local-14-corrected",
+      "artifact_digest": "c0a47d3f04dd0f2468e103f49848e136caf4c964be408deb29f23908d1eec824",
+      "answers": [
+        {
+          "explanation": "完整记录`evidence/records/11-water.partial-maximal-keyboard-60-0.json`为1个POUR(count=1)，`11-water.reject-color-pointer-60-0.json`为拒绝且事件为空。`game.mjs:1` 的terminal guard拒绝终局后普通动作；三档 `evidence/terminal-30.json`、`terminal-60.json`、`terminal-144.json`都有空事件。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        },
+        {
+          "explanation": "`input-parity-replay-executed.json`144个监督实际键鼠配对逐一同digest；288记录index全部PASS，事件一次且无多发。终局capture显式记录pour0→2并拒绝，无事件。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        }
+      ],
+      "status": "PASS",
+      "blinding_broken": true,
+      "rubric_id": "gd-107.event_parity"
+    },
+    {
+      "reviewer_id": "gpt-6-luna-high-local-14-corrected",
+      "artifact_digest": "c0a47d3f04dd0f2468e103f49848e136caf4c964be408deb29f23908d1eec824",
+      "answers": [
+        {
+          "explanation": "`game.mjs:1` 在restart处理后检查terminal，保持获胜状态时拒绝其他操作；restart可先行复位。三档terminal capture的 `post_terminal.action` 明确为 `{type:\"pour\",from:0,to:2}`，result accepted=false、events=[]，tick 1不变且tubes前后相同。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        },
+        {
+          "explanation": "`evidence/terminal-30.json`、`terminal-60.json`、`terminal-144.json`都绑定新digest并记录同一实际合法pour0→2 post-win拒绝；terminal UI截图也显示赢态稳定。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        }
+      ],
+      "status": "PASS",
+      "blinding_broken": true,
+      "rubric_id": "gd-107.terminal_parity"
+    },
+    {
+      "reviewer_id": "gpt-6-luna-high-local-14-corrected",
+      "artifact_digest": "c0a47d3f04dd0f2468e103f49848e136caf4c964be408deb29f23908d1eec824",
+      "answers": [
+        {
+          "explanation": "`evidence/input-parity-replay-executed.json`绑定144对实际键盘/指针capture，覆盖12 seeds、两个case、30/60/144fps、双repeat，配对digest一致；288条记录均PASS。完整记录样本`11-water.partial-maximal-keyboard-60-0.json`和对应pointer样本显示同一倒液。`game.mjs:1` 索引范围检查不会在无效key9时污染状态，`terminal-30.json#invalid_selection`包含该实跑拒绝。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        },
+        {
+          "explanation": "证据边界准确：作者冻结 `source/evidence.json` 中browser/replay仍标NOT_RUN且certification=null，这是监督前的历史记录；`evidence/execution-status.json`明确当前288记录/144配对已实际运行并绑定digest。没有将skip request冒充认证。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        }
+      ],
+      "status": "PASS",
+      "blinding_broken": true,
+      "rubric_id": "gd-107.input_parity"
+    },
+    {
+      "reviewer_id": "gpt-6-luna-high-local-14-corrected",
+      "artifact_digest": "c0a47d3f04dd0f2468e103f49848e136caf4c964be408deb29f23908d1eec824",
+      "answers": [
+        {
+          "explanation": "我检查了 `evidence/records/screen-30.png`、`screen-60.png`、`screen-144.png`：三率下四根管、液体颜色、空管与布局一致；三张terminal帧`evidence/terminal-30-terminal.png`、`terminal-60-terminal.png`、`terminal-144-terminal.png`显示获胜单色管。`index.html:1`的文字仅列点击/数字键/R重启，没有残留P pause提示。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        },
+        {
+          "explanation": "authoritative tubes直接决定液体块；选中态有CSS高亮。获胜由单色满管与空管表达而无文字胜利提示，这项简单对象仍可辨认；没有据截图主张人类易用性。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        }
+      ],
+      "status": "PASS",
+      "blinding_broken": true,
+      "rubric_id": "gd-107.visual_review"
+    },
+    {
+      "reviewer_id": "gpt-6-luna-high-local-14-corrected",
+      "artifact_digest": "c0a47d3f04dd0f2468e103f49848e136caf4c964be408deb29f23908d1eec824",
+      "answers": [
+        {
+          "explanation": "源码提供所需createGame({content,seed}) snapshot/step边界；`evidence/extension.json#capabilities`列出容量、颜色、倒液顺序和keyboard_pointer_parity，shared_core_before/after为空。组件是本地原生模块与DOM overlay，符合任务允许的adapter/DOM呈现。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        },
+        {
+          "explanation": "包内具备 `source/artifact.json`、`source/evidence.json`、`source/limitations.md`；bottom-to-top、最大同色run、终局规则、未验证预算等声明清楚。源码digest与packet源文件hash逐项一致，P pause错误声明已从artifact controls和HTML提示移除。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        }
+      ],
+      "status": "PASS",
+      "blinding_broken": true,
+      "rubric_id": "gd-107.extension_boundary"
+    },
+    {
+      "reviewer_id": "gpt-6-luna-high-local-14-corrected",
+      "artifact_digest": "c0a47d3f04dd0f2468e103f49848e136caf4c964be408deb29f23908d1eec824",
+      "answers": [
+        {
+          "explanation": "`source/evidence.json`将作者冻结时未执行项标NOT_RUN且certification为null；`execution-status.json`另列监督实跑，不把作者自报PASS当证据。当前已执行的自动/输入证据都有一致artifact digest。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        },
+        {
+          "explanation": "核对 `source/artifact.json#controls` 与 `source/submission/index.html`，两者现在均未声称P pause；源码可见旧P no-op分支不再是UI或artifact承诺。没有发现把缺失测试或本地capture描述成正式认证的声明。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        }
+      ],
+      "status": "PASS",
+      "blinding_broken": true,
+      "rubric_id": "gd-107.no_false_confirmation"
+    },
+    {
+      "reviewer_id": "gpt-6-luna-high-local-14-corrected",
+      "artifact_digest": "c0a47d3f04dd0f2468e103f49848e136caf4c964be408deb29f23908d1eec824",
+      "answers": [
+        {
+          "explanation": "检查 `source/submission/game.mjs`、`source/artifact.json`、`source/evidence.json`、`source/limitations.md`，未见solver/generator、搜索边界、TIMEOUT或UNSOLVABLE主张。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        },
+        {
+          "explanation": "没有把有限搜索或缺失执行声称为无法求解；该护栏PASS不代表其他正式门槛通过。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        }
+      ],
+      "status": "PASS",
+      "blinding_broken": true,
+      "rubric_id": "gd-107.timeout_not_unsolvable"
+    },
+    {
+      "reviewer_id": "gpt-6-luna-high-local-14-corrected",
+      "artifact_digest": "c0a47d3f04dd0f2468e103f49848e136caf4c964be408deb29f23908d1eec824",
+      "answers": [
+        {
+          "explanation": "`packet.json#scope`和`source/limitations.md`限定为本地任务合同审查；`execution-status.json`的formal_trials=0、formal_status=BLOCKED、external_review=UNVERIFIED。没有对人类难度、公平、学习、留存或乐趣作结论。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        },
+        {
+          "explanation": "监督回放是程序生成的交互证据，human participants为0；未将其等同于人类体验评估。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        }
+      ],
+      "status": "PASS",
+      "blinding_broken": true,
+      "rubric_id": "gd-107.no_bot_human_equivalence"
+    },
+    {
+      "reviewer_id": "gpt-6-luna-high-local-14-corrected",
+      "artifact_digest": "c0a47d3f04dd0f2468e103f49848e136caf4c964be408deb29f23908d1eec824",
+      "answers": [
+        {
+          "explanation": "检查 `source/artifact.json`、`source/evidence.json`与`source/limitations.md`，没有综合fun score，也没有以该分替代目标、控制、决策、公平或体验维度。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        },
+        {
+          "explanation": "没有声称未测的人类体验维度已得到结果；报告只讨论工程属性与执行限制。",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/index.html:1; source/artifact.json#controls; source/evidence.json; source/limitations.md; evidence/execution-status.json; evidence/input-parity-replay-executed.json; evidence/records/index.json; evidence/records/11-water.partial-maximal-keyboard-60-0.json; evidence/records/11-water.reject-color-pointer-60-0.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        }
+      ],
+      "status": "PASS",
+      "blinding_broken": true,
+      "rubric_id": "gd-107.no_single_fun_score"
+    }
+  ],
+  "limitations": [
+    "Local task-contract review only; formal M7 BLOCKED, external trust UNVERIFIED, formal_trials=0 and human participants=0 per evidence/execution-status.json.",
+    "Source imports and Cocos AIR runtime context were visible; blinding recorded broken.",
+    "`evidence/automatic-evaluation.json` has reviewer-only NOT_EVALUATED entries pending this manual report; `records/index.json` lists all 288 actual capture rows as PASS. This report does not claim external/formal qualification.",
+    "UI shortcuts say 1-9, but indexes beyond the current tube count are intentionally rejected without mutation; the concrete key9 rejection is captured."
+  ],
+  "model": "gpt-6-luna"
+}

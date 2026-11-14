@@ -1,0 +1,21 @@
+import * as cc from '../vendor/cocosair/cocosair.module.js';
+import { createGame } from './game.mjs';
+const app=await cc.createAirApp({canvas:'#GameCanvas',designResolution:{width:800,height:600,policy:0}}),scene=new cc.Scene('CardGame'),ui=cc.createUICanvas(scene,'Canvas',{designWidth:800,designHeight:600}),n=new cc.Node('Table');n.layer=cc.Layers.Enum.UI_2D;n.addComponent(cc.UITransform).setContentSize(800,600);const g=n.addComponent(cc.GraphicsComponent);g.fillColor=new cc.Color().fromHEX('#23533c');g.rect(-380,-280,760,560);g.fill();ui.addChild(n);app.run(scene);
+let game=createGame({}),records=[],maxHealthByPlayer=[10,10],visibleActionCache=[],visibleStateCache=null;
+const copy=v=>JSON.parse(JSON.stringify(v));
+function draw(){
+  const s=game.snapshot(),hand=game.visibleHand(),playerIndex=s.active_player==='player2'?1:0,maxHealth=maxHealthByPlayer[playerIndex];
+  document.querySelector('#view').innerHTML=`<div><div id="visible-state" data-tick="${s.tick}" data-active-player="${s.active_player}" data-mana="${s.mana}" data-health="${s.health}" data-opponent-health="${s.opponent_health}">Turn ${s.tick} · ${s.active_player} · Mana ${s.mana} · ${s.health} HP vs ${s.opponent_health} HP</div><div>${hand.map((card,slot)=>{const heal=card==='Mend'?Math.max(0,Math.min(2,maxHealth-s.health)):0;const damage=card==='Mend'?0:card==='Strike'?3:2;const effect=card==='Mend'?`heal +${heal}`:`damage ${damage}`;const text=`${String(card)} · cost 1 · ${effect}`;return `<button class="card" data-visible-action="1" data-type="play" data-slot="${slot}" data-cost="1" data-damage="${damage}" data-heal="${heal}" ${s.mana<1||s.paused||s.terminal||s.pending?'disabled':''}>${text}</button>`;}).join('')}</div><div class="actions"><button id="pass" data-visible-action="1" data-type="pass" data-cost="0" data-damage="0" data-heal="0" ${s.paused||s.terminal||s.pending?'disabled':''}>Pass · cost 0 · end turn</button>${s.pending?`Action queued for tick ${s.pending.dueTick}`:''}${s.terminal?`<p>${s.terminal.status}</p>`:''}</div></div>`;
+  document.querySelectorAll('.card').forEach(e=>e.onclick=()=>transition({type:'play',slot:+e.dataset.slot}));
+  document.querySelector('#pass').onclick=()=>transition({type:'pass'});
+  const renderedState=document.querySelector('#visible-state').dataset;
+  visibleStateCache={tick:Number(renderedState.tick),active_player:renderedState.activePlayer,mana:Number(renderedState.mana),health:Number(renderedState.health),opponent_health:Number(renderedState.opponentHealth)};
+  visibleActionCache=[...document.querySelectorAll('[data-visible-action]:not(:disabled)')].map(el=>({action:el.dataset.type==='play'?{type:'play',slot:Number(el.dataset.slot)}:{type:'pass'},text:el.textContent,cost:Number(el.dataset.cost),damage:Number(el.dataset.damage),heal:Number(el.dataset.heal)}));
+}
+function transition(action){const before=game.snapshot(),result=game.step({action,tick:before.tick}),after=game.snapshot();records.push({action:copy(action),accepted:!!result?.accepted,events:copy(result?.events??[]),before:copy(before),after:copy(after)});draw();return result;}
+function queueDelayed(action,delay=1){const before=game.snapshot(),result=game.queueDelayed(action,delay),after=game.snapshot();records.push({action:{type:'queueDelayed',action:copy(action),delay},accepted:!!result?.accepted,events:[],before:copy(before),after:copy(after)});draw();return result;}
+function reset({content={},seed=11}={}){game=createGame({content,seed});maxHealthByPlayer=[content.health??10,content.opponent_health??10];records=[];draw();return copy(game.snapshot());}
+window.__candidate={createGame,get game(){return game},get state(){return copy(game.snapshot())}};
+window.__acceptance={reset,snapshot:()=>copy(game.snapshot()),step:transition,frame:()=>{draw();return copy(game.snapshot());},log:()=>copy(records),queueDelayed,pointerForAction:()=>null,designSize:{width:800,height:600},visibleState:()=>copy(visibleStateCache),visibleActions:()=>copy(visibleActionCache)};
+window.render_game_to_text=()=>JSON.stringify(game.snapshot());window.advanceTime=ms=>window.__acceptance.frame(ms);
+window.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();transition({type:'pass'});}else if(['r','R','p','P'].includes(e.key)){e.preventDefault();transition(e.key);}},true);draw();

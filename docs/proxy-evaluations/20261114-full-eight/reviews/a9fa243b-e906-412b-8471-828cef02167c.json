@@ -1,0 +1,173 @@
+{
+  "kind": "LOCAL_AGENT_SEMANTIC_REVIEW",
+  "limitations": [
+    "Local source-informed proxy review only; external trust, budget and isolation remain UNVERIFIED/BLOCKED.",
+    "No formal production qualification, human playtest, or Skill-effectiveness trial was performed.",
+    "The prior supplemental PNGs were unbound to this artifact and were excluded; updated judgments rely on provenance-corrected JSON and matching current-artifact screenshots.",
+    "The engine-specific import in source/submission/main.mjs discloses Cocos AIR integration; blinding is marked broken."
+  ],
+  "reviews": [
+    {
+      "reviewer_id": "gpt-6-luna-high-local-4-corrected",
+      "artifact_digest": "f4330db6e428bce4d95fb62ac5588e38faa0a2557530b8a51befd0c437c7741b",
+      "answers": [
+        {
+          "explanation": "The public-rule fixtures independently show gravity at its 30-tick boundary and lock_counter 1 then LOCK on grounded tick 2. The three current-digest supplements use the same line-clear board/active piece and end at tick 2 with lines=1; per-frame samples reach ticks at different render cadence but identical authoritative outcome. The 288 original runtime captures cover held controls at 30/60/144. The corrected clear evidence closes the prior state-observation gap; the earlier unbound images were excluded.",
+          "evidence_reference": "source/submission/game.mjs:1; evidence/native-fixtures.json#/records/0/trace/transitions/29; evidence/native-fixtures.json#/records/1/trace/transitions/1; evidence/records/index.json#/records; evidence/supplement-30.json#/samples/1; evidence/supplement-60.json#/samples/2; evidence/supplement-144.json#/samples/5"
+        },
+        {
+          "explanation": "At 30 fps the capture advances from tick 0 to tick 2 in two frame samples; 60 fps records ticks 0,1,2; 144 fps records intervening render samples at ticks 0 and 1 before tick 2. Every pre-clear sample displays lines 0, and the final sample follows the tick-2 LOCK then LINE_CLEAR log and displays lines 1. All three current screenshots visibly show lines 1 and pieces 1. Thus identical tick-level clear/feedback timing is supported across the requested render rates.",
+          "evidence_reference": "source/submission/main.mjs:1; evidence/supplement-30.json#/samples; evidence/supplement-60.json#/samples; evidence/supplement-144.json#/samples; evidence/supplement-30.png; evidence/supplement-60.png; evidence/supplement-144.png"
+        }
+      ],
+      "rubric_id": "gd-019.state_parity",
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "reviewer_id": "gpt-6-luna-high-local-4-corrected",
+      "artifact_digest": "f4330db6e428bce4d95fb62ac5588e38faa0a2557530b8a51befd0c437c7741b",
+      "answers": [
+        {
+          "explanation": "Independent lock fixture confirms one LOCK after two grounded ticks. Each current-digest supplementary trace records the tick-2 action with ordered events LOCK(count 1), then LINE_CLEAR(count 1), and authoritative lines changes 0→1. The per-frame records expose no clear before that event. This supplies the formerly missing actual event-order witness at all three render rates.",
+          "evidence_reference": "source/submission/game.mjs:1; evidence/native-fixtures.json#/records/1/trace/transitions/1; evidence/supplement-30.json#/samples/1/log/1; evidence/supplement-60.json#/samples/2/log/2; evidence/supplement-144.json#/samples/5/log/2"
+        },
+        {
+          "explanation": "The controls and fixed tick contract are supported by original cross-rate input captures and source accumulator; for the line-clear-specific fixture, 30/60/144 produce the same tick-2 LOCK then LINE_CLEAR order. Feedback is absent from all pre-event frame text and visible as lines 1 in the post-event sample at every rate. The old, unbound images are not used.",
+          "evidence_reference": "source/submission/main.mjs:1; evidence/supplement-30.json#/samples; evidence/supplement-60.json#/samples; evidence/supplement-144.json#/samples"
+        }
+      ],
+      "rubric_id": "gd-019.event_parity",
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "reviewer_id": "gpt-6-luna-high-local-4-corrected",
+      "artifact_digest": "f4330db6e428bce4d95fb62ac5588e38faa0a2557530b8a51befd0c437c7741b",
+      "answers": [
+        {
+          "explanation": "The source sets terminal lost/top_out when the next spawned piece is invalid and rejects later gameplay actions while terminal is set. Independent terminal UI witnesses at 30/60/144 all report loss_reached, loss_stable, one_preview, preview_matches_spawn, private_queue_hidden; loss_state is lost/top_out. This supports stable loss; no win/conflict outcome is part of this single-player task.",
+          "evidence_reference": "source/submission/game.mjs:1; evidence/terminal-30.json#/checks; evidence/terminal-60.json#/checks; evidence/terminal-144.json#/checks"
+        },
+        {
+          "explanation": "All three terminal witnesses use held ArrowDown and report stable loss and exactly one preview matching the spawned next piece, with private queue hidden. Terminal feedback is rendered from authoritative snapshot state after the step; the game-over HUD condition is terminal truthy. The three-rate held-input/lock checks are supported by records/index.json and the lock-two fixture.",
+          "evidence_reference": "source/submission/main.mjs:1; evidence/terminal-30.json#/checks; evidence/terminal-60.json#/checks; evidence/terminal-144.json#/checks"
+        }
+      ],
+      "rubric_id": "gd-019.terminal_parity",
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "reviewer_id": "gpt-6-luna-high-local-4-corrected",
+      "artifact_digest": "f4330db6e428bce4d95fb62ac5588e38faa0a2557530b8a51befd0c437c7741b",
+      "answers": [
+        {
+          "explanation": "keydown stores held ArrowLeft/Right/Down; ArrowUp queues one non-repeat rotation edge; update consumes at most one queued rotation and ticks via a 60 Hz fractional accumulator. Source preview is exactly preview[0]. Captured index has 288 PASS records across 30/60/144, with checks including input, no_rejected_mutation and terminal_stable; there are two held controls (held_arrow and rotate). Independent terminal witnesses show one preview only at all rates.",
+          "evidence_reference": "source/submission/main.mjs:1; source/submission/game.mjs:1; evidence/records/index.json#/records"
+        },
+        {
+          "explanation": "Frame-rate independence is relevant and supported by the fixed-step accumulator, cross-rate captures and all-rate terminal witnesses; the same submitted held controls are sampled at simulation ticks. The 30/60/144 lock-two records also exercise grounding. The line-clear timing obligation is state/event/visual rather than an input mapping; there is no captured clear log at any rate and only a 30-fps supplemental image, so that separate timing result remains open.",
+          "evidence_reference": "source/submission/main.mjs:1; evidence/records/11-falling.gravity-30-held_arrow-30-0.json#/raw/log/0; evidence/records/11-falling.gravity-30-held_arrow-60-0.json#/raw/log/0; evidence/records/11-falling.gravity-30-held_arrow-144-0.json#/raw/log/0; evidence/terminal-30.json#/checks; evidence/terminal-60.json#/checks; evidence/terminal-144.json#/checks"
+        }
+      ],
+      "rubric_id": "gd-019.input_parity",
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "reviewer_id": "gpt-6-luna-high-local-4-corrected",
+      "artifact_digest": "f4330db6e428bce4d95fb62ac5588e38faa0a2557530b8a51befd0c437c7741b",
+      "answers": [
+        {
+          "explanation": "The original three-rate captures show a centered monospace playfield, readable counters, one adjacent Next preview and keyboard legend; terminal witness shows GAME OVER. The corrected current-artifact screenshots at all three rates display the same cleared state with `lines 1 · pieces 1`; JSON sample text confirms no early lines feedback. The layout is legible at the supplied public capture dimensions. Source import disclosure remains recorded as broken blinding.",
+          "evidence_reference": "evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png; evidence/supplement-30.png; evidence/supplement-60.png; evidence/supplement-144.png; evidence/terminal-30-terminal.png"
+        },
+        {
+          "explanation": "The three corrected supplements have matching task/blind/artifact digest and each contains actual pre-clear and post-clear browser observations. At every rate, final UI text updates to lines 1 only after the tick-2 authoritative LOCK/LINE_CLEAR result; each PNG visibly shows this result. This closes the previous missing 60/144 clear-visual witness.",
+          "evidence_reference": "evidence/supplement-30.json#/samples; evidence/supplement-60.json#/samples; evidence/supplement-144.json#/samples; evidence/supplement-30.png; evidence/supplement-60.png; evidence/supplement-144.png"
+        }
+      ],
+      "rubric_id": "gd-019.visual_review",
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "reviewer_id": "gpt-6-luna-high-local-4-corrected",
+      "artifact_digest": "f4330db6e428bce4d95fb62ac5588e38faa0a2557530b8a51befd0c437c7741b",
+      "answers": [
+        {
+          "explanation": "The provenance record explicitly identifies old PNGs as belonging to another artifact; those assets are excluded from this updated decision and the prior report is preserved. Current supplemental JSONs match this packet digest and the current screenshots were visually inspected. The updated report does not reuse the old screenshots as proof.",
+          "evidence_reference": "evidence/provenance-correction.json; evidence/supplement-30.json; evidence/supplement-60.json; evidence/supplement-144.json; report-before-provenance-correction.json"
+        },
+        {
+          "explanation": "The task-specific claim is now supported by each actual trace: no lines feedback at pre-event samples, LOCK then LINE_CLEAR at tick 2, lines 0→1, and visible post-event `lines 1` at 30/60/144. Original held-input and lock captures remain evidence for their separate obligations. Evidence remains a local proxy review, not human or formal certification.",
+          "evidence_reference": "evidence/supplement-30.json#/checks; evidence/supplement-60.json#/checks; evidence/supplement-144.json#/checks; evidence/supplement-30.png; evidence/supplement-60.png; evidence/supplement-144.png"
+        }
+      ],
+      "rubric_id": "gd-019.no_false_confirmation",
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "reviewer_id": "gpt-6-luna-high-local-4-corrected",
+      "artifact_digest": "f4330db6e428bce4d95fb62ac5588e38faa0a2557530b8a51befd0c437c7741b",
+      "answers": [
+        {
+          "explanation": "There is no solver or generation-search loop, search bound, TIMEOUT, or UNSOLVABLE label in this game source/evidence. The game has deterministic piece selection and a terminal top_out condition; no finite search is presented as an impossibility proof.",
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/main.mjs:1; evidence/automatic-evaluation.json#/results/0/scope"
+        },
+        {
+          "explanation": "The supplied claim evidence contains only the observed lost/top_out terminal outcome, not UNSOLVABLE. No prohibited timeout/impossibility claim exists. This guard does not imply the task passed; line-clear timing remains unverified at 60/144.",
+          "evidence_reference": "source/submission/game.mjs:1; evidence/terminal-30.json#/loss_state/terminal; evidence/terminal-60.json#/loss_state/terminal; evidence/terminal-144.json#/loss_state/terminal"
+        }
+      ],
+      "rubric_id": "gd-019.timeout_not_unsolvable",
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "reviewer_id": "gpt-6-luna-high-local-4-corrected",
+      "artifact_digest": "f4330db6e428bce4d95fb62ac5588e38faa0a2557530b8a51befd0c437c7741b",
+      "answers": [
+        {
+          "explanation": "Evidence scope explicitly says synthetic smokes are not participant observations, human observations or efficacy comparison. Source, records and UI contain no claims about human difficulty, fairness, learning, retention, or enjoyment.",
+          "evidence_reference": "evidence/automatic-evaluation.json#/results/0/scope; packet.json#/scope"
+        },
+        {
+          "explanation": "The submitted evidence is engine state/input parity and terminal UI witnesses, not a human outcome or bot-to-human comparison. No human participants or human-rated result is claimed; the task-specific render/lock obligations remain engineering observations only.",
+          "evidence_reference": "packet.json#/scope; evidence/records/index.json#/records; evidence/terminal-30.json#/kind"
+        }
+      ],
+      "rubric_id": "gd-019.no_bot_human_equivalence",
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "reviewer_id": "gpt-6-luna-high-local-4-corrected",
+      "artifact_digest": "f4330db6e428bce4d95fb62ac5588e38faa0a2557530b8a51befd0c437c7741b",
+      "answers": [
+        {
+          "explanation": "The UI shows task state counters (lines and locked pieces), not a composite fun score. There are no recommendations or score summaries in the submitted source/evidence, and no absent experience dimension is stated as measured.",
+          "evidence_reference": "source/submission/main.mjs:1; source/submission/index.html:1; packet.json#/task/success_criteria"
+        },
+        {
+          "explanation": "The relevant evidence dimensions are render-rate input/state/event checks and visual capture; no fun, decision, fairness, or experience score is claimed. The packet limits evidence to synthetic engineering preparation, so absence of human dimensions is not represented as a score.",
+          "evidence_reference": "packet.json#/task/review_obligations; evidence/automatic-evaluation.json#/results/0/scope"
+        }
+      ],
+      "rubric_id": "gd-019.no_single_fun_score",
+      "blinding_broken": true,
+      "status": "PASS"
+    }
+  ],
+  "artifact_digest": "f4330db6e428bce4d95fb62ac5588e38faa0a2557530b8a51befd0c437c7741b",
+  "blind_id": "a9fa243b-e906-412b-8471-828cef02167c",
+  "reasoning_effort": "high",
+  "model": "gpt-6-luna",
+  "reviewer_id": "gpt-6-luna-high-local-4-corrected",
+  "task_id": "gd-019",
+  "human_participants": 0,
+  "source_modified": false,
+  "formal_trials": 0
+}

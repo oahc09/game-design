@@ -1,0 +1,30 @@
+{
+  "task": "gd-071",
+  "workspace": "full-task-20261114-v2/candidates/baseline/gd-071",
+  "status": "REPAIRED_STATIC_AND_LOCAL_NATIVE_SMOKE_ONLY",
+  "changes": [
+    "Resolved initial capsule/platform overlap using existing platform and capsule geometry, without tuning public start, capsule dimensions, or physics constants.",
+    "Preserved horizontal side collision resolution instead of overwriting it with the candidate x position.",
+    "Emitted LAND only on airborne-to-grounded transition.",
+    "Applied the same overlap resolver when restoring checkpoints."
+  ],
+  "checks": {
+    "node_syntax": "PASS",
+    "local_native_smoke": "PASS for public-default spawn, jump, landing, no duplicate standing LAND, checkpoint capture and recovery",
+    "browser_runtime": "NOT_RUN",
+    "fps_replay": "NOT_RUN",
+    "capsule_visual_alignment": "NOT_RUN",
+    "evaluator": "NOT_RUN"
+  },
+  "certification": null,
+  "frozen_files": "No intentional edits to task/config, vendor, or engine source.",
+  "additional_repairs": [
+    {
+      "task": "gd-009",
+      "change": "Set live board grid-template-columns from public grid width, retaining 54px cells.",
+      "node_syntax": "PASS",
+      "browser_visual": "NOT_RUN",
+      "certification": null
+    }
+  ]
+}

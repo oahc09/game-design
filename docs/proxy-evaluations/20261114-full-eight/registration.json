@@ -1,0 +1,75 @@
+{
+  "kind": "LOCAL_FULL_EIGHT_TASK_ACCEPTANCE",
+  "date": "2026-11-14",
+  "tasks": [
+    "gd-009",
+    "gd-019",
+    "gd-029",
+    "gd-039",
+    "gd-065",
+    "gd-071",
+    "gd-107",
+    "gd-108"
+  ],
+  "model": "gpt-6-luna",
+  "effort": "high",
+  "stage": "FROZEN_FOR_CAPTURE",
+  "engine_rates": [
+    30,
+    60,
+    144
+  ],
+  "seeds": [
+    11,
+    29,
+    47,
+    71,
+    101,
+    131,
+    173,
+    211,
+    257,
+    307,
+    359,
+    419
+  ],
+  "engine_controls": "exact published per-task controls, not invented player profiles",
+  "engine_repeats": 2,
+  "card_profiles": [
+    {
+      "id": "immediate",
+      "version": "public-v0.2",
+      "observation": "visible_current_state_only",
+      "node_budget_per_decision": 128,
+      "lookahead_depth": 1,
+      "reaction_delay_steps": 0,
+      "action_error_probability": 0,
+      "tie_break": "lexicographic canonical public action JSON",
+      "policy_definition": "Public objective-greedy action with zero delay and no deliberate action noise.",
+      "freeze_before_execution": true,
+      "source_freeze_contract": "Supervisor records executable policy source digest, full public configuration digest, observation digest, and every episode before outcomes are scored. Semantic adherence to this algorithm is checked in the task blind rubric."
+    },
+    {
+      "id": "delayed",
+      "version": "public-v0.2",
+      "observation": "visible_current_state_only",
+      "node_budget_per_decision": 128,
+      "lookahead_depth": 1,
+      "reaction_delay_steps": 1,
+      "action_error_probability": 0,
+      "tie_break": "lexicographic canonical public action JSON",
+      "policy_definition": "Same objective-greedy rule with one-step delay; do not change authoritative game rules.",
+      "freeze_before_execution": true,
+      "source_freeze_contract": "Supervisor records executable policy source digest, full public configuration digest, observation digest, and every episode before outcomes are scored. Semantic adherence to this algorithm is checked in the task blind rubric."
+    }
+  ],
+  "card_captures_per_episode": 2,
+  "policy_source_digest": "d9c8f370b9242609af9d5c7671cee8360184a9d525908f6079fd40098df8cf2a",
+  "formal_trials": 0,
+  "formal_execution": "BLOCKED",
+  "external_review": "UNVERIFIED",
+  "provider_budget_attested": false,
+  "exact_snapshot_attested": false,
+  "unchanged_original_thresholds": true,
+  "human_required": false
+}

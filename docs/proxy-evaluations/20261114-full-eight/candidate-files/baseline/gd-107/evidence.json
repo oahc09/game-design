@@ -1,0 +1,17 @@
+{
+  "task_id": "gd-107",
+  "attempted": [
+    "Implemented keyboard/pointer unified input and water-sort model adapter; intentionally report missing parity checks as NOT_RUN.",
+    "Added terminal-state rejection after restart dispatch to preserve terminal state and events on ordinary input.",
+    "Added integral in-range index validation for numeric tube selection and explicit source/destination indices; invalid attempts preserve state and emit no events."
+  ],
+  "checks": {
+    "node_syntax": "PASS: node --check submission/game.mjs and submission/main.mjs exit 0; static syntax only.",
+    "browser_runtime": "NOT_RUN",
+    "input_parity_replay": "NOT_RUN",
+    "liquid_conservation": "NOT_RUN",
+    "terminal_rejection_smoke": "PASS: legal post-terminal pour, numeric selection and pause reject without mutation/events; restart accepted. Local native smoke only.",
+    "invalid_index_smoke": "PASS: bounded native smoke covered numeric and explicit invalid indices, unchanged state/events, terminal guard/restart, and unchanged maximal pour."
+  },
+  "certification": null
+}

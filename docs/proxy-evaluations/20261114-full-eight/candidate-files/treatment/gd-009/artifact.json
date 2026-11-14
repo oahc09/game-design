@@ -1,0 +1,17 @@
+{
+  "task_id": "gd-009",
+  "entrypoint": "submission/index.html",
+  "runtime": "submission/game.mjs",
+  "controls": [
+    "Arrow keys or pointer directional input",
+    "R restart",
+    "P pause"
+  ],
+  "assumptions": [
+    "Public grid is parsed using the supplied # . $ @ legend.",
+    "Each legal movement advances one turn; blocked moves are rejected without state mutation.",
+    "Victory occurs when every box occupies a goal.",
+    "Added the public direction alias, state snapshot fields, and same-instance acceptance recording hook; gameplay remains deterministic for a fixed grid and action stream."
+  ],
+  "engine": "CocosAirJS 1.0.0 revision 100"
+}

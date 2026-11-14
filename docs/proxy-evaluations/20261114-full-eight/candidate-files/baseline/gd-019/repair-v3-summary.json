@@ -1,0 +1,19 @@
+{
+  "task": "gd-019",
+  "workspace": "full-task-20261114-v3/candidates/baseline/gd-019",
+  "status": "REPAIRED_STATIC_AND_LOCAL_NATIVE_SMOKE_ONLY",
+  "changes": [
+    "Snapshot now exposes exactly one copied next-piece shape matrix from the native private sequence index without advancing sequence state.",
+    "Renderer displays the single next shape beside the live board."
+  ],
+  "checks": {
+    "node_syntax": "PASS",
+    "local_preview_sequence_smoke": "PASS: count one, repeated snapshot stability, and next actual spawn shape match",
+    "browser_runtime": "NOT_RUN",
+    "fps_replay": "NOT_RUN",
+    "visual_review": "NOT_RUN",
+    "evaluator": "NOT_RUN"
+  },
+  "certification": null,
+  "hidden_state": "No queue, bag, RNG state, or additional future pieces exposed."
+}

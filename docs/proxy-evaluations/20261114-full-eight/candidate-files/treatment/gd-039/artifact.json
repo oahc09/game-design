@@ -1,0 +1,20 @@
+{
+  "task_id": "gd-039",
+  "entrypoint": "submission/index.html",
+  "runtime": "submission/game.mjs",
+  "controls": [
+    "Drag adjacent gems to swap",
+    "R restart",
+    "P pause"
+  ],
+  "assumptions": [
+    "Uses the supplied match3 event-driven runtime through createGame adapter.",
+    "Task board/colors/moves initialize a 4x4 board with a default score objective of 100 when none is provided.",
+    "Resolution and objectives settle synchronously within each accepted swap; there is no intermediate animation state exposed.",
+    "Mapped declared board/moves/colors aliases and public lowercase swap form; same-instance acceptance logging and canvas pointer projection use the rendered board geometry.",
+    "GRAVITY and OBJECTIVE_CHECK are local adapter projections bracketed by native GemsCleared/GemFell/GemRefilled and ObjectiveCompleted/Terminal/StateAdvanced witnesses. The frozen Runtime state, matching, gravity, refill, RNG and objectives are unchanged.",
+    "Every drag whose source and destination resolve to board cells is submitted to native swap validation, including nonadjacent and otherwise rejected pairs; drags outside the board are ignored.",
+    "The public snapshot exposes configured objective type/target and authoritative progress; the HUD renders every objective target and current value, preserving the default score target of 100."
+  ],
+  "engine": "CocosAirJS 1.0.0 revision 100"
+}

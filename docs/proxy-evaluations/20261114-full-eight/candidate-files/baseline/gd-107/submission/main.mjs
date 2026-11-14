@@ -1,0 +1,12 @@
+import * as cc from '../vendor/cocosair/cocosair.module.js';
+import { createGame } from './game.mjs';
+const app=await cc.createAirApp({canvas:'#GameCanvas',designResolution:{width:800,height:600,policy:0}}),scene=new cc.Scene('WaterSortParity'),ui=cc.createUICanvas(scene,'Canvas',{designWidth:800,designHeight:600}),n=new cc.Node('Backdrop');n.layer=cc.Layers.Enum.UI_2D;n.addComponent(cc.UITransform).setContentSize(800,600);let g=n.addComponent(cc.GraphicsComponent);g.fillColor=new cc.Color().fromHEX('#244257');g.rect(-380,-280,760,560);g.fill();ui.addChild(n);app.run(scene);
+let game=createGame({}),records=[];const view=document.querySelector('#view'),copy=v=>JSON.parse(JSON.stringify(v));
+function draw(){const s=game.snapshot();view.innerHTML='<div class="tubes">'+s.tubes.map((t,i)=>`<div class="tube ${s.selected===i?'selected':''}" data-i="${i}">${t.map(c=>`<div class="liquid ${String(c)}"></div>`).join('')}</div>`).join('')+'</div>';view.querySelectorAll('.tube').forEach(e=>e.onclick=()=>transition(+e.dataset.i));}
+function transition(action){const before=game.snapshot(),result=game.step({action,tick:before.tick}),after=game.snapshot();records.push({action:copy(action),accepted:!!result?.accepted,events:copy(result?.events??[]),before:copy(before),after:copy(after)});draw();return result;}
+function reset({content={},seed=0}={}){game=createGame({content,seed});records=[];draw();return copy(game.snapshot());}
+function pointerForAction(action){const canvas=document.querySelector('#GameCanvas'),rect=canvas.getBoundingClientRect();const point=i=>{const tube=view.querySelector(`.tube[data-i="${i}"]`);if(!tube)return null;const r=tube.getBoundingClientRect();return [(r.left+r.width/2-rect.left)*800/rect.width,(r.top+r.height/2-rect.top)*600/rect.height];};const from=point(action?.from),to=point(action?.to);return from&&to?{from,to}:null;}
+window.__candidate={createGame,get game(){return game},get state(){return copy(game.snapshot())}};window.__acceptance={reset,snapshot:()=>copy(game.snapshot()),step:transition,frame:()=>{draw();return copy(game.snapshot());},log:()=>copy(records),designSize:{width:800,height:600},pointerForAction};window.render_game_to_text=()=>JSON.stringify(game.snapshot());window.advanceTime=ms=>window.__acceptance.frame(ms);
+window.addEventListener('keydown',e=>{if(/^[1-9]$/.test(e.key)){e.preventDefault();transition(+e.key-1);}else if(e.key==='0'){e.preventDefault();transition(9);}else if(['r','R','p','P'].includes(e.key)){e.preventDefault();transition(e.key);}},true);draw();
+
+

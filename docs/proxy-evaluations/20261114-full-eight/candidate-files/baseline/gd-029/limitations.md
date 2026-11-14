@@ -1,0 +1,9 @@
+# Repair findings: gd-029
+
+- The prior model accepted only string-like directions, ignored public `{move,fire}` actions and `bounds`, hard-coded reset positions/enemies, and did not load controlled `initial_snapshot` state. The UI floored elapsed time, never sampled the held fire key, and lacked the shared live acceptance recorder.
+- Reworked only the task submission modules to honor declared player/enemy/projectile/bounds and initial-snapshot fields, normalize diagonal displacement, emit per-projectile DAMAGE then DESTROY events in enemy-array order, and implement cooldown-based held fire. The browser uses a fractional 60 Hz accumulator for both automatic play and `advanceTime`, with direct model capture and real keyboard state routed through the same transition logger.
+- Assumptions: diagonal movement has unit magnitude per simulation tick; bounds are `[minX,minY,maxX,maxY]`; projectiles move upward by four units, spawn three units above the player, and collide at radius 4; first matching enemy by array order receives one hit; fire cooldown is ten ticks. Source/usage budgets are unverified.
+- Verification: `node --check` passed for `submission/game.mjs` and `submission/main.mjs`. Browser cadence, fixture traces and visual review remain pending supervisor; no success claim made.
+- Follow-up: supplied projectiles are normalized without mutating input, overlaps are resolved before the next movement update, and each consumed projectile damages at most one target per tick.
+- Renderer follow-up: entities with missing or non-finite coordinates are omitted from the playfield and counted as unlocated in the HUD; source state is unchanged.
+- Collision follow-up: enemies without two finite position coordinates are excluded from collision lookup and remain unchanged; positioned enemies keep the normal radius check.

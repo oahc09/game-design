@@ -1,0 +1,1207 @@
+{
+  "scope": "All superseded non-PASS reports retained in local archive; no old result overwritten or counted as current",
+  "reports": [
+    {
+      "path": "review-packages/03fb1c77-b31a-4527-bf3b-9660b4c1ab4e/report.json",
+      "sha256": "9cc078f10e7bd7d17681c6757d247ee51e03b5cc79f203f4ea4aad81842112f8",
+      "blind_id": "03fb1c77-b31a-4527-bf3b-9660b4c1ab4e",
+      "artifact_digest": "9fcc1d3ffa84c43d344cd4fdcbb6dd0f1d1f6d1739345769b87749deddd43f18",
+      "statuses": [
+        {
+          "rubric_id": "gd-108.knowledge_boundary",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-108.metric_valid",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-108.extension_boundary",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-108.no_false_confirmation",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-108.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-108.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-108.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/04503dad-4db9-4fa5-be43-fba4ef06b3d5/report.json",
+      "sha256": "c39027a98b554991689373be01f938b85e65e19c0dc487fab6664f7d93e6481a",
+      "blind_id": "04503dad-4db9-4fa5-be43-fba4ef06b3d5",
+      "artifact_digest": "58e8919d6a93e3f6011e77bf02f614caf7e736cd346552b2f5bb0d5909dda7ca",
+      "statuses": [
+        {
+          "rubric_id": "gd-108.knowledge_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-108.metric_valid",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-108.extension_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-108.no_false_confirmation",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-108.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-108.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-108.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/116e3aa7-b603-42c4-ab12-0b2d40c3cc9b/report-initial.json",
+      "sha256": "1bc0e517ce2739dd920f4b39c02133cd9bd23b5d18617f6adbcf77c70be7b384",
+      "blind_id": "116e3aa7-b603-42c4-ab12-0b2d40c3cc9b",
+      "artifact_digest": "1ec07c4f6d834b841b259b600da4d6278f2998aa08373797dccf977b59987d89",
+      "statuses": [
+        {
+          "rubric_id": "gd-065.state_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.event_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.terminal_parity",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "rubric_id": "gd-065.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.visual_review",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.extension_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_false_confirmation",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/116e3aa7-b603-42c4-ab12-0b2d40c3cc9b/report.json",
+      "sha256": "1bc0e517ce2739dd920f4b39c02133cd9bd23b5d18617f6adbcf77c70be7b384",
+      "blind_id": "116e3aa7-b603-42c4-ab12-0b2d40c3cc9b",
+      "artifact_digest": "1ec07c4f6d834b841b259b600da4d6278f2998aa08373797dccf977b59987d89",
+      "statuses": [
+        {
+          "rubric_id": "gd-065.state_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.event_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.terminal_parity",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "rubric_id": "gd-065.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.visual_review",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.extension_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_false_confirmation",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/24cc47e2-756b-4dcb-b880-6cdfd5383780/report.json",
+      "sha256": "2b6c4985281e275746271bc7b8edd1bc786e951bf07540bb6ea273c082889b11",
+      "blind_id": "24cc47e2-756b-4dcb-b880-6cdfd5383780",
+      "artifact_digest": "8736e4b9dbb8527c0b5f8db8c3f05d01aa83bddf698f44040aed9a5e42e7dd67",
+      "statuses": [
+        {
+          "rubric_id": "gd-107.state_parity",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-107.event_parity",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-107.terminal_parity",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-107.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.visual_review",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.extension_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.no_false_confirmation",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/36908cc2-76cf-4748-9b48-5d2b53d2cff5/report.json",
+      "sha256": "e84f5aabc5fb8bd6dfcdf983d43e917be3e7f41c4bf71229df211542e5a52f04",
+      "blind_id": "36908cc2-76cf-4748-9b48-5d2b53d2cff5",
+      "artifact_digest": "a0915961d398573aa1ccef43436ba955fe774f074710fb3274808d3516d0dde8",
+      "statuses": [
+        {
+          "rubric_id": "gd-065.state_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.event_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.terminal_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.visual_review",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.extension_boundary",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-065.no_false_confirmation",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-065.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/464e5cc1-887e-46e9-91ba-dda83d22ef9b/report-before-status-layer.json",
+      "sha256": "7e6dc0b666c55a82ed72bff5587100077f63419069b1e3591bd4293d6cabdd44",
+      "blind_id": "464e5cc1-887e-46e9-91ba-dda83d22ef9b",
+      "artifact_digest": "4715305521aca324697295e4863bbb515821acd3aaac8a5bc75e37357fcf84c3",
+      "statuses": [
+        {
+          "rubric_id": "gd-107.state_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.event_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.terminal_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.visual_review",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.extension_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.no_false_confirmation",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-107.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/464e5cc1-887e-46e9-91ba-dda83d22ef9b/report-updated.json",
+      "sha256": "7e6dc0b666c55a82ed72bff5587100077f63419069b1e3591bd4293d6cabdd44",
+      "blind_id": "464e5cc1-887e-46e9-91ba-dda83d22ef9b",
+      "artifact_digest": "4715305521aca324697295e4863bbb515821acd3aaac8a5bc75e37357fcf84c3",
+      "statuses": [
+        {
+          "rubric_id": "gd-107.state_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.event_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.terminal_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.visual_review",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.extension_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.no_false_confirmation",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-107.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/464e5cc1-887e-46e9-91ba-dda83d22ef9b/report.json",
+      "sha256": "02a0b51d467135da9be365fc1da48709412a8666b3c89ef079cbb0ad3f68d556",
+      "blind_id": "464e5cc1-887e-46e9-91ba-dda83d22ef9b",
+      "artifact_digest": "4715305521aca324697295e4863bbb515821acd3aaac8a5bc75e37357fcf84c3",
+      "statuses": [
+        {
+          "rubric_id": "gd-107.state_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.event_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.terminal_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.input_parity",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-107.visual_review",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.extension_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.no_false_confirmation",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/63afb8fd-c488-427e-85f5-fe1780bcd7a4/report.json",
+      "sha256": "d3affafee6b39331333d12c74f18bcf4809e2adc7e5d69913136b6b789006f1e",
+      "blind_id": "63afb8fd-c488-427e-85f5-fe1780bcd7a4",
+      "artifact_digest": "7c433ea4df9956329b4be9a025ff11b2e0f2ee1f358ac7a775063d99c6d0b37b",
+      "statuses": [
+        {
+          "rubric_id": "gd-108.knowledge_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-108.metric_valid",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-108.extension_boundary",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-108.no_false_confirmation",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-108.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-108.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-108.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/70ae8f0c-b78b-4de0-9543-2fc94d868d70/report.json",
+      "sha256": "ca0015b9c6a0ca9ceaace0248478028d59c7ce3f4e2aa92abe78f82a065681cc",
+      "blind_id": "70ae8f0c-b78b-4de0-9543-2fc94d868d70",
+      "artifact_digest": "9bb7476365d7ccb4fdf735f2ad313c43f7c41de240c2d3b6cd7137cbbd2fe9b6",
+      "statuses": [
+        {
+          "rubric_id": "gd-039.state_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.event_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.terminal_parity",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "rubric_id": "gd-039.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.visual_review",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-039.no_false_confirmation",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/793c2deb-2f4c-4bbb-bffd-0ac7c1924286/report-before-status-layer.json",
+      "sha256": "533898c2438209d88d716ceba1713559c10092562d1d873e49960d4e404c75c9",
+      "blind_id": "793c2deb-2f4c-4bbb-bffd-0ac7c1924286",
+      "artifact_digest": "65a789854cf27fda30eb8ce40bb56b104d7a063bc41b82b79551b21a74af013e",
+      "statuses": [
+        {
+          "rubric_id": "gd-065.state_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.event_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.terminal_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.visual_review",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.extension_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_false_confirmation",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-065.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/793c2deb-2f4c-4bbb-bffd-0ac7c1924286/report-initial.json",
+      "sha256": "e66bbb6142d00b6a1c731856ff7c6a54734d00c388fdec1961a866f8fe9fda67",
+      "blind_id": "793c2deb-2f4c-4bbb-bffd-0ac7c1924286",
+      "artifact_digest": "65a789854cf27fda30eb8ce40bb56b104d7a063bc41b82b79551b21a74af013e",
+      "statuses": [
+        {
+          "rubric_id": "gd-065.state_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.event_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.terminal_parity",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "rubric_id": "gd-065.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.visual_review",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "rubric_id": "gd-065.extension_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_false_confirmation",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/793c2deb-2f4c-4bbb-bffd-0ac7c1924286/report-updated.json",
+      "sha256": "533898c2438209d88d716ceba1713559c10092562d1d873e49960d4e404c75c9",
+      "blind_id": "793c2deb-2f4c-4bbb-bffd-0ac7c1924286",
+      "artifact_digest": "65a789854cf27fda30eb8ce40bb56b104d7a063bc41b82b79551b21a74af013e",
+      "statuses": [
+        {
+          "rubric_id": "gd-065.state_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.event_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.terminal_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.visual_review",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.extension_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_false_confirmation",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-065.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/793c2deb-2f4c-4bbb-bffd-0ac7c1924286/report.json",
+      "sha256": "e66bbb6142d00b6a1c731856ff7c6a54734d00c388fdec1961a866f8fe9fda67",
+      "blind_id": "793c2deb-2f4c-4bbb-bffd-0ac7c1924286",
+      "artifact_digest": "65a789854cf27fda30eb8ce40bb56b104d7a063bc41b82b79551b21a74af013e",
+      "statuses": [
+        {
+          "rubric_id": "gd-065.state_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.event_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.terminal_parity",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "rubric_id": "gd-065.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.visual_review",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "rubric_id": "gd-065.extension_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_false_confirmation",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/7c6caa74-adf4-4432-9af9-439e00e6ed79/report.json",
+      "sha256": "f91c0b5bbfb411f9613b33ba148e2621d3b44e06e580aeeb82ce5f2ad3b1a708",
+      "blind_id": "7c6caa74-adf4-4432-9af9-439e00e6ed79",
+      "artifact_digest": "b3626bb1563386fca154ca3e88cfbd65f093b5d319e15a8c8b2e950d709cc060",
+      "statuses": [
+        {
+          "rubric_id": "gd-065.state_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.event_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.terminal_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.visual_review",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.extension_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_false_confirmation",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-065.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-065.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/7cb1e99a-4f5f-46ab-8f70-7687eb0c6a4a/report.json",
+      "sha256": "e9e3a7901371d2858c9a1f7db64a9a22daf127a5492db8bfb809c22b34284873",
+      "blind_id": "7cb1e99a-4f5f-46ab-8f70-7687eb0c6a4a",
+      "artifact_digest": "534ac864c16de0992159e7d7a443bb28fd5445d010a56126741cd7c3f1cbfadd",
+      "statuses": [
+        {
+          "rubric_id": "gd-071.state_parity",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-071.event_parity",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-071.terminal_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-071.input_parity",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-071.visual_review",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-071.extension_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-071.no_false_confirmation",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-071.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-071.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-071.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/a9fa243b-e906-412b-8471-828cef02167c/report-before-provenance-correction.json",
+      "sha256": "573a9fc1ab69ad6cbcefe21571e347a264867cf6645245836ad3664a2ad59dc6",
+      "blind_id": "a9fa243b-e906-412b-8471-828cef02167c",
+      "artifact_digest": "f4330db6e428bce4d95fb62ac5588e38faa0a2557530b8a51befd0c437c7741b",
+      "statuses": [
+        {
+          "rubric_id": "gd-019.state_parity",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "rubric_id": "gd-019.event_parity",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "rubric_id": "gd-019.terminal_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-019.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-019.visual_review",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "rubric_id": "gd-019.no_false_confirmation",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-019.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-019.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-019.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/a9fa243b-e906-412b-8471-828cef02167c/report.json",
+      "sha256": "573a9fc1ab69ad6cbcefe21571e347a264867cf6645245836ad3664a2ad59dc6",
+      "blind_id": "a9fa243b-e906-412b-8471-828cef02167c",
+      "artifact_digest": "f4330db6e428bce4d95fb62ac5588e38faa0a2557530b8a51befd0c437c7741b",
+      "statuses": [
+        {
+          "rubric_id": "gd-019.state_parity",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "rubric_id": "gd-019.event_parity",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "rubric_id": "gd-019.terminal_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-019.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-019.visual_review",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "rubric_id": "gd-019.no_false_confirmation",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-019.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-019.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-019.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/d9e6a871-e1cc-41cd-ae11-b80237614ac4/report.json",
+      "sha256": "3ab4c2a1c0cf1a62b29a0fd0491918452a93bb8658b7a761c01f504324875033",
+      "blind_id": "d9e6a871-e1cc-41cd-ae11-b80237614ac4",
+      "artifact_digest": "c7d8126e4f477703ebc6510acd6b705c22138a0546359cf839b68b9c46f40759",
+      "statuses": [
+        {
+          "rubric_id": "gd-107.state_parity",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-107.event_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.terminal_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.input_parity",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-107.visual_review",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.extension_boundary",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-107.no_false_confirmation",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-107.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/d9f4ae8b-6f7b-46d1-941e-56fdd8c36001/report.json",
+      "sha256": "c218e02c23bd289bc55368351b52f4ebcadb050466169eb502457f415acd2856",
+      "blind_id": "d9f4ae8b-6f7b-46d1-941e-56fdd8c36001",
+      "artifact_digest": "d6ecebec5c13803048c038c5465576a6876c7160598f50dfa1b45d1c898323cc",
+      "statuses": [
+        {
+          "rubric_id": "gd-107.state_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.event_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.terminal_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.visual_review",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.extension_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.no_false_confirmation",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-107.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-107.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/dbeaf2c6-39dd-435b-bac5-f0cc7fa7558c/report.json",
+      "sha256": "a7278e372590ab16e80aada0142e88470f2c943c54ee8a078f23314e45c8c0c3",
+      "blind_id": "dbeaf2c6-39dd-435b-bac5-f0cc7fa7558c",
+      "artifact_digest": "80496f4a9dc998d7c078a3340085476664af09daa33be457d223fef1e0b4dd94",
+      "statuses": [
+        {
+          "rubric_id": "gd-071.state_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-071.event_parity",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-071.terminal_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-071.input_parity",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-071.visual_review",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-071.extension_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-071.no_false_confirmation",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-071.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-071.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-071.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/de010572-2c26-4c63-a70a-48697eb6f776/report.json",
+      "sha256": "1f1a356db3aa0f12c004844dc1d99f60eb53b940238ca2c0a94af42d266beec2",
+      "blind_id": "de010572-2c26-4c63-a70a-48697eb6f776",
+      "artifact_digest": "f946b84f1b6303447a0a9e361ee8ab4627ac3476271a1462c1abd8642317b5df",
+      "statuses": [
+        {
+          "rubric_id": "gd-019.state_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-019.event_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-019.terminal_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-019.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-019.visual_review",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-019.no_false_confirmation",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-019.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-019.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-019.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/e71d2eb9-deee-4c97-9c81-c39d02414fdf/report.json",
+      "sha256": "6142e7e7d3f042d0689ce53b7926f424716ca489f71d9ca3bbcc105245de0a48",
+      "blind_id": "e71d2eb9-deee-4c97-9c81-c39d02414fdf",
+      "artifact_digest": "d38f16a3e3b685a40beabb4ce168b6cbca48570039e56603f6e980ab903089cc",
+      "statuses": [
+        {
+          "rubric_id": "gd-108.knowledge_boundary",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-108.metric_valid",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-108.extension_boundary",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-108.no_false_confirmation",
+          "status": "FAIL"
+        },
+        {
+          "rubric_id": "gd-108.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-108.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-108.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/fed589a5-427c-41a3-82e3-908a926eab93/report-initial.json",
+      "sha256": "57d5dc4ac81a3b5466d1580a602990bd1f5ad3bf2d49b1548aa84430fd051f12",
+      "blind_id": "fed589a5-427c-41a3-82e3-908a926eab93",
+      "artifact_digest": "8475bd0e7f4987a8453b7fdddf5026bc290d77de39d503e2b40fc52845c117a0",
+      "statuses": [
+        {
+          "rubric_id": "gd-039.state_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.event_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.terminal_parity",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "rubric_id": "gd-039.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.visual_review",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.no_false_confirmation",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "path": "review-packages/fed589a5-427c-41a3-82e3-908a926eab93/report.json",
+      "sha256": "57d5dc4ac81a3b5466d1580a602990bd1f5ad3bf2d49b1548aa84430fd051f12",
+      "blind_id": "fed589a5-427c-41a3-82e3-908a926eab93",
+      "artifact_digest": "8475bd0e7f4987a8453b7fdddf5026bc290d77de39d503e2b40fc52845c117a0",
+      "statuses": [
+        {
+          "rubric_id": "gd-039.state_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.event_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.terminal_parity",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "rubric_id": "gd-039.input_parity",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.visual_review",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.no_false_confirmation",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.timeout_not_unsolvable",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.no_bot_human_equivalence",
+          "status": "PASS"
+        },
+        {
+          "rubric_id": "gd-039.no_single_fun_score",
+          "status": "PASS"
+        }
+      ],
+      "selected": false
+    }
+  ]
+}

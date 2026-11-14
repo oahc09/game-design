@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "scope": "same published seed/case/control/FPS/repeat, or seed/profile/FPS/capture; no outcome equality required between independently submitted game rules",
+  "results": [
+    {
+      "task_id": "gd-009",
+      "status": "PASS",
+      "paired_conditions": 432,
+      "arms": [
+        {
+          "arm": "baseline",
+          "artifact_digest": "f82d543f010a2651d4b2b2a85cf2db41562567aacc7c575c54b359e34fe8febf"
+        },
+        {
+          "arm": "treatment",
+          "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b"
+        }
+      ]
+    },
+    {
+      "task_id": "gd-019",
+      "status": "PASS",
+      "paired_conditions": 288,
+      "arms": [
+        {
+          "arm": "treatment",
+          "artifact_digest": "7c1c6094dae5b7850e1dcb5b04bc21953c67dc95cd6753b65ecbe07c8ece076e"
+        },
+        {
+          "arm": "baseline",
+          "artifact_digest": "f4330db6e428bce4d95fb62ac5588e38faa0a2557530b8a51befd0c437c7741b"
+        }
+      ]
+    },
+    {
+      "task_id": "gd-029",
+      "status": "PASS",
+      "paired_conditions": 288,
+      "arms": [
+        {
+          "arm": "treatment",
+          "artifact_digest": "6a2ba4b485e8081ad7f3d3008ab4a489b50314b0e2d31382cdaf95da827a9dd0"
+        },
+        {
+          "arm": "baseline",
+          "artifact_digest": "7d02f0e7714fc86edff172f550733df6648df97489161fd3bbbfbcd7deff8fde"
+        }
+      ]
+    },
+    {
+      "task_id": "gd-039",
+      "status": "PASS",
+      "paired_conditions": 144,
+      "arms": [
+        {
+          "arm": "treatment",
+          "artifact_digest": "b97ef17f1b20b9e77f44297981b635eefdcdf9ba72d2728659809bad4df1fa7e"
+        },
+        {
+          "arm": "baseline",
+          "artifact_digest": "8475bd0e7f4987a8453b7fdddf5026bc290d77de39d503e2b40fc52845c117a0"
+        }
+      ]
+    },
+    {
+      "task_id": "gd-065",
+      "status": "PASS",
+      "paired_conditions": 288,
+      "arms": [
+        {
+          "arm": "treatment",
+          "artifact_digest": "65a789854cf27fda30eb8ce40bb56b104d7a063bc41b82b79551b21a74af013e"
+        },
+        {
+          "arm": "baseline",
+          "artifact_digest": "b3626bb1563386fca154ca3e88cfbd65f093b5d319e15a8c8b2e950d709cc060"
+        }
+      ]
+    },
+    {
+      "task_id": "gd-071",
+      "status": "PASS",
+      "paired_conditions": 216,
+      "arms": [
+        {
+          "arm": "baseline",
+          "artifact_digest": "cf13d1b9fac0af997f956d36395eecc2867bb0d05760f50d823c4fd6524e98a6"
+        },
+        {
+          "arm": "treatment",
+          "artifact_digest": "b1f7e67a68be180454f41c3cdd25ff1de3e7c6276361e02d03d906e205b7c863"
+        }
+      ]
+    },
+    {
+      "task_id": "gd-107",
+      "status": "PASS",
+      "paired_conditions": 288,
+      "arms": [
+        {
+          "arm": "treatment",
+          "artifact_digest": "4715305521aca324697295e4863bbb515821acd3aaac8a5bc75e37357fcf84c3"
+        },
+        {
+          "arm": "baseline",
+          "artifact_digest": "c0a47d3f04dd0f2468e103f49848e136caf4c964be408deb29f23908d1eec824"
+        }
+      ]
+    },
+    {
+      "task_id": "gd-108",
+      "status": "PASS",
+      "paired_conditions": 144,
+      "arms": [
+        {
+          "arm": "treatment",
+          "artifact_digest": "d38f16a3e3b685a40beabb4ce168b6cbca48570039e56603f6e980ab903089cc"
+        },
+        {
+          "arm": "baseline",
+          "artifact_digest": "31ad4cd03ad36da19c2ed7fc9431a94683b7debec991c0e19bb302ed8aba041a"
+        }
+      ]
+    }
+  ]
+}

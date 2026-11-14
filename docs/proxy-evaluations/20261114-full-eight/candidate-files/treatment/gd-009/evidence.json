@@ -1,0 +1,20 @@
+{
+  "task_id": "gd-009",
+  "status": "IMPLEMENTED_UNVERIFIED",
+  "attempted_work": [
+    "Read public task, engine output contract, Game Design Skill, Sokoban archetype, runtime contract, and toolkit adapter/runtime.",
+    "Created engine boot, browser controls, authoritative createGame snapshot/step boundary, and CocosAirJS GraphicsComponent goal/crate rendering.",
+    "Applied the authorized minimal public-contract repair in submission modules and recorded unverified status; automatic browser/evaluator PASS is not claimed.",
+    "R key restart is a canonical native transition recorded with before/after snapshots; only supervisor reset clears the case log.",
+    "Final audit routed every live UI and fixed-step game.step call through stepLive; keyboard input listeners run in window capture phase."
+  ],
+  "checks": {
+    "node_syntax": "PASS (node --check task-local submission/main.mjs and submission/game.mjs after latest adapter changes)",
+    "browser_startup": "NOT_RUN",
+    "state_event_terminal_parity": "NOT_RUN",
+    "input_parity": "NOT_RUN",
+    "visual_review": "NOT_RUN"
+  },
+  "source_selection_context": "This candidate was authored after prior task candidates in the same generation context; sequence context may affect selection.",
+  "model_authored_pass_claims": false
+}

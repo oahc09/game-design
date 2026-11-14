@@ -1,0 +1,21 @@
+{
+  "task_id": "gd-107",
+  "entrypoint": "submission/index.html",
+  "runtime": "submission/game.mjs",
+  "controls": [
+    "Arrow keys + Enter",
+    "Pointer tube selection",
+    "Escape cancels",
+    "R restart",
+    "P pause"
+  ],
+  "assumptions": [
+    "Unregistered Water Sort prototype implements maximal top-group pours into an empty or same-color tube.",
+    "Victory requires all nonempty tubes full and monochromatic; empty tubes are allowed.",
+    "Keyboard and pointer map to the same {from,to} action object.",
+    "Added public pour action alias and live acceptance/pointer instrumentation; keyboard and pointer still call the same native {from,to} game action.",
+    "Supervisor reset and UI restart restore the keyboard cursor to initial tube index 0 along with clearing source selection."
+  ],
+  "engine": "CocosAirJS 1.0.0 revision 100",
+  "package_status": "EXPERIMENTAL_EXTENSION_GATE_NOT_RUN"
+}

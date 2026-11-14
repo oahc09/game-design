@@ -1,0 +1,17 @@
+{
+  "scope": "LOCAL_FULL_EIGHT_TASK_ACCEPTANCE",
+  "status": "PASS",
+  "tasks": 8,
+  "candidates": 16,
+  "engine_executions": 3888,
+  "card_executions": 288,
+  "card_decision_opportunities": 6090,
+  "native_fixtures": 26,
+  "manual_rubrics": 146,
+  "three_rate_groups": 696,
+  "water_keyboard_pointer_pairs": 576,
+  "formal_trials": 0,
+  "formal_status": "BLOCKED",
+  "external_review": "UNVERIFIED",
+  "human_participants": 0
+}

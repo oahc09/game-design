@@ -1,0 +1,192 @@
+{
+  "human_participants": 0,
+  "artifact_digest": "b1f7e67a68be180454f41c3cdd25ff1de3e7c6276361e02d03d906e205b7c863",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "blind_id": "e4d50e42-1035-4e13-b367-75c92dbedf9e",
+  "reviewer_id": "gpt-6-luna-high-local-12-corrected",
+  "task_id": "gd-071",
+  "reviews": [
+    {
+      "blinding_broken": true,
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:4; source/submission/main.mjs:2; evidence/records/11-gd-071.public-native-scenario-jump-30-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-60-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-144-0.json#actual",
+          "explanation": "PASS: packet.json#assumptions declares y-down world/screen coordinates, physics constants, top-only landing and fall recovery. source/submission/game.mjs:4 applies jump vy=-9, gravity +24 and lands on downward crossing; source/submission/main.mjs:2 maps platform/player coordinates with common scale/projection. Representative jump captures at 30/60/144 (evidence/records/11-gd-071.public-native-scenario-jump-30-0.json#actual, evidence/records/11-gd-071.public-native-scenario-jump-60-0.json#actual, evidence/records/11-gd-071.public-native-scenario-jump-144-0.json#actual) show same y trajectory and JUMP/LAND ordering; checkpoint traces recover to the checkpoint at all three rates. This is consistent with the declared assumptions; model replay is not treated as sole semantic oracle."
+        },
+        {
+          "evidence_reference": "packet.json#task; evidence/platform-behavior.json#rows; evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png",
+          "explanation": "All concrete obligations have evidence: evidence/platform-behavior.json#rows has 144 independent jump/land and checkpoint/recovery witnesses with zero failures; evidence/records/11-gd-071.public-native-scenario-checkpoint-30-0.json#actual, evidence/records/11-gd-071.public-native-scenario-checkpoint-60-0.json#actual, and evidence/records/11-gd-071.public-native-scenario-checkpoint-144-0.json#actual show checkpoint event then recovery. The three supplied screenshots show the capsule touching the platform top and checkpoint marker at its world position. The package declares top-only landing and no registered runtime (packet.json#assumptions); no side-collision requirement is invented."
+        }
+      ],
+      "rubric_id": "gd-071.state_parity",
+      "reviewer_id": "gpt-6-luna-high-local-12-corrected",
+      "artifact_digest": "b1f7e67a68be180454f41c3cdd25ff1de3e7c6276361e02d03d906e205b7c863"
+    },
+    {
+      "blinding_broken": true,
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:4; source/submission/main.mjs:2; evidence/records/11-gd-071.public-native-scenario-jump-30-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-60-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-144-0.json#actual",
+          "explanation": "PASS: JUMP then LAND occurs once in the inspected three-rate jump traces (indices 10 and 53), and CHECKPOINT then recovered CHECKPOINT in recovery traces (indices 20 and 204), with event ordering preserved across rates (evidence/records/11-gd-071.public-native-scenario-jump-30-0.json#actual.events, evidence/records/11-gd-071.public-native-scenario-jump-60-0.json#actual.events, evidence/records/11-gd-071.public-native-scenario-jump-144-0.json#actual.events; corresponding checkpoint records #actual.events). COLLIDE is emitted each fixed tick while contact persists by source/submission/game.mjs:4 and appears in raw captures; the original task only requires event consistency and packet.json#task.materials.submission_contract lists the vocabulary, with no begin-contact-only rule. I therefore treat it as the implementation's consistent per-tick contact event, not a failure."
+        },
+        {
+          "evidence_reference": "packet.json#task; evidence/platform-behavior.json#rows; evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png",
+          "explanation": "The concrete collision/checkpoint obligation is exercised at 30/60/144 in evidence/platform-behavior.json#rows and representative raw records. JUMP/LAND/CHECKPOINT order and counts are consistent; recurring COLLIDE is contact sampling, not contradicted by any declared task rule. Screenshots are static and establish alignment, not event timing."
+        }
+      ],
+      "rubric_id": "gd-071.event_parity",
+      "reviewer_id": "gpt-6-luna-high-local-12-corrected",
+      "artifact_digest": "b1f7e67a68be180454f41c3cdd25ff1de3e7c6276361e02d03d906e205b7c863"
+    },
+    {
+      "blinding_broken": true,
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:4; source/submission/main.mjs:2; evidence/records/11-gd-071.public-native-scenario-jump-30-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-60-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-144-0.json#actual",
+          "explanation": "PASS within task scope: source/submission/game.mjs:4 keeps terminal null for this level, rejects stale-tick actions, and restart resets; no win/loss objective is defined in packet.json#task. Inspected actual traces (evidence/records/11-gd-071.public-native-scenario-jump-60-0.json#actual.state and evidence/records/11-gd-071.public-native-scenario-checkpoint-60-0.json#actual.state) retain terminal:null throughout ordinary jump/recovery."
+        },
+        {
+          "evidence_reference": "packet.json#task; evidence/platform-behavior.json#rows; evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png",
+          "explanation": "Checkpoint recovery is nonterminal in source/submission/game.mjs:4 and evidence/records/11-gd-071.public-native-scenario-checkpoint-60-0.json#actual.events; no terminal feedback is shown in evidence/records/evidence/records/screen-60.png. The task defines no win/loss condition."
+        }
+      ],
+      "rubric_id": "gd-071.terminal_parity",
+      "reviewer_id": "gpt-6-luna-high-local-12-corrected",
+      "artifact_digest": "b1f7e67a68be180454f41c3cdd25ff1de3e7c6276361e02d03d906e205b7c863"
+    },
+    {
+      "blinding_broken": true,
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:4; source/submission/main.mjs:2; evidence/records/11-gd-071.public-native-scenario-jump-30-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-60-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-144-0.json#actual",
+          "explanation": "PASS: source/submission/main.mjs:2 now gates Space/C/R/P actions on !e.repeat, while movement is held-state sampling into a 60Hz accumulator. Actual Playwright keydown repeated without keyup and repeat=true is documented in evidence/input-edges-30.json#inputs, input-edges-60.json#inputs, input-edges-144.json#inputs; each file reports jump_count=1 and checkpoint_count=1 with PASS and matching artifact digest. Thus repeated keyboard.down does not create duplicate jump/checkpoint actions at any tested render rate. Native normalized traces also cover move/jump/checkpoint at 30/60/144."
+        },
+        {
+          "evidence_reference": "packet.json#task; evidence/platform-behavior.json#rows; evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png",
+          "explanation": "The task controls move/jump/checkpoint map through main.mjs:2 and game.mjs:4. Direct repeated-keydown tests at all three rates (evidence/input-edges-30.json, evidence/input-edges-60.json, evidence/input-edges-144.json) each contain exactly one JUMP and one CHECKPOINT despite repeat=true on the second keydown. R/P are extra controls and are also filtered by !e.repeat in source/submission/main.mjs:2."
+        }
+      ],
+      "rubric_id": "gd-071.input_parity",
+      "reviewer_id": "gpt-6-luna-high-local-12-corrected",
+      "artifact_digest": "b1f7e67a68be180454f41c3cdd25ff1de3e7c6276361e02d03d906e205b7c863"
+    },
+    {
+      "blinding_broken": true,
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:4; source/submission/main.mjs:2; evidence/records/11-gd-071.public-native-scenario-jump-30-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-60-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-144-0.json#actual",
+          "explanation": "PASS for supplied local captures: evidence/records/screen-30.png, evidence/records/screen-60.png, screen-144.png show the capsule centered on its current platform with the capsule bottom aligned to the top surface; the checkpoint cue marks the stored point. source/submission/main.mjs:2 renders platform bounds, capsule radius/height and checkpoint from authoritative snapshot using the declared y-down projection. These are static supplied screenshots and do not establish human usability."
+        },
+        {
+          "evidence_reference": "packet.json#task; evidence/platform-behavior.json#rows; evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png",
+          "explanation": "The visible capsule-alignment obligation is supported at each requested rate by the three supplied PNGs and their authoritative geometry formula in source/submission/main.mjs:2. Raw 30/60/144 jump/recovery traces provide the dynamic state context, but the screenshots themselves only show a grounded state."
+        }
+      ],
+      "rubric_id": "gd-071.visual_review",
+      "reviewer_id": "gpt-6-luna-high-local-12-corrected",
+      "artifact_digest": "b1f7e67a68be180454f41c3cdd25ff1de3e7c6276361e02d03d906e205b7c863"
+    },
+    {
+      "blinding_broken": true,
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:4; source/submission/main.mjs:2; evidence/records/11-gd-071.public-native-scenario-jump-30-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-60-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-144-0.json#actual",
+          "explanation": "PASS: source/submission/game.mjs:3 labels the implementation experimental and exposes the public createGame/snapshot/step boundary with checkpoint_restore. packet.json#assumptions explicitly says no platformer runtime is registered and states physics/coordinate assumptions. evidence/extension.json#architecture and #runtime_probe report native local modules and exercised hooks; shared Core hashes match before/after. No incompatible registered game is falsely relabeled."
+        },
+        {
+          "evidence_reference": "packet.json#task; evidence/platform-behavior.json#rows; evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png",
+          "explanation": "Requested checkpoint restore and collision/jump capabilities are implemented in source/submission/game.mjs:3-4 and enumerated in evidence/extension.json#capabilities; the local boundary is captured at #runtime_probe. The declared implementation limits remain explicit in packet.json#assumptions."
+        }
+      ],
+      "rubric_id": "gd-071.extension_boundary",
+      "reviewer_id": "gpt-6-luna-high-local-12-corrected",
+      "artifact_digest": "b1f7e67a68be180454f41c3cdd25ff1de3e7c6276361e02d03d906e205b7c863"
+    },
+    {
+      "blinding_broken": true,
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:4; source/submission/main.mjs:2; evidence/records/11-gd-071.public-native-scenario-jump-30-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-60-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-144-0.json#actual",
+          "explanation": "PASS with scope qualification: packet.json#automatic_status and evidence/automatic-evaluation.json#automatic_status are PASS for 216 automatic records with zero failures; this is not a formal qualification because packet.json#scope explicitly excludes formal M7, human observations, and independent production trust, and manual review remains separate. The input edge result is backed by three actual repeated-keydown records rather than a candidate boolean alone."
+        },
+        {
+          "evidence_reference": "packet.json#task; evidence/platform-behavior.json#rows; evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png",
+          "explanation": "Three-rate captures and screenshots support only the stated local behavior. packet.json#scope and evidence/execution-status.json bound the evidence to local engineering; no formal or human acceptance claim appears."
+        }
+      ],
+      "rubric_id": "gd-071.no_false_confirmation",
+      "reviewer_id": "gpt-6-luna-high-local-12-corrected",
+      "artifact_digest": "b1f7e67a68be180454f41c3cdd25ff1de3e7c6276361e02d03d906e205b7c863"
+    },
+    {
+      "blinding_broken": true,
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:4; source/submission/main.mjs:2; evidence/records/11-gd-071.public-native-scenario-jump-30-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-60-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-144-0.json#actual",
+          "explanation": "PASS: this implementation has no solver/generator search process and makes no TIMEOUT or UNSOLVABLE claim. source/submission/game.mjs:4 implements fixed-step movement/recovery only; packet.json#task is an engine implementation request."
+        },
+        {
+          "evidence_reference": "packet.json#task; evidence/platform-behavior.json#rows; evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png",
+          "explanation": "The captured checkpoint traces (evidence/records/11-gd-071.public-native-scenario-checkpoint-60-0.json#actual) are simulation evidence, not a search result. No solver bound or impossibility claim exists in packet.json#task or source/submission/game.mjs:4."
+        }
+      ],
+      "rubric_id": "gd-071.timeout_not_unsolvable",
+      "reviewer_id": "gpt-6-luna-high-local-12-corrected",
+      "artifact_digest": "b1f7e67a68be180454f41c3cdd25ff1de3e7c6276361e02d03d906e205b7c863"
+    },
+    {
+      "blinding_broken": true,
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:4; source/submission/main.mjs:2; evidence/records/11-gd-071.public-native-scenario-jump-30-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-60-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-144-0.json#actual",
+          "explanation": "PASS: packet.json#scope excludes human observations and packet.json#task/source contain no difficulty, fairness, learning, retention, enjoyment, or bot-human equivalence claim. The supplied records are fixed-step technical observations only."
+        },
+        {
+          "evidence_reference": "packet.json#task; evidence/platform-behavior.json#rows; evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png",
+          "explanation": "Three-rate state/event captures in evidence/records/11-gd-071.public-native-scenario-jump-60-0.json#actual are engineering evidence and are not presented as human ratings; no participant claim appears in packet.json#scope."
+        }
+      ],
+      "rubric_id": "gd-071.no_bot_human_equivalence",
+      "reviewer_id": "gpt-6-luna-high-local-12-corrected",
+      "artifact_digest": "b1f7e67a68be180454f41c3cdd25ff1de3e7c6276361e02d03d906e205b7c863"
+    },
+    {
+      "blinding_broken": true,
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:4; source/submission/main.mjs:2; evidence/records/11-gd-071.public-native-scenario-jump-30-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-60-0.json#actual; evidence/records/11-gd-071.public-native-scenario-jump-144-0.json#actual",
+          "explanation": "PASS: packet.json#task and source/submission describe a physics port and contain no composite fun score or experience recommendation. packet.json#scope bounds the result as local engineering evidence."
+        },
+        {
+          "evidence_reference": "packet.json#task; evidence/platform-behavior.json#rows; evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png",
+          "explanation": "The numbers in evidence/records/11-gd-071.public-native-scenario-jump-60-0.json#actual are state/velocity values; the screenshots are visual engineering captures. Neither is described as a fun score or substitute for unmeasured experience dimensions."
+        }
+      ],
+      "rubric_id": "gd-071.no_single_fun_score",
+      "reviewer_id": "gpt-6-luna-high-local-12-corrected",
+      "artifact_digest": "b1f7e67a68be180454f41c3cdd25ff1de3e7c6276361e02d03d906e205b7c863"
+    }
+  ],
+  "formal_trials": 0,
+  "source_modified": false,
+  "limitations": [
+    "Local source-informed proxy review only; not formal production qualification or human playtest.",
+    "Blinding is broken because the source reveals a task-specific platformer implementation.",
+    "Headless reference executes the candidate entry and is not an independent semantic oracle; independent behavior witnesses and source inspection were used.",
+    "Inspected supplied screenshots at 30/60/144 and representative raw traces, plus targeted repeated-keydown evidence; the full 216-record automatic matrix was not independently reread.",
+    "Per-tick COLLIDE is treated as a persistent contact sample because no public rule requires begin-contact-only semantics; no contradiction was found in supplied captures.",
+    "External trust, budget, and isolation remain UNVERIFIED/BLOCKED."
+  ],
+  "kind": "LOCAL_AGENT_SEMANTIC_REVIEW"
+}

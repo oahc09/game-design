@@ -1,0 +1,5 @@
+{
+  "partial_combat_snapshot": "Frozen no-post-destroy input declares enemy identity and health only. Native-rule capture projects those declared combat fields; raw full snapshots/digests remain stored. Engine replay retains full positions. Frozen assertions and counts unchanged.",
+  "engine_reference": "Independently executed native model for model/view parity, with independent public-rule fixtures and separate semantic review; not a sole circular semantic oracle.",
+  "event_projection": "Only declared semantic aliases kept; original event arrays retained in raw native and engine logs. No collector-invented phases."
+}

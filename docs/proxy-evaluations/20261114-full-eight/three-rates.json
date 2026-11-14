@@ -1,0 +1,102 @@
+{
+  "scope": "30/60/144 render-delta schedules; not measured hardware FPS",
+  "status": "PASS",
+  "rows": [
+    {
+      "blind_id": "e1a2a9ca-b420-471d-953c-ce2f06cde720",
+      "artifact_digest": "f82d543f010a2651d4b2b2a85cf2db41562567aacc7c575c54b359e34fe8febf",
+      "groups": 72,
+      "status": "PASS"
+    },
+    {
+      "blind_id": "d2851e5c-ab72-4cc2-938d-62a2800d610d",
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "groups": 72,
+      "status": "PASS"
+    },
+    {
+      "blind_id": "cf4ae63a-5ffa-4a25-9c52-d89847c98ce8",
+      "artifact_digest": "7c1c6094dae5b7850e1dcb5b04bc21953c67dc95cd6753b65ecbe07c8ece076e",
+      "groups": 48,
+      "status": "PASS"
+    },
+    {
+      "blind_id": "a9fa243b-e906-412b-8471-828cef02167c",
+      "artifact_digest": "f4330db6e428bce4d95fb62ac5588e38faa0a2557530b8a51befd0c437c7741b",
+      "groups": 48,
+      "status": "PASS"
+    },
+    {
+      "blind_id": "3193c5d1-49e5-42a0-a7ee-51617c6f87c8",
+      "artifact_digest": "6a2ba4b485e8081ad7f3d3008ab4a489b50314b0e2d31382cdaf95da827a9dd0",
+      "groups": 48,
+      "status": "PASS"
+    },
+    {
+      "blind_id": "0f0be325-8f6e-472d-b0ca-8a35469ed00f",
+      "artifact_digest": "7d02f0e7714fc86edff172f550733df6648df97489161fd3bbbfbcd7deff8fde",
+      "groups": 48,
+      "status": "PASS"
+    },
+    {
+      "blind_id": "4e33da66-b89c-4210-882e-d188acb7b00d",
+      "artifact_digest": "b97ef17f1b20b9e77f44297981b635eefdcdf9ba72d2728659809bad4df1fa7e",
+      "groups": 24,
+      "status": "PASS"
+    },
+    {
+      "blind_id": "fed589a5-427c-41a3-82e3-908a926eab93",
+      "artifact_digest": "8475bd0e7f4987a8453b7fdddf5026bc290d77de39d503e2b40fc52845c117a0",
+      "groups": 24,
+      "status": "PASS"
+    },
+    {
+      "blind_id": "793c2deb-2f4c-4bbb-bffd-0ac7c1924286",
+      "artifact_digest": "65a789854cf27fda30eb8ce40bb56b104d7a063bc41b82b79551b21a74af013e",
+      "groups": 48,
+      "status": "PASS"
+    },
+    {
+      "blind_id": "7c6caa74-adf4-4432-9af9-439e00e6ed79",
+      "artifact_digest": "b3626bb1563386fca154ca3e88cfbd65f093b5d319e15a8c8b2e950d709cc060",
+      "groups": 48,
+      "status": "PASS"
+    },
+    {
+      "blind_id": "da161fec-1143-48eb-b96b-74c1556b77c1",
+      "artifact_digest": "cf13d1b9fac0af997f956d36395eecc2867bb0d05760f50d823c4fd6524e98a6",
+      "groups": 36,
+      "status": "PASS"
+    },
+    {
+      "blind_id": "e4d50e42-1035-4e13-b367-75c92dbedf9e",
+      "artifact_digest": "b1f7e67a68be180454f41c3cdd25ff1de3e7c6276361e02d03d906e205b7c863",
+      "groups": 36,
+      "status": "PASS"
+    },
+    {
+      "blind_id": "464e5cc1-887e-46e9-91ba-dda83d22ef9b",
+      "artifact_digest": "4715305521aca324697295e4863bbb515821acd3aaac8a5bc75e37357fcf84c3",
+      "groups": 48,
+      "status": "PASS"
+    },
+    {
+      "blind_id": "54ca19bb-ed8b-4953-af88-4ceb49cb21fd",
+      "artifact_digest": "c0a47d3f04dd0f2468e103f49848e136caf4c964be408deb29f23908d1eec824",
+      "groups": 48,
+      "status": "PASS"
+    },
+    {
+      "blind_id": "e71d2eb9-deee-4c97-9c81-c39d02414fdf",
+      "artifact_digest": "d38f16a3e3b685a40beabb4ce168b6cbca48570039e56603f6e980ab903089cc",
+      "groups": 24,
+      "status": "PASS"
+    },
+    {
+      "blind_id": "7e471fe9-d7ca-4c5e-97aa-ba469afa8e1d",
+      "artifact_digest": "31ad4cd03ad36da19c2ed7fc9431a94683b7debec991c0e19bb302ed8aba041a",
+      "groups": 24,
+      "status": "PASS"
+    }
+  ]
+}

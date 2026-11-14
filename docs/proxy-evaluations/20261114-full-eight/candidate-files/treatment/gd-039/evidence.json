@@ -1,0 +1,29 @@
+{
+  "task_id": "gd-039",
+  "status": "IMPLEMENTED_UNVERIFIED",
+  "attempted_work": [
+    "Read task, engine contract, Game Design Skill, Match-3 archetype/runtime contracts and implementation.",
+    "Built createGame adapter and drag-to-swap CocosAirJS board renderer with authoritative objective state.",
+    "Applied the authorized minimal public-contract repair in submission modules and recorded unverified status; automatic browser/evaluator PASS is not claimed.",
+    "Added local subclass phase instrumentation around actual native clear/settle and endTurn objective-check boundaries; UI restart remains a logged native transition.",
+    "R key restart is a canonical native transition recorded with before/after snapshots; only supervisor reset clears the case log.",
+    "Final audit routed every live UI and fixed-step game.step call through stepLive; keyboard input listeners run in window capture phase.",
+    "Changed in-board drag routing to pass nonadjacent attempts through native validation and record native rejection/no-mutation.",
+    "Added actual configured objectives and authoritative current values to the public snapshot; HUD renders every target and progress value without changing objective rules."
+  ],
+  "checks": {
+    "node_syntax": "PASS (node --check submission/game.mjs and submission/main.mjs after goal projection)",
+    "browser_startup": "NOT_RUN after local phase instrumentation",
+    "drag_input": "NOT_RUN",
+    "resolution_event_order": "NOT_RUN",
+    "terminal_feedback": "NOT_RUN",
+    "visual_review": "NOT_RUN",
+    "phase_instrumentation": "NOT_RUN under supervisor",
+    "browser_rerun_after_drag_fix": "NOT_RUN",
+    "initial_browser_pilot": "FAIL per parent capture: nonadjacent in-board drag was filtered before native logger",
+    "goal_target_source_review": "PASS: values projected from runtime objectives and score/collected/blocker progress",
+    "goal_hud_browser": "NOT_RUN; root will supply terminal browser witnesses"
+  },
+  "source_selection_context": "This candidate was authored after prior task candidates in the same generation context; sequence context may affect selection.",
+  "model_authored_pass_claims": false
+}

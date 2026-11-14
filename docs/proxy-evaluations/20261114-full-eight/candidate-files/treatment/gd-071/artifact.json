@@ -1,0 +1,25 @@
+{
+  "task_id": "gd-071",
+  "entrypoint": "submission/index.html",
+  "runtime": "submission/game.mjs",
+  "controls": [
+    "A/D or arrow keys move",
+    "Space jump",
+    "C set checkpoint while grounded",
+    "R restart",
+    "P pause"
+  ],
+  "assumptions": [
+    "No platformer runtime is registered; this is an experimental fixed-step package.",
+    "World units use platforms [x,y,width,height] and increase y downward; player position is capsule center-x/feet-y. Screen projection uses the same y-down orientation; capsule bounds are [x-radius,x+radius] by [feet-height,feet]. Checkpoint is projected at its world-space feet position.",
+    "Physics defaults: move speed 5 units/s, jump speed 9 units/s, gravity 24 units/s², capsule radius 0.3, height 1.5.",
+    "Landing is one-way top-surface collision; falling 12 units below the lowest platform respawns at checkpoint.",
+    "Checkpoint defaults to spawn and can be set while grounded.",
+    "Corrected platform tuple use, declared platform/checkpoint adaptation and aligned renderer geometry to authoritative platforms/capsule; added same-instance fixed-step acceptance hooks.",
+    "Public move vectors [dx,dy] map dx to the platformer horizontal movement axis; jump and checkpoint type actions normalize to their existing boolean inputs.",
+    "Space jump, C checkpoint, R restart, and P pause respond once per physical keydown; repeated keydown events while held are ignored. COLLIDE is reported on each fixed simulation tick while contact persists, not only on begin-contact."
+  ],
+  "engine": "CocosAirJS 1.0.0 revision 100",
+  "package_status": "EXPERIMENTAL_EXTENSION_GATE_NOT_RUN",
+  "render_coordinates": "World +y projects downward to screen +y. Platform tuple y is the top surface; player y is capsule feet; capsule top is player.y - capsule.height. Checkpoint marker uses the same y-down world projection."
+}

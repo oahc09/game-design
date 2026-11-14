@@ -1,0 +1,19 @@
+{
+  "task_id": "gd-009",
+  "entrypoint": "submission/index.html",
+  "runtime": "submission/game.mjs",
+  "controls": [
+    "Arrow keys move",
+    "R restart",
+    "P pause"
+  ],
+  "semantic_event_mapping": {
+    "PUSH": "native PUSH event records a box moved by an accepted player step",
+    "WIN": "native WIN event records all goal cells occupied"
+  },
+  "assumptions": [
+    "Each accepted directional move advances one logical tick.",
+    "Pause is a local control; no gravity or wall-clock simulation applies.",
+    "Source and usage budgets are unverified."
+  ]
+}

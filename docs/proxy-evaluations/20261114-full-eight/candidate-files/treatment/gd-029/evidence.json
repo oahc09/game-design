@@ -1,0 +1,26 @@
+{
+  "task_id": "gd-029",
+  "status": "IMPLEMENTED_UNVERIFIED",
+  "attempted_work": [
+    "Read public task, engine contract, Game Design Skill, shooter archetype, runtime contract, and supplied shooter runtime.",
+    "Built CocosAirJS rendered arena with normalized action adapter, fixed 60 Hz held input, and observable candidate state.",
+    "Applied the authorized minimal public-contract repair in submission modules and recorded unverified status; automatic browser/evaluator PASS is not claimed.",
+    "Repaired public bounds/player/enemy/projectile seeding, wait-to-NOOP mapping, and JSON-safe public state projection. UI restart now records through the live transition path.",
+    "R key restart is a canonical native transition recorded with before/after snapshots; only supervisor reset clears the case log.",
+    "Applied public initial_snapshot tick, terminal, counters and entities; terminal snapshots remain stable under subsequent native actions.",
+    "Final audit routed every live UI and fixed-step game.step call through stepLive; keyboard input listeners run in window capture phase."
+  ],
+  "checks": {
+    "node_syntax": "PASS (node --check task-local submission/main.mjs and submission/game.mjs after latest adapter changes)",
+    "browser_startup": "NOT_RUN after initial_snapshot terminal fix",
+    "collision_positions": "NOT_RUN",
+    "event_order": "NOT_RUN",
+    "keyboard_action_timing": "NOT_RUN",
+    "visual_review": "NOT_RUN",
+    "projectile_initial_state": "NOT_RUN",
+    "wait_tick": "NOT_RUN",
+    "json_safe_snapshot": "NOT_RUN"
+  },
+  "source_selection_context": "This candidate was authored after prior task candidates in the same generation context; sequence context may affect selection.",
+  "model_authored_pass_claims": false
+}

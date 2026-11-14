@@ -1,0 +1,140 @@
+{
+  "blind_id": "e71d2eb9-deee-4c97-9c81-c39d02414fdf",
+  "human_participants": 0,
+  "kind": "LOCAL_AGENT_SEMANTIC_REVIEW",
+  "formal_trials": 0,
+  "task_id": "gd-108",
+  "artifact_digest": "d38f16a3e3b685a40beabb4ce168b6cbca48570039e56603f6e980ab903089cc",
+  "source_modified": false,
+  "reasoning_effort": "high",
+  "reviews": [
+    {
+      "blinding_broken": true,
+      "answers": [
+        {
+          "evidence_reference": "source/supervisor-public-policy.mjs; source/supervisor-card-capture.mjs; source/submission/main.mjs; evidence/records/11-immediate-60-0.json; evidence/records/11-delayed-60-0.json; evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png",
+          "explanation": "evidence/records/11-immediate-60-0.json#trace[0].observation and 11-delayed-60-0.json#trace[0].observation show policy inputs consist of cached UI HUD (tick, active player, mana, own/opponent health) and current rendered own card labels/Pass affordance. source/submission/main.mjs:3 builds these projections from HUD/rendered hand; source/supervisor-card-capture.mjs:2 passes visibleState plus visibleActions and never raw snapshot to policy. Screens at 30/60/144 Hz show the same displayed public HUD and own card affordances; opponent hand and future deck remain concealed. No deck count, hidden card values/order, RNG, or oracle input reaches the policy. Opponent health is public and actually shown in HUD. This meets the task observation boundary."
+        },
+        {
+          "evidence_reference": "source/blinded-human-comparison-plan.md; evidence/extension.json; evidence/execution-status.json; evidence/records/11-delayed-60-0.json",
+          "explanation": "evidence/records/11-delayed-60-0.json#trace[0..3] shows null/no-input at P0 decision 0, then applied_from_step 0 on P0 decision 1 and applied_from_step 1 on decision 2; no invalid native wait occurs. P1 is the fixed immediate policy per source/supervisor-card-capture.mjs:2. The comparison plan source/blinded-human-comparison-plan.md:1-7 provides independent blind IDs with sealed mapping, freezes policy/config/observation/seeds, consent/accessibility screening, randomized counterbalanced order, authoritative trace metrics and separate human ratings. It says not executed and 0 participants; no human outcome is imputed. All three obligations are supported as preparation/measurement boundaries."
+        }
+      ],
+      "rubric_id": "gd-108.knowledge_boundary",
+      "status": "PASS",
+      "reviewer_id": "gpt-6-luna-high-local-15-corrected",
+      "artifact_digest": "d38f16a3e3b685a40beabb4ce168b6cbca48570039e56603f6e980ab903089cc"
+    },
+    {
+      "blinding_broken": true,
+      "answers": [
+        {
+          "evidence_reference": "evidence/profile-metrics.json; evidence/paired-coverage.json; evidence/records/index.json; evidence/records/11-immediate-60-0.json; evidence/records/11-delayed-60-0.json",
+          "explanation": "evidence/profile-metrics.json#definitions/rows, evidence/paired-coverage.json#results[gd-108], evidence/records/index.json, and representative full traces evidence/records/11-immediate-60-0.json and 11-delayed-60-0.json: each of six profile×FPS rows uses all 12 first captures from frozen seeds with censor_count 0; immediate has 10/12 wins, mean 27.9167 subject decision opportunities/native attempts, P0 mana 11.5; delayed has 0/12, mean 32.1667 decision opportunities and 31.1667 native attempts (the initial null/no-input opportunity is distinct), P0 mana 7.0833. These values are stable across 30/60/144; profile metrics include P0 win perspective, fixed immediate P1, policy and config digests. Terminal examples match active-player winner and P0 perspective. Paired/replay automatic obligations pass; no causal Skill claim or unstated numeric threshold is made."
+        },
+        {
+          "evidence_reference": "source/blinded-human-comparison-plan.md; evidence/extension.json; evidence/execution-status.json; evidence/profile-metrics.json",
+          "explanation": "source/blinded-human-comparison-plan.md:1-7 is present and its SHA256/595-byte size match evidence/extension.json#files. It freezes source/config/observation/seeds before trial, plans counterbalanced blinded sessions after consent/accessibility screening, distinguishes authoritative traces from human ratings, and reports 0 participants/no fabricated results. evidence/execution-status.json formal_trials=0; profile-metrics remain descriptive bot measurements. Thus preparation is documented, while human outcomes remain unmeasured."
+        }
+      ],
+      "rubric_id": "gd-108.metric_valid",
+      "status": "PASS",
+      "reviewer_id": "gpt-6-luna-high-local-15-corrected",
+      "artifact_digest": "d38f16a3e3b685a40beabb4ce168b6cbca48570039e56603f6e980ab903089cc"
+    },
+    {
+      "blinding_broken": true,
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs; source/submission/main.mjs; source/supervisor-public-policy.mjs; source/supervisor-card-capture.mjs; source/blinded-human-comparison-plan.md; evidence/extension.json; evidence/records/11-delayed-60-0.json",
+          "explanation": "source/submission/game.mjs:1-14 and source/submission/main.mjs:1-11 implement a clearly declared deterministic card duel proxy for unspecified/unregistered rules, with hidden card values/deck order omitted from snapshots and UI-cached visibleState/actions. source/supervisor-public-policy.mjs:1-5 and source/supervisor-card-capture.mjs:2 implement one P0 decision-opportunity delay, P1 immediate; evidence/records/11-delayed-60-0.json#trace[0..2] confirms null/no-input then one-step application. evidence/extension.json#shared_core_before/#shared_core_after hashes are equal. source/blinded-human-comparison-plan.md exists; its digest matches evidence/extension.json#files, and its contents provide the requested blinded comparison preparation and explicitly leave execution to future participants. The proxy limitations are stated. This meets local extension boundary; formal qualification remains blocked."
+        },
+        {
+          "evidence_reference": "source/blinded-human-comparison-plan.md; evidence/extension.json; evidence/execution-status.json; evidence/records/11-delayed-60-0.json",
+          "explanation": "source/blinded-human-comparison-plan.md:1-7 documents blind labels/sealed mapping, frozen policy/config/observation/seeds, consent/accessibility screening, randomized counterbalanced ordering, authoritative task metrics and separate human ratings; it explicitly says not executed and participant count 0. The file hash and size match evidence/extension.json. Partial-observation/delay behavior is evidenced in source and traces; P1 fixed immediate; shared core unchanged; placeholder rules and proxy status declared. No item in this local extension obligation remains unmet."
+        }
+      ],
+      "rubric_id": "gd-108.extension_boundary",
+      "status": "PASS",
+      "reviewer_id": "gpt-6-luna-high-local-15-corrected",
+      "artifact_digest": "d38f16a3e3b685a40beabb4ce168b6cbca48570039e56603f6e980ab903089cc"
+    },
+    {
+      "blinding_broken": true,
+      "answers": [
+        {
+          "evidence_reference": "source/blinded-human-comparison-plan.md; evidence/extension.json; evidence/execution-status.json; source/evidence.json",
+          "explanation": "evidence/execution-status.json differentiates current automatic PASS from formal BLOCKED and external UNVERIFIED; source/evidence.json preserves historical candidate-stage NOT_RUN notes. The previously unavailable comparison plan is now in source/blinded-human-comparison-plan.md; its SHA256 and byte count match evidence/extension.json#files and its contents state not executed / 0 participants. No claim of formal completion, actual human results, or causal efficacy appears. No false completion claim found."
+        },
+        {
+          "evidence_reference": "source/blinded-human-comparison-plan.md; evidence/profile-metrics.json; evidence/execution-status.json",
+          "explanation": "source/blinded-human-comparison-plan.md:1-7 explicitly states not executed, 0 participants and no fabricated human ratings/outcomes. evidence/profile-metrics.json limits bot outcomes to descriptive policy metrics; evidence/execution-status.json retains formal status BLOCKED and external review UNVERIFIED. Thus the three task obligations are bounded to observed artifacts/preparation, with missing human measures unclaimed."
+        }
+      ],
+      "rubric_id": "gd-108.no_false_confirmation",
+      "status": "PASS",
+      "reviewer_id": "gpt-6-luna-high-local-15-corrected",
+      "artifact_digest": "d38f16a3e3b685a40beabb4ce168b6cbca48570039e56603f6e980ab903089cc"
+    },
+    {
+      "blinding_broken": true,
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs; source/supervisor-card-capture.mjs; evidence/records/index.json",
+          "explanation": "source/submission/game.mjs:1-14 contains no solver/generator impossibility claim; source/supervisor-card-capture.mjs:2 uses protocol max_steps and evidence/records/index.json reports terminal WIN/LOSS outcomes, not UNSOLVABLE. No finite unfinished frontier is called proof."
+        },
+        {
+          "evidence_reference": "evidence/profile-metrics.json; evidence/automatic-evaluation.json; source/blinded-human-comparison-plan.md",
+          "explanation": "evidence/profile-metrics.json records planned episodes and censoring; evidence/automatic-evaluation.json checks actual traces. No timeout or loss is described as unsolvable; plan source/blinded-human-comparison-plan.md:1-7 makes no such claim. Guard passes without implying overall formal completion."
+        }
+      ],
+      "rubric_id": "gd-108.timeout_not_unsolvable",
+      "status": "PASS",
+      "reviewer_id": "gpt-6-luna-high-local-15-corrected",
+      "artifact_digest": "d38f16a3e3b685a40beabb4ce168b6cbca48570039e56603f6e980ab903089cc"
+    },
+    {
+      "blinding_broken": true,
+      "answers": [
+        {
+          "evidence_reference": "source/blinded-human-comparison-plan.md; evidence/profile-metrics.json; evidence/execution-status.json",
+          "explanation": "evidence/execution-status.json#formal_trials is 0; source/blinded-human-comparison-plan.md:1-7 explicitly says human comparison not executed, participant count 0 and no fabricated rating/outcome. evidence/profile-metrics.json#definitions/comparison scopes outcomes as descriptive submitted-rule metrics, not human effect. No human difficulty/fairness/learning/retention/enjoyment claim appears."
+        },
+        {
+          "evidence_reference": "source/blinded-human-comparison-plan.md; evidence/execution-status.json; evidence/profile-metrics.json",
+          "explanation": "source/blinded-human-comparison-plan.md:5-7 keeps human ratings separate from authoritative episode metrics; evidence/execution-status.json states 0 formal trials. Bot outcomes are not substituted for absent participant observations."
+        }
+      ],
+      "rubric_id": "gd-108.no_bot_human_equivalence",
+      "status": "PASS",
+      "reviewer_id": "gpt-6-luna-high-local-15-corrected",
+      "artifact_digest": "d38f16a3e3b685a40beabb4ce168b6cbca48570039e56603f6e980ab903089cc"
+    },
+    {
+      "blinding_broken": true,
+      "answers": [
+        {
+          "evidence_reference": "source/supervisor-public-policy.mjs; evidence/profile-metrics.json",
+          "explanation": "source/supervisor-public-policy.mjs:1-5 uses damage plus heal as decision utility only. evidence/profile-metrics.json#rows reports separate completion, matchup, decision/native step and mana metrics; no composite fun score or claim about unmeasured fairness/experience dimensions appears."
+        },
+        {
+          "evidence_reference": "source/blinded-human-comparison-plan.md; evidence/profile-metrics.json",
+          "explanation": "source/blinded-human-comparison-plan.md:5-7 separates trace-based objective data from future human ratings, while evidence/profile-metrics.json reports distinct bot metrics. Neither source merges these into a fun score."
+        }
+      ],
+      "rubric_id": "gd-108.no_single_fun_score",
+      "status": "PASS",
+      "reviewer_id": "gpt-6-luna-high-local-15-corrected",
+      "artifact_digest": "d38f16a3e3b685a40beabb4ce168b6cbca48570039e56603f6e980ab903089cc"
+    }
+  ],
+  "limitations": [
+    "Local task-contract review only; external reviewer/provider trust, budget attestation and isolation remain UNVERIFIED/BLOCKED. Formal trials are 0.",
+    "Source policy and capture reveal profile implementation and immediate/delayed arms, so reviewer blinding is broken.",
+    "No human participants or human experience outcomes were evaluated.",
+    "Inspected and hash-verified the supplied blinded comparison plan; it is preparation only and has not been executed.",
+    "Inspected representative paired complete immediate/delayed 60-Hz traces, delayed traces at 30/144 Hz, metrics/coverage, source, and screenshots at all three rates; did not manually inspect every raw capture."
+  ],
+  "model": "gpt-6-luna",
+  "reviewer_id": "gpt-6-luna-high-local-15-corrected"
+}

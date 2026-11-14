@@ -1,0 +1,190 @@
+{
+  "reviews": [
+    {
+      "answers": [
+        {
+          "evidence_reference": "evidence/native-fixtures.json#records; evidence/records/11-water.partial-maximal-keyboard-30-0.json#actual.state,visual_checks; evidence/records/11-water.reject-color-pointer-144-1.json#actual.state",
+          "explanation": "Independent fixtures cover maximal top-run transfer within capacity and rejection of a mismatched color. Captures show accepted pour increments tick once and updates tubes; rejected pour preserves tubes/tick and emits no event. The native model is not the sole semantic oracle; source rule was inspected. Index covers all 288 records."
+        },
+        {
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/main.mjs:12-22; evidence/terminal-30.json#invalid_selection,post_terminal; evidence/records/11-water.partial-maximal-keyboard-30-0.json#visual_checks",
+          "explanation": "Selection is state-only; successful pour commits liquid before cue animation. Escape cancellation changes only cue state. Key 9 and a legal terminal 0→2 pour both reject without state change across all FPS probes. Source validates integer bounds for numeric selection and explicit from/to actions."
+        }
+      ],
+      "artifact_digest": "b3626bb1563386fca154ca3e88cfbd65f093b5d319e15a8c8b2e950d709cc060",
+      "reviewer_id": "gpt-6-luna-high-local-10-corrected",
+      "rubric_id": "gd-065.state_parity",
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "answers": [
+        {
+          "evidence_reference": "evidence/native-fixtures.json#records; evidence/records/11-water.partial-maximal-keyboard-30-0.json#actual.events,reference.events; evidence/records/11-water.reject-color-pointer-144-1.json#actual.events",
+          "explanation": "Accepted maximal fixture and capture each emit one matching POUR with expected endpoints, color, and amount; rejected mismatch emits no event. Selection is not a POUR and creates no semantic event. Occurrence and ordering match for supplied rules."
+        },
+        {
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/main.mjs:12-20; evidence/terminal-30.json#post_terminal,final.log",
+          "explanation": "Accepted transfers emit one POUR; cue cancellation adds no semantic event. Post-terminal 0→2 is rejected without events. Restart emits no POUR and restores initial state. No event is manufactured for selection or cancellation."
+        }
+      ],
+      "artifact_digest": "b3626bb1563386fca154ca3e88cfbd65f093b5d319e15a8c8b2e950d709cc060",
+      "reviewer_id": "gpt-6-luna-high-local-10-corrected",
+      "rubric_id": "gd-065.event_parity",
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:1; evidence/terminal-30.json#final,post_terminal; evidence/terminal-60.json#final,post_terminal; evidence/terminal-144.json#final,post_terminal",
+          "explanation": "At all three rates, full single-color plus empty tubes produces won/sorted. Each then attempts action {type:pour,from:0,to:2}; it is rejected with no events and byte-equivalent state fields before and after. Source handles restart before its terminal guard, preserving explicit restart behavior."
+        },
+        {
+          "evidence_reference": "evidence/terminal-30.json#inputs,invalid_selection,post_terminal; evidence/terminal-60.json#post_terminal; evidence/terminal-144.json#post_terminal",
+          "explanation": "Terminal follows authoritative pour. All three probes also show invalid key 9 rejected and cue cancellation leaving liquid state unchanged. The terminal 0→2 rejection is now explicit in the trace action field."
+        }
+      ],
+      "artifact_digest": "b3626bb1563386fca154ca3e88cfbd65f093b5d319e15a8c8b2e950d709cc060",
+      "reviewer_id": "gpt-6-luna-high-local-10-corrected",
+      "rubric_id": "gd-065.terminal_parity",
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "answers": [
+        {
+          "evidence_reference": "source/submission/main.mjs:8-9,23-27; evidence/input-parity-replay-executed.json#status,pair_count; evidence/records/index.json",
+          "explanation": "Tube clicks and numeric keys use the same native transition. Capture reports 144 keyboard/pointer pairs; the index has 288 PASS cases across 12 seeds, 2 scenarios, 2 repeats, 3 rates, and both controls. Input, state, and events match in supplied traces."
+        },
+        {
+          "evidence_reference": "source/submission/game.mjs:1; source/evidence.json#checks.invalid_index_smoke; evidence/terminal-30.json#invalid_selection,post_terminal",
+          "explanation": "Key 9 maps to invalid zero-based index 8 and is rejected unchanged. Native smoke notes cover numeric and explicit invalid indices; source validates both as integer, in-range indices. The terminal action 0→2 is normally legal but rejected after completion. No preview state exists."
+        }
+      ],
+      "artifact_digest": "b3626bb1563386fca154ca3e88cfbd65f093b5d319e15a8c8b2e950d709cc060",
+      "reviewer_id": "gpt-6-luna-high-local-10-corrected",
+      "rubric_id": "gd-065.input_parity",
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "answers": [
+        {
+          "evidence_reference": "evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png; evidence/terminal-30-active.png; evidence/terminal-30-terminal.png; evidence/terminal-60-active.png; evidence/terminal-60-terminal.png; evidence/terminal-144-active.png; evidence/terminal-144-terminal.png",
+          "explanation": "The three rate captures show visible red/blue layer fills and empty tubes. Active/terminal image pairs at each rate show the separate cue and completed full red tube. State remains legible, though the composition leaves substantial unused dark canvas."
+        },
+        {
+          "evidence_reference": "source/submission/index.html; source/submission/main.mjs:6-10,19-21; source/artifact.json#controls; evidence/terminal-30-active.png; evidence/terminal-30-terminal.png",
+          "explanation": "Bottom-to-top fill rendering matches state arrays; cue is separate from liquid and terminal images align with trace state. Visible controls now list tube click/number keys, Escape, and R restart; no pause control is advertised. Review is limited to supplied browser captures, not human usability."
+        }
+      ],
+      "artifact_digest": "b3626bb1563386fca154ca3e88cfbd65f093b5d319e15a8c8b2e950d709cc060",
+      "reviewer_id": "gpt-6-luna-high-local-10-corrected",
+      "rubric_id": "gd-065.visual_review",
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "answers": [
+        {
+          "evidence_reference": "evidence/extension.json#architecture,capabilities,runtime_probe; source/artifact.json#task_id,runtime,controls,invalid_index_behavior; source/submission/game.mjs:1",
+          "explanation": "The candidate exposes createGame/snapshot/step as native module and initializes Cocos with a normal DOM overlay. Required animation authority separation is present; no private GameSpec is required. Artifact metadata accurately lists controls and invalid-index behavior and matches the task ID."
+        },
+        {
+          "evidence_reference": "source/submission/game.mjs:1; source/submission/main.mjs:25-27; source/artifact.json#controls; source/submission/index.html",
+          "explanation": "Required selection, pour, cue cancellation, terminal guard, restart, and index checks are implemented. The visible and artifact control lists omit P pause, so no pause feature is advertised. A stale evidence claim about pause remains separately flagged under no_false_confirmation."
+        }
+      ],
+      "artifact_digest": "b3626bb1563386fca154ca3e88cfbd65f093b5d319e15a8c8b2e950d709cc060",
+      "reviewer_id": "gpt-6-luna-high-local-10-corrected",
+      "rubric_id": "gd-065.extension_boundary",
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "answers": [
+        {
+          "evidence_reference": "source/evidence.json#checks.terminal_rejection_smoke; evidence/terminal-pause-branch.json#running,terminal; source/submission/game.mjs:1",
+          "explanation": "The source evidence explicitly scopes this smoke to post-terminal actions. The separately imported frozen source was exercised with P during normal play (accepted true, no mutation) and after win (accepted false, no events, full state unchanged). Source ordering is restart, then terminal guard, then P no-op; therefore the wording is accurate for the tested terminal context. Current UI and artifact controls do not claim a running pause feature."
+        },
+        {
+          "evidence_reference": "source/submission/index.html; source/artifact.json#controls; source/submission/game.mjs:1; evidence/terminal-pause-branch.json#terminal",
+          "explanation": "The current visible instructions and artifact controls omit pause. A running P key is an accepted no-op, not a pause feature; after terminal the guard rejects P without events or state mutation. The new branch witness resolves the earlier ambiguity, so no unsupported completion claim remains in the reviewed package."
+        }
+      ],
+      "artifact_digest": "b3626bb1563386fca154ca3e88cfbd65f093b5d319e15a8c8b2e950d709cc060",
+      "reviewer_id": "gpt-6-luna-high-local-10-corrected",
+      "rubric_id": "gd-065.no_false_confirmation",
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "answers": [
+        {
+          "evidence_reference": "packet.json#task.prompt; source/submission/game.mjs:1; evidence/records/index.json",
+          "explanation": "No solver or generator is part of this candidate and no UNSOLVABLE assertion is present. This guard passes as absence of unsupported impossibility claims."
+        },
+        {
+          "evidence_reference": "evidence/automatic-evaluation.json#results; evidence/execution-status.json#current",
+          "explanation": "Finite captured scenarios are labeled PASS, not as proof of solvability or impossibility. No timeout or unfinished frontier is mislabeled."
+        }
+      ],
+      "artifact_digest": "b3626bb1563386fca154ca3e88cfbd65f093b5d319e15a8c8b2e950d709cc060",
+      "reviewer_id": "gpt-6-luna-high-local-10-corrected",
+      "rubric_id": "gd-065.timeout_not_unsolvable",
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "answers": [
+        {
+          "evidence_reference": "packet.json#scope; evidence/execution-status.json#scope,formal_trials,external_review",
+          "explanation": "The package scope is local task-contract review; formal trials are zero and external review is unverified. No human difficulty, fairness, learning, retention, or enjoyment conclusions are claimed."
+        },
+        {
+          "evidence_reference": "evidence/records/index.json; evidence/terminal-30.json#checks",
+          "explanation": "Replay and terminal captures are technical observations only, not human outcomes. No participant data is claimed."
+        }
+      ],
+      "artifact_digest": "b3626bb1563386fca154ca3e88cfbd65f093b5d319e15a8c8b2e950d709cc060",
+      "reviewer_id": "gpt-6-luna-high-local-10-corrected",
+      "rubric_id": "gd-065.no_bot_human_equivalence",
+      "blinding_broken": true,
+      "status": "PASS"
+    },
+    {
+      "answers": [
+        {
+          "evidence_reference": "packet.json#success_criteria,scope; source/evidence.json#checks,certification",
+          "explanation": "The artifact separates engineering checks and sets certification to null. No composite fun score or claim that experience dimensions were measured appears."
+        },
+        {
+          "evidence_reference": "evidence/automatic-evaluation.json#results; evidence/records/index.json",
+          "explanation": "The 288 records measure technical state, event, input, terminal, and visual checks, not a single experience score. Human experience remains unmeasured."
+        }
+      ],
+      "artifact_digest": "b3626bb1563386fca154ca3e88cfbd65f093b5d319e15a8c8b2e950d709cc060",
+      "reviewer_id": "gpt-6-luna-high-local-10-corrected",
+      "rubric_id": "gd-065.no_single_fun_score",
+      "blinding_broken": true,
+      "status": "PASS"
+    }
+  ],
+  "formal_trials": 0,
+  "limitations": [
+    "CocosAirJS import discloses implementation context; blinding is broken.",
+    "Local task-contract review only; external review is UNVERIFIED, formal status BLOCKED, formal trials and human participants are zero.",
+    "All 288 index statuses and 144 paired comparisons were checked; representative full traces, independent fixtures, all three public-rate screenshots, terminal active/terminal pairs, and both P branch states were inspected; not every raw capture individually.",
+    "A normal-play P input remains a no-op and is not advertised as a capability; the tested post-terminal P rejection is correctly scoped."
+  ],
+  "reasoning_effort": "high",
+  "source_modified": false,
+  "blind_id": "7c6caa74-adf4-4432-9af9-439e00e6ed79",
+  "human_participants": 0,
+  "task_id": "gd-065",
+  "model": "gpt-6-luna",
+  "artifact_digest": "b3626bb1563386fca154ca3e88cfbd65f093b5d319e15a8c8b2e950d709cc060",
+  "reviewer_id": "gpt-6-luna-high-local-10-corrected",
+  "kind": "LOCAL_AGENT_SEMANTIC_REVIEW"
+}

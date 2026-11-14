@@ -1,0 +1,160 @@
+{
+  "id": "gd-029",
+  "archetype": "arcade_shooter",
+  "task_type": "ENGINE_IMPLEMENTATION",
+  "difficulty": "Composite",
+  "prompt": "Port Arcade Shooter to the web engine with normalized diagonal movement and held fire. Compare collision positions, event ordering, and keyboard-to-action timing.",
+  "materials": {
+    "tick_rate": 60,
+    "bounds": [
+      0,
+      0,
+      100,
+      100
+    ],
+    "player": {
+      "position": [
+        50,
+        80
+      ],
+      "health": 3
+    },
+    "rule_note": "One projectile may damage at most one target once; ordering must be specified.",
+    "review_obligations": [
+      "Normalize diagonal speed",
+      "held fire obeys cooldown",
+      "collision positions and event order",
+      "keyboard tick mapping"
+    ],
+    "evaluation_protocol": {
+      "version": "public-protocol-0.2",
+      "scope": "Both arms receive these exact evaluation conditions. Numeric choices absent from v0.1 are explicit v0.2 benchmark design choices, not inferred original requirements.",
+      "seeds": [
+        11,
+        29,
+        47,
+        71,
+        101,
+        131,
+        173,
+        211,
+        257,
+        307,
+        359,
+        419
+      ],
+      "training_seeds": [
+        11,
+        29,
+        47,
+        71,
+        101,
+        131,
+        173,
+        211
+      ],
+      "held_out_seeds": [
+        257,
+        307,
+        359,
+        419
+      ],
+      "repeats": 1,
+      "all_attempts": true,
+      "max_attempts": 2,
+      "executor_budget": {
+        "tokens": 24000,
+        "reasoning_tokens": 12000,
+        "tool_calls": 80,
+        "steps": 120,
+        "asset_bytes": 2000000,
+        "wall_seconds": 300
+      },
+      "claim_policy": "TIMEOUT is not UNSOLVABLE; bot outcomes are not human ratings; missing observations remain unmeasured.",
+      "render_fps": [
+        30,
+        60,
+        144
+      ],
+      "input_repeats": 2,
+      "capture_dimensions": [
+        "state",
+        "events",
+        "terminal",
+        "input"
+      ],
+      "controls": [
+        "arrow",
+        "held_fire"
+      ],
+      "engine_case_ids": [
+        "shooter.single-hit",
+        "shooter.no-post-destroy-hit"
+      ],
+      "engine_scenario": [
+        "Normalize diagonal speed",
+        "held fire obeys cooldown",
+        "collision positions and event order",
+        "keyboard tick mapping"
+      ]
+    },
+    "submission_contract": {
+      "accepted_runtime": "Engine-native createGame({content,seed}) exposing snapshot/step or a toolkit adapter to that same public boundary. GameSpec is never mandatory.",
+      "snapshot": "JSON tick>=0 integer, terminal:null or {status,reason}; task-observable fields with an evaluator-owned alias map.",
+      "action": "Public action objects; direction, swap, place, pour, move/fire, and phase actions are normalized by the evaluator.",
+      "evidence": "Trusted supervisor captures build, native transitions, every episode, every generation attempt, source hashes, and old/new regression traces. Model-authored pass booleans have no evidentiary value.",
+      "review": "Semantics, assumptions, human experience, and unprovided source claims receive explicit blind manual review, never automatic keyword scores.",
+      "normalized_fields": [
+        "tick",
+        "terminal",
+        "enemies",
+        "projectiles",
+        "player"
+      ],
+      "public_content_fields": [
+        "player {position,health}",
+        "enemies [{id,position,health}]",
+        "projectiles [{id,position,damage}]",
+        "initial_snapshot (controlled post-destruction state)"
+      ],
+      "semantic_event_vocabulary": [
+        "DAMAGE",
+        "DESTROY"
+      ],
+      "normalization_rule": "Native field/event names can differ; supervisor maps aliases from inspected source. Never manufacture missing events or infer order from a final screenshot. Controlled fixture content can supply initial positions, board, pieces, or declared initial_snapshot. No private GameSpec or treatment RNG stream is required."
+    }
+  },
+  "deliverables": [
+    "artifact.json",
+    "evidence.json",
+    "limitations.md"
+  ],
+  "success_criteria": [
+    "compile",
+    "state_parity",
+    "event_parity",
+    "terminal_parity",
+    "input_parity",
+    "visual_review"
+  ],
+  "stages": [
+    "interpret",
+    "implement",
+    "validate",
+    "report"
+  ],
+  "seed_set": [
+    11,
+    29,
+    47,
+    71,
+    101,
+    131,
+    173,
+    211,
+    257,
+    307,
+    359,
+    419
+  ]
+}

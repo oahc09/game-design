@@ -1,0 +1,32 @@
+{
+  "task_id": "gd-071",
+  "status": "EXPERIMENTAL_IMPLEMENTED_UNVERIFIED",
+  "attempted_work": [
+    "Read task, engine/output contracts, Game Design Skill and unknown-archetype protocol.",
+    "Confirmed platformer is not in the supplied registry and physics2d/platform_movement are unimplemented capabilities.",
+    "Created experimental fixed-step snapshot/step/restore package, checkpoint logic, keyboard controls and CocosAirJS capsule renderer.",
+    "Applied the authorized minimal public-contract repair in submission modules and recorded unverified status; automatic browser/evaluator PASS is not claimed.",
+    "R key restart is a canonical native transition recorded with before/after snapshots; only supervisor reset clears the case log.",
+    "Final audit routed every live UI and fixed-step game.step call through stepLive; keyboard input listeners run in window capture phase.",
+    "Added public move-vector alias and retained existing type jump/checkpoint aliases without changing physics.",
+    "Corrected renderer projection to the existing y-down platformer coordinates: platforms descend with +y, capsule feet map to player.y, capsule top maps to player.y-height, and checkpoint marker shares that projection. No simulation code changed.",
+    "Ignored repeat keydown for jump/checkpoint/restart/pause; retained held movement sampling and unchanged collision event cadence."
+  ],
+  "checks": {
+    "node_syntax": "PASS (node --check submission/main.mjs after keydown repeat guards)",
+    "browser_startup": "NOT_RUN",
+    "extension_schema_gate": "NOT_RUN",
+    "collision_and_checkpoint_replay": "NOT_RUN",
+    "fps_replay_30_60_144": "NOT_RUN",
+    "capsule_alignment": "NOT_RUN",
+    "input_parity": "NOT_RUN",
+    "visual_review": "NOT_RUN",
+    "initial_capture": "FAIL per parent capture: public move vector was ignored before alias fix",
+    "vector_alias_rerun": "NOT_RUN",
+    "y_down_projection_source_review": "PASS: renderer transforms correspond to public world/capsule coordinates",
+    "visual_review_after_projection": "NOT_RUN; root owns visual/evaluator review",
+    "collision_contact_contract": "DOCUMENTED: COLLIDE persists once per fixed tick while contact remains; no simulation event change"
+  },
+  "source_selection_context": "This candidate was authored after prior task candidates in the same generation context; sequence context may affect selection.",
+  "model_authored_pass_claims": false
+}

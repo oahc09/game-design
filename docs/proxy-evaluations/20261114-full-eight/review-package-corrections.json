@@ -1,0 +1,26 @@
+{
+  "scope": "Supervisor packaging corrections only; immutable candidate source bytes preserved",
+  "corrections": [
+    {
+      "issue": "v6 new packet template retained gd-071 task metadata for gd-065/gd-107",
+      "action": "v6 package rejected; new v9 and later packets derive task/task_id from frozen protocol and are identity-checked"
+    },
+    {
+      "issue": "Only submission/src copied; limitations.md and root comparison plan omitted",
+      "action": "copy every frozen root file by inventory, preserve original non-PASS reports, independently re-review provided documents"
+    },
+    {
+      "issue": "old supplemental PNG could be copied by filename despite a stale sibling JSON",
+      "action": "isolate old unbound images, require matching sibling artifact digest, recapture corrected FBG witnesses and independent re-review"
+    },
+    {
+      "issue": "Card public active_player/winner string IDs were not routed to numeric subject/opponent",
+      "action": "retain v7 controller output as rejected; v10+ explicitly normalize public IDs; full recapture and actual P1 count validation"
+    },
+    {
+      "issue": "Corrective freeze inherited old outer assumptions",
+      "action": "v15 reloads current authored assumptions, preserves previous freeze; full recapture and semantic re-review"
+    }
+  ],
+  "formal_trials": 0
+}

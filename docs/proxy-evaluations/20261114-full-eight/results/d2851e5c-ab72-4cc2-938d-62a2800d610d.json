@@ -1,0 +1,2693 @@
+{
+  "blind_id": "d2851e5c-ab72-4cc2-938d-62a2800d610d",
+  "arm": "treatment",
+  "task_id": "gd-009",
+  "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+  "status": "PASS",
+  "failed": [],
+  "missing": [],
+  "manual_rubrics": 9,
+  "report_digest": "cc8e10e8f33473bd702741281c320bba36e8fa6a948962095043149b860fc746",
+  "review_report": "review-packages/d2851e5c-ab72-4cc2-938d-62a2800d610d/report.json",
+  "results": [
+    {
+      "condition": 11,
+      "task_id": "gd-009",
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "compile",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.compile.build",
+              "family": "build",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "f4832555f81d9330251d7fde09c3a59ea12f09f257b7ad8b867e2351159d20e2"
+            }
+          ]
+        },
+        {
+          "id": "state_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.state_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.state_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "1d70266f328dfd8b7960bcc06aacd7ad3f41018c413808c8b91476822ef130cb"
+            },
+            {
+              "id": "gd-009.state_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "d6657e109caf80dbb4fa20801f189419502d85cd5a631d4ca4a3bd02e77ed504",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "event_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.event_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.event_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "1d70266f328dfd8b7960bcc06aacd7ad3f41018c413808c8b91476822ef130cb"
+            },
+            {
+              "id": "gd-009.event_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "822e632e1136d81deeffad046d46c1b42c2cf919232798121d0e9c1b91232e9f",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "terminal_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.terminal_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.terminal_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "1d70266f328dfd8b7960bcc06aacd7ad3f41018c413808c8b91476822ef130cb"
+            },
+            {
+              "id": "gd-009.terminal_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0dca21d8482ee169c8216003a390d2948fcbc5166d464a8de5a5664902be0bb8",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "input_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.input_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "1d70266f328dfd8b7960bcc06aacd7ad3f41018c413808c8b91476822ef130cb"
+            },
+            {
+              "id": "gd-009.input_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "cead48c475c2b9f7ac261eb8eba03b337fb0d4218ec6b983891a4a2e0bf9d262",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "visual_review",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.visual_review",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "bda4467ba77dde1cbc92f1cf213dbbaad21a5c5de72ed1c7ab572695777b3ee5",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_false_confirmation",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_false_confirmation",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "49b2a7a06fa6dbabaeca7e807f521d611849114bebd4b5427401cac7484e3743",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "timeout_not_unsolvable",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.timeout_not_unsolvable",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0f5c6c42144eb15e417601ebd389de5b7909329e4ae8a2a9e635d5a74ce28717",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_bot_human_equivalence",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_bot_human_equivalence",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6281bc5160c104e09cbdebb905b271010fd29cb4cfd0908d6aae161393183ca3",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_single_fun_score",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_single_fun_score",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "a40fe2c851ce834f4d0a294c085850ca0edfc43698d9da8b543a4e78a1245379",
+              "blinding_broken": false
+            }
+          ]
+        }
+      ],
+      "scope": "v0.2 protocol preparation; synthetic smokes are not model trials, runtime certification, or participant observations"
+    },
+    {
+      "condition": 29,
+      "task_id": "gd-009",
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "compile",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.compile.build",
+              "family": "build",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "f4832555f81d9330251d7fde09c3a59ea12f09f257b7ad8b867e2351159d20e2"
+            }
+          ]
+        },
+        {
+          "id": "state_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.state_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.state_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "562ece7b623881cdea9ace40567256bbc944698d26d9e04f449d6a58bddc205d"
+            },
+            {
+              "id": "gd-009.state_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "d6657e109caf80dbb4fa20801f189419502d85cd5a631d4ca4a3bd02e77ed504",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "event_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.event_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.event_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "562ece7b623881cdea9ace40567256bbc944698d26d9e04f449d6a58bddc205d"
+            },
+            {
+              "id": "gd-009.event_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "822e632e1136d81deeffad046d46c1b42c2cf919232798121d0e9c1b91232e9f",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "terminal_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.terminal_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.terminal_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "562ece7b623881cdea9ace40567256bbc944698d26d9e04f449d6a58bddc205d"
+            },
+            {
+              "id": "gd-009.terminal_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0dca21d8482ee169c8216003a390d2948fcbc5166d464a8de5a5664902be0bb8",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "input_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.input_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "562ece7b623881cdea9ace40567256bbc944698d26d9e04f449d6a58bddc205d"
+            },
+            {
+              "id": "gd-009.input_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "cead48c475c2b9f7ac261eb8eba03b337fb0d4218ec6b983891a4a2e0bf9d262",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "visual_review",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.visual_review",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "bda4467ba77dde1cbc92f1cf213dbbaad21a5c5de72ed1c7ab572695777b3ee5",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_false_confirmation",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_false_confirmation",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "49b2a7a06fa6dbabaeca7e807f521d611849114bebd4b5427401cac7484e3743",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "timeout_not_unsolvable",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.timeout_not_unsolvable",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0f5c6c42144eb15e417601ebd389de5b7909329e4ae8a2a9e635d5a74ce28717",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_bot_human_equivalence",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_bot_human_equivalence",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6281bc5160c104e09cbdebb905b271010fd29cb4cfd0908d6aae161393183ca3",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_single_fun_score",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_single_fun_score",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "a40fe2c851ce834f4d0a294c085850ca0edfc43698d9da8b543a4e78a1245379",
+              "blinding_broken": false
+            }
+          ]
+        }
+      ],
+      "scope": "v0.2 protocol preparation; synthetic smokes are not model trials, runtime certification, or participant observations"
+    },
+    {
+      "condition": 47,
+      "task_id": "gd-009",
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "compile",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.compile.build",
+              "family": "build",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "f4832555f81d9330251d7fde09c3a59ea12f09f257b7ad8b867e2351159d20e2"
+            }
+          ]
+        },
+        {
+          "id": "state_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.state_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.state_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "3982d593e8eb3eb5eff1ad690f244e9eb5e85a66de3b9d5d49e3052772c0efce"
+            },
+            {
+              "id": "gd-009.state_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "d6657e109caf80dbb4fa20801f189419502d85cd5a631d4ca4a3bd02e77ed504",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "event_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.event_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.event_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "3982d593e8eb3eb5eff1ad690f244e9eb5e85a66de3b9d5d49e3052772c0efce"
+            },
+            {
+              "id": "gd-009.event_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "822e632e1136d81deeffad046d46c1b42c2cf919232798121d0e9c1b91232e9f",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "terminal_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.terminal_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.terminal_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "3982d593e8eb3eb5eff1ad690f244e9eb5e85a66de3b9d5d49e3052772c0efce"
+            },
+            {
+              "id": "gd-009.terminal_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0dca21d8482ee169c8216003a390d2948fcbc5166d464a8de5a5664902be0bb8",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "input_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.input_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "3982d593e8eb3eb5eff1ad690f244e9eb5e85a66de3b9d5d49e3052772c0efce"
+            },
+            {
+              "id": "gd-009.input_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "cead48c475c2b9f7ac261eb8eba03b337fb0d4218ec6b983891a4a2e0bf9d262",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "visual_review",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.visual_review",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "bda4467ba77dde1cbc92f1cf213dbbaad21a5c5de72ed1c7ab572695777b3ee5",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_false_confirmation",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_false_confirmation",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "49b2a7a06fa6dbabaeca7e807f521d611849114bebd4b5427401cac7484e3743",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "timeout_not_unsolvable",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.timeout_not_unsolvable",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0f5c6c42144eb15e417601ebd389de5b7909329e4ae8a2a9e635d5a74ce28717",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_bot_human_equivalence",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_bot_human_equivalence",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6281bc5160c104e09cbdebb905b271010fd29cb4cfd0908d6aae161393183ca3",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_single_fun_score",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_single_fun_score",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "a40fe2c851ce834f4d0a294c085850ca0edfc43698d9da8b543a4e78a1245379",
+              "blinding_broken": false
+            }
+          ]
+        }
+      ],
+      "scope": "v0.2 protocol preparation; synthetic smokes are not model trials, runtime certification, or participant observations"
+    },
+    {
+      "condition": 71,
+      "task_id": "gd-009",
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "compile",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.compile.build",
+              "family": "build",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "f4832555f81d9330251d7fde09c3a59ea12f09f257b7ad8b867e2351159d20e2"
+            }
+          ]
+        },
+        {
+          "id": "state_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.state_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.state_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "fa759071383ac12775bcc5e6ae53a60fd258968d13db27042bd316e8a7094a22"
+            },
+            {
+              "id": "gd-009.state_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "d6657e109caf80dbb4fa20801f189419502d85cd5a631d4ca4a3bd02e77ed504",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "event_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.event_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.event_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "fa759071383ac12775bcc5e6ae53a60fd258968d13db27042bd316e8a7094a22"
+            },
+            {
+              "id": "gd-009.event_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "822e632e1136d81deeffad046d46c1b42c2cf919232798121d0e9c1b91232e9f",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "terminal_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.terminal_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.terminal_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "fa759071383ac12775bcc5e6ae53a60fd258968d13db27042bd316e8a7094a22"
+            },
+            {
+              "id": "gd-009.terminal_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0dca21d8482ee169c8216003a390d2948fcbc5166d464a8de5a5664902be0bb8",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "input_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.input_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "fa759071383ac12775bcc5e6ae53a60fd258968d13db27042bd316e8a7094a22"
+            },
+            {
+              "id": "gd-009.input_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "cead48c475c2b9f7ac261eb8eba03b337fb0d4218ec6b983891a4a2e0bf9d262",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "visual_review",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.visual_review",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "bda4467ba77dde1cbc92f1cf213dbbaad21a5c5de72ed1c7ab572695777b3ee5",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_false_confirmation",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_false_confirmation",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "49b2a7a06fa6dbabaeca7e807f521d611849114bebd4b5427401cac7484e3743",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "timeout_not_unsolvable",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.timeout_not_unsolvable",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0f5c6c42144eb15e417601ebd389de5b7909329e4ae8a2a9e635d5a74ce28717",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_bot_human_equivalence",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_bot_human_equivalence",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6281bc5160c104e09cbdebb905b271010fd29cb4cfd0908d6aae161393183ca3",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_single_fun_score",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_single_fun_score",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "a40fe2c851ce834f4d0a294c085850ca0edfc43698d9da8b543a4e78a1245379",
+              "blinding_broken": false
+            }
+          ]
+        }
+      ],
+      "scope": "v0.2 protocol preparation; synthetic smokes are not model trials, runtime certification, or participant observations"
+    },
+    {
+      "condition": 101,
+      "task_id": "gd-009",
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "compile",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.compile.build",
+              "family": "build",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "f4832555f81d9330251d7fde09c3a59ea12f09f257b7ad8b867e2351159d20e2"
+            }
+          ]
+        },
+        {
+          "id": "state_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.state_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.state_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "ca8da05d2f00e3c0c863881ca219ad0521ade8bafc18b4fd5fadba9bc8bc6f76"
+            },
+            {
+              "id": "gd-009.state_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "d6657e109caf80dbb4fa20801f189419502d85cd5a631d4ca4a3bd02e77ed504",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "event_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.event_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.event_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "ca8da05d2f00e3c0c863881ca219ad0521ade8bafc18b4fd5fadba9bc8bc6f76"
+            },
+            {
+              "id": "gd-009.event_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "822e632e1136d81deeffad046d46c1b42c2cf919232798121d0e9c1b91232e9f",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "terminal_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.terminal_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.terminal_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "ca8da05d2f00e3c0c863881ca219ad0521ade8bafc18b4fd5fadba9bc8bc6f76"
+            },
+            {
+              "id": "gd-009.terminal_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0dca21d8482ee169c8216003a390d2948fcbc5166d464a8de5a5664902be0bb8",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "input_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.input_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "ca8da05d2f00e3c0c863881ca219ad0521ade8bafc18b4fd5fadba9bc8bc6f76"
+            },
+            {
+              "id": "gd-009.input_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "cead48c475c2b9f7ac261eb8eba03b337fb0d4218ec6b983891a4a2e0bf9d262",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "visual_review",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.visual_review",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "bda4467ba77dde1cbc92f1cf213dbbaad21a5c5de72ed1c7ab572695777b3ee5",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_false_confirmation",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_false_confirmation",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "49b2a7a06fa6dbabaeca7e807f521d611849114bebd4b5427401cac7484e3743",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "timeout_not_unsolvable",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.timeout_not_unsolvable",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0f5c6c42144eb15e417601ebd389de5b7909329e4ae8a2a9e635d5a74ce28717",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_bot_human_equivalence",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_bot_human_equivalence",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6281bc5160c104e09cbdebb905b271010fd29cb4cfd0908d6aae161393183ca3",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_single_fun_score",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_single_fun_score",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "a40fe2c851ce834f4d0a294c085850ca0edfc43698d9da8b543a4e78a1245379",
+              "blinding_broken": false
+            }
+          ]
+        }
+      ],
+      "scope": "v0.2 protocol preparation; synthetic smokes are not model trials, runtime certification, or participant observations"
+    },
+    {
+      "condition": 131,
+      "task_id": "gd-009",
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "compile",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.compile.build",
+              "family": "build",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "f4832555f81d9330251d7fde09c3a59ea12f09f257b7ad8b867e2351159d20e2"
+            }
+          ]
+        },
+        {
+          "id": "state_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.state_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.state_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "e5b4b737f0647ec492297a9318c1507b586bc9f9c0766009b2f6f8efd1c66aa1"
+            },
+            {
+              "id": "gd-009.state_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "d6657e109caf80dbb4fa20801f189419502d85cd5a631d4ca4a3bd02e77ed504",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "event_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.event_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.event_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "e5b4b737f0647ec492297a9318c1507b586bc9f9c0766009b2f6f8efd1c66aa1"
+            },
+            {
+              "id": "gd-009.event_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "822e632e1136d81deeffad046d46c1b42c2cf919232798121d0e9c1b91232e9f",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "terminal_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.terminal_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.terminal_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "e5b4b737f0647ec492297a9318c1507b586bc9f9c0766009b2f6f8efd1c66aa1"
+            },
+            {
+              "id": "gd-009.terminal_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0dca21d8482ee169c8216003a390d2948fcbc5166d464a8de5a5664902be0bb8",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "input_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.input_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "e5b4b737f0647ec492297a9318c1507b586bc9f9c0766009b2f6f8efd1c66aa1"
+            },
+            {
+              "id": "gd-009.input_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "cead48c475c2b9f7ac261eb8eba03b337fb0d4218ec6b983891a4a2e0bf9d262",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "visual_review",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.visual_review",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "bda4467ba77dde1cbc92f1cf213dbbaad21a5c5de72ed1c7ab572695777b3ee5",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_false_confirmation",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_false_confirmation",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "49b2a7a06fa6dbabaeca7e807f521d611849114bebd4b5427401cac7484e3743",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "timeout_not_unsolvable",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.timeout_not_unsolvable",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0f5c6c42144eb15e417601ebd389de5b7909329e4ae8a2a9e635d5a74ce28717",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_bot_human_equivalence",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_bot_human_equivalence",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6281bc5160c104e09cbdebb905b271010fd29cb4cfd0908d6aae161393183ca3",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_single_fun_score",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_single_fun_score",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "a40fe2c851ce834f4d0a294c085850ca0edfc43698d9da8b543a4e78a1245379",
+              "blinding_broken": false
+            }
+          ]
+        }
+      ],
+      "scope": "v0.2 protocol preparation; synthetic smokes are not model trials, runtime certification, or participant observations"
+    },
+    {
+      "condition": 173,
+      "task_id": "gd-009",
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "compile",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.compile.build",
+              "family": "build",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "f4832555f81d9330251d7fde09c3a59ea12f09f257b7ad8b867e2351159d20e2"
+            }
+          ]
+        },
+        {
+          "id": "state_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.state_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.state_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6fc3daaef31eb0d56238ae75248a7e60e2e2c52de8d124419719c6f29c86e40e"
+            },
+            {
+              "id": "gd-009.state_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "d6657e109caf80dbb4fa20801f189419502d85cd5a631d4ca4a3bd02e77ed504",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "event_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.event_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.event_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6fc3daaef31eb0d56238ae75248a7e60e2e2c52de8d124419719c6f29c86e40e"
+            },
+            {
+              "id": "gd-009.event_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "822e632e1136d81deeffad046d46c1b42c2cf919232798121d0e9c1b91232e9f",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "terminal_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.terminal_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.terminal_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6fc3daaef31eb0d56238ae75248a7e60e2e2c52de8d124419719c6f29c86e40e"
+            },
+            {
+              "id": "gd-009.terminal_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0dca21d8482ee169c8216003a390d2948fcbc5166d464a8de5a5664902be0bb8",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "input_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.input_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6fc3daaef31eb0d56238ae75248a7e60e2e2c52de8d124419719c6f29c86e40e"
+            },
+            {
+              "id": "gd-009.input_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "cead48c475c2b9f7ac261eb8eba03b337fb0d4218ec6b983891a4a2e0bf9d262",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "visual_review",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.visual_review",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "bda4467ba77dde1cbc92f1cf213dbbaad21a5c5de72ed1c7ab572695777b3ee5",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_false_confirmation",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_false_confirmation",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "49b2a7a06fa6dbabaeca7e807f521d611849114bebd4b5427401cac7484e3743",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "timeout_not_unsolvable",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.timeout_not_unsolvable",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0f5c6c42144eb15e417601ebd389de5b7909329e4ae8a2a9e635d5a74ce28717",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_bot_human_equivalence",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_bot_human_equivalence",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6281bc5160c104e09cbdebb905b271010fd29cb4cfd0908d6aae161393183ca3",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_single_fun_score",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_single_fun_score",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "a40fe2c851ce834f4d0a294c085850ca0edfc43698d9da8b543a4e78a1245379",
+              "blinding_broken": false
+            }
+          ]
+        }
+      ],
+      "scope": "v0.2 protocol preparation; synthetic smokes are not model trials, runtime certification, or participant observations"
+    },
+    {
+      "condition": 211,
+      "task_id": "gd-009",
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "compile",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.compile.build",
+              "family": "build",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "f4832555f81d9330251d7fde09c3a59ea12f09f257b7ad8b867e2351159d20e2"
+            }
+          ]
+        },
+        {
+          "id": "state_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.state_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.state_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "dedaa4dd5c9f5178a5a10899fb393b62427e6a6a9b609e11c24230518ac6f86a"
+            },
+            {
+              "id": "gd-009.state_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "d6657e109caf80dbb4fa20801f189419502d85cd5a631d4ca4a3bd02e77ed504",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "event_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.event_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.event_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "dedaa4dd5c9f5178a5a10899fb393b62427e6a6a9b609e11c24230518ac6f86a"
+            },
+            {
+              "id": "gd-009.event_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "822e632e1136d81deeffad046d46c1b42c2cf919232798121d0e9c1b91232e9f",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "terminal_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.terminal_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.terminal_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "dedaa4dd5c9f5178a5a10899fb393b62427e6a6a9b609e11c24230518ac6f86a"
+            },
+            {
+              "id": "gd-009.terminal_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0dca21d8482ee169c8216003a390d2948fcbc5166d464a8de5a5664902be0bb8",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "input_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.input_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "dedaa4dd5c9f5178a5a10899fb393b62427e6a6a9b609e11c24230518ac6f86a"
+            },
+            {
+              "id": "gd-009.input_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "cead48c475c2b9f7ac261eb8eba03b337fb0d4218ec6b983891a4a2e0bf9d262",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "visual_review",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.visual_review",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "bda4467ba77dde1cbc92f1cf213dbbaad21a5c5de72ed1c7ab572695777b3ee5",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_false_confirmation",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_false_confirmation",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "49b2a7a06fa6dbabaeca7e807f521d611849114bebd4b5427401cac7484e3743",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "timeout_not_unsolvable",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.timeout_not_unsolvable",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0f5c6c42144eb15e417601ebd389de5b7909329e4ae8a2a9e635d5a74ce28717",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_bot_human_equivalence",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_bot_human_equivalence",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6281bc5160c104e09cbdebb905b271010fd29cb4cfd0908d6aae161393183ca3",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_single_fun_score",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_single_fun_score",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "a40fe2c851ce834f4d0a294c085850ca0edfc43698d9da8b543a4e78a1245379",
+              "blinding_broken": false
+            }
+          ]
+        }
+      ],
+      "scope": "v0.2 protocol preparation; synthetic smokes are not model trials, runtime certification, or participant observations"
+    },
+    {
+      "condition": 257,
+      "task_id": "gd-009",
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "compile",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.compile.build",
+              "family": "build",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "f4832555f81d9330251d7fde09c3a59ea12f09f257b7ad8b867e2351159d20e2"
+            }
+          ]
+        },
+        {
+          "id": "state_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.state_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.state_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "31b0c59177974e7d9f46395d7490a438692fe7aaa7ad13d568279cbbd12d4a7d"
+            },
+            {
+              "id": "gd-009.state_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "d6657e109caf80dbb4fa20801f189419502d85cd5a631d4ca4a3bd02e77ed504",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "event_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.event_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.event_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "31b0c59177974e7d9f46395d7490a438692fe7aaa7ad13d568279cbbd12d4a7d"
+            },
+            {
+              "id": "gd-009.event_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "822e632e1136d81deeffad046d46c1b42c2cf919232798121d0e9c1b91232e9f",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "terminal_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.terminal_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.terminal_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "31b0c59177974e7d9f46395d7490a438692fe7aaa7ad13d568279cbbd12d4a7d"
+            },
+            {
+              "id": "gd-009.terminal_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0dca21d8482ee169c8216003a390d2948fcbc5166d464a8de5a5664902be0bb8",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "input_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.input_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "31b0c59177974e7d9f46395d7490a438692fe7aaa7ad13d568279cbbd12d4a7d"
+            },
+            {
+              "id": "gd-009.input_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "cead48c475c2b9f7ac261eb8eba03b337fb0d4218ec6b983891a4a2e0bf9d262",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "visual_review",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.visual_review",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "bda4467ba77dde1cbc92f1cf213dbbaad21a5c5de72ed1c7ab572695777b3ee5",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_false_confirmation",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_false_confirmation",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "49b2a7a06fa6dbabaeca7e807f521d611849114bebd4b5427401cac7484e3743",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "timeout_not_unsolvable",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.timeout_not_unsolvable",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0f5c6c42144eb15e417601ebd389de5b7909329e4ae8a2a9e635d5a74ce28717",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_bot_human_equivalence",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_bot_human_equivalence",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6281bc5160c104e09cbdebb905b271010fd29cb4cfd0908d6aae161393183ca3",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_single_fun_score",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_single_fun_score",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "a40fe2c851ce834f4d0a294c085850ca0edfc43698d9da8b543a4e78a1245379",
+              "blinding_broken": false
+            }
+          ]
+        }
+      ],
+      "scope": "v0.2 protocol preparation; synthetic smokes are not model trials, runtime certification, or participant observations"
+    },
+    {
+      "condition": 307,
+      "task_id": "gd-009",
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "compile",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.compile.build",
+              "family": "build",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "f4832555f81d9330251d7fde09c3a59ea12f09f257b7ad8b867e2351159d20e2"
+            }
+          ]
+        },
+        {
+          "id": "state_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.state_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.state_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "e4172f3733aa7da9eb9180cf62940fae481902a80c6f4aded6a6e57fdb0dba58"
+            },
+            {
+              "id": "gd-009.state_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "d6657e109caf80dbb4fa20801f189419502d85cd5a631d4ca4a3bd02e77ed504",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "event_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.event_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.event_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "e4172f3733aa7da9eb9180cf62940fae481902a80c6f4aded6a6e57fdb0dba58"
+            },
+            {
+              "id": "gd-009.event_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "822e632e1136d81deeffad046d46c1b42c2cf919232798121d0e9c1b91232e9f",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "terminal_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.terminal_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.terminal_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "e4172f3733aa7da9eb9180cf62940fae481902a80c6f4aded6a6e57fdb0dba58"
+            },
+            {
+              "id": "gd-009.terminal_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0dca21d8482ee169c8216003a390d2948fcbc5166d464a8de5a5664902be0bb8",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "input_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.input_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "e4172f3733aa7da9eb9180cf62940fae481902a80c6f4aded6a6e57fdb0dba58"
+            },
+            {
+              "id": "gd-009.input_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "cead48c475c2b9f7ac261eb8eba03b337fb0d4218ec6b983891a4a2e0bf9d262",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "visual_review",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.visual_review",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "bda4467ba77dde1cbc92f1cf213dbbaad21a5c5de72ed1c7ab572695777b3ee5",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_false_confirmation",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_false_confirmation",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "49b2a7a06fa6dbabaeca7e807f521d611849114bebd4b5427401cac7484e3743",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "timeout_not_unsolvable",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.timeout_not_unsolvable",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0f5c6c42144eb15e417601ebd389de5b7909329e4ae8a2a9e635d5a74ce28717",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_bot_human_equivalence",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_bot_human_equivalence",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6281bc5160c104e09cbdebb905b271010fd29cb4cfd0908d6aae161393183ca3",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_single_fun_score",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_single_fun_score",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "a40fe2c851ce834f4d0a294c085850ca0edfc43698d9da8b543a4e78a1245379",
+              "blinding_broken": false
+            }
+          ]
+        }
+      ],
+      "scope": "v0.2 protocol preparation; synthetic smokes are not model trials, runtime certification, or participant observations"
+    },
+    {
+      "condition": 359,
+      "task_id": "gd-009",
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "compile",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.compile.build",
+              "family": "build",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "f4832555f81d9330251d7fde09c3a59ea12f09f257b7ad8b867e2351159d20e2"
+            }
+          ]
+        },
+        {
+          "id": "state_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.state_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.state_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "59a096119fabfcab7925ec72f3ed8f90a762eee2e0ca60420893ce08b56d59bc"
+            },
+            {
+              "id": "gd-009.state_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "d6657e109caf80dbb4fa20801f189419502d85cd5a631d4ca4a3bd02e77ed504",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "event_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.event_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.event_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "59a096119fabfcab7925ec72f3ed8f90a762eee2e0ca60420893ce08b56d59bc"
+            },
+            {
+              "id": "gd-009.event_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "822e632e1136d81deeffad046d46c1b42c2cf919232798121d0e9c1b91232e9f",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "terminal_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.terminal_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.terminal_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "59a096119fabfcab7925ec72f3ed8f90a762eee2e0ca60420893ce08b56d59bc"
+            },
+            {
+              "id": "gd-009.terminal_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0dca21d8482ee169c8216003a390d2948fcbc5166d464a8de5a5664902be0bb8",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "input_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.input_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "59a096119fabfcab7925ec72f3ed8f90a762eee2e0ca60420893ce08b56d59bc"
+            },
+            {
+              "id": "gd-009.input_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "cead48c475c2b9f7ac261eb8eba03b337fb0d4218ec6b983891a4a2e0bf9d262",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "visual_review",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.visual_review",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "bda4467ba77dde1cbc92f1cf213dbbaad21a5c5de72ed1c7ab572695777b3ee5",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_false_confirmation",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_false_confirmation",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "49b2a7a06fa6dbabaeca7e807f521d611849114bebd4b5427401cac7484e3743",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "timeout_not_unsolvable",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.timeout_not_unsolvable",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0f5c6c42144eb15e417601ebd389de5b7909329e4ae8a2a9e635d5a74ce28717",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_bot_human_equivalence",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_bot_human_equivalence",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6281bc5160c104e09cbdebb905b271010fd29cb4cfd0908d6aae161393183ca3",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_single_fun_score",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_single_fun_score",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "a40fe2c851ce834f4d0a294c085850ca0edfc43698d9da8b543a4e78a1245379",
+              "blinding_broken": false
+            }
+          ]
+        }
+      ],
+      "scope": "v0.2 protocol preparation; synthetic smokes are not model trials, runtime certification, or participant observations"
+    },
+    {
+      "condition": 419,
+      "task_id": "gd-009",
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "compile",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.compile.build",
+              "family": "build",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "f4832555f81d9330251d7fde09c3a59ea12f09f257b7ad8b867e2351159d20e2"
+            }
+          ]
+        },
+        {
+          "id": "state_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.state_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.state_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "5d3320fd95f7f9639f122195f2cbd32a487ab6a24354893df680f67560e59300"
+            },
+            {
+              "id": "gd-009.state_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "d6657e109caf80dbb4fa20801f189419502d85cd5a631d4ca4a3bd02e77ed504",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "event_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.event_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.event_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "5d3320fd95f7f9639f122195f2cbd32a487ab6a24354893df680f67560e59300"
+            },
+            {
+              "id": "gd-009.event_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "822e632e1136d81deeffad046d46c1b42c2cf919232798121d0e9c1b91232e9f",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "terminal_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.terminal_parity.native_rules",
+              "family": "native_rules",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {
+                "required_fixtures": 3,
+                "observed_fixtures": 3
+              },
+              "evidence_digest": "45fdb23b6d59b659e9824f081abe78351c5526aff3dc7eb4ddc889ba01a65bcf"
+            },
+            {
+              "id": "gd-009.terminal_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "5d3320fd95f7f9639f122195f2cbd32a487ab6a24354893df680f67560e59300"
+            },
+            {
+              "id": "gd-009.terminal_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0dca21d8482ee169c8216003a390d2948fcbc5166d464a8de5a5664902be0bb8",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "input_parity",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.input_parity.engine_parity",
+              "family": "engine_parity",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "5d3320fd95f7f9639f122195f2cbd32a487ab6a24354893df680f67560e59300"
+            },
+            {
+              "id": "gd-009.input_parity",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "cead48c475c2b9f7ac261eb8eba03b337fb0d4218ec6b983891a4a2e0bf9d262",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "visual_review",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.visual_review",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "bda4467ba77dde1cbc92f1cf213dbbaad21a5c5de72ed1c7ab572695777b3ee5",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_false_confirmation",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_false_confirmation",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "49b2a7a06fa6dbabaeca7e807f521d611849114bebd4b5427401cac7484e3743",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "timeout_not_unsolvable",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.timeout_not_unsolvable",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "0f5c6c42144eb15e417601ebd389de5b7909329e4ae8a2a9e635d5a74ce28717",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_bot_human_equivalence",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_bot_human_equivalence",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "6281bc5160c104e09cbdebb905b271010fd29cb4cfd0908d6aae161393183ca3",
+              "blinding_broken": false
+            }
+          ]
+        },
+        {
+          "id": "no_single_fun_score",
+          "status": "PASS",
+          "obligations": [
+            {
+              "id": "gd-009.no_single_fun_score",
+              "family": "blind_manual",
+              "status": "PASS",
+              "issues": [],
+              "measurements": {},
+              "evidence_digest": "a40fe2c851ce834f4d0a294c085850ca0edfc43698d9da8b543a4e78a1245379",
+              "blinding_broken": false
+            }
+          ]
+        }
+      ],
+      "scope": "v0.2 protocol preparation; synthetic smokes are not model trials, runtime certification, or participant observations"
+    }
+  ],
+  "scope": "LOCAL_TASK_CONTRACT_ONLY",
+  "formal_trials": 0,
+  "external_review": "UNVERIFIED"
+}

@@ -1,0 +1,30 @@
+{
+  "task_id": "gd-019",
+  "entrypoint": "submission/index.html",
+  "runtime": "submission/game.mjs",
+  "controls": [
+    "Arrow keys move/rotate/drop",
+    "R restart",
+    "P pause"
+  ],
+  "semantic_event_mapping": {
+    "LOCK": "native LOCK event records a piece placed into the board",
+    "LINE_CLEAR": "native LINE_CLEAR event records rows removed after LOCK"
+  },
+  "assumptions": [
+    "Exactly one public next-piece preview is exposed as preview[0].shape.",
+    "The preview reads the next native deterministic shape index without advancing the hidden sequence; no additional queue, bag, or RNG state is exposed.",
+    "Grounded lock counter increments once per simulation tick.",
+    "Clockwise matrix rotation has no wall kicks.",
+    "The deterministic piece set is a small seed-indexed shape list after the supplied active piece.",
+    "Source and usage budgets are unverified."
+  ],
+  "visible_preview_count": 1,
+  "preview_contract": {
+    "snapshot_field": "preview",
+    "shape": "matrix",
+    "count": 1,
+    "sequence": "derived from the next native deterministic spawn index without advancing it",
+    "additional_future": "hidden"
+  }
+}

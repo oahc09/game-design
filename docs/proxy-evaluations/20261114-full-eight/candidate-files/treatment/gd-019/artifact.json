@@ -1,0 +1,22 @@
+{
+  "task_id": "gd-019",
+  "entrypoint": "submission/index.html",
+  "runtime": "submission/game.mjs",
+  "controls": [
+    "Held left/right/down arrows",
+    "Up rotates",
+    "Space hard drop",
+    "C hold",
+    "R restart",
+    "P pause"
+  ],
+  "assumptions": [
+    "Uses the supplied falling_blocks toolkit runtime as the engine candidate rules adapter.",
+    "Task-specific gravityTicks=30 and lockDelayTicks=2 override toolkit defaults.",
+    "FPS independence is intended through a 60 Hz accumulator and is not yet measured.",
+    "Exactly one public next-piece preview is shown; remaining queue, bag, sequence and RNG state stay hidden.",
+    "Whitelisted declared falling-block gameplay fields, mapped board/gravity/lock aliases, exposed only the single configured preview through the public observation, accepted public rotate/wait/direction forms, and exposed the live fixed-step accumulator and transition log. Initial-piece shape cell-matrix adaptation is local to the adapter.",
+    "Rotation, hard drop, and hold keydown edges queue until the next 60 Hz simulation tick and are consumed once; browser key-repeat does not enqueue repeated presses."
+  ],
+  "engine": "CocosAirJS 1.0.0 revision 100"
+}

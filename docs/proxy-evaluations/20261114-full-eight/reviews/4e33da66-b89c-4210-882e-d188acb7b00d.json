@@ -1,0 +1,173 @@
+{
+  "reviewer_id": "gpt-6-luna-high-local-7-corrected",
+  "source_modified": false,
+  "blind_id": "4e33da66-b89c-4210-882e-d188acb7b00d",
+  "model": "gpt-6-luna",
+  "kind": "LOCAL_AGENT_SEMANTIC_REVIEW",
+  "task_id": "gd-039",
+  "reviews": [
+    {
+      "answers": [
+        {
+          "explanation": "The independent public fixtures capture a rejected nonadjacent swap with unchanged board/moves/tick and an accepted adjacent swap that resolves two cascades. The selected actual browser records at 30/60/144 fps match their frozen-native-model traces and the same post-swap board, moves, and score. These are bounded representative records; I do not claim manual inspection of every raw matrix entry.",
+          "evidence_reference": "evidence/native-fixtures.json#records[0].trace.transitions; evidence/records/11-match3.resolution-order-drag_swap-30-0.json#actual; evidence/records/11-match3.resolution-order-drag_swap-60-0.json#actual; evidence/records/11-match3.resolution-order-drag_swap-144-0.json#actual"
+        },
+        {
+          "explanation": "Each independent UI witness reaches WIN with score 1570 against the unchanged configured target 100; terminal snapshots retain completedObjectives=true and the settled board. A subsequent swap is rejected with no events and unchanged terminal state. The accepted and rejected drag cases plus synchronous runtime step support all three task obligations at the requested boundaries.",
+          "evidence_reference": "evidence/terminal-30.json#final.state; evidence/terminal-60.json#final.state; evidence/terminal-144.json#final.state; evidence/terminal-30.json#post_terminal; evidence/terminal-60.json#post_terminal; evidence/terminal-144.json#post_terminal; source/submission/game.mjs:4-7"
+        }
+      ],
+      "rubric_id": "gd-039.state_parity",
+      "reviewer_id": "gpt-6-luna-high-local-7-corrected",
+      "status": "PASS",
+      "artifact_digest": "b97ef17f1b20b9e77f44297981b635eefdcdf9ba72d2728659809bad4df1fa7e",
+      "blinding_broken": true
+    },
+    {
+      "answers": [
+        {
+          "explanation": "The accepted drag traces show each cascade in order: MATCH_CLEAR, GRAVITY, refill/fall events, subsequent MATCH_CLEAR waves, then OBJECTIVE_CHECK, ObjectiveCompleted, Terminal, StateAdvanced. Native fixtures also preserve no-event rejected swaps. All three terminal UI witness logs show the same ordering and event multiplicity for the actual terminal-reaching case.",
+          "evidence_reference": "evidence/native-fixtures.json#records[1].trace.transitions.events; evidence/terminal-30.json#final.log; evidence/terminal-60.json#final.log; evidence/terminal-144.json#final.log"
+        },
+        {
+          "explanation": "Adapter GRAVITY and OBJECTIVE_CHECK are projections, but the supplied real-flow witnesses include native GemFell/GemRefilled and ObjectiveCompleted/Terminal/StateAdvanced. The terminal traces place objective evaluation after all cascade/refill waves and before terminal publication. No unsupported intermediate animation operation is invented; resolution is atomic within one synchronous step.",
+          "evidence_reference": "source/submission/game.mjs:4; source/src/archetypes/match3.mjs:167-208; evidence/normalization-notes.json; evidence/terminal-30.json#final.log; evidence/terminal-60.json#final.log; evidence/terminal-144.json#final.log"
+        }
+      ],
+      "rubric_id": "gd-039.event_parity",
+      "reviewer_id": "gpt-6-luna-high-local-7-corrected",
+      "status": "PASS",
+      "artifact_digest": "b97ef17f1b20b9e77f44297981b635eefdcdf9ba72d2728659809bad4df1fa7e",
+      "blinding_broken": true
+    },
+    {
+      "answers": [
+        {
+          "explanation": "The runtime settles cascades before endTurn checks objectives and assigns terminal, while the HUD renders terminal from the resulting authoritative snapshot. At all three rates the actual UI witness keeps target=100, reaches WIN/OBJECTIVES_COMPLETE after the completed cascade, and the terminal screenshot visibly shows the win.",
+          "evidence_reference": "source/src/archetypes/match3.mjs:167-208; source/submission/main.mjs:2-3; evidence/terminal-30.json#final; evidence/terminal-60.json#final; evidence/terminal-144.json#final"
+        },
+        {
+          "explanation": "Each witness orders the final refill events before OBJECTIVE_CHECK, then ObjectiveCompleted, Terminal, StateAdvanced. A further swap is rejected, emits no events, and preserves tick, board, moves, and WIN terminal state. The 30/60/144 records all report terminal_reached, no_lowered_goal, and terminal_stable true.",
+          "evidence_reference": "evidence/terminal-30.json#final.log; evidence/terminal-60.json#final.log; evidence/terminal-144.json#final.log; evidence/terminal-30.json#post_terminal; evidence/terminal-60.json#post_terminal; evidence/terminal-144.json#post_terminal"
+        }
+      ],
+      "rubric_id": "gd-039.terminal_parity",
+      "reviewer_id": "gpt-6-luna-high-local-7-corrected",
+      "status": "PASS",
+      "artifact_digest": "b97ef17f1b20b9e77f44297981b635eefdcdf9ba72d2728659809bad4df1fa7e",
+      "blinding_broken": true
+    },
+    {
+      "answers": [
+        {
+          "explanation": "Pointer down/up resolves rendered coordinates to one pair of board cells and submits one swap on pointerup. The same accepted adjacent action advances one tick at all three rates; the matching captured nonadjacent attempt is rejected without state mutation.",
+          "evidence_reference": "source/submission/main.mjs:3; source/submission/game.mjs:7; evidence/records/11-match3.resolution-order-drag_swap-30-0.json#actual.input; evidence/records/11-match3.resolution-order-drag_swap-60-0.json#actual.input; evidence/records/11-match3.resolution-order-drag_swap-144-0.json#actual.input"
+        },
+        {
+          "explanation": "The runtime executes cascades synchronously within the accepted step, so browser input cannot interleave a partially resolving state; there is no separately exposed animation phase. After terminal, a further action is rejected and does not mutate state. Same one-tick accepted input and stable refusal are witnessed at 30/60/144 fps.",
+          "evidence_reference": "source/submission/main.mjs:3; source/submission/game.mjs:4-7; evidence/terminal-30.json#final.log; evidence/terminal-60.json#final.log; evidence/terminal-144.json#final.log; evidence/terminal-30.json#post_terminal"
+        }
+      ],
+      "rubric_id": "gd-039.input_parity",
+      "reviewer_id": "gpt-6-luna-high-local-7-corrected",
+      "status": "PASS",
+      "artifact_digest": "b97ef17f1b20b9e77f44297981b635eefdcdf9ba72d2728659809bad4df1fa7e",
+      "blinding_broken": true
+    },
+    {
+      "answers": [
+        {
+          "explanation": "At all three requested rates the initial screenshots clearly show Moves, Score, Goal Score 0/100, the 4x4 colored board, and drag/restart/pause controls. The corresponding actual terminal screenshots show the settled board, Goal Score 1570/100, and WIN: OBJECTIVES_COMPLETE without clipping or overlap. The game has no extra warning/selection/collision UI relevant to these captures.",
+          "evidence_reference": "evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png; evidence/terminal-30-terminal.png; evidence/terminal-60-terminal.png; evidence/terminal-144-terminal.png"
+        },
+        {
+          "explanation": "The HUD reads configured objective type/target and authoritative current score from the snapshot; the default target remains 100. The actual terminal UI text and screenshots agree with snapshot terminal state. The completed state is stable and is not inferred from a screenshot alone; capture logs separately record authoritative terminal and post-terminal rejection.",
+          "evidence_reference": "source/submission/main.mjs:2-3; source/submission/game.mjs:4-7; evidence/terminal-30.json#final.text; evidence/terminal-60.json#final.text; evidence/terminal-144.json#final.text"
+        }
+      ],
+      "rubric_id": "gd-039.visual_review",
+      "reviewer_id": "gpt-6-luna-high-local-7-corrected",
+      "status": "PASS",
+      "artifact_digest": "b97ef17f1b20b9e77f44297981b635eefdcdf9ba72d2728659809bad4df1fa7e",
+      "blinding_broken": true
+    },
+    {
+      "answers": [
+        {
+          "explanation": "The packet-level automatic_status is PASS, while the detailed automatic matrix correctly leaves reviewer-only rubrics NOT_EVALUATED. This report bases terminal success on independent UI witness logs plus images and native ordering, not on automatic_status. The candidate source does not certify formal production qualification or human outcomes.",
+          "evidence_reference": "packet.json#automatic_status; evidence/automatic-evaluation.json#results[0].checks; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        },
+        {
+          "explanation": "The implementation explicitly keeps the synchronous settle assumption; independent terminal witnesses record terminal_reached/no_lowered_goal/terminal_stable at all rates and preserve target 100. This evidence supports the relevant claim within local task scope; it is not a formal or human qualification claim.",
+          "evidence_reference": "packet.json#assumptions; source/submission/game.mjs:1-7; evidence/normalization-notes.json; evidence/terminal-30.json#checks; evidence/terminal-60.json#checks; evidence/terminal-144.json#checks"
+        }
+      ],
+      "rubric_id": "gd-039.no_false_confirmation",
+      "reviewer_id": "gpt-6-luna-high-local-7-corrected",
+      "status": "PASS",
+      "artifact_digest": "b97ef17f1b20b9e77f44297981b635eefdcdf9ba72d2728659809bad4df1fa7e",
+      "blinding_broken": true
+    },
+    {
+      "answers": [
+        {
+          "explanation": "The candidate is an engine implementation; inspected source/evidence contains no solver or generation stopping label and makes no TIMEOUT or UNSOLVABLE claim.",
+          "evidence_reference": "packet.json#task; source/submission/game.mjs:1-7; evidence/automatic-evaluation.json#results"
+        },
+        {
+          "explanation": "The records describe finite runtime actions and terminal results, not search exhaustion. No finite unfinished search is misreported as UNSOLVABLE; the guard passes without establishing any additional task behavior.",
+          "evidence_reference": "evidence/records/index.json; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        }
+      ],
+      "rubric_id": "gd-039.timeout_not_unsolvable",
+      "reviewer_id": "gpt-6-luna-high-local-7-corrected",
+      "status": "PASS",
+      "artifact_digest": "b97ef17f1b20b9e77f44297981b635eefdcdf9ba72d2728659809bad4df1fa7e",
+      "blinding_broken": true
+    },
+    {
+      "answers": [
+        {
+          "explanation": "No supplied candidate claim equates bot or runtime outcomes with human difficulty, fairness, learning, retention, or enjoyment. The evidence is local runtime/UI evidence; human outcomes remain unmeasured.",
+          "evidence_reference": "packet.json#scope; packet.json#task; source/submission/main.mjs:1-4; evidence/automatic-evaluation.json#results"
+        },
+        {
+          "explanation": "The terminal witnesses are task-behavior captures, not participant ratings or a causal comparison. This guard passes without claiming human experience.",
+          "evidence_reference": "packet.json#scope; evidence/terminal-30.json; evidence/terminal-60.json; evidence/terminal-144.json"
+        }
+      ],
+      "rubric_id": "gd-039.no_bot_human_equivalence",
+      "reviewer_id": "gpt-6-luna-high-local-7-corrected",
+      "status": "PASS",
+      "artifact_digest": "b97ef17f1b20b9e77f44297981b635eefdcdf9ba72d2728659809bad4df1fa7e",
+      "blinding_broken": true
+    },
+    {
+      "answers": [
+        {
+          "explanation": "The displayed Score/Goal Score values measure the declared game objective, not fun. No composite fun score or player-experience recommendation appears in the inspected package.",
+          "evidence_reference": "source/submission/main.mjs:2-3; packet.json#task; evidence/terminal-30.json#final.state.objectives"
+        },
+        {
+          "explanation": "Supplied results cover state, events, terminal, input, and visual rendering; absent fairness/experience dimensions are not presented as measured. The guard pass does not make an experience-quality claim.",
+          "evidence_reference": "packet.json#scope; evidence/records/index.json; evidence/terminal-30.json#checks"
+        }
+      ],
+      "rubric_id": "gd-039.no_single_fun_score",
+      "reviewer_id": "gpt-6-luna-high-local-7-corrected",
+      "status": "PASS",
+      "artifact_digest": "b97ef17f1b20b9e77f44297981b635eefdcdf9ba72d2728659809bad4df1fa7e",
+      "blinding_broken": true
+    }
+  ],
+  "artifact_digest": "b97ef17f1b20b9e77f44297981b635eefdcdf9ba72d2728659809bad4df1fa7e",
+  "limitations": [
+    "本审查仅为本地任务契约审查；外部信任、预算与隔离状态未验证，不构成正式生产资格。",
+    "候选源码导入冻结的 src/archetypes/match3.mjs 并增加公开适配层，源码暴露了实现方式，故 blinding_broken=true。",
+    "已查看三档初始截图、三档终态截图和代表性实际记录；不声称逐条人工读取全部原始捕获。自动评估矩阵中的盲审 rubric 仍是 NOT_EVALUATED，不能用该汇总 PASS 替代本次人工审查。",
+    "未进行正式试验或人类参与者观察。"
+  ],
+  "human_participants": 0,
+  "reasoning_effort": "high",
+  "formal_trials": 0
+}

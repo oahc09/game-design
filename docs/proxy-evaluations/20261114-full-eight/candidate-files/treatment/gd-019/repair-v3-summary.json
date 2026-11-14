@@ -1,0 +1,21 @@
+{
+  "task": "gd-019",
+  "scope": "v3 treatment candidate only",
+  "changes": [
+    "Set adapter previewCount to original public value 1.",
+    "Exposed preview.slice(0,1) through the runtime public observation; raw queue, bag, sequence and RNG remain hidden.",
+    "Rendered one Next shape from the actual public preview head."
+  ],
+  "checks": {
+    "node_syntax": "PASS: submission/game.mjs and submission/main.mjs",
+    "native_smoke": "PASS: one valid preview; same-seed initial projection replayed; no queue/bag/sequence/RNG/raw runtime property exposed",
+    "browser": "NOT_RUN",
+    "fps_30_60_144": "NOT_RUN",
+    "evaluator": "NOT_RUN"
+  },
+  "preserved": [
+    "The prior browser startup attempt 1 failure remains in evidence.json.",
+    "Frozen configs, rules, seed handling, physics and timing were not changed."
+  ],
+  "claims": "No full public acceptance or browser visual pass is claimed."
+}

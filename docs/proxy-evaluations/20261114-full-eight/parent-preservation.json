@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "engineering_baseline": "5cd27c52a3a5626e9d9861da8b45896552e4ec1d",
+  "source_commit": "e947514376d599d10d69ddc101439f9726e374d4",
+  "parent_archives": [
+    {
+      "name": "agent-proxy-evidence-20261107-01.tar.gz",
+      "sha256": "55f5aaa581b0119e13993a1bd103011dbe73c34bbcc12bbae53c24713c8d8159",
+      "verified": true
+    },
+    {
+      "name": "agent-proxy-evidence-20261107-02.tar.gz",
+      "sha256": "63f76fe9cd7d1515369e93ef46c304be31cfd08a87dc24097b4bc5dde8f9abcc",
+      "verified": true
+    }
+  ],
+  "protected_tracked_paths": [
+    "src",
+    "schemas",
+    "benchmark-dataset",
+    "fixtures",
+    "web/calibrated-configs.json",
+    "package.json"
+  ],
+  "protected_diff": "empty",
+  "versions": {
+    "package": "0.2.0",
+    "skill_protocol": "0.1.0"
+  },
+  "candidate_changes": "disposable versioned workspaces only; root runtime/generator/router/evaluator/engine adapter unchanged",
+  "environment": "current Windows user, NTFS execution worktree; no Windows Sandbox, no permission/credential change",
+  "formal_trials": 0,
+  "formal_status": "BLOCKED",
+  "external_review": "UNVERIFIED"
+}

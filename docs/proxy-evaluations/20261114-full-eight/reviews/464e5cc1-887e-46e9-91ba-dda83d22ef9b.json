@@ -1,0 +1,191 @@
+{
+  "reviewer_id": "gpt-6-luna-high-local-13",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "kind": "LOCAL_AGENT_SEMANTIC_REVIEW",
+  "blind_id": "464e5cc1-887e-46e9-91ba-dda83d22ef9b",
+  "task_id": "gd-107",
+  "artifact_digest": "4715305521aca324697295e4863bbb515821acd3aaac8a5bc75e37357fcf84c3",
+  "reviews": [
+    {
+      "artifact_digest": "4715305521aca324697295e4863bbb515821acd3aaac8a5bc75e37357fcf84c3",
+      "rubric_id": "gd-107.state_parity",
+      "reviewer_id": "gpt-6-luna-high-local-13",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "evidence/native-fixtures.json#records[water.partial-maximal]; source/submission/game.mjs:4",
+          "explanation": "The fixture moves the maximal top B group into a same-color tube with only one free slot, leaving lower layers unchanged and preserving total liquid. The reject-color fixture leaves tick and tubes unchanged. Actual captures repeat both states across controls/rates."
+        },
+        {
+          "evidence_reference": "source/submission/game.mjs:4; evidence/input-parity-replay-executed.json#pairs; evidence/records/11-water.partial-maximal-pointer-30-0.json#actual; evidence/CURRENT-STATUS.md",
+          "explanation": "Both controls converge on {from,to}; supervisor actual-capture evidence now verifies 144 matched keyboard/pointer fixture pairs. The candidate replay JSON is explicitly a pre-supervisor historical plan, and CURRENT-STATUS.md plus execution-status.json clearly distinguish that frozen author snapshot from the current captured replay. The declared state rules and controls are supported within local scope."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "4715305521aca324697295e4863bbb515821acd3aaac8a5bc75e37357fcf84c3",
+      "rubric_id": "gd-107.event_parity",
+      "reviewer_id": "gpt-6-luna-high-local-13",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:4; evidence/native-fixtures.json#records[water.partial-maximal].trace.transitions[0].events; evidence/native-fixtures.json#records[water.reject-color].trace.transitions[0].events",
+          "explanation": "Accepted pour emits one POUR with source, target, color and amount; wrong-color rejection emits no event and no tick change. Independent fixtures and raw captures retain matching event arrays."
+        },
+        {
+          "evidence_reference": "evidence/records/11-water.partial-maximal-keyboard-30-0.json#actual.events; evidence/records/11-water.partial-maximal-pointer-30-0.json#actual.events; source/submission/input-parity-replay.json#status",
+          "explanation": "Keyboard and pointer event arrays match in the representative captures and the 144-pair supervisor replay. The candidate plan remains historically NOT_RUN, but the separately executed replay is current evidence; it confirms equal event traces for accepted and rejected cases."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "4715305521aca324697295e4863bbb515821acd3aaac8a5bc75e37357fcf84c3",
+      "rubric_id": "gd-107.terminal_parity",
+      "reviewer_id": "gpt-6-luna-high-local-13",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:4; evidence/terminal-30.json#final; evidence/terminal-30.json#post_terminal",
+          "explanation": "Victory requires every nonempty tube to be full and monochromatic; empties are allowed. Witness shows final red pour yields WIN/SORTED, and a subsequent action is rejected with state and terminal stable."
+        },
+        {
+          "evidence_reference": "evidence/terminal-30.json#final; evidence/terminal-60.json#final; evidence/terminal-144.json#final; evidence/terminal-144.json#post_terminal",
+          "explanation": "All three terminal witnesses and images show the same win and stable post-terminal rejection. Separate supervisor captures establish keyboard/pointer parity; the source plan is a historical pre-run artifact rather than current status."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "4715305521aca324697295e4863bbb515821acd3aaac8a5bc75e37357fcf84c3",
+      "rubric_id": "gd-107.input_parity",
+      "reviewer_id": "gpt-6-luna-high-local-13",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "evidence/input-parity-replay-executed.json#pairs; evidence/records/11-water.partial-maximal-keyboard-144-0.json#actual; evidence/records/11-water.partial-maximal-pointer-144-0.json#actual; source/submission/main.mjs:2; source/submission/game.mjs:3-4",
+          "explanation": "Supervisor-owned execution evidence declares 144 pairs, bound to the artifact digest. I checked pair completeness: 144 unique seed/case/rate/repeat keys, all PASS, all keyboard/pointer trace digests equal, and all 288 referenced capture files exist. Representative accepted pours at 144Hz and rejected wrong-color pours at 60Hz show matching actual input, tick/state, events and rejection stability. Source routes both controls through the same {from,to} action semantics. The candidate replay JSON remains a historical NOT_RUN plan and is superseded by this actual capture evidence."
+        },
+        {
+          "evidence_reference": "evidence/input-parity-replay-executed.json#pairs; evidence/records/index.json#records; evidence/records/11-water.reject-color-keyboard-60-0.json#actual; evidence/records/11-water.reject-color-pointer-60-0.json#actual",
+          "explanation": "The execution packet binds to this artifact, covers both accepted partial-maximal and rejected wrong-color cases at 30/60/144Hz with two repeats over 12 seeds, and each pair has identical observed canonical trace digests. The representative reject case has unchanged tubes/tick and empty events in both controls. The frozen plan file is correctly identified as pre-run historical material, not the supervisor result. This supports the requested local input-parity replay; it is not formal qualification."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "4715305521aca324697295e4863bbb515821acd3aaac8a5bc75e37357fcf84c3",
+      "rubric_id": "gd-107.visual_review",
+      "reviewer_id": "gpt-6-luna-high-local-13",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png; source/submission/main.mjs:2",
+          "explanation": "Inspected all three rate screenshots: four distinct tubes, correctly ordered colored segments, clear yellow selection/cursor cue, and HUD control instructions are visible. Terminal copy is snapshot-derived. Static captures do not establish human usability."
+        },
+        {
+          "evidence_reference": "evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png",
+          "explanation": "The supplied screenshots are visually consistent across rates with no visible clipping or overlap at the captured canvas size. Review is limited to these browser captures; candidate imports disclose intervention, so blinding is broken."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "4715305521aca324697295e4863bbb515821acd3aaac8a5bc75e37357fcf84c3",
+      "rubric_id": "gd-107.extension_boundary",
+      "reviewer_id": "gpt-6-luna-high-local-13",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "evidence/extension.json#architecture; evidence/extension.json#shared_core_before; evidence/extension.json#shared_core_after; source/submission/game.mjs:2-4",
+          "explanation": "Experimental package declares container transfer and keyboard-pointer capabilities; Core hashes are unchanged. Native source implements tube capacity, maximal pours and shared keyboard/pointer action shape, without claiming production registration."
+        },
+        {
+          "evidence_reference": "evidence/extension.json#architecture; evidence/extension.json#shared_core_before; evidence/extension.json#shared_core_after; evidence/input-parity-replay-executed.json#status; evidence/execution-status.json; evidence/CURRENT-STATUS.md",
+          "explanation": "Experimental/unregistered scope and unchanged Core boundary are explicit, and the supervisor replay is present. CURRENT-STATUS.md and execution-status.json clearly label source/limitations notes as immutable pre-acceptance author snapshots and supply separate current execution status; therefore their historical NOT_RUN wording is not presented as current delivery status."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "4715305521aca324697295e4863bbb515821acd3aaac8a5bc75e37357fcf84c3",
+      "rubric_id": "gd-107.no_false_confirmation",
+      "reviewer_id": "gpt-6-luna-high-local-13",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "evidence/CURRENT-STATUS.md; evidence/execution-status.json; evidence/automatic-evaluation.json#results; evidence/input-parity-replay-executed.json#status",
+          "explanation": "Current status is separately and clearly attributed: supervisor-owned actual evidence binds to the artifact and reports 144 executed parity pairs; manual rubric checks remain IN_PROGRESS until complete; formal status is BLOCKED and external review UNVERIFIED. CURRENT-STATUS.md identifies source/limitations.md as an immutable pre-acceptance author snapshot, so its historical NOT_RUN language is not a claim about present execution. No unsupported formal or human completion claim is made."
+        },
+        {
+          "evidence_reference": "evidence/CURRENT-STATUS.md; evidence/execution-status.json#source_snapshot_role; evidence/execution-status.json#current_execution_role; evidence/input-parity-replay-executed.json#pairs",
+          "explanation": "The historical submission plan and limitations remain preserved as pre-supervisor author-stage snapshots. The separate current-status layer correctly points to the 144 passing supervisor pairs and records formal qualification BLOCKED, external review UNVERIFIED, and zero human participants. This resolves the apparent stale-note conflict without rewriting source claims or inflating acceptance."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "4715305521aca324697295e4863bbb515821acd3aaac8a5bc75e37357fcf84c3",
+      "rubric_id": "gd-107.timeout_not_unsolvable",
+      "reviewer_id": "gpt-6-luna-high-local-13",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/input-parity-replay.json#kind; evidence/automatic-evaluation.json#scope",
+          "explanation": "No solver stopping outcome or UNSOLVABLE claim is present. The source replay plan is historically NOT_RUN, while the current supervisor file records executed input-parity traces; neither makes a search impossibility assertion."
+        },
+        {
+          "evidence_reference": "source/submission/input-parity-replay.json#status; packet.json#task.materials.evaluation_protocol.claim_policy",
+          "explanation": "No solve/impossibility claim is present, and public policy distinguishes TIMEOUT from UNSOLVABLE. The historical plan is separated from current replay evidence; this guard concerns only solver labels."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "4715305521aca324697295e4863bbb515821acd3aaac8a5bc75e37357fcf84c3",
+      "rubric_id": "gd-107.no_bot_human_equivalence",
+      "reviewer_id": "gpt-6-luna-high-local-13",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "evidence/automatic-evaluation.json#scope; packet.json#scope",
+          "explanation": "Materials define evidence as local engineering and synthetic smoke, not human outcomes. No bot-human equivalence or human difficulty/fairness/enjoyment claim is made."
+        },
+        {
+          "evidence_reference": "evidence/automatic-evaluation.json#scope; packet.json#task.prompt",
+          "explanation": "Prompt requests implementation and replay; evidence explicitly excludes participant observations and efficacy comparison. Human outcomes remain unmeasured."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "4715305521aca324697295e4863bbb515821acd3aaac8a5bc75e37357fcf84c3",
+      "rubric_id": "gd-107.no_single_fun_score",
+      "reviewer_id": "gpt-6-luna-high-local-13",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "packet.json#task.prompt; evidence/automatic-evaluation.json#scope",
+          "explanation": "No recommendation or fun score is present. Evidence concerns mechanics and captures, without claiming unmeasured experience dimensions."
+        },
+        {
+          "evidence_reference": "evidence/automatic-evaluation.json#scope; evidence/CURRENT-STATUS.md; evidence/input-parity-replay-executed.json#status",
+          "explanation": "No composite fun metric appears. Current evidence is scoped to local mechanics and input captures; the status layer keeps human-experience outcomes unmeasured and formal acceptance blocked."
+        }
+      ],
+      "blinding_broken": true
+    }
+  ],
+  "limitations": [
+    "Local semantic review only; external production trust and review remain UNVERIFIED, formal qualification remains BLOCKED.",
+    "No human participants or formal trials; human outcomes remain unmeasured.",
+    "Supervisor replay covers 144 keyboard/pointer fixture pairs; it does not claim human experience or formal acceptance.",
+    "Blinding is broken because candidate source imports expose the intervention.",
+    "Source/limitations statements are frozen pre-acceptance author snapshots; current execution status is separately recorded under evidence/CURRENT-STATUS.md and evidence/execution-status.json."
+  ],
+  "formal_trials": 0,
+  "human_participants": 0,
+  "source_modified": false
+}

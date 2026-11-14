@@ -1,0 +1,27 @@
+{
+  "task_id": "gd-108",
+  "status": "PROXY_IMPLEMENTED_UNVERIFIED",
+  "attempted_work": [
+    "Read task, output contracts, Game Design Skill, routing and unknown-archetype protocol; registry does not contain card_game.",
+    "Created a proxy runtime with partial snapshot, hidden deck/private hands, immediate/delayed profile definitions and a blinded comparison plan.",
+    "Applied the authorized minimal public-contract repair in submission modules and recorded unverified status; automatic browser/evaluator PASS is not claimed.",
+    "R key restart is a canonical native transition recorded with before/after snapshots; only supervisor reset clears the case log.",
+    "Made public step action normalization null-safe so rejected inputs leave the projection available for full before/after comparison.",
+    "Final audit routed every live UI and fixed-step game.step call through stepLive; keyboard input listeners run in window capture phase.",
+    "Added cached visibleActions projection from rendered own-hand labels and Pass affordance with exact text and numeric cost/damage/heal fields.",
+    "Added __acceptance.visibleState() from the successful HUD render cache with acting-player-relative health fields; getter returns no raw snapshot."
+  ],
+  "checks": {
+    "node_syntax": "PASS (node --check submission/main.mjs after visibleState HUD cache)",
+    "partial_observation_boundary": "NOT_RUN",
+    "delayed_policy_replay": "NOT_RUN",
+    "paired_seed_metrics": "NOT_RUN",
+    "human_trials": "NOT_RUN (0 participants)",
+    "visual_review": "NOT_RUN",
+    "extension_gate": "NOT_RUN",
+    "visible_actions_projection": "NOT_RUN under browser supervisor after fix",
+    "visible_state_projection": "SOURCE_ONLY: cached HUD fields; browser probe NOT_RUN"
+  },
+  "model_authored_pass_claims": false,
+  "source_selection_context": "This candidate was authored after prior task candidates in the same generation context; sequence context may affect selection."
+}

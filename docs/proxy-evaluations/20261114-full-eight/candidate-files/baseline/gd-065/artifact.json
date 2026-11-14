@@ -1,0 +1,22 @@
+{
+  "task_id": "gd-065",
+  "entrypoint": "submission/index.html",
+  "runtime": "submission/game.mjs",
+  "controls": [
+    "Click a tube or press keys 1-9 to select source and destination",
+    "Escape cancels the visual-only pour cue",
+    "R restart"
+  ],
+  "semantic_event_mapping": {
+    "POUR": "native POUR records one accepted maximal transfer from a source tube to a destination tube"
+  },
+  "assumptions": [
+    "Pointer and number-key selection both dispatch native numeric source/destination selection.",
+    "Pour transfers the maximal contiguous top run that fits.",
+    "Completed tubes are empty or full and single-color.",
+    "Liquid state updates atomically; a separate visual-only cue can be canceled with Escape without changing game state.",
+    "frame(ms) and ordinary RAF advance the same cue timer.",
+    "Source and usage budgets are unverified."
+  ],
+  "invalid_index_behavior": "Numeric selection and explicit source/destination indices are zero-based integers; invalid values reject without mutation or events."
+}

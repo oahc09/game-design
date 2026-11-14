@@ -1,0 +1,1 @@
+{"kind":"REPLAY_PLAN_NOT_EXECUTED","task_id":"gd-107","fixture":{"capacity":4,"tubes":[["R","B","R","B"],["B","R","B","R"],[],[]]},"intended_action":{"from":0,"to":2},"keyboard_action":{"selected_source":0,"destination":2},"pointer_action":{"source_tube":0,"destination_tube":2},"comparison_required":["accepted","events","snapshot"],"status":"NOT_RUN"}

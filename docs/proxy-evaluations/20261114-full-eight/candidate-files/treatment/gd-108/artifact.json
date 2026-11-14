@@ -1,0 +1,23 @@
+{
+  "task_id": "gd-108",
+  "entrypoint": "submission/index.html",
+  "runtime": "submission/game.mjs",
+  "controls": [
+    "Arrow keys select card",
+    "Enter play",
+    "Space pass",
+    "R restart",
+    "P pause"
+  ],
+  "assumptions": [
+    "Card Game is not registered; a minimal deterministic duel proxy is provided for interface work only.",
+    "Demo cards/effects are placeholders, not an inferred game specification.",
+    "Snapshot reveals public health, mana, phase and zone counts only; deck order and both private hands are excluded.",
+    "The active player sees their own hand in the visual surface, not through the candidate snapshot or text observer.",
+    "Kept private hand/deck contents out of snapshots, normalized public lowercase phase actions, and exposed live same-instance acceptance hooks. Delayed policy execution remains an external wrapper boundary.",
+    "visibleActions() returns a deep copy of the most recently rendered current-player play labels plus the visible Pass affordance; it reads no private game state and exposes no opponent hand or future deck.",
+    "visibleState() returns only tick, active_player, mana, own health, and opponent health from the last successfully rendered HUD, relative to the acting player. The getter returns only the cached projection."
+  ],
+  "engine": "CocosAirJS 1.0.0 revision 100",
+  "package_status": "PROXY_ONLY_EXTENSION_GATE_NOT_RUN"
+}

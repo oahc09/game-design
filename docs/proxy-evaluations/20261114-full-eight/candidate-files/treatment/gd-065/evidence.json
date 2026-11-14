@@ -1,0 +1,28 @@
+{
+  "task_id": "gd-065",
+  "status": "EXPERIMENTAL_IMPLEMENTED_UNVERIFIED",
+  "attempted_work": [
+    "Read public task, engine contract, Game Design Skill, routing, runtime contract, and unknown-archetype protocol.",
+    "Confirmed no water_sort archetype/runtime in the supplied registry/toolkit.",
+    "Created an experimental createGame snapshot/step package, strict content checks, restore hook, authoritative pour trace, tube selection UI, and CocosAirJS renderer.",
+    "Applied the authorized minimal public-contract repair in submission modules and recorded unverified status; automatic browser/evaluator PASS is not claimed.",
+    "R key restart is a canonical native transition recorded with before/after snapshots; only supervisor reset clears the case log.",
+    "Made the live game binding replaceable for supervisor reset and routed keyboard/pointer pours and UI restart through the shared native recorder.",
+    "Final audit routed every live UI and fixed-step game.step call through stepLive; keyboard input listeners run in window capture phase.",
+    "Added one visual-only committed-pour progress cue, Escape cancellation counter and __acceptance.visualState(); RAF and supervisor frame advance the same timer."
+  ],
+  "checks": {
+    "node_syntax": "PASS (node --check submission/main.mjs after visual cue addition)",
+    "browser_startup": "NOT_RUN",
+    "schema_extension_gate": "NOT_RUN",
+    "seeded_replay_restore": "NOT_RUN",
+    "pour_trace_parity": "NOT_RUN",
+    "input_parity": "NOT_RUN",
+    "animation_authority_boundary": "NOT_RUN",
+    "visual_review": "NOT_RUN",
+    "visual_cue": "NOT_RUN in browser after implementation",
+    "animation_cancel": "NOT_RUN in browser after implementation"
+  },
+  "source_selection_context": "This candidate was authored after prior task candidates in the same generation context; sequence context may affect selection.",
+  "model_authored_pass_claims": false
+}

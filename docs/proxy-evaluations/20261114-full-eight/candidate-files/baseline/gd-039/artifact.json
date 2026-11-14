@@ -1,0 +1,24 @@
+{
+  "task_id": "gd-039",
+  "entrypoint": "submission/index.html",
+  "runtime": "submission/game.mjs",
+  "controls": [
+    "Pointer drag neighboring gems",
+    "R restart",
+    "P pause"
+  ],
+  "semantic_event_mapping": {
+    "MATCH_CLEAR": "native MATCH_CLEAR carries the cells actually removed in each resolution wave",
+    "GRAVITY": "native GRAVITY marks the post-clear column compaction stage",
+    "REFILL": "native REFILL marks deterministic replacement of empty cells",
+    "OBJECTIVE_CHECK": "native OBJECTIVE_CHECK is emitted after all cascades resolve"
+  },
+  "assumptions": [
+    "Only adjacent swaps creating an immediate match are accepted.",
+    "Matched cells add one point each.",
+    "Fixed blockers split column compaction.",
+    "Moves exhausted is the only public terminal objective.",
+    "Resolution is synchronous within one native step.",
+    "Source and usage budgets are unverified."
+  ]
+}

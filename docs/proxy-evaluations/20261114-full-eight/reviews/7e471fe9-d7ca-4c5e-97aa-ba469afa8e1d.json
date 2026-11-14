@@ -1,0 +1,137 @@
+{
+  "reviewer_id": "gpt-6-luna-high-local-16-corrected",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "kind": "LOCAL_AGENT_SEMANTIC_REVIEW",
+  "blind_id": "7e471fe9-d7ca-4c5e-97aa-ba469afa8e1d",
+  "task_id": "gd-108",
+  "artifact_digest": "31ad4cd03ad36da19c2ed7fc9431a94683b7debec991c0e19bb302ed8aba041a",
+  "reviews": [
+    {
+      "artifact_digest": "31ad4cd03ad36da19c2ed7fc9431a94683b7debec991c0e19bb302ed8aba041a",
+      "rubric_id": "gd-108.knowledge_boundary",
+      "reviewer_id": "gpt-6-luna-high-local-16-corrected",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/supervisor-card-capture.mjs; source/supervisor-public-policy.mjs; source/submission/main.mjs; source/submission/game.mjs; evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png",
+          "explanation": "Supervisor policy receives only the current visibleState and visibleActions getters. main.mjs constructs those from the currently rendered HUD data attributes and enabled DOM controls, including visible cost/effect; it does not pass the game instance, hidden hand arrays, deck order, or RNG. game.mjs snapshots expose active-player zone counts and public fields only; visibleHand returns only the active player hand. All three supplied rate screenshots show the actual browser UI with current player, active hand, visible card cost/effect and pass control; the full captures provide behavior evidence beyond the static screenshots."
+        },
+        {
+          "evidence_reference": "evidence/records/11-delayed-60-0.json#trace; evidence/records/11-immediate-60-0.json#trace; source/artifact.json#assumptions; source/submission/blinded-comparison-plan.md",
+          "explanation": "Native state has independent private hands/decks for both players, while ordinary observations/UI expose only the active hand and hide future order and delayed payload. Captured delayed P0 starts with decision_tick 0 and no_input/applied_from_step null, then applies the prior P0 opportunity at decision_tick 1; P1 uses the immediate policy. Immediate sample raw winner player1 normalizes to P0 WIN; delayed sample raw winner player2 normalizes to P0 LOSS. Comparison preparation is explicit and human outcomes remain 0."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "31ad4cd03ad36da19c2ed7fc9431a94683b7debec991c0e19bb302ed8aba041a",
+      "rubric_id": "gd-108.metric_valid",
+      "reviewer_id": "gpt-6-luna-high-local-16-corrected",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "evidence/profile-metrics.json#definitions,rows; evidence/records/index.json#records; evidence/paired-coverage.json#results",
+          "explanation": "Six profile-by-rate groups each report 12 planned seeds, 0 censored, completion and P0-perspective matchup rates, decision opportunities, native attempts, P0 mana spent, and P1 decision counts. The combined index has 144 records: two full captures for each of 12 seeds × 2 profiles × 3 rates. Profile metrics use the first capture as the 12 seed observations; the second is preserved for deterministic replay. I independently recomputed each first-capture group outcome count and mean decision opportunities from index.json; all six match. Paired coverage reports 144 pairs."
+        },
+        {
+          "evidence_reference": "source/artifact.json#assumptions; source/submission/game.mjs; source/supervisor-card-capture.mjs; evidence/records/11-immediate-60-0.json#raw_final,trace; evidence/records/11-delayed-60-0.json#raw_final,trace; evidence/profile-metrics.json#rows",
+          "explanation": "The documented rules match source: both players start with 3 mana; passing changes active player, refreshes incoming mana to 3, and does not change health or draw; card costs/effects and draw-after-play retain their declared values. The capture routes P1 to fixed immediate policy and delays P0 one opportunity. I checked all 144 records: each includes both actors, no browser errors, and each terminal winner mapped to P0 agrees with the raw winner. Group rates are 12/12 P0 wins immediate and 0/12 delayed at all rates; these are local toy-game observations only, with no causal Skill or human claim."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "31ad4cd03ad36da19c2ed7fc9431a94683b7debec991c0e19bb302ed8aba041a",
+      "rubric_id": "gd-108.extension_boundary",
+      "reviewer_id": "gpt-6-luna-high-local-16-corrected",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "packet.json#source_files; source/submission/game.mjs; source/submission/main.mjs; source/artifact.json#assumptions,semantic_event_mapping; evidence/extension.json#capabilities",
+          "explanation": "The submitted runtime is a new native local two-player card game; each player has a separate private deck/hand, only active-player hand is displayed, and pass switches active_player while refreshing incoming mana. The artifact accurately says there is no distinct reveal operation/event because visibility follows active_player, rather than denying that a private P1 hand exists. Extension metadata lists delayed_partial_observation and blinded_human_protocol; shared_core_before and shared_core_after are both empty. No unsupported implementation format or incompatible-game relabeling is present. I recomputed SHA-256 for all five packet source_files and each matched the packet digest. The artifact accurately says there is no distinct reveal operation/event because visibility follows active_player, rather than denying that a private P1 hand exists."
+        },
+        {
+          "evidence_reference": "evidence/records/11-delayed-60-0.json#trace; source/submission/blinded-comparison-plan.md; source/artifact.json#blinded_comparison_plan,assumptions; source/limitations.md#Current model and visibility",
+          "explanation": "Delayed P0 trace records one initial no-input decision and prior-opportunity applied_from_step thereafter; P1 is immediate. The comparison plan specifies opaque C1/C2 IDs, separate condition key, counterbalanced order, and eight separate experience dimensions, and marks itself unexecuted with 0 participants/ratings. The reconciled artifact and limitations describe the two hidden hands/decks, no-damage/no-draw pass, 3-mana turn refresh, card values, terminal winner, and no separate REVEAL event consistently with current source."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "31ad4cd03ad36da19c2ed7fc9431a94683b7debec991c0e19bb302ed8aba041a",
+      "rubric_id": "gd-108.no_false_confirmation",
+      "reviewer_id": "gpt-6-luna-high-local-16-corrected",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/evidence.json#checks; evidence/execution-status.json; evidence/automatic-evaluation.json#automatic_status,failures; evidence/records/index.json#records",
+          "explanation": "Author-stage source evidence says browser and paired captures were NOT_RUN before supervisor acceptance and explicitly has no certification. Current execution-status separately records reexecuted captures; the bound automatic evaluation says PASS with 144 records and no failures, while blind-manual items remain NOT_EVALUATED pending this report. No screenshot or author smoke is represented as task completion, and no human outcome is claimed."
+        },
+        {
+          "evidence_reference": "source/artifact.json#blinded_comparison_plan,assumptions; source/limitations.md#Evidence status; evidence/profile-metrics.json#definitions",
+          "explanation": "The concrete obligations are bounded: delay and partial observations have current source/capture evidence; human comparison is prepared but not executed; participants and ratings are zero and explicitly unmeasured. Metrics describe the P0 policy versus fixed immediate P1 under declared toy rules and state they are not causal Skill gain, human effect, or formal M7."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "31ad4cd03ad36da19c2ed7fc9431a94683b7debec991c0e19bb302ed8aba041a",
+      "rubric_id": "gd-108.timeout_not_unsolvable",
+      "reviewer_id": "gpt-6-luna-high-local-16-corrected",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "evidence/automatic-evaluation.json#results; evidence/records/index.json#records; evidence/profile-metrics.json#rows",
+          "explanation": "No solver or generation impossibility result is claimed. Episode limits are 300 steps and captured runs end in WIN/LOSS; no TIMEOUT or unfinished frontier is labeled UNSOLVABLE. This guard passes as absence of a prohibited stopping claim only."
+        },
+        {
+          "evidence_reference": "source/evidence.json#checks; source/submission/blinded-comparison-plan.md#Current execution record; evidence/execution-status.json",
+          "explanation": "The source submission marks human/browser work NOT_RUN at author time; the separate current supervisor record documents completed local captures and keeps formal trials at zero. There is no search proof claim attached to partial observation, comparison preparation, or absent participants."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "31ad4cd03ad36da19c2ed7fc9431a94683b7debec991c0e19bb302ed8aba041a",
+      "rubric_id": "gd-108.no_bot_human_equivalence",
+      "reviewer_id": "gpt-6-luna-high-local-16-corrected",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/blinded-comparison-plan.md#Scope and status,Current execution record; source/artifact.json#blinded_comparison_plan",
+          "explanation": "The plan says it prepares a future comparison, does not report a study, and records 0 human participants and 0 ratings. It explicitly says agent/native traces are not participant data. No bot result is called human difficulty, fairness, learning, retention, or enjoyment."
+        },
+        {
+          "evidence_reference": "evidence/profile-metrics.json#definitions,rows; source/submission/blinded-comparison-plan.md#Separate experience dimensions",
+          "explanation": "Metrics are limited to local completion, action/decision counts, mana spent, and matchup outcomes versus the declared fixed immediate P1. The plan keeps eight human experience dimensions separate and unmeasured. No causal or bot-human equivalence conclusion is made."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "31ad4cd03ad36da19c2ed7fc9431a94683b7debec991c0e19bb302ed8aba041a",
+      "rubric_id": "gd-108.no_single_fun_score",
+      "reviewer_id": "gpt-6-luna-high-local-16-corrected",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/public-policy.mjs; source/supervisor-public-policy.mjs; evidence/profile-metrics.json#definitions,rows",
+          "explanation": "The scalar is only a decision utility over visible damage plus healing for selecting a next action; it is not described as a fun score. Reported measurements remain separate: completion, decision opportunities/native attempts, mana spent, matchup outcome, and censor count."
+        },
+        {
+          "evidence_reference": "source/submission/blinded-comparison-plan.md#Separate experience dimensions; source/artifact.json#blinded_comparison_plan",
+          "explanation": "The future plan requests eight separate 1–7 experience ratings, forbids combining them, and states that no ratings currently exist. Missing human dimensions remain unmeasured."
+        }
+      ],
+      "blinding_broken": true
+    }
+  ],
+  "limitations": [
+    "Source and profile records expose the immediate/delayed intervention, so source-informed blinding is broken.",
+    "All reviewed outcomes are local policy/game evidence only; formal_trials=0, human_participants=0, external review is UNVERIFIED, and source/usage/provider budgets remain unverified."
+  ],
+  "formal_trials": 0,
+  "human_participants": 0,
+  "source_modified": false
+}

@@ -1,0 +1,6 @@
+# Repair findings: gd-039
+
+- The original core already rejected nonadjacent/no-match swaps, but hard-coded a 4x4 board, used a fixed three-color RNG, emitted only one resolution wave, and did not support blockers/refill streams. Browser input had no actual transition log or supervisor API.
+- Updated the native model to adapt the public board/color/move/blocker/refill fields, validate adjacent swaps, process each actual match wave through MATCH_CLEAR, GRAVITY, REFILL before OBJECTIVE_CHECK, and use deterministic seeded refill. The UI now renders the same live board and pointerForAction derives canvas design coordinates from actual tile and canvas geometry.
+- Assumptions: only immediate matches accept a swap; matched tiles score one point each; gravity compacts within each column while fixed blockers split the column; absent a public target, moves exhausted is the terminal objective. Refill streams cycle if supplied; otherwise use a seeded LCG. Resolution is synchronous within a native transition, so there is no externally observable intermediate animation state. Source/usage budgets are unverified.
+- Verification: `node --check` passed for both submission modules. Browser interaction, pointer geometry, cadence and fixture parity remain pending supervisor; no success claim made.

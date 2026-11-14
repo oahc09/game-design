@@ -1,0 +1,190 @@
+{
+  "source_modified": false,
+  "reviews": [
+    {
+      "rubric_id": "gd-071.state_parity",
+      "reviewer_id": "gpt-6-luna-high-local-11",
+      "answers": [
+        {
+          "explanation": "The public task omits movement constants, and packet assumptions explicitly supply gravity 0.035, speed 0.18, jump impulse 0.34, radius 0.35, height 1, foot-anchor start and recovery bounds. The 30 FPS jump trace goes from tick 10 (y=2, grounded) to tick 11 (y=2.305, airborne), then lands at tick 29. Representative checkpoint raw traces at all three rates show fall below y=-3.8 followed by restore to the captured checkpoint at tick 63; the source collision/resolution and reset code implements those assumptions. This is bounded-model evidence, not fidelity to an unspecified commercial physics engine.",
+          "evidence_reference": "evidence/records/11-gd-071.public-native-scenario-jump-30-0.json#actual.state"
+        },
+        {
+          "explanation": "All concrete obligations are supported locally: records/index.json lists move/jump/checkpoint captures at 30/60/144 FPS with two repeats; representative raw checkpoint traces at each rate include five recovery transitions, and platform-behavior.json includes jump/landing and checkpoint/recovery witness summaries. The three supplied screenshots show capsule/platform/checkpoint alignment. Physics and coordinate assumptions are explicit in packet.json.",
+          "evidence_reference": "evidence/records/index.json"
+        }
+      ],
+      "artifact_digest": "cf13d1b9fac0af997f956d36395eecc2867bb0d05760f50d823c4fd6524e98a6",
+      "status": "PASS",
+      "blinding_broken": true
+    },
+    {
+      "rubric_id": "gd-071.event_parity",
+      "reviewer_id": "gpt-6-luna-high-local-11",
+      "answers": [
+        {
+          "explanation": "The jump trace has grounded-to-airborne and airborne-to-grounded transitions; source emits JUMP for grounded jump and LAND only on transition from airborne to grounded. Checkpoint traces at 30, 60 and 144 FPS each show five restore transitions and matching COLLIDE events, e.g. 30 FPS tick 62->63 in evidence/records/11-gd-071.public-native-scenario-checkpoint-30-0.json#actual.state and #actual.events. The native model is not itself an independent semantic oracle; these raw traces are checked against the declared model assumptions.",
+          "evidence_reference": "evidence/records/11-gd-071.public-native-scenario-jump-30-0.json#actual.state"
+        },
+        {
+          "explanation": "Collision/checkpoint recovery is relevant and witnessed at all requested rates: representative raw checkpoint captures at 30/60/144 each contain five restore transitions and corresponding COLLIDE events; evidence/platform-behavior.json#rows supplies the broader summary. Capsule alignment is visual evidence, separate from events. State/event/input/terminal consistency is supported for the supplied fixtures and declared assumptions.",
+          "evidence_reference": "evidence/platform-behavior.json#rows"
+        }
+      ],
+      "artifact_digest": "cf13d1b9fac0af997f956d36395eecc2867bb0d05760f50d823c4fd6524e98a6",
+      "status": "PASS",
+      "blinding_broken": true
+    },
+    {
+      "rubric_id": "gd-071.terminal_parity",
+      "reviewer_id": "gpt-6-luna-high-local-11",
+      "answers": [
+        {
+          "explanation": "evidence/records/11-gd-071.public-native-scenario-move-30-0.json#checks; packet.json#task.prompt. The task specifies platforms, movement and checkpoint recovery but no goal/win/loss condition. Terminal remains null; paused/terminal state rejects ordinary actions and restart resets. Captured checks include terminal stability and no rejected mutation. This supports the specified no-terminal task only.",
+          "evidence_reference": "source/submission/game.mjs:1"
+        },
+        {
+          "explanation": "Recovery is a nonterminal transition and is witnessed in raw checkpoint traces at all three rates; terminal remains null because the prompt specifies no goal/win/loss condition. The captures include terminal stability and rejected-mutation checks. Capsule alignment is separately supported by the screenshots; no unsupported win/loss behavior is inferred.",
+          "evidence_reference": "evidence/platform-behavior.json#rows"
+        }
+      ],
+      "artifact_digest": "cf13d1b9fac0af997f956d36395eecc2867bb0d05760f50d823c4fd6524e98a6",
+      "status": "PASS",
+      "blinding_broken": true
+    },
+    {
+      "rubric_id": "gd-071.input_parity",
+      "reviewer_id": "gpt-6-luna-high-local-11",
+      "answers": [
+        {
+          "explanation": "source/submission/game.mjs:1; evidence/records/index.json; evidence/records/11-gd-071.public-native-scenario-jump-30-0.json#actual.input. Main maps held left/right to one vector per 60Hz tick and queues jump/checkpoint once per non-repeat keydown; game step consumes one action. Records cover move/jump/checkpoint across three rates and repeats. Findings are limited to supplied replay/input cases.",
+          "evidence_reference": "source/submission/main.mjs:1"
+        },
+        {
+          "explanation": "The records index covers move/jump/checkpoint at all three rates and repeats. Representative checkpoint traces at 30/60/144 show five recovery transitions each; the three screenshots support capsule alignment. State/event/input/terminal checks are in the supplied captures. Findings remain bounded to the recorded controls and fixture schedules.",
+          "evidence_reference": "evidence/records/index.json"
+        }
+      ],
+      "artifact_digest": "cf13d1b9fac0af997f956d36395eecc2867bb0d05760f50d823c4fd6524e98a6",
+      "status": "PASS",
+      "blinding_broken": true
+    },
+    {
+      "rubric_id": "gd-071.visual_review",
+      "reviewer_id": "gpt-6-luna-high-local-11",
+      "answers": [
+        {
+          "explanation": "evidence/records/screen-60.png; evidence/records/screen-144.png; source/submission/main.mjs:1; source/submission/index.html:1. I inspected the three supplied browser captures: each shows player capsule, platforms, checkpoint marker, grounded readout and controls. Main positions capsule from player coordinates and radius/height; the readout reports tick/grounded/checkpoint. Captures agree with the disclosed convention and platform top. They are static samples at tick 70, not an all-frame usability study.",
+          "evidence_reference": "evidence/records/screen-30.png"
+        },
+        {
+          "explanation": "evidence/records/screen-60.png; evidence/records/screen-144.png; evidence/platform-behavior.json#rows. Capsule alignment is visually supported at captured states; recovery at three rates comes from separate behavior traces, not screenshots. Overall consistency uses both evidence types.",
+          "evidence_reference": "evidence/records/screen-30.png"
+        }
+      ],
+      "artifact_digest": "cf13d1b9fac0af997f956d36395eecc2867bb0d05760f50d823c4fd6524e98a6",
+      "status": "PASS",
+      "blinding_broken": true
+    },
+    {
+      "rubric_id": "gd-071.extension_boundary",
+      "reviewer_id": "gpt-6-luna-high-local-11",
+      "answers": [
+        {
+          "explanation": "packet.json#assumptions; source/submission/game.mjs:1; source/submission/main.mjs:1. Source exposes createGame with snapshot/step/reset and checkpoint restore. The bounded physics implementation and assumptions are explicit. Main imports Cocos AIR for the canvas/app shell while game logic is a task-specific module. No claim that this is an already registered runtime is supported.",
+          "evidence_reference": "evidence/extension.json#status"
+        },
+        {
+          "explanation": "evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png; evidence/extension.json#status; packet.json#scope. Three-rate recovery, visual capsule alignment and state/event/input/terminal records are present. Broader production engine parity and unverified source/usage budgets remain outside scope.",
+          "evidence_reference": "evidence/platform-behavior.json#rows"
+        }
+      ],
+      "artifact_digest": "cf13d1b9fac0af997f956d36395eecc2867bb0d05760f50d823c4fd6524e98a6",
+      "status": "PASS",
+      "blinding_broken": true
+    },
+    {
+      "rubric_id": "gd-071.no_false_confirmation",
+      "reviewer_id": "gpt-6-luna-high-local-11",
+      "answers": [
+        {
+          "explanation": "packet.json#assumptions; evidence/automatic-evaluation.json#scope; evidence/platform-behavior.json#rows; evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png. Scope limits results to local engineering/proxy review; source and usage budgets are unverified, and automatic evaluation leaves blind manual obligations unevaluated pending review. Three-rate recovery and alignment claims have supplied captures. I found no claim of formal qualification, production trust, human observation or efficacy comparison.",
+          "evidence_reference": "packet.json#scope"
+        },
+        {
+          "explanation": "evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png; packet.json#scope. Recovery/rate claims cite behavior records, alignment cites screenshots, and consistency is limited to fixtures and assumptions. No missing observation is represented as confirmation.",
+          "evidence_reference": "evidence/platform-behavior.json#rows"
+        }
+      ],
+      "artifact_digest": "cf13d1b9fac0af997f956d36395eecc2867bb0d05760f50d823c4fd6524e98a6",
+      "status": "PASS",
+      "blinding_broken": true
+    },
+    {
+      "rubric_id": "gd-071.timeout_not_unsolvable",
+      "reviewer_id": "gpt-6-luna-high-local-11",
+      "answers": [
+        {
+          "explanation": "packet.json#scope; source/submission/game.mjs:1; evidence/automatic-evaluation.json#scope. This package has no solver/generation search and makes no TIMEOUT/UNSOLVABLE claim; it concerns deterministic movement, collision and checkpoint restoration. The guard is satisfied by absence of prohibited solver claims, not as proof the task passed.",
+          "evidence_reference": "packet.json#task.prompt"
+        },
+        {
+          "explanation": "evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png; packet.json#task.prompt. No solver stopping label appears. The collision/recovery and visual evidence does not imply an impossibility or solvability claim.",
+          "evidence_reference": "evidence/platform-behavior.json#rows"
+        }
+      ],
+      "artifact_digest": "cf13d1b9fac0af997f956d36395eecc2867bb0d05760f50d823c4fd6524e98a6",
+      "status": "PASS",
+      "blinding_broken": true
+    },
+    {
+      "rubric_id": "gd-071.no_bot_human_equivalence",
+      "reviewer_id": "gpt-6-luna-high-local-11",
+      "answers": [
+        {
+          "explanation": "packet.json#methodology; evidence/automatic-evaluation.json#scope. Scope excludes human observations and says synthetic smokes are not trials, runtime certification or participant observations. I found no human difficulty/fairness/learning/retention/enjoyment claim. Replay results remain engineering observations.",
+          "evidence_reference": "packet.json#scope"
+        },
+        {
+          "explanation": "evidence/platform-behavior.json#rows; evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png. Task claims are bounded to supplied runs, screenshots and source. No bot result is equated with a human outcome.",
+          "evidence_reference": "packet.json#scope"
+        }
+      ],
+      "artifact_digest": "cf13d1b9fac0af997f956d36395eecc2867bb0d05760f50d823c4fd6524e98a6",
+      "status": "PASS",
+      "blinding_broken": true
+    },
+    {
+      "rubric_id": "gd-071.no_single_fun_score",
+      "reviewer_id": "gpt-6-luna-high-local-11",
+      "answers": [
+        {
+          "explanation": "packet.json#task.prompt; evidence/automatic-evaluation.json#scope; source/submission/index.html:1. This is a platformer prototype with controls/readout and local replay evidence, not a recommendation or experience scorecard. I found no composite fun score or claim that unmeasured dimensions were assessed.",
+          "evidence_reference": "packet.json#scope"
+        },
+        {
+          "explanation": "evidence/platform-behavior.json#rows; evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png. Claims concern collision, recovery, capsule alignment and state/event/input/terminal consistency; none is collapsed into a fun score.",
+          "evidence_reference": "packet.json#task.prompt"
+        }
+      ],
+      "artifact_digest": "cf13d1b9fac0af997f956d36395eecc2867bb0d05760f50d823c4fd6524e98a6",
+      "status": "PASS",
+      "blinding_broken": true
+    }
+  ],
+  "model": "gpt-6-luna",
+  "blind_id": "da161fec-1143-48eb-b96b-74c1556b77c1",
+  "reviewer_id": "gpt-6-luna-high-local-11",
+  "limitations": [
+    "Local source-bound proxy review only; no formal production qualification, human playtest, efficacy comparison, or independent trust/budget/isolation verification.",
+    "The native model is separately executed but is not an independent semantic oracle; judgments rely on declared assumptions, source review and supplied behavior witnesses.",
+    "Visual findings are based on the three supplied static browser captures; no new browser session or human observation was performed.",
+    "Source imports disclose Cocos AIR/task context, so blinding is broken."
+  ],
+  "reasoning_effort": "high",
+  "human_participants": 0,
+  "kind": "LOCAL_AGENT_SEMANTIC_REVIEW",
+  "task_id": "gd-071",
+  "formal_trials": 0,
+  "artifact_digest": "cf13d1b9fac0af997f956d36395eecc2867bb0d05760f50d823c4fd6524e98a6"
+}

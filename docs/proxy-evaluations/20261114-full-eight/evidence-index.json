@@ -1,0 +1,39 @@
+{
+  "scope": "LOCAL_EVIDENCE_ARCHIVE_NOT_PRODUCTION_ATTESTATION",
+  "archive": "output/full-task-evidence-20261114-01.tar.gz",
+  "archive_bytes": 131584202,
+  "sha256": "23e8cfa6bfbe6511c91c735b8a011d49099035a6d9367df8589f7108a769a75e",
+  "manifest": "output/full-task-20261114-manifest.json",
+  "manifest_sha256": "512923ba2b2a16bde5a8d7d9427d1c2a9e85a0e269ba90dbec1d89910bfa6bfe",
+  "source_files": 26134,
+  "source_bytes": 2177289608,
+  "version_roots": [
+    "full-task-20261114-01",
+    "full-task-20261114-v10",
+    "full-task-20261114-v11",
+    "full-task-20261114-v12",
+    "full-task-20261114-v13",
+    "full-task-20261114-v14",
+    "full-task-20261114-v15",
+    "full-task-20261114-v2",
+    "full-task-20261114-v3",
+    "full-task-20261114-v4",
+    "full-task-20261114-v5",
+    "full-task-20261114-v6",
+    "full-task-20261114-v7",
+    "full-task-20261114-v8",
+    "full-task-20261114-v9"
+  ],
+  "verification": "tar full gzip read succeeded; complete archive file list equals manifest plus manifest file",
+  "selected_results": {
+    "tasks": 8,
+    "candidates": 16,
+    "engine_executions": 3888,
+    "card_executions": 288,
+    "manual_rubrics": 146
+  },
+  "retention": "all superseded captures, failures, sources, packet corrections and parent references retained",
+  "formal_trials": 0,
+  "formal_status": "BLOCKED",
+  "external_review": "UNVERIFIED"
+}

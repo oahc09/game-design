@@ -1,0 +1,23 @@
+{
+  "task_id": "gd-029",
+  "entrypoint": "submission/index.html",
+  "runtime": "submission/game.mjs",
+  "controls": [
+    "Arrow keys move",
+    "Space held fire",
+    "R restart",
+    "P pause"
+  ],
+  "semantic_event_mapping": {
+    "DAMAGE": "native DAMAGE event records one hit and consumed projectile",
+    "DESTROY": "native DESTROY event records target removal after lethal DAMAGE"
+  },
+  "assumptions": [
+    "Diagonal move vector is normalized to unit magnitude per tick.",
+    "Projectile collision uses radius 4; the first matching enemy in array order receives one hit.",
+    "Projectiles are checked for overlap before their next movement; each consumed projectile damages at most one target.",
+    "Projectiles move upward 4 units per tick and spawn 3 units above the player.",
+    "Held fire cooldown is 10 simulation ticks.",
+    "Source and usage budgets are unverified."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "task_id": "gd-071",
+  "entrypoint": "submission/index.html",
+  "runtime": "submission/game.mjs",
+  "controls": [
+    "Arrow keys move",
+    "Space jump",
+    "C checkpoint",
+    "R restart",
+    "P pause"
+  ],
+  "semantic_event_mapping": {
+    "JUMP": "native JUMP records a grounded impulse accepted at the current fixed tick",
+    "LAND": "native LAND records crossing onto a platform top",
+    "COLLIDE": "native COLLIDE records ceiling contact or checkpoint recovery",
+    "CHECKPOINT": "native CHECKPOINT records explicit checkpoint capture"
+  },
+  "assumptions": [
+    "player_start is interpreted as an initial foot anchor; runtime stores player position at the capsule top-center.",
+    "If the initial capsule overlaps a platform, it is lifted to clear the intersecting platform using the declared capsule radius and height; spawn coordinates and physics constants are not changed.",
+    "Capsule radius is 0.35 and height is 1.",
+    "Fixed-step physics uses gravity 0.035, horizontal speed 0.18, and jump impulse 0.34.",
+    "Platforms are [x,y,width,height].",
+    "Fall below y=-4 or leave the horizontal recovery range restores the checkpoint through the same overlap resolver.",
+    "LAND is emitted only when changing from airborne to grounded.",
+    "This is a bounded task-specific physics model, not a registered runtime.",
+    "Source and usage budgets are unverified."
+  ]
+}

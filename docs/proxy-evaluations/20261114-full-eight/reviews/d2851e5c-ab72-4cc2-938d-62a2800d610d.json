@@ -1,0 +1,172 @@
+{
+  "reviewer_id": "gpt-6-luna-high-local-2",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "kind": "LOCAL_AGENT_SEMANTIC_REVIEW",
+  "blind_id": "d2851e5c-ab72-4cc2-938d-62a2800d610d",
+  "task_id": "gd-009",
+  "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+  "reviews": [
+    {
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "rubric_id": "gd-009.state_parity",
+      "reviewer_id": "gpt-6-luna-high-local-2",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:1-5",
+          "explanation": "Yes within the declared Sokoban rules. parse() uses the supplied # . $ @ legend and preserves the 7x5 public initial grid; step() changes player/box positions and increments tick only after a legal move. The independent reject-chain fixture attempts to push a box into another box and records accepted:false, unchanged tick/player/boxes, and no events. The source and fixture support the accepted/rejected state boundary; coverage is local to the supplied cases and assumptions."
+        },
+        {
+          "evidence_reference": "source/submission/main.mjs:4-5",
+          "explanation": "Arrow keys are mapped to uppercase direction aliases; R resets through createGame. Goal cells are stored separately from boxes and rendered as green markers, including when a box occupies a goal. The actual final-goal capture moves the box onto its goal, increments tick once, and records WIN. Rejected wall/chain cases are mutation-free in native fixtures and captured cases. No unmet source-level task obligation found."
+        }
+      ],
+      "blinding_broken": false
+    },
+    {
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "rubric_id": "gd-009.event_parity",
+      "reviewer_id": "gpt-6-luna-high-local-2",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:5",
+          "explanation": "For the legal final push the source emits exactly one PUSH followed by one WIN, after applying the box/player state change. The independent public fixture specifies the same occurrence, multiplicity, and order; the actual 60 FPS browser record shows the same sequence. Rejected wall and blocked-chain actions emit no events. Evidence supports event parity for task-relevant actions."
+        },
+        {
+          "evidence_reference": "evidence/records/11-sokoban.reject-chain-arrow-60-0.json#actual.events",
+          "explanation": "Arrow and restart controls are represented in the captures; restart does not synthesize PUSH/WIN, while rejected arrow actions produce empty event arrays. Displaying a goal is a render concern, not a semantic event in the declared vocabulary. The authoritative final push produces PUSH then WIN once. No event mismatch or missing required task event is evident."
+        }
+      ],
+      "blinding_broken": false
+    },
+    {
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "rubric_id": "gd-009.terminal_parity",
+      "reviewer_id": "gpt-6-luna-high-local-2",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:5",
+          "explanation": "Victory is assigned only after a legal action when every box is on a goal. Both source and final-goal fixture return WIN/ALL_BOXES_ON_GOALS on the same transition; a blocked action returns without mutation or terminal change. This supports terminal feedback being derived from authoritative state."
+        },
+        {
+          "evidence_reference": "source/submission/main.mjs:4-5",
+          "explanation": "The HUD reads the game snapshot and shows Solved only when snapshot.terminal is set. The final-goal capture reports WIN; the source rejects subsequent movement while terminal, and restart constructs the initial game state. Arrow/restart, goal occupancy, and feedback are consistent with the declared rule; no terminal instability appears in the supplied evidence."
+        }
+      ],
+      "blinding_broken": false
+    },
+    {
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "rubric_id": "gd-009.input_parity",
+      "reviewer_id": "gpt-6-luna-high-local-2",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/main.mjs:5-6",
+          "explanation": "The four arrow keys map one-to-one to directions and call act once per keydown; R performs one restart action. The keydown handler prevents browser defaults for arrows. The actual captures include arrow and restart controls across 30/60/144 FPS and repeat runs, and the automatic records report matching normalized inputs. The available interface adds documented board-click direction selection and P pause; those are extra controls, not conflicting mappings."
+        },
+        {
+          "evidence_reference": "source/submission/game.mjs:5",
+          "explanation": "Accepted legal moves advance one turn; blocked moves preserve the same tick/state and are recorded rejected. Goals are not mutated by input. Terminal feedback follows the game snapshot after the action. The browser key mapping and restart path agree with the public controls; no frame-accumulator behavior is relevant to this turn-based game."
+        }
+      ],
+      "blinding_broken": false
+    },
+    {
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "rubric_id": "gd-009.visual_review",
+      "reviewer_id": "gpt-6-luna-high-local-2",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "evidence/records/screen-30.png",
+          "explanation": "At all three requested rates the supplied browser screenshots show a centered, fully visible enclosed board, distinct player/box/goal shapes, clear contrast, and a move/status line. I inspected each screenshot; they depict the same initial reject-chain fixture, not the default 7x5 board, and show two boxes and two goals in the positions represented by that fixture. This is adequate visual evidence for the captured scenario, not evidence of every layout or accessibility condition."
+        },
+        {
+          "evidence_reference": "source/submission/main.mjs:4-5",
+          "explanation": "The renderer paints walls/floor, then goal markers and box overlays, then the player; the HUD displays Moves or authoritative Solved text. Screenshot content is legible and consistent with the captured initial fixture at 30/60/144. Arrow/restart affordances appear in the HUD. Scope is screenshot-level visual review only; no human usability or accessibility study is present."
+        }
+      ],
+      "blinding_broken": false
+    },
+    {
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "rubric_id": "gd-009.no_false_confirmation",
+      "reviewer_id": "gpt-6-luna-high-local-2",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "packet.json#scope",
+          "explanation": "The packet limits the result to local engineering evidence and source-informed proxy review, explicitly excluding formal M7, production trust, human observations, and efficacy comparison. Automatic status PASS is accompanied by manual NOT_EVALUATED obligations; this report supplies the manual review without treating the automatic label alone as proof."
+        },
+        {
+          "evidence_reference": "source/submission/main.mjs:4-5",
+          "explanation": "The concrete claim that arrows/restart work and that the final push reaches authoritative win is supported by source and actual capture. Goal occupancy is rendered from the goals/boxes state; the captured final transition provides the matching authoritative state. Evidence is bounded to tested fixtures/captures; no screenshot-only claim is used to certify all task completion."
+        }
+      ],
+      "blinding_broken": false
+    },
+    {
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "rubric_id": "gd-009.timeout_not_unsolvable",
+      "reviewer_id": "gpt-6-luna-high-local-2",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:1-6",
+          "explanation": "The reviewed Sokoban implementation has no solver, generation search, or UNSOLVABLE/TIMEOUT classification. It is a fixed board controlled by a player. Therefore the prohibition is satisfied by absence of such claims; it does not establish anything about solver completeness."
+        },
+        {
+          "evidence_reference": "packet.json#task.prompt",
+          "explanation": "The concrete task is a deterministic port of one declared board; no search-bound result is claimed in the implementation or supplied captures. Arrow/restart, goal display, and terminal evidence are evaluated from source and records. No finite unfinished search is mislabeled UNSOLVABLE."
+        }
+      ],
+      "blinding_broken": false
+    },
+    {
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "rubric_id": "gd-009.no_bot_human_equivalence",
+      "reviewer_id": "gpt-6-luna-high-local-2",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "packet.json#scope",
+          "explanation": "The packet explicitly says these are synthetic/local engineering captures, not human observations or efficacy comparison. No claim about human difficulty, fairness, learning, retention, or enjoyment is made in the supplied task evidence. Bot/harness outcomes therefore remain policy-specific technical observations."
+        },
+        {
+          "evidence_reference": "source/submission/main.mjs:4-5",
+          "explanation": "The relevant claims concern controls, state, goals, and terminal feedback only. The screenshots and browser traces do not claim human outcomes, and no participants are reported. Human experience remains unmeasured; the guard is satisfied by bounded claims, not by inferring human equivalence."
+        }
+      ],
+      "blinding_broken": false
+    },
+    {
+      "artifact_digest": "4f401e4f8e11e7d6e7b893c178f2fb3f52388143cacfaa73d6edf7d3e6431c9b",
+      "rubric_id": "gd-009.no_single_fun_score",
+      "reviewer_id": "gpt-6-luna-high-local-2",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "packet.json#scope",
+          "explanation": "No composite fun score or recommendation replacing separate user-experience dimensions appears in the supplied task packet, source, or automatic evidence summary. The result is confined to implementation parity and visual evidence. Unmeasured experience dimensions are not represented as measured."
+        },
+        {
+          "evidence_reference": "source/submission/game.mjs:1-6",
+          "explanation": "The implementation exposes moves and solved status as game feedback; it does not compute or report a scalar fun score. Claims about arrow/restart, goal display, and authoritative win are technical and supported by source/captures. No missing objective/control/decision/fairness/experience dimension is collapsed into a score."
+        }
+      ],
+      "blinding_broken": false
+    }
+  ],
+  "limitations": [
+    "Local source-bound review only; external trust, budget/isolation, and formal production qualification remain UNVERIFIED/BLOCKED.",
+    "No human participants or formal trials; screenshots were inspected at 30, 60, and 144 FPS, but this is not a human usability/accessibility study.",
+    "Automatic evaluation reports 432 captured records and no failures, but per-record exhaustive raw review was not performed."
+  ],
+  "formal_trials": 0,
+  "human_participants": 0,
+  "source_modified": false
+}

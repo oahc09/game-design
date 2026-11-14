@@ -1,0 +1,13 @@
+{
+  "task_id": "gd-029",
+  "attempted": [
+    "Implemented deterministic fixed-tick movement, cooldown projectiles, single-target collision events, terminal state and CocosAirJS bootstrap."
+  ],
+  "checks": {
+    "node_syntax": "Local node --check was attempted and returned exit code 0; this is not supervisor certification.",
+    "browser_runtime": "NOT_RUN",
+    "collision_parity": "NOT_RUN",
+    "visual_review": "NOT_RUN"
+  },
+  "certification": null
+}

@@ -1,0 +1,172 @@
+{
+  "reviewer_id": "gpt-6-luna-high-local-3-corrected",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "kind": "LOCAL_AGENT_SEMANTIC_REVIEW",
+  "blind_id": "cf4ae63a-5ffa-4a25-9c52-d89847c98ce8",
+  "task_id": "gd-019",
+  "artifact_digest": "7c1c6094dae5b7850e1dcb5b04bc21953c67dc95cd6753b65ecbe07c8ece076e",
+  "reviews": [
+    {
+      "artifact_digest": "7c1c6094dae5b7850e1dcb5b04bc21953c67dc95cd6753b65ecbe07c8ece076e",
+      "rubric_id": "gd-019.state_parity",
+      "reviewer_id": "gpt-6-luna-high-local-3-corrected",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "evidence/records/11-falling.gravity-30-held_arrow-30-0.json#actual",
+          "explanation": "evidence/records/11-falling.gravity-30-held_arrow-30-0.json#actual,reference,checks; source/src/archetypes/falling_blocks.mjs:160-191. Representative 30/60/144 captured actual transitions match their native references for normalized state, tick and terminal fields; all indexed 288 records report PASS for state checks. The independently authored falling-block fixtures and source audit support the public 10x20 board, 30-tick gravity and 2-tick lock assumptions. Native-model equality is parity evidence, not by itself an independent semantic oracle."
+        },
+        {
+          "evidence_reference": "evidence/supplement-30.json#artifact_digest",
+          "explanation": "evidence/supplement-30.json#artifact_digest,checks,samples; evidence/supplement-60.json#artifact_digest,checks,samples; evidence/supplement-144.json#artifact_digest,checks,samples; evidence/provenance-correction.json#current_json. All three supplements bind to the current packet digest and independently captured public-rule fixture; each shows tick 0 lines=0 then tick 2 lines=1, with LOCK and LineCleared and HUD Lines 1. This directly closes the earlier line-clear witness gap at 30/60/144. The same-current-digest input records and 60-Hz accumulator/tick-lock source support the other obligations."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "7c1c6094dae5b7850e1dcb5b04bc21953c67dc95cd6753b65ecbe07c8ece076e",
+      "rubric_id": "gd-019.event_parity",
+      "reviewer_id": "gpt-6-luna-high-local-3-corrected",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "evidence/records/11-falling.lock-two-held_arrow-30-0.json#actual",
+          "explanation": "evidence/records/11-falling.lock-two-held_arrow-30-0.json#actual,reference,checks; evidence/records/11-falling.lock-two-held_arrow-60-0.json#actual,reference,checks; evidence/records/11-falling.lock-two-held_arrow-144-0.json#actual,reference,checks; source/src/archetypes/falling_blocks.mjs:141-158,183-191. All indexed events checks pass. Source emits PieceLocked once on the second grounded tick, then any LineCleared event, then spawn/StateAdvanced; there is no evaluator-manufactured event per normalization notes. Source/native fixtures plus captures support this order; the native model alone is not counted as the independent semantic proof."
+        },
+        {
+          "evidence_reference": "evidence/supplement-30.json#samples[1].log[-1].events",
+          "explanation": "evidence/supplement-30.json#samples[1].log[-1].events,checks; evidence/supplement-60.json#samples[2].log[-1].events,checks; evidence/supplement-144.json#samples[5].log[-1].events,checks; evidence/provenance-correction.json#current_json. Current-digest captures at all rates show one sequence LOCK,LineCleared,PieceSpawned,StateAdvanced at tick 2 after an initial no-clear state; checks confirm no early feedback and visible feedback. Source lock resolution order agrees. Thus line clear event multiplicity/order is now directly evidenced at all requested render rates."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "7c1c6094dae5b7850e1dcb5b04bc21953c67dc95cd6753b65ecbe07c8ece076e",
+      "rubric_id": "gd-019.terminal_parity",
+      "reviewer_id": "gpt-6-luna-high-local-3-corrected",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "evidence/terminal-30.json#checks",
+          "explanation": "evidence/terminal-30.json#checks,loss_state,loss_stability; evidence/terminal-60.json#checks,loss_state,loss_stability; evidence/terminal-144.json#checks,loss_state,loss_stability; source/src/archetypes/falling_blocks.mjs:126,141-161,188-191. Each dedicated trace reaches terminal LOSE/TOP_OUT and confirms repeated post-terminal input is rejected with unchanged state; the images show the LOSE HUD at all rates. Source includes top-out/lock-out/time-limit loss and target-lines win paths. This supports terminal/stability parity; these loss witnesses do not claim a win was captured."
+        },
+        {
+          "evidence_reference": "evidence/terminal-30.json#checks",
+          "explanation": "evidence/terminal-30.json#checks,loss_state,loss_stability; evidence/terminal-60.json#checks,loss_state,loss_stability; evidence/terminal-144.json#checks,loss_state,loss_stability; evidence/supplement-30.json#checks,samples; evidence/supplement-60.json#checks,samples; evidence/supplement-144.json#checks,samples. Terminal probes preserve LOSE across rejected post-terminal steps at each rate. Current-digest supplement now additionally shows line-clear state/feedback only after LOCK then LineCleared at all rates; no terminal feedback is inferred before authoritative state."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "7c1c6094dae5b7850e1dcb5b04bc21953c67dc95cd6753b65ecbe07c8ece076e",
+      "rubric_id": "gd-019.input_parity",
+      "reviewer_id": "gpt-6-luna-high-local-3-corrected",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "evidence/records/index.json#records",
+          "explanation": "evidence/records/index.json#records; source/submission/main.mjs:5-7; source/submission/game.mjs:4-6; evidence/terminal-30.json#checks,preview_probe; evidence/terminal-60.json#checks,preview_probe; evidence/terminal-144.json#checks,preview_probe. Held arrows remain held per simulation tick; rotation/drop/hold key edges enqueue once on non-repeat keydown and clear after one fixed tick. Adapter returns a one-item preview and only that item from runtime.observe; terminal probes at all rates confirm preview matches the actual next spawn and private queue remains hidden. No preview mutation or input-repeat issue found."
+        },
+        {
+          "evidence_reference": "evidence/records/index.json#records",
+          "explanation": "evidence/records/index.json#records; evidence/terminal-30.json#checks,preview_probe; evidence/terminal-60.json#checks,preview_probe; evidence/terminal-144.json#checks,preview_probe; evidence/supplement-30.json#checks,samples; evidence/supplement-60.json#checks,samples; evidence/supplement-144.json#checks,samples. Held-input and rotate traces cover 30/60/144; one-shot edges are consumed once on fixed ticks, and one visible preview matches the next spawn while private queue remains hidden. Current-digest supplements demonstrate state/HUD lines 0 before clear and lines 1 only after LOCK/LineCleared at each rate."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "7c1c6094dae5b7850e1dcb5b04bc21953c67dc95cd6753b65ecbe07c8ece076e",
+      "rubric_id": "gd-019.visual_review",
+      "reviewer_id": "gpt-6-luna-high-local-3-corrected",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "evidence/records/screen-30.png",
+          "explanation": "evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png; evidence/terminal-30-loss.png; evidence/terminal-30-terminal.png; evidence/terminal-60-loss.png; evidence/terminal-60-terminal.png; evidence/terminal-144-loss.png; evidence/terminal-144-terminal.png; source/submission/main.mjs:4. Screens at all rates show a legible 10x20 playfield, active/settled pieces, one next-piece graphic and Next label, and terminal LOSE when applicable. One preview matches visible_preview_count=1 and the declared rule that later pieces remain hidden; unlike the earlier artifact, no preview omission remains. No overlap or ambiguous collision display observed."
+        },
+        {
+          "evidence_reference": "evidence/supplement-30.png",
+          "explanation": "evidence/supplement-30.png; evidence/supplement-60.png; evidence/supplement-144.png; evidence/supplement-30.json#artifact_digest,checks,samples; evidence/supplement-60.json#artifact_digest,checks,samples; evidence/supplement-144.json#artifact_digest,checks,samples; evidence/provenance-correction.json#current_images,current_json. I inspected all three current-digest screenshots: each shows Lines 1 / Tick 2 after clear, the active Z piece, settled remnants and one Next S preview. The trace at each rate shows the corresponding prior Lines 0 state and then LOCK,LineCleared before the HUD update. The prior supplementary PNGs were parent-artifact copies and are excluded from this finding; the freshly recaptured package-bound assets support it."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "7c1c6094dae5b7850e1dcb5b04bc21953c67dc95cd6753b65ecbe07c8ece076e",
+      "rubric_id": "gd-019.no_false_confirmation",
+      "reviewer_id": "gpt-6-luna-high-local-3-corrected",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "evidence/automatic-evaluation.json#automatic_status",
+          "explanation": "packet.json#task.materials.evaluation_protocol.submission_contract.review; evidence/automatic-evaluation.json#automatic_status,failures; evidence/terminal-30.json#checks; source/submission/main.mjs:4-7. The source and traces make task-scoped claims, not formal certification. The automatic matrix is PASS but its rubric checks remain NOT_EVALUATED by design; the report relies on actual captures/source and preserves external qualification limits. No unsupported completion claim found."
+        },
+        {
+          "evidence_reference": "evidence/provenance-correction.json#reason",
+          "explanation": "evidence/provenance-correction.json#reason,current_images,current_json,candidate_source_changed; evidence/supplement-30.json#artifact_digest,checks,samples; evidence/supplement-60.json#artifact_digest,checks,samples; evidence/supplement-144.json#artifact_digest,checks,samples; evidence/automatic-evaluation.json#automatic_status,failures. Prior supplementary PNGs are explicitly legacy/unbound and are not used. The new current-digest JSON and images each show line count 0→1, LOCK/LineCleared ordering and no-early-feedback/visible-feedback checks true. Candidate source is unchanged. The original report is retained; this addendum updates evidence conclusions without claiming formal qualification."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "7c1c6094dae5b7850e1dcb5b04bc21953c67dc95cd6753b65ecbe07c8ece076e",
+      "rubric_id": "gd-019.timeout_not_unsolvable",
+      "reviewer_id": "gpt-6-luna-high-local-3-corrected",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/src/archetypes/falling_blocks.mjs:207-229,249-271",
+          "explanation": "source/src/archetypes/falling_blocks.mjs:207-229,249-271; packet.json#task.materials.evaluation_protocol.claim_policy. Search exposes a truncated frontier flag and generation diagnostics report attempted/accepted candidates; inspected task artifact makes no TIMEOUT-to-UNSOLVABLE inference. Solver stopping semantics are unrelated to the frame/lock/feedback obligations. No prohibited claim found."
+        },
+        {
+          "evidence_reference": "source/src/archetypes/falling_blocks.mjs:207-229,249-271",
+          "explanation": "source/src/archetypes/falling_blocks.mjs:207-229,249-271; evidence/supplement-30.json#artifact_digest,checks; evidence/supplement-60.json#artifact_digest,checks; evidence/supplement-144.json#artifact_digest,checks; packet.json#task.materials.evaluation_protocol.claim_policy. The current-digest supplements substantiate render/lock/feedback only; they make no solver or generation stopping claim. Search still marks truncation separately and no TIMEOUT-to-UNSOLVABLE inference appears."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "7c1c6094dae5b7850e1dcb5b04bc21953c67dc95cd6753b65ecbe07c8ece076e",
+      "rubric_id": "gd-019.no_bot_human_equivalence",
+      "reviewer_id": "gpt-6-luna-high-local-3-corrected",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/src/archetypes/falling_blocks.mjs:231-248,273-280",
+          "explanation": "packet.json#task.materials.evaluation_protocol.claim_policy; source/src/archetypes/falling_blocks.mjs:231-248,273-280; source/submission/main.mjs. The artifact contains bot policies and gameplay metrics but no claim about human difficulty, fairness, learning, retention, or enjoyment. Human outcomes remain unmeasured; no equivalence assertion found."
+        },
+        {
+          "evidence_reference": "evidence/supplement-30.json#artifact_digest",
+          "explanation": "evidence/supplement-30.json#artifact_digest,checks; evidence/supplement-60.json#artifact_digest,checks; evidence/supplement-144.json#artifact_digest,checks; packet.json#task.materials.evaluation_protocol.claim_policy. Newly bound captures are technical line-clear timing observations at each render rate, not human ratings or experience data. No bot-to-human equivalence claim is made; human outcomes remain unmeasured."
+        }
+      ],
+      "blinding_broken": true
+    },
+    {
+      "artifact_digest": "7c1c6094dae5b7850e1dcb5b04bc21953c67dc95cd6753b65ecbe07c8ece076e",
+      "rubric_id": "gd-019.no_single_fun_score",
+      "reviewer_id": "gpt-6-luna-high-local-3-corrected",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/src/archetypes/falling_blocks.mjs:273-280",
+          "explanation": "source/src/archetypes/falling_blocks.mjs:273-280; source/submission/main.mjs:4; packet.json#task.success_criteria. Displayed game score/lines and bot performance metrics are task gameplay fields; no recommendation or composite fun score appears in the reviewed artifact. No absent experience dimension is claimed as measured."
+        },
+        {
+          "evidence_reference": "evidence/supplement-30.json#samples",
+          "explanation": "evidence/supplement-30.json#samples; evidence/supplement-60.json#samples; evidence/supplement-144.json#samples; source/src/archetypes/falling_blocks.mjs:151-152,273-280; packet.json#task.materials.evaluation_protocol.claim_policy. New captures show game score 100 and lines 1 after one authoritative clear. Those are gameplay fields, not a composite fun or experience measure; fairness and enjoyment remain unmeasured."
+        }
+      ],
+      "blinding_broken": true
+    }
+  ],
+  "limitations": [
+    "Local engineering review only; not formal production qualification, human playtest, or Skill-effectiveness experiment. External trust/budget/isolation remain UNVERIFIED/BLOCKED.",
+    "Provenance correction invalidates the earlier supplementary PNGs as proof for this artifact. This updated report relies on newly captured supplement JSON and PNG at 30/60/144, each carrying the current packet digest; the legacy images and original report remain preserved and were not used for the addendum conclusions.",
+    "Automatic full108 matrix is PASS with no failures, while reviewer-only rubric checks are NOT_EVALUATED pending manual review. This review inspected representative source/captures and all requested FPS screenshots, not every raw record. No human outcomes were evaluated."
+  ],
+  "formal_trials": 0,
+  "human_participants": 0,
+  "source_modified": false
+}

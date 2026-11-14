@@ -1,0 +1,2 @@
+* -text whitespace=cr-at-eol
+candidate-files/** -text whitespace=cr-at-eol,-blank-at-eof

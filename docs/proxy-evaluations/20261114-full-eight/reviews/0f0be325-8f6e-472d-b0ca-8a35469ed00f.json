@@ -1,0 +1,172 @@
+{
+  "reviewer_id": "gpt-6-luna-high-local-6",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "kind": "LOCAL_AGENT_SEMANTIC_REVIEW",
+  "blind_id": "0f0be325-8f6e-472d-b0ca-8a35469ed00f",
+  "task_id": "gd-029",
+  "artifact_digest": "7d02f0e7714fc86edff172f550733df6648df97489161fd3bbbfbcd7deff8fde",
+  "reviews": [
+    {
+      "artifact_digest": "7d02f0e7714fc86edff172f550733df6648df97489161fd3bbbfbcd7deff8fde",
+      "rubric_id": "gd-029.state_parity",
+      "reviewer_id": "gpt-6-luna-high-local-6",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:29-37,46-60; evidence/native-fixtures.json#shooter.single-hit; evidence/records/29-shooter.single-hit-held_fire-60-0.json#actual.state",
+          "explanation": "源码归一化移动向量、边界夹取；碰撞只取首个距离小于4的敌人，扣血并消费该弹。native fixture 的双敌同位案例支持只命中一名敌人；30/60/144浏览器捕获都有对应状态记录。native partial combat snapshot只投影已声明身份/生命字段，raw仍保存完整快照/digest。"
+        },
+        {
+          "evidence_reference": "source/submission/main.mjs:11-14; evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png",
+          "explanation": "四项任务点均相关：对角归一化、10 tick冷却、碰撞先于弹丸位移并且单弹只消费一次、输入由60Hz累加器逐tick采样。源码与三个帧率捕获相互印证；自动PASS仅是辅助。本结论限于已提供有限case。"
+        }
+      ],
+      "blinding_broken": false
+    },
+    {
+      "artifact_digest": "7d02f0e7714fc86edff172f550733df6648df97489161fd3bbbfbcd7deff8fde",
+      "rubric_id": "gd-029.event_parity",
+      "reviewer_id": "gpt-6-luna-high-local-6",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:46-60; evidence/native-fixtures.json#shooter.single-hit; evidence/records/29-shooter.single-hit-held_fire-60-0.json#actual.events",
+          "explanation": "事件顺序为DAMAGE，若血量归零则紧接DESTROY；命中弹丸被移除。native独立fixture和实际浏览器event记录支持此顺序。normalization-notes声明保留raw event arrays且未添加合成阶段。"
+        },
+        {
+          "evidence_reference": "source/submission/main.mjs:14,19-20; evidence/records/29-shooter.single-hit-held_fire-30-0.json#checks; evidence/records/29-shooter.single-hit-held_fire-60-0.json#checks; evidence/records/29-shooter.single-hit-held_fire-144-0.json#checks",
+          "explanation": "相关义务：对角输入归一化、held fire由tick cooldown节流、碰撞按弹丸顺序仅损伤首个近邻目标、按固定tick映射键盘。三率captures中的state/events/input/terminal checks均PASS；这不证明所有任意初态。"
+        }
+      ],
+      "blinding_broken": false
+    },
+    {
+      "artifact_digest": "7d02f0e7714fc86edff172f550733df6648df97489161fd3bbbfbcd7deff8fde",
+      "rubric_id": "gd-029.terminal_parity",
+      "reviewer_id": "gpt-6-luna-high-local-6",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/game.mjs:25-27,52-60; evidence/supplement-60.json#final; evidence/supplement-30-win.png; evidence/supplement-60-win.png; evidence/supplement-144-win.png",
+          "explanation": "清空敌人后才设won/all_enemies_destroyed。structured 60fps终态显示敌人空、won；三率胜利截图HUD均为Targets 0与won。胜利后的普通action被拒且状态稳定。游戏未声明玩家失败机制，不对不存在的loss规则作声称。"
+        },
+        {
+          "evidence_reference": "source/submission/game.mjs:20,25-27,59-60; evidence/records/29-shooter.no-post-destroy-hit-held_fire-60-0.json#raw",
+          "explanation": "移动和射击只按权威tick运行；敌人清空才反馈won。terminal后held fire被rejected且tick/state/terminal不变，restart重置。collision事件执行顺序在game.mjs:46-59；三率胜利截图作为反馈证据。"
+        }
+      ],
+      "blinding_broken": false
+    },
+    {
+      "artifact_digest": "7d02f0e7714fc86edff172f550733df6648df97489161fd3bbbfbcd7deff8fde",
+      "rubric_id": "gd-029.input_parity",
+      "reviewer_id": "gpt-6-luna-high-local-6",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/main.mjs:11-21; evidence/records/29-shooter.single-hit-held_fire-30-0.json#checks; evidence/records/29-shooter.single-hit-held_fire-60-0.json#checks; evidence/records/29-shooter.single-hit-held_fire-144-0.json#checks",
+          "explanation": "keydown/up维护held set，delta进入1/60秒累加器后才推进tick；Space按住在每个tick传fire，不随渲染帧率发弹。R/P仅在keydown调用一次transition。三率捕获的input检查通过。"
+        },
+        {
+          "evidence_reference": "source/submission/main.mjs:14,17-20; source/submission/game.mjs:29-45; evidence/records/index.json#records",
+          "explanation": "Arrow keys映射movement，Space映射fire，R/P映射restart/pause；每个满模拟tick一个action。index覆盖三率下arrow/held_fire案例。该任务没有pointer controls，键盘映射满足请求。"
+        }
+      ],
+      "blinding_broken": false
+    },
+    {
+      "artifact_digest": "7d02f0e7714fc86edff172f550733df6648df97489161fd3bbbfbcd7deff8fde",
+      "rubric_id": "gd-029.visual_review",
+      "reviewer_id": "gpt-6-luna-high-local-6",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "source/submission/main.mjs:12; source/submission/index.html:1; evidence/records/screen-30.png; evidence/records/screen-60.png; evidence/records/screen-144.png",
+          "explanation": "三率截图可读到青色玩家、红色目标、HP、Targets、Tick和键位说明；定位取自snapshot，HUD目标数也取authoritative敌人数组。此处是截图时点的可视检查，不推断完整可用性或真人体验。"
+        },
+        {
+          "evidence_reference": "source/submission/main.mjs:12,19-20; evidence/supplement-30-win.png; evidence/supplement-60-win.png; evidence/supplement-144-win.png",
+          "explanation": "对角、冷却、碰撞顺序和tick映射本质是行为条款；显示层以对象位置和tick HUD反馈。三率胜利截图明确显示Targets 0与won。视觉证据与源码/捕获共同支持，单靠截图不能证明碰撞几何。"
+        }
+      ],
+      "blinding_broken": false
+    },
+    {
+      "artifact_digest": "7d02f0e7714fc86edff172f550733df6648df97489161fd3bbbfbcd7deff8fde",
+      "rubric_id": "gd-029.no_false_confirmation",
+      "reviewer_id": "gpt-6-luna-high-local-6",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "evidence/automatic-evaluation.json#scope; packet.json#scope; evidence/records/index.json; evidence/supplement-60.json",
+          "explanation": "材料明确这些是local synthetic smokes，不是model trials、runtime certification或participant observations。自动汇总的总体PASS与各手工rubric NOT_EVALUATED状态可区分；没有把截图单独描述为正式完成。"
+        },
+        {
+          "evidence_reference": "source/submission/game.mjs:33-60; evidence/records/29-shooter.single-hit-held_fire-60-0.json#checks; evidence/supplement-60.json#final",
+          "explanation": "四项任务义务有实现与capture证据；材料没有把有限case外推为生产/引擎认证。结论仅是未发现unsupported completion claim，不是仅凭缺少反面说法推定任务全面通过。"
+        }
+      ],
+      "blinding_broken": false
+    },
+    {
+      "artifact_digest": "7d02f0e7714fc86edff172f550733df6648df97489161fd3bbbfbcd7deff8fde",
+      "rubric_id": "gd-029.timeout_not_unsolvable",
+      "reviewer_id": "gpt-6-luna-high-local-6",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "packet.json#task; source/submission/game.mjs:1-64",
+          "explanation": "本Arcade Shooter任务无solver、生成搜索或不可解结论；材料没有TIMEOUT/UNSOLVABLE声明，所以没有把有限搜索失败误报为不可解。该guard对本任务无搜索路径，不能代表搜索器已被验证。"
+        },
+        {
+          "evidence_reference": "source/submission/game.mjs:29-60; evidence/automatic-evaluation.json#scope",
+          "explanation": "四项义务是状态机/控制实现，不涉及搜索或有限前沿；未见将TIMEOUT当作UNSOLVABLE的结论。支持此guard通过不意味着已经证明整个游戏任务。"
+        }
+      ],
+      "blinding_broken": false
+    },
+    {
+      "artifact_digest": "7d02f0e7714fc86edff172f550733df6648df97489161fd3bbbfbcd7deff8fde",
+      "rubric_id": "gd-029.no_bot_human_equivalence",
+      "reviewer_id": "gpt-6-luna-high-local-6",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "evidence/automatic-evaluation.json#scope; packet.json#scope; evidence/records/index.json",
+          "explanation": "证据将采集限定为自动smokes/local records，且声明不是participant observations；没有机器人等同于人的难度、公平、学习、留存或乐趣结果的说法。无人类参与者意味着人类结果仍未测量。"
+        },
+        {
+          "evidence_reference": "source/submission/game.mjs:29-60; evidence/automatic-evaluation.json#scope",
+          "explanation": "控制与碰撞检查可支持有限软件行为结论，不能支持human outcome；材料没有作此类推论，并明确排除参与者结论。"
+        }
+      ],
+      "blinding_broken": false
+    },
+    {
+      "artifact_digest": "7d02f0e7714fc86edff172f550733df6648df97489161fd3bbbfbcd7deff8fde",
+      "rubric_id": "gd-029.no_single_fun_score",
+      "reviewer_id": "gpt-6-luna-high-local-6",
+      "status": "PASS",
+      "answers": [
+        {
+          "evidence_reference": "packet.json#task; evidence/automatic-evaluation.json#scope; source/submission/main.mjs:12",
+          "explanation": "任务要求移植并比较控制/碰撞行为；材料没有把目标、控制、决策、公平和体验压成单一fun score，也没有宣称未采集维度已测量。"
+        },
+        {
+          "evidence_reference": "source/submission/game.mjs:33-60; evidence/records/index.json",
+          "explanation": "对角归一、冷却、碰撞和tick是实现检查，不是用户体验量表；记录索引只列case检查状态，没有合成或推断体验结果。"
+        }
+      ],
+      "blinding_broken": false
+    }
+  ],
+  "limitations": [
+    "Local task-contract review only; external trust, budget, and isolation remain UNVERIFIED/BLOCKED.",
+    "Finite selected smoke records and screenshots do not establish full engine/runtime certification, human outcomes, or formal production qualification.",
+    "Native model parity is not an independent semantic oracle; review also used source and independent native fixtures."
+  ],
+  "formal_trials": 0,
+  "human_participants": 0,
+  "source_modified": false
+}

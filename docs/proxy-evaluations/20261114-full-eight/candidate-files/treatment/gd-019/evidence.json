@@ -1,0 +1,30 @@
+{
+  "task_id": "gd-019",
+  "status": "PREVIEW_RESTORED_AWAITING_PUBLIC_RERUN",
+  "attempted_work": [
+    "Read public task, engine contract, Game Design Skill, Falling Blocks archetype, fixed-step contract, and supplied runtime.",
+    "Built a CocosAirJS rendered board, toolkit-backed createGame adapter, held-key input and fixed 60 Hz accumulator.",
+    "Public startup attempt 1 failed because missing initialBoard became undefined instead of the runtime's required empty-array sentinel.",
+    "Repair attempt 2 sets missing board fixtures to []; node syntax check passes.",
+    "Applied the authorized minimal public-contract repair in submission modules and recorded unverified status; automatic browser/evaluator PASS is not claimed.",
+    "R key restart is a canonical native transition recorded with before/after snapshots; only supervisor reset clears the case log.",
+    "Routed fixed-step accumulator sampling through the shared native transition recorder; focused keyboard events run in capture phase.",
+    "Final audit routed every live UI and fixed-step game.step call through stepLive; keyboard input listeners run in window capture phase.",
+    "Added pending one-shot keydown edges consumed on the next fixed simulation tick, including under fractional 144 FPS accumulation.",
+    "Restored exactly one public next-piece preview from the runtime public observation and rendered that shape in the Next panel; queue/bag/RNG remain outside snapshots."
+  ],
+  "checks": {
+    "node_syntax": "PASS (node --check submission/game.mjs and submission/main.mjs after single-preview repair)",
+    "browser_startup_attempt_1": "FAIL: Error: INVALID_CONTENT: content.extensions.falling_blocks.initialBoard: Expected empty array or height x width matrix of integer cells 0..7",
+    "browser_startup_attempt_2": "NOT_RUN; public supervisor rerun pending",
+    "fps_replay_30_60_144": "NOT_RUN",
+    "lock_tick_parity": "NOT_RUN",
+    "line_clear_feedback": "NOT_RUN",
+    "visual_review": "NOT_RUN",
+    "rotation_edge_cadence": "NOT_RUN under browser supervisor after fix",
+    "native_preview_smoke": "PASS: one valid public shape, deterministic same-seed initial projection, no queue/bag/sequence/RNG/raw runtime property exposed",
+    "preview_visual_browser": "NOT_RUN; root owns browser/evaluator review"
+  },
+  "source_selection_context": "This candidate was authored after prior task candidates in the same generation context; sequence context may affect selection.",
+  "model_authored_pass_claims": false
+}

@@ -1,0 +1,18 @@
+{
+  "task": "gd-039",
+  "scope": "v4 treatment candidate only",
+  "changes": [
+    "Snapshot exposes configured objective type, target, current authoritative progress, color index when applicable, and completed flag.",
+    "HUD renders every actual objective target and current value; default score target stays 100."
+  ],
+  "checks": {
+    "node_syntax": "PASS: submission/game.mjs and submission/main.mjs",
+    "browser": "NOT_RUN; root owns terminal browser witnesses",
+    "evaluator": "NOT_RUN"
+  },
+  "preserved": [
+    "Objective rules, RNG, moves, goals and event flow unchanged.",
+    "Derived GRAVITY/OBJECTIVE_CHECK provenance remains intact; no unconditional objective marker added."
+  ],
+  "claims": "No visual or full-acceptance pass claimed."
+}
