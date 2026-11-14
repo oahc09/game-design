@@ -1,0 +1,192 @@
+{
+  "kind": "NATIVE_AGENT_EXPLORATORY_PREREGISTRATION",
+  "version": "native-agent-feedback-1.0.0",
+  "created_at": "2026-11-01T12:03:33.295Z",
+  "source_commit": "637e383783123d97bc05b235f1a5be125a9faba1",
+  "authorization_message": "Sentinel_7777650a031c819186391b778885232b",
+  "scope": "One task pair; two artifacts of three levels each, not six independent tasks.",
+  "task": {
+    "id": "native-shooter-three-levels-v1",
+    "archetype": "arcade_shooter",
+    "task_type": "CONTENT_GENERATION",
+    "difficulty": "Composite",
+    "prompt": "Design exactly 3 distinct playable shooter levels using the supplied fixed world and bounded JSON fields. Enemy centers including delayed spawns must be inside x=10..90,y=8..30. Target competent bot win fraction 0.5..0.9 on the provided fit seeds for EACH level. Distinct layouts and pacing, with a coherent progression; do not claim human fun or generalization.",
+    "materials": {
+      "fixed": {
+        "ruleset_version": "arcade_shooter_v0.1.1",
+        "width": 100,
+        "height": 130,
+        "playerX": 50,
+        "playerY": 108,
+        "playerHP": 3,
+        "playerRadius": 2,
+        "playerSpeed": 24,
+        "projectileSpeed": 90,
+        "projectileRadius": 0.5,
+        "projectileDamage": 1,
+        "fireIntervalTicks": 8,
+        "enemyRadius": 2.5,
+        "enemyDamage": 1,
+        "contactIntervalTicks": 60,
+        "maxTicks": 900
+      },
+      "domains": {
+        "enemyHP": [
+          1,
+          6
+        ],
+        "enemySpeed": [
+          0,
+          12
+        ],
+        "enemyFireIntervalTicks": [
+          15,
+          240
+        ],
+        "enemyProjectileSpeed": [
+          15,
+          80
+        ]
+      },
+      "entity_domains": {
+        "x": [
+          10,
+          90
+        ],
+        "y": [
+          8,
+          30
+        ],
+        "hp": [
+          1,
+          8
+        ],
+        "speed": [
+          0,
+          12
+        ],
+        "fireIntervalTicks": [
+          15,
+          240
+        ],
+        "tick": [
+          0,
+          600
+        ]
+      },
+      "counts": {
+        "enemies": [
+          2,
+          10
+        ],
+        "total_enemies_and_spawns": [
+          4,
+          12
+        ]
+      },
+      "fit_seeds": [
+        1103,
+        1201,
+        1301,
+        1409
+      ],
+      "max_steps": 900,
+      "profile": "competent",
+      "numeric_target": {
+        "min": 0.5,
+        "max": 0.9
+      },
+      "response_format": {
+        "version": "native-shooter-design-1",
+        "levels": [
+          {
+            "id": "level-1",
+            "title": "Chinese title",
+            "rationale": "Brief reasoning, assumptions and limitations",
+            "config": {
+              "enemyHP": 2,
+              "enemySpeed": 6,
+              "enemyFireIntervalTicks": 100,
+              "enemyProjectileSpeed": 30,
+              "enemies": [
+                {
+                  "x": 20,
+                  "y": 20
+                }
+              ],
+              "spawns": [
+                {
+                  "tick": 240,
+                  "x": 60,
+                  "y": 15
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "rules_note": "60Hz; move normalized, player shoots toward aim, enemy moves toward player and fires aimed projectiles. Enemy initial fire cooldown is seeded between half and full interval. Collision is swept-circle; simultaneous player death and final enemy kill is LOSE. Competent bot uses visible-state intercept aiming and local movement avoidance. maxTicks=900 timeout is LOSE. The illustrative response shape is NOT a valid four-enemy submission."
+    },
+    "deliverables": [
+      "one JSON object only, exactly three levels"
+    ],
+    "success_criteria": [
+      "schema/rules/task constraints PASS",
+      "each level fit win fraction in 0.5..0.9",
+      "actual final browser gates reported separately"
+    ],
+    "seed_set": [
+      1103,
+      1201,
+      1301,
+      1409
+    ]
+  },
+  "fit_seeds": [
+    1103,
+    1201,
+    1301,
+    1409
+  ],
+  "comparison_seeds": [
+    1501,
+    1601,
+    1709,
+    1801
+  ],
+  "browser_seed": 2027,
+  "max_attempts_per_arm": 3,
+  "soft_deadline_per_turn_seconds": 120,
+  "timeout_policy": "Supervisor observes elapsed wall time and sends stop at 120s if still active; any scheduling/delivery delay or returned late artifact retained and marked protocol deviation. Native cancellation is not provider-cancellation evidence.",
+  "attempt_policy": "Exactly up to three full submissions per arm; own measured feedback only. No supervisor tuning or out-of-band simulations by arms. Final selection uses only fit: valid candidates ranked by levels in band, then summed distance from band, then earliest attempt. Comparison evaluated once after selection; no repairs afterward.",
+  "exposure": "instruction_ablation/2.0.0",
+  "native_agent_policy": {
+    "fork_turns": "none",
+    "model_override": false,
+    "tools": "Read-only inspection of own exported workspace only; no code execution/simulation/generation/web/other agents. JSON response through native message only.",
+    "access_boundary": "Instruction-scoped; shared tools and filesystem are not enforced OS isolation. Actual tool access globally unavailable to supervisor; agent disclosure is unverified."
+  },
+  "budget": {
+    "submissions_per_arm": 3,
+    "model_token_usage": "UNVERIFIED",
+    "exact_snapshot": "UNVERIFIED",
+    "hard_token_caps": "NOT_AVAILABLE",
+    "provider_spend": "No external provider or CLI calls; native task allowance only"
+  },
+  "gates": {
+    "schema": "required",
+    "rules": "required",
+    "task_contract": "required",
+    "numeric": "registered-sample result only",
+    "browser": "separate observed gate"
+  },
+  "formal_trials": 0,
+  "human_participants": 0,
+  "claims_forbidden": [
+    "formal D qualification",
+    "formal M7",
+    "statistical/general Skill advantage",
+    "human preference",
+    "enforced isolation or certified token parity"
+  ]
+}
