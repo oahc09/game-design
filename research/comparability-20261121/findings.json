@@ -1,0 +1,886 @@
+{
+  "scope": "HISTORICAL_COMPARABILITY_AUDIT",
+  "formal_status": "BLOCKED",
+  "formal_trials": 0,
+  "external_review": "UNVERIFIED",
+  "historical_reports_checked": 26,
+  "tasks": [
+    {
+      "id": "gd-009",
+      "paired_conditions": 432,
+      "equal_across_arms": {
+        "content": 432,
+        "realized_input": 432,
+        "frame_count": 432,
+        "state": 288,
+        "events": 288,
+        "terminal": 288,
+        "policy": null
+      },
+      "original_preference": {
+        "baseline": 1,
+        "treatment": 11,
+        "tie": 4,
+        "unmeasured": 0
+      },
+      "first_attempt_smoke_failures": [],
+      "realized_engine_input_mismatches_by_case": {},
+      "targeted_retest": [
+        {
+          "task_id": "gd-009",
+          "arm": "baseline",
+          "n": 16,
+          "pass": 16,
+          "fail": 0,
+          "unverified": 0
+        },
+        {
+          "task_id": "gd-009",
+          "arm": "treatment",
+          "n": 16,
+          "pass": 16,
+          "fail": 0,
+          "unverified": 0
+        }
+      ],
+      "final_acceptance": [
+        {
+          "blind_id": "e1a2a9ca-b420-471d-953c-ce2f06cde720",
+          "id": "gd-009",
+          "arm": "baseline",
+          "status": "PASS",
+          "manual_rubrics": 9,
+          "failed": [],
+          "missing": []
+        },
+        {
+          "blind_id": "d2851e5c-ab72-4cc2-938d-62a2800d610d",
+          "id": "gd-009",
+          "arm": "treatment",
+          "status": "PASS",
+          "manual_rubrics": 9,
+          "failed": [],
+          "missing": []
+        }
+      ],
+      "superseded_rubric_observations": {},
+      "lineage": {
+        "baseline": {
+          "submission/game.mjs": {
+            "first": "2ffe260d9ca741732a53d3bedac6e9797f12e40a751f52faf42d5dd17065c50c",
+            "proxy_review": "2ffe260d9ca741732a53d3bedac6e9797f12e40a751f52faf42d5dd17065c50c",
+            "targeted_retest": null,
+            "accepted": "4da0378c8e0b5b88684e85e5803a9415eafbb038d4e58b1af07b4721d4af1eae"
+          },
+          "submission/main.mjs": {
+            "first": "7ea888d2abf83ab7879053fb3394eb06623fc18643d91d4a069344b62d91c53e",
+            "proxy_review": "7ea888d2abf83ab7879053fb3394eb06623fc18643d91d4a069344b62d91c53e",
+            "targeted_retest": "70d2eef596304b9fb89382c9f93fe2afb76ac70e0f13b069c5c5fee32775e4fb",
+            "accepted": "49737cbda0aaeba14ebe8f8d3278a60d10e2a0b3ad80e257843306d6f5f8dd77"
+          },
+          "submission/index.html": {
+            "first": "ba5911eda192ad654a9bfebeb2fd5ed65a574bcc8fe997592c11d7d55a331fee",
+            "proxy_review": "ba5911eda192ad654a9bfebeb2fd5ed65a574bcc8fe997592c11d7d55a331fee",
+            "targeted_retest": null,
+            "accepted": "ba5911eda192ad654a9bfebeb2fd5ed65a574bcc8fe997592c11d7d55a331fee"
+          }
+        },
+        "treatment": {
+          "submission/game.mjs": {
+            "first": "4cd712eca7b20a2e51d6f3da811ac1d5b7fe0c2f38fa288660da1821ee72ac40",
+            "proxy_review": "4cd712eca7b20a2e51d6f3da811ac1d5b7fe0c2f38fa288660da1821ee72ac40",
+            "targeted_retest": null,
+            "accepted": "026ff0df7a2eeb3979a52279dd38e7fc4fb2103de3f4f3154412f13f0561b366"
+          },
+          "submission/main.mjs": {
+            "first": "2ce36f51d66a7a9b8a14192598da42df620bc45d050fb4ce768ecece0781e076",
+            "proxy_review": "2ce36f51d66a7a9b8a14192598da42df620bc45d050fb4ce768ecece0781e076",
+            "targeted_retest": "a3c644b3b080dcfafa22ac197bfb006fa00ed81c5996b5f75430bfccd6e6481e",
+            "accepted": "f0e8ba84f742e966d3549bf5052f055739b991359f16702c5cf937835109c408"
+          },
+          "submission/index.html": {
+            "first": "ad95540ce10d403990eb7f12513690aa446e54199f3e2173683427b77a1c3f9e",
+            "proxy_review": "ad95540ce10d403990eb7f12513690aa446e54199f3e2173683427b77a1c3f9e",
+            "targeted_retest": null,
+            "accepted": "ad95540ce10d403990eb7f12513690aa446e54199f3e2173683427b77a1c3f9e"
+          }
+        }
+      }
+    },
+    {
+      "id": "gd-019",
+      "paired_conditions": 288,
+      "equal_across_arms": {
+        "content": 288,
+        "realized_input": 288,
+        "frame_count": 288,
+        "state": 0,
+        "events": 144,
+        "terminal": 288,
+        "policy": null
+      },
+      "original_preference": {
+        "baseline": 2,
+        "treatment": 8,
+        "tie": 6,
+        "unmeasured": 0
+      },
+      "first_attempt_smoke_failures": [
+        {
+          "arm": "treatment",
+          "task_id": "gd-019",
+          "error": "INVALID_CONTENT: initialBoard must be empty array or height x width matrix",
+          "repair_attempt": 2
+        }
+      ],
+      "realized_engine_input_mismatches_by_case": {},
+      "targeted_retest": [
+        {
+          "task_id": "gd-019",
+          "arm": "baseline",
+          "n": 16,
+          "pass": 16,
+          "fail": 0,
+          "unverified": 0
+        },
+        {
+          "task_id": "gd-019",
+          "arm": "treatment",
+          "n": 16,
+          "pass": 16,
+          "fail": 0,
+          "unverified": 0
+        }
+      ],
+      "final_acceptance": [
+        {
+          "blind_id": "cf4ae63a-5ffa-4a25-9c52-d89847c98ce8",
+          "id": "gd-019",
+          "arm": "treatment",
+          "status": "PASS",
+          "manual_rubrics": 9,
+          "failed": [],
+          "missing": []
+        },
+        {
+          "blind_id": "a9fa243b-e906-412b-8471-828cef02167c",
+          "id": "gd-019",
+          "arm": "baseline",
+          "status": "PASS",
+          "manual_rubrics": 9,
+          "failed": [],
+          "missing": []
+        }
+      ],
+      "superseded_rubric_observations": {
+        "NOT_EVALUATED": 6,
+        "FAIL": 1
+      },
+      "lineage": {
+        "baseline": {
+          "submission/game.mjs": {
+            "first": "5f273f8fbaf39c9b375fd1d0a0c67cf734406af4c7f10f50f4ec68f53fab3ca4",
+            "proxy_review": "5f273f8fbaf39c9b375fd1d0a0c67cf734406af4c7f10f50f4ec68f53fab3ca4",
+            "targeted_retest": null,
+            "accepted": "3b8a8662ab26597b08899c44dced8fd486ba7c8f39b752fe954bd063257e8db4"
+          },
+          "submission/main.mjs": {
+            "first": "a6d09e2aaea0f693b3aa864084cf4d671cc24c7abbc82d6d9e5c97c97cae06fe",
+            "proxy_review": "a6d09e2aaea0f693b3aa864084cf4d671cc24c7abbc82d6d9e5c97c97cae06fe",
+            "targeted_retest": null,
+            "accepted": "0877cc8a3e52ba873807c987bc5e573cacd04a75b7a2a4fb4fec8b856413b937"
+          },
+          "submission/index.html": {
+            "first": "78bcb72ad020d7e3806893d1b67db3522623ad74fdb8cdb25731e26e0aadb73f",
+            "proxy_review": "78bcb72ad020d7e3806893d1b67db3522623ad74fdb8cdb25731e26e0aadb73f",
+            "targeted_retest": null,
+            "accepted": "faad3708f333d1fbb9770e80435ba1bad3e474ff940167f17ee2c0a3a57e0e0e"
+          }
+        },
+        "treatment": {
+          "submission/game.mjs": {
+            "first": "abce349a2263718f38d0bc669fa0b655322540ac989afbe061dbbfcb8cc42fed",
+            "proxy_review": "fd5e6291ef1f7f805d732c8688e4a0fab75d41c8b6ed758646b3b84892a66f09",
+            "targeted_retest": "4f5dba675aa1f98250f59dc30b0327d3d4c7543d82fb6d901dafe253667d94c4",
+            "accepted": "a32c7c4933f614cb3793bd56343c38926c45bce66671905b23daaf325ad2fda5"
+          },
+          "submission/main.mjs": {
+            "first": "b6899565e395b9448260a48d083cf9c471a72bbd528b4d3709ce807b6e5d4811",
+            "proxy_review": "b6899565e395b9448260a48d083cf9c471a72bbd528b4d3709ce807b6e5d4811",
+            "targeted_retest": "740026b90480e9b9450c9a6f027d6a0c56471b638b32f00b6dfaad81ec93ab18",
+            "accepted": "ba3decbdad06185100586e0848b866ffb721f2843ad6fb4d6daa7c6f086d01cd"
+          },
+          "submission/index.html": {
+            "first": "b07f4ae6153f76b45006435928194524717af93ee1356e152497aa842bd7f7ac",
+            "proxy_review": "b07f4ae6153f76b45006435928194524717af93ee1356e152497aa842bd7f7ac",
+            "targeted_retest": null,
+            "accepted": "b07f4ae6153f76b45006435928194524717af93ee1356e152497aa842bd7f7ac"
+          }
+        }
+      }
+    },
+    {
+      "id": "gd-029",
+      "paired_conditions": 288,
+      "equal_across_arms": {
+        "content": 288,
+        "realized_input": 216,
+        "frame_count": 288,
+        "state": 0,
+        "events": 72,
+        "terminal": 216,
+        "policy": null
+      },
+      "original_preference": {
+        "baseline": 0,
+        "treatment": 14,
+        "tie": 2,
+        "unmeasured": 0
+      },
+      "first_attempt_smoke_failures": [],
+      "realized_engine_input_mismatches_by_case": {
+        "shooter.single-hit/held_fire": {
+          "pairs": 72,
+          "first_example_trace_lengths": [
+            30,
+            41
+          ]
+        }
+      },
+      "targeted_retest": [],
+      "final_acceptance": [
+        {
+          "blind_id": "3193c5d1-49e5-42a0-a7ee-51617c6f87c8",
+          "id": "gd-029",
+          "arm": "treatment",
+          "status": "PASS",
+          "manual_rubrics": 9,
+          "failed": [],
+          "missing": []
+        },
+        {
+          "blind_id": "0f0be325-8f6e-472d-b0ca-8a35469ed00f",
+          "id": "gd-029",
+          "arm": "baseline",
+          "status": "PASS",
+          "manual_rubrics": 9,
+          "failed": [],
+          "missing": []
+        }
+      ],
+      "superseded_rubric_observations": {},
+      "lineage": {
+        "baseline": {
+          "submission/game.mjs": {
+            "first": "cf9f32e2c96b72e846c9654b7efb09aeedec96811355b37d38e07a0c571b050b",
+            "proxy_review": "cf9f32e2c96b72e846c9654b7efb09aeedec96811355b37d38e07a0c571b050b",
+            "targeted_retest": null,
+            "accepted": "3fb78710bdfaba62d5b3346be608dbe28c3be0d86fc6e825b96dd5a8e8589da1"
+          },
+          "submission/main.mjs": {
+            "first": "cef32f184a1210020eef5d6e880fad71dc627fea87def99304c1915c7099c258",
+            "proxy_review": "cef32f184a1210020eef5d6e880fad71dc627fea87def99304c1915c7099c258",
+            "targeted_retest": null,
+            "accepted": "a5065d700eab42f95544d4f6b72eae4b53f902c58462e29f0e99767b5a2f3672"
+          },
+          "submission/index.html": {
+            "first": "5fc94bca8dee278ab8d89af85f01cf8da115548e9cf5b61122c5b488542d7342",
+            "proxy_review": "5fc94bca8dee278ab8d89af85f01cf8da115548e9cf5b61122c5b488542d7342",
+            "targeted_retest": null,
+            "accepted": "5cca62b46db4197dcd83d9301eb1c8966969b14948aa9a7871deb8618f82aff9"
+          }
+        },
+        "treatment": {
+          "submission/game.mjs": {
+            "first": "9e481e97363f3ca7ec616be4ea898010c5e2e2a5120e38b61aec67fae40c35da",
+            "proxy_review": "9e481e97363f3ca7ec616be4ea898010c5e2e2a5120e38b61aec67fae40c35da",
+            "targeted_retest": null,
+            "accepted": "edaa990596d10886a69d1473e8b38cc2297ea985a21b84cccc2a4da539a8f7ef"
+          },
+          "submission/main.mjs": {
+            "first": "c9e8bc58bd63d58e5e38fe4123281091acf639ecda6fd8d86a207e27feca4348",
+            "proxy_review": "c9e8bc58bd63d58e5e38fe4123281091acf639ecda6fd8d86a207e27feca4348",
+            "targeted_retest": null,
+            "accepted": "a2edafc357f2dcdad276e03a473e21e5db15954b0b2112c1ccda012b5f3b9d48"
+          },
+          "submission/index.html": {
+            "first": "b55b1b36cfaffebfdda5c6862480bca32dd6bd9f85f852f0c42b50dcdb78d934",
+            "proxy_review": "b55b1b36cfaffebfdda5c6862480bca32dd6bd9f85f852f0c42b50dcdb78d934",
+            "targeted_retest": null,
+            "accepted": "b55b1b36cfaffebfdda5c6862480bca32dd6bd9f85f852f0c42b50dcdb78d934"
+          }
+        }
+      }
+    },
+    {
+      "id": "gd-039",
+      "paired_conditions": 144,
+      "equal_across_arms": {
+        "content": 144,
+        "realized_input": 144,
+        "frame_count": 144,
+        "state": 72,
+        "events": 72,
+        "terminal": 144,
+        "policy": null
+      },
+      "original_preference": {
+        "baseline": 0,
+        "treatment": 2,
+        "tie": 13,
+        "unmeasured": 1
+      },
+      "first_attempt_smoke_failures": [],
+      "realized_engine_input_mismatches_by_case": {},
+      "targeted_retest": [],
+      "final_acceptance": [
+        {
+          "blind_id": "4e33da66-b89c-4210-882e-d188acb7b00d",
+          "id": "gd-039",
+          "arm": "treatment",
+          "status": "PASS",
+          "manual_rubrics": 9,
+          "failed": [],
+          "missing": []
+        },
+        {
+          "blind_id": "fed589a5-427c-41a3-82e3-908a926eab93",
+          "id": "gd-039",
+          "arm": "baseline",
+          "status": "PASS",
+          "manual_rubrics": 9,
+          "failed": [],
+          "missing": []
+        }
+      ],
+      "superseded_rubric_observations": {
+        "NOT_EVALUATED": 3,
+        "FAIL": 1
+      },
+      "lineage": {
+        "baseline": {
+          "submission/game.mjs": {
+            "first": "06d50f9bfb419c329ccb9da3163d88ef7bc46deddb3adea4d9b96bc45fbddbfd",
+            "proxy_review": "06d50f9bfb419c329ccb9da3163d88ef7bc46deddb3adea4d9b96bc45fbddbfd",
+            "targeted_retest": null,
+            "accepted": "564b1b2c5c731dc6c4cc796d6c42a47199b15c979a35dddc39d2df30be49817a"
+          },
+          "submission/main.mjs": {
+            "first": "3637f6bd0106218cb6f2ce468c094bc6bf3d09821dde27235fde750d34371554",
+            "proxy_review": "3637f6bd0106218cb6f2ce468c094bc6bf3d09821dde27235fde750d34371554",
+            "targeted_retest": null,
+            "accepted": "d8944addcf470fb8bd06228616221021cbd4b0c490c5eb74c79a7d08f0c1f48f"
+          },
+          "submission/index.html": {
+            "first": "94afe8de55e48ba156f90d13cd05ef3844294c9c9c284c2a44a8a19cd5870da4",
+            "proxy_review": "94afe8de55e48ba156f90d13cd05ef3844294c9c9c284c2a44a8a19cd5870da4",
+            "targeted_retest": null,
+            "accepted": "94afe8de55e48ba156f90d13cd05ef3844294c9c9c284c2a44a8a19cd5870da4"
+          }
+        },
+        "treatment": {
+          "submission/game.mjs": {
+            "first": "df722180a065badeaf5d701b4d2b1b144da0ba9a215254b30642c3c88381fcc5",
+            "proxy_review": "df722180a065badeaf5d701b4d2b1b144da0ba9a215254b30642c3c88381fcc5",
+            "targeted_retest": null,
+            "accepted": "9ac40da8b2d8ecb5d96c0ce366e87ce2c0d062eca8c2ecdca976e52a63dfcd9a"
+          },
+          "submission/main.mjs": {
+            "first": "36fb2c779d2d73b128568f3c06011c49973cb2d1f16c171bcd9fc944ae620664",
+            "proxy_review": "36fb2c779d2d73b128568f3c06011c49973cb2d1f16c171bcd9fc944ae620664",
+            "targeted_retest": null,
+            "accepted": "1ab41fb95acfbc731c3f4e12d69a103453f0e75491636ca0e431e2dedb82e8b8"
+          },
+          "submission/index.html": {
+            "first": "940673f3889d385099462596c72a0beaacf90780ff42290521716fed318ca7d7",
+            "proxy_review": "940673f3889d385099462596c72a0beaacf90780ff42290521716fed318ca7d7",
+            "targeted_retest": null,
+            "accepted": "940673f3889d385099462596c72a0beaacf90780ff42290521716fed318ca7d7"
+          }
+        }
+      }
+    },
+    {
+      "id": "gd-065",
+      "paired_conditions": 288,
+      "equal_across_arms": {
+        "content": 288,
+        "realized_input": 288,
+        "frame_count": 288,
+        "state": 288,
+        "events": 144,
+        "terminal": 288,
+        "policy": null
+      },
+      "original_preference": {
+        "baseline": 1,
+        "treatment": 13,
+        "tie": 2,
+        "unmeasured": 0
+      },
+      "first_attempt_smoke_failures": [],
+      "realized_engine_input_mismatches_by_case": {},
+      "targeted_retest": [],
+      "final_acceptance": [
+        {
+          "blind_id": "793c2deb-2f4c-4bbb-bffd-0ac7c1924286",
+          "id": "gd-065",
+          "arm": "treatment",
+          "status": "PASS",
+          "manual_rubrics": 10,
+          "failed": [],
+          "missing": []
+        },
+        {
+          "blind_id": "7c6caa74-adf4-4432-9af9-439e00e6ed79",
+          "id": "gd-065",
+          "arm": "baseline",
+          "status": "PASS",
+          "manual_rubrics": 10,
+          "failed": [],
+          "missing": []
+        }
+      ],
+      "superseded_rubric_observations": {
+        "NOT_EVALUATED": 6,
+        "FAIL": 5
+      },
+      "lineage": {
+        "baseline": {
+          "submission/game.mjs": {
+            "first": "b26d591b1e4fba27011fd9cb08ea81fed73f39f8855e3afff189db866febbeec",
+            "proxy_review": "b26d591b1e4fba27011fd9cb08ea81fed73f39f8855e3afff189db866febbeec",
+            "targeted_retest": null,
+            "accepted": "674562aa159b95e1944df32e09b2279288c9e43e389349ace3d6bf2f75151c20"
+          },
+          "submission/main.mjs": {
+            "first": "e81aaa0f11ebff9521986882fa9274fed5c05c544ac59d4a0bdb29ab2bf792ab",
+            "proxy_review": "e81aaa0f11ebff9521986882fa9274fed5c05c544ac59d4a0bdb29ab2bf792ab",
+            "targeted_retest": null,
+            "accepted": "b244bbf4e39814d9d5d297e0f6b8c71a8eeec83c2f3378fdda17469d2c81fd6d"
+          },
+          "submission/index.html": {
+            "first": "38ad0534fc26b63f3e2cf6de88dca909629f3396fc886cd1988512d73d1f7fd6",
+            "proxy_review": "38ad0534fc26b63f3e2cf6de88dca909629f3396fc886cd1988512d73d1f7fd6",
+            "targeted_retest": null,
+            "accepted": "fc12a112c44ce3519907a3fdb9ba22bff9d67a1d089ea3af8e183835612622a9"
+          }
+        },
+        "treatment": {
+          "submission/game.mjs": {
+            "first": "03679ed2e1d059911f803fd033ae29d21eecac5e17e1bb312aac4de583129c43",
+            "proxy_review": "03679ed2e1d059911f803fd033ae29d21eecac5e17e1bb312aac4de583129c43",
+            "targeted_retest": null,
+            "accepted": "826fdebc56bbb69c9bbb8362bed46482908a709aea4634d4d634c81d536801ee"
+          },
+          "submission/main.mjs": {
+            "first": "c5d77b4e43720d34d4f015e0390833d2b6bc0d061b6c08c52fa23a3073616699",
+            "proxy_review": "c5d77b4e43720d34d4f015e0390833d2b6bc0d061b6c08c52fa23a3073616699",
+            "targeted_retest": null,
+            "accepted": "bcbea7489498af47302f138eb5e641ce7803fb38796942781d139b4477806c7c"
+          },
+          "submission/index.html": {
+            "first": "bf1736228d3d0d3163e90ff0111f81e7a95f6b3fa86b6fcf30a6ff925d8caaf7",
+            "proxy_review": "bf1736228d3d0d3163e90ff0111f81e7a95f6b3fa86b6fcf30a6ff925d8caaf7",
+            "targeted_retest": null,
+            "accepted": "bf1736228d3d0d3163e90ff0111f81e7a95f6b3fa86b6fcf30a6ff925d8caaf7"
+          }
+        }
+      }
+    },
+    {
+      "id": "gd-071",
+      "paired_conditions": 216,
+      "equal_across_arms": {
+        "content": 216,
+        "realized_input": 216,
+        "frame_count": 216,
+        "state": 0,
+        "events": 0,
+        "terminal": 216,
+        "policy": null
+      },
+      "original_preference": {
+        "baseline": 3,
+        "treatment": 11,
+        "tie": 2,
+        "unmeasured": 0
+      },
+      "first_attempt_smoke_failures": [
+        {
+          "arm": "baseline",
+          "task_id": "gd-071",
+          "error": "ReferenceError: events is not defined",
+          "repair_attempt": 2
+        }
+      ],
+      "realized_engine_input_mismatches_by_case": {},
+      "targeted_retest": [],
+      "final_acceptance": [
+        {
+          "blind_id": "da161fec-1143-48eb-b96b-74c1556b77c1",
+          "id": "gd-071",
+          "arm": "baseline",
+          "status": "PASS",
+          "manual_rubrics": 10,
+          "failed": [],
+          "missing": []
+        },
+        {
+          "blind_id": "e4d50e42-1035-4e13-b367-75c92dbedf9e",
+          "id": "gd-071",
+          "arm": "treatment",
+          "status": "PASS",
+          "manual_rubrics": 10,
+          "failed": [],
+          "missing": []
+        }
+      ],
+      "superseded_rubric_observations": {
+        "FAIL": 6
+      },
+      "lineage": {
+        "baseline": {
+          "submission/game.mjs": {
+            "first": "6b8dce2dc97570ac6feabf1a2ef5a9405d542114011af40997d364c26a670bf5",
+            "proxy_review": "a12ce781fada9e610697dde2f3adc2fa9cb01e16d02055206cdc3ea70144b468",
+            "targeted_retest": null,
+            "accepted": "e96b2ce65bd9fbfe2a904567af9cc3becaebd346066650a44355d8e5c5f8df19"
+          },
+          "submission/main.mjs": {
+            "first": "ef9b20d609a8779b72fa31d9474ce26190c8c54920a71ca37bfd2ea96f39263b",
+            "proxy_review": "ef9b20d609a8779b72fa31d9474ce26190c8c54920a71ca37bfd2ea96f39263b",
+            "targeted_retest": null,
+            "accepted": "d61788a283521ebce1f7ef44bf2feca17b7034f623f10a6266ace3cd1d88f7c6"
+          },
+          "submission/index.html": {
+            "first": "a290aee0b75df76f03bc094e7f05c2d486d5314b4539fbb3b50422b6ffa7e0ec",
+            "proxy_review": "a290aee0b75df76f03bc094e7f05c2d486d5314b4539fbb3b50422b6ffa7e0ec",
+            "targeted_retest": null,
+            "accepted": "e9b318836f2b547ea45f1961374e7d596afa76c5ab1f2fa0f80054dc0cb215f1"
+          }
+        },
+        "treatment": {
+          "submission/game.mjs": {
+            "first": "d7a1f8f7f21c2e46ceedcf6a1dac99e5781e2d2cb67244c9a7c0c05052d80595",
+            "proxy_review": "d7a1f8f7f21c2e46ceedcf6a1dac99e5781e2d2cb67244c9a7c0c05052d80595",
+            "targeted_retest": null,
+            "accepted": "d9393edda3d9eae54c8fba92f3411118b3fe6991228ec0894dc2231046e797b0"
+          },
+          "submission/main.mjs": {
+            "first": "805ef2fae3c76fcd230a7ec0059840d5c986bd66dcb0114590191813fe188397",
+            "proxy_review": "805ef2fae3c76fcd230a7ec0059840d5c986bd66dcb0114590191813fe188397",
+            "targeted_retest": null,
+            "accepted": "57384a817f627a4f224e198d5f6d94eb23c346fe225fddcbe4a5a0e613d2b7ea"
+          },
+          "submission/index.html": {
+            "first": "4d526ce13b1add73276f043e540d0ce7c8fb8e75862ca764c14c6681e03bc854",
+            "proxy_review": "4d526ce13b1add73276f043e540d0ce7c8fb8e75862ca764c14c6681e03bc854",
+            "targeted_retest": null,
+            "accepted": "4d526ce13b1add73276f043e540d0ce7c8fb8e75862ca764c14c6681e03bc854"
+          }
+        }
+      }
+    },
+    {
+      "id": "gd-107",
+      "paired_conditions": 288,
+      "equal_across_arms": {
+        "content": 288,
+        "realized_input": 288,
+        "frame_count": 288,
+        "state": 288,
+        "events": 144,
+        "terminal": 288,
+        "policy": null
+      },
+      "original_preference": {
+        "baseline": 4,
+        "treatment": 8,
+        "tie": 4,
+        "unmeasured": 0
+      },
+      "first_attempt_smoke_failures": [],
+      "realized_engine_input_mismatches_by_case": {},
+      "targeted_retest": [],
+      "final_acceptance": [
+        {
+          "blind_id": "464e5cc1-887e-46e9-91ba-dda83d22ef9b",
+          "id": "gd-107",
+          "arm": "treatment",
+          "status": "PASS",
+          "manual_rubrics": 10,
+          "failed": [],
+          "missing": []
+        },
+        {
+          "blind_id": "54ca19bb-ed8b-4953-af88-4ceb49cb21fd",
+          "id": "gd-107",
+          "arm": "baseline",
+          "status": "PASS",
+          "manual_rubrics": 10,
+          "failed": [],
+          "missing": []
+        }
+      ],
+      "superseded_rubric_observations": {
+        "FAIL": 11
+      },
+      "lineage": {
+        "baseline": {
+          "submission/game.mjs": {
+            "first": "b26d591b1e4fba27011fd9cb08ea81fed73f39f8855e3afff189db866febbeec",
+            "proxy_review": "b26d591b1e4fba27011fd9cb08ea81fed73f39f8855e3afff189db866febbeec",
+            "targeted_retest": null,
+            "accepted": "674562aa159b95e1944df32e09b2279288c9e43e389349ace3d6bf2f75151c20"
+          },
+          "submission/main.mjs": {
+            "first": "908d63263043f90093d1f5244ed7cec2dc10fd6d37eefd70a49900bee3298a9d",
+            "proxy_review": "908d63263043f90093d1f5244ed7cec2dc10fd6d37eefd70a49900bee3298a9d",
+            "targeted_retest": null,
+            "accepted": "7cefb5bf512fbfe127a7f8958f461bd19312ffc680b4996ba16c91073bdcda95"
+          },
+          "submission/index.html": {
+            "first": "38ad0534fc26b63f3e2cf6de88dca909629f3396fc886cd1988512d73d1f7fd6",
+            "proxy_review": "38ad0534fc26b63f3e2cf6de88dca909629f3396fc886cd1988512d73d1f7fd6",
+            "targeted_retest": null,
+            "accepted": "f319a2e09d0df726e386dd2f5eb77e2f1ccb85121087c139a624c97136a227f5"
+          }
+        },
+        "treatment": {
+          "submission/game.mjs": {
+            "first": "ea1ae677c2413fcac5f7d202891ae3c2dbf4dac244a4bd4d039f31d28ff6e6f1",
+            "proxy_review": "ea1ae677c2413fcac5f7d202891ae3c2dbf4dac244a4bd4d039f31d28ff6e6f1",
+            "targeted_retest": null,
+            "accepted": "33b76e033ab4f132141df764c3cfb4ea22529fd5465d929cb06e5635691521e2"
+          },
+          "submission/main.mjs": {
+            "first": "5af8b16242501c3960de12dd873f82a1c15dbaec889efbc2ec7d168aac57b1f9",
+            "proxy_review": "5af8b16242501c3960de12dd873f82a1c15dbaec889efbc2ec7d168aac57b1f9",
+            "targeted_retest": null,
+            "accepted": "519d7b30933f28a7572f64000d85212f09d883acf537f0ba6cc8edddf1313c30"
+          },
+          "submission/index.html": {
+            "first": "f064eeff03de09f945d5fa61a0c1353334ec76567d280429b59298eea2144952",
+            "proxy_review": "f064eeff03de09f945d5fa61a0c1353334ec76567d280429b59298eea2144952",
+            "targeted_retest": null,
+            "accepted": "f064eeff03de09f945d5fa61a0c1353334ec76567d280429b59298eea2144952"
+          }
+        }
+      }
+    },
+    {
+      "id": "gd-108",
+      "paired_conditions": 144,
+      "equal_across_arms": {
+        "content": 144,
+        "realized_input": 0,
+        "frame_count": null,
+        "state": null,
+        "events": null,
+        "terminal": 132,
+        "policy": 144
+      },
+      "original_preference": {
+        "baseline": 1,
+        "treatment": 14,
+        "tie": 1,
+        "unmeasured": 0
+      },
+      "first_attempt_smoke_failures": [],
+      "realized_engine_input_mismatches_by_case": null,
+      "targeted_retest": [],
+      "final_acceptance": [
+        {
+          "blind_id": "e71d2eb9-deee-4c97-9c81-c39d02414fdf",
+          "id": "gd-108",
+          "arm": "treatment",
+          "status": "PASS",
+          "manual_rubrics": 7,
+          "failed": [],
+          "missing": []
+        },
+        {
+          "blind_id": "7e471fe9-d7ca-4c5e-97aa-ba469afa8e1d",
+          "id": "gd-108",
+          "arm": "baseline",
+          "status": "PASS",
+          "manual_rubrics": 7,
+          "failed": [],
+          "missing": []
+        }
+      ],
+      "superseded_rubric_observations": {
+        "FAIL": 8
+      },
+      "lineage": {
+        "baseline": {
+          "submission/game.mjs": {
+            "first": "8ee1095c4ac9d693fd69f67aafedc1e470eda6efd2e3c029fc6deff7ba7b4d7f",
+            "proxy_review": "8ee1095c4ac9d693fd69f67aafedc1e470eda6efd2e3c029fc6deff7ba7b4d7f",
+            "targeted_retest": null,
+            "accepted": "e9fdc8ae48df0ce85e6855f4eed7cef96d387d7932b33e2046390571e41d7b03"
+          },
+          "submission/main.mjs": {
+            "first": "7e5bb6f341e9d3b2b6da1a31719f58aa6dbf89f9f750b7ae9a17d2d8f87842da",
+            "proxy_review": "7e5bb6f341e9d3b2b6da1a31719f58aa6dbf89f9f750b7ae9a17d2d8f87842da",
+            "targeted_retest": null,
+            "accepted": "8f9a10600c47b2f191db02a8ec843da575b30c8f7b99e1d955f988b071e93dab"
+          },
+          "submission/index.html": {
+            "first": "4e3bc9292847a49bb8858ee54886ef26de0157fee79941a712e83472a6b1c809",
+            "proxy_review": "4e3bc9292847a49bb8858ee54886ef26de0157fee79941a712e83472a6b1c809",
+            "targeted_retest": null,
+            "accepted": "dec51803b812c1a53070932bff5fcf7cc16d0fb618bb350f28d371851bd4bf47"
+          }
+        },
+        "treatment": {
+          "submission/game.mjs": {
+            "first": "db11df3fcb87da2daa6369f55fffc6abef8978a3f7ac490effb919bae82975ed",
+            "proxy_review": "db11df3fcb87da2daa6369f55fffc6abef8978a3f7ac490effb919bae82975ed",
+            "targeted_retest": null,
+            "accepted": "39bbda1454b752a8cce2837c642a868fee9db14a2ce8c4023c084681276c3d86"
+          },
+          "submission/main.mjs": {
+            "first": "b87e309fb8505cd8a5bf7c175170f8786d628507cb0f3ff94183005082bc3341",
+            "proxy_review": "b87e309fb8505cd8a5bf7c175170f8786d628507cb0f3ff94183005082bc3341",
+            "targeted_retest": null,
+            "accepted": "ad2d6a61b05cb4dcfa8c94aeb3b8338f4565ac3ed3ab030c79fa0b1d52bec46b"
+          },
+          "submission/index.html": {
+            "first": "50fd500360eff8eb2628c20561493a1f7c3a4a7e0743964c33530d35d696ba7b",
+            "proxy_review": "50fd500360eff8eb2628c20561493a1f7c3a4a7e0743964c33530d35d696ba7b",
+            "targeted_retest": null,
+            "accepted": "50fd500360eff8eb2628c20561493a1f7c3a4a7e0743964c33530d35d696ba7b"
+          }
+        }
+      },
+      "card_metrics": {
+        "baseline": [
+          {
+            "fps": 30,
+            "profile": "immediate",
+            "episodes": 12,
+            "wins": 12,
+            "losses": 0,
+            "censored": 0,
+            "mean_steps": 10.916666666666666,
+            "mean_mana": 5.916666666666667
+          },
+          {
+            "fps": 30,
+            "profile": "delayed",
+            "episodes": 12,
+            "wins": 0,
+            "losses": 12,
+            "censored": 0,
+            "mean_steps": 13.583333333333334,
+            "mean_mana": 3
+          },
+          {
+            "fps": 60,
+            "profile": "immediate",
+            "episodes": 12,
+            "wins": 12,
+            "losses": 0,
+            "censored": 0,
+            "mean_steps": 10.916666666666666,
+            "mean_mana": 5.916666666666667
+          },
+          {
+            "fps": 60,
+            "profile": "delayed",
+            "episodes": 12,
+            "wins": 0,
+            "losses": 12,
+            "censored": 0,
+            "mean_steps": 13.583333333333334,
+            "mean_mana": 3
+          },
+          {
+            "fps": 144,
+            "profile": "immediate",
+            "episodes": 12,
+            "wins": 12,
+            "losses": 0,
+            "censored": 0,
+            "mean_steps": 10.916666666666666,
+            "mean_mana": 5.916666666666667
+          },
+          {
+            "fps": 144,
+            "profile": "delayed",
+            "episodes": 12,
+            "wins": 0,
+            "losses": 12,
+            "censored": 0,
+            "mean_steps": 13.583333333333334,
+            "mean_mana": 3
+          }
+        ],
+        "treatment": [
+          {
+            "fps": 30,
+            "profile": "immediate",
+            "episodes": 12,
+            "wins": 10,
+            "losses": 2,
+            "censored": 0,
+            "mean_steps": 27.916666666666668,
+            "mean_mana": 11.5
+          },
+          {
+            "fps": 30,
+            "profile": "delayed",
+            "episodes": 12,
+            "wins": 0,
+            "losses": 12,
+            "censored": 0,
+            "mean_steps": 32.166666666666664,
+            "mean_mana": 7.083333333333333
+          },
+          {
+            "fps": 60,
+            "profile": "immediate",
+            "episodes": 12,
+            "wins": 10,
+            "losses": 2,
+            "censored": 0,
+            "mean_steps": 27.916666666666668,
+            "mean_mana": 11.5
+          },
+          {
+            "fps": 60,
+            "profile": "delayed",
+            "episodes": 12,
+            "wins": 0,
+            "losses": 12,
+            "censored": 0,
+            "mean_steps": 32.166666666666664,
+            "mean_mana": 7.083333333333333
+          },
+          {
+            "fps": 144,
+            "profile": "immediate",
+            "episodes": 12,
+            "wins": 10,
+            "losses": 2,
+            "censored": 0,
+            "mean_steps": 27.916666666666668,
+            "mean_mana": 11.5
+          },
+          {
+            "fps": 144,
+            "profile": "delayed",
+            "episodes": 12,
+            "wins": 0,
+            "losses": 12,
+            "censored": 0,
+            "mean_steps": 32.166666666666664,
+            "mean_mana": 7.083333333333333
+          }
+        ]
+      }
+    }
+  ]
+}
