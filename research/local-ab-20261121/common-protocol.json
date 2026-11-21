@@ -1,0 +1,264 @@
+{
+  "seeds": [
+    11,
+    29,
+    47,
+    71,
+    101,
+    131,
+    173,
+    211,
+    257,
+    307,
+    359,
+    419
+  ],
+  "render_rates": [
+    30,
+    60,
+    144
+  ],
+  "replays_per_render_rate": 2,
+  "shooter": {
+    "task_id": "gd-029",
+    "fixture_ids": [
+      "shooter.single-hit",
+      "shooter.no-post-destroy-hit"
+    ],
+    "tick_rate": 60,
+    "offered_ticks": 60,
+    "controls": {
+      "arrow": {
+        "keys": [
+          "ArrowRight",
+          "ArrowUp"
+        ],
+        "action": {
+          "move": [
+            1,
+            -1
+          ],
+          "fire": false
+        }
+      },
+      "held_fire": {
+        "keys": [
+          "Space"
+        ],
+        "action": {
+          "move": [
+            0,
+            0
+          ],
+          "fire": true
+        }
+      }
+    },
+    "rules": {
+      "bounds": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "initial_player": {
+        "position": [
+          50,
+          80
+        ],
+        "health": 3,
+        "cooldown": 0,
+        "aim": [
+          0,
+          -1
+        ]
+      },
+      "player_radius": 2,
+      "player_speed_per_second": 24,
+      "projectile_speed_per_second": 90,
+      "projectile_radius": 0.5,
+      "projectile_damage": 1,
+      "fire_interval_ticks": 8,
+      "initial_projectile_velocity": [
+        0,
+        0
+      ],
+      "fixture_enemy_radius": 2.5,
+      "fixture_enemy_speed": 0,
+      "fixture_enemy_fire_interval_ticks": 0,
+      "collision": "swept circles; earliest time, then projectile ID, then target ID; consume each projectile at most once",
+      "entity_aliases": {
+        "a": 1,
+        "b": 2,
+        "p": 1000
+      },
+      "destruction_order": "damage then ordered destruction then outcome",
+      "terminal_priority": [
+        "player death",
+        "all enemies destroyed",
+        "time limit"
+      ],
+      "max_ticks": 7200
+    },
+    "terminal_tail": "Offer the full schedule regardless of terminal. Record terminal tick and rejected or unapplied tail separately. Require unchanged authoritative state and no gameplay events in the tail.",
+    "scenarios": [
+      {
+        "id": "shooter.single-hit",
+        "content": {
+          "player": {
+            "position": [
+              50,
+              80
+            ],
+            "health": 3
+          },
+          "enemies": [
+            {
+              "id": "a",
+              "position": [
+                50,
+                40
+              ],
+              "health": 2
+            },
+            {
+              "id": "b",
+              "position": [
+                50,
+                40
+              ],
+              "health": 2
+            }
+          ],
+          "projectiles": [
+            {
+              "id": "p",
+              "position": [
+                50,
+                40
+              ],
+              "damage": 1
+            }
+          ],
+          "collision_fixture": "overlap two enemies with one projectile"
+        },
+        "native_probe": {
+          "seed": 11,
+          "actions": [
+            {
+              "type": "wait"
+            }
+          ]
+        }
+      },
+      {
+        "id": "shooter.no-post-destroy-hit",
+        "content": {
+          "initial_snapshot": {
+            "tick": 1,
+            "terminal": null,
+            "enemies": [
+              {
+                "id": "a",
+                "health": 1
+              },
+              {
+                "id": "b",
+                "health": 2
+              }
+            ],
+            "projectiles": []
+          }
+        },
+        "native_probe": {
+          "seed": 11,
+          "actions": [
+            {
+              "type": "wait"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "card": {
+    "task_id": "gd-108",
+    "content": {
+      "zones": [
+        "deck",
+        "hand",
+        "discard"
+      ],
+      "opening_hand_size": 3,
+      "mana": 3
+    },
+    "cards": [
+      {
+        "name": "Strike",
+        "cost": 1,
+        "damage": 2
+      },
+      {
+        "name": "Guard",
+        "cost": 1,
+        "shield": 2
+      },
+      {
+        "name": "Heavy Strike",
+        "cost": 2,
+        "damage": 4
+      },
+      {
+        "name": "Focus",
+        "cost": 0,
+        "damage": 1
+      }
+    ],
+    "copies_per_card": 3,
+    "initial_health": [
+      20,
+      20
+    ],
+    "initial_mana": 3,
+    "initial_shield": [
+      0,
+      0
+    ],
+    "initial_draw_per_player": 3,
+    "initial_seat": 0,
+    "shuffle": "LCG uint32 (1664525*x + 1013904223) then descending Fisher–Yates. Initial seed is seed + seat*199. Deck draws from the end. If triggered by an implicit draw with an empty deck and nonempty discard, reshuffle discard at seed + seat + tick.",
+    "rules": "Playing spends mana and places the played card in discard, applies direct damage and adds printed shield to own player. Shield does not absorb damage in this pinned build. Nonlethal play draws only if current hand becomes empty. Pass changes seat and restores incoming mana to 3, then draws for the incoming seat. Explicit draw rejects when deck is empty. Stale tick, illegal action and post-terminal actions reject without mutation. Lethal play ends immediately and identifies the active seat as winner.",
+    "profiles": [
+      {
+        "id": "immediate",
+        "version": "public-v0.2",
+        "observation": "visible_current_state_only",
+        "node_budget_per_decision": 128,
+        "lookahead_depth": 1,
+        "reaction_delay_steps": 0,
+        "action_error_probability": 0,
+        "tie_break": "lexicographic canonical public action JSON",
+        "policy_definition": "Public objective-greedy action with zero delay and no deliberate action noise.",
+        "freeze_before_execution": true,
+        "source_freeze_contract": "Supervisor records executable policy source digest, full public configuration digest, observation digest, and every episode before outcomes are scored. Semantic adherence to this algorithm is checked in the task blind rubric."
+      },
+      {
+        "id": "delayed",
+        "version": "public-v0.2",
+        "observation": "visible_current_state_only",
+        "node_budget_per_decision": 128,
+        "lookahead_depth": 1,
+        "reaction_delay_steps": 1,
+        "action_error_probability": 0,
+        "tie_break": "lexicographic canonical public action JSON",
+        "policy_definition": "Same objective-greedy rule with one-step delay; do not change authoritative game rules.",
+        "freeze_before_execution": true,
+        "source_freeze_contract": "Supervisor records executable policy source digest, full public configuration digest, observation digest, and every episode before outcomes are scored. Semantic adherence to this algorithm is checked in the task blind rubric."
+      }
+    ],
+    "max_steps": 300,
+    "opponent_profile": "immediate",
+    "subject_seat": 0,
+    "input": "Run identical supervisor policy from visible current-actor HUD and own rendered legal options. For fixed replay feed the sealed action trace including null no-input decisions. An initial delayed null consumes one decision opportunity and leaves game state unchanged. Keep fixed replay separate from policy-driven metrics."
+  }
+}

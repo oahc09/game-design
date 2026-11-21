@@ -1,0 +1,58 @@
+{
+  "study_id": "LOCAL-AB-20261121-01",
+  "revision": "4d2f8fe5bdeeb30177a11e631e8265025e99836c",
+  "status": "REGISTERED_NOT_RUN",
+  "scope": "EXPLORATORY_LOCAL_AB",
+  "formal_status": "BLOCKED",
+  "formal_trials": 0,
+  "external_review": "UNVERIFIED",
+  "model_calls": 0,
+  "planned_model_route": {
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "snapshot_attested": false,
+    "provider_budget_attested": false
+  },
+  "arms": [
+    "baseline",
+    "treatment"
+  ],
+  "exposure": "full_skill",
+  "task_ids": [
+    "gd-029",
+    "gd-108"
+  ],
+  "planned_task_pairs": 2,
+  "planned_arm_tasks": 4,
+  "max_attempts_per_arm_task": 2,
+  "shared_attempt_budget": {
+    "tokens": 24000,
+    "reasoning_tokens": 12000,
+    "tool_calls": 80,
+    "steps": 120,
+    "asset_bytes": 2000000,
+    "wall_seconds": 300
+  },
+  "reference_selection": "Prior accepted implementations selected as common diagnostic references before new submissions. Shooter source and outputs are supervisor material except normal Skill exposure. Card runtime and UI are a common read-only subject for both arms.",
+  "references": {
+    "gd-029": {
+      "blind_id": "3193c5d1-49e5-42a0-a7ee-51617c6f87c8",
+      "artifact_digest": "6a2ba4b485e8081ad7f3d3008ab4a489b50314b0e2d31382cdaf95da827a9dd0"
+    },
+    "gd-108": {
+      "blind_id": "e71d2eb9-deee-4c97-9c81-c39d02414fdf",
+      "artifact_digest": "d38f16a3e3b685a40beabb4ce168b6cbca48570039e56603f6e980ab903089cc"
+    }
+  },
+  "source_hashes": {
+    "benchmark-dataset/v0.2/public/tasks.json": "0e548d6cf289c54f59345ff681372e937c7497df6a2e6c2702b67c6cad01f601",
+    "benchmark-dataset/v0.2/evaluator/task-configs.json": "d20bb7e249ff76aa6f3550979f1fa2a703f26af143512602292fb1a99fdfd1a7",
+    "benchmark-dataset/v0.2/evaluator/fixtures/public-rule-fixtures.json": "39242e9650501887b8994cd24ccfcbf692fd83905572679b9a49a91ef0499cbe",
+    "benchmark-dataset/v0.2/rubric.json": "0e9eeceb3c34f6fa7875d305b1f0e9ffb7fce48596734f6dab28786216f7ef12",
+    "src/benchmark/task-protocols.mjs": "a9f236d70964b7ae09b95d7adebea4e40396b8022a9821e59fe89669dd7b4544",
+    "src/archetypes/arcade_shooter.mjs": "09b429a8c83ae6238ffc8863f7e1f6cf048ce3c24832487ba411ce9022932cc7",
+    "docs/proxy-evaluations/20261114-full-eight/candidate-index.json": "1de7ae986db8a7ab080868759e02d2c5853291b42a6f0063c28e891649928a70",
+    "docs/proxy-evaluations/20261114-full-eight/evidence-index.json": "9e1acd2fc961f6a338c5695b9926955857d4e3802c863c1780d4fc302cd10a47",
+    "experiments/full-eight-20261114/controller-v10/public-policy.mjs": "a80c539edff1b3e9f7d3482ef0ce588637088cb919a6a0cd1b2ee0710f315d7d"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "unit": "one task and one arm with a fresh generation context; 2 planned pairs, 4 planned arm tasks",
+  "maximum_attempts": 2,
+  "first_attempt": {
+    "seal": "Before evaluation or feedback, record full submission or missing result, source digests, exit status and observed usage.",
+    "pass": "Every original applicable automatic and blind manual obligation must pass with artifact-bound evidence, and shared rules/input conformance must pass as a separate experiment condition.",
+    "denominator": "Report outcomes out of all four planned arm tasks, two per arm; pair effects use eligible complete pairs and disclose missing or excluded pairs separately.",
+    "outcomes": ["PASS", "FAIL", "NOT_EVALUATED", "NOT_RUN", "INFRA_FAILURE"]
+  },
+  "defects": {
+    "unit": "One reproducible root cause per task/arm/attempt, linked to all affected rubric checks; recurrence under seeds or repeats is not another defect.",
+    "categories": ["BUILD_OR_STARTUP", "RULE_OR_STATE", "EVENT_OR_TERMINAL", "INPUT_OR_REPLAY", "OBSERVATION_BOUNDARY", "METRIC_OR_REPORT", "VISUAL", "INFRASTRUCTURE"],
+    "handling": "Preserve first evidence, input, expected/observed behavior and source digest. Missing evidence stays NOT_EVALUATED; supervisor or environment errors are not candidate defects."
+  },
+  "repair": {
+    "admission": "Only after attempt 1 is sealed and evaluated. One extra attempt with the same feedback format, public reproducer only, no hidden expected trace or opposite-arm output.",
+    "attribution": "Track candidate retry and supervisor intervention separately. A supervisor source patch invalidates the affected arm-task for any model-only repair estimate and stays as an engineering observation.",
+    "cost": ["repair_attempts", "elapsed_ms_by_generation_evaluation_and_supervision", "observed_input_output_reasoning_tokens", "observed_tool_calls", "observed_steps", "artifact_bytes", "changed_files", "defects_closed_and_regressions"],
+    "unknown": "Unavailable usage is null with reason. Record actual counts separately from declared limits. Missing provider telemetry prevents claims of hard-budget equivalence, monetary cost, or token savings.",
+    "final": "Report first and final outcomes side by side, and repairs per all planned arm tasks and per attempted repair. Report paired observations descriptively; no inference from replay counts or historical candidates."
+  }
+}

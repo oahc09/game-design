@@ -1,0 +1,37 @@
+{
+  "study_id": "LOCAL-AB-20261121-01",
+  "status": "OFFLINE_PREFLIGHT_PASS",
+  "material_exports": 4,
+  "model_calls": 0,
+  "study_attempts": 0,
+  "browser_runs": 0,
+  "formal_status": "BLOCKED",
+  "formal_trials": 0,
+  "protocol_sha256": "dae59df52487b519a9b43213afdb2b1f05217e576de973f2e1172f93ea127f01",
+  "measurement_sha256": "f2014a29f805bcf449f17d7e8f2c22f0f87a926ac6bb3d9ab32abd2ba833e8da",
+  "results": {
+    "gd-029": {
+      "native_replays_checked": 288,
+      "seed_case_or_profile_groups": 48,
+      "rejected_terminal_tail_steps": 1368,
+      "shared_material_hashes": {
+        "task.json": "a2ef88738d8250bcf2f13770ed026259ac7f07acf6cdf4f507323c734d36e7bb",
+        "common-protocol.json": "314bb4bdb5bd331b65931602589b2bca5a0c37f8998a9564c397248dc0e0c2d1"
+      },
+      "shared_engine_digest": "18473d4c23652e4274f6afa2987622e29d741b4ffe0595b1f41ded5b51665746"
+    },
+    "gd-108": {
+      "native_replays_checked": 144,
+      "seed_case_or_profile_groups": 24,
+      "rejected_terminal_tail_steps": 0,
+      "shared_material_hashes": {
+        "task.json": "895ca1921b8fe7a6b288238b364c67dec2a251b48ffe186c5392bee29b24a4fb",
+        "common-protocol.json": "c2fe56d8fdf66ee30491e3d9046d66779ed20b0f90cc0987dd8e86a6f60a56bc",
+        "submission/index.html": "50fd500360eff8eb2628c20561493a1f7c3a4a7e0743964c33530d35d696ba7b",
+        "submission/main.mjs": "ad2d6a61b05cb4dcfa8c94aeb3b8338f4565ac3ed3ab030c79fa0b1d52bec46b",
+        "submission/game.mjs": "39bbda1454b752a8cce2837c642a868fee9db14a2ce8c4023c084681276c3d86"
+      },
+      "shared_engine_digest": "18473d4c23652e4274f6afa2987622e29d741b4ffe0595b1f41ded5b51665746"
+    }
+  }
+}
