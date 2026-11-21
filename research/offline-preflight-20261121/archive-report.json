@@ -1,0 +1,19 @@
+{
+  "scope": "OFFLINE_EVIDENCE_RESTORE_AND_BACKUP",
+  "status": "PASS",
+  "archive_sha256": "23e8cfa6bfbe6511c91c735b8a011d49099035a6d9367df8589f7108a769a75e",
+  "manifest_sha256": "512923ba2b2a16bde5a8d7d9427d1c2a9e85a0e269ba90dbec1d89910bfa6bfe",
+  "archive_bytes": 131584202,
+  "restored_files_verified": 26134,
+  "candidate_source_bindings": 1947,
+  "raw_capture_references_checked": {
+    "engine_executions": 3888,
+    "card_executions": 288
+  },
+  "sealed_reports_matched": 16,
+  "review_file_references_checked": 1034,
+  "backup_drive": "D:",
+  "backup_folder": "full-task-20261114-01",
+  "formal_status": "BLOCKED",
+  "formal_trials": 0
+}
