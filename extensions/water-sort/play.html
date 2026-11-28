@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>水排序</title>
+  <link rel="stylesheet" href="./play.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>水排序</h1>
+      <button type="button" id="restart">重开</button>
+    </header>
+    <p class="goal">把同色液体集中到同一根管里，填满每根有液体的管。</p>
+    <canvas width="720" height="350" tabindex="0" aria-label="四根试管的水排序棋盘" aria-describedby="controls"></canvas>
+    <div class="footer">
+      <p id="status" role="status"></p>
+      <p id="controls">点击管子，或用 ← → 与 Enter。Esc 取消选择，R 重开。</p>
+    </div>
+  </main>
+  <script type="module" src="./play.mjs"></script>
+</body>
+</html>
